@@ -50,7 +50,7 @@ def test_every_locator_resolves_and_fallback_returns_without_rescoring(client,ap
         from app.routes.polity_unit6 import read_links
         q=next(q for q in qs.values() if not section_links(q) and visible(q) and q['id'] not in read_links())
     url='/learn/polity/unit6/practice/'+q['id']+'?chapter='+q['_chapter']+'&kind='+q['_kind']+'&qlang=both'
-    answered=soup(client.post(url,data={'answer':'1'}))
+    answered=soup(client.post(url,data={'answer':'1'},follow_redirects=True))
     assert answered.select('.is-correct') and 'nscored' not in str(answered)
     notes_url=answered.select_one('[data-chapter-link]')['href']
     assert notes_url.endswith('#question-explanation')
@@ -204,13 +204,13 @@ def test_wrong_is_red_points_explanation_and_no_unscored_text(client,app):
         multi=next(q for q in qs if q['_en'].count('. ')>=3)
     for q in (was_unscored,multi):
         wrong=q['_answer']%4+1
-        page=soup(client.post('/learn/polity/unit6/practice/'+q['id'],data={'answer':str(wrong)}))
+        page=soup(client.post('/learn/polity/unit6/practice/'+q['id'],data={'answer':str(wrong)},follow_redirects=True))
         assert page.select('.geo-option.is-wrong') and page.select('.geo-answer.is-wrong') and page.select('.geo-option.is-correct')
         text=page.get_text().lower()
         assert 'unscored' not in text and 'no marks' not in text and 'study only' not in text
         assert page.select('.xp-lead')
-    assert soup(client.post('/learn/polity/unit6/practice/'+multi['id'],data={'answer':str(multi['_answer'])})).select('.xp-pts li')
-    ok=soup(client.post('/learn/polity/unit6/practice/'+multi['id'],data={'answer':str(multi['_answer'])}))
+    assert soup(client.post('/learn/polity/unit6/practice/'+multi['id'],data={'answer':str(multi['_answer'])},follow_redirects=True)).select('.xp-pts li')
+    ok=soup(client.post('/learn/polity/unit6/practice/'+multi['id'],data={'answer':str(multi['_answer'])},follow_redirects=True))
     assert ok.select('.geo-answer.is-right')
 
 

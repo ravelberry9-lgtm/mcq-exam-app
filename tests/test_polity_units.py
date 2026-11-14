@@ -85,7 +85,7 @@ def test_answer_panel_has_inline_next_and_finish_on_last(client, app):
         qs = [q for q in records().values() if q['_chapter'] == '10.3.2' and q['_kind'] == 'pyq' and q['_answer'] in (1, 2, 3, 4)]
     qs.sort(key=lambda q: q['id'])
     args = 'chapter=10.3.2&kind=pyq&qlang=en'
-    page = soup(client.post(f"/learn/polity/unit6/practice/{qs[0]['id']}?{args}", data={'answer': '1'}))
+    page = soup(client.post(f"/learn/polity/unit6/practice/{qs[0]['id']}?{args}", data={'answer': '1'},follow_redirects=True))
     assert page.select_one('#answer-result .u6-next-inline a[data-next]')
     lib = soup(client.get('/learn/polity/unit6/library?' + args))
     links = [a['href'] for a in lib.select('.geo-question-list a')]
@@ -99,8 +99,8 @@ def test_question_leaving_mistakes_view_keeps_next(client, app):
         qs = sorted((q for q in records().values() if q['_chapter'] == '8.1.1' and q['_kind'] == 'pyq' and q['_answer'] in (1, 2, 3, 4)), key=lambda q: q['id'])
     a, b, c = qs[:3]
     for q in (a, b, c):  # make three mistakes
-        client.post(f"/learn/polity/unit6/practice/{q['id']}?chapter=8.1.1&kind=pyq", data={'answer': str(q['_answer'] % 4 + 1)})
-    client.post(f"/learn/polity/unit6/practice/{b['id']}?chapter=8.1.1&kind=pyq", data={'answer': str(b['_answer'])})  # b fixed
+        client.post(f"/learn/polity/unit6/practice/{q['id']}?chapter=8.1.1&kind=pyq", data={'answer': str(q['_answer'] % 4 + 1)},follow_redirects=True)
+    client.post(f"/learn/polity/unit6/practice/{b['id']}?chapter=8.1.1&kind=pyq", data={'answer': str(b['_answer'])},follow_redirects=True)  # b fixed
     page = soup(client.get(f"/learn/polity/unit6/practice/{b['id']}?chapter=8.1.1&kind=pyq&view=mistakes"))
     assert page.select_one('a[rel=next]') and page.select_one('a[rel=prev]')
 
@@ -109,7 +109,7 @@ def test_unconfirmed_key_marker_and_telugu_fallback(client, app):
     enable(app)
     with app.app_context():
         q = next(q for q in records().values() if q['_chapter'].startswith('8.') and q.get('key_status') == 'no_official_key' and q['_answer'] in (1, 2, 3, 4) and not q.get('question_te'))
-    page = soup(client.post(f"/learn/polity/unit6/practice/{q['id']}?chapter={q['_chapter']}&kind=pyq&qlang=te", data={'answer': str(q['_answer'])}))
+    page = soup(client.post(f"/learn/polity/unit6/practice/{q['id']}?chapter={q['_chapter']}&kind=pyq&qlang=te", data={'answer': str(q['_answer'])},follow_redirects=True))
     assert page.select_one('.xp-key[data-key-status=no_official_key]')
     stem = page.select_one('.geo-question').get_text()
     assert q['question_en'].split('\n')[0][:40] in stem and 'Telugu text not available' in stem

@@ -38,7 +38,7 @@ def test_polity_unit7_chapter_notes_practice_descriptive(client,app):
         assert client.get(f'/learn/polity/unit6/chapters/{cid}/notes').status_code==200,cid
     with app.app_context():
         q=next(q for q in records().values() if q['_chapter']=='7.3.2' and q['_kind'] in ('pyq','primary_pyq'))
-    r=client.post('/learn/polity/unit6/practice/'+q['id'],data={'answer':q['_answer']})
+    r=client.post('/learn/polity/unit6/practice/'+q['id'],data={'answer':q['_answer']},follow_redirects=True)
     assert r.status_code==200 and b'answer-result' in r.data
     assert client.get('/learn/polity/unit6/library?kind=pyq&unit=7').status_code==200
     page=soup(client.get('/learn/polity/unit6/descriptive?chapter=7.1.1'))

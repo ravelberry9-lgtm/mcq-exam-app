@@ -708,7 +708,10 @@ def answer(item_id):
     else:state.wrong_count=0
     db.session.commit()
     _run_record(q['id'],feedback=='correct');_remember_last(q['id'])
-    return question_page(q,selected,True,qs)
+    # Post/Redirect/Get: the result is shown on a GET page, so going to the notes and pressing
+    # Back (or refreshing) never asks the browser to resubmit a form.
+    args={**filters(q['_chapter']),'qlang':language(),'review':'1','choice':selected}
+    return redirect(url_for('.practice',item_id=item_id,**args)+'#answer-result')
 
 @bp.post('/progress/<chapter_id>')
 def progress(chapter_id):
@@ -764,6 +767,9 @@ def save_exam_answer(exam_id):
 
 def _hub_values():
     v={k:request.args.get(k,'').strip() for k in ('kind','chapter')+FACETS}
+    v['cat']=request.args.get('cat','').strip()
+    if v['cat'] not in ('','all','recent','earlier'):v['cat']=''
+    if v['cat'] and v['kind']=='pyq':v['cat']=''
     if v['kind'] not in ('','bank','pyq'):abort(404)
     if v['exam'] and v['exam'] not in dict(EXAM_GROUPS):abort(404)
     if v['chapter']:chapter_or_404(v['chapter'])
@@ -785,7 +791,7 @@ def practice_hub():
     start=url_for('.practice',item_id=qs[0]['id'],qlang=lang,**{k:x for k,x in v.items() if x}) if qs else None
     return render_template('ds/polity_practice_hub.html',v=v,count=len(qs),start=start,groups=EXAM_GROUPS,exam_counts=ex,
         chapters=[c for c in chs if c[1]],facets=facet_options(fbase),
-        totals={'bank':sum(q['_kind']=='bank' for q in allq),'pyq':sum(q['_kind']!='bank' for q in allq)},
+        totals={'bank':sum(q['_kind']=='bank' for q in allq),'pyq':sum(q['_kind']!='bank' for q in allq)},ca_counts={p:sum(1 for q in allq if q.get('_ca') and (p=='all' or q.get('ca_period')==p)) for p in ('all','recent','earlier')},
         list_url=url_for('.library',**{k:x for k,x in v.items() if x}),resume=_resume_for(v,qs,lang),**_wrong_entry(lang))
 def _concept_url(ref,**kw):
     t,sub=_cg.link_target(ref)

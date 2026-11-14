@@ -26,6 +26,7 @@
 </section>
 {% endif %}
 
+{% if kind!='pyq' %}<section class="card ph-sec"><h2>📰 Current affairs <small>optional</small></h2><div class="ph-chips" role="radiogroup" aria-label="Current affairs">{% for val,lab,n in [('','Any (no filter)',None),('all','All current affairs',ca_counts.all),('recent','Last 12 months',ca_counts.recent),('earlier','2024 – 2025',ca_counts.earlier)] %}<label class="{{ 'on' if v.cat==val }}"><input type="radio" name="cat" value="{{ val }}" {{ 'checked' if v.cat==val }}>{{ lab }}{% if n is not none %} <small>{{ n }}</small>{% endif %}</label>{% endfor %}</div></section>{% endif %}
 <section class="card ph-sec"><h2><label for="ph-ch">Chapter</label></h2>
   <select id="ph-ch" name="chapter" class="ph-sel">
     <option value="">Any chapter</option>

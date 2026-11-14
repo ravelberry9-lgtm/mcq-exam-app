@@ -57,7 +57,7 @@ def test_all_sources_maps_and_readers(client,app):
 
 def test_unscored_never_incorrect_or_marked_wrong(client,app):
     enable(app);item='POL-641-C008'
-    r=client.post('/learn/polity/unit6/practice/'+item,data={'action':'answer','answer':'1'})
+    r=client.post('/learn/polity/unit6/practice/'+item,data={'action':'answer','answer':'1'},follow_redirects=True)
     assert r.status_code==200
     assert b'No marks' not in r.data and b'nscored' not in r.data and (b'Correct' in r.data or b'Incorrect' in r.data)
     with app.app_context():
@@ -71,9 +71,9 @@ def test_scored_mistakes_and_progress(client,app):
     enable(app)
     with app.app_context():q=next(q for q in records().values() if q['_kind']=='bank' and q['_scored'] and q['_answer'] in (1,2,3,4))
     wrong=q['_answer']%4+1
-    assert client.post('/learn/polity/unit6/practice/'+q['id'],data={'answer':wrong}).status_code==200
+    assert client.post('/learn/polity/unit6/practice/'+q['id'],data={'answer':wrong},follow_redirects=True).status_code==200
     assert q['id'].encode() in client.get('/learn/polity/unit6/library?view=mistakes').data
-    assert client.post('/learn/polity/unit6/practice/'+q['id'],data={'answer':q['_answer']}).status_code==200
+    assert client.post('/learn/polity/unit6/practice/'+q['id'],data={'answer':q['_answer']},follow_redirects=True).status_code==200
     assert q['id'].encode() not in client.get('/learn/polity/unit6/library?view=mistakes').data
     assert client.post('/learn/polity/unit6/progress/6.9.2',data={'completed':'1'},follow_redirects=True).status_code==200
 
@@ -152,7 +152,7 @@ def test_admin_requires_login_then_edits_deletes_and_stores_text(client,app):
     assert client.post('/learn/polity/unit6/admin/q/'+q['id'],data=form).status_code==302
     page=client.get('/learn/polity/unit6/practice/'+q['id']+'?qlang=en').get_data(as_text=True)
     assert 'EDITED STEM TEXT' in page and 'Edited option 2' in page and 'EDITED STEM TEXT' not in base
-    r=client.post('/learn/polity/unit6/practice/'+q['id']+'?qlang=en',data={'answer':str(new)});assert b'Correct' in r.data
+    r=client.post('/learn/polity/unit6/practice/'+q['id']+'?qlang=en',data={'answer':str(new)},follow_redirects=True);assert b'Correct' in r.data
     assert client.post('/learn/polity/unit6/admin/q/'+q['id'],data={'action':'reset'}).status_code==302
     assert 'EDITED STEM TEXT' not in client.get('/learn/polity/unit6/practice/'+q['id']+'?qlang=en').get_data(as_text=True)
     assert client.post('/learn/polity/unit6/admin/q/'+q['id'],data={'action':'delete'}).status_code==302
@@ -185,7 +185,7 @@ def test_concept_notes_after_explanation_and_expand(client,app):
     with app.app_context():
         from app.services import concepts as _cg
         q=next(x for x in records().values() if x.get('_kind')=='bank' and x.get('_answer') in (1,2,3,4) and not _cg.subs_for(x['id']))
-    r=client.post('/learn/polity/unit6/practice/'+q['id']+'?qlang=both',data={'answer':str(q['_answer'])})
+    r=client.post('/learn/polity/unit6/practice/'+q['id']+'?qlang=both',data={'answer':str(q['_answer'])},follow_redirects=True)
     html=r.get_data(as_text=True)
     assert 'id="concept-notes"' in html and 'cc-allbtn' in html and 'Show all chapter cards' in html and '/cards/' in html
     assert html.index('class="xp"')<html.index('id="concept-notes"')<html.index('id="aichk"')
@@ -841,7 +841,7 @@ def test_practice_score_and_result(client,app):
     q=next(x for x in records().values() if x.get('_kind')=='bank' and x.get('_answer') in (1,2,3,4) and not x.get('hold_reason'))
     client.get(f"/learn/polity/unit6/practice/{q['id']}?fresh=1")
     wrong=1 if q['_answer']!=1 else 2
-    h=client.post(f"/learn/polity/unit6/practice/{q['id']}",data={'answer':wrong}).get_data(as_text=True)
+    h=client.post(f"/learn/polity/unit6/practice/{q['id']}",data={'answer':wrong},follow_redirects=True).get_data(as_text=True)
     assert 'Score <b>0</b> / 1' in h
     r=client.get('/learn/polity/unit6/practice/result').get_data(as_text=True)
     assert 'Practise my wrong answers' in r and '0</b> / 1' in r
@@ -865,3 +865,12 @@ def test_current_affairs(client,app):
     assert len(ca)>=250 and all(q['_answer'] in (1,2,3,4) for q in ca)
     q=client.get(f"/learn/polity/unit6/practice/{ca[0]['id']}?cat={ca[0]['ca_topic']}").get_data(as_text=True)
     assert 'Current affairs' in q
+
+def test_answer_post_redirect_get_and_ca_practice_filter(client,app):
+    enable(app)
+    r=client.post('/learn/polity/unit6/practice/CA-ca01-Q1?cat=ca01&qlang=en',data={'answer':'1'})
+    assert r.status_code==302 and 'review=1' in r.location and 'choice=1' in r.location and 'cat=ca01' in r.location
+    page=client.get(r.location).get_data(as_text=True)
+    assert 'answer-result' in page and 'Full topic notes' in page
+    hub=client.get('/learn/polity/unit6/practice?kind=bank&cat=all').get_data(as_text=True)
+    assert 'Current affairs' in hub and 'cat=all' in hub and '/practice/CA-' in hub
