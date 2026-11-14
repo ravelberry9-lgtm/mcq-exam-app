@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% block title %}{{ t.title }} · Concept card{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_concepts.css',v='cc5') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_concepts.css',v='cc6') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader">{% if back_url %}<a href="{{ back_url }}">‹ Back to question</a>{% else %}<a href="{{ url_for('polity_unit6.concepts_hub') }}">‹ Concepts</a>{% endif %}<strong>{{ t.title }}</strong></div>{% endblock %}
 {% macro cell(x) %}{{ xl(x|string) }}{% endmacro %}
 {% macro rcell(x) %}{% set cp=cell_parts(x) if pilot else None %}{% if cp %}{% if cp.lead %}{% if cp.lead.isdigit() %}<span class="cp-count">{{ cp.lead }} in all</span>{% else %}<b class="cp-lead">{{ cell(cp.lead) }}</b>{% endif %}{% endif %}<ul class="cp-list">{% for i in cp['items'] %}<li>{% if i.who %}<span class="cp-who">{{ cell(i.who) }}</span> <span class="cp-arrow" aria-hidden="true">→</span> <span class="cp-what">{{ i.what }}</span>{% else %}{{ cell(i.text) }}{% endif %}</li>{% endfor %}</ul>{% else %}{{ cell(x) }}{% endif %}{% endmacro %}
@@ -26,6 +26,7 @@
 <div class="cg-body">
 {% if s.at_a_glance %}<table class="cg-glance{{ ' cp-on' if pilot }}"><tbody>{% for k,v in s.at_a_glance %}<tr><th><i class="cp-dot" aria-hidden="true"></i>{{ k }}</th><td>{{ rcell(v) }}</td></tr>{% endfor %}</tbody></table>{% endif %}
 {% for sec in s.sections %}<details class="cg-sec{{ ' traps' if 'trap' in sec.heading|lower }}"{% if sec.open %} open{% endif %}><summary>{{ sec.heading }}</summary><div class="cg-secbody">{% for b in sec.blocks %}{{ block(b) }}{% endfor %}</div></details>{% endfor %}
+{% set cas=ca_for_concept(s.id) %}{% if cas %}<div class="cg-ca"><h4>📰 In the news (current affairs)</h4><ul>{% for c in cas %}<li><a href="{{ url_for('polity_unit6.ca_topic',tid=c.id) }}">{{ c.title_en }}</a> <small>{{ c.date }}</small></li>{% endfor %}</ul></div>{% endif %}
 </div></details>{% endfor %}
 </div></div></div>{% endblock %}
 {% block scripts %}<script src="{{ url_for('static',filename='polity_concepts.js',v='cc2') }}" defer></script>{% endblock %}

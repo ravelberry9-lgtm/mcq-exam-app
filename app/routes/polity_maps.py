@@ -105,6 +105,14 @@ def _load_records():
         rationale=shared_ex.get(q.get('explanation_id',q['id']),{})
         q['_en']=q.get('explanation_en') or rationale.get('en','');q['_te']=q.get('explanation_te') or rationale.get('te','')
         result.setdefault(q['id'],q)
+    # Current-affairs MCQs (Nov 2025 – Nov 2026): stored with their topic notes; filed under a related chapter.
+    caf=CONTENT/'current-affairs'/'topics.json'
+    if caf.is_file():
+        for t in read(caf).get('topics',[]):
+            for m in t.get('mcqs',[]):
+                q={'id':m['id'],'question_en':m['question_en'],'question_te':m.get('question_te',''),'options_en':m['options_en'],'options_te':m.get('options_te',[]),'answer':m['answer']}
+                q.update(_kind='bank',_chapter=t.get('host_chapter','6.1.1'),_scored=True,_answer=m['answer'],_en=m.get('explanation_en',''),_te=m.get('explanation_te',''),ca_topic=t['id'],ca_period=t.get('period','recent'),_ca=True)
+                result.setdefault(q['id'],q)
     v2=read(CONTENT/'_shared/PYQ-Explanations-v2.json') if (CONTENT/'_shared/PYQ-Explanations-v2.json').is_file() else {}
     for qid,x in (v2.get('questions',{}) if isinstance(v2,dict) else {}).items():
         q=result.get(qid)

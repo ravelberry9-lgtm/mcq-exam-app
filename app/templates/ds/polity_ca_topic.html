@@ -1,0 +1,15 @@
+{% extends 'ds/base.html' %}
+{% block title %}{{ t.title_en }} · Current affairs{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc4') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261112p') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_ca.css',v='ca3') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.ca_home',qlang=lang) }}">‹ Current affairs</a><nav class="u6-langmini" aria-label="Language / భాష">{% for code,label in [('te','తె'),('en','E'),('both','తె+E')] %}<a href="{{ url_for('polity_unit6.ca_topic',tid=t.id,qlang=code) }}"{% if code==lang %} aria-current="true"{% endif %}>{{ label }}</a>{% endfor %}</nav></div>{% endblock %}
+{% macro notes(blocks,l) %}{% for b in blocks %}<section class="ca-blk"><h2>{{ b.h }}</h2>{% if b.p %}{% for x in b.p %}<p>{{ x }}</p>{% endfor %}{% endif %}{% if b.li %}<ul>{% for x in b.li %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}{% if b.table %}<div class="ca-tw"><table class="ca-t"><tbody>{% for r in b.table %}<tr><th>{{ r[0] }}</th><td>{{ r[1] }}</td></tr>{% endfor %}</tbody></table></div>{% endif %}</section>{% endfor %}{% endmacro %}
+{% block content %}<article class="ca ca-page">
+<header class="card ca-head"><p class="ca-kick">{{ sections[t.section][1] if lang=='te' else sections[t.section][0] }} · {{ t.date }}</p>
+<h1>{{ t.title_te if lang=='te' and t.title_te else t.title_en }}</h1>{% if lang=='both' and t.title_te %}<p class="ca-sub" lang="te">{{ t.title_te }}</p>{% endif %}
+{% if start %}<a class="ca-go" href="{{ start }}">Practise {{ t.mcqs|length }} MCQs on this topic ›</a>{% endif %}</header>
+{% if lang in ('en','both') %}<div class="card ca-notes" lang="en">{{ notes(t.notes.en,'en') }}</div>{% endif %}
+{% if lang in ('te','both') and t.notes.te %}<div class="card ca-notes" lang="te">{{ notes(t.notes.te,'te') }}</div>{% endif %}
+{% if links %}<section class="card ca-links"><h2>Linked concept cards</h2><ul>{% for title,u in links %}<li><a href="{{ u }}">{{ title }} ›</a></li>{% endfor %}</ul></section>{% endif %}
+{% if t.sources %}<details class="card ca-src"><summary>Sources ({{ t.sources|length }})</summary><ul>{% for s in t.sources %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a></li>{% endfor %}</ul></details>{% endif %}
+<nav class="ca-pn">{% if prev %}<a href="{{ url_for('polity_unit6.ca_topic',tid=prev,qlang=lang) }}">‹ Previous topic</a>{% else %}<span></span>{% endif %}{% if next %}<a href="{{ url_for('polity_unit6.ca_topic',tid=next,qlang=lang) }}">Next topic ›</a>{% endif %}</nav>
+</article>{% endblock %}

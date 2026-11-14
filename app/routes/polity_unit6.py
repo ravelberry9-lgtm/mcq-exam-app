@@ -434,7 +434,7 @@ def q_tags(q):
     amds={m.group(1) for r in (_AMD,_AMD2) for m in r.finditer(txt) if 1<=int(m.group(1))<=106}
     low=txt.casefold();cases={cid for cid,_,keys in _case_keys() if any(k.casefold() in low for k in keys)}
     stem=q.get('question_en') or ''
-    t={'exam':exam_group(q.get('exam')) if q['_kind'] in ('pyq','primary_pyq') else '','art':arts,'amd':amds,'case':cases,'ca':bool(_CA.search(stem))}
+    t={'exam':exam_group(q.get('exam')) if q['_kind'] in ('pyq','primary_pyq') else '','art':arts,'amd':amds,'case':cases,'ca':bool(q.get('_ca') or _CA.search(stem))}
     _TAGS[key]=t;return t
 def _artkey(a):m=re.match(r'(\d+)(.*)',a);return (int(m.group(1)),m.group(2))
 def facet_options(qs):
@@ -451,7 +451,7 @@ def _ordinal(n):return 'th' if 10<=n%100<=20 else {1:'st',2:'nd',3:'rd'}.get(n%1
 FACETS=('exam','art','amd','case','ca','cg')
 
 def filters(default_chapter=''):
-    values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view','map','unit')+FACETS}
+    values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view','map','unit','cat')+FACETS}
     if values['exam'] and values['exam'] not in dict(EXAM_GROUPS):abort(404)
     if values['ca'] not in ('','1'):abort(404)
     if values['unit'] and (not values['unit'].isdigit() or int(values['unit']) not in UNITS):abort(404)
@@ -477,6 +477,7 @@ def selection(values):
     for k in ('art','amd','case'):
         if values.get(k):qs=[q for q in qs if values[k] in q_tags(q)[k]]
     if values.get('ca'):qs=[q for q in qs if q_tags(q)['ca']]
+    if values.get('cat'):qs=[q for q in qs if q.get('ca_topic')==values['cat'] or values['cat'] in ('all','recent','earlier') and q.get('_ca') and (values['cat']=='all' or q.get('ca_period')==values['cat'])]
     if values.get('cg'):qs=[q for q in qs if any(_cg.topic_of(x)==values['cg'] for x in _cg.index()['qmap'].get(q['id'],[]))]
     if query:qs=[q for q in qs if query.casefold() in (q.get('question_en','')+' '+q.get('question_te','')+' '+q['id']).casefold()]
     if view in ('saved','mistakes'):
@@ -809,7 +810,7 @@ def concept_card(tid):
     open_sub=sub if sub in ids else (ids[0] if ids else '')
     back=request.args.get('back','');back_url=back if back.startswith('/learn/polity/') else None
     n=_concept_qcount().get(tid,0)
-    return render_template('ds/polity_concept_card.html',pilot=request.args.get('plain')!='1',t=t,n=n,open_sub=open_sub,back_url=back_url,
+    return render_template('ds/polity_concept_card.html',ca_for_concept=ca_for_concept,pilot=request.args.get('plain')!='1',t=t,n=n,open_sub=open_sub,back_url=back_url,
         practice_url=url_for('.practice_hub',kind='',cg=tid),xl=_xl,link_url=_concept_url)
 
 @bp.get('/pick.json')
@@ -947,3 +948,40 @@ def _resume_for(v,qs,lang):
     pos=next((i for i,q in enumerate(qs) if q['id']==item),None)
     if pos is None or pos==0:return None
     return {'pos':pos+1,'url':url_for('.practice',item_id=item,qlang=lang,**{k:x for k,x in v.items() if x})}
+
+# ---- Current affairs (Indian & AP polity, Nov 2025 – Nov 2026): notes + MCQs ----
+CA_SECTIONS=[('P','Parliament & Constitution amendments','పార్లమెంట్ & రాజ్యాంగ సవరణలు'),('J','Judiciary','న్యాయవ్యవస్థ'),('E','Elections','ఎన్నికలు'),('X','Executive & constitutional bodies','కార్యనిర్వాహక వర్గం & రాజ్యాంగ సంస్థలు'),('F','Federalism & rights','సమాఖ్య విధానం & హక్కులు'),('L','Local government & governance','స్థానిక ప్రభుత్వాలు & పాలన'),('A','Andhra Pradesh polity','ఆంధ్రప్రదేశ్ రాజకీయ వ్యవస్థ'),('R','Reports, indices & days','నివేదికలు, సూచీలు & దినోత్సవాలు')]
+@lru_cache(maxsize=1)
+def ca_data():
+    f=CONTENT/'current-affairs'/'topics.json'
+    if not f.is_file():return {'topics':[],'asof':''}
+    import json as _j;return _j.loads(f.read_text(encoding='utf-8'))
+def ca_for_concept(sub_id):
+    return [t for t in ca_data()['topics'] if sub_id in (t.get('concepts') or [])]
+def _ca_first(cat,lang):
+    qs=[q for q in records().values() if visible(q) and q.get('_ca') and (cat=='all' or q.get('ca_topic')==cat or q.get('ca_period')==cat)]
+    return url_for('.practice',item_id=qs[0]['id'],cat=cat,chapter='',qlang=lang,fresh='1') if qs else None
+@bp.get('/current-affairs')
+def ca_home():
+    lang=language();d=ca_data()
+    periods=[('recent','Last 12 months','Nov 2025 – Nov 2026'),('earlier','2024 – 2025','Jun 2024 – Oct 2025')]
+    have=[p for p in periods if any(t.get('period','recent')==p[0] for t in d['topics'])]
+    per=request.args.get('p','recent')
+    if per not in [p[0] for p in have]:per=have[0][0] if have else 'recent'
+    ts=[t for t in d['topics'] if t.get('period','recent')==per]
+    groups=[(k,en,te,[t for t in ts if t.get('section')==k]) for k,en,te in CA_SECTIONS]
+    n=sum(len(t.get('mcqs',[])) for t in ts)
+    return render_template('ds/polity_ca.html',groups=[g for g in groups if g[3]],lang=lang,periods=have,per=per,
+        span=dict((p[0],p[2]) for p in periods)[per],ntopics=len(ts),nmcq=n,start_all=_ca_first(per,lang))
+@bp.get('/current-affairs/<tid>')
+def ca_topic(tid):
+    lang=language();t=next((x for x in ca_data()['topics'] if x['id']==tid),None) or abort(404)
+    subs={s['id']:(tp['id'],s['title']) for tp in [_cg.topic(x['id']) for x in _cg.topics()] if tp for s in tp['subcards']}
+    links=[(subs[c][1],url_for('.concept_card',tid=subs[c][0],sub=c)+'#'+c) for c in t.get('concepts',[]) if c in subs]
+    order=[x['id'] for x in ca_data()['topics']];i=order.index(tid)
+    return render_template('ds/polity_ca_topic.html',t=t,lang=lang,links=links,start=_ca_first(tid,lang),
+        prev=order[i-1] if i else None,next=order[i+1] if i+1<len(order) else None,sections={k:(en,te) for k,en,te in CA_SECTIONS})
+@bp.app_template_filter('ca_title')
+def _ca_title(tid):
+    t=next((x for x in ca_data()['topics'] if x['id']==tid),None)
+    return t['title_en'] if t else ''

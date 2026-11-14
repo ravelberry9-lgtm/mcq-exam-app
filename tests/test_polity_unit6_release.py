@@ -41,7 +41,7 @@ def test_all_sources_maps_and_readers(client,app):
         allqs=records();maps=catalog()
         # Unit 6's authored records are unchanged; bank PYQs / Laxmikanth MCQs added for units 6-10 live in their own files.
         qs={k:q for k,q in allqs.items() if k not in added_ids()}
-        assert sum(1 for q in qs.values() if q['_chapter'].startswith('6.'))==2585  # 2315 + 27 PYQs reclassified + 114 new A-R/match + 35 cross-chapter + 94 APPSC PYQ-gap MCQs on 2026-11-12
+        assert sum(1 for q in qs.values() if q['_chapter'].startswith('6.') and not q.get('_ca'))==2585  # 2315 + 27 PYQs reclassified + 114 new A-R/match + 35 cross-chapter + 94 APPSC PYQ-gap MCQs on 2026-11-12
         qs={k:q for k,q in qs.items() if q['_chapter'].startswith('6.')}
         assert sum(q['_kind']=='expected' for q in qs.values())==32
         assert all(q['_en'] and (q['_te'] or q.get('_v2')) for q in qs.values())  # v2 PYQ explanations are English-only
@@ -852,3 +852,16 @@ def test_practice_tab_and_start(client,app):
     assert 'Indian Polity' in client.get('/learn/practice').get_data(as_text=True)
     h=client.get('/learn/polity/unit6/practice-start').get_data(as_text=True)
     assert 'Wrong answers only' in h and 'Last practice result' in h
+
+
+def test_current_affairs(client,app):
+    enable(app)
+    h=client.get('/learn/polity/unit6/current-affairs').get_data(as_text=True)
+    assert 'Current affairs' in h and 'ca-item' in h
+    t=client.get('/learn/polity/unit6/current-affairs/ca44?qlang=both').get_data(as_text=True)
+    assert 'Amaravati' in t and 'Practise' in t
+    from app.routes.polity_maps import records
+    ca=[q for q in records().values() if q.get('_ca')]
+    assert len(ca)>=250 and all(q['_answer'] in (1,2,3,4) for q in ca)
+    q=client.get(f"/learn/polity/unit6/practice/{ca[0]['id']}?cat={ca[0]['ca_topic']}").get_data(as_text=True)
+    assert 'Current affairs' in q
