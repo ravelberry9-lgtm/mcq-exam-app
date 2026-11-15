@@ -94,6 +94,23 @@ def main():
         qs=[]
         for q in shown(n):
             q,s=shuffle(q); sh+=s; qs.append(q)
+        fx=ROOT/"g2_fixes"/f"fixes_L{NN}.json"
+        if fx.exists():
+            f=J(fx)
+            for x in f.get("notes",[]):
+                if page.count(x["old"])!=1: raise SystemExit(f"L{NN}: notes old text not unique: {x['old'][:50]!r}")
+                page=page.replace(x["old"],x["new"])
+            byid={q["id"]:q for q in qs}
+            for qid,d in f.get("questions",{}).items():
+                q=byid[qid]
+                for k,v in d.items():
+                    assert k!="answer"
+                    if k.startswith("options_"):
+                        a=q["answer"]-1
+                        assert len(v)==len(q[k]) and v[a]==q[k][a],f"{qid} {k} key moved"
+                    q[k]=v
+            dead=set(f.get("retire",[]))
+            qs=[q for q in qs if q["id"] not in dead]
         d=OUT/str(n); d.mkdir(exist_ok=True)
         (d/"Notes.html").write_text(page,encoding="utf-8")
         (d/"Questions.json").write_text(json.dumps({"questions":qs},ensure_ascii=False),encoding="utf-8")
