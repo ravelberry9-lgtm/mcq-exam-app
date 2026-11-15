@@ -1,0 +1,7 @@
+# L12 REVISE
+Backup: lesson_12.prerev.md. Words 15,980 -> 17,089 (<= 18,000). All {#ids} kept; internal links resolve; lint: no errors (1 remaining formal-term hit is the Lesson 2 link title).
+Fixed all 38 review entries:
+- FACT: Radcliffe = Punjab + Bengal only (boundary-lines text, table, IB list, exam line "which is NOT Radcliffe"); land-border rank -> 4th by CIA data (China 22,457, Russia 22,407, Brazil 16,145, India 13,888), book 3rd kept as exam rule; Adam's Bridge 48 km (30 mi) with book-30-km exam line; 327 villages labelled book figure + 205 press figure, Burgampadu "all but 12 villages"; Chhattisgarh trap rewritten; Afghanistan trap no plate reasoning; UK 13–14x; China sectors sentence; NCERT attribution dropped; "2025 నాటికి" removed, FMR Dec 2024 16->10 km; Annamayya HQ Rayachoti->Madanapalle (31 Dec 2025) + Gudur/Kota/Chillakur to Nellore; 305 taluks labelled book.
+- Added: 28-district HQ table with 2022/2025 origin + exam block; pre-2000 state formation table (1956–1987, Art. 2/3); 11 rows to state-neighbours table; SAARC proposer/summit/observers; Sugauli 1816; 1962 war dates; Robert Palk; coastline release trail; Siachen expeditions/maps sentence; NEC, Saltoro, RDO, Marine NP/Biosphere Reserve explained; 8 terms added to terms box; Kutch=Kachchh note.
+- Style fixes 16–20; repetition 37 (Afghan paragraph now only in #eastern-neighbours), 38 (open border).
+Sources: revision_sources.md.
