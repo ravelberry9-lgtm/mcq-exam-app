@@ -22,6 +22,12 @@ def flat(q,sect):
     for a,b in (("question_te","question_en"),("options_te","options_en"),("option_explanations_te","option_explanations_en"),("explanation_te","explanation_en")):
         if not r[a]: r[a]=r[b]
         if not r[b]: r[b]=r[a]
+    if "variants" in q:
+        ml={"te":(q["variants"].get("te",{}) or {}).get("matching_lists"),"en":(q["variants"].get("en",{}) or {}).get("matching_lists")}
+    else:
+        ml={"te":q.get("matching_lists_te") or q.get("matching_lists"),"en":q.get("matching_lists_en") or q.get("matching_lists")}
+    ml["te"]=ml["te"] or ml["en"]; ml["en"]=ml["en"] or ml["te"]
+    if ml["te"]: r["matching_lists_te"],r["matching_lists_en"]=ml["te"],ml["en"]
     r["section"]=sect; r["kind"]=q.get("kind","")
     return r
 FIXED=re.compile(r"(\bonly\b|\bboth\b|\bneither\b|\bnone of\b|\ball of\b|\babove\b|\bboth\b|పైవన్నీ|పైవేవీ|మాత్రమే|రెండూ|కావు|^[A-Da-d]\s*[–-]\s*\d|^\d(\s*,\s*\d)*(\s*(and|&)\s*\d)?$)",re.I)
@@ -79,8 +85,7 @@ def main():
     lm=J(SRC/"lesson_map.json"); titles={}
     for g in lm["groups"]:
         for l in g["lessons"]: titles[l["lesson"]]=(g["id"],l["title"])
-    if OUT.exists(): shutil.rmtree(OUT)
-    OUT.mkdir(parents=True); chapters=[]; tot=sh=0
+    OUT.mkdir(parents=True,exist_ok=True); chapters=[]; tot=sh=0
     for n in range(1,35):
         NN=f"{n:02d}"; ddir={1:"ch01",2:"ch02",3:"ch03"}.get(n,f"lesson{NN}")
         html=SRC/ddir/(f"lesson_{NN}_trimmed.html" if n<=3 else f"lesson_{NN}_rebuilt.html")
@@ -89,7 +94,7 @@ def main():
         qs=[]
         for q in shown(n):
             q,s=shuffle(q); sh+=s; qs.append(q)
-        d=OUT/str(n); d.mkdir()
+        d=OUT/str(n); d.mkdir(exist_ok=True)
         (d/"Notes.html").write_text(page,encoding="utf-8")
         (d/"Questions.json").write_text(json.dumps({"questions":qs},ensure_ascii=False),encoding="utf-8")
         m={"display_chapter":n,"group":titles[n][0],"title":titles[n][1],"question_count":len(qs),"notes_file":"Notes.html","questions_file":"Questions.json"}
