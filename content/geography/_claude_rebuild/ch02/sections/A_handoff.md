@@ -1,0 +1,14 @@
+# handoff — facts in my sources that belong to other concepts
+- 02: Longitude→local mean solar time: 360° = 24 h, 15° = 1 h, 1° = 4 min, 1′ = 4 s; 30′ difference = 2 min. (time)
+- 02/04/37: Standard meridian for a country is separate from Prime Meridian; Standard time follows time zone, not longitude. (time/IST)
+- 04: Example 80°E LMT is 10 min behind 82.5°E; official clock still IST. (time/IST)
+- 04/37: International Date Line near 180°, bends round islands/territories; separate from the 180° meridian. (dateline)
+- 04: UN M49 puts Kiribati in Oceania > Micronesia sub-region; Federated States of Micronesia is a separate country. (dateline)
+- 22: Accurate clocks (chronometers) made longitude at sea possible — I kept a one-line mention; time group may expand. (time history)
+- 22: Uses list includes time zones. (time)
+- 02: 1884 conference: same zero longitude does not mean same local time everywhere. (time)
+- 03: Water depth units (m/feet/fathoms) — I included briefly; drop if another group owns it.
+- 17/18/36 shared: Rotation/Revolution, Mean solar day 24 h vs Sidereal 23 h 56 min 4 s, Tropical year 365 d 5 h 49 min, IST = UTC+05:30, 82°30′E Mirzapur, Equinox/Solstice definitions, Polar day/night, solar altitude formula 90° − |lat − decl|, 60° latitude rotation speed half of equator. (rotation/time/seasons)
+- 36: 17°N, 83°E example (Visakhapatnam area) — used in my lesson as Vijayawada 16.5°N, 80.6°E instead.
+- 16: France 12 / US 11 / UK 9 / Australia 9 time zones; Russia 11→9 in 2010 historical; Romulus 304-day calendar; Hipparchus degree claim unverified. (time zones / calendar)
+- NCERT 9: 2-hour time lag between Gujarat and Arunachal Pradesh. (IST)

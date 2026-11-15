@@ -1,0 +1,69 @@
+# పునాది విస్తరణ · Textbook depth and application
+
+పటం ఒక neutral photograph కాదు: scale, projection, symbols, selected dataతో నిర్మించిన representation. ఈ భాగం reading నుంచి measurement, terrain reasoning, evidence-based planning వరకు నేర్పుతుంది.
+Scaleను ఉపయోగించి నిజమైన దూరం ఎలా లెక్కించాలి?
+పటంలో 1:50,000 అంటే map distance, ground distance రెండింటినీ ఒకే unitలో తీసుకుంటే 1 map unit = 50,000 ground units. అందువల్ల 1 cm = 50,000 cm = 500 m = 0.5 km. 6 cm దూరం 3 km. ముందుగా ratio, తరువాత units మార్చాలి; 50,000ను kilometresగా నేరుగా చదవకండి.
+1:25,000 అనేది 1:250,000కన్నా large scale: fraction పెద్దది, ఒకే paper areaలో చిన్న ground area ఎక్కువ detailతో కనిపిస్తుంది. ఒక mapను రెండు రెట్లు enlarge చేస్తే representative fraction మారుతుంది; mapతో పాటు resize అయిన graphic/bar scale మాత్రం ground-distance interpretationను కొనసాగించగలదు. Digital screen zoom మాత్రమే చూసి original ratio స్థిరమని అనుకోవద్దు.
+Contour నుంచి landform భావనకు
+Contour line ఒకే elevation ఉన్న pointsను కలుపుతుంది. ఒక mapలో contour interval స్థిరంగా ఇచ్చినప్పుడు lines దగ్గరగా ఉంటే elevation వేగంగా మారుతుంది—steep slope; దూరంగా ఉంటే gentle slope. Contour intervalను legendలో చదవాలి. రెండు mapsలో intervalలు వేరైతే spacing ఒక్కటితో slopesను పోల్చకండి.
+నది cross చేసే contour V సాధారణంగా upstream, higher ground వైపు చూపుతుంది; river దాని ఎదురుదిశలో downhillగా ప్రవహిస్తుంది. Spot height ఒక point elevation మాత్రమే; contour line అన్నిచోట్ల ఒకే elevationను కలుపుతుంది. Bathymetric depth contoursను land elevationతో legend చూడకుండా కలపకండి.
+పటాన్ని నిర్ణయానికి ఉపయోగించే పద్ధతి
+AP flood evacuationకు river layer ఒక్కటే సరిపోదు: elevation, likely inundation, roads, bridges, shelters, population layersను GISలో కలిపి చూడాలి. Remote sensing imageryను అందిస్తుంది; GIS layersను నిల్వ చేసి విశ్లేషిస్తుంది; GNSS/GPS positionను తెలుసుకోవడంలో సహాయపడుతుంది. ఒక technology మిగిలిన అన్నింటినీ స్వయంగా చేయదు.
+వినియోగానికి తగిన scale, projection, legend, date, data source చూడండి. Projectionలో curved Earthను flat surfaceపై చూపేటప్పుడు distortion తప్పదు; map ఏ propertyను preserve చేస్తుందో బట్టి distance/area reasoning చేయాలి. Old mapలో road ఉందని అది flood సమయంలో తెరిచి ఉందని కాదు. Correlation కనిపించిందని ఒక feature మరోదానికి కారణం అని నిర్ధారించకండి.
+పోలికలు, సంబంధాలు · Concept comparison 1
+Concept / అంశం | Precise relationship / సంబంధం | 
+Physical geography / సహజ భూగోళశాస్త్రం | Study focused on natural landforms, climate and Earth processes | 
+Human geography / మానవ భూగోళశాస్త్రం | Study focused on populations, settlements and spatial economic activities | 
+Globe / భూగోళ నమూనా | A reduced three-dimensional model representing Earth | 
+Map projection / పట ప్రక్షేపణం | A systematic transformation of the curved Earth onto a flat representation | 
+
+Physical geography / సహజ భూగోళశాస్త్రం: పర్వత నిర్మాణం, నదీ ప్రక్రియలు, climate వంటి natural systemsను Physical Geography అధ్యయనం చేస్తుంది. Human activityతో సంబంధాలు ఉన్నా ఈ branch ప్రధాన focus సహజ వ్యవస్థలే. Study focused on natural landforms, climate and Earth processes.
+Human geography / మానవ భూగోళశాస్త్రం: ప్రజలు ఎక్కడ నివసిస్తున్నారు, migration, farming, cities ఎలా విస్తరిస్తాయో Human Geography పరిశీలిస్తుంది. కేవలం జనాభా పేర్ల జాబితా కాదు. Study focused on populations, settlements and spatial economic activities.
+Globe / భూగోళ నమూనా: Globe Earth curvatureను చూపే three-dimensional model. Local street detailకు పెద్ద scale plan మరింత ఉపయోగకరం. A reduced three-dimensional model representing Earth.
+Map projection / పట ప్రక్షేపణం: Curved surfaceను planeపై చూపేటప్పుడు area, shape, direction లేదా distanceలో ఏదో distortion ఏర్పడుతుంది. అన్ని propertiesను everywhere ఒకేసారి ఖచ్చితంగా నిలుపలేం. A systematic transformation of the curved Earth onto a flat representation.
+పోలికలు, సంబంధాలు · Concept comparison 2
+Concept / అంశం | Precise relationship / సంబంధం | 
+Representative fraction / పట నిష్పత్తి | Map distance divided by ground distance in the same units | 
+Large-scale map / పెద్ద స్కేలు పటం | A map such as 1:25,000 showing a smaller ground area in greater detail | 
+Small-scale map / చిన్న స్కేలు పటం | A map such as 1:5,000,000 showing a larger ground area with less detail | 
+Graphic scale / రేఖా స్కేలు | A drawn distance bar that stays usable when resized proportionally with the map | 
+
+Representative fraction / పట నిష్పత్తి: RFలో numerator, denominator ఒకే unitsలో ఉండాలి. 1:50,000 అంటే 1 cm = 500 m; ratioకు ప్రత్యేక length unit ఉండదు. Map distance divided by ground distance in the same units.
+Large-scale map / పెద్ద స్కేలు పటం: ఒకే paper sizeలో large-scale map చిన్న areaని ఎక్కువ detailతో చూపుతుంది. Denominator చిన్నదైతే fraction పెద్దది. A map such as 1:25,000 showing a smaller ground area in greater detail.
+Small-scale map / చిన్న స్కేలు పటం: World/continent mapsకు smaller scale ఉపయోగపడుతుంది. Area ఎక్కువైనా individual houses చూపే detail ఉండకపోవచ్చు. A map such as 1:5,000,000 showing a larger ground area with less detail.
+Graphic scale / రేఖా స్కేలు: Mapతో పాటు graphic bar సమాన నిష్పత్తిలో resize అయితే ground distanceకు దాని సంబంధం కొనసాగుతుంది. Printed numerical RF మాత్రం resize తరువాత update కావాలి. A drawn distance bar that stays usable when resized proportionally with the map.
+పోలికలు, సంబంధాలు · Concept comparison 3
+Concept / అంశం | Precise relationship / సంబంధం | 
+Legend / సంకేతాల సూచిక | Explanation of the symbols and colours used on a particular map | 
+North arrow / ఉత్తర దిశ బాణం | The orientation marker used to establish the map directions | 
+Contour line / సమోన్నత రేఖ | A line joining points of equal elevation | 
+Contour interval / సమోన్నత అంతరం | The elevation difference between successive contour lines | 
+
+Legend / సంకేతాల సూచిక: Blue అంటే అన్ని mapsలో ఒకే meaning అని ఊహించవద్దు. ఆ map legendలో symbol meaning చూడాలి. Explanation of the symbols and colours used on a particular map.
+North arrow / ఉత్తర దిశ బాణం: Page top north అని blind assumption చేయకండి; north arrow లేదా graticule చూడండి. Rotated mapలో కూడా దిక్కులను marker నుంచే నిర్ణయించాలి. The orientation marker used to establish the map directions.
+Contour line / సమోన్నత రేఖ: Contourలోని points equal elevation కలిగి ఉంటాయి. సమాన rainfall/isobar linesతో దీనిని కలపకండి. A line joining points of equal elevation.
+Contour interval / సమోన్నత అంతరం: Contour interval vertical difference; పటంపై lines మధ్య horizontal spacing కాదు. Legendలో 20 m అయితే successive contours elevationలో 20 m తేడా. The elevation difference between successive contour lines.
+పోలికలు, సంబంధాలు · Concept comparison 4
+Concept / అంశం | Precise relationship / సంబంధం | 
+GIS / భౌగోళిక సమాచార వ్యవస్థ | A system for storing and analysing geographically referenced layers | 
+Remote sensing / దూర సంవేదనం | Obtaining information about objects without direct physical contact | 
+GNSS / ఉపగ్రహ స్థాన నిర్ధారణ | Satellite-based determination of position and navigation | 
+Ground survey / క్షేత్ర కొలత | Direct field measurement of locations, distances or elevations | 
+
+GIS / భౌగోళిక సమాచార వ్యవస్థ: GISలో roads, rivers, population వంటి spatial layersను కలిపి patterns, accessibility విశ్లేషించవచ్చు. Map వల్ల నేరుగా medical treatment జరగదు. A system for storing and analysing geographically referenced layers.
+Remote sensing / దూర సంవేదనం: Satellite imagery ఒక remote-sensing source. Sensor measurementsను interpret చేయాలి; image colour ఒక్కటే నిర్ధారణ కాదు. Obtaining information about objects without direct physical contact.
+GNSS / ఉపగ్రహ స్థాన నిర్ధారణ: GPS ఒక GNSS system. Position fix పొందడం, GISలో regional layers analysis చేయడం వేరు పనులు. Satellite-based determination of position and navigation.
+Ground survey / క్షేత్ర కొలత: Ground survey field measurementsతో local featureను కొలుస్తుంది. Remote sensingను verify చేయడంలో ground observations ఉపయోగపడతాయి. Direct field measurement of locations, distances or elevations.
+పోలికలు, సంబంధాలు · Concept comparison 5
+Concept / అంశం | Precise relationship / సంబంధం | 
+Political map / రాజకీయ పటం | A map emphasising administrative boundaries and named political units | 
+Physical map / సహజ స్వరూప పటం | A map emphasising relief, mountains, plains and water bodies | 
+Thematic map / విషయ పటం | A map focused on one theme such as rainfall or population density | 
+Plan / స్థల ప్రణాళిక పటం | A very large-scale representation of a small locality or site | 
+
+Political map / రాజకీయ పటం: Political mapలో boundaries, states, countries ముఖ్యం. Elevation colourను political boundaryగా చదవకండి. A map emphasising administrative boundaries and named political units.
+Physical map / సహజ స్వరూప పటం: Physical map సహజ featuresను చూపుతుంది. Colour shades altitude సూచించవచ్చు; legend అవసరం. A map emphasising relief, mountains, plains and water bodies.
+Thematic map / విషయ పటం: Thematic map నిర్దిష్ట variable spatial patternను చూపుతుంది. Map dates, classification intervals data interpretationను ప్రభావితం చేస్తాయి. A map focused on one theme such as rainfall or population density.
+Plan / స్థల ప్రణాళిక పటం: House/site planలో local measurements detailగా ఉంటాయి. Small-scale world mapతో site dimensionsను ఖచ్చితంగా కొలవలేం. A very large-scale representation of a small locality or site.
+ఆధారాలు · Sources: sathee.iitk.ac.in [1] [https://sathee.iitk.ac.in/sathee-ssc/student-corner/ncert-books/class-11/geography/practical-work-in-geography/chapter-01-introduction-to-maps/] · www.usgs.gov [2] [https://www.usgs.gov/faqs/what-a-topographic-map] · pubs.usgs.gov [3] [https://pubs.usgs.gov/publication/fs07999] · surveyofindia.gov.in [4] [https://surveyofindia.gov.in/pages/political-map-of-india]
+ఈ పాఠం original MCQs · Practice with explanations → [/learn/geography/original-practice?chapter=01]

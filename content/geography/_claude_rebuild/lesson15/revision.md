@@ -1,0 +1,9 @@
+# L15 revision
+Fixed: Keralam (intro note, terms, onset heading term, :::changing with 25 Aug 2026 + gazette, new :::exam Kerala=Keralam); why Andaman then Kerala first (para + fact); May temps all mean-max, labelled, IMD 1991-2020; rainfall tables (Mumbai 250, Nagpur 115, Solapur 71, Anantapur 55 district; Kolkata 180, Patna 108, Prayagraj 92, Delhi 77, Bikaner 29) with old-book notes; Jaisalmer 26 cm, "నాలుగో వంతు"; Mawsynram 1,190-1,240 range, Sohra ~1,120; Sohra 1-day record wording; Mumbai 2005 cause; Leh why.
+Also: A-2, A-3, A-7, A-8 (typo notes removed), B-2, B-3, B-4, B-5 (+pairs), B-14, B-15, B-16, B-17, C-1..C-4, C-6, Q2 wording; pairs +Isochrone/Isohyet, Loo/Nor'westers; terms box merged (A/B/C extras); #sources URLs.
+Not done: A-1 other parts done; A-4/5/6/9/10/11, B-10/12/13 (CAIPEEX only in box), B-20, C-5 (box gloss only), C-7..C-16 rest, C-18 new selfcheck Qs, C-20, 4.5 families.
+Words 13.8k (cap 14.5k). Lint: warnings only (63 vs 55; new long-sentence hits mostly terms-box lines). build_html: 0 tag errors, 0 broken links, 22 ids.
+
+## Pass 2 (all remaining entries)
+Done: A-4, A-5 (Krishnamurti table row dropped), A-6 (softened), A-9, A-10 (87% = Deficient), A-11 (cold-season decision rule), B-3 (trimmed), B-10 (5-class table labelled), B-12, B-13 (CAIPEEX expanded + Varshadhare), B-20 (heat/severe heat pair + Q22; no cold-wave record added, no official IMD figure found), C-5, C-7, C-8, C-9, C-10 (table cell shortened), C-11 (2015 AP heat deaths >1,000, domain-b/Business Standard reports; lightning line), C-12 (55 cm everywhere), C-13 (book label), C-14 (fact), C-15, C-16 (4 pairs), C-18 (Q12 replaced, Q21-23 added), C-20 (labels on all exam blocks), 4.5 (drought years, Meghalaya/Rajasthan/Ladakh, two-stage forecast in #rainfall-variability exam block).
+Words 14,200. build_html clean.

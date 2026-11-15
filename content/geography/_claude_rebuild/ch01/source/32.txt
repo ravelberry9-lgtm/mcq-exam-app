@@ -1,0 +1,43 @@
+# 8. Latitude మరియు Longitude: మొదటి పరిచయం
+
+భూమి మీద Hyderabad, Vijayawada, Delhi లాంటి ప్రదేశాలు చాలానే ఉన్నాయి. ఒక ప్రదేశాన్ని కచ్చితంగా గుర్తించడానికి దాని పేరు మాత్రమే సరిపోదు. అందుకే భూమిపై ఊహాజనిత గీతలను ఉపయోగిస్తాం.
+
+Latitude / అక్షాంశాలు
+
+భూమి చుట్టూ తూర్పు నుంచి పడమర వైపు వెళ్తున్న ఊహాజనిత గీతలను latitudes అంటారు.
+
+మధ్యలో ఉన్న ముఖ్యమైన latitude:
+
+Equator / భూమధ్యరేఖ
+
+ఇది భూమిని ఉత్తర అర్ధగోళం (Northern Hemisphere) మరియు దక్షిణ అర్ధగోళం (Southern Hemisphere)గా విడగొడుతుంది.
+
+Longitude / రేఖాంశాలు
+
+ఉత్తర ధ్రువం నుంచి దక్షిణ ధ్రువం వరకు వెళ్తున్న ఊహాజనిత గీతలను longitudes అంటారు.
+
+ముఖ్యమైన longitude:
+
+Prime Meridian / ప్రధాన రేఖాంశం
+
+ఇది Greenwich అనే ప్రదేశం గుండా వెళ్తుంది. ఇది 0° longitudeగా పరిగణిస్తారు.
+
+ఎందుకు అవసరం?
+
+ఒక ప్రదేశాన్ని కచ్చితంగా గుర్తించడానికి
+
+Time zones / కాల మండలాలు అర్థం చేసుకోవడానికి
+
+విమానాలు, నౌకలు దారి తెలుసుకోవడానికి
+
+weather maps చదవడానికి
+
+ఇప్పటికి ఇంతే గుర్తుంచుకోండి:
+
+Latitude — అక్షాంశం: Equatorను 0° ఆధారంగా తీసుకుని, ఒక ప్రదేశం ఉత్తరం లేదా దక్షిణంగా ఉన్న Angular positionను డిగ్రీల్లో చెబుతాం. ఉదాహరణకు 20°N అంటే Equatorకు ఉత్తరంగా 20° Latitude; అది 20 km దూరం అని కాదు. అక్షాంశ విలువలు 0° నుంచి ఉత్తరానికి 90°N లేదా దక్షిణానికి 90°S వరకు ఉంటాయి.
+
+Longitude — రేఖాంశం: Prime Meridianను 0° ఆధారంగా తీసుకుని, ఒక ప్రదేశం తూర్పు లేదా పడమరగా ఉన్న Angular positionను డిగ్రీల్లో చెబుతాం. ఉదాహరణకు 75°E అంటే Prime Meridianకు తూర్పుగా 75° Longitude. విలువలు 0° నుంచి తూర్పుకు 180°E లేదా పడమరకు 180°W వరకు ఉంటాయి. 180°E, 180°W ఒకే Meridianను సూచిస్తాయి.
+
+ఇద్దరు విద్యార్థులు Delhi, Islamabad నగరాలు “దగ్గరగా” ఉన్నాయా అని అడిగితే ముందుగా ఏ కొలతలో దగ్గర? అని అడగాలి. భూమి మీద మొత్తం ప్రయాణ దూరం, latitude తేడా, longitude తేడా ఒకటే కావు. Delhiకి దగ్గర రేఖాంశం ఏ నగరానికి? అనే ప్రశ్నలో పటంపై నగరాలు ఒకే ఉత్తర–దక్షిణ గీతకు ఎంత దగ్గరగా ఉన్నాయో చూడాలి. UN city coordinatesలో New Delhi సుమారు 77°E, Islamabad సుమారు 73°E, Kabul మరియు Tashkent సుమారు 69°E, Tehran సుమారు 51°E. ఇచ్చిన నాలుగు ఎంపికల్లో Islamabad రేఖాంశం Delhiకి అత్యంత దగ్గర; Islamabad, Delhi ఒకే latitudeలో ఉన్నాయన్నది మాత్రం కాదు. నగర కేంద్రాన్ని ఏ బిందువుగా తీసుకున్నారనే దాని వల్ల decimal విలువ మారవచ్చు; ఈ ప్రశ్నకు సుమారు degreeలు చాలు. UNGEGN New Delhi coordinates [https://ungegn.un.org/dashboard/cities/details?id=100]; Islamabad [https://ungegn.un.org/dashboard/cities/details?id=99]; Kabul [https://ungegn.un.org/dashboard/cities/details?id=98]; Tashkent [https://ungegn.un.org/dashboard/cities/details?id=176]; Tehran [https://ungegn.un.org/dashboard/cities/details?id=79].
+
+Latitude, Longitude, Indian Standard Timeను తరువాతి అధ్యాయంలో detailగా నేర్చుకుందాం.

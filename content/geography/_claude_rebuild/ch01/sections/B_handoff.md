@@ -1,0 +1,16 @@
+# Handoff — facts in my sources for other concepts
+- Pythagoras tradition, spherical Earth idea (41) → Earth's shape
+- Aristotle evidence: lunar-eclipse shadow, star positions change (41) → Earth's shape
+- Eratosthenes: circumference from shadow angles (41) → Earth's shape/measurement
+- Oblate spheroid; Newton, Huygens on polar flattening (41) → Earth's shape
+- Equatorial diameter ~12,756 km; polar ~12,714 km; mean radius ~6,371 km (6,378 = equatorial radius) (41) → Earth's dimensions
+- Equatorial circumference ~40,075 km; meridional ~40,008 km (41) → Earth's dimensions
+- Surface area ~510 million km²; land ~149 (29%); water ~361 (71%) (41) → Earth's dimensions
+- Earth mass ~5.97×10²⁴ kg (41) → Earth's dimensions
+- Cartography definition (42) → maps
+- Mesopotamian clay-tablet maps; Babylonian world map (42) → map history
+- Anaximander, Hecataeus (42); Ptolemy lat–long (42); Al-Idrisi 1154, south-up (42) → map history
+- Great Trigonometrical Survey 1802, William Lambton; George Everest later superintendent (42) → surveys
+- Triangulation: baseline + angles; heights need vertical datum (42) → surveys (I used only the datum point)
+- James Rennell Surveyor General 1767–1777, book's 1776 wrong (42, Survey of India) → surveys
+- Contour line / interval (21, 22, 37, 40) → maps/relief

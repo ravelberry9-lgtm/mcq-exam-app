@@ -1,0 +1,21 @@
+# Facts for other concepts found in my sources
+
+- [28] Asia largest continent; India in south Asia; Europe–Asia joined by land (continent naming is historical) — continents concept
+- [28] One global ocean, five named: Pacific largest, Arctic smallest; Bay of Bengal part of Indian Ocean — oceans concept
+- [28] North Sea touches Norway, Germany (not Finland, Russia); Baltic/Gulf of Bothnia for Finland — atlas/regions
+- [28] Rivers: Ganga–Asia–Bay of Bengal; Nile–Africa–Mediterranean (north-flowing); Amazon–S. America–Atlantic; Volga–Europe–Caspian; Congo–Africa–Atlantic; Caspian is not an ocean — rivers/continents
+- [28] Sahara in N. Africa: sand + gravel plains + rocky uplands; Atacama S. America — deserts
+- [28] Great Lakes: Superior, Michigan, Huron, Erie, Ontario; Lake Victoria in Africa — lakes
+- [28] Canada–US boundary 8,891 km (land 5,061, water 3,830; 6,416 + 2,475 Alaska) — IBC — borders
+- [28] Canada longest coastline (three oceans + islands; length scale-dependent) — coastline
+- [28] Catalonia–Spain; Crimea (UNGA 2014 resolution) not Hungary; Mindanao–Philippines; Oromia–Ethiopia — regions
+- [29] Map colours: blue water, green lowland/forest, brown highland; always read Legend/Key — legend/scale concept
+- [01,36,37,38] Map essentials: Title, Direction (North arrow), Scale, Legend, Date; cardinal directions; facing East, left is North — map-reading concept
+- [21,40] RF, large vs small scale (1:25,000 vs 1:5,000,000), graphic scale survives resizing; 1:50,000 → 1 cm = 500 m — scale concept
+- [21,22,36,37,40] Contour line, contour interval, close = steep, V points upstream, spot height, bathymetric contours — contour concept
+- [22,42] Ocean depth: Challenger Deep ~10.9 km (old 11,035 m), western Pacific; mean depth ~3.7 km — ocean concept
+- [22,42] Air temp records: Furnace Creek 56.7°C (10 Jul 1913); Al Azizia 58°C invalidated; Vostok −89.2°C (21 Jul 1983); Dallol mean claim needs period — climate concept
+- [22] Pythagoras/Aristotle/Eratosthenes, oblate spheroid, Newton/Huygens, geoid vs ellipsoid, Everest/Mauna Kea/Chimborazo, Dead Sea, Earth dimensions (12,756/12,714 km diameters, 6,371 radius, 40,075/40,008 circumference, 510/149/361 million km²) — earth-shape concept
+- [22] Book-legend colour pairs (dark green forest … black cities; yellow unclear) — legend concept
+- [21,40] Physical vs Human geography definitions — geography concept
+- [36,39] Equator/Prime Meridian; lat–long → IST, Tropic of Cancer; next chapter — lat/long concept

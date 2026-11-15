@@ -1,0 +1,11 @@
+# Facts in my sources that belong to other concepts
+- 12: Date Line worked example (170°E Tuesday 23:20 → 170°W Tuesday 00:40; signed-longitude method; 4 min per degree; do not double-correct) — Date Line / time concept.
+- 12: Local mean time vs civil time zones; real Date Line bends for countries/islands — time concept.
+- 28: Light travel time Sun→Earth ≈ 500 s = 8 min 20 s ≈ 8.3 min (150 million km ÷ 3,00,000 km/s); unit traps (8.3 s, 9.3 h) — Sun/Earth distance concept.
+- 28: Rotation vs Revolution table: mean solar day 24 h, sidereal day ≈ 23 h 56 min 4 s, revolution ≈ 365 days 6 h — rotation/revolution concept.
+- 41: Gregorian calendar introduced 1582 under Pope Gregory XIII, reform of Julian; not adopted by all countries on the same day — calendar concept.
+- 41: Circle divided into 360°; Babylonian–Greek tradition, not Hipparchus alone — latitude/longitude/degree concept.
+- 17/19: Mean tropical year ≈ 365.2422 days — calendar concept.
+- 17/36: Tropic of Cancer/Capricorn 23.44°; Arctic/Antarctic Circle 66.56° derivation; tropics shift with long-term tilt change — latitude-lines concept (I used the values; derivation detail belongs there).
+- 17: Visible horizon definition (depends on observer height) — horizon/latitude concept.
+- 36: 15° per hour, 1° per 4 min; 75°E→90°E one hour; sunrise time differences also depend on latitude and season — local time concept.

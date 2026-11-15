@@ -1,0 +1,13 @@
+# Contour linesతో ఎత్తు, వాలు ఎలా చదవాలి?
+
+పటం చదునుగా ఉన్నా నేలపై కొండలు, లోయలు ఉంటాయి. వాటి ఎత్తులను చూపడానికి ఒకే Elevation ఉన్న బిందువులను కలిపి రేఖ గీస్తారు. దీనిని Contour line లేదా Isohypse అంటారు. ఉదాహరణకు 100 m అని ఉన్న Contour వెంట అన్ని బిందువులూ అదే Height reference నుంచి 100 m ఎత్తులో ఉంటాయి. ఆ కొండ మొత్తం 100 m ఎత్తులో ఉందని కాదు.
+100 m, 120 m వంటి Contour labelsను పోల్చాలంటే ఒకే Common height reference అవసరం; అది సాధారణంగా Mean sea levelతో సంబంధం ఉన్న Vertical datum. Contour interval నిలువు ఎత్తు తేడా; పటంపై రేఖల మధ్య Horizontal spacing కాదు.
+100 m, 120 m, 140 m అనే వరుస Contoursలో ఒక్కో మెట్టుకు ఎత్తు 20 m పెరుగుతోంది. అందువల్ల Contour interval 20 m. ఈ 20 m పెరుగుదల తక్కువ Horizontal distanceలో జరిగితే నేల నిటారుగా ఎక్కుతుంది; అదే పెరుగుదల ఎక్కువ దూరంలో జరిగితే వాలు మెల్లగా ఉంటుంది. అందుకే ఒకే Scale, ఒకే Contour interval ఉన్న పటంలో దగ్గరగా ఉన్న రేఖలు Steep slopeను, దూరంగా ఉన్న రేఖలు Gentle slopeను సూచిస్తాయి.
+
+ఒకే Scale, Contour interval ఉన్నప్పుడు | వాలు | కారణం | 
+రేఖలు దగ్గరగా | Steep slope | అదే ఎత్తు పెరుగుదల తక్కువ Horizontal distanceలో జరుగుతుంది. | 
+రేఖలు దూరంగా | Gentle slope | అదే ఎత్తు పెరుగుదల ఎక్కువ Horizontal distanceలో జరుగుతుంది. | 
+
+వేర్వేరు పటాలను పోల్చేటప్పుడుMap scale లేదా Contour interval మారితే Spacing ఒక్కటినే చూసి Slope నిర్ణయించకూడదు. రెండు పటాలకూ ఈ సమాచారం అవసరం. 100 m నుంచి 160 mకు Vertical rise 60 m; అది Horizontal map distance కాదు.
+
+MAP-V05 · రెండు భాగాల్లో Scale, Contour interval ఒకటే. రేఖల విలువలు ఎత్తులు. ఒకే ఎత్తు పెరుగుదల తక్కువ అడ్డ దూరంలో జరిగితే వాలు ఎక్కువ. ఇవి ఒక సమాన వాలున్న కొండ భాగానికి నమూనా రేఖలు.

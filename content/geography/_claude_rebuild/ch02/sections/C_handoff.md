@@ -1,0 +1,12 @@
+# Facts in my sources that belong to other concepts
+- Tides: unequal Moon/Sun pull across Earth is main cause; rotation alone does not create tides (08, 40, 17)
+- Lunar day ~24 h 50 min between upper transits of Moon (NOAA tides05) (08)
+- Semidiurnal tide: two near-equal highs and lows per lunar day; mixed semidiurnal when heights differ; local depth/coast shape affect timing (08, 40)
+- High-to-high ~12 h 25 min; high-to-low ~6 h 12.5 min (book 6 h 13 min) (08, 40)
+- Horizon: apparent boundary where sky meets land; changes with observer height (40)
+- Equator is a geometric great circle set by the axis; Prime Meridian is a chosen zero; Civil time is set by government (14)
+- Natural events vs measuring conventions we chose (lines, units, clock rules) (14)
+- Full circle 360°, half 180°, quarter 90°; Hipparchus used 360° (chord table) with Babylonian roots; not sole inventor (14, 16)
+- Tropics of Cancer/Capricorn ~23.44° N/S; Arctic/Antarctic circles ~66.56° (= 90 − 23.44) (17, 19, 36) — motion-tilt only points to them
+- Equinox: Sun declination ~0°; solstice ~23.4° N/S (36)
+- IST = UTC+5:30; Indian standard meridian 82°30′E (36)

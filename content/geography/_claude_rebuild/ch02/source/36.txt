@@ -1,0 +1,58 @@
+# పునాది విస్తరణ · Textbook depth and application
+
+ఒక ప్రదేశం ఎక్కడ ఉందో Coordinates తెలియజేస్తాయి. అక్కడి Local solar timeను Longitudeతో లెక్కించవచ్చు. పగటి సమయం ఎంత ఉంటుందో తెలుసుకోవాలంటే Latitudeతో పాటు సంవత్సరంలోని కాలాన్ని కూడా చూడాలి. ఈ సంబంధాలను క్రింది ఉదాహరణలతో గుర్తుచేసుకుందాం.
+Coordinates: angleను distanceతో కలపకండి
+Latitude అంటే Equatorకు ఉత్తరంగా లేదా దక్షిణంగా ఒక ప్రదేశం ఉన్న కోణ స్థానం. Longitude అంటే Prime Meridianకు తూర్పుగా లేదా పడమరగా ఉన్న కోణ స్థానం. ఉదాహరణకు 17°N, 83°E అనే Coordinatesలో 17°N ఆ ప్రదేశం Northern Hemisphereలో ఉందని, 83°E Eastern Hemisphereలో ఉందని తెలియజేస్తాయి. 1°లో 60 arcminutes, ఒక arcminuteలో 60 arcseconds ఉంటాయి. ఇవి కోణాన్ని కొలిచే units; గడియారంలోని నిమిషాలు, సెకన్లు కావు. అందువల్ల 30 arcminutes = 0.5°.
+ఒక Longitude నుంచి మరో Longitude వరకు ఉండే దూరం Latitudeను బట్టి మారుతుంది. Meridians Equator దగ్గర ఎక్కువ దూరంగా ఉంటాయి; Poles వైపు దగ్గరై, Poles వద్ద కలుస్తాయి. అందువల్ల 1° Longitudeకు సంబంధించిన దూరాన్ని అన్ని Latitudeల వద్ద ఒకేలా తీసుకోకూడదు. 1° Latitudeకు సుమారు 111 km అనే అంచనా ఉపయోగపడుతుంది. అయితే భూమి పూర్తిగా గోళాకారంలో లేకపోవడం వల్ల ఈ దూరంలో కూడా స్వల్ప తేడా ఉంటుంది.
+Solar time, standard time మరియు dates
+Mean solar time లెక్కల్లో 360°కు 24 గంటలు తీసుకుంటాం. అందువల్ల 15°కు ఒక గంట, 1°కు 4 నిమిషాలు వస్తాయి. తూర్పున ఉన్న ప్రదేశంలో Local mean solar time ముందుంటుంది. ఉదాహరణకు 75°E నుంచి 90°E వరకు 15° తేడా కాబట్టి రెండో ప్రదేశంలో ఒక గంట ముందుంటుంది. సూర్యోదయ సమయాల తేడాను మాత్రం ఈ లెక్కతోనే నిర్ణయించలేం; Latitude, ఋతువు, స్థానిక Horizon కూడా దానిపై ప్రభావం చూపుతాయి.
+భారతదేశంలో IST = UTC +05:30 పాటిస్తాం; దానికి ఆధారమైన Standard Meridian 82°30′E. UTC ప్రకారం సోమవారం 22:00 అయితే IST ప్రకారం మంగళవారం 03:30 అవుతుంది. International Date Lineను తూర్పు వైపు దాటినప్పుడు సాధారణ నియమంగా ఒక తేదీ తగ్గిస్తాం; పడమర వైపు దాటినప్పుడు ఒక తేదీ కలుపుతాం. నిజమైన ప్రయాణంలో బయలుదేరే, చేరే ప్రదేశాల Time zonesను కూడా లెక్కలోకి తీసుకోవాలి. ఈ Date Line ప్రతి చోటా 180° Meridian వెంటనే ఉండదు.
+Seasons: cause నుంచి hemispheric patternకు
+భూమి Axis, Orbitకు లంబంగా ఉండే దిశ నుంచి సుమారు 23.4° వంగి ఉంటుంది. ఈ Axial tiltతో పాటు Revolution వల్ల సంవత్సరంలో సూర్యకిరణాలు పడే కోణం, పగటి నిడివి మారతాయి. జనవరిలో భూమి సూర్యుడికి దగ్గరగా ఉండే Perihelion వచ్చినా Northern Hemisphereలో శీతాకాలమే ఉంటుంది. కాబట్టి ఋతువులకు సూర్యుడి నుంచి దూరం ఒక్కటే కారణం కాదు. June solstice సమయంలో ఉత్తరార్ధగోళంలో పగలు ఎక్కువగా, దక్షిణార్ధగోళంలో తక్కువగా ఉంటుంది; December solstice సమయంలో దీనికి విరుద్ధంగా ఉంటుంది.
+Equinox సమయంలో Sun declination సుమారు 0°; Solstice సమయాల్లో సుమారు 23.4°N లేదా 23.4°S ఉంటుంది. సూర్యుడు తలపై నిటారుగా కనిపించడం, 24 గంటలూ కనిపించడం వేర్వేరు పరిస్థితులు. June solstice సమయంలో Tropic of Cancer వద్ద మధ్యాహ్నం సూర్యుడు నిటారుగా కనిపిస్తాడు; Arctic Circleకు ఉత్తరంగా Polar day కనిపిస్తుంది. ఈ సంఘటనల Calendar dates సంవత్సరం, Time zoneను బట్టి కొద్దిగా మారవచ్చు. Mean solar day 24 గంటలు కాగా, దూరంలోని నక్షత్రాల ఆధారంగా కొలిచే Sidereal day సుమారు 23 గంటల 56 నిమిషాలు.
+పోలికలు, సంబంధాలు · Concept comparison 1
+Concept / అంశం | Precise relationship / సంబంధం | 
+Latitude / అక్షాంశం | Angular distance north or south of the Equator | 
+Longitude / రేఖాంశం | Angular distance east or west of the Prime Meridian | 
+Equator / భూమధ్యరేఖ | The zero-degree latitude dividing northern and southern hemispheres | 
+Prime Meridian / ప్రధాన రేఖాంశం | The zero-degree longitude used as the reference for east and west | 
+
+Latitude 0° నుంచి 90° వరకు ఉంటుంది. N అంటే Equatorకు ఉత్తరం, S అంటే దక్షిణం. ఇది తూర్పు–పడమర స్థానాన్ని తెలిపే కొలత కాదు.
+Longitudeను Prime Meridian నుంచి తూర్పు లేదా పడమర వైపు 180° వరకు కొలుస్తాం. 180°E, 180°W రెండూ ఒకే Meridianను సూచిస్తాయి.
+Equator అనేది 0° Latitude; ఇది Northern, Southern hemispheres మధ్య సరిహద్దు. 0° Longitudeను Prime Meridian అంటారు.
+Prime Meridianను ఆధారంగా East, West longitudesను చెబుతాం. Prime Meridian, దానికి ఎదురుగా ఉన్న 180° Meridian కలిసి Eastern, Western hemispheres మధ్య సరిహద్దును ఏర్పరుస్తాయి.
+పోలికలు, సంబంధాలు · Concept comparison 2
+Concept / అంశం | Precise relationship / సంబంధం | 
+Tropic of Cancer / కర్కట రేఖ | The northern limiting latitude of the overhead Sun, near 23.4° N | 
+Tropic of Capricorn / మకర రేఖ | The southern limiting latitude of the overhead Sun, near 23.4° S | 
+Arctic Circle / ఉత్తర ధ్రువ వృత్తం | The northern polar-circle latitude near 66.6° N | 
+Antarctic Circle / దక్షిణ ధ్రువ వృత్తం | The southern polar-circle latitude near 66.6° S | 
+
+June solstice సమయంలో Tropic of Cancer వద్ద మధ్యాహ్నం సూర్యుడు నిటారుగా కనిపిస్తాడు. ఇది Overhead Sun కనిపించగల ఉత్తరపు పరిమితి. దీని ఖచ్చితమైన Latitude భూమి Axial tiltతో పాటు దీర్ఘకాలంలో స్వల్పంగా మారుతుంది.
+December solstice సమయంలో Tropic of Capricorn వద్ద మధ్యాహ్నం సూర్యుడు నిటారుగా కనిపిస్తాడు. ఇది Overhead Sun కనిపించగల దక్షిణపు పరిమితి.
+Arctic Circle Latitude సుమారు 66.6°N. ఇది 90° నుంచి Axial tilt సుమారు 23.4° తీసివేస్తే వస్తుంది. దీనికి ఉత్తరంగా వేసవిలో Polar day, శీతాకాలంలో Polar night ఏర్పడే ప్రాంతాలు ఉంటాయి.
+Antarctic Circle Latitude సుమారు 66.6°S. ఉత్తర ధ్రువ ప్రాంతంలో వేసవి ఉన్నప్పుడు దక్షిణ ధ్రువ ప్రాంతంలో శీతాకాలం ఉంటుంది; అందువల్ల ఇక్కడి Polar day, Polar night కాలాలు ఉత్తర ప్రాంతానికి విరుద్ధంగా ఉంటాయి.
+పోలికలు, సంబంధాలు · Concept comparison 3
+Concept / అంశం | Precise relationship / సంబంధం | 
+Rotation / భ్రమణం | Earth turning about its own axis | 
+Revolution / పరిభ్రమణం | Earth travelling around the Sun | 
+Mean solar day / సగటు సౌర దినం | About 24 hours measured relative to the mean Sun | 
+Sidereal day / నాక్షత్ర దినం | About 23 hours 56 minutes measured relative to distant stars | 
+
+భూమి తన Axis చుట్టూ తిరగడం Rotation. దీనివల్ల పగలు, రాత్రి మారుతూ ఉంటాయి. Axis అనేది భూమి కేంద్రం, రెండు Poles గుండా ఊహించుకునే రేఖ.
+భూమి సూర్యుడి చుట్టూ ప్రయాణించడం Revolution. ఇది Axial tiltతో కలిసి సంవత్సరంలో ఋతువులు మారడానికి కారణమవుతుంది.
+Mean Sun అనే గణనలో ఉపయోగించే సగటు సూర్యస్థానాన్ని ఆధారంగా Mean solar dayను నిర్ణయిస్తాం. ఒక Upper transit నుంచి తరువాతి Upper transit వరకు 24 గంటలు తీసుకుంటాం.
+భూమి Rotation చేస్తున్నప్పుడే Orbitలో కూడా ముందుకు కదులుతుంది. అందువల్ల దూరపు నక్షత్రాలతో పోలిస్తే ఒక Rotation పూర్తయిన తరువాత కూడా, సూర్యుడు మళ్లీ అదే Meridianపైకి రావడానికి భూమి ఇంకొంచెం తిరగాలి. ఈ కారణంగా Solar day, Sidereal day కంటే సుమారు 4 నిమిషాలు ఎక్కువ.
+పోలికలు, సంబంధాలు · Concept comparison 4
+Concept / అంశం | Precise relationship / సంబంధం | 
+IST / భారత ప్రామాణిక కాలం | The civil standard time of India, UTC plus 5 hours 30 minutes | 
+Indian standard meridian / భారత ప్రామాణిక రేఖాంశం | 82 degrees 30 minutes east longitude | 
+Equinox / విషువత్తు | An occasion when the Sun crosses the celestial equator | 
+Solstice / అయనాంతం | An occasion of the Sun's northernmost or southernmost annual declination | 
+
+దేశమంతటా ఒకే గడియార కాలం కోసం IST ఉపయోగిస్తాం. అయితే ప్రతి ఊరిలో సూర్యుడు మధ్యాహ్న స్థానానికి వచ్చే Local solar noon తప్పనిసరిగా IST 12:00కు జరగదు.
+భారత Standard Meridian 82°30′E = 82.5°E. ప్రతి degreeకు 4 నిమిషాలు తీసుకుంటే 82.5 × 4 = 330 నిమిషాలు = 5 గంటల 30 నిమిషాలు. ఇది భారతదేశపు అత్యంత తూర్పు Longitude కాదు.
+Equinox సమయంలో సూర్యుడు Celestial equatorను దాటుతాడు. పగలు, రాత్రి దాదాపు సమానంగా ఉంటాయని చెబుతాం. కానీ Atmospheric refraction, సూర్యుడి పై అంచు ఆధారంగా Sunriseను నిర్ణయించడం వల్ల ప్రతి చోటా ఖచ్చితంగా 12 గంటల చొప్పున ఉండవు.
+June solstice వద్ద సూర్యుడి Declination ఉత్తరపు గరిష్ఠ స్థానానికి, December solstice వద్ద దక్షిణపు గరిష్ఠ స్థానానికి చేరుతుంది. Juneలో Northern Hemisphereకు వేసవి Solstice అయితే Southern Hemisphereకు శీతాకాల Solstice అవుతుంది. Decemberలో దీనికి విరుద్ధంగా ఉంటుంది.
+ఆధారాలు · Sources: www.nplindia.in [1] [https://www.nplindia.in/index.php/indian-standard-time/] · www.weather.gov [2] [https://www.weather.gov/cle/seasons] · spaceplace.nasa.gov [3] [https://spaceplace.nasa.gov/seasons/en/] · sathee.iitk.ac.in [4] [https://sathee.iitk.ac.in/ncert-books/class-6/social-science/the-earth-our-habitat/chapter-02-globe-latitudes-and-longitudes/]
+ఈ పాఠం original MCQs · Practice with explanations → [/learn/geography/original-practice?chapter=02]
