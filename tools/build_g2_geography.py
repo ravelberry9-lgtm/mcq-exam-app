@@ -154,7 +154,18 @@ def _arkind(o):
 def canon_ar_options(q):
     ks=[_arkind(o) for o in q.get("options_en",[])]
     if None in ks or len(set(ks))!=len(ks): return
+    olds={"en":list(q.get("options_en",[])),"te":list(q.get("options_te",[]))}
     q["options_en"]=[_ARSTD[k][0] for k in ks]; q["options_te"]=[_ARSTD[k][1] for k in ks]
+    # Explanations quote the old option wording; swap in the standard wording.
+    for lg,idx in (("en",0),("te",1)):
+        for f in ("explanation_"+lg,"option_explanations_"+lg):
+            v=q.get(f)
+            if not v: continue
+            def sw(t):
+                for o,k in sorted(zip(olds[lg],ks),key=lambda x:-len(x[0] or "")):
+                    if o and len(o)>8: t=t.replace(o,_ARSTD[k][idx])
+                return t
+            q[f]=[sw(x) for x in v] if isinstance(v,list) else sw(v)
 
 def main():
     lm=J(SRC/"lesson_map.json"); titles={}
