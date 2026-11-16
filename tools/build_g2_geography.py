@@ -111,6 +111,19 @@ def main():
                     q[k]=v
             dead=set(f.get("retire",[]))
             qs=[q for q in qs if q["id"] not in dead]
+        # Manual APPSC-standard MCQ review (2026-11-16): fixes only, never retire.
+        # Positions refer to the displayed (shuffled) order; the correct option stays at its index.
+        rv=ROOT/"g2_mcq_review"/f"review_L{NN}.json"
+        if rv.exists():
+            byid={q["id"]:q for q in qs}
+            for qid,d in J(rv).get("fix",{}).items():
+                q=byid[qid]
+                for k,v in d.items():
+                    if k in ("reason",): continue
+                    if k=="explanation_stale": q["explanation_stale"]=bool(v); continue
+                    assert k!="answer",f"{qid}: answer index may not change"
+                    if k.startswith("options_"): assert len(v)==len(q[k]),f"{qid} {k} option count changed"
+                    q[k]=v
         d=OUT/str(n); d.mkdir(exist_ok=True)
         (d/"Notes.html").write_text(page,encoding="utf-8")
         # Polity design: explanations live in their own file, keyed by explanation_id.
@@ -120,6 +133,7 @@ def main():
             q["explanation_id"]=q["id"]
             ex[q["id"]]={"te":q.pop("explanation_te",None) or "","en":q.pop("explanation_en",None) or "",
                          "options_te":q.pop("option_explanations_te",None) or [],"options_en":q.pop("option_explanations_en",None) or []}
+            if q.pop("explanation_stale",False): ex[q["id"]]["stale"]=True
         (d/"Questions.json").write_text(json.dumps({"questions":qs},ensure_ascii=False),encoding="utf-8")
         (d/"Explanations.json").write_text(json.dumps({"chapter":n,"questions":ex},ensure_ascii=False),encoding="utf-8")
         m={"display_chapter":n,"group":titles[n][0],"title":titles[n][1],"question_count":len(qs),"notes_file":"Notes.html","questions_file":"Questions.json","explanations_file":"Explanations.json"}
