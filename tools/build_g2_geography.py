@@ -81,6 +81,26 @@ def shown(n):
         if q["id"] in seen or not q["options_en"] or q["answer"] is None: continue
         seen.add(q["id"]); res.append(q)
     return res
+
+import re as _re
+_L2=_re.compile(r"(?:List\s*II|జాబితా\s*[-–]?\s*II|జాబితా\s*-?\s*2)\s*:")
+_L1=_re.compile(r"(?:List\s*I|జాబితా\s*[-–]?\s*I|జాబితా\s*-?\s*1)\s*:")
+def _items(t,pat):
+    return [x.strip().rstrip(";.,").strip() for x in _re.split(pat," "+t)[1:]]
+def sync_lists(q):
+    """Make the List I/II grid follow the numbering printed in the stem, so answer codes match what is shown."""
+    for lg in ("en","te"):
+        ml=q.get("matching_lists_"+lg); st=q.get("question_"+lg) or ""
+        if not ml: continue
+        ml=q["matching_lists_"+lg]={k:list(v) if isinstance(v,list) else v for k,v in ml.items()}
+        m2=_L2.search(st); m1=_L1.search(st)
+        if not m2: continue
+        right=_items(st[m2.end():],r"(?:^|\s)\d\.\s")
+        if len(right)==len(ml.get("right",[])) and all(right): ml["right"]=right
+        if m1 and m1.end()<=m2.start():
+            left=_items(st[m1.end():m2.start()],r"(?:^|\s)[A-D]\.\s")
+            if len(left)==len(ml.get("left",[])) and all(left): ml["left"]=left
+
 def main():
     lm=J(SRC/"lesson_map.json"); titles={}
     for g in lm["groups"]:
@@ -124,6 +144,7 @@ def main():
                     assert k!="answer",f"{qid}: answer index may not change"
                     if k.startswith("options_"): assert len(v)==len(q[k]),f"{qid} {k} option count changed"
                     q[k]=v
+        for q in qs: sync_lists(q)
         d=OUT/str(n); d.mkdir(exist_ok=True)
         (d/"Notes.html").write_text(page,encoding="utf-8")
         # Polity design: explanations live in their own file, keyed by explanation_id.
