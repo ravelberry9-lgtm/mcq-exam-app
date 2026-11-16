@@ -122,6 +122,17 @@ def _load_records():
         t=x.get('te') or {}
         if t.get('lead'):q['_te']='\n'.join([t['lead']]+list(t.get('points') or [])+(['ఇది కూడా గుర్తుంచుకోండి: '+t['also']] if t.get('also') else []));q['explain_table_te']=t.get('table')
         if x.get('better_answer') in (1,2,3,4) and x['better_answer']!=q.get('_answer'):q['_better']=x['better_answer'];q['key_status']='disputed';q.setdefault('official_key',q.get('_answer'))
+    # Reviewed fixes (2026-11-16): Telugu for English-only PYQs and corrected disputed keys. Authored files stay untouched.
+    fx=CONTENT/'_shared'/'Fixes-20261116.json'
+    for qid,d in (read(fx).get('questions',{}) if fx.is_file() else {}).items():
+        q=result.get(qid)
+        if not q:continue
+        if d.get('question_te'):q['question_te']=d['question_te']
+        if isinstance(d.get('options_te'),list) and len(d['options_te'])==len(q.get('options_en') or []):q['options_te']=d['options_te']
+        if d.get('study_answer') in (1,2,3,4) and d['study_answer']!=q.get('_answer'):
+            q.setdefault('official_key',q.get('_answer'));q['_answer']=d['study_answer'];q['explain_table']=None;q['explain_table_te']=None
+        if d.get('explanation_en'):q['_en']=d['explanation_en'];q.pop('_better',None)
+        if d.get('explanation_te'):q['_te']=d['explanation_te']
     for q in result.values():
         q['_orig_scored']=q['_scored'];q['_scored']=q['_answer'] in (1,2,3,4)
     return result
