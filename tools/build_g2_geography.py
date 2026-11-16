@@ -112,6 +112,50 @@ def sync_lists(q):
             left=_items(st[m1.end():m2.start()],r"(?:^|\s)[A-D]\.\s")
             if len(left)==len(ml.get("left",[])) and all(left): ml["left"]=left
 
+def _canon_ar(t):
+    t=_re.sub(r"\((?:Assertion|Reason)\s*[—–-]\s*([AR])\)",r"(\1)",t)
+    t=_re.sub(r"(ప్రతిపాదన|కారణం)\s*\((Assertion|Reason)\)",lambda m:m.group(1)+(" (A)" if m.group(2)=="Assertion" else " (R)"),t)
+    t=_re.sub(r"\s*((?:Reason|కారణం)\s*\(R\)\s*[:：])",r"\n\1",t)
+    return t.strip()
+_HEAD={"en":("List I","List II"),"te":("జాబితా I","జాబితా II")}
+def canon_match(q):
+    """Polity layout: the stem itself carries List I / List II (one item per line); the app renders the two columns from it."""
+    for lg in ("en","te"):
+        ml=q.get("matching_lists_"+lg); st=(q.get("question_"+lg) or "").strip()
+        if not ml or len(ml.get("left",[]))<2 or len(ml.get("right",[]))<2: continue
+        cut=[m.start() for m in (_L1.search(st),_re.search(r"(?:^|\s)A\.\s",st),_re.search(r"మొదటి\s*జాబితా|జాబితా\s*[-–]?\s*(?:I|1|ఒకటి)\s*[:：(]",st)) if m]
+        intro=st[:min(cut)].strip() if cut else st
+        intro=_re.sub(r"[\s:：\-–]+$","",intro) or ("Match List I with List II." if lg=="en" else "జాబితా I ను జాబితా II తో జతపరచండి.")
+        if not intro.endswith((".","?",":")): intro+=":"
+        clean=lambda x:_re.sub(r"\s*(?:\n|\s)(?:రెండో|మొదటి|రెండవ)\s*జాబితా\s*[:：]?\s*$|\s*(?:\n|\s)(?:List\s*II|జాబితా\s*II)\s*[:：]?\s*$","",_re.sub(r"^\s*\(?[A-Ga-g1-9]\)?[.)]\s+","",x)).strip()
+        pre=lambda xs:all(_re.match(r"^\s*\(?[A-Ga-g1-9]\)?[.)]\s+",x) for x in xs)
+        tailc=lambda x:_re.sub(r"\s*(?:\n|\s)(?:రెండో|మొదటి|రెండవ)\s*జాబితా\s*[:：]?\s*$|\s*(?:\n|\s)(?:List\s*II|జాబితా\s*II)\s*[:：]?\s*$","",x).strip()
+        for side in ("left","right"):
+            ml[side]=[clean(x) if pre(ml[side]) else tailc(x) for x in ml[side]]
+        h1,h2=_HEAD[lg]
+        q["question_"+lg]=intro+"\n"+h1+":\n"+"\n".join(f"{'ABCDEFG'[i]}. {x}" for i,x in enumerate(ml["left"]))+"\n"+h2+":\n"+"\n".join(f"{i+1}. {x}" for i,x in enumerate(ml["right"]))
+
+_ARSTD={"exp":("Both A and R are true and R is the correct explanation of A","A, R రెండూ నిజం; A కు R సరైన వివరణ"),
+        "nexp":("Both A and R are true but R is not the correct explanation of A","A, R రెండూ నిజం; కానీ A కు R సరైన వివరణ కాదు"),
+        "tf":("A is true but R is false","A నిజం, కానీ R తప్పు"),
+        "ft":("A is false but R is true","A తప్పు, కానీ R నిజం"),
+        "ff":("Both A and R are false","A, R రెండూ తప్పు")}
+def _arkind(o):
+    o=_re.sub(r"\bassertion\b","a",_re.sub(r"\breason\b","r",o.lower()))
+    if not _re.search(r"both",o): o=_re.sub(r"\bnot\s+(?:a\s+)?(?:true|correct)","false",o)
+    if _re.search(r"both.*(false|incorrect)|neither",o): return "ff"
+    if _re.search(r"both.*(true|correct)",o):
+        return "nexp" if _re.search(r"not|n't|unrelated|\bno\b|irrelevant",o) else "exp"
+    m=_re.search(r"\ba\b[^,;]*?\b(true|correct|false|incorrect|wrong)\b.*\br\b[^,;]*?\b(true|correct|false|incorrect|wrong)\b",o)
+    if m:
+        a=m.group(1) in ("true","correct");r=m.group(2) in ("true","correct")
+        return {(True,False):"tf",(False,True):"ft"}.get((a,r))
+    return None
+def canon_ar_options(q):
+    ks=[_arkind(o) for o in q.get("options_en",[])]
+    if None in ks or len(set(ks))!=len(ks): return
+    q["options_en"]=[_ARSTD[k][0] for k in ks]; q["options_te"]=[_ARSTD[k][1] for k in ks]
+
 def main():
     lm=J(SRC/"lesson_map.json"); titles={}
     for g in lm["groups"]:
@@ -155,7 +199,11 @@ def main():
                     assert k!="answer",f"{qid}: answer index may not change"
                     if k.startswith("options_"): assert len(v)==len(q[k]),f"{qid} {k} option count changed"
                     q[k]=v
-        for q in qs: sync_lists(q)
+        for q in qs:
+            sync_lists(q); canon_match(q)
+            if _re.search(r"Assertion",q.get("question_en","")):
+                for lg in ("en","te"): q["question_"+lg]=_canon_ar(q.get("question_"+lg) or "")
+                canon_ar_options(q)
         d=OUT/str(n); d.mkdir(exist_ok=True)
         (d/"Notes.html").write_text(page,encoding="utf-8")
         # Polity design: explanations live in their own file, keyed by explanation_id.
