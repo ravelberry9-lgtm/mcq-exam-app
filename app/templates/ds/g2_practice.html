@@ -1,6 +1,11 @@
 {% extends "ds/base.html" %}
 {% set nav_active = 'practice' %}
 {% block title %}Lesson {{ number }} MCQs · Group 2 Geography{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
-{% block topbar %}<h1>Lesson {{ number }} · MCQ Practice</h1>{% endblock %}
-{% block content %}<nav><a href="{{ url_for('geography.g2_chapter',number=number) }}">‹ Lesson</a></nav><section class="card"><h2>{{ ch.title }}</h2><p>{{ questions|length }} questions · Telugu and English</p>{% if questions %}<a class="btn primary" href="{{ url_for('geography.g2_question',number=number,qid=questions[0].id,qlang='te') }}">ప్రారంభించండి · Start</a>{% endif %}</section>{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc4') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261112p') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('geography.g2_chapter',number=number) }}">‹ పాఠం · Lesson</a><strong>Practice</strong></div>{% endblock %}
+{% block content %}
+<section class="card"><p class="q-meta">పాఠం {{ number }}</p><h2>{{ ch.title }}</h2><p>{{ questions|length }} ప్రశ్నలు · questions · మీరు చూసినవి {{ seen }}</p>
+<div class="u6-actions">{% if questions %}<a class="btn primary" href="{{ url_for('geography.g2_question',number=number,qid=next_id,qlang='te') }}">{{ 'కొనసాగించండి · Continue' if run.n else 'ప్రారంభించండి · Start' }} ›</a><a class="btn" href="{{ url_for('geography.g2_question',number=number,qid=questions[0].id,qlang='te') }}">మొదటి నుంచి · From Q1</a>{% endif %}{% if run.n %}<a class="btn" href="{{ url_for('geography.g2_result',number=number) }}">Score {{ run.ok }} / {{ run.n }} ›</a>{% endif %}<a class="btn" href="{{ url_for('geography.g2_notes',number=number) }}">📖 నోట్స్ · Notes</a></div></section>
+{% if wrong %}<section class="card"><details><summary><b>తప్పు సమాధానాలు · Wrong answers ({{ wrong|length }})</b></summary><ol>{% for w in wrong %}<li><a href="{{ url_for('geography.g2_question',number=number,qid=w.id,qlang='te') }}">{{ w.question_te[:120] }}</a></li>{% endfor %}</ol></details></section>{% endif %}
+{% if saved %}<section class="card"><details><summary><b>గుర్తు పెట్టినవి · Bookmarked ({{ saved|length }})</b></summary><ol>{% for w in saved %}<li><a href="{{ url_for('geography.g2_question',number=number,qid=w.id,qlang='te') }}">{{ w.question_te[:120] }}</a></li>{% endfor %}</ol></details></section>{% endif %}
+{% endblock %}
