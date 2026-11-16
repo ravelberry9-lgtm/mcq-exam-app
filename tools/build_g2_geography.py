@@ -94,7 +94,18 @@ def sync_lists(q):
         if not ml: continue
         ml=q["matching_lists_"+lg]={k:list(v) if isinstance(v,list) else v for k,v in ml.items()}
         m2=_L2.search(st); m1=_L1.search(st)
-        if not m2: continue
+        if not m2:
+            # Stem lists "A. … D. …" then "1. … 4. …" without a "List II:" label.
+            ds=[m.end() for m in _re.finditer(r"(?:^|\s)D\.\s",st)]
+            one=_re.compile(r"(?:^|\s)1\.\s").search(st,ds[-1]) if ds else None
+            if not one: continue
+            right=_items(st[one.start():],r"(?:^|\s)\d\.\s")
+            if len(right)==len(ml.get("right",[])) and all(right): ml["right"]=right
+            a0=_re.search(r"(?:^|\s)A\.\s",st)
+            if a0 and a0.start()<one.start():
+                left=_items(st[a0.start():one.start()],r"(?:^|\s)[A-D]\.\s")
+                if len(left)==len(ml.get("left",[])) and all(left): ml["left"]=left
+            continue
         right=_items(st[m2.end():],r"(?:^|\s)\d\.\s")
         if len(right)==len(ml.get("right",[])) and all(right): ml["right"]=right
         if m1 and m1.end()<=m2.start():
