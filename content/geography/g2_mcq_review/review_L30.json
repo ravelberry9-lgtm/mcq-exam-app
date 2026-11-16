@@ -61,8 +61,6 @@
   "GEO-ORIG-56-005",
   "GEO-ORIG-56-006",
   "GEO-ORIG-56-007",
-  "GEO-ORIG-56-013",
-  "GEO-ORIG-56-014",
   "GEO-ORIG-56-023",
   "IA15-P506-002",
   "IA15-P506-003",
@@ -655,6 +653,124 @@
    "question_en": "How many Towns of Export Excellence (TEE) has India notified as of 2026?",
    "question_te": "2026 నాటికి భారత్ ఎన్ని ఎగుమతి శ్రేష్ఠత పట్టణాలను (Towns of Export Excellence, TEE) ప్రకటించింది?",
    "reason": "Source-based stem ('According to DGFT'); now asks the fact directly, dated."
+  },
+  "GEO-ORIG-56-013": {
+   "question_en": "Match List I with List II. A. Export; B. Import; C. Domestic coastal shipping; D. Transshipment. 1. Transfer between vessels; 2. Movement between domestic coastal ports; 3. Outward across a border; 4. Inward across a border.",
+   "matching_lists_en": {
+    "left": [
+     "Export / ఎగుమతి",
+     "Import / దిగుమతి",
+     "Domestic coastal shipping / దేశీయ తీర నౌకాయానం",
+     "Transshipment / మారునౌక సరుకు బదిలీ"
+    ],
+    "right": [
+     "Transfer of cargo between vessels or services during a journey",
+     "Cargo movement between domestic coastal ports",
+     "Outward movement or sale across the reporting economy's border as defined",
+     "Inward movement or purchase across the reporting economy's border as defined"
+    ]
+   },
+   "options_en": [
+    "A–4, B–3, C–1, D–2",
+    "A–2, B–1, C–4, D–3",
+    "A–1, B–2, C–3, D–4",
+    "A–3, B–4, C–2, D–1"
+   ],
+   "question_te": "జాబితా–Iను జాబితా–IIతో జతపరచండి: A. ఎగుమతి; B. దిగుమతి; C. దేశీయ తీర నౌకాయానం (Coastal Shipping); D. మారునౌక బదిలీ (Transshipment). 1. ప్రయాణ మధ్యలో నౌక మార్పు; 2. ఒకే దేశంలోని తీర నౌకాశ్రయాల మధ్య కదలిక; 3. సరిహద్దు దాటి బయటకు కదలిక; 4. సరిహద్దు దాటి లోపలకు కదలిక.",
+   "matching_lists_te": {
+    "left": [
+     "Export / ఎగుమతి",
+     "Import / దిగుమతి",
+     "Domestic coastal shipping / దేశీయ తీర నౌకాయానం",
+     "Transshipment / మారునౌక సరుకు బదిలీ"
+    ],
+    "right": [
+     "Transfer of cargo between vessels or services during a journey",
+     "Cargo movement between domestic coastal ports",
+     "Outward movement or sale across the reporting economy's border as defined",
+     "Inward movement or purchase across the reporting economy's border as defined"
+    ]
+   },
+   "options_te": [
+    "A–4, B–3, C–1, D–2",
+    "A–2, B–1, C–4, D–3",
+    "A–1, B–2, C–3, D–4",
+    "A–3, B–4, C–2, D–1"
+   ],
+   "explanation_en": "Trade movements must be distinguished by direction, border crossing and transfer between transport services.",
+   "explanation_te": "వాణిజ్య కదలికలను దిశ, దేశ సరిహద్దు, రవాణా మార్పు ఆధారంగా వేరు చేయాలి. తీర నౌకాయానం దేశీయ తీర నౌకాశ్రయాల మధ్య జరుగుతుంది; మారునౌక బదిలీలో ప్రయాణ మధ్యలో సరుకును మరో నౌకకు మారుస్తారు.",
+   "option_explanations_en": [
+    "Export/import directions and coastal/transshipment are reversed.",
+    "All four concepts are mismatched.",
+    "Export is confused with transshipment and import with coastal shipping.",
+    "Correct: outward–export, inward–import, domestic coast–coastal shipping, vessel transfer–transshipment."
+   ],
+   "option_explanations_te": [
+    "తప్పు; ఎగుమతి–దిగుమతి దిశలు, తీర నౌకాయానం–మారునౌక బదిలీ భావాలు మారాయి.",
+    "తప్పు; నాలుగు భావాలూ తప్పుగా జతపడ్డాయి.",
+    "తప్పు; ఎగుమతిని మారునౌక బదిలీతో, దిగుమతిని తీర నౌకాయానంతో కలిపింది.",
+    "సరైంది; నాలుగు కదలికలు వాటి అర్థాలతో సరిగ్గా జతపడ్డాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-56-014": {
+   "question_en": "Match List I with List II. A. Cargo tonnage; B. TEU; C. Trade value; D. Merchandise trade balance. 1. Physical mass; 2. Container capacity; 3. Export value minus import value; 4. Monetary worth.",
+   "matching_lists_en": {
+    "left": [
+     "Cargo tonnage / సరుకు టన్నులు",
+     "TEU / ఇరవై అడుగుల సమాన యూనిట్",
+     "Trade value / వాణిజ్య విలువ",
+     "Merchandise trade balance / సరుకు వాణిజ్య శేషం"
+    ],
+    "right": [
+     "Physical mass of cargo handled",
+     "Container-capacity measure based on a twenty-foot equivalent unit",
+     "Export value minus import value for the stated period",
+     "Monetary worth of traded goods under stated valuation rules"
+    ]
+   },
+   "options_en": [
+    "A–2, B–1, C–3, D–4",
+    "A–1, B–2, C–4, D–3",
+    "A–4, B–3, C–2, D–1",
+    "A–3, B–4, C–1, D–2"
+   ],
+   "question_te": "జాబితా–Iను జాబితా–IIతో జతపరచండి: A. సరుకు టన్నులు (Cargo Tonnage); B. TEU; C. వాణిజ్య విలువ (Trade Value); D. వస్తు వాణిజ్య సమతుల్యం (Merchandise Trade Balance). 1. భౌతిక బరువు; 2. కంటైనర్ సామర్థ్యం; 3. ఎగుమతి విలువ − దిగుమతి విలువ; 4. ద్రవ్య విలువ.",
+   "matching_lists_te": {
+    "left": [
+     "Cargo tonnage / సరుకు టన్నులు",
+     "TEU / ఇరవై అడుగుల సమాన యూనిట్",
+     "Trade value / వాణిజ్య విలువ",
+     "Merchandise trade balance / సరుకు వాణిజ్య శేషం"
+    ],
+    "right": [
+     "Physical mass of cargo handled",
+     "Container-capacity measure based on a twenty-foot equivalent unit",
+     "Export value minus import value for the stated period",
+     "Monetary worth of traded goods under stated valuation rules"
+    ]
+   },
+   "options_te": [
+    "A–2, B–1, C–3, D–4",
+    "A–1, B–2, C–4, D–3",
+    "A–4, B–3, C–2, D–1",
+    "A–3, B–4, C–1, D–2"
+   ],
+   "explanation_en": "Physical mass, container capacity, monetary worth and the export-import value difference are four distinct measures.",
+   "explanation_te": "భౌతిక బరువు, కంటైనర్ సామర్థ్యం, ద్రవ్య విలువ, ఎగుమతి–దిగుమతి విలువల తేడా నాలుగు వేర్వేరు కొలతలు. ఒకదానిని మరొకదానికి నేరుగా సమానంగా చూడకూడదు.",
+   "option_explanations_en": [
+    "It wrongly swaps tonnage with capacity and TEU with mass.",
+    "Correct: mass–tonnage, capacity–TEU, money–value, difference–balance.",
+    "All four measures are mismatched.",
+    "It confuses tonnage with balance and TEU with monetary value."
+   ],
+   "option_explanations_te": [
+    "తప్పు; సరుకు టన్నులను సామర్థ్యంగా, TEUను బరువుగా మార్చింది.",
+    "సరైంది; బరువు–సరుకు టన్నులు, సామర్థ్యం–TEU, ద్రవ్య విలువ–వాణిజ్య విలువ, తేడా–వాణిజ్య సమతుల్యం.",
+    "తప్పు; నాలుగు కొలతలూ తప్పుగా జతపడ్డాయి.",
+    "తప్పు; సరుకు టన్నులను సమతుల్యంతో, TEUను ద్రవ్య విలువతో కలిపింది."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
   }
  }
 }
