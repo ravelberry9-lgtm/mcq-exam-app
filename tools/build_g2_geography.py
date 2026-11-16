@@ -113,8 +113,16 @@ def main():
             qs=[q for q in qs if q["id"] not in dead]
         d=OUT/str(n); d.mkdir(exist_ok=True)
         (d/"Notes.html").write_text(page,encoding="utf-8")
+        # Polity design: explanations live in their own file, keyed by explanation_id.
+        EXK=("explanation_te","explanation_en","option_explanations_te","option_explanations_en")
+        ex={}
+        for q in qs:
+            q["explanation_id"]=q["id"]
+            ex[q["id"]]={"te":q.pop("explanation_te",None) or "","en":q.pop("explanation_en",None) or "",
+                         "options_te":q.pop("option_explanations_te",None) or [],"options_en":q.pop("option_explanations_en",None) or []}
         (d/"Questions.json").write_text(json.dumps({"questions":qs},ensure_ascii=False),encoding="utf-8")
-        m={"display_chapter":n,"group":titles[n][0],"title":titles[n][1],"question_count":len(qs),"notes_file":"Notes.html","questions_file":"Questions.json"}
+        (d/"Explanations.json").write_text(json.dumps({"chapter":n,"questions":ex},ensure_ascii=False),encoding="utf-8")
+        m={"display_chapter":n,"group":titles[n][0],"title":titles[n][1],"question_count":len(qs),"notes_file":"Notes.html","questions_file":"Questions.json","explanations_file":"Explanations.json"}
         (d/"manifest.json").write_text(json.dumps(m,ensure_ascii=False,indent=1),encoding="utf-8")
         chapters.append(m); tot+=len(qs)
     (OUT/"manifest.json").write_text(json.dumps({"format":"g2-geography-v1","built":"2026-11-05","question_count":tot,"chapters":chapters},ensure_ascii=False,indent=1),encoding="utf-8")

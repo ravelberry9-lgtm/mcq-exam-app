@@ -1,0 +1,27 @@
+{# Polity-style answer panel for Group 2 Geography.
+   Explanations come from Explanations.json (stored separately), text unchanged. #}
+{% macro _lbl(lang,te,en) %}{% if lang=='te' %}{{ te }}{% elif lang=='en' %}{{ en }}{% else %}{{ te }} · {{ en }}{% endif %}{% endmacro %}
+{% macro g2_explain_panel(q,lang) %}
+{% set a=q.answer %}
+{% set te=q.explanation_te if lang in ('te','both') else '' %}
+{% set en=q.explanation_en if (lang in ('en','both') or not q.explanation_te) else '' %}
+{% set pte=explain_parts(te,[q.options_te],a) if te else none %}
+{% set pen=explain_parts(en,[q.options_en],a) if en else none %}
+{% set alt=pte and pen %}
+<div class="xp">
+  <p class="xp-ans"><span class="xp-k">{{ _lbl(lang,'సమాధానం','Answer') }}</span><b class="xp-num">{{ a }}</b>
+  <span{% if lang!='en' %} lang="te"{% endif %}>{{ q.options_en[a-1] if lang=='en' else q.options_te[a-1] }}</span>{% if lang=='both' %}<span class="xp-alt" lang="en">{{ q.options_en[a-1] }}</span>{% endif %}</p>
+  {% if not (pte or pen) %}<p class="xp-none">వివరణ ఇంకా లేదు · No written explanation yet.</p>{% else %}
+  <section class="xp-why"><h3 class="xp-h">{{ _lbl(lang,'ఎందుకు','Why') }}</h3>
+    {% if pte %}<p class="xp-lead" lang="te">{{ pte.lead }}</p>{% endif %}
+    {% if pen %}<p class="xp-lead{% if alt %} xp-alt{% endif %}" lang="en">{{ pen.lead }}</p>{% endif %}
+    {% if pte and pte.why %}<ul class="xp-pts" lang="te">{% for s in pte.why %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}
+    {% if pen and pen.why %}<ul class="xp-pts{% if alt %} xp-alt{% endif %}" lang="en">{% for s in pen.why %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}
+  </section>{% endif %}
+  {% set ote=q.option_explanations_te if lang in ('te','both') else [] %}{% set oen=q.option_explanations_en if (lang in ('en','both') or not ote) else [] %}
+  {% if ote or oen %}<section class="xp-other"><h3 class="xp-h">{{ _lbl(lang,'ఇతర ఎంపికలు','Other options') }}</h3><ul class="xp-opts">
+  {% for i in range(q.options_en|length) if i+1!=a %}{% set t1=ote[i] if ote|length>i else '' %}{% set t2=oen[i] if oen|length>i else '' %}{% if t1 or t2 %}
+    <li><b class="xp-num">{{ i+1 }}</b><div>{% if t1 %}<p lang="te">{{ t1 }}</p>{% endif %}{% if t2 %}<p{% if t1 %} class="xp-alt"{% endif %} lang="en">{{ t2 }}</p>{% endif %}</div></li>
+  {% endif %}{% endfor %}</ul></section>{% endif %}
+</div>
+{% endmacro %}

@@ -36,7 +36,7 @@ def _g2_question(number,qid,answered=False):
     ch=g2.chapter(number) or abort(404);rows=g2.questions(number)
     q=g2.question(number,qid) or abort(404);pos=next(i for i,x in enumerate(rows) if x['id']==qid)
     lang=request.args.get('qlang','te')
-    if lang not in ('te','en'):abort(400)
+    if lang not in ('te','en','both'):abort(400)
     choice=result=None
     if answered or request.args.get('review')=='1':
         raw=request.form.get('choice','') if answered else request.args.get('choice','')
@@ -45,7 +45,7 @@ def _g2_question(number,qid,answered=False):
     na={'question':qid,'qlang':lang}
     if result:na.update({'review':'1','choice':choice})
     notes_url=url_for('geography.g2_notes',number=number,**na)
-    return render_template('ds/g2_question.html',number=number,ch=ch,q=q,lang=lang,options=q['options_'+lang],explanation=q['explanation_'+lang],option_explanations=q['option_explanations_'+lang],result=result,choice=choice,position=pos+1,total=len(rows),previous=rows[pos-1]['id'] if pos else None,following=rows[pos+1]['id'] if pos+1<len(rows) else None,notes_url=notes_url,section_url=notes_url+'#'+q['section'])
+    return render_template('ds/g2_question.html',number=number,ch=ch,q=q,lang=lang,options=q['options_en' if lang=='en' else 'options_te'],result=result,choice=choice,position=pos+1,total=len(rows),previous=rows[pos-1]['id'] if pos else None,following=rows[pos+1]['id'] if pos+1<len(rows) else None,notes_url=notes_url,section_url=notes_url+'#'+q['section'])
 
 @bp.get('/g2/<int:number>/practice/<qid>')
 def g2_question(number,qid):return _g2_question(number,qid)
