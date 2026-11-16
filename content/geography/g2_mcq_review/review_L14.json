@@ -60,7 +60,6 @@
   "GEO-NEW-14-017",
   "GEO-NEW-14-018",
   "GEO-NEW-14-019",
-  "GEO-NEW-14-020",
   "GEO-NEW-14-021",
   "GEO-NEW-14-022",
   "GEO-NEW-14-023",
@@ -123,22 +122,13 @@
   "GEO-ORIG-23-010",
   "GEO-ORIG-23-011",
   "GEO-ORIG-23-012",
-  "GEO-ORIG-23-013",
-  "GEO-ORIG-23-014",
-  "GEO-ORIG-23-015",
   "GEO-ORIG-23-022",
   "GEO-ORIG-23-024",
   "GEO-ORIG-24-013",
   "GEO-ORIG-24-014",
   "GEO-ORIG-24-015",
   "GEO-ORIG-24-023",
-  "GEO-ORIG-25-013",
-  "GEO-ORIG-25-014",
-  "GEO-ORIG-25-015",
   "GEO-ORIG-25-024",
-  "GEO-ORIG-26-013",
-  "GEO-ORIG-26-014",
-  "GEO-ORIG-26-015",
   "GEO-ORIG-27-005",
   "GEO-ORIG-27-006",
   "GEO-ORIG-27-007",
@@ -146,9 +136,6 @@
   "GEO-ORIG-27-009",
   "GEO-ORIG-27-010",
   "GEO-ORIG-27-012",
-  "GEO-ORIG-27-013",
-  "GEO-ORIG-27-014",
-  "GEO-ORIG-27-015",
   "GEO-ORIG-27-022",
   "GEO-ORIG-27-023",
   "GEO-ORIG-27-024",
@@ -1867,6 +1854,773 @@
     "తప్పు. వరాహ Yelamanchili దగ్గరి చిన్న నది; Visakhapatnam కు నీరివ్వదు."
    ],
    "reason": "Duplicate of Q147 (GEO-IA-03-049, statement 1: Nagavali about 256 km, CWC); stem was also source-meta (same fact, same answer); rewritten into a new question from the same notes section, key kept at position 3."
+  },
+  "GEO-ORIG-23-013": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Drainage basin; B. Water divide; C. Tributary; D. Distributary. List II: 1. A stream joining a larger river or channel; 2. Topographic boundary separating adjacent surface catchments; 3. Area contributing surface runoff to a common outlet; 4. A channel branching away from a main river.",
+   "matching_lists_en": {
+    "left": [
+     "Drainage basin",
+     "Water divide",
+     "Tributary",
+     "Distributary"
+    ],
+    "right": [
+     "A stream joining a larger river or channel",
+     "Topographic boundary separating adjacent surface catchments",
+     "Area contributing surface runoff to a common outlet",
+     "A channel branching away from a main river"
+    ]
+   },
+   "options_en": [
+    "A–3; B–2; C–1; D–4",
+    "A–4; B–1; C–2; D–3",
+    "A–1; B–4; C–3; D–2",
+    "A–2; B–1; C–4; D–3"
+   ],
+   "question_te": "జాబితా–Iలోని భావనలను జాబితా–IIలోని నిర్వచనాలతో సరిపోల్చండి. A. నదీ పరివాహక ప్రాంతం (Drainage Basin); B. జలవిభాజకం (Water Divide); C. ఉపనది (Tributary); D. నదీపాయ (Distributary). 1. పెద్ద నదిలో కలిసే ప్రవాహం; 2. పక్క పరివాహక ప్రాంతాలను వేరు చేసే భూరూప సరిహద్దు; 3. ఒకే నిష్క్రమణ స్థానానికి ఉపరితల ప్రవాహాన్ని అందించే భూభాగం; 4. ప్రధాన నది నుంచి విడిపోయే శాఖ.",
+   "matching_lists_te": {
+    "left": [
+     "Drainage basin / పరీవాహక ప్రాంతం",
+     "Water divide / జల విభాజకం",
+     "Tributary / ఉపనది",
+     "Distributary / నదీపాయ"
+    ],
+    "right": [
+     "A stream joining a larger river or channel",
+     "Topographic boundary separating adjacent surface catchments",
+     "Area contributing surface runoff to a common outlet",
+     "A channel branching away from a main river"
+    ]
+   },
+   "options_te": [
+    "A–3; B–2; C–1; D–4",
+    "A–4; B–1; C–2; D–3",
+    "A–1; B–4; C–3; D–2",
+    "A–2; B–1; C–4; D–3"
+   ],
+   "explanation_en": "The correct matching is A-3, B-2, C-1 and D-4. A basin is an area, a divide is its boundary, a tributary joins and a distributary branches away.",
+   "explanation_te": "నదీ పరివాహక ప్రాంతం–3; జలవిభాజకం–2; ఉపనది–1; వితరణి–4. పరివాహక ప్రాంతం ఒక భూభాగం; జలవిభాజకం దాని సరిహద్దు. ఉపనది ప్రధాన నదిలో కలుస్తుంది; వితరణి ప్రధాన నది నుంచి విడిపోతుంది.",
+   "option_explanations_en": [
+    "Correct: basin-3, divide-2, tributary-1 and distributary-4.",
+    "Incorrect: a basin does not branch away, and a divide is not a joining stream.",
+    "Incorrect: a basin is not a joining stream, while a tributary is not an outlet area.",
+    "Incorrect: a basin is not a topographic boundary and a tributary is not a branching channel."
+   ],
+   "option_explanations_te": [
+    "సరైనది: పరివాహక ప్రాంతం–3, జలవిభాజకం–2, ఉపనది–1, వితరణి–4.",
+    "పరివాహక ప్రాంతం ప్రధాన నది నుంచి విడిపోయే శాఖ కాదు; జలవిభాజకం కలిసే ప్రవాహం కాదు.",
+    "పరివాహక ప్రాంతం కలిసే ప్రవాహం కాదు; ఉపనది ఒకే నిష్క్రమణకు నీరు ఇచ్చే మొత్తం భూభాగం కాదు.",
+    "పరివాహక ప్రాంతం భూరూప సరిహద్దు కాదు; ఉపనది ప్రధాన నది నుంచి విడిపోయే శాఖ కాదు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-23-014": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Dendritic pattern; B. Trellis pattern; C. Radial pattern; D. Rectangular pattern. List II: 1. Tree-like branching drainage on broadly uniform substrate; 2. Streams diverging outward from a central highland; 3. Parallel main streams with short tributaries guided by alternating structures; 4. Drainage with prominent right-angle bends linked to joints or faults.",
+   "matching_lists_en": {
+    "left": [
+     "Dendritic pattern",
+     "Trellis pattern",
+     "Radial pattern",
+     "Rectangular pattern"
+    ],
+    "right": [
+     "Tree-like branching drainage on broadly uniform substrate",
+     "Streams diverging outward from a central highland",
+     "Parallel main streams with short tributaries guided by alternating structures",
+     "Drainage with prominent right-angle bends linked to joints or faults"
+    ]
+   },
+   "options_en": [
+    "A–3; B–2; C–4; D–1",
+    "A–1; B–3; C–2; D–4",
+    "A–2; B–4; C–1; D–3",
+    "A–4; B–2; C–3; D–1"
+   ],
+   "question_te": "జాబితా–Iలోని ప్రవాహ ప్రతిరూపాలను జాబితా–IIలోని లక్షణాలతో సరిపోల్చండి. A. శాఖీయుత ప్రతిరూపం (Dendritic) B. తడిక ప్రతిరూపం (Trellis) C. రేడియల్ ప్రతిరూపం (Radial) D. దీర్ఘచతురస్రాకార ప్రతిరూపం (Rectangular). 1. ఏకరీతి శిలా ఉపరితలంపై చెట్టు కొమ్మల్లా; 2. కేంద్ర ఎత్తైన ప్రాంతం నుంచి బయటకు; 3. మారుతూ ఉండే శిలా నిర్మాణాల్లో సమాంతర ప్రధాన ప్రవాహాలు, చిన్న ఉపనదులు; 4. సంధులు/భ్రంశాల వల్ల లంబకోణ మలుపులు.",
+   "matching_lists_te": {
+    "left": [
+     "Dendritic pattern / శాఖీయుత ప్రతిరూపం",
+     "Trellis pattern / తడిక ప్రతిరూపం",
+     "Radial pattern / రేడియల్ ప్రతిరూపం",
+     "Rectangular pattern / దీర్ఘచతురస్రాకార ప్రతిరూపం"
+    ],
+    "right": [
+     "Tree-like branching drainage on broadly uniform substrate",
+     "Streams diverging outward from a central highland",
+     "Parallel main streams with short tributaries guided by alternating structures",
+     "Drainage with prominent right-angle bends linked to joints or faults"
+    ]
+   },
+   "options_te": [
+    "A–3; B–2; C–4; D–1",
+    "A–1; B–3; C–2; D–4",
+    "A–2; B–4; C–1; D–3",
+    "A–4; B–2; C–3; D–1"
+   ],
+   "explanation_en": "The correct matching is Dendritic-1, Trellis-3, Radial-2 and Rectangular-4. Each pattern reflects a distinct relationship between channel form and geological control.",
+   "explanation_te": "శాఖీయుత–1; తడిక–3; రేడియల్–2; దీర్ఘచతురస్రాకార–4. ప్రతిరూపాన్ని దాని ఆకారంతో పాటు దాన్ని నియంత్రించే రాతి నిర్మాణంతో (Geological control) గుర్తించాలి.",
+   "option_explanations_en": [
+    "Incorrect: dendritic is tree-like, not trellis-like; radial is outward, not rectangular.",
+    "Correct: Dendritic-1, Trellis-3, Radial-2, Rectangular-4.",
+    "Incorrect: dendritic is not radial and trellis is not the right-angle joint pattern.",
+    "Incorrect: dendritic is not rectangular, and radial is not the alternating-structure pattern."
+   ],
+   "option_explanations_te": [
+    "శాఖీయుత ప్రతిరూపం చెట్టు కొమ్మల్లా ఉంటుంది; తడిక ప్రతిరూపం కాదు. రేడియల్ ప్రతిరూపం బయటకు ప్రవహిస్తుంది; దీర్ఘచతురస్రాకార ప్రతిరూపం కాదు.",
+    "సరైనది: శాఖీయుత–1, తడిక–3, రేడియల్–2, దీర్ఘచతురస్రాకార–4.",
+    "శాఖీయుత ప్రతిరూపం కేంద్రాపసరణ కాదు; తడిక ప్రతిరూపం సంధుల వల్ల ఏర్పడే దీర్ఘచతురస్రాకార ప్రతిరూపం కాదు.",
+    "శాఖీయుత ప్రతిరూపం దీర్ఘచతురస్రాకార ప్రతిరూపం కాదు; రేడియల్ ప్రతిరూపం మారే శిలా నిర్మాణ నమూనా కాదు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-23-015": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Discharge; B. Stage; C. Confluence; D. Flow regime. List II: 1. Water-surface elevation relative to a local gauge reference; 2. Volume of water passing a section per unit time; 3. Place where two channels meet; 4. Seasonal and longer-term pattern of river discharge.",
+   "matching_lists_en": {
+    "left": [
+     "Discharge",
+     "Stage",
+     "Confluence",
+     "Flow regime"
+    ],
+    "right": [
+     "Water-surface elevation relative to a local gauge reference",
+     "Volume of water passing a section per unit time",
+     "Place where two channels meet",
+     "Seasonal and longer-term pattern of river discharge"
+    ]
+   },
+   "options_en": [
+    "A–3; B–4; C–2; D–1",
+    "A–2; B–1; C–3; D–4",
+    "A–4; B–3; C–1; D–2",
+    "A–1; B–3; C–4; D–2"
+   ],
+   "question_te": "జాబితా–Iలోని నదీ కొలత భావనలను జాబితా–IIతో సరిపోల్చండి. A. ప్రవాహ పరిమాణం (Discharge) B. నీటిమట్టం (Stage) C. సంగమం (Confluence) D. ప్రవాహ విధానం (Flow Regime). 1. స్థానిక కొలమాన ఆధార స్థాయితో పోల్చిన నీటి ఉపరితల ఎత్తు; 2. యూనిట్ కాలంలో అడ్డముఖం గుండా వెళ్లే నీటి ఘనపరిమాణం; 3. రెండు ప్రవాహ మార్గాలు కలిసే ప్రదేశం; 4. ఋతువారీ/దీర్ఘకాల ప్రవాహ మార్పుల నమూనా.",
+   "matching_lists_te": {
+    "left": [
+     "Discharge / ప్రవాహ పరిమాణ రేటు",
+     "Stage / జలమట్టం",
+     "Confluence / సంగమం",
+     "Flow regime / ప్రవాహ ఋతు స్వభావం"
+    ],
+    "right": [
+     "Water-surface elevation relative to a local gauge reference",
+     "Volume of water passing a section per unit time",
+     "Place where two channels meet",
+     "Seasonal and longer-term pattern of river discharge"
+    ]
+   },
+   "options_te": [
+    "A–3; B–4; C–2; D–1",
+    "A–2; B–1; C–3; D–4",
+    "A–4; B–3; C–1; D–2",
+    "A–1; B–3; C–4; D–2"
+   ],
+   "explanation_en": "The correct matching is Discharge-2, Stage-1, Confluence-3 and Flow Regime-4: rate, elevation, meeting place and time pattern respectively.",
+   "explanation_te": "సరైన జతలు: ప్రవాహ పరిమాణం–2; నీటిమట్టం–1; సంగమం–3; ప్రవాహ విధానం–4. ఇవి వరుసగా నీటి ఘనపరిమాణ రేటు, నీటి ఉపరితల ఎత్తు, రెండు ప్రవాహాల కలయిక ప్రదేశం, కాలంతో మారే ప్రవాహ నమూనాను సూచిస్తాయి.",
+   "option_explanations_en": [
+    "Incorrect: discharge is not a meeting place and stage is not a seasonal pattern.",
+    "Correct: Discharge-2, Stage-1, Confluence-3, Flow Regime-4.",
+    "Incorrect: discharge is not a time pattern, while stage is not a confluence.",
+    "Incorrect: discharge is not stage, and flow regime is not discharge volume at one instant."
+   ],
+   "option_explanations_te": [
+    "ప్రవాహ పరిమాణం సంగమ స్థలం కాదు; నీటిమట్టం ఋతువారీ నమూనా కాదు.",
+    "సరైనది: ప్రవాహ పరిమాణం–2, నీటిమట్టం–1, సంగమం–3, ప్రవాహ విధానం–4.",
+    "ప్రవాహ పరిమాణం కాల నమూనా కాదు; నీటిమట్టం సంగమం కాదు.",
+    "ప్రవాహ పరిమాణం నీటి ఉపరితల ఎత్తు కాదు; ప్రవాహ విధానం ఒక క్షణంలోని ఘనపరిమాణం కాదు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-25-013": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Godavari source region; B. Krishna source region; C. Kaveri source region; D. Mahanadi source region. List II: 1. Trimbakeshwar near Nashik in Maharashtra; 2. Talakaveri in the Brahmagiri hills of Kodagu (Karnataka); 3. Mahabaleshwar area in the Western Ghats; 4. Sihawa region in Chhattisgarh.",
+   "matching_lists_en": {
+    "left": [
+     "Godavari source region",
+     "Krishna source region",
+     "Kaveri source region",
+     "Mahanadi source region"
+    ],
+    "right": [
+     "Trimbakeshwar near Nashik in Maharashtra",
+     "Talakaveri in the Brahmagiri hills of Kodagu (Karnataka)",
+     "Mahabaleshwar area in the Western Ghats",
+     "Sihawa region in Chhattisgarh"
+    ]
+   },
+   "options_en": [
+    "A–4; B–2; C–3; D–1",
+    "A–1; B–3; C–2; D–4",
+    "A–2; B–4; C–1; D–3",
+    "A–3; B–2; C–4; D–1"
+   ],
+   "question_te": "జాబితా–Iలోని నదులను జాబితా–IIలోని పుట్టిన ప్రదేశాలతో సరిపోల్చండి. A. గోదావరి; B. కృష్ణా; C. కావేరి; D. మహానది. 1. త్రయంబకేశ్వర్; 2. కొడగు (కర్ణాటక) బ్రహ్మగిరి కొండల్లోని తలకావేరి; 3. మహాబలేశ్వర్; 4. సిహావా ప్రాంతం.",
+   "matching_lists_te": {
+    "left": [
+     "Godavari source region / గోదావరి మూల ప్రాంతం",
+     "Krishna source region / కృష్ణా మూల ప్రాంతం",
+     "Kaveri source region / కావేరి మూల ప్రాంతం",
+     "Mahanadi source region / మహానది మూల ప్రాంతం"
+    ],
+    "right": [
+     "Trimbakeshwar near Nashik in Maharashtra",
+     "Talakaveri in the Brahmagiri hills of Kodagu (Karnataka)",
+     "Mahabaleshwar area in the Western Ghats",
+     "Sihawa region in Chhattisgarh"
+    ]
+   },
+   "options_te": [
+    "A–4; B–2; C–3; D–1",
+    "A–1; B–3; C–2; D–4",
+    "A–2; B–4; C–1; D–3",
+    "A–3; B–2; C–4; D–1"
+   ],
+   "explanation_en": "The correct source mapping is Godavari–Trimbakeshwar (1), Krishna–Mahabaleshwar (3), Cauvery–Talakaveri (2), and Mahanadi–Sihawa (4).",
+   "explanation_te": "సరైన క్రమం: గోదావరి–త్రయంబకేశ్వర్ (1), కృష్ణా–మహాబలేశ్వర్ (3), కావేరి–తలకావేరి (2), మహానది–సిహావా ప్రాంతం (4). కాబట్టి A–1, B–3, C–2, D–4.",
+   "option_explanations_en": [
+    "Incorrect: all four source pairs are displaced.",
+    "Correct: A–1, B–3, C–2 and D–4.",
+    "Incorrect: none of the four rivers is matched to its source.",
+    "Incorrect: Krishna, Cauvery and Mahanadi are mismatched."
+   ],
+   "option_explanations_te": [
+    "తప్పు: నాలుగు మూలస్థాన జతలూ మారాయి.",
+    "సరైనది: A–1, B–3, C–2, D–4.",
+    "తప్పు: ఏ నదీ సరైన మూలస్థానంతో జతపడలేదు.",
+    "తప్పు: కృష్ణా, కావేరి, మహానది జతలు సరిపోవు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-25-014": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Narmada source region; B. Tapi source region; C. Periyar outlet setting; D. Luni drainage setting. List II: 1. Arid western drainage towards the Rann of Kutch region; 2. Multai area in Madhya Pradesh; 3. Major west-coast river system of Kerala; 4. Amarkantak area.",
+   "matching_lists_en": {
+    "left": [
+     "Narmada source region",
+     "Tapi source region",
+     "Periyar outlet setting",
+     "Luni drainage setting"
+    ],
+    "right": [
+     "Arid western drainage towards the Rann of Kutch region",
+     "Multai area in Madhya Pradesh",
+     "Major west-coast river system of Kerala",
+     "Amarkantak area"
+    ]
+   },
+   "options_en": [
+    "A–2; B–3; C–1; D–4",
+    "A–3; B–1; C–4; D–2",
+    "A–1; B–3; C–2; D–4",
+    "A–4; B–2; C–3; D–1"
+   ],
+   "question_te": "జాబితా–Iలోని నది లేదా నదీ వ్యవస్థను జాబితా–IIలోని భౌగోళిక సంబంధంతో సరిపోల్చండి. A. నర్మదా; B. తాపీ; C. పెరియార్; D. లూనీ. 1. రాణ్ ఆఫ్ కచ్ వైపు సాగే శుష్క ప్రాంత నదీ వ్యవస్థ; 2. ముల్తాయ్; 3. కేరళలోని పశ్చిమ ప్రవాహ నది; 4. అమరకంటక్.",
+   "matching_lists_te": {
+    "left": [
+     "Narmada source region / నర్మదా మూల ప్రాంతం",
+     "Tapi source region / తాపీ మూల ప్రాంతం",
+     "Periyar outlet setting / పెరియార్ తీరం",
+     "Luni drainage setting / లూనీ పరీవాహకం"
+    ],
+    "right": [
+     "Arid western drainage towards the Rann of Kutch region",
+     "Multai area in Madhya Pradesh",
+     "Major west-coast river system of Kerala",
+     "Amarkantak area"
+    ]
+   },
+   "options_te": [
+    "A–2; B–3; C–1; D–4",
+    "A–3; B–1; C–4; D–2",
+    "A–1; B–3; C–2; D–4",
+    "A–4; B–2; C–3; D–1"
+   ],
+   "explanation_en": "The correct mapping is Narmada–Amarkantak (4), Tapi–Multai (2), Periyar–Kerala west-flowing river (3), and Luni–arid drainage toward the Rann of Kutch (1).",
+   "explanation_te": "సరైన జతలు: నర్మదా–అమరకంటక్ (4), తాపీ–ముల్తాయ్ (2), పెరియార్–కేరళ పశ్చిమ ప్రవాహ నది (3), లూనీ–రాణ్ ఆఫ్ కచ్ వైపు సాగే శుష్క ప్రాంత నదీ వ్యవస్థ (1).",
+   "option_explanations_en": [
+    "Incorrect: the four relationships are mismatched.",
+    "Incorrect: every relationship is shifted.",
+    "Incorrect: none of the four is correct.",
+    "Correct: A–4, B–2, C–3 and D–1."
+   ],
+   "option_explanations_te": [
+    "తప్పు: నాలుగు సంబంధాలూ సరిపోవు.",
+    "తప్పు: ప్రతి సంబంధం మారింది.",
+    "తప్పు: నాలుగింటిలో ఏదీ సరైనది కాదు.",
+    "సరైనది: A–4, B–2, C–3, D–1."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-25-015": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Delta growth condition; B. Estuarine mixing; C. Reservoir regulation; D. Sediment trapping by dams. List II: 1. Interaction of river freshwater and marine water in a coastal basin; 2. Sediment accumulation at a river mouth sustained relative to removal; 3. Reservoir retention reducing some downstream sediment delivery; 4. Storage and release changing downstream timing of flows.",
+   "matching_lists_en": {
+    "left": [
+     "Delta growth condition",
+     "Estuarine mixing",
+     "Reservoir regulation",
+     "Sediment trapping by dams"
+    ],
+    "right": [
+     "Interaction of river freshwater and marine water in a coastal basin",
+     "Sediment accumulation at a river mouth sustained relative to removal",
+     "Reservoir retention reducing some downstream sediment delivery",
+     "Storage and release changing downstream timing of flows"
+    ]
+   },
+   "options_en": [
+    "A–1; B–4; C–3; D–2",
+    "A–2; B–1; C–4; D–3",
+    "A–3; B–4; C–1; D–2",
+    "A–4; B–3; C–2; D–1"
+   ],
+   "question_te": "జాబితా–Iలోని ప్రక్రియను జాబితా–IIలోని వివరణతో సరిపోల్చండి. A. డెల్టా వృద్ధి (Delta Growth); B. నదీముఖ మిశ్రమం (Estuarine Mixing); C. జలాశయ నియంత్రణ (Reservoir Regulation); D. అవక్షేప నిరోధం (Sediment Trapping). 1. నది మంచినీరు, సముద్రపు ఉప్పునీరు కలవడం; 2. తొలగింపుకంటే నదీముఖ అవక్షేప నిక్షేపణ ఎక్కువగా ఉండటం; 3. జలాశయంలో అవక్షేపం నిలిచి దిగువకు చేరే పరిమాణం తగ్గడం; 4. నీటి నిల్వ–విడుదల వల్ల దిగువ ప్రవాహ సమయం మారడం.",
+   "matching_lists_te": {
+    "left": [
+     "Delta growth condition / డెల్టా వృద్ధి పరిస్థితి",
+     "Estuarine mixing / నదీముఖ మిశ్రమం",
+     "Reservoir regulation / జలాశయ నియంత్రణ",
+     "Sediment trapping by dams / అవక్షేప నిరోధం"
+    ],
+    "right": [
+     "Interaction of river freshwater and marine water in a coastal basin",
+     "Sediment accumulation at a river mouth sustained relative to removal",
+     "Reservoir retention reducing some downstream sediment delivery",
+     "Storage and release changing downstream timing of flows"
+    ]
+   },
+   "options_te": [
+    "A–1; B–4; C–3; D–2",
+    "A–2; B–1; C–4; D–3",
+    "A–3; B–4; C–1; D–2",
+    "A–4; B–3; C–2; D–1"
+   ],
+   "explanation_en": "The correct process mapping is Delta Growth–2, Estuarine Mixing–1, Reservoir Regulation–4 and Sediment Trapping–3. Flow regulation and sediment retention are related but distinct.",
+   "explanation_te": "సరైన జతలు: డెల్టా వృద్ధి–2; నదీముఖ మిశ్రమం–1; జలాశయ నియంత్రణ–4; అవక్షేప నిరోధం–3. నీటి ప్రవాహ నియంత్రణ, అవక్షేప నిలుపుదల ఒకే ప్రక్రియ కావు.",
+   "option_explanations_en": [
+    "Incorrect: all four processes are mismatched.",
+    "Correct: A–2, B–1, C–4 and D–3.",
+    "Incorrect: the relationships do not define the named processes.",
+    "Incorrect: all four definitions are assigned to the wrong process."
+   ],
+   "option_explanations_te": [
+    "తప్పు: నాలుగు ప్రక్రియలూ తప్పుడు వివరణలతో జతపడ్డాయి.",
+    "సరైనది: A–2, B–1, C–4, D–3.",
+    "తప్పు: నిర్వచనాలు పేర్కొన్న ప్రక్రియలకు సరిపోవు.",
+    "తప్పు: నాలుగు నిర్వచనాలూ తప్పుడు ప్రక్రియలకు ఇచ్చారు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-26-013": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Pranhita; B. Indravati; C. Sabari; D. Tungabhadra. List II: 1. Rises in the Sinkaram hills of Odisha and joins the Godavari at Kunavaram; 2. Formed by the Wardha and Wainganga; joins the Godavari at Kaleshwaram; 3. Rises in Kalahandi in Odisha, crosses the Bastar plateau, joins near Bhadrakali; 4. Formed by the Tunga and Bhadra; joins the Krishna as a right-bank tributary.",
+   "matching_lists_en": {
+    "left": [
+     "Pranhita",
+     "Indravati",
+     "Sabari",
+     "Tungabhadra"
+    ],
+    "right": [
+     "Rises in the Sinkaram hills of Odisha and joins the Godavari at Kunavaram",
+     "Formed by the Wardha and Wainganga; joins the Godavari at Kaleshwaram",
+     "Rises in Kalahandi in Odisha, crosses the Bastar plateau, joins near Bhadrakali",
+     "Formed by the Tunga and Bhadra; joins the Krishna as a right-bank tributary"
+    ]
+   },
+   "options_en": [
+    "A–2; B–3; C–1; D–4",
+    "A–4; B–1; C–3; D–2",
+    "A–1; B–4; C–2; D–3",
+    "A–3; B–1; C–4; D–2"
+   ],
+   "question_te": "జాబితా–Iలోని నదిని జాబితా–IIలోని వివరణతో సరిపోల్చండి. A. ప్రాణహిత; B. ఇంద్రావతి; C. శబరి; D. తుంగభద్ర. 1. ఒడిశా సింకరం కొండల్లో పుట్టి కునవరం వద్ద గోదావరిలో కలుస్తుంది; 2. వార్ధా, వైన్‌గంగా కలిసి ఏర్పడి కాళేశ్వరం వద్ద గోదావరిలో కలుస్తుంది; 3. ఒడిశా కలహండిలో పుట్టి బస్తర్ పీఠభూమి దాటి భద్రకాళి వద్ద కలుస్తుంది; 4. తుంగ, భద్ర కలిసి ఏర్పడి కృష్ణాలో కుడి ఒడ్డు ఉపనదిగా కలుస్తుంది.",
+   "matching_lists_te": {
+    "left": [
+     "Pranhita / ప్రాణహిత",
+     "Indravati / ఇంద్రావతి",
+     "Sabari / శబరి",
+     "Tungabhadra / తుంగభద్ర"
+    ],
+    "right": [
+     "Rises in the Sinkaram hills of Odisha and joins the Godavari at Kunavaram",
+     "Formed by the Wardha and Wainganga; joins the Godavari at Kaleshwaram",
+     "Rises in Kalahandi in Odisha, crosses the Bastar plateau, joins near Bhadrakali",
+     "Formed by the Tunga and Bhadra; joins the Krishna as a right-bank tributary"
+    ]
+   },
+   "options_te": [
+    "A–2; B–3; C–1; D–4",
+    "A–4; B–1; C–3; D–2",
+    "A–1; B–4; C–2; D–3",
+    "A–3; B–1; C–4; D–2"
+   ],
+   "explanation_en": "The correct matching is Pranhita-2, Indravati-3, Sabari-1 and Tungabhadra-4. The first three are left-bank tributaries of the Godavari; the Tungabhadra belongs to the Krishna.",
+   "explanation_te": "సరైన జతలు: ప్రాణహిత–2, ఇంద్రావతి–3, శబరి–1, తుంగభద్ర–4. మొదటి మూడు గోదావరికి ఎడమ ఒడ్డు ఉపనదులు; తుంగభద్ర కృష్ణా నదీ వ్యవస్థకు చెందుతుంది.",
+   "option_explanations_en": [
+    "Correct: A–2, B–3, C–1, D–4.",
+    "Incorrect: all four are mismatched.",
+    "Incorrect: none of the four relationships is correct.",
+    "Incorrect: Pranhita, Tungabhadra and Indravati are mismatched."
+   ],
+   "option_explanations_te": [
+    "సరైనది: A–2, B–3, C–1, D–4.",
+    "తప్పు: నాలుగు సంబంధాలూ సరిపోవు.",
+    "తప్పు: ఏ సంబంధమూ సరైనది కాదు.",
+    "తప్పు: ప్రాణహిత, తుంగభద్ర, ఇంద్రావతి జతలు సరిపోవు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-26-014": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Bhima; B. Chitravathi; C. Papagni; D. Cheyyeru. List II: 1. Right-bank tributary of the Penna formed by the Bahuda and Pincha streams; 2. Left-bank tributary of the Krishna that joins it near Raichur; 3. Right-bank tributary of the Penna that joins it near Kamalapuram; 4. Right-bank tributary of the Penna; Puttaparthi stands on its bank.",
+   "matching_lists_en": {
+    "left": [
+     "Bhima",
+     "Chitravathi",
+     "Papagni",
+     "Cheyyeru"
+    ],
+    "right": [
+     "Right-bank tributary of the Penna formed by the Bahuda and Pincha streams",
+     "Left-bank tributary of the Krishna that joins it near Raichur",
+     "Right-bank tributary of the Penna that joins it near Kamalapuram",
+     "Right-bank tributary of the Penna; Puttaparthi stands on its bank"
+    ]
+   },
+   "options_en": [
+    "A–3; B–1; C–2; D–4",
+    "A–2; B–4; C–3; D–1",
+    "A–4; B–3; C–1; D–2",
+    "A–1; B–3; C–4; D–2"
+   ],
+   "question_te": "జాబితా–Iలోని నదిని జాబితా–IIలోని వివరణతో సరిపోల్చండి. A. భీమా; B. చిత్రావతి; C. పాపాఘ్ని; D. చెయ్యేరు. 1. బహుదా, పింఛ వాగులు కలిసి ఏర్పడే పెన్నా కుడి ఒడ్డు ఉపనది; 2. రాయచూర్ దగ్గర కృష్ణాలో కలిసే ఎడమ ఒడ్డు ఉపనది; 3. కమలాపురం దగ్గర పెన్నాలో కలిసే కుడి ఒడ్డు ఉపనది; 4. పెన్నాకు కుడి ఒడ్డు ఉపనది; దీని ఒడ్డున పుట్టపర్తి ఉంది.",
+   "matching_lists_te": {
+    "left": [
+     "Bhima / భీమా",
+     "Chitravathi / చిత్రావతి",
+     "Papagni / పాపాగ్ని",
+     "Cheyyeru / చెయ్యేరు"
+    ],
+    "right": [
+     "Right-bank tributary of the Penna formed by the Bahuda and Pincha streams",
+     "Left-bank tributary of the Krishna that joins it near Raichur",
+     "Right-bank tributary of the Penna that joins it near Kamalapuram",
+     "Right-bank tributary of the Penna; Puttaparthi stands on its bank"
+    ]
+   },
+   "options_te": [
+    "A–3; B–1; C–2; D–4",
+    "A–2; B–4; C–3; D–1",
+    "A–4; B–3; C–1; D–2",
+    "A–1; B–3; C–4; D–2"
+   ],
+   "explanation_en": "The correct matching is Bhima-2, Chitravathi-4, Papagni-3 and Cheyyeru-1. The Bhima is a left-bank tributary of the Krishna; the other three are right-bank tributaries of the Penna.",
+   "explanation_te": "సరైన జతలు: భీమా–2, చిత్రావతి–4, పాపాఘ్ని–3, చెయ్యేరు–1. భీమా కృష్ణాకు ఎడమ ఒడ్డు ఉపనది; మిగతా మూడు పెన్నాకు కుడి ఒడ్డు ఉపనదులు.",
+   "option_explanations_en": [
+    "Incorrect: all four relationships are wrong.",
+    "Correct: A–2, B–4, C–3, D–1.",
+    "Incorrect: all four are displaced.",
+    "Incorrect: none is correctly mapped."
+   ],
+   "option_explanations_te": [
+    "తప్పు: నాలుగు సంబంధాలూ తప్పు.",
+    "సరైనది: A–2, B–4, C–3, D–1.",
+    "తప్పు: నాలుగు జతలూ స్థానభ్రంశం చెందాయి.",
+    "తప్పు: ఏ జతా సరైనది కాదు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-26-015": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Prakasam Barrage; B. Dowleswaram Barrage; C. Somasila; D. Gotta Barrage. List II: 1. Reservoir project built across Penna; 2. Barrage across Vamsadhara; 3. Barrage system across Godavari near Rajamahendravaram; 4. Barrage across Krishna at Vijayawada.",
+   "matching_lists_en": {
+    "left": [
+     "Prakasam Barrage",
+     "Dowleswaram Barrage",
+     "Somasila",
+     "Gotta Barrage"
+    ],
+    "right": [
+     "Reservoir project built across Penna",
+     "Barrage across Vamsadhara",
+     "Barrage system across Godavari near Rajamahendravaram",
+     "Barrage across Krishna at Vijayawada"
+    ]
+   },
+   "options_en": [
+    "A–2; B–1; C–3; D–4",
+    "A–3; B–1; C–2; D–4",
+    "A–4; B–3; C–1; D–2",
+    "A–1; B–2; C–4; D–3"
+   ],
+   "question_te": "జాబితా–Iలోని ప్రాజెక్టును జాబితా–IIలోని నదితో సరిపోల్చండి. A. ప్రకాశం బ్యారేజ్; B. ధవళేశ్వరం బ్యారేజ్; C. సోమశిల; D. గొట్టా బ్యారేజ్. 1. పెన్నా; 2. వంశధార; 3. గోదావరి; 4. కృష్ణా.",
+   "matching_lists_te": {
+    "left": [
+     "Prakasam Barrage / ప్రకాశం బ్యారేజ్",
+     "Dowleswaram Barrage / ధవళేశ్వరం బ్యారేజ్",
+     "Somasila / సోమశిల",
+     "Gotta Barrage / గొట్టా బ్యారేజ్"
+    ],
+    "right": [
+     "Reservoir project built across Penna",
+     "Barrage across Vamsadhara",
+     "Barrage system across Godavari near Rajamahendravaram",
+     "Barrage across Krishna at Vijayawada"
+    ]
+   },
+   "options_te": [
+    "A–2; B–1; C–3; D–4",
+    "A–3; B–1; C–2; D–4",
+    "A–4; B–3; C–1; D–2",
+    "A–1; B–2; C–4; D–3"
+   ],
+   "explanation_en": "The correct project-river mapping is Prakasam–Krishna (4), Dowleswaram–Godavari (3), Somasila–Penna (1), and Gotta–Vamsadhara (2).",
+   "explanation_te": "సరైన జతలు: ప్రకాశం–కృష్ణా (4), ధవళేశ్వరం–గోదావరి (3), సోమశిల–పెన్నా (1), గొట్టా–వంశధార (2). కాబట్టి A–4, B–3, C–1, D–2.",
+   "option_explanations_en": [
+    "Incorrect: all four are mismatched.",
+    "Incorrect: none is correctly paired.",
+    "Correct: A–4, B–3, C–1, D–2.",
+    "Incorrect: all four project-river pairs are wrong."
+   ],
+   "option_explanations_te": [
+    "తప్పు: నాలుగు జతలూ సరిపోవు.",
+    "తప్పు: ఏ జతా సరైనది కాదు.",
+    "సరైనది: A–4, B–3, C–1, D–2.",
+    "తప్పు: నాలుగు ప్రాజెక్టు–నది జతలూ తప్పు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-27-013": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Hydrograph; B. Peak discharge; C. Lag time; D. Baseflow. List II: 1. Graph of discharge or water level against time; 2. Delay between a defined rainfall measure and river response; 3. Delayed contribution commonly sustained by groundwater and storage; 4. Maximum discharge during a specified event or period.",
+   "matching_lists_en": {
+    "left": [
+     "Hydrograph",
+     "Peak discharge",
+     "Lag time",
+     "Baseflow"
+    ],
+    "right": [
+     "Graph of discharge or water level against time",
+     "Delay between a defined rainfall measure and river response",
+     "Delayed contribution commonly sustained by groundwater and storage",
+     "Maximum discharge during a specified event or period"
+    ]
+   },
+   "options_en": [
+    "A–1; B–4; C–2; D–3",
+    "A–3; B–2; C–4; D–1",
+    "A–2; B–3; C–1; D–4",
+    "A–4; B–2; C–3; D–1"
+   ],
+   "question_te": "జాబితా–Iలోని భావనను జాబితా–IIలోని నిర్వచనంతో సరిపోల్చండి. A. ప్రవాహ కాలరేఖ (Hydrograph); B. గరిష్ఠ ప్రవాహ పరిమాణం (Peak Discharge); C. ప్రతిస్పందన ఆలస్యం (Lag Time); D. ఆధార ప్రవాహం (Baseflow). 1. ప్రవాహ పరిమాణం లేదా నీటి మట్టం–కాలం రేఖాచిత్రం; 2. వర్షపాత కొలత, నదీ ప్రతిస్పందన మధ్య ఆలస్యం; 3. భూగర్భజలం, నిల్వ నీటి వల్ల కొనసాగే ఆలస్య ప్రవాహం; 4. ఒక సంఘటనలో గరిష్ఠ ప్రవాహ పరిమాణం.",
+   "matching_lists_te": {
+    "left": [
+     "Hydrograph / ప్రవాహ కాలరేఖ",
+     "Peak discharge / గరిష్ఠ ప్రవాహం",
+     "Lag time / ప్రతిస్పందన ఆలస్యం",
+     "Baseflow / ఆధార ప్రవాహం"
+    ],
+    "right": [
+     "Graph of discharge or water level against time",
+     "Delay between a defined rainfall measure and river response",
+     "Delayed contribution commonly sustained by groundwater and storage",
+     "Maximum discharge during a specified event or period"
+    ]
+   },
+   "options_te": [
+    "A–1; B–4; C–2; D–3",
+    "A–3; B–2; C–4; D–1",
+    "A–2; B–3; C–1; D–4",
+    "A–4; B–2; C–3; D–1"
+   ],
+   "explanation_en": "The correct mapping is Hydrograph–1, Peak Discharge–4, Lag Time–2 and Baseflow–3. The hydrograph is the full time series; the peak is one maximum value; lag is a timing delay; baseflow is delayed stored-water contribution.",
+   "explanation_te": "సరైన జతలు: ప్రవాహ కాలరేఖ–1, గరిష్ఠ ప్రవాహ పరిమాణం–4, ప్రతిస్పందన ఆలస్యం–2, ఆధార ప్రవాహం–3. కాలరేఖ మొత్తం కాల శ్రేణి; గరిష్ఠ ప్రవాహం ఒక్క అత్యున్నత విలువ; ఆలస్యం సమయ వ్యత్యాసం; ఆధార ప్రవాహం భూగర్భజలం లేదా నిల్వ నుంచి వచ్చే సహకారం.",
+   "option_explanations_en": [
+    "Correct: A–1, B–4, C–2 and D–3.",
+    "Incorrect: all four hydrological terms are mismatched.",
+    "Incorrect: none of the four definitions is correctly assigned.",
+    "Incorrect: the hydrograph, peak and baseflow are mismatched."
+   ],
+   "option_explanations_te": [
+    "సరైనది: A–1, B–4, C–2, D–3.",
+    "తప్పు: నాలుగు జలవిజ్ఞాన పదాలూ సరిపోవు.",
+    "తప్పు: ఏ నిర్వచనమూ సరైన పదానికి ఇవ్వలేదు.",
+    "తప్పు: ప్రవాహ కాలరేఖ, గరిష్ఠ ప్రవాహం, ఆధార ప్రవాహం జతలు సరిపోవు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-27-014": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Infiltration; B. Groundwater recharge; C. Water withdrawal; D. Consumptive use. List II: 1. Water reaching and replenishing an aquifer; 2. Water entering the soil surface; 3. Water not promptly returned to the source system after use; 4. Water removed from a source for use.",
+   "matching_lists_en": {
+    "left": [
+     "Infiltration",
+     "Groundwater recharge",
+     "Water withdrawal",
+     "Consumptive use"
+    ],
+    "right": [
+     "Water reaching and replenishing an aquifer",
+     "Water entering the soil surface",
+     "Water not promptly returned to the source system after use",
+     "Water removed from a source for use"
+    ]
+   },
+   "options_en": [
+    "A–3; B–4; C–1; D–2",
+    "A–2; B–1; C–4; D–3",
+    "A–4; B–3; C–2; D–1",
+    "A–1; B–4; C–3; D–2"
+   ],
+   "question_te": "జాబితా–Iలోని భావనను జాబితా–IIలోని నిర్వచనంతో సరిపోల్చండి. A. చొరబాటు (Infiltration); B. భూగర్భజల పునర్భరణం (Groundwater Recharge); C. నీటి ఉపసంహరణ (Water Withdrawal); D. వినియోగంతో తిరిగిరాని నీరు (Consumptive Use). 1. జలధారకు చేరి దానిని పునర్భర్తీ చేసే నీరు; 2. నేల ఉపరితలం నుంచి నేలలోకి ప్రవేశించే నీరు; 3. వినియోగం తరువాత మూలానికి త్వరగా తిరిగి రాని నీరు; 4. వినియోగం కోసం మూలం నుంచి తీసుకున్న నీరు.",
+   "matching_lists_te": {
+    "left": [
+     "Infiltration / భూమిలో నీరు చొరబాటు",
+     "Groundwater recharge / భూగర్భజల పునర్భరణం",
+     "Water withdrawal / నీటి ఉపసంహరణం",
+     "Consumptive use / వినియోగంతో తిరిగిరాని భాగం"
+    ],
+    "right": [
+     "Water reaching and replenishing an aquifer",
+     "Water entering the soil surface",
+     "Water not promptly returned to the source system after use",
+     "Water removed from a source for use"
+    ]
+   },
+   "options_te": [
+    "A–3; B–4; C–1; D–2",
+    "A–2; B–1; C–4; D–3",
+    "A–4; B–3; C–2; D–1",
+    "A–1; B–4; C–3; D–2"
+   ],
+   "explanation_en": "The correct mapping is Infiltration–2, Recharge–1, Withdrawal–4 and Consumptive Use–3. Not all infiltration becomes recharge, and not all withdrawal becomes consumptive use.",
+   "explanation_te": "సరైన జతలు: చొరబాటు–2, పునర్భరణం–1, ఉపసంహరణ–4, వినియోగంతో తిరిగిరాని నీరు–3. చొరబడిన నీరంతా పునర్భరణం కాదు; ఉపసంహరించిన నీరంతా వినియోగంతో తిరిగిరాని భాగం కాదు.",
+   "option_explanations_en": [
+    "Incorrect: all four terms are mismatched.",
+    "Correct: A–2, B–1, C–4 and D–3.",
+    "Incorrect: none is correctly matched.",
+    "Incorrect: the four definitions are assigned to the wrong terms."
+   ],
+   "option_explanations_te": [
+    "తప్పు: నాలుగు పదాలూ తప్పుగా జతపడ్డాయి.",
+    "సరైనది: A–2, B–1, C–4, D–3.",
+    "తప్పు: ఏ జతా సరైనది కాదు.",
+    "తప్పు: నాలుగు నిర్వచనాలూ తప్పుడు పదాలకు ఇచ్చారు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-27-015": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Floodplain zoning; B. Embankment; C. Subsidence; D. Environmental flow. List II: 1. Water regime intended to sustain river ecosystems and dependent uses; 2. Guiding land use according to inundation hazard and vulnerability; 3. Raised structure intended to confine or exclude floodwaters; 4. Downward movement of the land surface.",
+   "matching_lists_en": {
+    "left": [
+     "Floodplain zoning",
+     "Embankment",
+     "Subsidence",
+     "Environmental flow"
+    ],
+    "right": [
+     "Water regime intended to sustain river ecosystems and dependent uses",
+     "Guiding land use according to inundation hazard and vulnerability",
+     "Raised structure intended to confine or exclude floodwaters",
+     "Downward movement of the land surface"
+    ]
+   },
+   "options_en": [
+    "A–1; B–4; C–3; D–2",
+    "A–2; B–3; C–4; D–1",
+    "A–3; B–4; C–1; D–2",
+    "A–4; B–1; C–2; D–3"
+   ],
+   "question_te": "జాబితా–Iలోని భావనను జాబితా–IIలోని నిర్వచనంతో సరిపోల్చండి. A. వరద మైదాన వినియోగ నియంత్రణ (Floodplain Zoning); B. వరద కట్ట (Embankment); C. భూ అవనతి (Subsidence); D. పర్యావరణ ప్రవాహం (Environmental Flow). 1. పర్యావరణ వ్యవస్థను నిలబెట్టే ప్రవాహ విధానం; 2. ముంపు ప్రమాదం ఆధారంగా భూవినియోగ మార్గదర్శనం; 3. వరద నీటిని నిర్దిష్ట ప్రాంతంలో ఉంచే ఎత్తైన నిర్మాణం; 4. భూ ఉపరితలం కిందికి దిగడం.",
+   "matching_lists_te": {
+    "left": [
+     "Floodplain zoning / వరద మైదాన వినియోగ నియంత్రణ",
+     "Embankment / వరద కట్ట",
+     "Subsidence / భూ అవనతి",
+     "Environmental flow / పర్యావరణ ప్రవాహం"
+    ],
+    "right": [
+     "Water regime intended to sustain river ecosystems and dependent uses",
+     "Guiding land use according to inundation hazard and vulnerability",
+     "Raised structure intended to confine or exclude floodwaters",
+     "Downward movement of the land surface"
+    ]
+   },
+   "options_te": [
+    "A–1; B–4; C–3; D–2",
+    "A–2; B–3; C–4; D–1",
+    "A–3; B–4; C–1; D–2",
+    "A–4; B–1; C–2; D–3"
+   ],
+   "explanation_en": "The correct mapping is Floodplain Zoning–2, Embankment–3, Subsidence–4 and Environmental Flow–1. They represent planning, a physical barrier, land movement and an ecological flow regime respectively.",
+   "explanation_te": "సరైన జతలు: వరద మైదాన నియంత్రణ–2, వరద కట్ట–3, భూ అవనతి–4, పర్యావరణ ప్రవాహం–1. ప్రణాళికా చర్య, భౌతిక అవరోధం, భూమి కదలిక, పర్యావరణ ప్రవాహ విధానం నాలుగు వేర్వేరు భావనలు.",
+   "option_explanations_en": [
+    "Incorrect: all four concepts are mismatched.",
+    "Correct: A–2, B–3, C–4 and D–1.",
+    "Incorrect: none is correctly assigned.",
+    "Incorrect: all four definitions are displaced."
+   ],
+   "option_explanations_te": [
+    "తప్పు: నాలుగు భావనలూ సరిపోవు.",
+    "సరైనది: A–2, B–3, C–4, D–1.",
+    "తప్పు: ఏదీ సరైన నిర్వచనంతో జతపడలేదు.",
+    "తప్పు: నాలుగు నిర్వచనాలూ స్థానభ్రంశం చెందాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-NEW-14-020": {
+   "question_en": "Match the rivers in List I with the places where they join, in List II:\nList I: A. Betwa B. Ken C. Chambal D. Son\nList II: 1. The Yamuna near Chilla; 2. The Yamuna near Etawah; 3. The Ganga near Patna; 4. The Yamuna near Hamirpur.",
+   "matching_lists_en": {
+    "left": [
+     "Betwa",
+     "Ken",
+     "Chambal",
+     "Son"
+    ],
+    "right": [
+     "The Yamuna near Chilla",
+     "The Yamuna near Etawah",
+     "The Ganga near Patna",
+     "The Yamuna near Hamirpur"
+    ]
+   },
+   "options_en": [
+    "A–1; B–4; C–3; D–2",
+    "A–4; B–1; C–3; D–2",
+    "A–4; B–1; C–2; D–3",
+    "A–2; B–1; C–4; D–3"
+   ],
+   "question_te": "జాబితా I లోని నదులను జాబితా II లోని అవి కలిసే చోట్లతో జతపరచండి:\nజాబితా I: A. బెట్వా B. కెన్ C. చంబల్ D. సోన్\nజాబితా II: 1. చిల్లా దగ్గర యమునలో; 2. ఇటావా దగ్గర యమునలో; 3. పాట్నా దగ్గర గంగలో; 4. హమీర్‌పూర్ దగ్గర యమునలో.",
+   "matching_lists_te": {
+    "left": [
+     "బెట్వా",
+     "కెన్",
+     "చంబల్",
+     "సోన్"
+    ],
+    "right": [
+     "చిల్లా దగ్గర యమునలో",
+     "ఇటావా దగ్గర యమునలో",
+     "పాట్నా దగ్గర గంగలో",
+     "హమీర్‌పూర్ దగ్గర యమునలో"
+    ]
+   },
+   "options_te": [
+    "A–1; B–4; C–3; D–2",
+    "A–4; B–1; C–3; D–2",
+    "A–4; B–1; C–2; D–3",
+    "A–2; B–1; C–4; D–3"
+   ],
+   "explanation_en": "The Betwa joins the Yamuna near Hamirpur, the Ken near Chilla and the Chambal near Etawah. The Son does not join the Yamuna; it joins the Ganga directly near Patna (Maner).",
+   "explanation_te": "బెట్వా హమీర్‌పూర్ దగ్గర, కెన్ చిల్లా దగ్గర, చంబల్ ఇటావా దగ్గర యమునలో కలుస్తాయి. సోన్ యమునలో కాదు, పాట్నా దగ్గర (మనేర్) నేరుగా గంగలో కలుస్తుంది.",
+   "option_explanations_en": [
+    "Wrong: A–1 does not fit; the Betwa joins near Hamirpur (4). B–4 does not fit; the Ken joins near Chilla (1). C–3 does not fit; the Chambal joins near Etawah (2). D–2 does not fit; the Son joins the Ganga near Patna (3).",
+    "Wrong: C–3 does not fit; the Chambal joins near Etawah (2). D–2 does not fit; the Son joins the Ganga near Patna (3).",
+    "Correct: A–4; B–1; C–2; D–3. The Betwa joins near Hamirpur (4). The Ken joins near Chilla (1). The Chambal joins near Etawah (2). The Son joins the Ganga near Patna (3).",
+    "Wrong: A–2 does not fit; the Betwa joins near Hamirpur (4). C–4 does not fit; the Chambal joins near Etawah (2)."
+   ],
+   "option_explanations_te": [
+    "తప్పు: A–1 సరికాదు; బెట్వా హమీర్‌పూర్ దగ్గర కలుస్తుంది (4). B–4 సరికాదు; కెన్ చిల్లా దగ్గర కలుస్తుంది (1). C–3 సరికాదు; చంబల్ ఇటావా దగ్గర కలుస్తుంది (2). D–2 సరికాదు; సోన్ పాట్నా దగ్గర గంగలో కలుస్తుంది (3).",
+    "తప్పు: C–3 సరికాదు; చంబల్ ఇటావా దగ్గర కలుస్తుంది (2). D–2 సరికాదు; సోన్ పాట్నా దగ్గర గంగలో కలుస్తుంది (3).",
+    "సరైనది: A–4; B–1; C–2; D–3. బెట్వా హమీర్‌పూర్ దగ్గర కలుస్తుంది (4). కెన్ చిల్లా దగ్గర కలుస్తుంది (1). చంబల్ ఇటావా దగ్గర కలుస్తుంది (2). సోన్ పాట్నా దగ్గర గంగలో కలుస్తుంది (3).",
+    "తప్పు: A–2 సరికాదు; బెట్వా హమీర్‌పూర్ దగ్గర కలుస్తుంది (4). C–4 సరికాదు; చంబల్ ఇటావా దగ్గర కలుస్తుంది (2)."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
   }
  }
 }

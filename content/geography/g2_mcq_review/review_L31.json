@@ -76,8 +76,6 @@
   "GEO-ORIG-57-004",
   "GEO-ORIG-57-006",
   "GEO-ORIG-57-007",
-  "GEO-ORIG-57-014",
-  "GEO-ORIG-57-015",
   "GEO-ORIG-57-022",
   "GEO-ORIG-57-023",
   "GEO-ORIG-57-024"
@@ -210,19 +208,61 @@
   "GEO-ORIG-57-013": {
    "matching_lists_en": {
     "left": [
+     "Life expectancy at birth",
+     "Mean years of schooling",
+     "Expected years of schooling",
+     "GNI per capita PPP"
+    ],
+    "right": [
+     "Expected years a newborn would live under prevailing age-specific mortality rates",
+     "National income per person adjusted for cross-country purchasing-power differences",
+     "Schooling years a school-entry child can expect under prevailing enrolment patterns",
+     "Average completed schooling years of adults aged 25 and older in the HDI framework"
+    ]
+   },
+   "reason": "Content correct; only a typo 'aged25' in matching_lists_en fixed. | List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern.",
+   "question_en": "Match List I with List II (one-to-one). List I: A. Life expectancy at birth; B. Mean years of schooling; C. Expected years of schooling; D. GNI per capita PPP. List II: 1. Expected years a newborn would live under prevailing age-specific mortality rates; 2. National income per person adjusted for cross-country purchasing-power differences; 3. Schooling years a school-entry child can expect under prevailing enrolment patterns; 4. Average completed schooling years of adults aged 25 and older in the HDI framework.",
+   "options_en": [
+    "A–4; B–3; C–2; D–1",
+    "A–1; B–4; C–3; D–2",
+    "A–2; B–3; C–4; D–1",
+    "A–3; B–2; C–1; D–4"
+   ],
+   "question_te": "మానవ అభివృద్ధి సూచిక (HDI)లోని అంశాలను వాటి అర్థాలతో జతపరచండి: A. పుట్టినప్పుడు ఆయుర్దాయం; B. సగటు విద్యా సంవత్సరాలు; C. ఆశించగల విద్యా సంవత్సరాలు; D. కొనుగోలు శక్తి సమానత్వం వద్ద తలసరి GNI. 1. ప్రస్తుత మరణ రేట్ల ప్రకారం నవజాత శిశువు జీవించగల సంవత్సరాలు; 2. కొనుగోలు శక్తికి సవరించిన తలసరి జాతీయ ఆదాయం; 3. ప్రస్తుత నమోదు ధోరణుల ప్రకారం బడిలో చేరే పిల్లవాడికి లభించగల విద్యా సంవత్సరాలు; 4. 25 సంవత్సరాలు పైబడిన పెద్దలు పూర్తిచేసిన విద్యా సంవత్సరాల సగటు.",
+   "matching_lists_te": {
+    "left": [
      "Life expectancy at birth / జనన సమయంలో ఆయుర్దాయం",
      "Mean years of schooling / సగటు విద్యా సంవత్సరాలు",
      "Expected years of schooling / ఆశించిన విద్యా సంవత్సరాలు",
      "GNI per capita PPP / PPP తలసరి జాతీయ ఆదాయం"
     ],
     "right": [
-     "Schooling years a school-entry child can expect under prevailing enrolment patterns",
      "Expected years a newborn would live under prevailing age-specific mortality rates",
      "National income per person adjusted for cross-country purchasing-power differences",
-     "Average completed schooling years of adults aged 25 and older in the HDI framework"
+     "Schooling years a school-entry child can expect under prevailing enrolment patterns",
+     "Average completed schooling years of adults aged25 and older in the HDI framework"
     ]
    },
-   "reason": "Content correct; only a typo 'aged25' in matching_lists_en fixed."
+   "options_te": [
+    "A–4; B–3; C–2; D–1",
+    "A–1; B–4; C–3; D–2",
+    "A–2; B–3; C–4; D–1",
+    "A–3; B–2; C–1; D–4"
+   ],
+   "explanation_en": "The correct matches are A–1, B–4, C–3 and D–2. HDI uses life expectancy for health, mean and expected schooling for education, and GNI per capita at PPP for living standards.",
+   "explanation_te": "సరైన జతలు A–1, B–4, C–3, D–2. ఆరోగ్య కోణానికి ఆయుర్దాయం; విద్యకు సగటు విద్యా సంవత్సరాలు, ఆశించగల విద్యా సంవత్సరాలు; జీవన ప్రమాణానికి PPP వద్ద తలసరి GNI ఉపయోగిస్తారు.",
+   "option_explanations_en": [
+    "A–4 is wrong; life expectancy matches 2.",
+    "All four matches are correct.",
+    "This incorrectly matches life expectancy with income.",
+    "This interchanges both schooling indicators."
+   ],
+   "option_explanations_te": [
+    "తప్పు; ఆయుర్దాయానికి 1 సరైన జత.",
+    "సరైంది; నాలుగు సూచికలూ వాటి అర్థాలతో సరిగ్గా జతపడ్డాయి.",
+    "తప్పు; ఆయుర్దాయాన్ని ఆదాయంతో జతపరిచింది.",
+    "తప్పు; సగటు, ఆశించగల విద్యా సంవత్సరాలను మార్చింది."
+   ]
   },
   "GEO-ORIG-57-016": {
    "question_en": "Consider the statements about HDR 2025 (2023 data; the latest HDR as of November 2026): I. South Sudan is ranked last, at 193. II. Norway and Switzerland share the second rank. Choose the correct option.",
@@ -476,6 +516,124 @@
    "question_en": "Why should state HDI values from India's NHDR 2001 not be compared directly with the country HDI table of HDR 2025?",
    "question_te": "భారత NHDR 2001 లోని రాష్ట్రాల HDI విలువలను HDR 2025 దేశాల HDI పట్టికతో నేరుగా ఎందుకు పోల్చకూడదు?",
    "reason": "Stem cited 'pages 527–528' (book/page meta); now asks the concept directly. Options and explanation still fit."
+  },
+  "GEO-ORIG-57-014": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. HDI; B. IHDI; C. GII; D. Global MPI. List II: 1. HDI adjusted for inequality in the distribution of each dimension; 2. Gender disadvantage measure covering reproductive health, empowerment and labour market; 3. Composite average achievement in health, education and living standards; 4. Measure of overlapping acute deprivations in health, education and living standards.",
+   "matching_lists_en": {
+    "left": [
+     "HDI",
+     "IHDI",
+     "GII",
+     "Global MPI"
+    ],
+    "right": [
+     "HDI adjusted for inequality in the distribution of each dimension",
+     "Gender disadvantage measure covering reproductive health, empowerment and labour market",
+     "Composite average achievement in health, education and living standards",
+     "Measure of overlapping acute deprivations in health, education and living standards"
+    ]
+   },
+   "options_en": [
+    "A–2; B–4; C–3; D–1",
+    "A–4; B–2; C–1; D–3",
+    "A–1; B–2; C–4; D–3",
+    "A–3; B–1; C–2; D–4"
+   ],
+   "question_te": "మిశ్రమ సూచికలను (Composite Indices) వాటి ప్రధాన లక్ష్యాలతో జతపరచండి: A. HDI; B. IHDI; C. GII; D. ప్రపంచ MPI. 1. పంపిణీ అసమానతకు సవరించిన HDI; 2. ప్రత్యుత్పత్తి ఆరోగ్యం, సాధికారత, శ్రామిక మార్కెట్‌లో లింగ ప్రతికూలత; 3. ఆరోగ్యం, విద్య, జీవన ప్రమాణంలో సగటు సాధన; 4. కుటుంబ స్థాయిలో మిళితమైన తీవ్రమైన లోపాలు.",
+   "matching_lists_te": {
+    "left": [
+     "HDI / మానవ అభివృద్ధి సూచిక",
+     "IHDI / అసమానత సవరించిన HDI",
+     "GII / లింగ అసమానత సూచిక",
+     "Global MPI / బహుముఖ పేదరిక సూచిక"
+    ],
+    "right": [
+     "HDI adjusted for inequality in the distribution of each dimension",
+     "Gender disadvantage measure covering reproductive health, empowerment and labour market",
+     "Composite average achievement in health, education and living standards",
+     "Measure of overlapping acute deprivations in health, education and living standards"
+    ]
+   },
+   "options_te": [
+    "A–2; B–4; C–3; D–1",
+    "A–4; B–2; C–1; D–3",
+    "A–1; B–2; C–4; D–3",
+    "A–3; B–1; C–2; D–4"
+   ],
+   "explanation_en": "The correct matches are A–3, B–1, C–2 and D–4. These indices measure different aspects and are not interchangeable.",
+   "explanation_te": "సరైన జతలు A–3, B–1, C–2, D–4. ఈ నాలుగు సూచికలు వేర్వేరు ప్రశ్నలకు సమాధానం ఇస్తాయి; వాటిని పరస్పరం మార్చి ఉపయోగించరాదు.",
+   "option_explanations_en": [
+    "This incorrectly matches HDI with GII.",
+    "This incorrectly matches HDI with MPI.",
+    "This incorrectly matches HDI with IHDI.",
+    "All four matches are correct."
+   ],
+   "option_explanations_te": [
+    "తప్పు; HDIని GII లక్ష్యంతో జతపరిచింది.",
+    "తప్పు; HDIని MPI లక్ష్యంతో జతపరిచింది.",
+    "తప్పు; HDIని IHDI లక్ష్యంతో జతపరిచింది.",
+    "సరైంది; నాలుగు సూచికలు వాటి లక్ష్యాలతో సరిగ్గా జతపడ్డాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-57-015": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Index score; B. Index rank; C. Reference year; D. Publication year. List II: 1. Year in which a report or dataset is released; 2. Numerical achievement value under a specified index methodology; 3. Relative ordered position among the compared units; 4. Time period to which an underlying observation relates.",
+   "matching_lists_en": {
+    "left": [
+     "Index score",
+     "Index rank",
+     "Reference year",
+     "Publication year"
+    ],
+    "right": [
+     "Year in which a report or dataset is released",
+     "Numerical achievement value under a specified index methodology",
+     "Relative ordered position among the compared units",
+     "Time period to which an underlying observation relates"
+    ]
+   },
+   "options_en": [
+    "A–1; B–4; C–3; D–2",
+    "A–4; B–1; C–2; D–3",
+    "A–2; B–3; C–4; D–1",
+    "A–3; B–4; C–1; D–2"
+   ],
+   "question_te": "నివేదిక పదాలను వాటి అర్థాలతో జతపరచండి: A. సూచిక విలువ (Index Score); B. సూచిక స్థానం (Index Rank); C. సూచన సంవత్సరం (Reference Year); D. ప్రచురణ సంవత్సరం (Publication Year). 1. నివేదిక విడుదలైన సంవత్సరం; 2. పద్ధతితో లెక్కించిన సాధన విలువ; 3. పోలిక సమూహంలోని సంబంధిత స్థానం; 4. గణాంకం చెందిన కాలం.",
+   "matching_lists_te": {
+    "left": [
+     "Index score / సూచిక విలువ",
+     "Index rank / సూచిక స్థానం",
+     "Reference year / గణాంక సూచన సంవత్సరం",
+     "Publication year / ప్రచురణ సంవత్సరం"
+    ],
+    "right": [
+     "Year in which a report or dataset is released",
+     "Numerical achievement value under a specified index methodology",
+     "Relative ordered position among the compared units",
+     "Time period to which an underlying observation relates"
+    ]
+   },
+   "options_te": [
+    "A–1; B–4; C–3; D–2",
+    "A–4; B–1; C–2; D–3",
+    "A–2; B–3; C–4; D–1",
+    "A–3; B–4; C–1; D–2"
+   ],
+   "explanation_en": "The correct matches are A–2, B–3, C–4 and D–1. Score, rank, reference year and publication year are distinct concepts.",
+   "explanation_te": "సరైన జతలు A–2, B–3, C–4, D–1. సూచిక విలువ, సంబంధిత స్థానం, గణాంక కాలం, విడుదల కాలం నాలుగు వేర్వేరు భావనలు.",
+   "option_explanations_en": [
+    "This incorrectly matches score with publication year.",
+    "This incorrectly matches score with reference year.",
+    "All four matches are correct.",
+    "This incorrectly matches score with rank."
+   ],
+   "option_explanations_te": [
+    "తప్పు; సూచిక విలువను ప్రచురణ సంవత్సరంతో జతపరిచింది.",
+    "తప్పు; సూచిక విలువను సూచన సంవత్సరంతో జతపరిచింది.",
+    "సరైంది; నాలుగు పదాలూ వాటి అర్థాలతో సరిగ్గా జతపడ్డాయి.",
+    "తప్పు; సూచిక విలువను ర్యాంకుతో జతపరిచింది."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
   }
  }
 }

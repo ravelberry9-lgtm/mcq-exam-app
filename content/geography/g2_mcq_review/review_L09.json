@@ -49,7 +49,6 @@
   "GEO-NEW-09-048",
   "GEO-NEW-09-049",
   "GEO-ORIG-14-008",
-  "GEO-ORIG-14-014",
   "GEO-ORIG-14-023",
   "GEO-ORIG-14-024",
   "GEO-ORIG-17-013",
@@ -2005,6 +2004,65 @@
   "GEO-NEW-09-008": {
    "question_te": "రాయలసీమలోని అనంతపురం జిల్లా భారతదేశంలోనే అతి తక్కువ వర్షం (సుమారు 550 mm) పడే జిల్లాల్లో ఒకటిగా ఉండటానికి ప్రధాన కారణం ఏది?",
    "reason": "Telugu stem carried the answer \"(Rain shadow)\" as a giveaway; removed."
+  },
+  "GEO-ORIG-14-014": {
+   "question_en": "Match List I with List II. List I: A. Weather; B. Climate; C. Climate normal; D. Temperature anomaly. List II: 1. Reference-period statistics commonly calculated over thirty years; 2. Short-term atmospheric conditions at a place; 3. Long-term statistical character of weather; 4. Observed temperature minus a stated reference mean.",
+   "matching_lists_en": {
+    "left": [
+     "Weather",
+     "Climate",
+     "Climate normal",
+     "Temperature anomaly"
+    ],
+    "right": [
+     "Reference-period statistics commonly calculated over thirty years",
+     "Short-term atmospheric conditions at a place",
+     "Long-term statistical character of weather",
+     "Observed temperature minus a stated reference mean"
+    ]
+   },
+   "options_en": [
+    "A–4; B–1; C–3; D–2",
+    "A–3; B–1; C–4; D–2",
+    "A–2; B–3; C–1; D–4",
+    "A–1; B–4; C–2; D–3"
+   ],
+   "question_te": "జాబితా–Iలోని పదాలను జాబితా–IIలోని నిర్వచనాలతో సరిపోల్చి సరైన సంకేతాన్ని ఎంచుకోండి. జాబితా–I: A. రోజువారీ వాతావరణం (Weather); B. శీతోష్ణస్థితి (Climate); C. శీతోష్ణస్థితి సగటు (Climate Normal); D. ఉష్ణోగ్రత విచలనం (Temperature Anomaly). జాబితా–II: 1. సాధారణంగా 30 సంవత్సరాల ఆధార కాలానికి లెక్కించిన గణాంకం; 2. ఒక ప్రదేశంలోని స్వల్పకాలిక వాతావరణ పరిస్థితులు; 3. వాతావరణం యొక్క దీర్ఘకాలిక గణాంక స్వభావం; 4. పరిశీలిత ఉష్ణోగ్రత − పేర్కొన్న ఆధార సగటు.",
+   "matching_lists_te": {
+    "left": [
+     "రోజువారీ వాతావరణం (Weather)",
+     "శీతోష్ణస్థితి (Climate)",
+     "శీతోష్ణస్థితి సగటు (Climate Normal)",
+     "ఉష్ణోగ్రత విచలనం (Temperature Anomaly)"
+    ],
+    "right": [
+     "సాధారణంగా 30 సంవత్సరాల ఆధార కాలానికి లెక్కించిన గణాంకం",
+     "ఒక ప్రదేశంలోని స్వల్పకాలిక వాతావరణ పరిస్థితులు",
+     "వాతావరణం యొక్క దీర్ఘకాలిక గణాంక స్వభావం",
+     "పరిశీలిత ఉష్ణోగ్రత − పేర్కొన్న ఆధార సగటు"
+    ]
+   },
+   "options_te": [
+    "A–4; B–1; C–3; D–2",
+    "A–3; B–1; C–4; D–2",
+    "A–2; B–3; C–1; D–4",
+    "A–1; B–4; C–2; D–3"
+   ],
+   "explanation_en": "Correct: A–2, B–3, C–1 and D–4.",
+   "explanation_te": "సరైనది: A–2, B–3, C–1, D–4.",
+   "option_explanations_en": [
+    "Incorrect. It confuses the anomaly with Weather and assigns the short-term state to the anomaly.",
+    "Incorrect. It assigns long-term Climate to Weather and misidentifies both benchmark terms.",
+    "Correct: A–2, B–3, C–1 and D–4.",
+    "Incorrect. None of the four definitions is paired with its correct term."
+   ],
+   "option_explanations_te": [
+    "తప్పు. ఇది Anomalyని Weatherతో కలిపి, స్వల్పకాలిక స్థితిని Anomalyకి జతచేస్తుంది.",
+    "తప్పు. ఇది దీర్ఘకాల Climateను Weatherకు జతచేసి రెండు ప్రమాణ పదాలను కూడా తారుమారు చేస్తుంది.",
+    "సరైనది: A–2, B–3, C–1, D–4.",
+    "తప్పు. నాలుగు నిర్వచనాల్లో ఏదీ సరైన పదంతో జత కాలేదు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
   }
  }
 }

@@ -78,7 +78,6 @@
   "GEO-ORIG-14-009",
   "GEO-ORIG-14-010",
   "GEO-ORIG-14-011",
-  "GEO-ORIG-14-015",
   "GEO-ORIG-14-016",
   "GEO-ORIG-14-017",
   "GEO-ORIG-14-018",
@@ -97,9 +96,6 @@
   "GEO-ORIG-15-010",
   "GEO-ORIG-15-011",
   "GEO-ORIG-15-012",
-  "GEO-ORIG-15-013",
-  "GEO-ORIG-15-014",
-  "GEO-ORIG-15-015",
   "GEO-ORIG-15-016",
   "GEO-ORIG-15-017",
   "GEO-ORIG-15-018",
@@ -111,7 +107,6 @@
   "GEO-ORIG-15-024",
   "GEO-ORIG-17-006",
   "GEO-ORIG-17-007",
-  "GEO-ORIG-38-015",
   "GEO-ORIG-38-023",
   "IA04-GAP-001",
   "WG14-P067-001",
@@ -573,7 +568,7 @@
    ]
   },
   "GEO-ORIG-14-013": {
-   "reason": "matching_lists_te labels (క్షోభమండలం/సమతాపమండలం/మధ్యమండలం/ఉష్ణమండలం) clash with the ఆవరణం terms used everywhere else; 'ఉష్ణమండలం' reads as 'tropics'.",
+   "reason": "matching_lists_te labels (క్షోభమండలం/సమతాపమండలం/మధ్యమండలం/ఉష్ణమండలం) clash with the ఆవరణం terms used everywhere else; 'ఉష్ణమండలం' reads as 'tropics'. | List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern.",
    "matching_lists_te": {
     "left": [
      "ట్రోపో ఆవరణం (Troposphere)",
@@ -583,11 +578,53 @@
     ],
     "right": [
      "స్ట్రాటో ఆవరణం పైన ఉండి, ఎత్తుతో ఉష్ణోగ్రత సాధారణంగా తగ్గే పొర",
-     "సాధారణ వాతావరణ ఘటనలు ఎక్కువగా జరిగే అట్టడుగు పొర",
      "గతిజ ఉష్ణోగ్రత పెరిగే, అత్యల్ప సాంద్రత గల ఎగువ పొర",
-     "ఓజోన్ శోషణ వల్ల ఎత్తుతో ఉష్ణోగ్రత పెరిగే పొర"
+     "ఓజోన్ శోషణ వల్ల ఎత్తుతో ఉష్ణోగ్రత పెరిగే పొర",
+     "సాధారణ వాతావరణ ఘటనలు ఎక్కువగా జరిగే అట్టడుగు పొర"
     ]
-   }
+   },
+   "question_en": "Match List I with List II. List I: A. Troposphere; B. Stratosphere; C. Mesosphere; D. Thermosphere. List II: 1. Layer above the Stratosphere where temperature generally decreases upward; 2. Very thin high-altitude layer with rising kinetic temperature; 3. Layer where ozone absorption supports warming with height; 4. Lowest layer containing most ordinary weather.",
+   "matching_lists_en": {
+    "left": [
+     "Troposphere",
+     "Stratosphere",
+     "Mesosphere",
+     "Thermosphere"
+    ],
+    "right": [
+     "Layer above the Stratosphere where temperature generally decreases upward",
+     "Very thin high-altitude layer with rising kinetic temperature",
+     "Layer where ozone absorption supports warming with height",
+     "Lowest layer containing most ordinary weather"
+    ]
+   },
+   "options_en": [
+    "A–3; B–1; C–2; D–4",
+    "A–2; B–1; C–3; D–4",
+    "A–1; B–2; C–4; D–3",
+    "A–4; B–3; C–1; D–2"
+   ],
+   "question_te": "జాబితా–Iలోని వాతావరణ పొరలను జాబితా–IIలోని లక్షణాలతో సరిపోల్చి సరైన సంకేతాన్ని ఎంచుకోండి. జాబితా–I: A. ట్రోపో ఆవరణం (Troposphere); B. స్ట్రాటో ఆవరణం (Stratosphere); C. మీసో ఆవరణం (Mesosphere); D. థర్మో ఆవరణం (Thermosphere). జాబితా–II: 1. స్ట్రాటో ఆవరణం పైన ఉండి, ఎత్తుతో ఉష్ణోగ్రత సాధారణంగా తగ్గే పొర; 2. గతిజ ఉష్ణోగ్రత పెరిగే, అత్యల్ప సాంద్రత గల ఎగువ పొర; 3. ఓజోన్ శోషణ వల్ల ఎత్తుతో ఉష్ణోగ్రత పెరిగే పొర; 4. సాధారణ వాతావరణ ఘటనలు ఎక్కువగా జరిగే అట్టడుగు పొర.",
+   "options_te": [
+    "A–3; B–1; C–2; D–4",
+    "A–2; B–1; C–3; D–4",
+    "A–1; B–2; C–4; D–3",
+    "A–4; B–3; C–1; D–2"
+   ],
+   "explanation_en": "Correct: A–4, B–3, C–1 and D–2.",
+   "explanation_te": "సరైనది: A–4, B–3, C–1, D–2.",
+   "option_explanations_en": [
+    "Incorrect: it assigns ozone warming to the Troposphere and ordinary weather to the Thermosphere.",
+    "Incorrect: it assigns high kinetic temperature to the Troposphere and ozone warming to the Mesosphere.",
+    "Incorrect: it reverses the position and defining processes of all four layers.",
+    "Correct: A–4, B–3, C–1 and D–2."
+   ],
+   "option_explanations_te": [
+    "తప్పు. ఇది ఓజోన్ వల్ల వేడెక్కడాన్ని ట్రోపో ఆవరణానికి, సాధారణ వాతావరణ ఘటనలను ఉష్ణమండలానికి తప్పుగా జతచేస్తుంది.",
+    "తప్పు. ఇది అధిక గతిజ ఉష్ణోగ్రతను ట్రోపో ఆవరణానికి, ఓజోన్ వేడెక్కింపును మీసో ఆవరణానికి తప్పుగా జతచేస్తుంది.",
+    "తప్పు. నాలుగు పొరల స్థానం, ప్రధాన ప్రక్రియలను తారుమారు చేస్తుంది.",
+    "సరైనది: A–4, B–3, C–1, D–2."
+   ]
   },
   "WG14-P067-003": {
    "reason": "Duplicate of GEO-ORIG-14-022 (ionosphere = overlapping region defined by ionisation, same answer). GEO-ORIG-14-022 kept; this rewritten to the Kennelly–Heaviside layer (notes, ionosphere history).",
@@ -4445,6 +4482,301 @@
    "reason": "'According to NCERT' stem; asked the fact directly (normal lapse rate).",
    "question_en": "At the normal lapse rate, temperature in the Troposphere falls by 1 °C for about every how many metres of height?",
    "question_te": "సాధారణ Lapse rate ప్రకారం Troposphere లో ఎత్తుకు వెళ్తే సుమారు ఎన్ని మీటర్లకు 1 °C చొప్పున ఉష్ణోగ్రత తగ్గుతుంది?"
+  },
+  "GEO-ORIG-14-015": {
+   "question_en": "Match List I with List II. List I: A. Dry-air Nitrogen; B. Dry-air Oxygen; C. Stratospheric ozone; D. Water vapour. List II: 1. About 21 percent of dry air; 2. About 78 percent of dry air; 3. Trace-gas region absorbing much harmful UV radiation; 4. Variable gas central to humidity and the Water cycle.",
+   "matching_lists_en": {
+    "left": [
+     "Dry-air Nitrogen",
+     "Dry-air Oxygen",
+     "Stratospheric ozone",
+     "Water vapour"
+    ],
+    "right": [
+     "About 21 percent of dry air",
+     "About 78 percent of dry air",
+     "Trace-gas region absorbing much harmful UV radiation",
+     "Variable gas central to humidity and the Water cycle"
+    ]
+   },
+   "options_en": [
+    "A–3; B–4; C–2; D–1",
+    "A–1; B–3; C–4; D–2",
+    "A–2; B–1; C–3; D–4",
+    "A–4; B–3; C–1; D–2"
+   ],
+   "question_te": "జాబితా–Iలోని వాతావరణ భాగాలను జాబితా–IIలోని లక్షణాలతో సరిపోల్చి సరైన సంకేతాన్ని ఎంచుకోండి. జాబితా–I: A. పొడి గాలిలో నత్రజని (Nitrogen); B. పొడి గాలిలో ఆక్సిజన్ (Oxygen); C. స్ట్రాటో ఆవరణ ఓజోన్ (Stratospheric Ozone); D. నీటి ఆవిరి (Water Vapour). జాబితా–II: 1. పొడి గాలిలో సుమారు 21%; 2. పొడి గాలిలో సుమారు 78%; 3. హానికర UVలో పెద్ద భాగాన్ని గ్రహించే అల్ప పరిమాణ వాయువు; 4. ఆర్ద్రత, జలచక్రానికి కీలకమైన మారే వాయువు.",
+   "matching_lists_te": {
+    "left": [
+     "పొడి గాలిలో నత్రజని (Nitrogen)",
+     "పొడి గాలిలో ఆక్సిజన్ (Oxygen)",
+     "స్ట్రాటో ఆవరణ ఓజోన్ (Stratospheric Ozone)",
+     "నీటి ఆవిరి (Water Vapour)"
+    ],
+    "right": [
+     "పొడి గాలిలో సుమారు 21%",
+     "పొడి గాలిలో సుమారు 78%",
+     "హానికర UVలో పెద్ద భాగాన్ని గ్రహించే అల్ప పరిమాణ వాయువు",
+     "ఆర్ద్రత, జలచక్రానికి కీలకమైన మారే వాయువు"
+    ]
+   },
+   "options_te": [
+    "A–3; B–4; C–2; D–1",
+    "A–1; B–3; C–4; D–2",
+    "A–2; B–1; C–3; D–4",
+    "A–4; B–3; C–1; D–2"
+   ],
+   "explanation_en": "Correct: A–2, B–1, C–3 and D–4.",
+   "explanation_te": "సరైనది: A–2, B–1, C–3, D–4.",
+   "option_explanations_en": [
+    "Incorrect. It gives Nitrogen the Ozone role and Water vapour the Oxygen percentage.",
+    "Incorrect. It exchanges the percentages and process roles of all four constituents.",
+    "Correct: A–2, B–1, C–3 and D–4.",
+    "Incorrect. It assigns humidity to Nitrogen and the UV role to Water vapour."
+   ],
+   "option_explanations_te": [
+    "తప్పు. ఇది Nitrogenకు Ozone పాత్రను, Water Vapourకు Oxygen శాతాన్ని ఇస్తుంది.",
+    "తప్పు. నాలుగు భాగాల శాతాలు, ప్రక్రియ పాత్రలను తారుమారు చేస్తుంది.",
+    "సరైనది: A–2, B–1, C–3, D–4.",
+    "తప్పు. ఇది ఆర్ద్రత పాత్రను Nitrogenకు, UV పాత్రను Water Vapourకు జతచేస్తుంది."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-15-013": {
+   "question_en": "Match List I with List II. List I: A. Insolation; B. Albedo; C. Terrestrial radiation; D. Sensible heat. List II: 1. Incoming solar radiation received by Earth; 2. Longwave thermal radiation emitted by Earth; 3. The reflected fraction of incident radiation; 4. Heat transfer producing a measurable temperature change.",
+   "matching_lists_en": {
+    "left": [
+     "Insolation",
+     "Albedo",
+     "Terrestrial radiation",
+     "Sensible heat"
+    ],
+    "right": [
+     "Incoming solar radiation received by Earth",
+     "Longwave thermal radiation emitted by Earth",
+     "The reflected fraction of incident radiation",
+     "Heat transfer producing a measurable temperature change"
+    ]
+   },
+   "options_en": [
+    "A–4; B–2; C–3; D–1",
+    "A–1; B–3; C–2; D–4",
+    "A–2; B–4; C–1; D–3",
+    "A–3; B–2; C–4; D–1"
+   ],
+   "question_te": "జాబితా–Iను జాబితా–IIతో జతపరచండి. జాబితా–I: A. సూర్యపుటం (Insolation); B. ఆల్బిడో (Albedo); C. భౌమ వికిరణం (Terrestrial radiation); D. స్పర్శనీయ ఉష్ణం (Sensible heat). జాబితా–II: 1. భూమికి అందే ఆగమన సౌర వికిరణం; 2. భూమి విడుదల చేసే దీర్ఘ తరంగ ఉష్ణ వికిరణం; 3. పడిన వికిరణంలో పరావర్తనం చెందిన భాగం; 4. కొలవగల ఉష్ణోగ్రత మార్పును కలిగించే ఉష్ణ బదిలీ.",
+   "matching_lists_te": {
+    "left": [
+     "సూర్యపుటం (Insolation)",
+     "ఆల్బిడో (Albedo)",
+     "భౌమ వికిరణం (Terrestrial radiation)",
+     "స్పర్శనీయ ఉష్ణం (Sensible heat)"
+    ],
+    "right": [
+     "భూమికి అందే ఆగమన సౌర వికిరణం",
+     "భూమి విడుదల చేసే దీర్ఘ తరంగ ఉష్ణ వికిరణం",
+     "పడిన వికిరణంలో పరావర్తనం చెందిన భాగం",
+     "కొలవగల ఉష్ణోగ్రత మార్పును కలిగించే ఉష్ణ బదిలీ"
+    ]
+   },
+   "options_te": [
+    "A–4; B–2; C–3; D–1",
+    "A–1; B–3; C–2; D–4",
+    "A–2; B–4; C–1; D–3",
+    "A–3; B–2; C–4; D–1"
+   ],
+   "explanation_en": "The correct matches are A–1, B–3, C–2 and D–4: insolation is incoming solar radiation, albedo is the reflected fraction, terrestrial radiation is Earth's longwave emission, and sensible heat changes temperature.",
+   "explanation_te": "సరైన జతలు A–1, B–3, C–2, D–4. శక్తి భూమికి చేరడం సూర్యపుటం (Insolation); పరావర్తనం చెందిన భాగం ఆల్బిడో (Albedo); భూమి విడుదల చేసేది భౌమ వికిరణం (Terrestrial radiation); ఉష్ణోగ్రతను మార్చేది స్పర్శనీయ ఉష్ణం (Sensible heat).",
+   "option_explanations_en": [
+    "All four pairings conflict with the definitions.",
+    "The correct matches are A–1, B–3, C–2 and D–4: insolation is incoming solar radiation, albedo is the reflected fraction, terrestrial radiation is Earth's longwave emission, and sensible heat changes temperature.",
+    "It swaps insolation with terrestrial radiation and mispairs albedo.",
+    "The albedo, terrestrial-radiation and sensible-heat matches are wrong."
+   ],
+   "option_explanations_te": [
+    "ఇందులో నాలుగు జతలూ నిర్వచనాలకు విరుద్ధంగా ఉన్నాయి.",
+    "సరైన జతలు A–1, B–3, C–2, D–4. శక్తి భూమికి చేరడం సూర్యపుటం (Insolation); పరావర్తనం చెందిన భాగం ఆల్బిడో (Albedo); భూమి విడుదల చేసేది భౌమ వికిరణం (Terrestrial radiation); ఉష్ణోగ్రతను మార్చేది స్పర్శనీయ ఉష్ణం (Sensible heat).",
+    "ఇన్‌సోలేషన్‌ను భౌమ వికిరణంతో, ఆల్బిడోను స్పర్శనీయ ఉష్ణంతో మార్చింది.",
+    "ఆల్బిడో, భౌమ వికిరణం, స్పర్శనీయ ఉష్ణం జతలు తప్పు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-15-014": {
+   "question_en": "Match List I with List II. List I: A. Relative humidity; B. Dew point; C. Evaporation; D. Condensation. List II: 1. Actual vapour relative to saturation at the same temperature; 2. Liquid water becomes vapour; 3. Water vapour becomes liquid; 4. Temperature to which air must cool to become saturated.",
+   "matching_lists_en": {
+    "left": [
+     "Relative humidity",
+     "Dew point",
+     "Evaporation",
+     "Condensation"
+    ],
+    "right": [
+     "Actual vapour relative to saturation at the same temperature",
+     "Liquid water becomes vapour",
+     "Water vapour becomes liquid",
+     "Temperature to which air must cool to become saturated"
+    ]
+   },
+   "options_en": [
+    "A–2; B–3; C–1; D–4",
+    "A–3; B–2; C–4; D–1",
+    "A–1; B–4; C–2; D–3",
+    "A–4; B–2; C–3; D–1"
+   ],
+   "question_te": "జాబితా–Iను జాబితా–IIతో జతపరచండి. జాబితా–I: A. సాపేక్ష ఆర్ద్రత (Relative humidity); B. తుషార స్థానం (Dew point); C. బాష్పీభవనం (Evaporation); D. సాంద్రీకరణం (Condensation). జాబితా–II: 1. ప్రస్తుత నీటి ఆవిరిని సంతృప్త స్థితితో పోల్చిన శాతం; 2. ద్రవ నీరు ఆవిరిగా మారడం; 3. నీటి ఆవిరి ద్రవంగా మారడం; 4. గాలి సంతృప్తి చెందేందుకు చల్లబడాల్సిన ఉష్ణోగ్రత.",
+   "matching_lists_te": {
+    "left": [
+     "సాపేక్ష ఆర్ద్రత (Relative humidity)",
+     "తుషార స్థానం (Dew point)",
+     "బాష్పీభవనం (Evaporation)",
+     "సాంద్రీకరణం (Condensation)"
+    ],
+    "right": [
+     "ప్రస్తుత నీటి ఆవిరిని సంతృప్త స్థితితో పోల్చిన శాతం",
+     "ద్రవ నీరు ఆవిరిగా మారడం",
+     "నీటి ఆవిరి ద్రవంగా మారడం",
+     "గాలి సంతృప్తి చెందేందుకు చల్లబడాల్సిన ఉష్ణోగ్రత"
+    ]
+   },
+   "options_te": [
+    "A–2; B–3; C–1; D–4",
+    "A–3; B–2; C–4; D–1",
+    "A–1; B–4; C–2; D–3",
+    "A–4; B–2; C–3; D–1"
+   ],
+   "explanation_en": "The correct matches are A–1, B–4, C–2 and D–3. Relative humidity is a ratio, dew point is a temperature, and evaporation and condensation are opposite phase changes.",
+   "explanation_te": "సరైన జతలు A–1, B–4, C–2, D–3. సాపేక్ష ఆర్ద్రత (Relative humidity) ఒక శాతం; మంచుబిందు (Dew point) ఒక ఉష్ణోగ్రత; బాష్పీభవనం, సాంద్రీకరణం పరస్పర విరుద్ధ స్థితి మార్పులు.",
+   "option_explanations_en": [
+    "It confuses relative humidity with evaporation and mispairs the rest.",
+    "It reverses the phase changes and mispairs both moisture measures.",
+    "The correct matches are A–1, B–4, C–2 and D–3. Relative humidity is a ratio, dew point is a temperature, and evaporation and condensation are opposite phase changes.",
+    "The dew-point, evaporation and condensation matches are wrong."
+   ],
+   "option_explanations_te": [
+    "సాపేక్ష ఆర్ద్రతను బాష్పీభవనంతో కలిపింది; మిగిలిన జతలూ తప్పు.",
+    "సాంద్రీకరణం, బాష్పీభవనం సహా అన్ని జతలు మారిపోయాయి.",
+    "సరైన జతలు A–1, B–4, C–2, D–3. సాపేక్ష ఆర్ద్రత (Relative humidity) ఒక శాతం; మంచుబిందు (Dew point) ఒక ఉష్ణోగ్రత; బాష్పీభవనం, సాంద్రీకరణం పరస్పర విరుద్ధ స్థితి మార్పులు.",
+    "మంచుబిందు, బాష్పీభవనం, సాంద్రీకరణం జతలు తప్పు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-15-015": {
+   "question_en": "Match List I with List II. List I: A. Pressure-gradient force; B. Coriolis effect; C. Sea breeze; D. Land breeze. List II: 1. Night-time flow from land to sea; 2. Daytime flow from sea to land; 3. Force acting from higher toward lower pressure; 4. Deflection of moving air associated with Earth's rotation.",
+   "matching_lists_en": {
+    "left": [
+     "Pressure-gradient force",
+     "Coriolis effect",
+     "Sea breeze",
+     "Land breeze"
+    ],
+    "right": [
+     "Night-time flow from land to sea",
+     "Daytime flow from sea to land",
+     "Force acting from higher toward lower pressure",
+     "Deflection of moving air associated with Earth's rotation"
+    ]
+   },
+   "options_en": [
+    "A–3; B–4; C–2; D–1",
+    "A–1; B–2; C–4; D–3",
+    "A–2; B–1; C–3; D–4",
+    "A–4; B–2; C–1; D–3"
+   ],
+   "question_te": "జాబితా–Iను జాబితా–IIతో జతపరచండి. జాబితా–I: A. పీడన ప్రవణత బలం (Pressure-gradient force); B. కొరియాలిస్ ప్రభావం (Coriolis effect); C. సముద్ర పవనం (Sea breeze); D. భూ పవనం (Land breeze). జాబితా–II: 1. రాత్రి భూమి నుంచి సముద్రం వైపు గాలి; 2. పగలు సముద్రం నుంచి భూమివైపు గాలి; 3. అధిక పీడనం నుంచి అల్ప పీడనం వైపు పనిచేసే బలం; 4. భూ భ్రమణం వల్ల కదిలే గాలి మార్గం మళ్లడం.",
+   "matching_lists_te": {
+    "left": [
+     "పీడన ప్రవణత బలం (Pressure-gradient force)",
+     "కొరియాలిస్ ప్రభావం (Coriolis effect)",
+     "సముద్ర పవనం (Sea breeze)",
+     "భూ పవనం (Land breeze)"
+    ],
+    "right": [
+     "రాత్రి భూమి నుంచి సముద్రం వైపు గాలి",
+     "పగలు సముద్రం నుంచి భూమివైపు గాలి",
+     "అధిక పీడనం నుంచి అల్ప పీడనం వైపు పనిచేసే బలం",
+     "భూ భ్రమణం వల్ల కదిలే గాలి మార్గం మళ్లడం"
+    ]
+   },
+   "options_te": [
+    "A–3; B–4; C–2; D–1",
+    "A–1; B–2; C–4; D–3",
+    "A–2; B–1; C–3; D–4",
+    "A–4; B–2; C–1; D–3"
+   ],
+   "explanation_en": "The correct matches are A–3, B–4, C–2 and D–1. The pressure-gradient force accelerates air, the Coriolis effect deflects it, the sea breeze occurs by day, and the land breeze by night.",
+   "explanation_te": "సరైన జతలు A–3, B–4, C–2, D–1. పీడన ప్రవణత బలం గాలిని కదిలిస్తుంది; కొరియాలిస్ ప్రభావం దాని మార్గాన్ని మళ్లిస్తుంది; సముద్ర గాలి పగలు, భూగాలి రాత్రి ఏర్పడతాయి.",
+   "option_explanations_en": [
+    "The correct matches are A–3, B–4, C–2 and D–1. The pressure-gradient force accelerates air, the Coriolis effect deflects it, the sea breeze occurs by day, and the land breeze by night.",
+    "It confuses the force with a land breeze and the Coriolis effect with a sea breeze.",
+    "All four pairings are wrong.",
+    "The force, deflection and local-wind pairings are incorrect."
+   ],
+   "option_explanations_te": [
+    "సరైన జతలు A–3, B–4, C–2, D–1. పీడన ప్రవణత బలం గాలిని కదిలిస్తుంది; కొరియాలిస్ ప్రభావం దాని మార్గాన్ని మళ్లిస్తుంది; సముద్ర గాలి పగలు, భూగాలి రాత్రి ఏర్పడతాయి.",
+    "పీడన బలాన్ని భూగాలితో, కొరియాలిస్ ప్రభావాన్ని సముద్ర గాలితో కలిపింది.",
+    "నాలుగు జతలూ తప్పు.",
+    "పీడన బలం, కొరియాలిస్ ప్రభావం, స్థానిక గాలుల జతలు తప్పు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-38-015": {
+   "question_en": "Match List I with List II (one-to-one). List I: A. Cyclone eye; B. Eyewall; C. Storm surge; D. Vertical wind shear. List II: 1. Relatively calm central region of a strong tropical cyclone; 2. Ring of intense convection around a developed cyclone eye; 3. Change of wind speed or direction with increasing height; 4. Storm-driven abnormal sea-level rise along the coast.",
+   "matching_lists_en": {
+    "left": [
+     "Cyclone eye",
+     "Eyewall",
+     "Storm surge",
+     "Vertical wind shear"
+    ],
+    "right": [
+     "Relatively calm central region of a strong tropical cyclone",
+     "Ring of intense convection around a developed cyclone eye",
+     "Change of wind speed or direction with increasing height",
+     "Storm-driven abnormal sea-level rise along the coast"
+    ]
+   },
+   "options_en": [
+    "A–1; B–2; C–4; D–3",
+    "A–3; B–4; C–2; D–1",
+    "A–4; B–3; C–1; D–2",
+    "A–2; B–4; C–3; D–1"
+   ],
+   "question_te": "జాబితా–Iలోని చక్రవాత అంశాలను జాబితా–IIలోని లక్షణాలతో జతపరచండి. జాబితా–I: A. చక్రవాత కన్ను (Cyclone eye); B. చక్రవాత కన్నుగోడ (Eyewall); C. తుఫాను ఉప్పెన (Storm surge); D. నిలువు గాలి కోత (Vertical wind shear). జాబితా–II: 1. బలమైన చక్రవాతం మధ్యలో సాపేక్షంగా ప్రశాంతంగా ఉండే ప్రాంతం; 2. చక్రవాత కన్ను చుట్టూ ఉండే తీవ్ర మేఘాలు, గాలుల వలయం; 3. ఎత్తు పెరిగే కొద్దీ గాలి వేగం లేదా దిశ మారడం; 4. తుఫాను వల్ల తీరం వెంట సముద్ర మట్టం అసాధారణంగా పెరగడం.",
+   "matching_lists_te": {
+    "left": [
+     "చక్రవాత కన్ను (Cyclone eye)",
+     "చక్రవాత కన్నుగోడ (Eyewall)",
+     "తుఫాను ఉప్పెన (Storm surge)",
+     "నిలువు గాలి కోత (Vertical wind shear)"
+    ],
+    "right": [
+     "బలమైన చక్రవాతం మధ్యలో సాపేక్షంగా ప్రశాంతంగా ఉండే ప్రాంతం",
+     "చక్రవాత కన్ను చుట్టూ ఉండే తీవ్ర మేఘాలు, గాలుల వలయం",
+     "ఎత్తు పెరిగే కొద్దీ గాలి వేగం లేదా దిశ మారడం",
+     "తుఫాను వల్ల తీరం వెంట సముద్ర మట్టం అసాధారణంగా పెరగడం"
+    ]
+   },
+   "options_te": [
+    "A–1; B–2; C–4; D–3",
+    "A–3; B–4; C–2; D–1",
+    "A–4; B–3; C–1; D–2",
+    "A–2; B–4; C–3; D–1"
+   ],
+   "explanation_en": "The correct sequence is A–1, B–2, C–4 and D–3. The eye and eyewall are cyclone structures; surge is a coastal water-level hazard; wind shear is an environmental control.",
+   "explanation_te": "సరైన క్రమం A–1, B–2, C–4, D–3. కన్ను, కన్నుగోడ చక్రవాత నిర్మాణ భాగాలు; ఉప్పెన తీర నీటిమట్ట ప్రమాదం; గాలి కోత చక్రవాత అభివృద్ధిని ప్రభావితం చేసే వాతావరణ పరిస్థితి.",
+   "option_explanations_en": [
+    "Correct: eye–1, eyewall–2, storm surge–4 and vertical wind shear–3.",
+    "Incorrect: change with height defines wind shear, not the eye; coastal water rise defines storm surge, not the eyewall.",
+    "Incorrect: coastal water rise is storm surge, and the eye is the relatively calm centre.",
+    "Incorrect: intense convection around the eye is the eyewall, not the eye itself."
+   ],
+   "option_explanations_te": [
+    "సరైన జతలు: చక్రవాత కన్ను–1; కన్నుగోడ–2; తుఫాను ఉప్పెన–4; నిలువు గాలి కోత–3.",
+    "తప్పు. ఎత్తుతో గాలి మారడం గాలి కోత; తీర నీటిమట్టం పెరగడం తుఫాను ఉప్పెన.",
+    "తప్పు. తీర నీటిమట్టం పెరగడం తుఫాను ఉప్పెన; ప్రశాంత కేంద్రం చక్రవాత కన్ను.",
+    "తప్పు. కన్ను చుట్టూ తీవ్ర సంవహనం కన్నుగోడకు చెందుతుంది; కన్నుకు కాదు."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
   }
  }
 }

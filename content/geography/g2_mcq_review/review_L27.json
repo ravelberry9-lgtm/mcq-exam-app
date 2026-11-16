@@ -64,7 +64,6 @@
   "GEO-ORIG-44C-006",
   "GEO-ORIG-44C-007",
   "GEO-ORIG-44C-008",
-  "GEO-ORIG-44C-014",
   "GEO-ORIG-45-001",
   "GEO-ORIG-45-002",
   "GEO-ORIG-45-003",
@@ -78,7 +77,6 @@
   "GEO-ORIG-45-011",
   "GEO-ORIG-45-012",
   "GEO-ORIG-45-017",
-  "GEO-ORIG-45-018",
   "GEO-ORIG-45-019",
   "GEO-ORIG-45A-002",
   "GEO-ORIG-45A-003",
@@ -100,9 +98,6 @@
   "GEO-ORIG-45B-010",
   "GEO-ORIG-45B-011",
   "GEO-ORIG-45B-012",
-  "GEO-ORIG-45B-013",
-  "GEO-ORIG-45B-014",
-  "GEO-ORIG-45B-015",
   "GEO-ORIG-45C-001",
   "GEO-ORIG-45C-002",
   "GEO-ORIG-45C-003",
@@ -114,8 +109,6 @@
   "GEO-ORIG-45C-011",
   "GEO-ORIG-45C-012",
   "GEO-ORIG-45C-013",
-  "GEO-ORIG-45C-014",
-  "GEO-ORIG-45C-015",
   "GEO-ORIG-45D-002",
   "GEO-ORIG-45D-003",
   "GEO-ORIG-45D-004",
@@ -127,8 +120,6 @@
   "GEO-ORIG-45D-010",
   "GEO-ORIG-45D-011",
   "GEO-ORIG-45D-012",
-  "GEO-ORIG-45D-013",
-  "GEO-ORIG-45D-014",
   "GEO-ORIG-45D-015",
   "GEO-ORIG-45E-001",
   "GEO-ORIG-45E-002",
@@ -136,7 +127,6 @@
   "GEO-ORIG-45E-004",
   "GEO-ORIG-45E-009",
   "GEO-ORIG-45E-011",
-  "GEO-ORIG-45E-013",
   "GEO-ORIG-45E-015",
   "GEO-ORIG-45F-001",
   "GEO-ORIG-45F-002",
@@ -238,7 +228,6 @@
   "GEO-ORIG-47-002",
   "GEO-ORIG-47-003",
   "GEO-ORIG-47-004",
-  "GEO-ORIG-47-017",
   "IA12-P461-PYQ001",
   "IA12-P464-Q004",
   "IA12-P465-Q003",
@@ -2254,8 +2243,63 @@
    "question_te": "చెరకు కార్శి పంటను (Ratoon crop) సరిగ్గా వివరించేది ఏది?"
   },
   "GEO-ORIG-45I-013": {
-   "reason": "Telugu: 'మొదె పంట' is not the standard term; notes use 'కార్శి పంట' for ratoon. Explanation still fits.",
-   "question_te": "జాబితా–Iలోని చెరకు భావనలను జాబితా–IIలోని అర్థాలతో జతపరచండి.\nజాబితా–I: A. సెట్టు (Sett); B. కణుపు (Node); C. కన్ను (Bud); D. కార్శి పంట (Ratoon).\nజాబితా–II: 1. కొత్త చిగురును ఇచ్చే పెరుగుదల బిందువు; 2. ఏపుగా పెరగగల కళ్లున్న నాటే కాండపు ముక్క; 3. కోత తరువాత మిగిలిన మొదలు నుంచి తిరిగి పెరిగే పంట; 4. కన్ను, ఆకు కలిసే కాండపు స్థానం."
+   "reason": "Telugu: 'మొదె పంట' is not the standard term; notes use 'కార్శి పంట' for ratoon. Explanation still fits. | List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern.",
+   "question_te": "జాబితా–Iలోని చెరకు భావనలను జాబితా–IIలోని అర్థాలతో జతపరచండి.\nజాబితా–I: A. సెట్టు (Sett); B. కణుపు (Node); C. కన్ను (Bud); D. కార్శి పంట (Ratoon).\nజాబితా–II: 1. కోత తరువాత మిగిలిన మొదలు నుంచి తిరిగి పెరిగే పంట; 2. కన్ను, ఆకు కలిసే కాండపు స్థానం; 3. కొత్త చిగురును ఇచ్చే పెరుగుదల బిందువు; 4. ఏపుగా పెరగగల కళ్లున్న నాటే కాండపు ముక్క.",
+   "question_en": "Match the sugarcane concepts in List I with their meanings in List II.\nList I: A. Sett; B. Node; C. Bud; D. Ratoon.\nList II: 1. Regrowth crop from stubble after harvest; 2. Stem position bearing a bud and leaf attachment; 3. Growth point producing a new shoot; 4. Planting stem piece with viable buds.",
+   "matching_lists_en": {
+    "left": [
+     "Sett",
+     "Node",
+     "Bud",
+     "Ratoon"
+    ],
+    "right": [
+     "Regrowth crop from stubble after harvest",
+     "Stem position bearing a bud and leaf attachment",
+     "Growth point producing a new shoot",
+     "Planting stem piece with viable buds"
+    ]
+   },
+   "options_en": [
+    "A–1; B–3; C–2; D–4",
+    "A–3; B–1; C–4; D–2",
+    "A–4; B–2; C–3; D–1",
+    "A–2; B–3; C–1; D–4"
+   ],
+   "matching_lists_te": {
+    "left": [
+     "సెట్టు (Sett)",
+     "కణుపు (Node)",
+     "కన్ను (Bud)",
+     "కార్శి పంట (Ratoon)"
+    ],
+    "right": [
+     "కోత తరువాత మిగిలిన మొదలు నుంచి తిరిగి పెరిగే పంట",
+     "కన్ను, ఆకు కలిసే కాండపు స్థానం",
+     "కొత్త చిగురును ఇచ్చే పెరుగుదల బిందువు",
+     "ఏపుగా పెరగగల కళ్లున్న నాటే కాండపు ముక్క"
+    ]
+   },
+   "options_te": [
+    "A–1; B–3; C–2; D–4",
+    "A–3; B–1; C–4; D–2",
+    "A–4; B–2; C–3; D–1",
+    "A–2; B–3; C–1; D–4"
+   ],
+   "explanation_en": "The correct sequence is A–4, B–2, C–3 and D–1. These distinguish a planting unit, stem position, regenerative point and regrowth crop.",
+   "explanation_te": "సరైన క్రమం A–4, B–2, C–3, D–1. నాటే కాండపు ముక్క (Sett), కాండపు స్థానం (Node), పునరుత్పత్తి బిందువు (Bud), తిరిగి పెరిగే పంట (Ratoon crop) వేర్వేరు భావనలు.",
+   "option_explanations_en": [
+    "Incorrect. Sett matches 4 and node matches 4.",
+    "Incorrect. Bud matches 3 and ratoon matches 3.",
+    "Correct. All pairs match.",
+    "Incorrect. The sequence is mismatched."
+   ],
+   "option_explanations_te": [
+    "తప్పు. సెట్టు (Sett) 2తో, కణుపు (Node) 4తో జత కావాలి.",
+    "తప్పు. కన్ను (Bud) 1తో, మొదె పంట (Ratoon) 3తో జత కావాలి.",
+    "సరైంది. అన్ని జతలూ సరిపోతాయి.",
+    "తప్పు. పూర్తి క్రమం సరిపోలలేదు."
+   ]
   },
   "GEO-ORIG-45I-017": {
    "reason": "Telugu: 'మొదె పంట' is not the standard term; notes use 'కార్శి పంట' for ratoon. Explanation still fits.",
@@ -2999,6 +3043,655 @@
     "తప్పు. II కూడా సరైంది: మంచు లేని వెచ్చదనం, తేమ, నీటి పారుదల ముఖ్యం.",
     "తప్పు. III తప్పు కాబట్టి మూడూ సరైనవి కావు."
    ]
+  },
+  "GEO-ORIG-44C-014": {
+   "question_en": "Match: A. Sprinkler; B. Rice transplanting; C. DSR; D. AWD. 1. Moving nursery seedlings; 2. Controlled wet–dry cycle; 3. Pressurised droplets; 4. Direct sowing in main field.",
+   "matching_lists_en": {
+    "left": [
+     "Sprinkler irrigation / తుంపర సాగు",
+     "Transplanting rice / నారు నాట్లు",
+     "Direct-seeded rice / నేరుగా విత్తిన వరి",
+     "Alternate wetting and drying / తడి–పొడి నియంత్రణ"
+    ],
+    "right": [
+     "Moving nursery-grown seedlings into the main field",
+     "Managed irrigated-rice wet/dry intervals rather than continuous flooding",
+     "Pressurised application of water as droplets over land",
+     "Sowing rice seed directly in the main field"
+    ]
+   },
+   "options_en": [
+    "A–2; B–4; C–1; D–3",
+    "A–3; B–1; C–4; D–2",
+    "A–1; B–4; C–2; D–3",
+    "A–4; B–2; C–3; D–1"
+   ],
+   "question_te": "జాబితా–Iను జాబితా–IIతో జతపరచండి. A. తుంపర సేద్యం (Sprinkler); B. వరి నాట్లు (Transplanting); C. నేరుగా విత్తే వరి (DSR); D. తడి–పొడి పద్ధతి (AWD). 1. నారు మొక్కలను ప్రధాన పొలానికి మార్చడం; 2. నియంత్రిత తడి–పొడి చక్రం; 3. ఒత్తిడితో చినుకుల్లా నీరు; 4. ప్రధాన పొలంలో నేరుగా విత్తనం.",
+   "matching_lists_te": {
+    "left": [
+     "Sprinkler irrigation / తుంపర సాగు",
+     "Transplanting rice / నారు నాట్లు",
+     "Direct-seeded rice / నేరుగా విత్తిన వరి",
+     "Alternate wetting and drying / తడి–పొడి నియంత్రణ"
+    ],
+    "right": [
+     "Moving nursery-grown seedlings into the main field",
+     "Managed irrigated-rice wet/dry intervals rather than continuous flooding",
+     "Pressurised application of water as droplets over land",
+     "Sowing rice seed directly in the main field"
+    ]
+   },
+   "options_te": [
+    "A–2; B–4; C–1; D–3",
+    "A–3; B–1; C–4; D–2",
+    "A–1; B–4; C–2; D–3",
+    "A–4; B–2; C–3; D–1"
+   ],
+   "explanation_en": "Sprinkler applies droplets, transplanting moves seedlings, DSR sows directly, and AWD uses controlled wet–dry cycles. Thus A–3, B–1, C–4 and D–2.",
+   "explanation_te": "తుంపర సేద్యం (Sprinkler)–చినుకుల్లా నీరు; నాట్లు (Transplanting)–నారు మార్పు; నేరుగా విత్తే వరి (DSR)–ప్రధాన పొలంలో నేరుగా విత్తనం; తడి–పొడి పద్ధతి (AWD)–నియంత్రిత తడి–పొడి చక్రం. కాబట్టి A–3, B–1, C–4, D–2.",
+   "option_explanations_en": [
+    "All four processes are mispaired.",
+    "Correct. All four pairings are valid.",
+    "It confuses sprinkler with transplanting and AWD with sprinkler.",
+    "It confuses DSR with sprinkler and AWD with transplanting."
+   ],
+   "option_explanations_te": [
+    "నాలుగు ప్రక్రియలూ తప్పుగా జతపడ్డాయి.",
+    "సరైంది. నాలుగు జతలూ సరైనవి.",
+    "తుంపరను నాట్లతో, AWDను తుంపరతో తప్పుగా జత చేసింది.",
+    "DSRను తుంపరతో, AWDను నాట్లతో తప్పుగా జత చేసింది."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-45-018": {
+   "question_en": "Match the commercial crops in List I with the plant parts used in List II.\nList I: A. Cotton; B. Jute; C. Sugarcane; D. Tea.\nList II: 1. Stem storing sucrose; 2. Fibre hairs growing on seeds; 3. Bast fibre in the stem; 4. Processed young leaves and buds.",
+   "matching_lists_en": {
+    "left": [
+     "Cotton",
+     "Jute",
+     "Sugarcane",
+     "Tea"
+    ],
+    "right": [
+     "Stem storing sucrose",
+     "Fibre hairs growing on seeds",
+     "Bast fibre in the stem",
+     "Processed young leaves and buds"
+    ]
+   },
+   "options_en": [
+    "A–2; B–3; C–1; D–4",
+    "A–3; B–2; C–4; D–1",
+    "A–1; B–4; C–3; D–2",
+    "A–4; B–1; C–2; D–3"
+   ],
+   "question_te": "జాబితా–Iలోని వాణిజ్య పంటలను జాబితా–IIలోని ఉపయోగించే మొక్క భాగాలతో జతపరచండి.\nజాబితా–I: A. పత్తి; B. జనపనార; C. చెరకు; D. తేయాకు.\nజాబితా–II: 1. సుక్రోజ్ నిల్వ ఉండే కాండం; 2. గింజలపై పెరిగే నార రోమాలు; 3. కాండంలోని బాస్ట్ నార; 4. ప్రాసెస్ చేసే లేత ఆకులు, మొగ్గలు.",
+   "matching_lists_te": {
+    "left": [
+     "పత్తి",
+     "జనపనార",
+     "చెరకు",
+     "తేయాకు"
+    ],
+    "right": [
+     "సుక్రోజ్ నిల్వ ఉండే కాండం",
+     "గింజలపై పెరిగే నార రోమాలు",
+     "కాండంలోని బాస్ట్ నార",
+     "ప్రాసెస్ చేసే లేత ఆకులు, మొగ్గలు"
+    ]
+   },
+   "options_te": [
+    "A–2; B–3; C–1; D–4",
+    "A–3; B–2; C–4; D–1",
+    "A–1; B–4; C–3; D–2",
+    "A–4; B–1; C–2; D–3"
+   ],
+   "explanation_en": "The correct matches are Cotton–2, Jute–3, Sugarcane–1 and Tea–4. Cotton lint is seed hair, jute is stem bast fibre, sugarcane stores sucrose in its stem, and tea uses processed young leaves and buds.",
+   "explanation_te": "సరైన జతలు: పత్తి–2, జనపనార–3, చెరకు–1, తేయాకు–4. పత్తి నార గింజపై పెరిగే రోమం; జనపనార కాండంలోని బాస్ట్ నార; చెరకులో సుక్రోజ్ కాండంలో నిల్వ ఉంటుంది; తేయాకులో లేత ఆకులు, మొగ్గలను కోసి ప్రాసెస్ చేస్తారు.",
+   "option_explanations_en": [
+    "Correct. All four crop–plant-part pairs match.",
+    "Incorrect. Cotton is not a bast fibre and jute is not seed hair.",
+    "Incorrect. Sugarcane stores sucrose in its stem and tea uses leaves and buds.",
+    "Incorrect. All four plant parts are assigned to the wrong crops."
+   ],
+   "option_explanations_te": [
+    "సరైంది. నాలుగు పంట–మొక్క భాగం జతలూ సరిపోతాయి.",
+    "తప్పు. పత్తి బాస్ట్ నార కాదు; జనపనార గింజ రోమం కాదు.",
+    "తప్పు. చెరకు సుక్రోజ్ కాండంలో ఉంటుంది; తేయాకులో ఆకులు, మొగ్గలు ఉపయోగిస్తారు.",
+    "తప్పు. ఇచ్చిన నాలుగు మొక్క భాగాలూ ఆయా పంటలకు తారుమారయ్యాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-45B-013": {
+   "question_en": "Match the cotton terms in List I with their meanings in List II.\nList I: A. Lint; B. Boll; C. Seed cotton; D. Cottonseed.\nList II: 1. Harvested cotton containing seeds and fibre before ginning; 2. Long fibres growing on cotton seeds; 3. Fruit capsule enclosing seeds and fibre; 4. Seed separated from lint for sowing or processing.",
+   "matching_lists_en": {
+    "left": [
+     "Lint",
+     "Boll",
+     "Seed cotton",
+     "Cottonseed"
+    ],
+    "right": [
+     "Harvested cotton containing seeds and fibre before ginning",
+     "Long fibres growing on cotton seeds",
+     "Fruit capsule enclosing seeds and fibre",
+     "Seed separated from lint for sowing or processing"
+    ]
+   },
+   "options_en": [
+    "A–1; B–4; C–2; D–3",
+    "A–3; B–1; C–4; D–2",
+    "A–4; B–1; C–3; D–2",
+    "A–2; B–3; C–1; D–4"
+   ],
+   "question_te": "జాబితా–Iలోని పత్తి పదాలను జాబితా–IIలోని అర్థాలతో జతపరచండి.\nజాబితా–I: A. లింట్; B. బోల్; C. సీడ్ కాటన్; D. కాటన్‌సీడ్.\nజాబితా–II: 1. జిన్నింగ్‌కు ముందు గింజలు, నార కలిసిన కోసిన పత్తి; 2. పత్తి గింజలపై పెరిగే పొడవైన నార; 3. గింజలు, నారను కలిగిన ఫల కాయ; 4. లింట్ నుంచి వేరై విత్తనంగా లేదా ప్రాసెసింగ్‌కు ఉపయోగించే గింజ.",
+   "matching_lists_te": {
+    "left": [
+     "లింట్",
+     "బోల్",
+     "సీడ్ కాటన్",
+     "కాటన్‌సీడ్"
+    ],
+    "right": [
+     "జిన్నింగ్‌కు ముందు గింజలు, నార కలిసిన కోసిన పత్తి",
+     "పత్తి గింజలపై పెరిగే పొడవైన నార",
+     "గింజలు, నారను కలిగిన ఫల కాయ",
+     "లింట్ నుంచి వేరై విత్తనంగా లేదా ప్రాసెసింగ్‌కు ఉపయోగించే గింజ"
+    ]
+   },
+   "options_te": [
+    "A–1; B–4; C–2; D–3",
+    "A–3; B–1; C–4; D–2",
+    "A–4; B–1; C–3; D–2",
+    "A–2; B–3; C–1; D–4"
+   ],
+   "explanation_en": "The correct matches are A–2, B–3, C–1 and D–4. Lint is fibre on the seed, a boll is the fruit capsule, seed cotton is the seed–fibre mixture before ginning, and cottonseed is the seed separated during ginning.",
+   "explanation_te": "సరైన జతలు A–2, B–3, C–1, D–4. లింట్ గింజపై నార; బోల్ ఫల కాయ; సీడ్ కాటన్ జిన్నింగ్‌కు ముందు గింజ–నార మిశ్రమం; కాటన్‌సీడ్ జిన్నింగ్ తరువాత వేరైన గింజ. పంట భాగం, కోత ఉత్పత్తి, ప్రాసెసింగ్ ఉత్పత్తిని వేరు చేయాలి.",
+   "option_explanations_en": [
+    "Incorrect. Lint matches 2 and boll matches 4.",
+    "Incorrect. Seed cotton matches 1 and cottonseed matches 3.",
+    "Incorrect. The complete sequence is mismatched.",
+    "Correct. All four term–meaning pairs match."
+   ],
+   "option_explanations_te": [
+    "తప్పు. Lintకు 2, bollకు 3 సరైనవి.",
+    "తప్పు. Seed cottonకు 1, cottonseedకు 4 సరైనవి.",
+    "తప్పు. నాలుగు జతల్లో ఒక్కటీ పూర్తి క్రమంలో లేదు.",
+    "సరైంది. నాలుగు పద–అర్థ జతలూ సరిపోతాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-45B-014": {
+   "question_en": "Match the processing stages in List I with their functions in List II.\nList I: A. Ginning; B. Spinning; C. Weaving; D. Knitting.\nList II: 1. Separating cotton fibre from seeds; 2. Forming fabric through interlinked yarn loops; 3. Converting fibre into yarn; 4. Interlacing yarn systems to form fabric.",
+   "matching_lists_en": {
+    "left": [
+     "Ginning",
+     "Spinning",
+     "Weaving",
+     "Knitting"
+    ],
+    "right": [
+     "Separating cotton fibre from seeds",
+     "Forming fabric through interlinked yarn loops",
+     "Converting fibre into yarn",
+     "Interlacing yarn systems to form fabric"
+    ]
+   },
+   "options_en": [
+    "A–4; B–2; C–1; D–3",
+    "A–2; B–4; C–3; D–1",
+    "A–3; B–4; C–2; D–1",
+    "A–1; B–3; C–4; D–2"
+   ],
+   "question_te": "జాబితా–Iలోని ప్రాసెసింగ్ దశలను జాబితా–IIలోని పనులతో జతపరచండి.\nజాబితా–I: A. జిన్నింగ్; B. స్పిన్నింగ్; C. నేత; D. అల్లిక.\nజాబితా–II: 1. పత్తి నారను గింజల నుంచి వేరు చేయడం; 2. నూలు ఉచ్చులను కలిపి వస్త్రం చేయడం; 3. నారను నూలుగా మార్చడం; 4. రెండు దిశల నూలును అడ్డంగా కలిపి వస్త్రం చేయడం.",
+   "matching_lists_te": {
+    "left": [
+     "జిన్నింగ్",
+     "స్పిన్నింగ్",
+     "నేత",
+     "అల్లిక"
+    ],
+    "right": [
+     "పత్తి నారను గింజల నుంచి వేరు చేయడం",
+     "నూలు ఉచ్చులను కలిపి వస్త్రం చేయడం",
+     "నారను నూలుగా మార్చడం",
+     "రెండు దిశల నూలును అడ్డంగా కలిపి వస్త్రం చేయడం"
+    ]
+   },
+   "options_te": [
+    "A–4; B–2; C–1; D–3",
+    "A–2; B–4; C–3; D–1",
+    "A–3; B–4; C–2; D–1",
+    "A–1; B–3; C–4; D–2"
+   ],
+   "explanation_en": "The correct sequence is A–1, B–3, C–4 and D–2. Ginning separates fibre and seed; spinning makes yarn; weaving interlaces yarn systems; and knitting interlinks yarn loops.",
+   "explanation_te": "సరైన క్రమం A–1, B–3, C–4, D–2. Ginning నార–గింజలను వేరు చేస్తుంది; spinning నారను నూలుగా మారుస్తుంది; weaving నూలు వరుసలను అడ్డంగా కలుపుతుంది; knitting నూలు loopsను కలుపుతుంది. పొలం నుంచి వస్త్రం వరకు ఇవి వేర్వేరు దశలు.",
+   "option_explanations_en": [
+    "Incorrect. Ginning matches 1 and spinning matches 4.",
+    "Incorrect. Weaving matches 4 and knitting matches 3.",
+    "Incorrect. The processing sequence is mismatched.",
+    "Correct. All four process–function pairs match."
+   ],
+   "option_explanations_te": [
+    "తప్పు. Ginningకు 2, spinningకు 3 సరైనవి.",
+    "తప్పు. Weavingకు 1, knittingకు 2 సరైనవి.",
+    "తప్పు. A, B, C, D అన్నీ సరైన క్రమంలో లేవు.",
+    "సరైంది. నాలుగు process–function జతలూ సరిపోతాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-45B-015": {
+   "question_en": "Match the concepts in List I with their meanings in List II.\nList I: A. Staple length; B. Fibre strength; C. Bt trait; D. IPM.\nList II: 1. Engineered protection against specified target pests; 2. Monitoring-based combination of suitable pest-management methods; 3. Cotton-fibre length characteristic; 4. Resistance to fibre breakage under tension.",
+   "matching_lists_en": {
+    "left": [
+     "Staple length",
+     "Fibre strength",
+     "Bt trait",
+     "IPM"
+    ],
+    "right": [
+     "Engineered protection against specified target pests",
+     "Monitoring-based combination of suitable pest-management methods",
+     "Cotton-fibre length characteristic",
+     "Resistance to fibre breakage under tension"
+    ]
+   },
+   "options_en": [
+    "A–4; B–1; C–2; D–3",
+    "A–2; B–1; C–4; D–3",
+    "A–3; B–4; C–1; D–2",
+    "A–1; B–2; C–3; D–4"
+   ],
+   "question_te": "జాబితా–Iలోని భావనలను జాబితా–IIలోని అర్థాలతో జతపరచండి.\nజాబితా–I: A. స్టేపుల్ పొడవు; B. నార బలం; C. Bt లక్షణం; D. IPM.\nజాబితా–II: 1. నిర్దిష్ట లక్ష్య పురుగులపై జన్యు రక్షణ; 2. పరిశీలన ఆధారంగా అనుకూల చీడపీడల పద్ధతుల కలయిక; 3. పత్తి నార పొడవు లక్షణం; 4. లాగినప్పుడు నార తెగకుండా తట్టుకునే సామర్థ్యం.",
+   "matching_lists_te": {
+    "left": [
+     "స్టేపుల్ పొడవు",
+     "నార బలం",
+     "Bt లక్షణం",
+     "IPM"
+    ],
+    "right": [
+     "నిర్దిష్ట లక్ష్య పురుగులపై జన్యు రక్షణ",
+     "పరిశీలన ఆధారంగా అనుకూల చీడపీడల పద్ధతుల కలయిక",
+     "పత్తి నార పొడవు లక్షణం",
+     "లాగినప్పుడు నార తెగకుండా తట్టుకునే సామర్థ్యం"
+    ]
+   },
+   "options_te": [
+    "A–4; B–1; C–2; D–3",
+    "A–2; B–1; C–4; D–3",
+    "A–3; B–4; C–1; D–2",
+    "A–1; B–2; C–3; D–4"
+   ],
+   "explanation_en": "The correct matches are A–3, B–4, C–1 and D–2. Staple length and fibre strength are distinct quality measures. Bt is a specified genetic trait, whereas IPM combines several control methods based on crop monitoring.",
+   "explanation_te": "సరైన జతలు A–3, B–4, C–1, D–2. స్టేపుల్ పొడవు (Staple Length), నార బలం (Fibre Strength) వేర్వేరు నార నాణ్యతా కొలతలు. బీటీ (Bt) ఒక నిర్దిష్ట జన్యు లక్షణం (Genetic Trait); సమగ్ర చీడపీడల నిర్వహణ (IPM) పంట పరిశీలనపై ఆధారపడి అనేక నియంత్రణ పద్ధతులను కలుపుతుంది.",
+   "option_explanations_en": [
+    "Incorrect. Staple length matches 3 and IPM matches 3.",
+    "Incorrect. Fibre strength matches 4 and Bt matches 1.",
+    "Correct. All four concept–meaning pairs match.",
+    "Incorrect. All four matches are misplaced."
+   ],
+   "option_explanations_te": [
+    "తప్పు. Staple lengthకు 2, IPMకు 2 సరైనవి.",
+    "తప్పు. Fibre strengthకు 4, Btకు 1 సరైనవి.",
+    "సరైంది. నాలుగు భావన–అర్థ జతలూ సరిపోతాయి.",
+    "తప్పు. అన్ని జతలూ తారుమారయ్యాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-45C-014": {
+   "question_en": "Match the processing concepts in List I with their functions in List II.\nList I: A. Drying; B. Grading; C. Chilli powder; D. Oleoresin.\nList II: 1. Sorting by specified quality attributes; 2. Concentrated extract containing flavour, pungency or colour components; 3. Ground dried chilli product; 4. Reduction of fruit moisture for storage or processing.",
+   "matching_lists_en": {
+    "left": [
+     "Drying",
+     "Grading",
+     "Chilli powder",
+     "Oleoresin"
+    ],
+    "right": [
+     "Sorting by specified quality attributes",
+     "Concentrated extract containing flavour, pungency or colour components",
+     "Ground dried chilli product",
+     "Reduction of fruit moisture for storage or processing"
+    ]
+   },
+   "options_en": [
+    "A–3; B–2; C–4; D–1",
+    "A–4; B–1; C–3; D–2",
+    "A–1; B–3; C–2; D–4",
+    "A–2; B–3; C–1; D–4"
+   ],
+   "question_te": "జాబితా–Iలోని మిరప ప్రాసెసింగ్ భావనలను జాబితా–IIలోని పనులతో జతపరచండి.\nజాబితా–I: A. ఎండబెట్టడం (Drying); B. శ్రేణీకరణ (Grading); C. మిరప పొడి (Chilli Powder); D. ఒలియోరెసిన్ (Oleoresin).\nజాబితా–II: 1. నిర్దిష్ట నాణ్యత లక్షణాల ప్రకారం సరుకును వేరు చేయడం; 2. రంగు, కారం లేదా సువాసన భాగాలు కలిగిన సాంద్రీకృత సారం; 3. ఎండిన మిరపను మెత్తగా చేసిన ఉత్పత్తి; 4. నిల్వ లేదా ప్రాసెసింగ్ కోసం ఫలంలో తేమను తగ్గించడం.",
+   "matching_lists_te": {
+    "left": [
+     "ఎండబెట్టడం (Drying)",
+     "శ్రేణీకరణ (Grading)",
+     "మిరప పొడి (Chilli Powder)",
+     "ఒలియోరెసిన్ (Oleoresin)"
+    ],
+    "right": [
+     "నిర్దిష్ట నాణ్యత లక్షణాల ప్రకారం సరుకును వేరు చేయడం",
+     "రంగు, కారం లేదా సువాసన భాగాలు కలిగిన సాంద్రీకృత సారం",
+     "ఎండిన మిరపను మెత్తగా చేసిన ఉత్పత్తి",
+     "నిల్వ లేదా ప్రాసెసింగ్ కోసం ఫలంలో తేమను తగ్గించడం"
+    ]
+   },
+   "options_te": [
+    "A–3; B–2; C–4; D–1",
+    "A–4; B–1; C–3; D–2",
+    "A–1; B–3; C–2; D–4",
+    "A–2; B–3; C–1; D–4"
+   ],
+   "explanation_en": "The correct matches are A–4, B–1, C–3 and D–2. Drying reduces moisture, grading sorts by quality, chilli powder is ground dried product, and oleoresin is a concentrated extract.",
+   "explanation_te": "సరైన జతలు A–4, B–1, C–3, D–2. Drying moisture తగ్గిస్తుంది; grading quality attributes ప్రకారం వేరు చేస్తుంది; chilli powder ground dried product; oleoresin concentrated extract. ఒకే మిరప ఉత్పత్తి chainలో ఉన్నా నాలుగు వేర్వేరు భావనలు.",
+   "option_explanations_en": [
+    "Incorrect. Drying matches 4 and powder matches 1.",
+    "Correct. All four processing pairs match.",
+    "Incorrect. Grading matches 1 and oleoresin matches 3.",
+    "Incorrect. The A, C and D matches are misplaced."
+   ],
+   "option_explanations_te": [
+    "తప్పు. Dryingకు 2, powderకు 3 సరైనవి.",
+    "సరైంది. నాలుగు processing pairs సరిపోతాయి.",
+    "తప్పు. Gradingకు 4, oleoresinకు 2 సరైనవి.",
+    "తప్పు. A, C, D జతలు తారుమారయ్యాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-45C-015": {
+   "question_en": "Match the quality concepts in List I with their meanings in List II.\nList I: A. Traceability; B. Moisture content; C. Cleanliness; D. Harvest maturity.\nList II: 1. Freedom from specified foreign material; 2. Development stage at harvest affecting use and quality; 3. Water proportion in produce on a specified basis; 4. Records linking a batch to source and handling history.",
+   "matching_lists_en": {
+    "left": [
+     "Traceability",
+     "Moisture content",
+     "Cleanliness",
+     "Harvest maturity"
+    ],
+    "right": [
+     "Freedom from specified foreign material",
+     "Development stage at harvest affecting use and quality",
+     "Water proportion in produce on a specified basis",
+     "Records linking a batch to source and handling history"
+    ]
+   },
+   "options_en": [
+    "A–4; B–3; C–1; D–2",
+    "A–2; B–1; C–3; D–4",
+    "A–3; B–1; C–2; D–4",
+    "A–1; B–2; C–4; D–3"
+   ],
+   "question_te": "జాబితా–Iలోని నాణ్యత భావనలను జాబితా–IIలోని అర్థాలతో జతపరచండి.\nజాబితా–I: A. మూల జాడ నమోదు (Traceability); B. తేమ శాతం (Moisture Content); C. శుభ్రత (Cleanliness); D. కోత పరిపక్వత (Harvest Maturity).\nజాబితా–II: 1. ఉత్పత్తి ప్రమాణంలో పేర్కొన్న పరాయి పదార్థాలు లేకపోవడం; 2. వినియోగం, నాణ్యతపై ప్రభావం చూపే కోత సమయపు అభివృద్ధి దశ; 3. పేర్కొన్న ప్రాతిపదికపై ఉత్పత్తిలోని నీటి నిష్పత్తి; 4. బ్యాచ్‌ను మూలం, నిర్వహణ చరిత్రతో అనుసంధానించే రికార్డులు.",
+   "matching_lists_te": {
+    "left": [
+     "మూల జాడ నమోదు (Traceability)",
+     "తేమ శాతం (Moisture Content)",
+     "శుభ్రత (Cleanliness)",
+     "కోత పరిపక్వత (Harvest Maturity)"
+    ],
+    "right": [
+     "ఉత్పత్తి ప్రమాణంలో పేర్కొన్న పరాయి పదార్థాలు లేకపోవడం",
+     "వినియోగం, నాణ్యతపై ప్రభావం చూపే కోత సమయపు అభివృద్ధి దశ",
+     "పేర్కొన్న ప్రాతిపదికపై ఉత్పత్తిలోని నీటి నిష్పత్తి",
+     "బ్యాచ్‌ను మూలం, నిర్వహణ చరిత్రతో అనుసంధానించే రికార్డులు"
+    ]
+   },
+   "options_te": [
+    "A–4; B–3; C–1; D–2",
+    "A–2; B–1; C–3; D–4",
+    "A–3; B–1; C–2; D–4",
+    "A–1; B–2; C–4; D–3"
+   ],
+   "explanation_en": "The correct matches are A–4, B–3, C–1 and D–2. Traceability records the chain, moisture is water proportion, cleanliness concerns foreign matter, and maturity is the harvest stage.",
+   "explanation_te": "సరైన జతలు A–4, B–3, C–1, D–2. Traceability records chain; moisture water proportion; cleanliness extraneous matter లేకపోవడం; maturity harvest stage. ఒక quality certificateలో ఇవన్నీ వేర్వేరు fieldsగా ఉండవచ్చు.",
+   "option_explanations_en": [
+    "Correct. All four quality-concept pairs match.",
+    "Incorrect. Traceability matches 4 and maturity matches 3.",
+    "Incorrect. Moisture matches 3 and cleanliness matches 1.",
+    "Incorrect. All matches are misplaced."
+   ],
+   "option_explanations_te": [
+    "సరైంది. నాలుగు quality concept pairs సరిపోతాయి.",
+    "తప్పు. Traceabilityకు 2, maturityకు 2 సరైనవి.",
+    "తప్పు. Moistureకు 4, cleanlinessకు 1 సరైనవి.",
+    "తప్పు. అన్ని జతలు తారుమారయ్యాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-45D-013": {
+   "question_en": "Match the maize concepts in List I with their meanings in List II.\nList I: A. Maize identity; B. Tassel; C. Ear; D. Silk.\nList II: 1. Male inflorescence at the plant top; 2. Zea mays, a grass-family cereal; 3. Stigmatic structure receiving pollen; 4. Female inflorescence developing kernels.",
+   "matching_lists_en": {
+    "left": [
+     "Maize identity",
+     "Tassel",
+     "Ear",
+     "Silk"
+    ],
+    "right": [
+     "Male inflorescence at the plant top",
+     "Zea mays, a grass-family cereal",
+     "Stigmatic structure receiving pollen",
+     "Female inflorescence developing kernels"
+    ]
+   },
+   "options_en": [
+    "A–1; B–4; C–3; D–2",
+    "A–3; B–4; C–1; D–2",
+    "A–4; B–3; C–2; D–1",
+    "A–2; B–1; C–4; D–3"
+   ],
+   "question_te": "జాబితా–Iలోని మొక్కజొన్న భావనలను జాబితా–IIలోని అర్థాలతో జతపరచండి.\nజాబితా–I: A. మొక్కజొన్న గుర్తింపు; B. టాసెల్ (Tassel); C. కంకి (Ear); D. సిల్క్ (Silk).\nజాబితా–II: 1. మొక్క పైభాగంలోని మగ పుష్పగుచ్ఛం; 2. గడ్డి కుటుంబానికి చెందిన ధాన్య పంట Zea mays; 3. పుప్పొడిని స్వీకరించే స్త్రీకేసరాగ్ర నిర్మాణం; 4. గింజలు అభివృద్ధి చెందే ఆడ పుష్పగుచ్ఛం.",
+   "matching_lists_te": {
+    "left": [
+     "మొక్కజొన్న గుర్తింపు",
+     "టాసెల్ (Tassel)",
+     "కంకి (Ear)",
+     "సిల్క్ (Silk)"
+    ],
+    "right": [
+     "మొక్క పైభాగంలోని మగ పుష్పగుచ్ఛం",
+     "గడ్డి కుటుంబానికి చెందిన ధాన్య పంట Zea mays",
+     "పుప్పొడిని స్వీకరించే స్త్రీకేసరాగ్ర నిర్మాణం",
+     "గింజలు అభివృద్ధి చెందే ఆడ పుష్పగుచ్ఛం"
+    ]
+   },
+   "options_te": [
+    "A–1; B–4; C–3; D–2",
+    "A–3; B–4; C–1; D–2",
+    "A–4; B–3; C–2; D–1",
+    "A–2; B–1; C–4; D–3"
+   ],
+   "explanation_en": "The correct matches are A–2, B–1, C–4 and D–3. Zea mays identifies the crop, the tassel is the male inflorescence, the ear is the female inflorescence and silk is the pollen-receiving stigma.",
+   "explanation_te": "సరైన జతలు A–2, B–1, C–4, D–3. Zea mays పంటను గుర్తిస్తుంది; టాసెల్ మగ పుష్పగుచ్ఛం; కంకి ఆడ పుష్పగుచ్ఛం; సిల్క్ పుప్పొడిని స్వీకరించే స్త్రీకేసరాగ్రం (Stigma). మొత్తం అవయవం, పుష్పగుచ్ఛం, పుప్పొడిని స్వీకరించే ఒక్కో నిర్మాణాన్ని వేరు చేయాలి.",
+   "option_explanations_en": [
+    "Incorrect. Identity matches 2 and tassel matches 4.",
+    "Incorrect. Ear matches 4 and silk matches 3.",
+    "Incorrect. The complete sequence is mismatched.",
+    "Correct. All concept–meaning pairs match."
+   ],
+   "option_explanations_te": [
+    "తప్పు. పంట గుర్తింపుకు 2, టాసెల్‌కు 1 సరైనవి.",
+    "తప్పు. కంకికి 1, సిల్క్‌కు 3 సరైనవి.",
+    "తప్పు. నాలుగు జతలూ సరైన క్రమంలో లేవు.",
+    "సరైంది. అన్ని భావన–అర్థం జతలూ సరిపోతాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-45D-014": {
+   "question_en": "Match the reproductive concepts in List I with their meanings in List II.\nList I: A. Wind pollination; B. Detasseling; C. Hybrid seed; D. Silking stage.\nList II: 1. Removal of tassels from female rows in hybrid-seed production; 2. Emergence of receptive female structures; 3. Seed from controlled crossing of selected parents; 4. Predominant pollen movement through air.",
+   "matching_lists_en": {
+    "left": [
+     "Wind pollination",
+     "Detasseling",
+     "Hybrid seed",
+     "Silking stage"
+    ],
+    "right": [
+     "Removal of tassels from female rows in hybrid-seed production",
+     "Emergence of receptive female structures",
+     "Seed from controlled crossing of selected parents",
+     "Predominant pollen movement through air"
+    ]
+   },
+   "options_en": [
+    "A–1; B–3; C–2; D–4",
+    "A–2; B–3; C–1; D–4",
+    "A–4; B–1; C–3; D–2",
+    "A–3; B–2; C–4; D–1"
+   ],
+   "question_te": "జాబితా–Iలోని పునరుత్పత్తి భావనలను జాబితా–IIలోని అర్థాలతో జతపరచండి.\nజాబితా–I: A. గాలి పరాగసంపర్కం (Wind Pollination); B. డీటాసెలింగ్ (Detasseling); C. సంకర విత్తనం (Hybrid Seed); D. సిల్కింగ్ దశ (Silking Stage).\nజాబితా–II: 1. సంకర విత్తన పొలంలో తల్లి వరుసల నుంచి టాసెల్‌లను తొలగించడం; 2. పుప్పొడిని స్వీకరించగల ఆడ నిర్మాణాలు బయటకు రావడం; 3. ఎంపిక చేసిన తల్లి–తండ్రి మొక్కల నియంత్రిత సంకరం నుంచి పొందిన విత్తనం; 4. పుప్పొడి ప్రధానంగా గాలి ద్వారా కదలడం.",
+   "matching_lists_te": {
+    "left": [
+     "గాలి పరాగసంపర్కం (Wind Pollination)",
+     "డీటాసెలింగ్ (Detasseling)",
+     "సంకర విత్తనం (Hybrid Seed)",
+     "సిల్కింగ్ దశ (Silking Stage)"
+    ],
+    "right": [
+     "సంకర విత్తన పొలంలో తల్లి వరుసల నుంచి టాసెల్‌లను తొలగించడం",
+     "పుప్పొడిని స్వీకరించగల ఆడ నిర్మాణాలు బయటకు రావడం",
+     "ఎంపిక చేసిన తల్లి–తండ్రి మొక్కల నియంత్రిత సంకరం నుంచి పొందిన విత్తనం",
+     "పుప్పొడి ప్రధానంగా గాలి ద్వారా కదలడం"
+    ]
+   },
+   "options_te": [
+    "A–1; B–3; C–2; D–4",
+    "A–2; B–3; C–1; D–4",
+    "A–4; B–1; C–3; D–2",
+    "A–3; B–2; C–4; D–1"
+   ],
+   "explanation_en": "The correct matches are A–4, B–1, C–3 and D–2. Wind pollination moves pollen through air; detasseling removes female-row tassels; hybrid seed results from a controlled cross; and silking is silk emergence.",
+   "explanation_te": "సరైన జతలు A–4, B–1, C–3, D–2. గాలి పరాగసంపర్కంలో పుప్పొడి గాలి ద్వారా కదులుతుంది; డీటాసెలింగ్‌లో తల్లి వరుసల నుంచి టాసెల్‌లను తొలగిస్తారు; సంకర విత్తనం నియంత్రిత సంకరం ఫలితం; సిల్కింగ్ దశలో పుప్పొడిని స్వీకరించగల సిల్క్‌లు బయటకు వస్తాయి.",
+   "option_explanations_en": [
+    "Incorrect. Wind pollination matches 4 and detasseling 4.",
+    "Incorrect. Hybrid seed matches 3 and silking 3.",
+    "Correct. All four reproductive pairs match.",
+    "Incorrect. All matches are misplaced."
+   ],
+   "option_explanations_te": [
+    "తప్పు. గాలి పరాగసంపర్కానికి 2, డీటాసెలింగ్‌కు 1 సరైనవి.",
+    "తప్పు. సంకర విత్తనానికి 1, సిల్కింగ్‌కు 2 సరైనవి.",
+    "సరైంది. నాలుగు పునరుత్పత్తి భావనల జతలూ సరిపోతాయి.",
+    "తప్పు. అన్ని జతలూ తారుమారయ్యాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-45E-013": {
+   "question_en": "Match the pulse crops in List I with their scientific names in List II.\nList I: A. Black gram; B. Green gram; C. Pigeonpea; D. Chickpea.\nList II: 1. Cajanus cajan; 2. Vigna radiata; 3. Vigna mungo; 4. Cicer arietinum.",
+   "matching_lists_en": {
+    "left": [
+     "Black gram",
+     "Green gram",
+     "Pigeonpea",
+     "Chickpea"
+    ],
+    "right": [
+     "Cajanus cajan",
+     "Vigna radiata",
+     "Vigna mungo",
+     "Cicer arietinum"
+    ]
+   },
+   "options_en": [
+    "A–1; B–4; C–3; D–2",
+    "A–2; B–1; C–4; D–3",
+    "A–4; B–1; C–2; D–3",
+    "A–3; B–2; C–1; D–4"
+   ],
+   "question_te": "జాబితా–Iలోని పప్పు పంటలను జాబితా–IIలోని శాస్త్రీయ పేర్లతో జతపరచండి.\nజాబితా–I: A. మినుము; B. పెసర; C. కంది; D. శనగ.\nజాబితా–II: 1. Cajanus cajan; 2. Vigna radiata; 3. Vigna mungo; 4. Cicer arietinum.",
+   "matching_lists_te": {
+    "left": [
+     "మినుము",
+     "పెసర",
+     "కంది",
+     "శనగ"
+    ],
+    "right": [
+     "Cajanus cajan",
+     "Vigna radiata",
+     "Vigna mungo",
+     "Cicer arietinum"
+    ]
+   },
+   "options_te": [
+    "A–1; B–4; C–3; D–2",
+    "A–2; B–1; C–4; D–3",
+    "A–4; B–1; C–2; D–3",
+    "A–3; B–2; C–1; D–4"
+   ],
+   "explanation_en": "The correct matches are black gram–Vigna mungo, green gram–Vigna radiata, pigeonpea–Cajanus cajan and chickpea–Cicer arietinum.",
+   "explanation_te": "సరైన జతలు: మినుము–Vigna mungo, పెసర–Vigna radiata, కంది–Cajanus cajan, శనగ–Cicer arietinum. సాధారణ పేర్లు (Common Names) దగ్గరగా కనిపించినా వృక్ష జాతులను (Species) కలపకూడదు.",
+   "option_explanations_en": [
+    "Incorrect. The four species are mismatched.",
+    "Incorrect. Black gram matches 3 and green gram matches 4.",
+    "Incorrect. Pigeonpea matches 1 and chickpea matches 3.",
+    "Correct. All crop–species pairs match."
+   ],
+   "option_explanations_te": [
+    "తప్పు. నాలుగు వృక్ష జాతులు (Species) తప్పుగా జతపడ్డాయి.",
+    "తప్పు. మినుము 2తో, పెసర 4తో జతపడాలి.",
+    "తప్పు. కంది 1తో, శనగ 3తో జతపడాలి.",
+    "సరైంది. అన్ని crop–species జతలు సరైనవి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
+  },
+  "GEO-ORIG-47-017": {
+   "question_en": "Match List I with List II. A. Pomology; B. Olericulture; C. Floriculture; D. Plantation horticulture. 1. Vegetable crops; 2. Fruit crops; 3. Perennial commercial crops; 4. Flowers and ornamental plants.",
+   "matching_lists_en": {
+    "left": [
+     "Pomology / ఫల శాస్త్రం",
+     "Olericulture / కూరగాయల సాగు శాస్త్రం",
+     "Floriculture / పుష్ప సాగు",
+     "Plantation horticulture / తోట పంటలు"
+    ],
+    "right": [
+     "Horticultural study and cultivation of vegetables",
+     "Horticultural study and cultivation of fruit crops",
+     "Specialised perennial commercial crops within the stated horticultural grouping",
+     "Cultivation of flowers and ornamental plants"
+    ]
+   },
+   "options_en": [
+    "A–3; B–4; C–1; D–2",
+    "A–2; B–1; C–4; D–3",
+    "A–4; B–3; C–2; D–1",
+    "A–1; B–4; C–3; D–2"
+   ],
+   "question_te": "జాబితా–Iను జాబితా–IIతో సరిపోల్చండి. A. ఫల సాగు శాస్త్రం (Pomology); B. కూరగాయల సాగు శాస్త్రం (Olericulture); C. పుష్ప సాగు శాస్త్రం (Floriculture); D. తోట పంటల సాగు (Plantation Horticulture). 1. కూరగాయ పంటలు; 2. పండ్ల పంటలు; 3. దీర్ఘకాల వాణిజ్య పంటలు; 4. పూలు, అలంకార మొక్కలు.",
+   "matching_lists_te": {
+    "left": [
+     "Pomology / ఫల శాస్త్రం",
+     "Olericulture / కూరగాయల సాగు శాస్త్రం",
+     "Floriculture / పుష్ప సాగు",
+     "Plantation horticulture / తోట పంటలు"
+    ],
+    "right": [
+     "Horticultural study and cultivation of vegetables",
+     "Horticultural study and cultivation of fruit crops",
+     "Specialised perennial commercial crops within the stated horticultural grouping",
+     "Cultivation of flowers and ornamental plants"
+    ]
+   },
+   "options_te": [
+    "A–3; B–4; C–1; D–2",
+    "A–2; B–1; C–4; D–3",
+    "A–4; B–3; C–2; D–1",
+    "A–1; B–4; C–3; D–2"
+   ],
+   "explanation_en": "The correct pairs are Pomology–fruit crops, Olericulture–vegetable crops, Floriculture–flowers and ornamental plants, and Plantation horticulture–perennial commercial crops. Hence A–2, B–1, C–4, D–3.",
+   "explanation_te": "సరైన జతలు: Pomology–పండ్ల పంటలు; Olericulture–కూరగాయ పంటలు; Floriculture–పూలు, అలంకార మొక్కలు; Plantation Horticulture–దీర్ఘకాల వాణిజ్య పంటలు. కాబట్టి code A–2, B–1, C–4, D–3.",
+   "option_explanations_en": [
+    "All four pairs are incorrect in this code.",
+    "All four pairs are correct in this code.",
+    "This code interchanges the branches and crop groups.",
+    "This code mismatches olericulture and floriculture, among others."
+   ],
+   "option_explanations_te": [
+    "ఈ codeలో నాలుగు జతలూ తప్పుగా ఉన్నాయి.",
+    "ఇందులో నాలుగు జతలూ సరైనవి.",
+    "ఈ codeలో శాఖలు, పంట వర్గాలు పరస్పరం మారాయి.",
+    "ఈ codeలో Olericulture, Floriculture సహా జతలు తప్పాయి."
+   ],
+   "reason": "List II reordered so the answer code is not the lesson-wide A–2;B–4;C–1;D–3 pattern."
   }
  }
 }
