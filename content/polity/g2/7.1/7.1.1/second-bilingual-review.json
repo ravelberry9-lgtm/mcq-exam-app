@@ -1,0 +1,27 @@
+{
+  "chapter": "7.1.1",
+  "review_date": "2026-11-08",
+  "scope": {"chapter_questions": 11, "verified_pyqs": 1, "original_pagewise": 6, "original_whole_chapter": 4, "staged_expected_questions": 2},
+  "checks": {
+    "english_telugu_stem_alignment": "passed",
+    "four_option_alignment_and_order": "passed",
+    "answer_range_and_key_consistency": "passed",
+    "terminology": "passed",
+    "question_specific_explanations": "passed; all 11 explanation IDs resolve in Explanations.json",
+    "pyq_bilingual_visual_match": "passed against supplied official Series A final-key PDF page 40",
+    "expected_question_distinctness": "passed; one tests the responsible House and one separates confidence, Question Hour and Zero Hour"
+  },
+  "duplicate_audit": {
+    "inventory_compared": 642,
+    "fields": ["id", "question_en exact normalized", "question_te exact normalized"],
+    "collisions": 0,
+    "scope_note": "Compared with every parseable Questions.json outside 7.1.1 under content/polity/g2. Semantic near-duplicate review remains a coordinator-level shared-bank safeguard."
+  },
+  "interface_review": {
+    "reading_wrapper": "passed in Edge local-file view",
+    "gbk_iframe": "passed; full saved reading visible",
+    "practice_route": "not locally executable from file://; retained established ./practice contract for coordinator-owned app",
+    "mobile_and_answer_reveal": "coordinator-owned integration checks, not local chapter blockers"
+  },
+  "result": "passed_local_chapter_gate"
+}

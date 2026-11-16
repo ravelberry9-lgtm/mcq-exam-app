@@ -1,0 +1,347 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+    background: #eef2f7;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px;
+    background: #fff;
+    padding: 13mm 12mm 11mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+    color: #fff;
+    border-radius: 9px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .hbadge {
+    background: rgba(255,255,255,0.2);
+    border-radius: 7px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .htitle h1 { font-size: 18px; font-weight: 700; }
+  .htitle h2 { font-size: 13.5px; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+  .hmeta { margin-left: auto; text-align: right; font-size: 13px; opacity: 0.8; line-height: 1.7; }
+
+  /* SECTION HEADING */
+  .sh {
+    font-size: 14px;
+    font-weight: 700;
+    color: #283593;
+    background: #e8eaf6;
+    border-left: 5px solid #5c6bc0;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 11px 0 7px;
+    letter-spacing: 0.3px;
+  }
+
+  /* GRIDS */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+
+  /* CARD */
+  .card {
+    background: #f5f7ff;
+    border: 1.5px solid #c5cae9;
+    border-radius: 7px;
+    padding: 8px 10px;
+  }
+  .ch {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1a237e;
+    border-bottom: 1px solid #c5cae9;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
+  }
+
+  /* FACT ROWS */
+  .fact { margin: 3px 0; font-size: 14.5px; }
+  .fact::before { content: "• "; color: #5c6bc0; font-weight: 700; }
+  .k { font-weight: 700; color: #1a237e; }
+  .kg { font-weight: 700; color: #1b5e20; }
+  .kt { font-weight: 700; color: #004d40; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    background: #3949ab;
+    color: #fff;
+    padding: 5px 7px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td { padding: 4px 7px; border-bottom: 1px solid #e8eaf6; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) td { background: #f0f2ff; }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .tg { background: #e8f5e9; color: #1b5e20; }
+  .tb { background: #e3f2fd; color: #0d47a1; }
+  .tp { background: #ede7f6; color: #4527a0; }
+  .tt { background: #e0f7fa; color: #00695c; }
+
+  /* PILLS */
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .pill {
+    background: #3949ab;
+    color: #fff;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .pg { background: #2e7d32; }
+  .pt { background: #00695c; }
+  .pp { background: #4527a0; }
+
+  /* SOURCE GRID */
+  .sgrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
+  .sitem {
+    background: #e8eaf6;
+    border: 1.5px solid #9fa8da;
+    border-radius: 6px;
+    padding: 5px 6px;
+    text-align: center;
+  }
+  .sc { font-size: 13px; font-weight: 700; color: #283593; }
+  .sv { font-size: 12.5px; color: #37474f; margin-top: 2px; line-height: 1.35; }
+
+  /* TIMELINE */
+  .tl { padding-left: 18px; }
+  .tli { position: relative; padding: 3px 0 3px 12px; }
+  .tli::before {
+    content: '';
+    position: absolute;
+    left: -1px; top: 8px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: #5c6bc0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1.5px #5c6bc0;
+  }
+  .tli::after {
+    content: '';
+    position: absolute;
+    left: 3px; top: 17px;
+    width: 2px;
+    height: calc(100% - 8px);
+    background: #c5cae9;
+  }
+  .tli:last-child::after { display: none; }
+  .ty { font-weight: 700; color: #283593; font-size: 14.5px; }
+  .tx { font-size: 14px; color: #333; }
+
+  .footer {
+    border-top: 1.5px solid #c5cae9;
+    margin-top: 10px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
+</style><div class="oldpart">
+<!-- ════════════════ PAGE 1 ════════════════ -->
+<div class="page">
+<div class="header">
+<div class="hbadge">Concept cards</div>
+<div class="htitle">
+<h1>Fundamental Duties — ప్రాథమిక విధులు</h1>
+<h2>Indian Polity · Lakshmikanth · APPSC Group 2</h2>
+</div>
+
+</div>
+<!-- Intro Box -->
+<div class="introbox">
+<div style="font-size:14.5px; font-weight:700; color:#2e4a12;">10.1 పరిచయం — ప్రాథమిక విధులు ఎందుకు?
+    <span style="font-size:13px; font-weight:400; color:#4a6a22;"> (Why Fundamental Duties?)</span></div>
+<div class="fact" style="margin-top:5px;">రాజ్యాంగంలో మొదట ప్రాథమిక విధులు లేవు — 42వ సవరణ 1976 ద్వారా జోడించబడ్డాయి<br/><em>Originally no Fundamental Duties — added by <span class="k">42nd Amendment 1976</span></em></div>
+<div class="fact">స్వర్ణ సింగ్ కమిటీ సిఫారసు మేరకు జోడించబడ్డాయి; <span class="k">USSR (సోవియట్ యూనియన్)</span> రాజ్యాంగం నుండి స్వీకరించబడ్డాయి<br/><em>Added on recommendation of <span class="k">Swaran Singh Committee</span>; borrowed from <span class="k">USSR (Soviet Union)</span> constitution</em></div>
+<div class="fact">స్థానం: <span class="k">భాగం IVA · ఆర్టికల్ 51A</span> (DPSPs తర్వాత, భాగం V కు ముందు)<br/><em>Placed in: <span class="k">Part IVA · Article 51A</span> (after DPSPs in Part IV, before Part V)</em></div>
+<div class="fact">ప్రస్తుతం <span class="k">11 ప్రాథమిక విధులు</span> — మొదట 10 (42వ సవరణ 1976); 11వ విధి 86వ సవరణ 2002 ద్వారా జోడించబడింది<br/><em>Currently <span class="k">11 Fundamental Duties</span> — originally 10 (42nd Amdt 1976); 11th added by 86th Amdt 2002</em></div>
+</div>
+<!-- Numstrip -->
+<div class="numstrip">
+<div class="ns">
+<div class="n">42</div>
+<div class="l">వ సవరణ<br/>nd Amendment<br/>1976</div>
+</div>
+<div class="ns">
+<div class="n">10</div>
+<div class="l">మొదటి విధులు<br/>Original Duties<br/>(a–j)</div>
+</div>
+<div class="ns">
+<div class="n">86</div>
+<div class="l">వ సవరణ<br/>th Amendment<br/>2002</div>
+</div>
+<div class="ns">
+<div class="n">11</div>
+<div class="l">ప్రస్తుత విధులు<br/>Current Duties<br/>(a–k)</div>
+</div>
+</div>
+<!-- 11 Duties List -->
+<div class="sh">10.2 11 ప్రాథమిక విధులు — ఆర్టికల్ 51A (11 Fundamental Duties)</div>
+<ul class="dutylist">
+<li class="dutyitem">
+<span class="dtag">51A(a)</span>
+<div class="dtext">రాజ్యాంగాన్ని పాటించడం, దాని ఆదర్శాలు, వ్యవస్థలను గౌరవించడం, జాతీయ పతాకం &amp; జాతీయ గీతాన్ని గౌరవించడం<br/><em>Abide by the Constitution, respect its ideals &amp; institutions, National Flag &amp; National Anthem</em></div>
+</li>
+<li class="dutyitem">
+<span class="dtag alt">51A(b)</span>
+<div class="dtext">స్వాతంత్ర్య ఉద్యమానికి స్ఫూర్తినిచ్చిన ఉదాత్త ఆదర్శాలను మనసారా పాటించడం<br/><em>Cherish and follow the noble ideals which inspired the national struggle for freedom</em></div>
+</li>
+<li class="dutyitem">
+<span class="dtag">51A(c)</span>
+<div class="dtext">భారతదేశ సార్వభౌమత్వం, ఐక్యత మరియు సమగ్రతను నిలబెట్టడం మరియు రక్షించడం<br/><em>Uphold and protect the sovereignty, unity and integrity of India</em></div>
+</li>
+<li class="dutyitem">
+<span class="dtag alt">51A(d)</span>
+<div class="dtext">దేశాన్ని రక్షించడం మరియు పిలిచినప్పుడు జాతీయ సేవ చేయడం<br/><em>Defend the country and render national service when called upon</em></div>
+</li>
+<li class="dutyitem">
+<span class="dtag">51A(e)</span>
+<div class="dtext">మత, భాషా, ప్రాంతీయ వైవిధ్యాలను అధిగమించి సహోదర భావన పెంపొందించడం; మహిళల గౌరవాన్ని తక్కువ చేసే ఆచారాలు విరమించడం<br/><em>Promote harmony and spirit of common brotherhood; renounce practices derogatory to the dignity of women</em></div>
+</li>
+<li class="dutyitem">
+<span class="dtag alt">51A(f)</span>
+<div class="dtext">భారతదేశ సమ్మిళిత సంస్కృతి యొక్క గొప్ప వారసత్వాన్ని విలువకట్టడం మరియు పరిరక్షించడం<br/><em>Value and preserve the rich heritage of our composite culture</em></div>
+</li>
+<li class="dutyitem">
+<span class="dtag">51A(g)</span>
+<div class="dtext">అడవులు, సరస్సులు, నదులు, వన్యప్రాణులతో సహా సహజ పర్యావరణాన్ని రక్షించడం మరియు మెరుగుపరచడం; జీవులపట్ల కరుణ<br/><em>Protect and improve the natural environment including forests, lakes, rivers and wildlife; have compassion for living creatures</em></div>
+</li>
+<li class="dutyitem">
+<span class="dtag alt">51A(h)</span>
+<div class="dtext">శాస్త్రీయ దృక్పథం, మానవతావాదం మరియు జ్ఞాన విచారణ &amp; సంస్కరణ స్ఫూర్తిని పెంపొందించడం<br/><em>Develop scientific temper, humanism and the spirit of inquiry and reform</em></div>
+</li>
+<li class="dutyitem">
+<span class="dtag">51A(i)</span>
+<div class="dtext">సార్వజనిక ఆస్తిని సంరక్షించడం మరియు హింసను విరమించడం<br/><em>Safeguard public property and abjure violence</em></div>
+</li>
+<li class="dutyitem">
+<span class="dtag alt">51A(j)</span>
+<div class="dtext">వ్యక్తిగత మరియు సామూహిక కార్యకలాపాలన్నింటిలో శ్రేష్ఠతకు కృషి చేయడం — దేశం నిరంతరం ఉన్నత శిఖరాలకు చేరేలా<br/><em>Strive towards excellence in all spheres of individual &amp; collective activity — so that the nation constantly rises higher</em></div>
+</li>
+<li class="dutyitem">
+<span class="dtag new">51A(k)</span>
+<div class="dtext" style="font-weight:600;">6-14 సంవత్సరాల పిల్లలకు విద్యా అవకాశాలు కల్పించడం తల్లిదండ్రులు లేదా సంరక్షకుల విధి — <span style="color:#e65100;">86వ సవరణ 2002</span><br/><em>Parent/guardian's duty to provide educational opportunities for child (6-14 years) — <span style="color:#e65100;">86th Amendment 2002</span></em></div>
+</li>
+</ul>
+<div class="footer">Chapter 10 · Page 1 of 2 · Indian Polity — Lakshmikanth · APPSC Group 2</div>
+</div>
+<!-- ════════════════ PAGE 2 ════════════════ -->
+<div class="page">
+<div class="header">
+<div class="hbadge">Concept cards</div>
+<div class="htitle">
+<h1>Fundamental Duties — ప్రాథమిక విధులు (Page 2)</h1>
+<h2>Indian Polity · Lakshmikanth · APPSC Group 2</h2>
+</div>
+
+</div>
+<!-- Swaran Singh Committee -->
+<div class="sh">10.3 స్వర్ణ సింగ్ కమిటీ &amp; 86వ సవరణ (Swaran Singh Committee &amp; 86th Amendment)</div>
+<div class="g2">
+<div class="card ncard" id="CC-6.6-03"><div class="ch">స్వర్ణ్ సింగ్ కమిటీ (1976) · Swaran Singh Committee (1976)</div><div class="secl">Swaran Singh Committee &amp; the 42nd Amendment, 1976</div><div class="fact"><span lang="te">1976లో అంతర్గత అత్యవసర పరిస్థితి (1975-77) కాలంలో కాంగ్రెస్ పార్టీ ఈ కమిటీని ఏర్పాటు చేసింది.</span><br/><em class="en" lang="en">Set up in 1976 by the Congress Party during the internal Emergency (1975-77).</em></div><div class="fact"><span lang="te">ప్రకరణ 352 కింద అత్యవసర పరిస్థితి: 25 జూన్ 1975న ప్రకటన (అంతర్గత అలజడి కారణంగా), 21 మార్చి 1977న ఉపసంహరణ.</span><br/><em class="en" lang="en">Emergency under ప్రకరణ 352: proclaimed 25 June 1975 (internal disturbance), revoked 21 March 1977.</em></div><div class="fact"><span lang="te">రాజ్యాంగంలో ప్రాథమిక విధులకు ప్రత్యేక అధ్యాయం పెట్టాలని సిఫారసు చేసింది.</span><br/><em class="en" lang="en">Recommended a separate chapter on Fundamental Duties in the Constitution.</em></div><div class="fact flag"><span lang="te">42వ సవరణ ఈ విధులను ఆదేశిక సూత్రాల (భాగం IV) వెంటనే కొత్తగా భాగం IVAలో పెట్టింది. (కమిటీ నివేదిక విషయంలో 'ప్రత్యేక అధ్యాయం' అని మాత్రమే ఆధారం ఉంది.)</span><br/><em class="en" lang="en">The 42nd Amendment put the duties in a new Part IVA, placed right after the DPSPs (Part IV). (The Committee's own report is cited only for 'a separate chapter'.)</em> <em class="warn">⚠ disputed – verify</em></div><div class="fact"><span lang="te">కమిటీ 8 విధులు సూచించింది; కానీ 42వ సవరణ 10 విధులను చేర్చింది.</span><br/><em class="en" lang="en">Committee suggested 8 duties; the 42nd Amendment actually added 10.</em></div></div><div class="card ncard" id="CC-6.6-04"><div class="ch">ఆమోదం పొందని కమిటీ సిఫారసులు · Committee proposals that were NOT accepted</div><div class="secl">Swaran Singh Committee &amp; the 42nd Amendment, 1976</div><div class="fact"><span lang="te">విధులు పాటించని వారికి పార్లమెంటు శిక్ష లేదా జరిమానా విధించవచ్చు - దీన్ని అంగీకరించలేదు.</span><br/><em class="en" lang="en">Parliament may impose penalty or punishment for non-compliance with or refusal to observe duties - not accepted.</em></div><div class="fact"><span lang="te">అలాంటి శిక్షా చట్టాన్ని ప్రాథమిక హక్కుల ఉల్లంఘన పేరుతో కోర్టులో సవాలు చేయకూడదు - దీన్నీ అంగీకరించలేదు.</span><br/><em class="en" lang="en">No such penalty law could be questioned in court for violating FRs or any other provision - not accepted.</em></div><div class="fact"><span lang="te">పన్నులు చెల్లించడం కూడా ప్రాథమిక విధి కావాలి - ఇది కూడా అంగీకరించలేదు.</span><br/><em class="en" lang="en">Duty to pay taxes should be a Fundamental Duty - not accepted.</em></div><div class="fact"><span lang="te">కాబట్టి 'పన్ను విధి' తిరస్కరించిన సిఫారసు మాత్రమే; ప్రకరణ 51Aలో లేదు.</span><br/><em class="en" lang="en">So the 'tax duty' is a rejected proposal, not part of ప్రకరణ 51A.</em></div></div>
+<div class="card ncard" id="CC-6.6-08"><div class="ch">86వ సవరణ (2002), 11వ విధి · 86th Amendment (2002) and the 11th duty</div><div class="secl">List of Fundamental Duties — Article 51A</div><div class="fact"><span lang="te">ప్రకరణ 51A(k) చేర్చింది: 6-14 ఏళ్ల తమ బిడ్డకు లేదా సంరక్షణలోని పిల్లలకు చదువుకునే అవకాశం కల్పించడం తల్లిదండ్రుల/సంరక్షకుల విధి.</span><br/><em class="en" lang="en">Added ప్రకరణ 51A(k): parent/guardian to provide opportunities for education to child or ward aged 6-14.</em></div><div class="fact"><span lang="te">ఇదే సవరణ ప్రకరణ 21Aను చేర్చింది: 6-14 ఏళ్ల పిల్లలకు ఉచిత, నిర్బంధ విద్య ప్రాథమిక హక్కు.</span><br/><em class="en" lang="en">Same Amendment added ప్రకరణ 21A: free and compulsory education for children aged 6-14 as a Fundamental Right.</em></div><div class="fact"><span lang="te">ప్రకరణ 45 (ఆదేశిక సూత్రం) మార్చారు: ఆరేళ్లు నిండేవరకు పిల్లలందరికీ బాల్య సంరక్షణ, విద్య.</span><br/><em class="en" lang="en">ప్రకరణ 45 (DPSP) recast: early childhood care and education for all children until they complete six years.</em></div><div class="fact"><span lang="te">చట్టం తేదీ 12 డిసెంబర్ 2002; కానీ ప్రకరణ 51A(k)తో సహా దానిలోని అన్ని నిబంధనలు 1 ఏప్రిల్ 2010 నుంచే అమలులోకి వచ్చాయి (S.O. 427(E), 16 ఫిబ్రవరి 2010). అంటే 'చట్టం సంవత్సరం 2002, అమలు 2010' అని గుర్తుంచుకోండి.</span><br/><em class="en" lang="en">Act dated 12 December 2002, but all its provisions, including ప్రకరణ 51A(k), came into force only on 1 April 2010 (S.O. 427(E), 16 Feb 2010).</em></div><div class="fact"><span lang="te">ప్రకరణ 21Aను అమలు చేయడానికి విద్యాహక్కు (RTE) చట్టం, 2009 తెచ్చారు.</span><br/><em class="en" lang="en">RTE Act, 2009 was enacted to implement ప్రకరణ 21A.</em></div><div class="fact"><span lang="te">ఇప్పుడు మొత్తం విధులు 11 (1976లో 10 + 2002లో 1).</span><br/><em class="en" lang="en">Total duties now 11 (10 of 1976 + 1 of 2002).</em></div></div>
+</div>
+<!-- Nature & Features -->
+<div class="sh">10.4 స్వభావం &amp; లక్షణాలు (Nature &amp; Features of Fundamental Duties)</div>
+<div class="g2">
+<div class="card ncard" id="CC-6.6-09"><div class="ch">ప్రాథమిక విధుల లక్షణాలు · Features of Fundamental Duties</div><div class="secl">Features of Fundamental Duties</div><div class="fact"><span lang="te">కొన్ని నైతిక విధులు (స్వాతంత్ర్య పోరాట ఆదర్శాలను గౌరవించడం), కొన్ని పౌర విధులు (రాజ్యాంగం, పతాకం, గీతాన్ని గౌరవించడం).</span><br/><em class="en" lang="en">Some are moral (cherish freedom-struggle ideals), some civic (respect Constitution, Flag, Anthem).</em></div><div class="fact"><span lang="te">ఇవి కొత్తవి కావు; భారతీయ సంప్రదాయం, పురాణాలు, మతాలు, ఆచారాల్లో ఉన్న విలువలనే రాతపూర్వకం చేశారు.</span><br/><em class="en" lang="en">They codify values already part of Indian tradition, mythology, religions and practices.</em></div><div class="fact"><span lang="te">ఇవి భారత పౌరులకు మాత్రమే వర్తిస్తాయి, విదేశీయులకు కాదు (కొన్ని ప్రాథమిక హక్కులు అందరికీ వర్తించినట్టు కాదు).</span><br/><em class="en" lang="en">Apply only to Indian citizens, not foreigners (unlike some FRs available to all persons).</em></div><div class="fact"><span lang="te">ఆదేశిక సూత్రాల్లాగే వీటిని కోర్టు ద్వారా నేరుగా అమలు చేయించలేం; ఉల్లంఘనకు రాజ్యాంగంలో శిక్ష లేదు.</span><br/><em class="en" lang="en">Non-justiciable like DPSP: courts cannot directly enforce them; no legal sanction for violation.</em></div><div class="fact"><span lang="te">అయితే తగిన సాధారణ చట్టాల ద్వారా, శిక్షలతో సహా, వీటిని అమలు చేసే అధికారం పార్లమెంటుకు ఉంది.</span><br/><em class="en" lang="en">Parliament is free to enforce them through suitable ordinary laws, including penalties.</em></div></div>
+<div class="card ncard" id="CC-6.6-10"><div class="ch">ప్రాథమిక విధులపై విమర్శలు · Criticism of Fundamental Duties</div><div class="secl">Criticism of Fundamental Duties</div><div class="fact"><span lang="te">జాబితా సంపూర్ణం కాదు: ఓటు, పన్ను, కుటుంబ నియంత్రణ లేవు (పన్ను విధిని స్వర్ణ్ సింగ్ కమిటీ సిఫారసు చేసినా చేర్చలేదు).</span><br/><em class="en" lang="en">Not exhaustive: omits voting, paying taxes, family planning (tax duty was even recommended by Swaran Singh Committee).</em></div><div class="fact"><span lang="te">అస్పష్టమైన పదాలు: 'ఉన్నత ఆదర్శాలు', 'మిశ్రమ సంస్కృతి', 'శాస్త్రీయ దృక్పథం' - ఒక్కొక్కరు ఒక్కోలా అర్థం చేసుకుంటారు.</span><br/><em class="en" lang="en">Vague and ambiguous phrases: 'noble ideals', 'composite culture', 'scientific temper'.</em></div><div class="fact"><span lang="te">న్యాయస్థానంలో అమలు కావు కాబట్టి ఇవి కేవలం 'నైతిక సూత్రాల నియమావళి' అనే విమర్శ.</span><br/><em class="en" lang="en">Called a mere 'code of moral precepts' because they are non-justiciable.</em></div><div class="fact"><span lang="te">అనవసరం అనే విమర్శ: రాజ్యాంగంలో లేకపోయినా చాలామంది పౌరులు వీటిని పాటిస్తారు.</span><br/><em class="en" lang="en">Called superfluous: most citizens would perform them anyway.</em></div><div class="fact"><span lang="te">భాగం III తర్వాత కాకుండా భాగం IVకు 'అనుబంధం'గా పెట్టడం వల్ల వాటి ప్రాధాన్యం తగ్గిందనే విమర్శ.</span><br/><em class="en" lang="en">Placed as an 'appendage' to Part IV instead of after Part III, which lowers their status.</em></div><div class="fact"><span lang="te">51Aలో లేనంత మాత్రాన చట్టపరమైన బాధ్యత లేదని కాదు: చట్టం ఆధారంగా పన్ను విధిస్తారు (ప్రకరణ 265).</span><br/><em class="en" lang="en">Absent from 51A does not mean no legal duty: tax is levied by authority of law (ప్రకరణ 265).</em></div></div><div class="card ncard" id="CC-6.6-11"><div class="ch">ప్రాథమిక విధుల ప్రాముఖ్యత · Significance of Fundamental Duties</div><div class="secl">Significance of Fundamental Duties</div><div class="fact"><span lang="te">హక్కులు అనుభవిస్తూనే దేశం, సమాజం, తోటి పౌరుల పట్ల బాధ్యతలు ఉన్నాయని గుర్తుచేస్తాయి.</span><br/><em class="en" lang="en">Reminder that citizens owe duties to country, society and fellow citizens while enjoying rights.</em></div><div class="fact"><span lang="te">జెండా తగలబెట్టడం, ప్రజా ఆస్తిని ధ్వంసం చేయడం వంటి దేశ వ్యతిరేక, సంఘ వ్యతిరేక చర్యలకు హెచ్చరిక.</span><br/><em class="en" lang="en">Warning against anti-national, antisocial acts such as burning the flag or destroying public property.</em></div><div class="fact"><span lang="te">స్ఫూర్తి: క్రమశిక్షణ, నిబద్ధత పెంచి పౌరులను చురుకైన భాగస్వాములుగా చేస్తాయి.</span><br/><em class="en" lang="en">Source of inspiration: promote discipline, commitment and active citizenship.</em></div><div class="fact"><span lang="te">ఒక చట్టం రాజ్యాంగబద్ధమా కాదా అని నిర్ణయించడంలో కోర్టులకు సహాయపడతాయి.</span><br/><em class="en" lang="en">Help courts test constitutional validity of a law.</em></div><div class="fact"><span lang="te">మోహన్ కుమార్ సింఘానియా v భారత ప్రభుత్వం (1991): అస్పష్టమైన చట్టాల అర్థం తేల్చడానికి ప్రకరణ 51Aను ఉపయోగించవచ్చు.</span><br/><em class="en" lang="en">Mohan Kumar Singhania v Union of India (1991): ప్రకరణ 51A can be used to interpret ambiguous laws.</em></div><div class="fact"><span lang="te">రామ్‌లీలా మైదాన్ ఘటన కేసు (2012): భాగాలు III, IV, IVA మధ్య ఒక ఉమ్మడి సూత్రం ఉంది; వీటిని కలిపి చదవాలి.</span><br/><em class="en" lang="en">Re Ramlila Maidan Incident (2012): a common thread runs through Parts III, IV and IVA; read them together.</em></div></div><div class="card ncard" id="CC-6.6-13"><div class="ch">వర్మ కమిటీ (1999): విధులకు అండగా ఉన్న చట్టాలు · Verma Committee (1999): laws that already back the duties</div><div class="secl">Verma Committee Observations (1999)</div><div class="fact"><span lang="te">జస్టిస్ జె.ఎస్. వర్మ నేతృత్వంలోని పౌరుల ప్రాథమిక విధుల కమిటీ 1999లో నివేదిక ఇచ్చింది.</span><br/><em class="en" lang="en">Justice J.S. Verma Committee on Fundamental Duties of Citizens reported in 1999.</em></div><div class="fact"><span lang="te">కొన్ని విధులను పరోక్షంగా అమలు చేస్తున్న ప్రస్తుత చట్టాలను గుర్తించింది.</span><br/><em class="en" lang="en">It identified existing laws that indirectly implement several duties.</em></div><div class="fact"><span lang="te">జాతీయ గౌరవ అవమాన నిరోధక చట్టం, 1971: రాజ్యాంగం, పతాకం, జాతీయ గీతానికి అగౌరవం.</span><br/><em class="en" lang="en">Prevention of Insults to National Honour Act, 1971: disrespect to Constitution, Flag, Anthem.</em></div><div class="fact"><span lang="te">పౌర హక్కుల పరిరక్షణ చట్టం, 1955 (1976 వరకు అస్పృశ్యత (నేరాల) చట్టం): కులం, మతం సంబంధిత నేరాలు.</span><br/><em class="en" lang="en">Protection of Civil Rights Act, 1955 (Untouchability (Offences) Act until 1976): caste/religion offences.</em></div><div class="fact"><span lang="te">IPC (జాతీయ సమైక్యతకు భంగం కలిగించే ప్రకటనలు), UAPA 1967 (మత సంస్థలను చట్టవిరుద్ధమని ప్రకటించడం), ప్రజాప్రాతినిధ్య చట్టం 1951 (మతం/కులం పేరుతో ఓట్లు అడగడం అవినీతి చర్య).</span><br/><em class="en" lang="en">IPC (national-integration offences), UAPA 1967 (communal organisations unlawful), RPA 1951 (corrupt practices on religion/caste grounds).</em></div><div class="fact"><span lang="te">పర్యావరణ విధికి అండగా వన్యప్రాణి (సంరక్షణ) చట్టం, 1972; అటవీ (సంరక్షణ) చట్టం, 1980.</span><br/><em class="en" lang="en">Wildlife (Protection) Act, 1972 and Forest (Conservation) Act, 1980 back the environment duty.</em></div><div class="fact"><span lang="te">అటవీ (సంరక్షణ) చట్టం పేరు 'వన్ (సంరక్షణ్ ఏవం సంవర్ధన్) అధినియం, 1980'గా మారింది; 1 డిసెంబర్ 2023 నుంచి అమలు.</span><br/><em class="en" lang="en">Forest (Conservation) Act renamed Van (Sanrakshan Evam Samvardhan) Adhiniyam, 1980, effective 1 December 2023.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">జెండా నియమాలు భారత పతాక నియమావళి, 2002 (26 జనవరి 2002 నుంచి) నుంచి వస్తాయి; 1971 చట్టం నుంచి కాదు.</span><br/><em class="en" lang="en">Flag rules come from the Flag Code of India, 2002 (effective 26 January 2002), not the 1971 Act.</em></div></div>
+</div>
+<!-- FR vs DPSP vs FD Comparison -->
+<div class="sh">10.5 FR vs DPSP vs FD పోలిక (Comparison Table)</div>
+<table>
+<tr><th>లక్షణం / Feature</th><th>మూలభూత హక్కులు / FRs</th><th>DPSP</th><th>ప్రాథమిక విధులు / FDs</th></tr>
+<tr>
+<td>స్థానం / Placement</td>
+<td>భాగం III (Art 12–35)<br/><em>Part III</em></td>
+<td>భాగం IV (Art 36–51)<br/><em>Part IV</em></td>
+<td>భాగం IVA (Art 51A)<br/><em>Part IVA</em></td>
+</tr>
+<tr>
+<td>ఎవరికి? / For Whom?</td>
+<td>పౌరులు + కొన్ని అన్యులు<br/><em>Citizens + some aliens</em></td>
+<td>రాజ్యానికి నిర్దేశాలు<br/><em>Directives to State</em></td>
+<td>కేవలం పౌరులు<br/><em>Citizens only</em></td>
+</tr>
+<tr>
+<td>న్యాయ-అమలు / Justiciable?</td>
+<td><span class="k">అవును</span> — Art 32/226<br/><em>Yes — Art 32/226</em></td>
+<td><span class="k">కాదు</span><br/><em>No</em></td>
+<td><span class="k">కాదు</span> (పరోక్ష అమలు మాత్రమే)<br/><em>No (only indirect)</em></td>
+</tr>
+<tr>
+<td>మూలం / Source</td>
+<td>USA Bill of Rights<br/><em>USA</em></td>
+<td>ఐర్లాండ్ రాజ్యాంగం<br/><em>Irish Constitution</em></td>
+<td>USSR రాజ్యాంగం<br/><em>USSR Constitution</em></td>
+</tr>
+<tr>
+<td>జోడించిన సంవత్సరం / Added</td>
+<td>1950 (అసలు రాజ్యాంగంలో)<br/><em>1950 (original)</em></td>
+<td>1950 (అసలు రాజ్యాంగంలో)<br/><em>1950 (original)</em></td>
+<td>1976 (42వ సవరణ)<br/><em>1976 (42nd Amdt)</em></td>
+</tr>
+</table>
+<!-- Cases -->
+<div class="sh">10.6 ముఖ్య కేసులు (Landmark Cases)</div>
+<div class="g2">
+<div class="card ncard" id="CC-6.6-14"><div class="ch">జెండా, జాతీయ గీతం, విద్యపై కోర్టు కేసులు · Court cases on the Flag, the Anthem and education</div><div class="secl">Significance of Fundamental Duties (court use)</div><div class="fact"><span lang="te">బిజో ఇమ్మాన్యుయేల్ v కేరళ రాష్ట్రం (11 ఆగస్టు 1986): జాతీయ గీతం సమయంలో గౌరవంగా నిలబడి, పాడని యెహోవా సాక్షుల విద్యార్థులను బడి నుంచి తొలగించకూడదు.</span><br/><em class="en" lang="en">Bijoe Emmanuel v State of Kerala (11 Aug 1986): Jehovah's Witness students who stood respectfully but did not sing the Anthem could not be expelled.</em></div><div class="fact"><span lang="te">బిజో: ప్రకరణ 19(1)(a), 25(1) కింద రక్షణ; జాతీయ గీతం పాడమని బలవంతం చేసే చట్టం ఏదీ లేదు.</span><br/><em class="en" lang="en">Bijoe: protected under ప్రకరణ 19(1)(a) and 25(1); no law compels anyone to sing the Anthem.</em></div><div class="fact"><span lang="te">భారత ప్రభుత్వం v నవీన్ జిందాల్ (23 జనవరి 2004): గౌరవంగా జెండా ఎగరేయడం ప్రకరణ 19(1)(a)లో భాగం, ప్రకరణ 19(2) పరిమితులకు లోబడి.</span><br/><em class="en" lang="en">Union of India v Naveen Jindal (23 Jan 2004): respectful flying of the flag is part of ప్రకరణ 19(1)(a), subject to 19(2).</em></div><div class="fact"><span lang="te">శ్యామ్ నారాయణ్ చౌక్సే: 2016 మధ్యంతర ఉత్తర్వు సినిమా హాళ్లలో జాతీయ గీతం తప్పనిసరి చేసింది; 9 జనవరి 2018 ఉత్తర్వుతో అది ఐచ్ఛికమైంది (గౌరవించాల్సిన బాధ్యత అలాగే ఉంది).</span><br/><em class="en" lang="en">Shyam Narayan Chouksey: 2016 interim order made Anthem in cinemas mandatory; 9 Jan 2018 order made it optional (respect duty stays).</em> <em class="asof">as of 2018-01-09</em></div><div class="fact"><span lang="te">AIIMS విద్యార్థి సంఘం v AIIMS (తీర్పు 24 ఆగస్టు 2001; నివేదిక 2002 (1) SCC 428): విధులను రిట్ ద్వారా అమలు చేయలేకపోయినా, చట్టాల అర్థం తేల్చడంలో మార్గదర్శకం.</span><br/><em class="en" lang="en">AIIMS Students' Union v AIIMS (decided 24 Aug 2001; reported 2002 (1) SCC 428): duties are not writ-enforceable but guide interpretation of laws.</em></div><div class="fact"><span lang="te">దాశరథి v ఆంధ్రప్రదేశ్ రాష్ట్రం (13 జూలై 1984) ఆంధ్రప్రదేశ్ హైకోర్టు కేసు (ఆస్థాన కవి పదవి రద్దు; 51A(j) చర్చ) - సుప్రీంకోర్టు కేసు కాదు.</span><br/><em class="en" lang="en">Dasarathi v State of AP (13 July 1984) is an Andhra Pradesh High Court case (poet-laureate post abolition; 51A(j) discussed), not a Supreme Court case.</em></div></div>
+<div class="card ncard" id="CC-6.6-15"><div class="ch">పర్యావరణ విధి 51A(g)పై కోర్టు కేసులు · Court cases on the environment duty 51A(g)</div><div class="secl">Significance of Fundamental Duties (court use)</div><div class="fact"><span lang="te">రూరల్ లిటిగేషన్ అండ్ ఎంటైటిల్‌మెంట్ కేంద్ర (18 డిసెంబర్ 1986): పర్యావరణాన్ని, పర్యావరణ సమతుల్యాన్ని కాపాడడం 51A(g) ప్రకారం ప్రభుత్వానిదీ, ప్రతి పౌరుడిదీ బాధ్యత.</span><br/><em class="en" lang="en">Rural Litigation and Entitlement Kendra (18 Dec 1986): preserving environment and ecological balance is the task of government and every citizen under 51A(g).</em></div><div class="fact"><span lang="te">ఎం.సి. మెహతా v భారత ప్రభుత్వం (WP 3727/1985, తీర్పు 12 జనవరి 1988, కాన్పూర్ తోళ్ల పరిశ్రమలు/గంగా కేసు): దేశవ్యాప్తంగా మొదటి పది తరగతుల్లో వారానికి కనీసం ఒక గంట పర్యావరణ పాఠాలు చెప్పాలని ఆదేశించింది. (GBKలో ఉన్న '1986' తప్పు.)</span><br/><em class="en" lang="en">M.C. Mehta v Union of India (WP 3727/1985, decided 12 Jan 1988, Kanpur tanneries/Ganga case): at least one hour a week of environment lessons in the first ten classes across India. (GBK's '1986' is wrong.)</em></div><div class="fact"><span lang="te">పర్యావరణ (పరిరక్షణ) చట్టం, 1986; జంతువుల పట్ల క్రూరత్వ నిరోధక చట్టం, 1960 కూడా 51A(g)కి అండ.</span><br/><em class="en" lang="en">Environment (Protection) Act, 1986 and Prevention of Cruelty to Animals Act, 1960 also support 51A(g).</em></div><div class="fact"><span lang="te">రాజ్యానికి సంబంధించిన సూత్రం ప్రకరణ 48A (ఆదేశిక సూత్రం); పౌరుడి విధి 51A(g).</span><br/><em class="en" lang="en">The State's matching directive is ప్రకరణ 48A (DPSP); the citizen's duty is 51A(g).</em></div></div>
+</div>
+<!-- Quick Revision -->
+<div class="sh">⚡ త్వరిత సమీక్ష పిల్స్ (Quick Revision Pills)</div>
+<div class="pills">
+<span class="pill">ప్రాథమిక విధులు = భాగం IVA = ఆర్టికల్ 51A / Part IVA = Art 51A</span>
+<span class="pill pb">42వ సవరణ 1976 ద్వారా జోడించబడ్డాయి / Added by 42nd Amendment 1976</span>
+<span class="pill">USSR రాజ్యాంగం నుండి స్వీకరించబడ్డాయి / Borrowed from USSR Constitution</span>
+<span class="pill pp">స్వర్ణ సింగ్ కమిటీ 1976 — 8 విధులు సిఫారసు / Swaran Singh Committee — 8 duties recommended</span>
+<span class="pill">పార్లమెంటు 10 ఆమోదించింది (2 అదనంగా) / Parliament approved 10 (2 extra)</span>
+<span class="pill pb">86వ సవరణ 2002 — 11వ విధి (k) జోడించింది / 86th Amdt 2002 — added 11th duty (k)</span>
+<span class="pill pp">11వ విధి = తల్లిదండ్రులు 6-14 పిల్లలకు విద్య / 11th duty = Parents educate children 6-14</span>
+<span class="pill">Art 51A(f) = సమ్మిళిత సంస్కృతి వారసత్వం / Composite culture heritage</span>
+<span class="pill pb">Art 51A(g) = సహజ పర్యావరణం రక్షణ / Natural environment protection</span>
+<span class="pill">Art 51A(h) = శాస్త్రీయ దృక్పథం / Scientific temper and humanism</span>
+<span class="pill pp">Art 51A(i) = సార్వజనిక ఆస్తి + హింస వ్యతిరేకం / Public property + abjure violence</span>
+<span class="pill">న్యాయ-అమలు యోగ్యం కాదు — కానీ పార్లమెంటు చట్టం ద్వారా అమలు చేయవచ్చు / Non-justiciable but Parliament can enforce</span>
+<span class="pill pb">కేవలం పౌరులకే వర్తిస్తాయి (విదేశీయులకు కాదు) / Apply only to citizens (not foreigners)</span>
+<span class="pill pt">వర్మా కమిటీ 2002 = FDs అమలు నివేదిక / Verma Committee 2002 = FDs operationalisation</span>
+<span class="pill">పన్నులు చెల్లించడం FD కాదు — విమర్శ / Paying taxes NOT a FD — criticism of incompleteness</span>
+<span class="pill pp">AIIMS 2001: FDs చట్టాల చెల్లుబాటు నిర్ణయించడానికి ఉపయోగం / FDs used to determine constitutionality</span>
+</div>
+<div class="footer">Chapter 10 · Page 2 of 2 · Indian Polity — Lakshmikanth · APPSC Group 2</div>
+</div>
+</div><div class="page"><div class="sh">➕ Added from Laxmikanth, GBK &amp; current affairs / అదనపు అంశాలు</div><div class="g2"><div class="card ncard" id="CC-6.6-01"><div class="ch">నేపథ్యం: ముందు హక్కులు, తర్వాత విధులు · Background: rights first, duties added later</div><div class="secl">Background — Rights Without Duties</div><div class="fact"><span lang="te">1950 నాటి అసలు రాజ్యాంగంలో ప్రాథమిక హక్కులు ఉన్నాయి కానీ పౌరుల విధుల జాబితా లేదు.</span><br><em class="en" lang="en">The original Constitution (1950) had Fundamental Rights but no list of citizens&#x27; duties.</em></div><div class="fact"><span lang="te">రాజ్యం చేయాల్సిన బాధ్యతలను మాత్రం ఆదేశిక సూత్రాల రూపంలో (భాగం IV, ప్రకరణ 36-51) రాశారు.</span><br><em class="en" lang="en">Duties of the State were written in as Directive Principles (Part IV, ప్రకరణ 36-51).</em></div><div class="fact"><span lang="te">హక్కులు, విధులు ఒకదానితో ఒకటి ముడిపడి ఉంటాయి; ప్రతి హక్కు వెనుక ఒక బాధ్యత ఉంటుంది.</span><br><em class="en" lang="en">Rights and duties are correlative: every right carries a matching responsibility.</em></div><div class="fact"><span lang="te">1976లో పది విధులు చేర్చారు; 2002లో మరొకటి (11వది) చేర్చారు.</span><br><em class="en" lang="en">Ten duties were added in 1976; one more (the 11th) in 2002.</em></div></div><div class="card ncard" id="CC-6.6-02"><div class="ch">ప్రేరణ: సోవియట్ (USSR) రాజ్యాంగం · Inspiration: USSR Constitution</div><div class="secl">Inspiration — the USSR Model</div><div class="fact"><span lang="te">మన ప్రాథమిక విధులకు ప్రేరణ పూర్వపు సోవియట్ యూనియన్ (USSR) రాజ్యాంగం.</span><br><em class="en" lang="en">India&#x27;s Fundamental Duties are inspired by the Constitution of the erstwhile USSR.</em></div><div class="fact"><span lang="te">సోషలిస్టు దేశాల రాజ్యాంగాలు హక్కులకు, విధులకు సమాన ప్రాధాన్యం ఇచ్చాయి.</span><br><em class="en" lang="en">Socialist constitutions gave equal weight to rights and duties of citizens.</em></div><div class="fact"><span lang="te">అమెరికా, కెనడా, ఫ్రాన్స్, జర్మనీ, ఆస్ట్రేలియా రాజ్యాంగాల్లో పౌర విధుల ప్రత్యేక జాబితా లేదు.</span><br><em class="en" lang="en">Constitutions of USA, Canada, France, Germany, Australia carry no specific list of citizens&#x27; duties.</em></div><div class="fact"><span lang="te">పౌర విధుల జాబితా ఉన్న ప్రజాస్వామ్య రాజ్యాంగం బహుశా జపాన్ ఒక్కటే (ఉదా: ప్రకరణ 12, 26, 30 - ప్రజా సంక్షేమం, పిల్లల చదువు, పన్ను).</span><br><em class="en" lang="en">Japan is perhaps the only democratic constitution with a list of citizens&#x27; duties (e.g. Arts 12, 26, 30: public welfare, children&#x27;s education, tax).</em></div><div class="fact"><span lang="te">జాగ్రత్త: &#x27;ఏ ప్రజాస్వామ్య రాజ్యాంగంలోనూ ఏ విధీ లేదు&#x27; అనడం తప్పు; జర్మనీ ప్రాథమిక చట్టం ప్రకరణ 6(2) తల్లిదండ్రుల విధిని చెబుతుంది, కానీ మనలాంటి జాబితా కాదు.</span><br><em class="en" lang="en">Caution: &#x27;no democracy has any duty&#x27; is wrong; Germany&#x27;s Basic Law Art 6(2) states a parental duty, though not an Indian-style list.</em></div></div><div class="card ncard" id="CC-6.6-05"><div class="ch">42వ సవరణ: భాగం IVA, ప్రకరణ 51A · 42nd Amendment: Part IVA, Article 51A</div><div class="secl">Swaran Singh Committee &amp; the 42nd Amendment, 1976</div><div class="fact"><span lang="te">42వ రాజ్యాంగ సవరణ చట్టం, 1976 కొత్తగా భాగం IVAను చేర్చింది.</span><br><em class="en" lang="en">The 42nd Constitutional Amendment Act, 1976 added a new Part IVA.</em></div><div class="fact"><span lang="te">భాగం IVAలో ఒకే ఒక ప్రకరణ ఉంది: ప్రకరణ 51A - అందులో పది విధులు.</span><br><em class="en" lang="en">Part IVA has only one Article: ప్రకరణ 51A, a code of ten duties.</em></div><div class="fact"><span lang="te">చట్టానికి 18 డిసెంబర్ 1976న ఆమోదం లభించింది; భాగం IVA 3 జనవరి 1977 నుంచి అమలులోకి వచ్చింది.</span><br><em class="en" lang="en">Act received assent on 18 December 1976; Part IVA came into force on 3 January 1977.</em></div><div class="fact"><span lang="te">ఇంతకుముందు విధులు చేర్చకపోవడం ఒక &#x27;చారిత్రక తప్పిదం&#x27;, దాన్ని సరిదిద్దుతున్నామని కాంగ్రెస్ చెప్పింది.</span><br><em class="en" lang="en">Congress called the earlier omission of duties a &#x27;historical mistake&#x27; being corrected.</em></div></div><div class="card ncard" id="CC-6.6-06"><div class="ch">ప్రకరణ 51A విధులు (a) నుంచి (e) · Article 51A duties (a) to (e)</div><div class="secl">List of Fundamental Duties — Article 51A</div><div class="fact"><span lang="te">(a) రాజ్యాంగాన్ని పాటించడం; దాని ఆదర్శాలను, సంస్థలను, జాతీయ పతాకాన్ని, జాతీయ గీతాన్ని గౌరవించడం.</span><br><em class="en" lang="en">(a) Abide by the Constitution, respect its ideals and institutions, the National Flag and National Anthem.</em></div><div class="fact"><span lang="te">(b) స్వాతంత్ర్య పోరాటానికి స్ఫూర్తినిచ్చిన ఉన్నత ఆదర్శాలను గౌరవించి అనుసరించడం.</span><br><em class="en" lang="en">(b) Cherish and follow the noble ideals of the national freedom struggle.</em></div><div class="fact"><span lang="te">(c) భారతదేశ సార్వభౌమత్వాన్ని, ఐక్యతను, సమగ్రతను కాపాడడం.</span><br><em class="en" lang="en">(c) Uphold and protect the sovereignty, unity and integrity of India.</em></div><div class="fact"><span lang="te">(d) దేశాన్ని రక్షించడం; పిలిచినప్పుడు జాతీయ సేవ చేయడం.</span><br><em class="en" lang="en">(d) Defend the country and render national service when called upon.</em></div><div class="fact"><span lang="te">(e) మతం, భాష, ప్రాంతం, వర్గ భేదాలకు అతీతంగా సామరస్యం, సోదరభావం పెంచడం; స్త్రీల గౌరవానికి భంగం కలిగించే ఆచారాలను వదిలేయడం.</span><br><em class="en" lang="en">(e) Promote harmony and common brotherhood beyond religion, language, region or section; renounce practices derogatory to women&#x27;s dignity.</em></div></div><div class="card ncard" id="CC-6.6-07"><div class="ch">ప్రకరణ 51A విధులు (f) నుంచి (j) · Article 51A duties (f) to (j)</div><div class="secl">List of Fundamental Duties — Article 51A</div><div class="fact"><span lang="te">(f) దేశపు మిశ్రమ సంస్కృతి వారసత్వాన్ని విలువైనదిగా భావించి కాపాడడం.</span><br><em class="en" lang="en">(f) Value and preserve the rich heritage of the country&#x27;s composite culture.</em></div><div class="fact"><span lang="te">(g) అడవులు, సరస్సులు, నదులు, వన్యప్రాణులతో కూడిన సహజ పర్యావరణాన్ని కాపాడి మెరుగుపరచడం; జీవుల పట్ల కరుణ చూపడం.</span><br><em class="en" lang="en">(g) Protect and improve the natural environment (forests, lakes, rivers, wildlife); have compassion for living creatures.</em></div><div class="fact"><span lang="te">(h) శాస్త్రీయ దృక్పథం, మానవతావాదం, ప్రశ్నించే తత్వం, సంస్కరణ స్ఫూర్తి పెంచుకోవడం.</span><br><em class="en" lang="en">(h) Develop scientific temper, humanism and the spirit of inquiry and reform.</em></div><div class="fact"><span lang="te">(i) ప్రజా ఆస్తిని కాపాడడం; హింసను విడనాడడం.</span><br><em class="en" lang="en">(i) Safeguard public property and abjure violence.</em></div><div class="fact"><span lang="te">(j) దేశం ఉన్నత స్థాయికి ఎదిగేలా వ్యక్తిగత, సామూహిక కార్యకలాపాలన్నింటిలో శ్రేష్ఠత కోసం కృషి చేయడం.</span><br><em class="en" lang="en">(j) Strive for excellence in individual and collective activity so the nation rises to higher levels.</em></div><div class="fact"><span lang="te">51Aలో లేనివి: ఓటు వేయడం, పన్నులు కట్టడం, కుటుంబ నియంత్రణ, వృద్ధులు/దివ్యాంగుల సంరక్షణ వంటి సాధారణ విధి.</span><br><em class="en" lang="en">Not in 51A: voting, paying taxes, family planning, a general duty to care for elders/disabled.</em></div></div><div class="card ncard" id="CC-6.6-12"><div class="ch">రాజకీయ చర్చ: గోఖలే, ఇందిరా గాంధీ, జనతా ప్రభుత్వం · Political debate: Gokhale, Indira Gandhi, Janata Government</div><div class="secl">Political Debate — Gokhale, Indira Gandhi and the Janata Government</div><div class="fact"><span lang="te">న్యాయ మంత్రి హెచ్.ఆర్. గోఖలే: ఈ విధులు ఆందోళనలకు దిగే వర్గాలపై &#x27;నిగ్రహ ప్రభావం&#x27; చూపుతాయని అన్నారు.</span><br><em class="en" lang="en">Law Minister H.R. Gokhale: duties would have a &#x27;sobering effect&#x27; on restless, agitation-prone sections.</em></div><div class="fact flag"><span lang="te">ప్రధాని ఇందిరా గాంధీ (లక్ష్మీకాంత్ ఉటంకించిన మాటల్లో): విధులు హక్కులను అణచివేయవు, హక్కులు-విధుల మధ్య &#x27;ప్రజాస్వామిక సమతుల్యం&#x27; తెస్తాయి.</span><br><em class="en" lang="en">PM Indira Gandhi (as quoted by Laxmikanth): duties do not &#x27;smother rights&#x27; but create a &#x27;democratic balance&#x27;.</em> <em class="warn">⚠ disputed – verify</em></div><div class="fact"><span lang="te">పార్లమెంటులో ప్రతిపక్షం విధుల చేర్పును గట్టిగా వ్యతిరేకించింది.</span><br><em class="en" lang="en">The Opposition in Parliament strongly opposed adding the duties.</em></div><div class="fact"><span lang="te">మొరార్జీ దేశాయ్ నాయకత్వంలోని జనతా ప్రభుత్వం 43వ (1977), 44వ (1978) సవరణలతో 42వ సవరణలోని చాలా మార్పులు రద్దు చేసినా, ప్రాథమిక విధులను మాత్రం రద్దు చేయలేదు.</span><br><em class="en" lang="en">Janata Government (Morarji Desai) did not annul the duties, though it undid much of the 42nd Amendment via the 43rd (1977) and 44th (1978) Amendments.</em></div><div class="fact"><span lang="te">దీనితో పాటు 2002లో మరో విధి చేర్చడం - ఈ విషయంలో పార్టీలకు అతీతమైన ఏకాభిప్రాయం ఉందని చూపిస్తుంది.</span><br><em class="en" lang="en">This, plus the 2002 addition, shows a broad consensus on Fundamental Duties.</em></div></div><div class="card ncard" id="CC-6.6-16"><div class="ch">ప్రాథమిక విధులపై ఇటీవలి పరిణామాలు · Recent developments on Fundamental Duties</div><div class="secl">Significance — enforceable by law (current affairs)</div><div class="fact flag"><span lang="te">దుర్గా దత్ v భారత ప్రభుత్వం (WP(C) 67/2022): విధుల అమలుకు చట్టం చేయమని పార్లమెంటును ఆదేశించలేమని 11 సెప్టెంబర్ 2024న జస్టిస్ సంజీవ్ ఖన్నా నేతృత్వంలోని ధర్మాసనం మౌఖికంగా చెప్పింది. కేసు ఇంకా పెండింగ్‌లోనే ఉన్నట్లు చూపిస్తోంది; తుది తీర్పు ఏదీ కనిపించలేదు (9 నవంబర్ 2026 నాటికి).</span><br><em class="en" lang="en">Durga Dutt v Union of India (WP(C) 67/2022): on 11 Sep 2024 the bench headed by Sanjiv Khanna J orally said it cannot direct Parliament to enact a law enforcing the duties. Case still listed as pending; no final order found (as of 9 Nov 2026).</em> <em class="asof">as of 2026-11-09</em> <em class="warn">⚠ disputed – verify</em></div><div class="fact"><span lang="te">అటార్నీ జనరల్ ఆర్. వెంకటరమణి: శిక్షలు కాదు, అవగాహనే సరైన మార్గం అన్నారు; ఉన్న చట్టాల సారాంశం ఇవ్వమని కోర్టు కోరింది (LiveLaw, 11 సెప్టెంబర్ 2024).</span><br><em class="en" lang="en">Attorney General R. Venkataramani: awareness, not punishment, is the right way; Court asked for a synopsis of existing laws (LiveLaw, 11 Sep 2024).</em> <em class="asof">as of 2024-09-11</em></div><div class="fact"><span lang="te">ఇది లక్ష్మీకాంత్ చెప్పినదానికి సరిపోతుంది: విధులు న్యాయస్థానంలో అమలు కావు; చట్టం చేయాలా వద్దా అనేది పార్లమెంటు నిర్ణయం.</span><br><em class="en" lang="en">This matches Laxmikanth: duties are non-justiciable; enforcement is Parliament&#x27;s choice by ordinary law.</em></div></div></div></div>

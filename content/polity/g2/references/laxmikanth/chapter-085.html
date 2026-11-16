@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part X &mdash; Book 2</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 85 — Coalition Government</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Part X: Political Dynamics — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">What "Coalition Government" Actually Means</div>
+  <p class="eng">The word itself gives away its logic: <b class="term">coalition</b> comes from the Latin root <i>coalitio</i>, carrying the sense of separate things "growing together" into one — so a coalition, at bottom, is simply the fusing of distinct pieces into a single functioning whole. Carried into politics, that image becomes a working alliance among parties that started out as rivals: instead of one party ruling on its own, a cluster of otherwise-separate outfits agrees to share the reins of government and to run the country on the strength of a jointly negotiated programme rather than any single party's own manifesto. Several political thinkers have circled the same essential idea from slightly different angles — Ghai frames it as parties uniting to exercise power on an agreed common agenda; Robertson's account stresses that this typically happens precisely because no single party in a modern legislature can muster a majority alone, so two or more of them find enough overlapping ground to avoid drastic compromise on their separate policies while still being able to govern together; Ogg describes it more structurally, as members of otherwise distinct parties uniting to staff a single ministry; and Sahni ties the whole phenomenon directly to the existence of a <b class="hlb">multi-party system</b> — where a crowd of minority parties, none large enough to govern solo, sink their differences long enough to command a working majority in the House.</p>
+  <div class="te"><b class="term">Coalition</b> అనే పదమే దీని అర్థాన్ని చెప్తుంది — ఇది Latin మూలం <i>coalitio</i> నుండి వచ్చింది, దీని భావం వేర్వేరు భాగాలు "కలిసి పెరగడం", ఒకే యూనిట్ గా మారడం. దీన్ని రాజకీయాల్లోకి తీసుకొస్తే, ఇది ఒకప్పుడు ప్రత్యర్థులుగా ఉన్న పార్టీల మధ్య ఒక working alliance గా మారుతుంది — ఒకే పార్టీ ఒంటరిగా పాలించే బదులు, వేర్వేరు పార్టీల గుంపు కలిసి ప్రభుత్వ పగ్గాలను పంచుకోవడానికి అంగీకరిస్తుంది, ఏ ఒక్క పార్టీ manifesto మీదో కాకుండా, ఉమ్మడిగా చర్చించి రూపొందించిన programme మీద దేశాన్ని నడుపుతుంది. వేర్వేరు ఆలోచనాపరులు దాదాపు ఒకే మూల భావాన్ని వేర్వేరు కోణాల నుండి వివరించారు — Ghai దీన్ని, ఉమ్మడి agenda పై అధికారం చెలాయించడానికి పార్టీలు ఏకమవడంగా చెప్తారు; Robertson, ఆధునిక శాసనసభలో ఏ ఒక్క పార్టీ కూడా మెజారిటీ సాధించలేనప్పుడే ఇది సాధారణంగా జరుగుతుందని నొక్కిచెప్తారు — రెండు లేదా అంతకంటే ఎక్కువ పార్టీలు, తమ వ్యక్తిగత విధానాల్లో ఎక్కువ రాజీ పడకుండానే, కలిసి పాలించగలిగే ఉమ్మడి భూమికను కనుగొంటాయి; Ogg దీన్ని మరింత నిర్మాణాత్మకంగా, వేర్వేరు పార్టీల సభ్యులు ఒకే ministry లో చేరడంగా వర్ణిస్తారు; Sahni ఈ మొత్తం దృగ్విషయాన్ని నేరుగా <b class="hlb">multi-party system</b> తో ముడిపెడతారు — ఒంటరిగా పాలించలేని చిన్న పార్టీల గుంపు, తమ విభేదాలను పక్కనపెట్టి, సభలో పనిచేసే మెజారిటీని సాధించే వరకు కలిసి ఉంటాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Meaning of Coalition</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Where does the word "coalition" come from, and what does it literally mean?</td><td>Latin <i>coalitio</i> — "to grow together"</td></tr>
+      <tr><td>In one line, what is a coalition government?</td><td>Distinct parties uniting to jointly hold power on an agreed common programme</td></tr>
+      <tr><td>Why do coalitions usually form?</td><td>Because no single party alone can secure a legislative majority</td></tr>
+      <tr><td>Which system does coalition politics grow out of, per Sahni?</td><td>A multi-party democratic system</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Pre-poll Alliance vs Post-poll Alliance</div>
+  <p class="eng">India's own political history shows coalitions arriving by two quite different routes, and the exam frequently tests whether a student can tell them apart. A <b class="term">pre-poll alliance</b> is stitched together before a single vote is cast — the partner parties sit down in advance, iron out seat-sharing and a joint manifesto, and then approach voters as one combined front. This route carries a real advantage for the electorate: voters know exactly which parties will end up sharing power if the front wins, so they get to judge one coherent platform rather than guessing at post-election arithmetic. A <b class="term">post-poll alliance</b>, by contrast, only comes together after the results are declared — separate parties that fought the election independently (or in different combinations) then negotiate to pool their seats, mainly so that, between them, they can cross the majority mark and actually form a government. Here the objective is narrower and more immediate: dividing up power and running the administration, rather than presenting a unified vision to voters beforehand.</p>
+  <div class="te">భారత రాజకీయ చరిత్రలో coalitions రెండు వేర్వేరు మార్గాల ద్వారా ఏర్పడటం కనిపిస్తుంది, exam లో ఈ తేడాను గుర్తించగలరా అని తరచుగా అడుగుతారు. <b class="term">Pre-poll alliance</b> ఓటింగ్ కు ముందే ఏర్పడుతుంది — భాగస్వామి పార్టీలు ముందుగానే కూర్చుని, సీట్ల పంపకం, ఉమ్మడి manifesto ఖరారు చేసుకుని, ఓటర్ల ముందుకు ఒకే combined front గా వెళ్తాయి. ఈ మార్గం వల్ల ఓటర్లకు నిజమైన ప్రయోజనం ఉంది — front గెలిస్తే ఏ పార్టీలు కలిసి అధికారం పంచుకుంటాయో ముందుగానే తెలుస్తుంది, ఎన్నికల తర్వాతి లెక్కలను ఊహించాల్సిన అవసరం లేకుండా, ఒకే స్పష్టమైన platform ను judge చేయవచ్చు. దీనికి భిన్నంగా, <b class="term">post-poll alliance</b> ఫలితాలు వచ్చిన తర్వాతే ఏర్పడుతుంది — విడివిడిగా (లేదా వేర్వేరు కూటముల్లో) ఎన్నికల్లో పోటీ చేసిన పార్టీలు, తర్వాత తమ సీట్లను కలిపి మెజారిటీ దాటడానికి చర్చలు జరుపుతాయి. ఇక్కడ లక్ష్యం చాలా ఇరుకైనది, తక్షణమైనది — ఎన్నికలకు ముందు ఒక ఉమ్మడి దృష్టిని చూపించడం కాదు, అధికారాన్ని పంచుకుని పరిపాలన నడపడమే.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Pre-poll vs Post-poll</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>When is a pre-poll alliance formed?</td><td>Before elections, around a joint manifesto</td></tr>
+      <tr><td>When is a post-poll alliance formed?</td><td>After election results, to pool seats and reach a majority</td></tr>
+      <tr><td>Main advantage of a pre-poll alliance for voters?</td><td>They know in advance which parties will share power together</td></tr>
+      <tr><td>Main purpose of a post-poll alliance?</td><td>To divide power and be able to form/run the government</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">J.C. Johari's Eight Features of Coalition Politics</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">The Eight Recurring Features of Coalition Politics (J.C. Johari)</div>
+  <p class="eng">Political scientist <b class="hlp">J.C. Johari</b> distilled coalition politics down to eight recurring traits, and this list is one of the most quotable, most exam-friendly parts of the whole chapter. <b>First</b>, coalitions are never formed out of pure idealism — partners join expecting some reward, whether a tangible material gain (ministries, resources) or simply the psychic satisfaction of sharing in power. <b>Second</b>, by sheer definition a coalition needs at least two separate partners; a single party governing alone is not a coalition, however it behaves. <b>Third</b>, what actually binds the partners together is not a permanent merger of outlook but a temporary conjunction of specific interests — the alliance exists only as long as those interests keep overlapping. <b>Fourth</b>, coalition politics is inherently dynamic rather than static: players and groupings dissolve and re-form as circumstances shift, unlike the comparatively fixed shape of single-party rule. <b>Fifth</b>, compromise sits right at its centre — rigid, inflexible ideology simply has no room to survive inside a coalition. <b>Sixth</b>, a coalition government typically operates on a bare <b class="term">common minimum programme</b>, a shared baseline of policies that may fall well short of any individual partner's own ideal agenda. <b>Seventh</b>, pragmatism trumps ideology as the guiding logic — political adjustments often mean setting firmly-held principles aside. <b>Eighth</b>, and perhaps most bluntly, the entire exercise of forming and maintaining a coalition exists for one core purpose: to seize and hold onto power.</p>
+  <div class="te">రాజకీయ శాస్త్రవేత్త <b class="hlp">J.C. Johari</b>, coalition politics ను ఎనిమిది పునరావృత లక్షణాలుగా క్రోడీకరించారు — ఈ జాబితా chapter లో అత్యంత exam-friendly భాగాల్లో ఒకటి. <b>మొదటిది</b> — coalitions స్వచ్ఛమైన ఆదర్శవాదం నుండి ఏర్పడవు — భాగస్వాములు ఏదో ఒక ప్రతిఫలం ఆశించి చేరతారు, అది material లాభం (ministries, వనరులు) కావచ్చు, లేదా అధికారంలో భాగం పంచుకోవడం వల్ల కలిగే మానసిక సంతృప్తి కావచ్చు. <b>రెండోది</b> — నిర్వచనం ప్రకారమే, కనీసం ఇద్దరు వేర్వేరు భాగస్వాములు అవసరం — ఒంటరిగా పాలించే ఒకే పార్టీ, ఎలా ప్రవర్తించినా, coalition కాదు. <b>మూడోది</b> — భాగస్వాములను నిజంగా బంధించేది శాశ్వత దృక్పథ విలీనం కాదు, ప్రయోజనాల తాత్కాలిక కలయిక — ఆ ప్రయోజనాలు అతివ్యాప్తి చెందుతున్నంత కాలమే ఈ కూటమి కొనసాగుతుంది. <b>నాలుగోది</b> — coalition politics స్థిరమైనది కాదు, డైనమిక్ గా ఉంటుంది — పరిస్థితులు మారినప్పుడు ఆటగాళ్లు, గ్రూపులు విచ్ఛిన్నమై కొత్తగా ఏర్పడతాయి, single-party rule యొక్క స్థిర రూపానికి భిన్నంగా. <b>ఐదోది</b> — compromise దీని కేంద్రంలో ఉంటుంది — కఠినమైన సిద్ధాంతం coalition లో నిలబడలేదు. <b>ఆరోది</b> — coalition government సాధారణంగా <b class="term">common minimum programme</b> పైనే నడుస్తుంది — ఇది ఏ ఒక్క భాగస్వామి సొంత ఆదర్శ ఎజెండాకు కూడా తక్కువగానే ఉండవచ్చు. <b>ఏడోది</b> — సిద్ధాంతం కంటే ఆచరణాత్మకతే నడిపిస్తుంది — political adjustments చేసేటప్పుడు గట్టిగా నమ్మిన సూత్రాలను కూడా పక్కనపెట్టాల్సి రావచ్చు. <b>ఎనిమిదోది</b> — బహుశా అన్నింటికంటే స్పష్టంగా — coalition ఏర్పాటు, నిర్వహణ మొత్తం ఒకే ప్రధాన లక్ష్యం కోసం — అధికారాన్ని చేజిక్కించుకుని కాపాడుకోవడం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Johari's 8 Features</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who authored this list of 8 features?</td><td>J.C. Johari</td></tr>
+      <tr><td>Minimum number of partners a coalition needs?</td><td>At least two</td></tr>
+      <tr><td>Is coalition politics static or dynamic?</td><td>Dynamic — groups dissolve and re-form</td></tr>
+      <tr><td>What does a coalition government run on?</td><td>A common minimum programme</td></tr>
+      <tr><td>What is the "ultimate purpose" per Johari's 8th point?</td><td>To seize/hold power</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Formation — From Congress Dominance to the Coalition Era · Table 85.1</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Formation — India's Journey from Single-Party Dominance to Coalition Politics</div>
+  <p class="eng">For roughly two decades after independence, India's party system barely resembled the fragmented, coalition-prone picture the rest of this chapter describes. Look at the opening run of four national polls — <b class="hlg">1952, 1957, 1962 and 1967</b> — and one pattern jumps out: Congress comfortably cleared the majority threshold on its own strength each time and formed the government at the Centre without needing to strike a single bargain with any other party. That dominance did wobble briefly: Congress split internally in <b class="hlg">1969</b>, and <b class="hlp">Indira Gandhi's</b> government was reduced to a minority in the Lok Sabha — yet it still managed to survive, propped up by outside support from the CPI, the DMK and a few smaller parties, without those supporting parties formally joining the ministry. Congress then recovered decisively, winning the <b class="hlg">1971</b> election outright and re-establishing single-party rule as if the split had barely mattered.</p>
+  <p class="eng">The real rupture came in <b class="hlg">1977</b>. A Congress party that had looked practically unbeatable for a generation was handed a heavy, humiliating defeat, and from that point onward the Centre has repeatedly been governed by combinations of parties rather than any one outfit ruling alone — a pattern <b>Table 85.1</b> below tracks government by government. It is worth noting, though, that this new pattern did not immediately harden into a permanent rule: Congress clawed back a single-party majority twice more in the years that followed — in <b class="hlg">1980</b>, and then far more emphatically in <b class="hlg">1984</b>. It is really from <b class="imp">1989</b> onward that coalition or minority governments became the near-continuous norm at the Centre, a phase that ran essentially unbroken all the way through to <b class="imp">2014</b>, when a single party once again secured a majority on its own.</p>
+  <div class="te">స్వాతంత్ర్యం వచ్చిన తర్వాత దాదాపు రెండు దశాబ్దాల పాటు, భారత పార్టీ వ్యవస్థ, ఈ chapter లో మిగతా భాగం వర్ణించే చెల్లాచెదురైన, coalition-ప్రవణమైన చిత్రానికి పూర్తి భిన్నంగా ఉండేది. <b class="hlg">మొదటి నాలుగు general elections — 1952, 1957, 1962, 1967</b> — అన్నింటిలోనూ, Congress పార్టీ ఒంటరిగానే మెజారిటీ దాటి, ఏ ఇతర పార్టీతోనూ బేరసారాలు చేయాల్సిన అవసరం లేకుండా కేంద్రంలో ప్రభుత్వాన్ని ఏర్పాటు చేసింది. ఈ ఆధిపత్యం కొద్దిగా కదిలింది — <b class="hlg">1969</b>లో Congress అంతర్గతంగా చీలిపోయింది, దాంతో <b class="hlp">Indira Gandhi</b> ప్రభుత్వం Lok Sabha లో minority గా మారింది — అయినప్పటికీ ఇది CPI, DMK, మరికొన్ని చిన్న పార్టీల outside support తో నిలబడింది, ఆ మద్దతిచ్చే పార్టీలు అధికారికంగా ministry లో చేరకుండానే. తర్వాత Congress గట్టిగా కోలుకుంది, <b class="hlg">1971</b> ఎన్నికల్లో స్పష్టంగా గెలిచి, చీలిక పెద్దగా ప్రభావం చూపనట్లుగా single-party rule ను తిరిగి నెలకొల్పింది.</div>
+  <div class="te">నిజమైన మలుపు <b class="hlg">1977</b>లో వచ్చింది. ఒక తరం పాటు దాదాపు ఓడించలేని పార్టీగా కనిపించిన Congress, తీవ్రమైన, అవమానకరమైన ఓటమిని చవిచూసింది, ఆ తర్వాత నుండి కేంద్రంలో ఏ ఒక్క పార్టీ ఒంటరిగా పాలించడం కంటే, పార్టీల కూటములే పదేపదే పాలించాయి — ఈ నమూనాను దిగువన ఉన్న <b>Table 85.1</b> ప్రభుత్వం వారీగా చూపిస్తుంది. అయితే, ఈ కొత్త నమూనా వెంటనే శాశ్వత నియమంగా మారలేదని గమనించాలి — ఆ తర్వాతి సంవత్సరాల్లో Congress మరో రెండుసార్లు స్వంత మెజారిటీని తిరిగి సాధించింది — <b class="hlg">1980</b>లో, ఆపై మరింత గట్టిగా <b class="hlg">1984</b>లో. నిజంగా <b class="imp">1989</b> నుండే coalition లేదా minority governments కేంద్రంలో దాదాపు నిరంతర ప్రమాణంగా మారాయి — ఈ దశ <b class="imp">2014</b> వరకు దాదాపు అవిచ్ఛిన్నంగా కొనసాగింది, అప్పుడు మళ్ళీ ఒకే పార్టీ స్వంతంగా మెజారిటీ సాధించింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Formation Timeline</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>In which elections did Congress win a majority alone before 1977?</td><td>1952, 1957, 1962, 1967, and 1971 (after the 1969 split/minority interlude)</td></tr>
+      <tr><td>Which parties propped up Indira Gandhi's minority govt after the 1969 split?</td><td>CPI, DMK and other parties, from outside</td></tr>
+      <tr><td>Which year marks the start of the coalition era at the Centre?</td><td>1977</td></tr>
+      <tr><td>Did Congress ever regain single-party majority after 1977?</td><td>Yes — in 1980 and again in 1984</td></tr>
+      <tr><td>Which years mark the sustained/near-continuous coalition phase?</td><td>Roughly 1989 to 2014</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Table 85.1 — Formation of Coalition Governments at the Centre</div>
+  <table>
+    <caption>Coalition/minority governments at the Centre since 1977</caption>
+    <thead><tr><td class="n">#</td><th style="width:11%">Period</th><th style="width:17%">Coalition</th><th style="width:15%">PM (party)</th><th>Partners</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td class="hlg">1977–79</td><td>Janata Party</td><td>Morarji Desai (Congress(O))</td><td>Congress(O), Bharatiya Jana Sangh, Bharatiya Lok Dal, Socialist Party, Congress for Democracy, Chandra Shekhar group and others</td></tr>
+      <tr><td class="n">2</td><td class="hlg">1979–80</td><td>Janata Party (Secular)</td><td>Charan Singh (Janata(S))</td><td>Janata(S) and Congress(U); Congress(I) supported from outside</td></tr>
+      <tr><td class="n">3</td><td class="hlg">1989–90</td><td>National Front</td><td>V.P. Singh (Janata Dal)</td><td>Janata Dal, TDP, DMK, AGP, Congress(Socialist); BJP &amp; Left parties supported from outside</td></tr>
+      <tr><td class="n">4</td><td class="hlg">1990–91</td><td>Janata Dal(S)/Samajwadi Janata Party</td><td>Chandra Shekhar</td><td>Janata Dal(S) and Janata Party; Congress(I) supported from outside</td></tr>
+      <tr><td class="n">5</td><td class="hlg">1996–97</td><td>United Front</td><td>H.D. Deve Gowda (Janata Dal)</td><td>Janata Dal, CPI, Congress(T), DMK, TDP, TMC, AGP, SP and others; Congress &amp; CPM supported from outside</td></tr>
+      <tr><td class="n">6</td><td class="hlg">1997–98</td><td>United Front</td><td>I.K. Gujral (Janata Dal)</td><td>Janata Dal, CPI, TMC, SP, DMK, AGP, TDP and others; Congress supported from outside</td></tr>
+      <tr><td class="n">7</td><td class="hlg">1998–99</td><td>BJP-led Coalition</td><td>A.B. Vajpayee (BJP)</td><td>BJP, AIADMK, BJD, Shiv Sena, Lok Shakti, Samata, Akali Dal, PMK and others; TDP &amp; Trinamool Congress supported from outside</td></tr>
+      <tr><td class="n">8</td><td class="hlg">1999–2004</td><td class="term">National Democratic Alliance (NDA)</td><td>A.B. Vajpayee (BJP)</td><td>BJP, JD(U), Trinamool Congress, Shiv Sena, BJD, LJP, DMK, PMK, INLD, MDMK, National Conference, Akali Dal, RLD, AGP and others</td></tr>
+      <tr><td class="n">9</td><td class="hlg">2004–09</td><td class="term">United Progressive Alliance (UPA)</td><td>Manmohan Singh (Congress)</td><td>Congress, NCP, DMK, RJD, LJP and others; CPI &amp; CPM supported from outside</td></tr>
+      <tr><td class="n">10</td><td class="hlg">2009–14</td><td class="term">UPA-II</td><td>Manmohan Singh (Congress)</td><td>Congress, NCP, DMK, Trinamool Congress, National Conference and others</td></tr>
+      <tr><td class="n">11</td><td class="hlg">2014–19</td><td class="term">NDA</td><td>Narendra Modi (BJP)</td><td>BJP, LJP, TDP, Shiv Sena, Akali Dal, Rashtriya Lok Samata Party, Apna Dal(S) and others; TDP left NDA in 2018</td></tr>
+      <tr><td class="n">12</td><td class="hlg">2019–24 (book's cut-off)</td><td class="term">NDA</td><td>Narendra Modi (BJP)</td><td>BJP, Akali Dal, LJP, Shiv Sena and others; Shiv Sena left NDA in 2019, Akali Dal in 2020</td></tr>
+    </tbody>
+  </table>
+  <div class="te">ఈ table, 97వ ఎన్నికల నుండి (1977) కేంద్రంలో ఏర్పడిన coalition/minority governments అన్నింటినీ కాలక్రమంలో చూపిస్తుంది. 8వ edition లో ఇది "2019–till date" గా ముగుస్తుంది — ఆ తర్వాతి 2024 ఎన్నికల ఫలితం, ప్రస్తుత NDA పరిస్థితి కోసం ఈ chapter చివర ఉన్న Current Affairs Update page చూడండి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Table 85.1</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which coalition immediately followed the 1977 Congress defeat?</td><td>Janata Party, under Morarji Desai</td></tr>
+      <tr><td>Name the two United Front PMs (1996–98).</td><td>H.D. Deve Gowda, then I.K. Gujral</td></tr>
+      <tr><td>Which coalition/PM led 1998–2004?</td><td>BJP-led Coalition, then NDA — both under A.B. Vajpayee</td></tr>
+      <tr><td>Which coalition governed 2004–2014, under whom?</td><td>UPA / UPA-II, under Manmohan Singh</td></tr>
+      <tr><td>Which coalition and PM does the book's table end with?</td><td>NDA, under Narendra Modi (2019–till date, per the 8th edition)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Merits and Demerits of Coalition Government</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Merits of Coalition Government</div>
+  <p class="eng">Coalition rule is not just a compromise forced by arithmetic — Laxmikanth's account credits it with genuine structural strengths, five of which are worth holding onto. <b>First</b>, it accommodates a far wider spread of interests than one party ever could, giving different groups a real channel through which their expectations and grievances can reach the government. <b>Second</b>, since India itself is exceptionally diverse — in language, caste, religion, ethnicity and region — a coalition, by bringing several parties with different regional and social bases into government together, ends up mirroring that diversity and reflecting a broader cross-section of public opinion than any single-party government realistically could. <b>Third</b>, because governmental policy needs every partner's concurrence before it can move forward, coalition rule naturally pushes politics toward <b class="term">consensus-based decision-making</b> rather than one party simply dictating terms. <b>Fourth</b>, this same dynamic strengthens the country's federal fabric, since a coalition — precisely because it depends on regional parties for its numbers — tends to be considerably more sensitive and responsive to state-level and regional demands than a dominant single-party government would be. <b>Fifth</b>, spreading power across multiple parties reduces the risk of one party behaving in a high-handed, near-despotic manner, since every partner has a stake in the decision-making process — the net result, on balance, is more measured, more scrutinised decisions.</p>
+  <div class="te">Coalition పాలన కేవలం సంఖ్యాబలం వల్ల వచ్చిన compromise మాత్రమే కాదు — Laxmikanth వివరణలో దీనికి నిజమైన నిర్మాణాత్మక బలాలు ఉన్నాయని చెప్తారు, వీటిలో ఐదింటిని గుర్తుంచుకోవాలి. <b>మొదటిది</b> — ఒకే పార్టీ కంటే ఇది చాలా విస్తృత ప్రయోజనాలను కలుపుకుంటుంది, వేర్వేరు గ్రూపుల expectations, ఫిర్యాదులు ప్రభుత్వానికి చేరడానికి నిజమైన మార్గం కల్పిస్తుంది. <b>రెండోది</b> — భారతదేశం భాష, కులం, మతం, జాతి, ప్రాంతం రీత్యా అత్యంత వైవిధ్యభరితమైనది కాబట్టి, వేర్వేరు ప్రాంతీయ/సామాజిక పునాదులు కలిగిన అనేక పార్టీలను ప్రభుత్వంలోకి తీసుకురావడం ద్వారా, coalition ఈ వైవిధ్యాన్ని ప్రతిబింబిస్తుంది, ఒకే పార్టీ ప్రభుత్వం కంటే ప్రజాభిప్రాయాన్ని విస్తృతంగా ప్రతిబింబిస్తుంది. <b>మూడోది</b> — governmental policy ముందుకు సాగాలంటే ప్రతి భాగస్వామి అంగీకారం అవసరం కాబట్టి, coalition rule రాజకీయాలను సహజంగా <b class="term">consensus-based decision-making</b> వైపు నడిపిస్తుంది, ఒకే పార్టీ శాసించే బదులు. <b>నాలుగోది</b> — ఇదే dynamics దేశ federal స్వభావాన్ని బలపరుస్తుంది, ఎందుకంటే coalition తన సంఖ్యాబలం కోసం ప్రాంతీయ పార్టీలపై ఆధారపడుతుంది కాబట్టి, ఆధిపత్య single-party ప్రభుత్వం కంటే రాష్ట్ర-స్థాయి, ప్రాంతీయ డిమాండ్లకు ఎక్కువ స్పందిస్తుంది. <b>ఐదోది</b> — అధికారం అనేక పార్టీల మధ్య పంపిణీ కావడం వల్ల, ఒక పార్టీ ఏకపక్షంగా, నియంతృత్వ ధోరణితో ప్రవర్తించే ప్రమాదం తగ్గుతుంది, ప్రతి భాగస్వామికి నిర్ణయాల్లో వాటా ఉంటుంది కాబట్టి — దీని ఫలితంగా, మొత్తం మీద నిర్ణయాలు మరింత సమతూకంగా, ఎక్కువ పరిశీలనతో ఉంటాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Merits</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Merit 1?</td><td>Accommodates diverse interests/grievances</td></tr>
+      <tr><td>Merit 2?</td><td>Reflects India's social/regional diversity — more representative</td></tr>
+      <tr><td>Merit 3?</td><td>Consensus-based decision-making (every partner's concurrence needed)</td></tr>
+      <tr><td>Merit 4?</td><td>Strengthens federalism — more responsive to regional demands</td></tr>
+      <tr><td>Merit 5?</td><td>Reduces one-party despotism/tyranny — more balanced decisions</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Demerits of Coalition Government</div>
+  <p class="eng">Set against those strengths, Laxmikanth also lists seven serious weaknesses that recur across India's coalition experience. <b>First</b> and most obvious: coalitions tend toward instability, since any sharp difference of opinion among the partners on a policy question can bring the entire government crashing down. <b>Second</b>, the Prime Minister's normal pre-eminence — a defining feature of the parliamentary system — gets visibly curtailed, since he or she is now obliged to consult coalition partners before any major decision; critics have gone so far as to mockingly brand such leaders "Super Prime Ministers" or "Ultra Prime Ministers," precisely because real authority has migrated away from the PM's office alone. <b>Third</b>, coalition partners often set up a Steering or Co-ordination Committee to manage the alliance, and this body can end up functioning as an unofficial "Super-Cabinet," quietly undermining the constitutional Cabinet's own standing in government business. <b>Fourth</b>, smaller constituent parties can end up playing an outsized "King-maker" role, using their pivotal position to demand far more — in ministries, resources or policy concessions — than their actual seat-count in Parliament would ever justify. <b>Fifth</b>, leaders of regional parties routinely carry their state-specific concerns into national decision-making, pressuring the central executive to bend toward their line and sometimes threatening to walk out of the coalition altogether if refused. <b>Sixth</b>, the sheer need to accommodate every constituent tends to bloat the Council of Ministers — the most cited example is A.B. Vajpayee's <b class="hlg">1999</b> ministry, which crossed <b class="imp">70</b> ministers and earned the nickname "Jumbo Ministry," creating real headaches over how portfolios were divided and how so many ministers were meant to coordinate. <b>Seventh</b> and finally, accountability becomes diffuse: when something goes wrong administratively, coalition partners tend to play blame games rather than own the failure, letting everyone slip past both collective responsibility and individual responsibility alike.</p>
+  <div class="te">ఈ బలాలకు వ్యతిరేకంగా, Laxmikanth భారత coalition అనుభవంలో పదేపదే కనిపించే ఏడు తీవ్రమైన బలహీనతలను కూడా జాబితా చేస్తారు. <b>మొదటిది</b>, అత్యంత స్పష్టమైనది — coalitions అస్థిరత వైపు మొగ్గుతాయి, ఎందుకంటే policy విషయంలో భాగస్వాముల మధ్య ఏదైనా తీవ్రమైన అభిప్రాయ భేదం మొత్తం ప్రభుత్వాన్నే కూలదోయగలదు. <b>రెండోది</b> — parliamentary system యొక్క ముఖ్య లక్షణమైన PM యొక్క సాధారణ ప్రాధాన్యత గణనీయంగా తగ్గుతుంది, ఎందుకంటే ఏదైనా ప్రధాన నిర్ణయానికి ముందు coalition partners తో సంప్రదించాల్సి ఉంటుంది — నిజమైన అధికారం PM కార్యాలయం నుండి బయటకు వెళ్లిపోయిందని చెప్పేలా, విమర్శకులు ఇలాంటి నేతలను వ్యంగ్యంగా "Super Prime Ministers" లేదా "Ultra Prime Ministers" అని పిలుస్తారు. <b>మూడోది</b> — coalition partners తరచుగా కూటమిని నిర్వహించడానికి ఒక Steering లేదా Co-ordination Committee ఏర్పాటు చేస్తారు, ఇది అనధికారికంగా ఒక "Super-Cabinet" లా పనిచేస్తూ, constitutional Cabinet స్థానాన్ని ప్రభుత్వ వ్యవహారాల్లో నిశ్శబ్దంగా బలహీనపరచవచ్చు. <b>నాలుగోది</b> — చిన్న భాగస్వామి పార్టీలు అనూహ్యంగా పెద్ద "King-maker" పాత్ర పోషించవచ్చు, తమ కీలక స్థానాన్ని ఉపయోగించి, Parliament లో తమ నిజ సీట్ల సంఖ్యకు ఎంతమాత్రం సరిపోని ministries, వనరులు లేదా policy రాయితీలను డిమాండ్ చేయవచ్చు. <b>ఐదోది</b> — ప్రాంతీయ పార్టీల నేతలు, తమ రాష్ట్ర-నిర్దిష్ట ఆందోళనలను నిత్యం జాతీయ నిర్ణయాల్లోకి తీసుకువస్తారు, central executive ను తమ మాట వినిపించేలా ఒత్తిడి చేస్తారు, తిరస్కరిస్తే కూటమి నుండి పూర్తిగా వైదొలగుతామని కూడా బెదిరిస్తారు. <b>ఆరోది</b> — ప్రతి భాగస్వామిని కలుపుకోవాల్సిన అవసరం వల్ల Council of Ministers పరిమాణం పెద్దదిగా మారుతుంది — అత్యధికంగా ఉదహరించే ఉదాహరణ A.B. Vajpayee <b class="hlg">1999</b> ministry, ఇందులో <b class="imp">70</b> కి పైగా మంత్రులు ఉన్నారు, దీన్ని "Jumbo Ministry" అని పిలిచారు; ఇది portfolios ఎలా పంచాలో, ఇంతమంది మంత్రులు ఎలా సమన్వయం చేసుకోవాలో అనే నిజమైన తలనొప్పులు తెచ్చింది. <b>ఏడోది</b>, చివరిగా — accountability చెదిరిపోతుంది — administratively ఏదైనా తప్పు జరిగినప్పుడు, coalition partners దాన్ని తామే భరించే బదులు ఒకరిపై ఒకరు నిందలు వేసుకుంటారు, దీనివల్ల collective responsibility, individual responsibility రెండింటినీ అందరూ తప్పించుకుంటారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Demerits</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Demerit 1?</td><td>Prone to instability — policy disagreement can topple the govt</td></tr>
+      <tr><td>Demerit 2?</td><td>PM's leadership curtailed; nicknamed "Super/Ultra PM"</td></tr>
+      <tr><td>Demerit 3?</td><td>Steering/Co-ordination Committee acts as a "Super-Cabinet"</td></tr>
+      <tr><td>Demerit 4?</td><td>Small partners play "King-maker", demand beyond their strength</td></tr>
+      <tr><td>Demerit 5?</td><td>Regional leaders push state agendas, threaten to withdraw</td></tr>
+      <tr><td>Demerit 6?</td><td>Bloated ministries — Vajpayee's 1999 "Jumbo Ministry" (70+)</td></tr>
+      <tr><td>Demerit 7?</td><td>Diffused accountability — blame games over failures</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Chapter 85 — Facts at a Glance</div>
+
+<div class="para">
+  <div class="ptitle gn">Chapter 85 — Facts at a Glance</div>
+  <table>
+    <caption>Coalition Government — key facts, one table</caption>
+    <thead><tr><th style="width:38%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Word origin</td><td>Latin <i>coalitio</i> — "to grow together"</td></tr>
+      <tr><td>Author of the 8-point features list</td><td>J.C. Johari</td></tr>
+      <tr><td>Two routes to a coalition</td><td>Pre-poll alliance (before elections) vs post-poll alliance (after results)</td></tr>
+      <tr><td>Congress single-party majority years</td><td>1952, 1957, 1962, 1967, 1971; also 1980, 1984</td></tr>
+      <tr><td>Congress split / minority govt survives</td><td>1969 split; Indira Gandhi govt survived on CPI/DMK outside support</td></tr>
+      <tr><td>Year the coalition era begins at the Centre</td><td>1977 (Congress's heavy defeat)</td></tr>
+      <tr><td>Sustained/near-continuous coalition phase</td><td>Roughly 1989 to 2014</td></tr>
+      <tr><td>First coalition PM (1977–79)</td><td>Morarji Desai (Janata Party)</td></tr>
+      <tr><td>United Front PMs (1996–98)</td><td>H.D. Deve Gowda, then I.K. Gujral</td></tr>
+      <tr><td>NDA formed under whom, when?</td><td>A.B. Vajpayee, 1999 (also led BJP-led Coalition 1998–99)</td></tr>
+      <tr><td>UPA / UPA-II PM</td><td>Manmohan Singh (2004–09, 2009–14)</td></tr>
+      <tr><td>"Jumbo Ministry"</td><td>Vajpayee's 1999 ministry — 70+ ministers</td></tr>
+      <tr><td>Nickname for a PM constrained by coalition allies</td><td>"Super Prime Minister" / "Ultra Prime Minister"</td></tr>
+      <tr><td>Merits (count &amp; theme)</td><td>5 — accommodation, representativeness, consensus, federalism, checks on despotism</td></tr>
+      <tr><td>Demerits (count &amp; theme)</td><td>7 — instability, curtailed PM, super-cabinet, king-makers, regionalism, jumbo ministry, diffused responsibility</td></tr>
+      <tr><td>Book's own table cut-off</td><td class="imp">"2019 – till date" (NDA, Narendra Modi) per the 8th edition</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలం — M. Laxmikanth, Indian Polity, 8th Edition, Chapter 85 "Coalition Government" (definitions cited therein from Ghai, Robertson, Ogg, Sahni, and Johari's features list).</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Coalition Politics in 2026 <span class="caasof">(as of 25.08.2026, verified via live web search on this date — re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>1. At the Centre — NDA continues as a genuine coalition government since 2024:</b> The book's own Table 85.1 ends its entry for row 12 as "2019 – till date," written before the <b class="hlg">2024</b> Lok Sabha election. That election changed the ground reality in one important way: the BJP alone won <b class="hlg">240</b> seats — short of the <b class="imp">272</b>-seat majority mark — so, for the first time since 2014, the party governing at the Centre genuinely needs its allies' numbers, not just their political goodwill, to survive a floor test. The wider <b class="term">NDA</b> combine crossed the majority mark with <b class="hlg">293</b> seats, with TDP (<b class="hlp">Chandrababu Naidu</b>) and JD(U) (<b class="hlp">Nitish Kumar</b>) holding the pivotal "king-maker" numbers this chapter describes in the abstract. <b class="hlp">Narendra Modi</b> was sworn in for a third term in <b class="hlg">June 2024</b> heading this coalition ministry — commonly called "Modi 3.0" — and, as of this update, no fresh Lok Sabha election has intervened, so this coalition arrangement remains the status quo at the Centre through 2026.</p>
+    <div class="te"><b>1. కేంద్రంలో — 2024 నుండి NDA నిజమైన coalition గా కొనసాగుతోంది:</b> పుస్తకంలోని Table 85.1, 12వ వరుసను "2019 – till date" గా ముగిస్తుంది, ఇది <b class="hlg">2024</b> Lok Sabha ఎన్నికలకు ముందు రాసినది. ఆ ఎన్నికలు ఒక ముఖ్యమైన మార్పు తెచ్చాయి — BJP ఒంటరిగా <b class="hlg">240</b> సీట్లు గెలిచింది — <b class="imp">272</b> మెజారిటీ మార్కు కంటే తక్కువ — కాబట్టి, 2014 తర్వాత మొదటిసారి, కేంద్రంలో పాలిస్తున్న పార్టీకి floor test ను నెగ్గడానికి కేవలం రాజకీయ మద్దతు మాత్రమే కాదు, allies సంఖ్యాబలం నిజంగానే అవసరం. విస్తృత <b class="term">NDA</b> కూటమి <b class="hlg">293</b> సీట్లతో మెజారిటీ దాటింది. ఈ కూటమిలో, chapter నైరూప్యంగా వర్ణించిన "king-maker" పాత్రను TDP (<b class="hlp">చంద్రబాబు నాయుడు</b>), JD(U) (<b class="hlp">నితీష్ కుమార్</b>) పోషించారు. <b class="hlp">నరేంద్ర మోదీ</b> <b class="hlg">2024 జూన్</b>లో మూడోసారి ప్రమాణ స్వీకారం చేసి ఈ coalition ministry కు నాయకత్వం వహిస్తున్నారు — దీన్ని సాధారణంగా "Modi 3.0" అంటారు — ఈ అప్‌డేట్ నాటికి, కొత్త Lok Sabha ఎన్నికలు జరగలేదు కాబట్టి, ఈ coalition ఏర్పాటు 2026 వరకు కేంద్రంలో యథాతథంగా కొనసాగుతోంది.</div>
+
+    <p class="eng"><b>2. Tamil Nadu, 2026 — a fresh hung-verdict, post-poll coalition, formed live in front of this exam cycle:</b> Tamil Nadu went to the polls on <b class="hlg">23 April 2026</b>, with results declared on <b class="hlg">4 May 2026</b>. The verdict was a hung assembly: the newly formed <b class="term">Tamilaga Vettri Kazhagam (TVK)</b>, led by actor-turned-politician <b class="hlp">C. Joseph Vijay</b>, emerged as the single largest party with <b class="hlg">108</b> seats in the 234-member house — short of the <b class="imp">118</b>-seat majority mark — while the DMK-led front (Secular Progressive Alliance) won 73 and the AIADMK-BJP-led NDA front won 53. Rather than remaining a hung house, TVK secured post-poll support from breakaway constituents of the losing DMK-led front — including the Congress, the CPI and CPI(M), the VCK and the IUML — to cross the majority mark, and <b class="hlp">Vijay</b> was sworn in as Chief Minister on <b class="hlg">10 May 2026</b>, heading what is, on the ground, textbook <b class="term">post-poll coalition</b> government. This is a rare, genuinely live illustration of exactly the post-poll-alliance mechanism this chapter describes — worth remembering as a current example, distinct from the book's own Centre-focused Table 85.1.</p>
+    <div class="te"><b>2. తమిళనాడు, 2026 — ఈ exam cycle ముందు ప్రత్యక్షంగా ఏర్పడిన కొత్త hung-verdict, post-poll coalition:</b> తమిళనాడులో <b class="hlg">2026 ఏప్రిల్ 23</b>న పోలింగ్ జరిగింది, <b class="hlg">2026 మే 4</b>న ఫలితాలు వెలువడ్డాయి. ఫలితం hung assembly — నటుడి నుండి రాజకీయ నాయకుడిగా మారిన <b class="hlp">C. Joseph Vijay</b> నేతృత్వంలోని కొత్తగా ఏర్పడిన <b class="term">Tamilaga Vettri Kazhagam (TVK)</b>, 234 స్థానాల సభలో <b class="hlg">108</b> సీట్లతో అతిపెద్ద పార్టీగా నిలిచింది — <b class="imp">118</b> మెజారిటీ మార్కు కంటే తక్కువ — DMK నేతృత్వంలోని Secular Progressive Alliance 73, AIADMK-BJP నేతృత్వంలోని NDA front 53 సీట్లు గెలిచాయి. hung house గా మిగిలిపోయే బదులు, TVK, ఓడిన DMK-నేతృత్వ front నుండి విడిపోయిన భాగస్వాముల నుండి — Congress, CPI, CPI(M), VCK, IUML తో సహా — post-poll మద్దతు పొంది మెజారిటీ దాటింది. <b class="hlp">Vijay</b> <b class="hlg">2026 మే 10</b>న ముఖ్యమంత్రిగా ప్రమాణ స్వీకారం చేశారు — ఆచరణలో ఇది ఒక నిజమైన <b class="term">post-poll coalition</b> ప్రభుత్వం. ఈ chapter వర్ణించిన post-poll-alliance విధానానికి ఇది అరుదైన, నిజంగా ప్రత్యక్ష ఉదాహరణ — పుస్తకంలోని కేంద్రం-కేంద్రిత Table 85.1 కు భిన్నంగా, ఒక ప్రస్తుత ఉదాహరణగా గుర్తుంచుకోవాలి.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — recent coalition-politics current affairs</caption>
+      <thead><tr><th style="width:22%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">Jun 2024</td><td>Modi 3.0 sworn in — NDA coalition (293 seats), BJP alone at 240, short of 272 majority</td></tr>
+        <tr><td class="hlg">23 Apr 2026</td><td>Tamil Nadu assembly polling held (single phase)</td></tr>
+        <tr><td class="hlg">4 May 2026</td><td>Result: hung assembly — TVK 108, SPA (DMK-led) 73, NDA (AIADMK-BJP-led) 53</td></tr>
+        <tr><td class="hlg">10 May 2026</td><td>C. Joseph Vijay (TVK) sworn in as CM, heading a post-poll coalition with ex-SPA partners</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: keep the book's own facts (Johari's 8 features, pre-poll/post-poll distinction, the 1977/1989/2014 milestones, and Table 85.1 through "2019 – till date") as the stable core. Treat the 2024 Centre coalition and the 2026 Tamil Nadu post-poll coalition as live, evolving illustrations of the same concepts — both worth re-checking nearer your exam date, since neither changes the book's own historical text.</p>
+    <div class="te">Exam కోసం — పుస్తకంలోని facts (Johari 8 features, pre-poll/post-poll తేడా, 1977/1989/2014 మైలురాళ్లు, "2019 – till date" వరకు Table 85.1) ను స్థిరమైన core గా ఉంచుకోండి. 2024 కేంద్రం coalition, 2026 తమిళనాడు post-poll coalition లను ఇదే concepts కు ప్రస్తుత, మారుతున్న ఉదాహరణలుగా చూడండి — ఇవి రెండూ పుస్తకంలోని చారిత్రక టెక్స్ట్ ను మార్చవు కాబట్టి, మీ exam తేదీకి దగ్గరగా వీటిని మళ్లీ చెక్ చేసుకోవడం మంచిది.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 85 — Coalition Government · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.86 — Anti-Defection Law</span><span class="dpart">Part X &middot; Book 2 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

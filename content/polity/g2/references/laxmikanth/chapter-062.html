@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part VIII &mdash; Book 2</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 62 — Central Information Commission</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Right to Information Act, 2005 — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">What the Central Information Commission Is — Legal Status</div>
+  <p class="eng">The <b class="term">Central Information Commission (CIC)</b> came into existence in <b class="hlg">2005</b>, set up by the <b>Central Government</b> under the framework laid down by the <b class="hlb">Right to Information Act, 2005</b> — an ordinary parliamentary law, not the Constitution itself. That single fact drives the point the book insists on: the CIC is <b class="imp">not a constitutional body</b>; it is a <b class="term">statutory body</b>. Students should keep this distinction sharp: bodies such as the Election Commission (Article 324) or the UPSC (Article 315) trace their existence straight to the Constitution's own text, whereas the CIC owes its existence entirely to a statute — Parliament could, in theory, wipe out the CIC simply by repealing the RTI Act, something no ordinary law can do to a genuinely constitutional body.</p>
+  <div class="te"><b class="term">Central Information Commission (CIC)</b> <b class="hlg">2005</b> లో ఉనికిలోకి వచ్చింది — <b>Central Government</b>, <b class="hlb">Right to Information Act, 2005</b> ఇచ్చిన చట్రం కింద దీన్ని ఏర్పాటు చేసింది — ఇది Parliament చేసిన ఒక సాధారణ చట్టం మాత్రమే, Constitution కాదు. ఈ ఒక్క విషయమే పుస్తకం నొక్కి చెప్పే పాయింట్ కు కారణం — CIC <b class="imp">constitutional body కాదు</b>; ఇది <b class="term">statutory body</b>. విద్యార్థులు ఈ తేడాను గుర్తుంచుకోవాలి — Election Commission (Article 324), UPSC (Article 315) లాంటివి తమ ఉనికిని నేరుగా Constitution టెక్స్ట్ నుండి పొందుతాయి, కానీ CIC ఉనికి మొత్తం ఒక చట్టం మీదే ఆధారపడి ఉంటుంది — Parliament అనుకుంటే RTI Act ను repeal చేయడం ద్వారానే CIC ను తొలగించగలదు — ఇలాంటిది నిజమైన constitutional body కి ఏ సాధారణ చట్టం చేయజాలదు.</div>
+
+  <p class="eng">The CIC functions as a <b>high-powered, independent body</b> whose central job is hearing citizen complaints and ruling on appeals that arise under the RTI Act. Its reach extends to offices, financial institutions, and public sector undertakings (PSUs) that sit within the <b>Central Government's own ambit or that of a Union Territory</b> — grievances against a state-government office instead go to that state's own <b class="term">State Information Commission</b>, a parallel body this chapter's core text does not cover in detail.</p>
+  <div class="te">CIC ఒక <b>high-powered, independent body</b> గా పనిచేస్తుంది — citizens పెట్టిన complaints వినడం, RTI Act కింద వచ్చే appeals మీద తీర్పు ఇవ్వడం దీని ప్రధాన పని. దీని పరిధి <b>Central Government</b> కిందకు లేదా ఒక Union Territory కిందకు వచ్చే offices, financial institutions, public sector undertakings (PSUs) వరకు విస్తరించి ఉంటుంది — ఏదైనా state-government office మీద ఫిర్యాదు ఉంటే అది ఆ రాష్ట్రానికే చెందిన <b class="term">State Information Commission</b> కు వెళ్తుంది — ఇది ఒక parallel body, దీని వివరాలను ఈ chapter core text లోతుగా చర్చించదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — What CIC Is</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>When was CIC established, and by whom?</td><td>2005, by the Central Government</td></tr>
+      <tr><td>Under which Act?</td><td>Right to Information Act, 2005</td></tr>
+      <tr><td>Is CIC a constitutional body?</td><td>No — it is a statutory body</td></tr>
+      <tr><td>Jurisdiction covers offices/PSUs under whom?</td><td>Central Government and Union Territories (not states — that's the State Information Commission's job)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Composition — Strength, Appointment, Eligibility</div>
+  <p class="eng">Structurally, the Commission is headed by one <b class="term">Chief Information Commissioner (CIC)</b>, supported by <b class="imp">up to ten</b> <b class="term">Information Commissioners</b> — giving the body a ceiling strength of <b class="hlg">11</b> members in all. Appointment vests in the <b class="hlp">President</b>, but the President acts only on a name put forward by a dedicated <b class="imp">committee</b>, never by free personal choice. That committee has three members: <b>(1)</b> the <b class="hlp">Prime Minister</b>, sitting as its <b>Chairperson</b>; <b>(2)</b> the <b class="hlp">Leader of the Opposition</b> from the Lok Sabha; and <b>(3)</b> one <b class="hlp">Union Cabinet Minister</b> hand-picked by the Prime Minister for the purpose. Worth flagging for cross-chapter recall: this same PM + LOP + PM-nominated-minister pattern reappears in the panel that the CEC Act, 2023 later set up for choosing Election Commissioners — a useful memory link, even though the two panels sit under entirely different statutes for entirely different bodies.</p>
+  <div class="te">నిర్మాణపరంగా, Commission కు ఒక <b class="term">Chief Information Commissioner (CIC)</b> నాయకత్వం వహిస్తారు, వీరికి తోడుగా <b class="imp">పది మంది వరకు</b> <b class="term">Information Commissioners</b> ఉంటారు — దీంతో body గరిష్ట strength మొత్తం <b class="hlg">11</b> మంది. నియామకం <b class="hlp">President</b> చేతిలో ఉన్నా, President స్వంతంగా ఎంపిక చేయరు — ఒక ప్రత్యేక <b class="imp">committee</b> సూచించిన పేరు మీదే President action తీసుకుంటారు. ఆ committee లో ముగ్గురు ఉంటారు — <b>(1)</b> <b class="hlp">Prime Minister</b>, దీనికి <b>Chairperson</b> గా; <b>(2)</b> Lok Sabha నుండి <b class="hlp">Leader of Opposition</b>; <b>(3)</b> ఈ ప్రయోజనం కోసం ప్రధాన మంత్రి స్వయంగా ఎంచుకున్న ఒక <b class="hlp">Union Cabinet Minister</b>. Cross-chapter గుర్తుంచుకోవడానికి పనికొచ్చే విషయం — ఇదే PM + LOP + PM-ఎంపిక చేసిన Minister pattern, తర్వాత CEC Act, 2023 Election Commissioners ఎంపిక కోసం ఏర్పాటు చేసిన panel లో కూడా కనిపిస్తుంది — అయితే ఈ రెండు panels పూర్తిగా వేర్వేరు చట్టాల కింద, వేర్వేరు bodies కోసం ఏర్పడ్డాయని గుర్తుంచుకోవాలి.</div>
+
+  <p class="eng">Rather than laying down fixed degrees or age-based qualifications, the law keeps eligibility broad and reputation-based: a candidate must carry <b>standing and distinction in public life</b>, backed by <b>substantial exposure</b> to at least one of these fields — <b>management, social service, law, science &amp; technology, journalism or mass media,</b> or <b>public administration and governance</b>. Three things simultaneously rule a candidate <b>out</b>: sitting as an <b class="imp">MP, or as a member of any State/UT legislature</b>; holding <b class="imp">any other office of profit</b> on the side; and having <b class="imp">any tie to a political party, a running business, or an active profession</b>.</p>
+  <div class="te">స్థిర డిగ్రీలు లేదా వయో-ఆధారిత qualifications పెట్టే బదులు, చట్టం eligibility ను విస్తృతంగా, reputation-ఆధారితంగా ఉంచింది — అభ్యర్థి <b>public life లో గుర్తింపు, ప్రతిష్ఠ</b> కలిగి ఉండాలి, కింది fields లో కనీసం ఒకదానిలో <b>గణనీయమైన అనుభవం</b> ఉండాలి — <b>law, science &amp; technology, social service, management, journalism లేదా mass media</b>, లేదా <b>public administration, governance</b>. మూడు విషయాలు ఏకకాలంలో అభ్యర్థిని <b>అనర్హుడిని</b> చేస్తాయి — <b class="imp">MP గా ఉండటం, లేదా ఏ State/UT legislature member గా ఉండటం</b>; పక్కన <b class="imp">వేరే ఏదైనా office of profit hold చేయడం</b>; ఏదైనా <b class="imp">political party తో సంబంధం, నడుస్తున్న business, లేదా active profession ఉండటం</b>.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Composition</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Maximum possible strength of the CIC?</td><td>11 (1 Chief Information Commissioner + 10 Information Commissioners)</td></tr>
+      <tr><td>Who appoints them?</td><td>President, on recommendation of a 3-member committee</td></tr>
+      <tr><td>Members of the appointment committee?</td><td>PM (Chairperson), Leader of Opposition (Lok Sabha), PM-nominated Union Cabinet Minister</td></tr>
+      <tr><td>Broad eligibility fields (any one of)?</td><td>Law, science &amp; tech, social service, management, journalism/mass media, administration &amp; governance</td></tr>
+      <tr><td>3 disqualifications?</td><td>Not an MP/MLA of any state or UT; no other office of profit; no political-party/business/profession connection</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Tenure &amp; Service Conditions — the RTI (Amendment) Act, 2019 Change (Key Exam Trap)</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Tenure and Salary — Original 2005 Position vs the Current (Post-2019) Position</div>
+  <p class="eng">This is the single most important, most frequently tested fact in this chapter, and it is easy to get backwards — so read it carefully. Under the <b class="imp">original RTI Act, 2005</b>, both commissioner-level posts had a <b>statute-fixed clock</b>: a run of <b class="hlg">five years</b> in office, cut short earlier if the holder turned <b class="hlg">65</b>. Their pay packet was likewise nailed down in the Act itself, pegged <b>on par with</b> the Chief Election Commissioner and Election Commissioners. The logic was deliberate — borrow the Election Commission's fixed-tenure, fixed-pay formula so that no future government could squeeze the CIC's independence through the purse or the clock.</p>
+  <div class="te">ఇదే ఈ chapter లో అత్యంత ముఖ్యమైన, అత్యంత తరచుగా అడిగే fact — దీన్ని తారుమారు చేసి అర్థం చేసుకోవడం సులభమే, కాబట్టి జాగ్రత్తగా చదవాలి. <b class="imp">ఒరిజినల్ RTI Act, 2005</b> ప్రకారం, ఈ రెండు commissioner-level పదవులకూ ఒక <b>చట్టం-ఫిక్స్డ్ గడువు</b> ఉండేది — <b class="hlg">ఐదు సంవత్సరాల</b> పదవీకాలం, అయితే పదవిలో ఉన్నవారు <b class="hlg">65</b> ఏళ్లు దాటితే అంతకంటే ముందే ముగిసేది. వీరి జీతం కూడా చట్టంలోనే ఖరారు చేయబడింది — Chief Election Commissioner, Election Commissioners జీతానికి <b>సమానంగా</b>. ఈ డిజైన్ వెనుక ఉద్దేశం స్పష్టం — భవిష్యత్తులో ఏ ప్రభుత్వం అయినా జీతం లేదా పదవీకాలం ద్వారా CIC స్వతంత్రతను నొక్కేయకుండా, Election Commission లాంటి fixed-tenure, fixed-pay formula ను borrow చేశారు.</div>
+
+  <p class="eng">The <b class="term">RTI (Amendment) Act, 2019</b> rewrote this arrangement at its root. Both posts now run for <b class="imp">whatever term the Central Government chooses to notify</b>, capped in any case at age <b class="hlg">65</b> — Parliament's own five-year figure was struck out of the statute and swapped for a blank the Executive fills in through rules. Pay went the same way: rather than a figure locked to the Election Commission's scale, salary, allowances and other service terms are now likewise <b class="imp">whatever the Central Government notifies</b>. Only one safeguard from the original Act survives untouched — once in office, a commissioner's service terms <b>cannot be altered to their disadvantage</b> for the rest of that term.</p>
+  <div class="te"><b class="term">RTI (Amendment) Act, 2019</b> ఈ ఏర్పాటును మూలం నుండే తిరగరాసింది. ఇప్పుడు ఈ రెండు పదవులూ <b class="imp">Central Government notify చేసే గడువు</b> వరకు — ఏమైనా 65 ఏళ్ల వయసు దాటకుండా — కొనసాగుతాయి — Parliament స్వయంగా పెట్టిన ఐదు సంవత్సరాల figure ను చట్టం నుండి తొలగించి, దాని స్థానంలో Executive rules ద్వారా నింపే ఖాళీని ఉంచారు. జీతం విషయంలో కూడా ఇదే జరిగింది — Election Commission scale కు లింక్ అయిన figure బదులు, ఇప్పుడు salary, allowances, ఇతర service terms కూడా <b class="imp">Central Government notify చేసేవే</b>. ఒరిజినల్ Act నుండి మార్పు లేకుండా బతికి ఉన్న ఏకైక రక్షణ — ఒకసారి పదవిలో చేరిన తర్వాత, ఆ term మిగిలినంత కాలం commissioner service terms ను <b>వారికి నష్టం కలిగేలా మార్చకూడదు</b>.</div>
+
+  <p class="eng">This change was <b class="imp">highly controversial</b> at the time and remains a live point of debate. Critics — including RTI activists and opposition members in Parliament — argued that by removing the fixed statutory tenure and the fixed salary parity with the Election Commission, the 2019 Amendment handed the Central Government direct control over how long a sitting Information Commissioner serves and how much they are paid, which could make commissioners more deferential to the executive precisely on cases where they are expected to rule against government non-disclosure. The government's defence was that the CIC's functions are not comparable to constitutional bodies like the Election Commission, and that flexibility in service conditions was administratively reasonable. Students should treat this 2019 change as the chapter's <b class="imp">central exam trap</b>: know both the original 2005 figures (5 years / 65, CEC-equal salary) and the current post-2019 position (Govt-prescribed term / 65, Govt-prescribed salary) and be able to state clearly which one is the <b>current law</b>.</p>
+  <div class="te">ఈ మార్పు ఆ సమయంలో <b class="imp">తీవ్రంగా వివాదాస్పదం</b> అయింది, ఇప్పటికీ చర్చనీయాంశంగానే ఉంది. Critics — RTI activists, Parliament లో opposition సభ్యులతో సహా — ఇలా వాదించారు — ఫిక్స్డ్ statutory tenure ను, Election Commission తో ఫిక్స్డ్ salary parity ను తీసేయడం వల్ల, 2019 Amendment Central Government కు — ప్రస్తుత Information Commissioner ఎంతకాలం పనిచేస్తారో, ఎంత జీతం పొందుతారో — దానిపై నేరుగా నియంత్రణ ఇచ్చింది — దీని వల్ల commissioners, government non-disclosure కు వ్యతిరేకంగా తీర్పు ఇవ్వాల్సిన కేసుల్లోనే executive కు ఎక్కువ deferential గా మారే అవకాశం ఉంది. ప్రభుత్వం వాదన ఇదే — CIC విధులు Election Commission లాంటి constitutional bodies తో పోల్చదగినవి కావు, service conditions లో flexibility administratively సహేతుకమే అని వాదించింది. విద్యార్థులు ఈ 2019 మార్పును chapter <b class="imp">ప్రధాన exam trap</b> గా భావించాలి — ఒరిజినల్ 2005 figures (5 సంవత్సరాలు / 65, CEC-equal salary), ప్రస్తుత post-2019 position (Govt-prescribed term / 65, Govt-prescribed salary) రెండూ తెలుసుకుని, ఏది <b>ప్రస్తుత చట్టం</b> అనేది స్పష్టంగా చెప్పగలగాలి.</div>
+
+  <table>
+    <caption>Tenure &amp; Salary — 2005 Act vs 2019 Amendment, at a glance</caption>
+    <thead><tr><th style="width:24%">Feature</th><th>Original RTI Act, 2005</th><th>Current — post RTI (Amendment) Act, 2019</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">Tenure</td><td>Fixed 5 years, or age 65, whichever earlier</td><td class="imp">Such term as prescribed by Central Government, or age 65, whichever earlier</td></tr>
+      <tr><td class="hlg">Salary/allowances</td><td>Equal to CEC/Election Commissioners (fixed by statute)</td><td class="imp">Such as prescribed by Central Government (delinked from CEC/EC figure)</td></tr>
+      <tr><td class="hlg">Reappointment</td><td>Not eligible</td><td>Not eligible (unchanged)</td></tr>
+      <tr><td class="hlg">Service conditions post-appointment</td><td>Cannot be varied to disadvantage</td><td>Cannot be varied to disadvantage (unchanged — the one surviving protection)</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Tenure &amp; Salary, the 2019 Change</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Original 2005 tenure?</td><td>Fixed 5 years or age 65, whichever earlier</td></tr>
+      <tr><td>Current (post-2019) tenure?</td><td>Such term as prescribed by Central Government, or age 65, whichever earlier</td></tr>
+      <tr><td>What changed about salary?</td><td>Delinked from CEC/EC-equal statutory figure — now Central-Govt-prescribed</td></tr>
+      <tr><td>Which amendment made this change?</td><td>RTI (Amendment) Act, 2019</td></tr>
+      <tr><td>Why is this controversial?</td><td>Seen as weakening CIC's independence by giving the executive control over term/pay</td></tr>
+      <tr><td>What protection survived unchanged?</td><td>Service conditions can't be varied to disadvantage after appointment</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Removal of CIC/Information Commissioners — Two Distinct Routes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Removal — Five Direct Grounds (President's Own Decision)</div>
+  <p class="eng">The <b class="hlp">President</b> holds the power to send home the CIC or any Information Commissioner on the spot — no outside enquiry needed — the moment any of <b class="hlg">five</b> situations arises: <b>(1)</b> a court has adjudged the person an <b>insolvent</b>; <b>(2)</b> the person stands convicted of an offence that, <b>in the President's own view</b>, amounts to <b class="imp">moral turpitude</b>; <b>(3)</b> the person is caught taking up <b>paid work outside their official duties</b> while still in office; <b>(4)</b> the President forms the view that <b>mental or physical infirmity</b> has left the person unfit to carry on; or <b>(5)</b> the person has picked up a <b>financial or other stake</b> capable of <b>colouring their official decisions</b>. Two of these five (the moral-turpitude finding, and the infirmity finding) are pointedly left to the President's own judgment call — no separate enquiry body has to sign off before removal on any of these five grounds.</p>
+  <div class="te"><b class="hlp">President</b>, CIC లేదా ఏదైనా Information Commissioner ను — బయటి ఏ enquiry అవసరం లేకుండా, ఆ క్షణమే — కింది <b class="hlg">ఐదు</b> పరిస్థితుల్లో దేనిలోనైనా ఇంటికి పంపగలరు — <b>(1)</b> కోర్టు ఆ వ్యక్తిని <b>insolvent</b> అని ప్రకటిస్తే; <b>(2)</b> <b class="hlp">President</b> స్వంత అభిప్రాయంలో <b class="imp">moral turpitude</b> కు సమానమైన నేరంలో ఆ వ్యక్తి దోషిగా తేలితే; <b>(3)</b> పదవిలో ఉండగానే, అధికారిక విధులకు వెలుపల <b>ఏదైనా paid work</b> చేస్తూ దొరికితే; <b>(4)</b> <b class="imp">మానసిక లేదా శారీరక infirmity</b> వల్ల ఆ వ్యక్తి కొనసాగడానికి పనికిరాడని <b class="hlp">President</b> అభిప్రాయపడితే; లేదా <b>(5)</b> ఆ వ్యక్తి అధికారిక నిర్ణయాలను <b>ప్రభావితం చేయగల ఒక financial లేదా ఇతర వాటా</b> సంపాదిస్తే. ఈ ఐదింటిలో రెండు (moral turpitude నిర్ధారణ, infirmity నిర్ధారణ) స్పష్టంగా President స్వంత judgment కే వదిలేశారు — ఈ ఐదు గ్రౌండ్స్ లో దేనిమీద తొలగింపుకైనా, వేరే ఏ independent enquiry body ఆమోదం అవసరం లేదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — 5 Direct Removal Grounds</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How many direct removal grounds, and who decides?</td><td>5 grounds; President decides directly, no external enquiry needed</td></tr>
+      <tr><td>List them briefly</td><td>Insolvency, moral-turpitude conviction, outside paid employment, infirmity, prejudicial financial interest</td></tr>
+      <tr><td>Which 2 grounds are explicitly "in the President's opinion"?</td><td>Moral turpitude conviction, and infirmity of mind/body</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Removal — Proved Misbehaviour or Incapacity (the Supreme-Court-Enquiry Route)</div>
+  <p class="eng">There is a sixth route to removal, running on a completely different track from the five above: <b class="imp">proved misbehaviour or incapacity</b>. Here the President cannot act alone — the matter <b>has to go to the Supreme Court</b> for an enquiry first, and removal follows only <b>if</b> the Court, having enquired, <b>backs the case for removal and tells the President so</b>. Think of it as a cousin of the safeguard the Constitution builds around higher constitutional posts, even though this is a separate statutory provision — the whole point is to stop "misbehaviour" from becoming a convenient label the government of the day slaps on an inconvenient commissioner without a judge ever looking at the evidence.</p>
+  <div class="te">తొలగింపుకు ఆరవ మార్గం కూడా ఉంది, ఇది పైన చెప్పిన ఐదు గ్రౌండ్స్ కు పూర్తిగా భిన్నమైన track లో నడుస్తుంది — <b class="imp">proved misbehaviour లేదా incapacity</b>. ఇక్కడ President ఒంటరిగా చర్య తీసుకోలేరు — ముందుగా ఈ విషయం enquiry కోసం <b>Supreme Court దగ్గరకు వెళ్లాల్సిందే</b>, Court విచారించి <b>తొలగింపు సరైనదేనని President కు చెప్తేనే</b> తొలగింపు జరుగుతుంది. దీన్ని higher constitutional posts కు Constitution కల్పించిన రక్షణకు ఒక cousin లా అనుకోవచ్చు — అయినా ఇది వేరే statutory provision — అసలు ఉద్దేశం ఏమిటంటే, ఏ judge సాక్ష్యాధారాలు చూడకుండానే, ప్రభుత్వం "misbehaviour" అనే లేబుల్ ను తనకు నచ్చని commissioner మీద అంటించి తొలగించకుండా ఆపడమే.</div>
+
+  <p class="eng">There is also a tight, technical definition of <b class="term">deemed misbehaviour</b> built into this provision: a commissioner falls under it if they hold a <b>personal stake</b> in any contract or agreement the Central Government has entered into, or if they <b>share, in any way,</b> in the profit, benefit, or payment flowing from such a contract — <b>with one carve-out</b>: merely holding shares as an <b>ordinary shareholder, on the same footing as everyone else</b>, in an incorporated company does not count, even if that company happens to hold a government contract.</p>
+  <div class="te">ఈ provision లో <b class="term">deemed misbehaviour</b> అనే ఒక కచ్చితమైన, technical నిర్వచనం కూడా ఉంది — Central Government చేసిన ఏదైనా contract లేదా agreement లో ఒక commissioner <b>వ్యక్తిగత వాటా</b> కలిగి ఉంటే, లేదా అలాంటి contract నుండి వచ్చే లాభం, benefit, లేదా payment లో <b>ఏ రూపంలోనైనా వాటా పంచుకుంటే</b> — ఆ commissioner దీని కిందకు వస్తారు — <b>ఒక్క మినహాయింపు</b> — ఒక incorporated company లో, మిగతా అందరితో సమానంగా, కేవలం <b>ఒక సాధారణ shareholder</b> గా shares కలిగి ఉంటే అది లెక్కలోకి రాదు — ఆ company కి government contract ఉన్నా సరే.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Misbehaviour/Incapacity Removal Route</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who must the President refer the matter to?</td><td>The Supreme Court, for an enquiry</td></tr>
+      <tr><td>When can the President then remove?</td><td>Only if SC upholds the removal cause and advises so</td></tr>
+      <tr><td>Deemed misbehaviour = ?</td><td>Being concerned/interested in a Central Govt contract, or sharing its profit/benefit</td></tr>
+      <tr><td>Exception to deemed misbehaviour?</td><td>Holding an interest only as an ordinary member in common with other members of an incorporated company</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Powers &amp; Functions — Part I: Complaints, Suo-Moto Power, Civil Court Powers, Record Access</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Duty to Receive and Inquire Into Complaints (6 Grounds)</div>
+  <p class="eng">Whenever a citizen runs into trouble with an RTI request, the Commission is <b>duty-bound</b> to take up and inquire into that complaint — and the law spells out six situations that qualify: <b>(1)</b> the request could not even be filed because <b>no Public Information Officer (PIO) had been appointed</b> to receive it; <b>(2)</b> the information sought was <b>flatly refused</b>; <b>(3)</b> the deadline passed with <b>no reply at all</b>; <b>(4)</b> the applicant finds the <b>fee demanded</b> excessive; <b>(5)</b> the applicant suspects the <b>answer supplied</b> is incomplete, misleading, or outright false; and <b>(6)</b> a catch-all for any other information-access grievance under the Act. In effect, this makes the CIC the <b class="term">second-appeal</b> authority — the citizen's main escalation route once things go wrong at the department level.</p>
+  <div class="te">ఏ citizen అయినా తన RTI request తో ఇబ్బంది పడితే, దాన్ని తీసుకుని దానిపై inquire చేయడం Commission <b>విధి</b> — దీనికి చట్టం ఆరు పరిస్థితులను పేర్కొంటుంది — <b>(1)</b> request స్వీకరించడానికే <b>ఏ Public Information Officer (PIO) నియామకం కాకపోవడం వల్ల</b> దాన్ని దాఖలు చేయలేకపోవడం; <b>(2)</b> కోరిన information ను <b>నేరుగా తిరస్కరించడం</b>; <b>(3)</b> గడువు దాటినా <b>ఏ జవాబూ రాకపోవడం</b>; <b>(4)</b> అడిగిన <b>fee</b> ఎక్కువగా ఉందని applicant అనుకోవడం; <b>(5)</b> ఇచ్చిన <b>జవాబు</b> అసంపూర్ణంగా, తప్పుదోవ పట్టించేదిగా, లేదా పూర్తిగా అబద్ధంగా ఉందని applicant అనుమానించడం; <b>(6)</b> information పొందడానికి సంబంధించిన మరే ఇతర ఫిర్యాదైనా. దీని అర్థం — CIC ఇక్కడ <b class="term">second-appeal</b> అథారిటీగా పనిచేస్తుంది — department స్థాయిలో పొరపాటు జరిగిన citizen కు ఇదే ప్రధాన escalation మార్గం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Complaint Grounds</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How many complaint grounds are listed?</td><td>6 (plus a catch-all "any other matter")</td></tr>
+      <tr><td>What role does this make the CIC functionally?</td><td>Second-appeal / grievance-redressal authority under RTI Act</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Suo-Moto Power and Civil Court Powers During Inquiry</div>
+  <p class="eng">The Commission is not limited to reacting to complaints — its <b class="term">suo-moto</b> power lets it launch an inquiry on any matter purely on its own initiative, whenever <b>reasonable grounds</b> exist, with no complaint required first. Once an inquiry is underway, six specific <b>civil-court-style</b> powers kick in: <b>(1)</b> calling people in, forcing their attendance, and making them testify on oath or hand over documents/objects; <b>(2)</b> ordering that documents be <b>discovered and inspected</b>; <b>(3)</b> taking evidence by <b>affidavit</b>; <b>(4)</b> pulling in <b>any public record</b> held by a court or office; <b>(5)</b> summoning <b>witnesses or papers</b> for examination; and <b>(6)</b> a residual power for whatever else gets prescribed. It is exactly this bundle of civil-court powers that gives the CIC's inquiry stage its <b class="term">quasi-judicial</b> flavour, rather than leaving it a purely administrative exercise.</p>
+  <div class="te">Commission కేవలం complaints కు స్పందించడానికే పరిమితం కాదు — దీని <b class="term">suo-moto</b> power వల్ల, ఏ complaint రాకపోయినా, <b>reasonable grounds</b> ఉంటే చాలు, ఏ విషయం మీదైనా తనంతట తానే inquiry ప్రారంభించగలదు. ఒకసారి inquiry మొదలైతే, ఆరు నిర్దిష్ట <b>civil-court తరహా</b> powers అమల్లోకి వస్తాయి — <b>(1)</b> వ్యక్తులను పిలిపించడం, హాజరు తప్పనిసరి చేయడం, oath మీద సాక్ష్యం చెప్పమని లేదా documents/వస్తువులు అప్పగించమని ఒత్తిడి చేయడం; <b>(2)</b> documents <b>discovery, inspection</b> కు ఆదేశించడం; <b>(3)</b> <b>affidavit</b> ద్వారా సాక్ష్యం తీసుకోవడం; <b>(4)</b> ఏ court/office వద్ద ఉన్న <b>public record</b> నైనా రప్పించడం; <b>(5)</b> <b>witnesses లేదా papers</b> examination కోసం summons పంపడం; <b>(6)</b> prescribe అయ్యే ఇతర ఏదైనా విషయం కోసం మిగిలిన power. ఈ civil-court powers సముదాయమే — inquiry దశలో CIC పాత్రకు కేవలం administrative కాకుండా <b class="term">quasi-judicial</b> రంగు ఇస్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Suo-Moto &amp; Civil Court Powers</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Does the CIC need a complaint to act?</td><td>No — suo-moto power lets it inquire on its own, on reasonable grounds</td></tr>
+      <tr><td>How many civil-court powers during inquiry?</td><td>6 — summoning, discovery/inspection, affidavit evidence, record requisition, witness summons, other prescribed matters</td></tr>
+      <tr><td>What character does this give the CIC's inquiry role?</td><td>Quasi-judicial, not merely administrative</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Access to Records During Inquiry — No Withholding Permitted</div>
+  <p class="eng">While an inquiry is on, the Commission can call for and <b>look at any record</b> sitting with the public authority concerned — and, crucially, <b class="imp">that authority has no ground on which it can refuse to hand the record over</b>. Every relevant file, in short, must land on the Commission's desk for scrutiny. This is a deliberately hard-edged rule: strip it away, and a public authority could simply sit on the very papers needed to prove whether it had wrongly denied information in the first place.</p>
+  <div class="te">Inquiry జరుగుతున్నప్పుడు, సంబంధిత public authority వద్ద ఉన్న ఏ <b>record</b> నైనా Commission తెప్పించుకుని చూడగలదు — ముఖ్యంగా, <b class="imp">ఆ authority దాన్ని ఇవ్వకుండా ఆపడానికి ఏ కారణమూ చూపజాలదు</b>. సంక్షిప్తంగా చెప్పాలంటే, సంబంధిత ప్రతి ఫైలు పరిశీలన కోసం Commission దగ్గరకు రావాల్సిందే. ఇది ఉద్దేశపూర్వకంగా కఠినమైన నియమం — ఇది లేకపోతే, information ను తొలుత తప్పుగా నిరాకరించిందా లేదా అని నిరూపించడానికి కావాల్సిన సరిగ్గా అవే పేపర్ల మీద public authority కూర్చుండిపోయే అవకాశం ఉండేది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Record Access</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Can a public authority withhold records from the CIC during inquiry?</td><td>No — on any ground</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Powers &amp; Functions — Part II: Compliance Powers, Penalty, Annual Report, Recommendation Power</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Power to Secure Compliance From the Public Authority (9 Points)</div>
+  <p class="eng">Beyond just deciding a case, the Commission can force a public authority to actually fall in line with that decision. This compliance power lets it direct the authority to: <b>(1)</b> hand over information in a particular format; <b>(2)</b> put a Public Information Officer in place wherever the post sits vacant; <b>(3)</b> put out information or classes of information publicly; <b>(4)</b> overhaul its practices around <b>keeping, maintaining, and disposing of records</b>; <b>(5)</b> step up staff training on RTI matters; <b>(6)</b> file its own compliance report back to the Commission; <b>(7)</b> pay the applicant for any loss or harm suffered; <b>(8)</b> face an <b class="imp">imposed penalty</b> under the Act; or <b>(9)</b> have the application <b>rejected outright</b>. Of these nine, point 8 — the penalty power — matters most in practice, since it is what turns CIC rulings from polite suggestions into orders with real bite.</p>
+  <div class="te">కేవలం కేసును decide చేయడం మాత్రమే కాదు, తన నిర్ణయానికి public authority నిజంగా కట్టుబడేలా చేసే power కూడా Commission కు ఉంది. ఈ compliance power ద్వారా Commission ఆ authority ని కింది వాటికి direct చేయగలదు — <b>(1)</b> ఒక నిర్దిష్ట format లో information అందించమని; <b>(2)</b> ఏ చోట PIO పోస్ట్ ఖాళీగా ఉందో అక్కడ ఒకరిని నియమించమని; <b>(3)</b> information లేదా information categories ను ప్రజలకు అందుబాటులో పెట్టమని; <b>(4)</b> records <b>ఉంచడం, నిర్వహించడం, నాశనం చేయడం</b> విషయంలో practices ను సరిదిద్దమని; <b>(5)</b> RTI అంశాలపై staff training పెంచమని; <b>(6)</b> తన compliance గురించి ఒక report Commission కు దాఖలు చేయమని; <b>(7)</b> applicant కు జరిగిన నష్టం లేదా హానికి పరిహారం చెల్లించమని; <b>(8)</b> Act కింద <b class="imp">penalty విధించడాన్ని</b> ఎదుర్కోమని; లేదా <b>(9)</b> application <b>నేరుగా తిరస్కరించబడటాన్ని</b>. ఈ తొమ్మిదింటిలో, point 8 — penalty power — practically అత్యంత ముఖ్యమైనది, ఎందుకంటే ఇదే CIC తీర్పులను కేవలం మర్యాదపూర్వక సూచనల నుండి నిజమైన బలం ఉన్న ఆదేశాలుగా మారుస్తుంది.</div>
+
+  <p class="eng">A footnote pins down the exact numbers: a defaulting <b>Public Information Officer</b> can be fined <b class="hlg">₹250 for every day</b> of delay, with the total <b>capped at ₹25,000</b>, and disciplinary proceedings can be recommended against them on top of that. Note who actually pays — it is the officer personally at fault, not the department or authority as an institution — and note that the fine has a ceiling rather than running open-ended.</p>
+  <div class="te">ఖచ్చితమైన numbers ఒక footnote లో ఇచ్చారు — తప్పు చేసిన <b>Public Information Officer</b> మీద ఆలస్యం జరిగిన ప్రతి రోజుకూ <b class="hlg">₹250</b> చొప్పున, మొత్తం <b class="hlg">₹25,000</b> గరిష్టంగా ఉండేలా, penalty విధించవచ్చు, దీనికి తోడు ఆ officer మీద disciplinary చర్యలు కూడా సిఫారసు చేయవచ్చు. ఇక్కడ ఎవరు నిజంగా చెల్లిస్తారో గమనించండి — ఇది department లేదా authority మీద institution గా కాదు, తప్పు చేసిన officer వ్యక్తిగతంగానే — అలాగే ఈ fine కు ఒక పరిమితి ఉంటుంది తప్ప అది open-ended కాదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Compliance Powers &amp; Penalty</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How many compliance-power points listed?</td><td>9, including penalty imposition and application rejection</td></tr>
+      <tr><td>Penalty rate on defaulting PIO?</td><td>₹250 per day</td></tr>
+      <tr><td>Maximum penalty cap?</td><td>₹25,000</td></tr>
+      <tr><td>Who is the penalty levied on?</td><td>The individual Public Information Officer, not the public authority as a whole</td></tr>
+      <tr><td>Additional action possible beyond the fine?</td><td>Recommend disciplinary action against the errant official</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Annual Report to Parliament, and the Recommendation Power</div>
+  <p class="eng">Every year, the Commission draws up an <b>annual report</b> on how well the RTI Act is being implemented and hands it to the <b>Central Government</b>, which then <b>lays it before Parliament — both Houses</b>. So this is not a quiet internal paper exercise; it is a yearly checkpoint that puts RTI's real-world implementation on record before the legislature. Separately, if a public authority is found <b>falling short</b> of what the Act requires, the Commission can <b>suggest</b> corrective steps to that authority. The word choice matters here — this is only a <b>suggestion</b>, softer and advisory in nature, quite unlike the binding compliance directions covered earlier.</p>
+  <div class="te">ప్రతి సంవత్సరం, RTI Act ఎంతవరకు అమలవుతోందో తెలియజేస్తూ Commission ఒక <b>annual report</b> తయారు చేసి <b>Central Government</b> కు అందిస్తుంది, అది దాన్ని <b>Parliament ఉభయ సభల ముందు</b> ఉంచుతుంది. కాబట్టి ఇది కేవలం internal గా జరిగే మౌన కాగితం పని కాదు — RTI వాస్తవ అమలు స్థితిని ఏటా legislature ముందుకు తీసుకువచ్చే ఒక checkpoint. వేరుగా, ఏదైనా public authority Act అవసరాలను <b>పాటించడంలో వెనుకబడితే</b>, సరిదిద్దుకోవడానికి తీసుకోవాల్సిన steps ను Commission ఆ authority కి <b>సూచించగలదు</b>. ఇక్కడ పదాల ఎంపిక ముఖ్యం — ఇది కేవలం ఒక <b>సూచన</b> మాత్రమే, ముందు చెప్పిన binding compliance directions కు పూర్తి భిన్నంగా, softer, advisory స్వభావం కలిగినది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Annual Report &amp; Recommendation Power</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who does CIC submit its annual report to?</td><td>The Central Government</td></tr>
+      <tr><td>Where does the Central Govt place it?</td><td>Before each House of Parliament</td></tr>
+      <tr><td>What does CIC do about a non-conforming public authority?</td><td>May recommend steps for conformity — a recommendation power, not a binding order</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Chapter 62 — Facts at a Glance</div>
+  <table>
+    <caption>Central Information Commission — key facts, one table</caption>
+    <thead><tr><th style="width:34%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Established / governing Act</td><td>2005, by Central Government, under the RTI Act, 2005 (statutory, not constitutional)</td></tr>
+      <tr><td>Composition</td><td>1 Chief Information Commissioner + up to 10 Information Commissioners (max strength 11)</td></tr>
+      <tr><td>Appointing authority</td><td>President, on recommendation of a 3-member committee — PM (Chair), LOP (Lok Sabha), PM-nominated Union Cabinet Minister</td></tr>
+      <tr><td>Tenure — original 2005 Act</td><td>Fixed 5 years or age 65, whichever earlier</td></tr>
+      <tr><td>Tenure — current (RTI Amendment Act, 2019)</td><td>Such term as prescribed by Central Government, or age 65, whichever earlier</td></tr>
+      <tr><td>Salary — current</td><td>Such as prescribed by Central Government (delinked from earlier CEC/EC-equal figure)</td></tr>
+      <tr><td>Removal — 5 direct grounds</td><td>Insolvency, moral turpitude conviction, outside paid employment, infirmity, prejudicial financial interest</td></tr>
+      <tr><td>Removal — misbehaviour/incapacity</td><td>Requires Supreme Court enquiry; President removes only if SC upholds and advises</td></tr>
+      <tr><td>Second-appeal role</td><td>Yes — CIC is the statutory second-appeal authority under the RTI Act</td></tr>
+      <tr><td>Quasi-judicial power</td><td>Civil-court powers during inquiry; orders are binding, backed by penalty power</td></tr>
+      <tr><td>Max penalty on defaulting PIO</td><td>₹250/day, capped at ₹25,000, plus possible disciplinary-action recommendation</td></tr>
+      <tr><td>Reporting</td><td>Annual report to Central Govt → placed before each House of Parliament</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలాలు — Right to Information Act, 2005; Right to Information (Amendment) Act, 2019; Right to Information Rules, 2019.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — RTI (Amendment) Act, 2019 Details, RTI Rules 2019 Figures &amp; Current CIC <span class="caasof">(as of 17.08.2026, verified via live web search on this date — re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>1. Exact effect of the RTI (Amendment) Act, 2019 — confirmed:</b> The 2019 Amendment substituted the tenure/service-condition provisions of the original 2005 Act (for both Central and State Information Commissions) so that term of office and salary are now "such as may be prescribed by the Central Government," replacing the earlier fixed 5-year tenure and the fixed salary-parity-with-Election-Commission formula. This shifted rule-making authority for these matters from Parliament (fixed in the statute) to the Executive (Central Government rules) — exactly the change this chapter's main text explains as the central exam trap. The Act was passed by both Houses of Parliament and received Presidential assent in <b class="hlg">2019</b>.</p>
+    <div class="te"><b>1. RTI (Amendment) Act, 2019 ఖచ్చితమైన ప్రభావం — confirmed:</b> 2019 Amendment, ఒరిజినల్ 2005 Act లో tenure/service-condition provisions ను (Central, State Information Commissions రెండింటికీ) substitute చేసింది — ఇప్పుడు term of office, salary "Central Government prescribe చేసేవి" గా మారాయి — దీనికి ముందు ఉన్న ఫిక్స్డ్ 5-సంవత్సరాల tenure, Election Commission తో ఫిక్స్డ్ salary-parity formula స్థానంలో ఇది వచ్చింది. దీని వల్ల ఈ విషయాల్లో rule-making authority Parliament (చట్టంలో ఫిక్స్డ్) నుండి Executive (Central Government rules) కు మారింది — ఇదే ఈ chapter main text ప్రధాన exam trap గా వివరించిన మార్పు. ఈ Act ను Parliament ఉభయ సభలు ఆమోదించాయి, <b class="hlg">2019</b> లో ఇది Presidential assent పొందింది.</div>
+
+    <p class="eng"><b>2. RTI Rules, 2019 — the actual prescribed figures:</b> Following the 2019 Amendment, the Central Government notified the Right to Information (Term of Office, Salaries, Allowances and Other Terms and Conditions of Service of Chief Information Commissioner, Information Commissioners...) Rules, 2019. Under these Rules, the prescribed term of office was set at <b class="hlg">three years</b> (down from the earlier fixed five years) — this is the specific number the Central Government chose to prescribe, exercising the discretion the 2019 Amendment gave it. On salary, the Rules set the Central CIC's monthly salary at <b class="hlg">₹2.50 lakh</b> and a Central Information Commissioner's at <b class="hlg">₹2.25 lakh</b> — figures that happen to be numerically similar to the earlier CEC/EC-equal amounts, but the key structural point for the exam is that these figures now exist only as <b class="imp">subordinate legislation (Rules)</b> that the Central Government can change again without going back to Parliament, unlike the original 2005 Act's figures which were fixed in the primary statute itself.</p>
+    <div class="te"><b>2. RTI Rules, 2019 — వాస్తవంగా prescribe అయిన figures:</b> 2019 Amendment తర్వాత, Central Government Right to Information (Term of Office, Salaries, Allowances and Other Terms and Conditions of Service of Chief Information Commissioner, Information Commissioners...) Rules, 2019 ను notify చేసింది. ఈ Rules ప్రకారం, prescribed term of office <b class="hlg">మూడు సంవత్సరాలు</b> గా (ముందు ఫిక్స్డ్ గా ఉన్న ఐదు సంవత్సరాల నుండి తగ్గించి) సెట్ చేశారు — 2019 Amendment ఇచ్చిన discretion వాడుకుని Central Government ఎంచుకున్న specific number ఇది. Salary విషయంలో, Rules Central CIC నెల జీతం <b class="hlg">₹2.50 లక్ష</b> గా, Central Information Commissioner జీతం <b class="hlg">₹2.25 లక్ష</b> గా సెట్ చేశాయి — ఈ figures numerically ముందు ఉన్న CEC/EC-equal amounts తో దాదాపు సమానంగానే ఉన్నా, exam కోసం ముఖ్యమైన structural point ఏమిటంటే — ఇప్పుడు ఈ figures <b class="imp">subordinate legislation (Rules)</b> గా మాత్రమే ఉన్నాయి — వీటిని Central Government Parliament దగ్గరకు వెళ్లకుండానే మళ్ళీ మార్చవచ్చు — ఒరిజినల్ 2005 Act figures ప్రధాన చట్టంలోనే ఫిక్స్డ్ గా ఉండేవి, అది దీనికి భిన్నం.</div>
+
+    <p class="eng"><b>3. Current Chief Information Commissioner:</b> As of this date, the Chief Information Commissioner of India is <b class="hlp">Raj Kumar Goyal</b>, a retired 1990-batch IAS officer (AGMUT cadre) who most recently served as Secretary, Department of Justice, Ministry of Law and Justice. He was sworn in on <b class="hlg">15 December 2025</b> by President <b class="hlp">Droupadi Murmu</b>, succeeding <b class="hlp">Heeralal Samariya</b> (whose term had ended on 13 September 2025, leaving the post vacant for about three months). His appointment was recommended by the statutory 3-member committee: Prime Minister <b class="hlp">Narendra Modi</b> (Chairperson), Home Minister <b class="hlp">Amit Shah</b> (the PM-nominated Union Cabinet Minister), and Leader of Opposition <b class="hlp">Rahul Gandhi</b>. On the same day, <b class="hlg">eight</b> new Information Commissioners were also sworn in, bringing the Commission to its <b class="imp">full sanctioned strength of 11</b> (1 CIC + 10 ICs) for the first time in nine years (the Commission had last been at full strength in 2016). A news report dated 13 August 2026 continues to identify Raj Kumar Goyal as the sitting Chief Information Commissioner, confirming this is current.</p>
+    <div class="te"><b>3. ప్రస్తుత Chief Information Commissioner:</b> ఈ తేదీ నాటికి, India Chief Information Commissioner <b class="hlp">Raj Kumar Goyal</b> — 1990-batch retired IAS officer (AGMUT cadre), ఇటీవల Secretary, Department of Justice, Ministry of Law and Justice గా పనిచేశారు. వీరు <b class="hlg">2025 డిసెంబర్ 15</b>న President <b class="hlp">Droupadi Murmu</b> చేత ప్రమాణ స్వీకారం చేశారు — <b class="hlp">Heeralal Samariya</b> తర్వాత (వీరి term 2025 సెప్టెంబర్ 13న ముగిసింది, ఆ తర్వాత సుమారు మూడు నెలలు పోస్ట్ ఖాళీగా ఉంది). వీరి appointment ను statutory 3-member committee సిఫారసు చేసింది — Prime Minister <b class="hlp">Narendra Modi</b> (Chairperson), Home Minister <b class="hlp">Amit Shah</b> (PM-నామినేటెడ్ Union Cabinet Minister), Leader of Opposition <b class="hlp">Rahul Gandhi</b>. అదే రోజు, <b class="hlg">ఎనిమిది</b> కొత్త Information Commissioners కూడా ప్రమాణ స్వీకారం చేశారు — దీంతో Commission తొమ్మిది సంవత్సరాల తర్వాత (చివరిసారి 2016లో పూర్తి strength ఉండేది) మొదటిసారి <b class="imp">పూర్తి sanctioned strength 11</b> (1 CIC + 10 ICs) కు చేరుకుంది. 2026 ఆగస్టు 13 తేదీ నాటి ఒక news report ఇప్పటికీ Raj Kumar Goyal ను సిటింగ్ Chief Information Commissioner గానే పేర్కొంటోంది — ఇది ఈ సమాచారం ప్రస్తుతానిదేనని నిర్ధారిస్తుంది.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — RTI Amendment 2019 &amp; CIC Leadership, 2019-2026</caption>
+      <thead><tr><th style="width:20%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">2019</td><td>RTI (Amendment) Act, 2019 passed — fixed 5-yr tenure &amp; CEC-equal salary replaced with "Central-Govt-prescribed" term/salary</td></tr>
+        <tr><td class="hlg">2019</td><td>RTI Rules, 2019 notified — prescribed term set at 3 years; CIC salary ₹2.50 lakh/month, IC salary ₹2.25 lakh/month</td></tr>
+        <tr><td class="hlg">6 Nov 2023</td><td>Heeralal Samariya sworn in as Chief Information Commissioner</td></tr>
+        <tr><td class="hlg">13 Sep 2025</td><td>Samariya's term ends (age 65) — CIC post falls vacant, no successor for ~3 months</td></tr>
+        <tr><td class="hlg">15 Dec 2025</td><td>Raj Kumar Goyal sworn in as Chief Information Commissioner; 8 new ICs sworn in same day — Commission reaches full strength (11)</td></tr>
+        <tr><td class="hlg">13 Aug 2026</td><td>News coverage still confirms Raj Kumar Goyal as sitting CIC (CIC disposal-figures clarification report)</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: cite the RTI Act, 2005's original design (5 years/65, CEC-equal salary) as the historical baseline, and the RTI (Amendment) Act, 2019's shift to "Central-Government-prescribed" term/salary as the current law and the chapter's key trap. Be ready for MCQs on (a) which year the amendment was passed (2019), (b) what exactly changed (tenure AND salary, both delinked from fixed statutory figures), (c) the actual RTI Rules 2019 figures (3 years; ₹2.50 lakh/₹2.25 lakh), and (d) the current CIC by name (Raj Kumar Goyal) — exactly the kind of evolving fact the Rulebook flags as needing re-verification before each exam cycle.</p>
+    <div class="te">Exam కోసం — RTI Act, 2005 ఒరిజినల్ డిజైన్ (5 సంవత్సరాలు/65, CEC-equal salary) ను historical baseline గా, RTI (Amendment) Act, 2019 "Central-Government-prescribed" term/salary కు మారడాన్ని ప్రస్తుత చట్టంగా, ఈ chapter ప్రధాన trap గా ఉదహరించండి. (a) amendment ఏ సంవత్సరంలో పాస్ అయింది (2019), (b) ఖచ్చితంగా ఏమి మారింది (tenure మరియు salary రెండూ, ఫిక్స్డ్ statutory figures నుండి delinked), (c) వాస్తవ RTI Rules 2019 figures (3 సంవత్సరాలు; ₹2.50 లక్ష/₹2.25 లక్ష), (d) ప్రస్తుత CIC పేరు (Raj Kumar Goyal) — ఇలాంటి MCQs కు సిద్ధంగా ఉండండి — ఇది సరిగ్గా ప్రతి exam cycle ముందూ re-verify చేయాల్సిన రకమైన, evolving fact గా Rulebook సూచించింది.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 62 — Central Information Commission · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.63 — State Information Commission</span><span class="dpart">Part VIII &middot; Book 2 of 3</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

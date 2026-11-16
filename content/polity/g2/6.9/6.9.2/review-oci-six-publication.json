@@ -1,0 +1,53 @@
+{
+  "question_ids": [
+    "POL-692-P83-005",
+    "POL-692-P83-006",
+    "POL-692-P83-007",
+    "POL-692-P83-008",
+    "POL-692-P85-004",
+    "POL-692-P85-005"
+  ],
+  "prekey_selections": [
+    1,
+    3,
+    4,
+    2,
+    2,
+    1
+  ],
+  "new_originals": 6,
+  "new_canonical_claim_records": 22,
+  "existing_fact_reused": [
+    "POL-618-oci-electoral-eligibility"
+  ],
+  "existing_fact_before": {
+    "POL-618-oci-electoral-eligibility": {
+      "id": "POL-618-oci-electoral-eligibility",
+      "claim": "An OCI card does not confer citizenship or eligibility to register as an elector.",
+      "gbk_page": 83,
+      "laxmikanth": {
+        "chapter": 7,
+        "section": "Overseas Citizenship of India: Origins; Eligibility and Rights"
+      },
+      "status": "tested",
+      "question_ids": [
+        "POL-6.1.8-P83-01"
+      ],
+      "sources": [
+        "https://ociservices.gov.in/onlineOCI/faq"
+      ]
+    }
+  },
+  "independent_review": "_parallel/UNIT6-CITIZENSHIP-OCI-SIX-ROOT-REVIEW.json",
+  "primary_locator_file": "_parallel/unit6_rights_duties/citizenship-audit/OCI-primary-item-locators.json",
+  "guide_only": [
+    "Article16/58/66/124/217number associations",
+    "Exact two-year minimum versus shorter sentences",
+    "Sentenced versus actually-served alternative not independently posed",
+    "Current notifiedotherlawlist",
+    "Separate marriagecancellationground",
+    "Passportnumber/documentdetail beyondreasonednationalitydistinction"
+  ],
+  "exact_book_tabs_unchanged": true,
+  "chapter_complete": false
+}

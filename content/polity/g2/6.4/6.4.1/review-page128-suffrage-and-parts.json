@@ -1,0 +1,47 @@
+{
+  "question_ids": [
+    "POL-6.1.9-P128-06",
+    "POL-6.1.9-P128-07"
+  ],
+  "new_questions": 2,
+  "new_tested_facts": 5,
+  "sources": [
+    "https://www.legislative.gov.in/static/uploads/2025/07/88cca69e868e50b217f855be2fb8bdba.pdf"
+  ],
+  "manual_option_review": {
+    "POL-6.1.9-P128-06": [
+      "Includes false2",
+      "Only1correct2",
+      "Bothfalse",
+      "Includes false2/3"
+    ],
+    "POL-6.1.9-P128-07": [
+      "265/301Partsswapped",
+      "301/326Partsswapped",
+      "Allcorrect3",
+      "265/326Partsswapped"
+    ]
+  },
+  "bilingual_review": "Both versions manually solved2and3; citizens versus residents, Houses versus specified chambers, and Part numbering aligned.",
+  "dedup": "Existing265law-authority and301qualified-freedom claims not re-created; new facts concern326 scope/qualifications and previously untested Part locations.",
+  "limits": "Statement1 expressly tests citizen/18year/legallyfixeddate/registration/qualifiedscope. No exact qualifying-date procedural rule tested. No blanket judicial treatment of every voting-right dispute.",
+  "GBK_scan_passes": 0,
+  "notes_changed": false,
+  "browser_visual_verified": false,
+  "chapter_complete": false,
+  "integration_check": {
+    "practice_http": 200,
+    "questions_present": [
+      "POL-6.1.9-P128-06",
+      "POL-6.1.9-P128-07"
+    ],
+    "fact_backlinks": true,
+    "guide_widths_valid": true,
+    "reading_files_hash_unchanged": {
+      "Notes.html": "c87bfe15f1f25341448bd060826b473eb18be983af92de6075d98be416880ff8",
+      "Laxmikanth.html": "c775ee1d92be3164a0f6846ef37291b4f80a8afefe308616071536ad3b07bfd4"
+    },
+    "browser_visual_verified": false
+  },
+  "final_stem_review": "Expanded statement1 in both languages to expressly test age and registration, not infer these facts from explanation. Key2 unchanged after manual resolve."
+}

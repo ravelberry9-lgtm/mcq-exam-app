@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part X &mdash; Book 2</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 86 — Anti-Defection Law</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — 52nd Amendment Act, 1985 (Tenth Schedule) &amp; 91st Amendment Act, 2003 — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Origin — The 52nd Amendment (1985) Creates the Tenth Schedule</div>
+  <p class="eng">Originally, the Constitution said nothing about what happens when an elected member simply switches political parties after taking his/her seat — floor-crossing carried no direct constitutional penalty. The <b class="term">52nd Constitutional Amendment Act, 1985</b> closed this gap by making <b class="imp">defection</b> a fresh, standalone ground on which any MP or state legislator could lose his/her seat. It achieved this in two moves: it reworked four existing Articles — <b class="hlg">101, 102, 190 and 191</b>, all of which already dealt with a seat falling vacant or a member being disqualified — and it bolted on a brand-new schedule, the <b class="term">Tenth Schedule</b>, that spells out the entire defection-disqualification scheme. This 1985 package is what everyone refers to, informally, as the <b>anti-defection law</b>. Nearly two decades later, the <b class="term">91st Amendment Act, 2003</b> came back and reshaped one specific part of this scheme — that later change is covered fully toward the end of this chapter.</p>
+  <div class="te">Constitution మొదట్లో, ఒక ఎన్నికైన member తన party మారితే ఏమి జరుగుతుందో దాని గురించి ఏమీ చెప్పలేదు — floor-crossing కు ఎలాంటి direct constitutional penalty ఉండేది కాదు. <b class="term">52వ Constitutional Amendment Act, 1985</b> ఈ లోటును పూరించి, <b class="imp">defection</b> ను Parliament లేదా state legislature ఏ House సభ్యుడినైనా అనర్హులను చేసే ఒక కొత్త, స్వతంత్ర కారణంగా చేసింది. దీన్ని రెండు దశల్లో చేసింది — ఇప్పటికే seat ఖాళీ కావడం లేదా member అనర్హత గురించి ఉన్న నాలుగు Articles — <b class="hlg">101, 102, 190, 191</b> — ను సవరించింది, మరియు మొత్తం defection-disqualification scheme ను వివరించే కొత్త schedule, <b class="term">Tenth Schedule</b> ను చేర్చింది. ఈ 1985 package నే అందరూ అనధికారికంగా <b>anti-defection law</b> అని పిలుస్తారు. దాదాపు రెండు దశాబ్దాల తర్వాత, <b class="term">91వ Amendment Act, 2003</b> ఈ scheme లోని ఒక నిర్దిష్ట భాగాన్ని మళ్లీ మార్చింది — ఆ మార్పు గురించి ఈ chapter చివర్లో పూర్తిగా చర్చిస్తాం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Origin of the Anti-Defection Law</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which amendment introduced the anti-defection law?</td><td>52nd Constitutional Amendment Act, 1985</td></tr>
+      <tr><td>Which Schedule did it add?</td><td>The Tenth Schedule</td></tr>
+      <tr><td>Which four Articles did it change?</td><td>Articles 101, 102, 190 and 191</td></tr>
+      <tr><td>Which later amendment revisited the Tenth Schedule?</td><td>91st Amendment Act, 2003</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Ground 1 — Members Elected on a Party Ticket</div>
+  <p class="eng">The Tenth Schedule treats a member who contested and won on a political party's symbol differently from an independent or nominated member — such a member is expected to stay loyal to that party's line inside the House. Two distinct acts trigger disqualification here. <b>First</b>, if the member <b class="term">voluntarily walks away from</b> his/her party ties on his/her own accord — note that this need not be a formal resignation letter; courts have read conduct amounting to voluntary abandonment as covered too. <b>Second</b>, if the member votes, or abstains from voting, in the House <b class="imp">against a direction (whip)</b> issued by his/her own party, without first getting the party's permission — but only if the party then fails to <b class="term">condone</b> this act within <b class="hlg">15 days</b>. So a member does have a narrow escape route here: prior permission, or a timely condonation by the party afterward, avoids disqualification even after voting against the whip.</p>
+  <div class="te">Party symbol పై పోటీ చేసి గెలిచిన member ను, independent లేదా nominated member కంటే Tenth Schedule వేరుగా చూస్తుంది — House లోపల ఆ party line కు ఇలాంటి member లాయల్ గా ఉండాలని expect చేస్తారు. ఇక్కడ రెండు వేర్వేరు చర్యలు disqualification తెస్తాయి. <b>మొదటిది</b> — member తన party సభ్యత్వాన్ని <b class="term">స్వచ్ఛందంగా వదులుకుంటే</b> — ఇది తప్పనిసరిగా అధికారిక resignation letter కానవసరం లేదు, స్వచ్ఛంద వదులుకోవడంగా కనిపించే ప్రవర్తనను కూడా courts ఇందులో భాగంగానే చూశాయి. <b>రెండోది</b> — member తన party ఇచ్చిన <b class="imp">direction (whip)</b> కు వ్యతిరేకంగా House లో ఓటు వేసినా లేదా ఓటింగ్ కు దూరంగా ఉన్నా, ముందుగా party అనుమతి తీసుకోకుండా — అయితే ఈ చర్యను party <b class="hlg">15 రోజుల్లో</b> <b class="term">condone</b> చేయకపోతేనే. కాబట్టి member కు ఇక్కడ ఒక చిన్న తప్పించుకునే మార్గం ఉంది — ముందస్తు అనుమతి, లేదా whip కు వ్యతిరేకంగా ఓటేసిన తర్వాత కూడా party సకాలంలో condone చేస్తే, disqualification తప్పుతుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Ground 2 — Independent Members</div>
+  <p class="eng">A member who contested and won purely on his/her own, with no political party having fielded or backed the candidacy — an <b class="term">independent member</b> — faces the opposite rule: he/she is disqualified as soon as he/she <b class="imp">takes up membership of any party</b> once the election is over. The logic is straightforward — such a member sought and received a mandate as an individual, not as a party representative, so switching allegiance to a party afterward is itself treated as the defection.</p>
+  <div class="te">ఏ political party అభ్యర్థిగా నిలబడకుండా ఎన్నికల్లో గెలిచిన member — <b class="term">independent member</b> — కు దీనికి వ్యతిరేక నియమం వర్తిస్తుంది — ఎన్నికల తర్వాత ఏ political party లోనైనా <b class="imp">చేరిన వెంటనే</b> అనర్హులవుతారు. దీని వెనుక లాజిక్ సూటిగానే ఉంది — ఇలాంటి member ఒక వ్యక్తిగా mandate పొందారు, party representative గా కాదు, కాబట్టి తర్వాత ఏదైనా party వైపు మొగ్గు చూపడాన్నే defection గా పరిగణిస్తారు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Ground 3 — Nominated Members</div>
+  <p class="eng">A <b class="term">nominated member</b> gets a special six-month window. He/she becomes disqualified only if he/she joins a political party <b class="imp">after six months</b> have passed from the date he/she took his/her seat in the House — implying that joining a party within that same <b class="hlg">six-month</b> period carries no disqualification risk at all. This grace period exists precisely because a nominated member, unlike an elected one, arrives without any party affiliation attached to his/her seat in the first place.</p>
+  <div class="te"><b class="term">Nominated member</b> కు ఆరు నెలల ప్రత్యేక వ్యవధి ఉంటుంది. House లో seat తీసుకున్న తేదీ నుండి <b class="hlg">ఆరు నెలలు</b> గడిచిన <b class="imp">తర్వాత</b> ఒక political party లో చేరితేనే వీరు అనర్హులవుతారు — అంటే అదే ఆరు నెలల వ్యవధిలో party లో చేరితే ఎలాంటి disqualification risk ఉండదు. ఈ grace period ఉండటానికి కారణం — ఎన్నికైన member లా కాకుండా, nominated member కు తన seat కు ఏ party affiliation ఆరంభంలోనే అంటుకుని ఉండదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Grounds of Disqualification</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Two acts that disqualify a party member?</td><td>Voluntarily giving up party membership; voting/abstaining against the whip without permission and uncondoned within 15 days</td></tr>
+      <tr><td>Condonation window for an uncondoned whip violation?</td><td>15 days</td></tr>
+      <tr><td>When is an independent member disqualified?</td><td>As soon as he/she takes up membership of any party post-election</td></tr>
+      <tr><td>Grace period for a nominated member to join a party?</td><td>6 months from taking his/her seat</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Exceptions — Merger (2/3) &amp; Presiding Officer · The Deleted Split Exception</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Exception 1 — Merger of Parties (Two-Thirds Rule)</div>
+  <p class="eng">Not every act of leaving a party counts as punishable defection — the Tenth Schedule carves out two protected situations. The first, and by far the more important one for exam purposes, is a genuine <b class="term">merger</b>: if a member's original party merges with another party, and at least <b class="imp">two-thirds</b> of that party's members in the legislature have consented to the merger, then none of those members is disqualified for having gone along with it. The threshold is deliberately high — a bare majority cannot trigger this protection; it takes a clear supermajority within the legislature party for the merger itself to count as legitimate under the Schedule, rather than as a disguised defection by a breakaway faction.</p>
+  <div class="te">Party ను వదిలిపెట్టే ప్రతి చర్యా శిక్షార్హమైన defection గా పరిగణించబడదు — Tenth Schedule రెండు రక్షిత పరిస్థితులను ప్రత్యేకంగా ఉంచింది. మొదటిది, exam దృష్టితో మరింత ముఖ్యమైనది — నిజమైన <b class="term">merger</b> — ఒక member అసలు party మరో party తో విలీనం అయితే, ఆ party శాసనసభ్యుల్లో కనీసం <b class="imp">మూడింట రెండొంతుల (2/3)</b> మంది merger కు అంగీకరిస్తే, దానికి కట్టుబడిన members ఎవరూ అనర్హులు కారు. ఈ threshold ఉద్దేశపూర్వకంగా ఎక్కువగా పెట్టారు — కేవలం సాధారణ మెజారిటీ దీనికి సరిపోదు — శాసనసభ్య party లో స్పష్టమైన supermajority ఉంటేనే, ఆ merger ను Schedule కింద చట్టబద్ధమైనదిగా పరిగణిస్తారు, విడిపోయిన వర్గం చేసిన మారువేషపు defection గా కాదు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Exception 2 — A Presiding Officer's Own Position</div>
+  <p class="eng">The second protected situation concerns a member who takes up the House's <b class="term">presiding officer</b> post — Speaker, Deputy Speaker, Chairman or Deputy Chairman, and equivalents in the states. Such a member may voluntarily give up his/her party membership on taking up the office, or rejoin the same party after ceasing to hold it, without inviting disqualification either way. This carve-out exists to protect the <b class="imp">dignity and impartiality</b> expected of the chair — a presiding officer is meant to conduct proceedings even-handedly across party lines, and stepping back from active party membership while in the chair (and returning to it afterward) supports that neutral posture rather than undermining it.</p>
+  <div class="te">రెండో రక్షిత పరిస్థితి — House <b class="term">presiding officer</b> గా ఎన్నికైన member కు సంబంధించినది — Speaker, Deputy Speaker, Chairman, Deputy Chairman, రాష్ట్రాల్లో వీటికి సమానమైన పదవులు. ఇలాంటి member ఆ పదవి చేపట్టేటప్పుడు తన party సభ్యత్వాన్ని స్వచ్ఛందంగా వదులుకున్నా, లేదా పదవి వదిలిన తర్వాత అదే party లో తిరిగి చేరినా, ఏ సందర్భంలోనూ అనర్హత రాదు. ఈ మినహాయింపు, chair కు అవసరమైన <b class="imp">గౌరవం, నిష్పక్షపాతం</b> ను కాపాడటానికి ఉంది — presiding officer అన్ని పార్టీల పట్ల సమానంగా proceedings నడపాలని expect చేస్తారు, chair లో ఉన్నప్పుడు active party సభ్యత్వం నుండి పక్కకు తప్పుకోవడం (తర్వాత తిరిగి చేరడం) ఈ తటస్థ వైఖరిని దెబ్బతీయకుండా బలపరుస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">The Deleted Exception — One-Third Split (Removed by the 91st Amendment, 2003)</div>
+  <p class="eng">As originally enacted in 1985, the Tenth Schedule carried a <b class="hlg">third</b> protected situation: if as few as <b class="hlg">one-third</b> of a legislature party's members broke away together, that breakaway group was treated as a valid "split" and escaped disqualification — a threshold noticeably lower, and easier to engineer, than the two-thirds required for a merger. This one-third split exception proved to be the single most criticised feature of the original anti-defection law, since it effectively let group defections through a much smaller door than individual defections. The <b class="term">91st Amendment Act, 2003</b> deleted this split exception entirely. As a direct result, members who break away in a group today get no protection at all unless their move clears the much higher two-thirds merger bar — a split of any size, on its own, no longer shields anyone from disqualification.</p>
+  <div class="te">1985లో మొదట్లో చేర్చినట్లుగా, Tenth Schedule లో <b class="hlg">మూడో</b> రక్షిత పరిస్థితి కూడా ఉండేది — ఒక శాసనసభ్య party లో కేవలం <b class="hlg">మూడింట ఒక వంతు (1/3)</b> మంది కలిసి విడిపోతే, ఆ విడిపోయిన గ్రూప్ ను చెల్లుబాటు అయ్యే "split" గా పరిగణించి, disqualification నుండి తప్పించేవారు — ఇది merger కు అవసరమైన 2/3 కంటే గణనీయంగా తక్కువ, సులభంగా ఏర్పాటు చేయగల threshold. ఈ one-third split exception, అసలు anti-defection law లో అత్యంత విమర్శించబడిన అంశంగా నిలిచింది — ఎందుకంటే ఇది group defections ను individual defections కంటే చాలా చిన్న ద్వారం గుండా అనుమతించింది. <b class="term">91వ Amendment Act, 2003</b> ఈ split exception ను పూర్తిగా తొలగించింది. దీని ఫలితంగా, ఈరోజు గ్రూప్ గా విడిపోయే members కు, వారి చర్య చాలా ఎక్కువైన 2/3 merger బార్ ను దాటితే తప్ప, ఎలాంటి రక్షణ ఉండదు — ఎంత పెద్ద split అయినా, అది ఒంటరిగా ఇక ఎవరినీ disqualification నుండి కాపాడదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Exceptions to Disqualification</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Merger exception — what fraction must consent?</td><td class="imp">Two-thirds (2/3) of the party's legislature members</td></tr>
+      <tr><td>Presiding-officer exception — covers what act?</td><td>Giving up party membership on taking the chair, or rejoining it after leaving office</td></tr>
+      <tr><td>What was the old split exception's threshold?</td><td>One-third (1/3) of the legislature party</td></tr>
+      <tr><td>Which amendment deleted the split exception, and when?</td><td>91st Amendment Act, 2003</td></tr>
+      <tr><td>Does any group split protect members today?</td><td>No — only a genuine 2/3 merger does</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Deciding Authority — Presiding Officer &amp; Kihoto Hollohan (1992)</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">Who Decides — The Presiding Officer, With No Fixed Deadline</div>
+  <p class="eng">Any dispute over whether a member stands disqualified for defection is resolved by the <b class="term">presiding officer</b> of that member's House — the Speaker for the Lok Sabha or a state Assembly, the Chairman for the Rajya Sabha or a state Council. Notably, the Tenth Schedule sets <b class="imp">no time-limit</b> within which this decision must be made — a gap that, in practice, has allowed some presiding officers to sit on disqualification petitions for months or even years without ruling either way, a point that recurs often in current-affairs discussion of the law (see the Current Affairs page at the end of this chapter).</p>
+  <div class="te">ఒక member defection కారణంగా అనర్హులయ్యారా లేదా అనే వివాదాన్ని, ఆ member House <b class="term">presiding officer</b> పరిష్కరిస్తారు — Lok Sabha లేదా state Assembly కు Speaker, Rajya Sabha లేదా state Council కు Chairman. గమనించదగ్గ విషయం ఏమిటంటే, ఈ నిర్ణయం ఎప్పటిలోగా తీసుకోవాలో Tenth Schedule <b class="imp">ఎలాంటి కాల పరిమితి</b> నిర్దేశించలేదు — ఆచరణలో ఈ లోటు వల్ల, కొందరు presiding officers disqualification petitions పై నెలలు లేదా సంవత్సరాల తరబడి ఏ నిర్ణయమూ తీసుకోకుండా ఉంచేసిన సందర్భాలు ఉన్నాయి — ఈ చట్టం గురించి current-affairs చర్చల్లో ఇది తరచుగా వచ్చే అంశం (chapter చివర్లో Current Affairs page చూడండి).</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Kihoto Hollohan vs Zachillhu (1992) — The Landmark Ruling</div>
+  <p class="eng">As originally drafted, the Tenth Schedule went one step further and declared that the presiding officer's decision on defection was <b class="imp">final</b> and could not be examined by any court at all. This finality clause was tested in <b class="hlp">Kihoto Hollohan vs Zachillhu</b> (<b class="hlg">1992</b>), and the <b class="hlp">Supreme Court</b> struck it down as unconstitutional — reasoning that a provision cutting off the Supreme Court's and the High Courts' own jurisdiction in this manner could not stand. The Court explained that when a presiding officer rules on a disqualification question under the Tenth Schedule, he/she is not acting as a mere political office-holder but is functioning as a <b class="term">tribunal</b> — and a tribunal's ruling, exactly like that of any other tribunal, remains open to <b class="imp">judicial review</b>. That review, though, is deliberately narrow: courts will step in only on grounds such as <b>mala fide exercise of the power, perversity in the finding, or a breach of the principles of natural justice</b> — not simply because a losing member disagrees with the outcome. At the same time, the Court rejected a separate argument that had been raised against the scheme — it held that handing this adjudicatory power to the presiding officer in the first place was <b class="imp">not itself invalid</b>, brushing aside the claim that a presiding officer is inherently too politically compromised to be trusted with the role.</p>
+  <div class="te">మొదట్లో draft చేసినట్లుగా, Tenth Schedule మరో అడుగు ముందుకేసి, presiding officer defection పై ఇచ్చే నిర్ణయం <b class="imp">తుది నిర్ణయం (final)</b>, దాన్ని ఏ court కూడా పరిశీలించజాలదని ప్రకటించింది. ఈ finality clause ను <b class="hlp">Kihoto Hollohan vs Zachillhu</b> (<b class="hlg">1992</b>) కేసులో సవాలు చేశారు, <b class="hlp">Supreme Court</b> దీన్ని unconstitutional అని కొట్టివేసింది — Supreme Court, High Courts కు ఉన్న jurisdiction ను ఇలా తీసివేసే provision నిలబడదని వాదించింది. presiding officer, Tenth Schedule కింద disqualification ప్రశ్నపై తీర్పు ఇచ్చినప్పుడు, కేవలం ఒక political పదవి హోల్డర్ గా కాదు, ఒక <b class="term">tribunal</b> గా వ్యవహరిస్తారని Court వివరించింది — ఏ ఇతర tribunal తీర్పులాగే, ఈ తీర్పు కూడా <b class="imp">judicial review</b> కు లోబడుతుంది. అయితే, ఈ review ఉద్దేశపూర్వకంగా చాలా పరిమితం — courts జోక్యం చేసుకునేది <b>mala fide గా అధికారం వినియోగించడం, finding లో perversity, natural justice సూత్రాల ఉల్లంఘన</b> లాంటి grounds పైనే — ఒక member ఫలితంతో ఏకీభవించలేదన్న కారణంతో మాత్రం కాదు. అదే సమయంలో, ఈ scheme పై లేవనెత్తిన మరో వాదనను Court తిరస్కరించింది — presiding officer కు ఈ adjudicatory power ఇవ్వడం అనేది స్వతహాగా <b class="imp">చెల్లనిది కాదని</b> Court పేర్కొంది — presiding officer రాజకీయంగా పక్షపాతం చూపే అవకాశం ఎక్కువ కాబట్టి ఈ బాధ్యతకు అనర్హులన్న వాదనను Court కొట్టిపారేసింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Deciding Authority &amp; Kihoto Hollohan</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who decides a defection-disqualification question?</td><td>The presiding officer of the member's House (Speaker/Chairman)</td></tr>
+      <tr><td>Is there a fixed time-limit for this decision?</td><td>No — the Tenth Schedule sets none</td></tr>
+      <tr><td>Case name and year for the landmark ruling?</td><td>Kihoto Hollohan vs Zachillhu, 1992</td></tr>
+      <tr><td>What did the Supreme Court strike down?</td><td>The clause making the presiding officer's decision final and unreviewable</td></tr>
+      <tr><td>What role does the presiding officer play under the Schedule?</td><td>Functions as a tribunal</td></tr>
+      <tr><td>On what grounds is judicial review available?</td><td>Mala fide exercise of power, perversity, or breach of natural justice</td></tr>
+      <tr><td>Did the Court invalidate vesting this power in the presiding officer itself?</td><td>No — that vesting was upheld as valid</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Rule-Making Power &amp; Procedure · Evaluation — Purpose, Advantages, Criticism</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Rule-Making Power &amp; How a Case Actually Proceeds</div>
+  <p class="eng">The presiding officer is also given the power to frame <b class="term">rules</b> that operationalise the Tenth Schedule's provisions. Any such rules must be laid before the House for <b class="hlg">30 days</b>, during which the House retains the ability to approve, modify, or reject them outright. The presiding officer can further direct that any member's wilful breach of these rules be treated on par with a House <b>privilege breach</b>. Under the rules actually framed this way, a defection case does not start on its own — it begins only when the presiding officer receives a formal <b>complaint</b> from a fellow member of that House. Before deciding anything, the presiding officer must give the accused member a fair chance to submit his/her own explanation, and may additionally choose to forward the matter on to the <b>Committee of Privileges</b> for a closer look. The upshot is that defection carries no automatic or instantaneous consequence — a complaint, a hearing, and a considered decision all have to happen first.</p>
+  <div class="te">Tenth Schedule provisions ను అమలు చేసేందుకు అవసరమైన <b class="term">rules</b> రూపొందించే అధికారం కూడా presiding officer కు ఉంటుంది. అలాంటి rules ఏవైనా House ముందు <b class="hlg">30 రోజులు</b> ఉంచాలి, ఈ వ్యవధిలో House వాటిని ఆమోదించవచ్చు, మార్చవచ్చు లేదా పూర్తిగా తిరస్కరించవచ్చు. ఈ rules ను ఎవరైనా member ఉద్దేశపూర్వకంగా ఉల్లంఘిస్తే దాన్ని House <b>breach of privilege</b> లాగే పరిగణించాలని presiding officer నిర్దేశించవచ్చు. ఇలా రూపొందించిన rules కింద, defection కేసు దానంతట అదే మొదలవదు — ఆ House లోని ఒక సహ-member నుండి అధికారికంగా <b>complaint</b> అందితేనే ప్రారంభమవుతుంది. ఏదైనా నిర్ణయం తీసుకునేముందు, ఆరోపణ ఎదుర్కొంటున్న member కు తన వివరణ ఇచ్చే న్యాయమైన అవకాశం presiding officer ఇవ్వాలి, అదనంగా విషయాన్ని <b>Committee of Privileges</b> కు లోతైన విచారణ కోసం పంపవచ్చు. అంటే defection కు ఆటోమేటిక్ లేదా తక్షణ పర్యవసానం ఉండదు — ముందుగా complaint, hearing, ఆలోచించిన నిర్ణయం జరగాలి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Rule-Making &amp; Procedure</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How long must rules be laid before the House?</td><td>30 days</td></tr>
+      <tr><td>Wilful breach of these rules is treated as?</td><td>Breach of privilege of the House</td></tr>
+      <tr><td>What triggers a defection case to start?</td><td>A complaint from a member of that House</td></tr>
+      <tr><td>Must the accused member get a hearing?</td><td>Yes — a chance to submit an explanation before any decision</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Evaluation — Purpose &amp; Advantages</div>
+  <p class="eng">The Tenth Schedule exists to discourage political defections driven by the lure of office, money, or similar personal gain, and, in doing so, to strengthen the working of India's parliamentary democracy. Then Prime Minister <b class="hlp">Rajiv Gandhi</b> famously called it "a first step towards cleaning-up public life"; separately, the then Union Law Minister held up Parliament's unanimous passage of the bill as clear evidence of Indian democracy's maturity and stability. Four advantages are usually cited: <b>(1)</b> it gives the political system greater stability by discouraging legislators from switching parties on a whim; <b>(2)</b> it still allows democratic realignment through the merger route, so genuine party reorganisation remains possible; <b>(3)</b> it curbs corruption and cuts down on the wasteful expense of repeated by-elections caused by defection-driven vacancies; and <b>(4)</b> it was the first provision to give political parties themselves an explicit place in the constitutional text.</p>
+  <div class="te">పదవి, డబ్బు లేదా ఇలాంటి వ్యక్తిగత లాభం కోసం జరిగే రాజకీయ defections ను నిరుత్సాహపరచడానికి, తద్వారా India పార్లమెంటరీ ప్రజాస్వామ్య పనితీరును బలపరచడానికి Tenth Schedule ఉద్దేశించబడింది. అప్పటి Prime Minister <b class="hlp">Rajiv Gandhi</b> దీన్ని "public జీవితాన్ని శుభ్రం చేసే మొదటి అడుగు" అని పిలిచారు; వేరుగా, అప్పటి Union Law Minister — Parliament ఈ బిల్లును ఏకగ్రీవంగా ఆమోదించడాన్ని India ప్రజాస్వామ్యం పరిణతికి, స్థిరత్వానికి స్పష్టమైన నిదర్శనంగా అభివర్ణించారు. సాధారణంగా నాలుగు advantages చెప్పుకుంటారు — <b>(1)</b> legislators తమ ఇష్టం వచ్చినట్లు party మారకుండా నిరుత్సాహపరచడం ద్వారా political system కు ఎక్కువ స్థిరత్వం ఇస్తుంది; <b>(2)</b> merger మార్గం ద్వారా democratic realignment ను ఇప్పటికీ అనుమతిస్తుంది, కాబట్టి నిజమైన party reorganisation సాధ్యమే; <b>(3)</b> corruption ను తగ్గిస్తుంది, defection వల్ల ఏర్పడే ఖాళీలకు పదే పదే జరిగే by-elections వృధా ఖర్చును తగ్గిస్తుంది; <b>(4)</b> political parties కు constitutional text లో స్పష్టమైన స్థానం ఇచ్చిన మొదటి provision ఇదే.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Evaluation — Criticism</div>
+  <p class="eng">The law has also drawn substantial criticism on five broad points. <b>(1)</b> It fails to separate genuine dissent from outright defection, so a legislator's freedom to voice disagreement with his/her own party gets curbed along with defection itself — critics describe this as elevating party bossism over individual conscience. <b>(2)</b> Its own internal logic is inconsistent: an individual member switching sides is punished, while a large enough group doing exactly the same thing escapes through the merger route — critics have summed this up sharply as banning retail defection while legalising wholesale defection. <b>(3)</b> It has nothing to say about a member's conduct <b>outside</b> the legislature — there is no mechanism here to expel someone for such activity. <b>(4)</b> Treating the independent-member and nominated-member cases so differently — instant disqualification for one, a six-month grace period for the other — strikes critics as an arbitrary distinction. <b>(5)</b> Vesting the decision in the presiding officer draws its own doubts: this office-holder may not always act with full political neutrality, and may also lack the specialised legal training needed to adjudicate such questions — tellingly, two former Lok Sabha Speakers, <b class="hlp">Rabi Ray</b> and <b class="hlp">Shivraj Patil</b>, publicly admitted their own unease at being handed this adjudicatory role.</p>
+  <div class="te">ఈ చట్టం ఐదు విస్తృత అంశాలపై గణనీయమైన విమర్శలను కూడా ఎదుర్కొంది. <b>(1)</b> నిజమైన dissent ను, పూర్తి defection నుండి వేరు చేయడంలో విఫలమైంది — దీంతో ఒక legislator తన party తో విభేదం వ్యక్తం చేసే స్వేచ్ఛ, defection తోపాటే అణచివేయబడుతుంది — దీన్ని విమర్శకులు వ్యక్తిగత conscience కంటే party bossism ను పైన పెట్టడంగా అభివర్ణిస్తారు. <b>(2)</b> దీని అంతర్గత లాజిక్ అస్థిరంగా ఉంది — ఒక వ్యక్తి party మారితే శిక్షిస్తారు, కానీ సరిపడా పెద్ద గ్రూప్ అదే పని చేస్తే merger మార్గంలో తప్పించుకుంటుంది — దీన్ని విమర్శకులు retail defection ను నిషేధించి, wholesale defection ను చట్టబద్ధం చేయడంగా వ్యంగ్యంగా చెప్తారు. <b>(3)</b> legislature <b>బయట</b> member ప్రవర్తన గురించి ఇందులో ఏమీ లేదు — దీనికోసం ఎవరినైనా expel చేసే వ్యవస్థ ఇక్కడ లేదు. <b>(4)</b> independent member కు, nominated member కు ఇంత భిన్నంగా వ్యవహరించడం — ఒకరికి తక్షణ disqualification, మరొకరికి ఆరు నెలల grace period — విమర్శకులకు ఇది ఏకపక్ష వ్యత్యాసంగా కనిపిస్తుంది. <b>(5)</b> నిర్ణయాన్ని presiding officer కు అప్పగించడం కూడా సందేహాలు రేకెత్తిస్తుంది — ఈ పదవి హోల్డర్ ఎల్లప్పుడూ పూర్తి political neutrality తో వ్యవహరించకపోవచ్చు, ఇలాంటి ప్రశ్నలపై తీర్పు ఇవ్వడానికి అవసరమైన ప్రత్యేక legal శిక్షణ కూడా వారికి లేకపోవచ్చు — గమనార్హంగా, ఇద్దరు మాజీ Lok Sabha Speakers — <b class="hlp">Rabi Ray</b>, <b class="hlp">Shivraj Patil</b> — స్వయంగా ఈ adjudicatory role పై తమ అసౌకర్యాన్ని బహిరంగంగా వ్యక్తం చేశారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Evaluation of the Anti-Defection Law</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Name two advantages of the anti-defection law.</td><td>Greater political stability; curbs corruption/by-election expense (also: allows merger-route realignment, gives parties constitutional recognition)</td></tr>
+      <tr><td>What is the "retail vs wholesale defection" criticism?</td><td>Individual defection is banned but group defection escapes via the merger exception</td></tr>
+      <tr><td>What conduct does the law fail to address?</td><td>A member's activities outside the legislature</td></tr>
+      <tr><td>Which two former Speakers doubted their own suitability to decide defection cases?</td><td>Rabi Ray (1991) and Shivraj Patil (1993)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">The 91st Amendment Act, 2003 — Why It Was Brought, and What It Changed</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">91st Amendment (2003) — Reasons for the Change</div>
+  <p class="eng">By the early 2000s, there was recurring pressure to tighten the anti-defection framework, largely because the old one-third split exception was seen as letting bulk defections through even as it punished individual ones — and it was blamed, in particular, for destabilising several state governments. This concern was not new or isolated: the <b class="hlp">Dinesh Goswami Committee</b> on electoral reforms had flagged it in its <b class="hlg">1990</b> report, the <b class="hlp">Law Commission of India</b> repeated the point in its <b class="hlg">170th Report (1999)</b> on electoral-law reform, and the <b class="hlp">National Commission to Review the Working of the Constitution</b> (<b class="hlp">NCRWC</b>) endorsed the same recommendation in its <b class="hlg">2002</b> report — all three bodies converging on the idea that the split exception should simply be removed. The NCRWC went further still, suggesting that a defector should also be barred from holding any ministerial or other paid public office for the rest of that legislature's term, or until fresh elections, whichever came sooner. It additionally flagged a separate, related problem — governments at the Centre and in the states had taken to appointing unusually large Councils of Ministers, and it recommended fixing this by capping ministerial strength at no more than <b class="hlg">10%</b> of the popular House.</p>
+  <div class="te">2000ల ప్రారంభం నాటికి, anti-defection framework ను మరింత కఠినంగా చేయాలన్న డిమాండ్ పదే పదే వినిపించింది — ప్రధానంగా పాత one-third split exception, individual defections ను శిక్షిస్తూనే bulk defections ను తప్పించుకోనిస్తుందని భావించడం వల్ల — దీన్ని ప్రత్యేకంగా అనేక రాష్ట్ర ప్రభుత్వాలను అస్థిరపరచినందుకు నిందించారు. ఇది కొత్త లేదా ఒంటరి ఆందోళన కాదు — electoral reforms పై <b class="hlp">Dinesh Goswami Committee</b> దీన్ని తన <b class="hlg">1990</b> నివేదికలో ఎత్తిచూపింది, <b class="hlp">Law Commission of India</b> తన <b class="hlg">170వ నివేదిక (1999)</b> లో electoral-law reform పై అదే విషయం పునరావృతం చేసింది, <b class="hlp">National Commission to Review the Working of the Constitution</b> (<b class="hlp">NCRWC</b>) తన <b class="hlg">2002</b> నివేదికలో అదే సిఫారసును ఆమోదించింది — మూడు బాడీలూ split exception ను తొలగించాలన్న ఆలోచనతో ఏకీభవించాయి. NCRWC మరింత ముందుకెళ్లి, ఒక defector ను, ఆ శాసనసభ మిగిలిన term వరకు లేదా తర్వాతి ఎన్నికల వరకు — ఏది ముందైతే అది వరకు — ఏ ministerial లేదా ఇతర జీతం గల ప్రభుత్వ పదవి నుండి కూడా దూరంగా ఉంచాలని సూచించింది. దీనికి తోడు, ఒక వేరైన, సంబంధిత సమస్యను కూడా NCRWC ఎత్తిచూపింది — కేంద్రంలో, రాష్ట్రాల్లో ప్రభుత్వాలు అసాధారణంగా పెద్ద Councils of Ministers ను నియమిస్తున్నాయని, దీన్ని సరిదిద్దడానికి ministerial strength ను popular House లో <b class="hlg">10%</b> మించకుండా పరిమితం చేయాలని సిఫారసు చేసింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Reasons for the 91st Amendment</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which body's 1990 report first flagged the split-exception problem?</td><td>Dinesh Goswami Committee on Electoral Reforms</td></tr>
+      <tr><td>Which Law Commission report (year) repeated this?</td><td>170th Report, 1999</td></tr>
+      <tr><td>Which 2002 body also recommended removing the split exception?</td><td>NCRWC (National Commission to Review the Working of the Constitution)</td></tr>
+      <tr><td>What ministerial-size cap did the NCRWC recommend?</td><td>Not more than 10% of the popular House's strength</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">91st Amendment (2003) — What It Actually Provided</div>
+  <p class="eng">When it came to actual drafting, Parliament did not adopt the NCRWC's proposed 10% figure — it settled on a somewhat more generous ceiling instead. The 91st Amendment made five substantive changes. <b>(1)</b> The total strength of the Union Council of Ministers, the Prime Minister included, cannot exceed <b class="imp">15%</b> of the Lok Sabha's total membership. <b>(2)</b> Any MP, in either House, who stands disqualified for defection is, on that basis, also barred from being appointed a minister. <b>(3)</b> In a state, the Council of Ministers, the Chief Minister included, likewise cannot exceed <b class="imp">15%</b> of that state's Assembly strength — but with a floor built in as well: it cannot fall below <b class="imp">12</b> ministers, regardless of how small 15% of the Assembly might work out to be. <b>(4)</b> A state legislator disqualified for defection is similarly barred from a ministerial appointment. <b>(5)</b> Anyone disqualified for defection, at either the Union or the state level, is further barred from holding any <b>remunerative political post</b> — defined broadly to cover a government office whose pay comes from public revenue, or an office under a government-owned body whose pay is drawn from that body's own funds, purely compensatory payments aside. Alongside all this, the amendment carried out the deletion of the old one-third split exception discussed earlier — closing off the loophole the reform bodies had been pointing to all along.</p>
+  <div class="te">వాస్తవ drafting విషయానికి వస్తే, NCRWC ప్రతిపాదించిన 10% అంకెను Parliament అంగీకరించలేదు — బదులుగా కొంచెం ఎక్కువ ceiling ను ఖరారు చేసింది. 91వ Amendment ఐదు కీలక మార్పులు చేసింది. <b>(1)</b> Prime Minister తో సహా Union Council of Ministers మొత్తం బలం, Lok Sabha మొత్తం సభ్యత్వంలో <b class="imp">15%</b> మించకూడదు. <b>(2)</b> Parliament ఏదైనా House లో defection కారణంగా అనర్హులైన member, అదే కారణంతో minister గా నియామకానికి కూడా అనర్హులు. <b>(3)</b> ఒక రాష్ట్రంలో, Chief Minister తో సహా Council of Ministers, ఆ రాష్ట్ర Assembly బలంలో <b class="imp">15%</b> మించకూడదు — కానీ దీనికో floor కూడా ఉంది — Assembly లో 15% ఎంత తక్కువగా ఉన్నా, ministers సంఖ్య <b class="imp">12</b> కంటే తక్కువగా ఉండకూడదు. <b>(4)</b> defection కారణంగా అనర్హులైన state legislator కూడా ఇలాగే minister పదవికి అనర్హులు. <b>(5)</b> Union లేదా state స్థాయిలో defection కారణంగా అనర్హులైన ఎవరైనా, ఏదైనా <b>remunerative political post</b> నుండి కూడా దూరంగా ఉంచబడతారు — దీన్ని విస్తృతంగా నిర్వచించారు — public revenue నుండి జీతం వచ్చే ప్రభుత్వ పదవి, లేదా ప్రభుత్వ-యాజమాన్యంలోని బాడీ తన సొంత నిధుల నుండి జీతం ఇచ్చే పదవి — కేవలం compensatory చెల్లింపులు మినహా. వీటన్నింటితోపాటు, ఇంతకుముందు చర్చించిన పాత one-third split exception ను తొలగించే పనిని కూడా ఈ amendment పూర్తి చేసింది — reform బాడీలు ఎప్పటినుండో ఎత్తిచూపుతున్న లొసుగును ఇది మూసేసింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — 91st Amendment's Provisions</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Council of Ministers ceiling — Centre?</td><td class="imp">15% of Lok Sabha strength (incl. PM)</td></tr>
+      <tr><td>Council of Ministers ceiling &amp; floor — states?</td><td class="imp">15% of Assembly strength, but not less than 12 (incl. CM)</td></tr>
+      <tr><td>Can a defection-disqualified member become a minister?</td><td>No — barred at both Union and state level</td></tr>
+      <tr><td>Can such a member hold any remunerative political post?</td><td>No — also barred, subject to a compensatory-payment exception</td></tr>
+      <tr><td>Which older exception did this amendment delete?</td><td>The one-third split exception</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Chapter 86 — Facts at a Glance</div>
+
+<div class="para">
+  <div class="ptitle gn">Chapter 86 — Facts at a Glance</div>
+  <table>
+    <caption>Anti-Defection Law — key facts, one table</caption>
+    <thead><tr><th style="width:40%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Introducing amendment</td><td>52nd Constitutional Amendment Act, 1985</td></tr>
+      <tr><td>Articles changed</td><td>101, 102, 190, 191</td></tr>
+      <tr><td>New Schedule added</td><td>Tenth Schedule</td></tr>
+      <tr><td>Party-member disqualification grounds</td><td>Voluntarily giving up membership; voting/abstaining against whip (uncondoned within 15 days)</td></tr>
+      <tr><td>Independent member — disqualified when</td><td>Joins any political party after election</td></tr>
+      <tr><td>Nominated member — grace period</td><td>6 months from taking seat, to join a party freely</td></tr>
+      <tr><td>Merger exception threshold</td><td class="imp">2/3 of the party's legislature members</td></tr>
+      <tr><td>Presiding-officer exception</td><td>Giving up/rejoining party membership around holding that office</td></tr>
+      <tr><td>Old split exception (now deleted)</td><td>1/3 of legislature party — removed by the 91st Amendment, 2003</td></tr>
+      <tr><td>Deciding authority</td><td>Presiding officer (Speaker/Chairman); no fixed time-limit</td></tr>
+      <tr><td>Kihoto Hollohan vs Zachillhu (1992)</td><td class="imp">"Final, non-justiciable" clause struck down; decision subject to judicial review (mala fide, perversity, natural-justice breach)</td></tr>
+      <tr><td>Rules — laid before House for</td><td>30 days (House may approve/modify/disapprove)</td></tr>
+      <tr><td>Case starts only on</td><td>A fellow House member's formal complaint</td></tr>
+      <tr><td>91st Amendment — CoM ceiling (Centre)</td><td>15% of Lok Sabha strength, incl. PM</td></tr>
+      <tr><td>91st Amendment — CoM ceiling/floor (states)</td><td>15% of Assembly strength, not less than 12, incl. CM</td></tr>
+      <tr><td>91st Amendment — other bar</td><td>Defection-disqualified members also barred from ministership &amp; remunerative political posts</td></tr>
+      <tr><td>Reform bodies behind the 91st Amendment</td><td>Dinesh Goswami Committee (1990), Law Commission 170th Report (1999), NCRWC (2002)</td></tr>
+    </tbody>
+  </table>
+  <div class="te" style="font-size:12px;margin-top:6px">మూలాలు — 52nd Constitutional Amendment Act, 1985; Kihoto Hollohan vs. Zachillhu (Supreme Court, 1992); 91st Constitutional Amendment Act, 2003.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Live Supreme Court Matter on Speaker's Delay in Deciding Defection Pleas <span class="caasof">(as of 25.08.2026, verified via live web search on this date — re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>Abhishek Banerjee moves the Supreme Court over pending disqualification petitions against 20 Lok Sabha MPs:</b> In <b class="hlg">August 2026</b>, <b class="hlp">Abhishek Banerjee</b>, Trinamool Congress (TMC) General Secretary and the party's Lok Sabha leader, approached the <b class="hlp">Supreme Court</b> seeking a speedy decision from the <b class="hlp">Lok Sabha Speaker</b> on disqualification petitions pending against <b class="hlg">20</b> TMC MPs — the petitions allege these MPs sought to defect by aligning with another outfit, which the petitioners say attracts disqualification under the <b class="hlb">Tenth Schedule</b>. A bench led by the Chief Justice of India stressed that merely issuing notices to the concerned MPs was not enough — what mattered was concluding the disqualification proceedings within a definite time frame, echoing the exact structural gap this chapter covers: the Tenth Schedule fixes no deadline for a presiding officer's decision. The Solicitor General informed the Court that the Speaker's office had, by this point, issued notices to all 20 MPs, with the matter still pending final adjudication. This live dispute is a good illustration of a long-standing criticism of the anti-defection law — that an open-ended decision timeline can let disqualification proceedings drag on indefinitely.</p>
+    <div class="te"><b>Abhishek Banerjee — 20 Lok Sabha MPs పై pending disqualification petitions విషయంలో Supreme Court ను ఆశ్రయించడం:</b> <b class="hlg">2026 ఆగస్టు</b>లో, Trinamool Congress (TMC) General Secretary, పార్టీ Lok Sabha నేత అయిన <b class="hlp">Abhishek Banerjee</b>, <b class="hlg">20</b> మంది TMC MPs పై pending ఉన్న disqualification petitions పై త్వరిత నిర్ణయం కోసం <b class="hlp">Lok Sabha Speaker</b> ను ఆదేశించమని <b class="hlp">Supreme Court</b> ను ఆశ్రయించారు — ఈ MPs మరో గ్రూప్ తో చేతులు కలిపి defect అవ్వాలని చూశారని, ఇది <b class="hlb">Tenth Schedule</b> కింద disqualification ను ఆకర్షిస్తుందని petitioners ఆరోపించారు. India Chief Justice నేతృత్వంలోని bench, కేవలం సంబంధిత MPs కు notices ఇవ్వడం సరిపోదని, ఒక నిర్దిష్ట కాల వ్యవధిలో disqualification proceedings పూర్తి చేయడమే ముఖ్యమని నొక్కి చెప్పింది — ఇది ఈ chapter చర్చించిన సరిగ్గా అదే structural లోటును ప్రతిబింబిస్తుంది — presiding officer నిర్ణయానికి Tenth Schedule ఎలాంటి deadline పెట్టదు. Speaker కార్యాలయం ఇప్పటికే అన్ని 20 మంది MPs కు notices జారీ చేసిందని, తుది adjudication ఇంకా పెండింగ్ లో ఉందని Solicitor General Court కు తెలిపారు. ఈ live వివాదం, anti-defection law పై చాలాకాలంగా ఉన్న ఒక విమర్శకు మంచి ఉదాహరణ — గడువు లేని నిర్ణయ కాలపరిమితి disqualification proceedings ను అనంతంగా సాగదీయనిస్తుంది అనేదే ఆ విమర్శ.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — this live matter</caption>
+      <thead><tr><th style="width:22%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">Aug 2026</td><td>Abhishek Banerjee petitions the Supreme Court over delay in deciding disqualification pleas against 20 TMC MPs</td></tr>
+        <tr><td class="hlg">25 Aug 2026</td><td>Supreme Court presses for a time-bound conclusion; Solicitor General confirms Speaker has issued notices to all 20 MPs; matter still pending</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: keep the stable core facts — the 52nd and 91st Amendments, the 2/3 merger threshold, and the Kihoto Hollohan judicial-review holding — as your fixed answers. Treat this TMC-MPs matter as a live illustration of the "no fixed time-limit" gap, worth a quick re-check nearer your exam date since the Supreme Court's proceedings are still ongoing.</p>
+    <div class="te">Exam కోసం — 52nd, 91st Amendments, 2/3 merger threshold, Kihoto Hollohan judicial-review తీర్పు — వీటిని స్థిరమైన core factsగా గుర్తుంచుకోండి. ఈ TMC MPs వ్యవహారాన్ని, "నిర్ణీత కాల పరిమితి లేదు" అనే లోటుకు ఒక live ఉదాహరణగా చూడండి — Supreme Court ముందు ఈ ప్రొసీడింగ్స్ ఇంకా కొనసాగుతున్నందున, మీ exam తేదీకి దగ్గరగా దీన్ని మళ్లీ ఒకసారి చెక్ చేసుకోండి.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 86 — Anti-Defection Law · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.87 — Pressure Groups</span><span class="dpart">Part X &middot; Book 2 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

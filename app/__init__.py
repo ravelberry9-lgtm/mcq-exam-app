@@ -22,6 +22,8 @@ def create_app(config_class: type = Config) -> Flask:
     init_csrf(app)
     from .services.device import init_device
     init_device(app)
+    from .services.access_gate import init_access_gate
+    init_access_gate(app)
 
     from .services.learn import render_note_html
 
@@ -71,11 +73,32 @@ def create_app(config_class: type = Config) -> Flask:
     from .routes.science import bp as science_bp
     app.register_blueprint(science_bp)
 
+    from .routes.ai_check import bp as ai_check_bp  # AI second opinion on one MCQ (OpenAI, on demand)
+    app.register_blueprint(ai_check_bp)
+
     from .routes.voice import bp as voice_bp  # voice page + signed device token
     app.register_blueprint(voice_bp)
 
     from .routes.geography import bp as geography_bp
     app.register_blueprint(geography_bp)
+
+    from .routes.polity import bp as polity_bp
+    app.register_blueprint(polity_bp)
+    from .routes.polity_maps import bp as polity_maps_bp
+    app.register_blueprint(polity_maps_bp)
+    from .routes.polity_unit6 import bp as polity_unit6_bp
+    app.register_blueprint(polity_unit6_bp)
+    from .routes.polity_admin import bp as polity_admin_bp
+    app.register_blueprint(polity_admin_bp)
+    from .routes.polity_marks import bp as polity_marks_bp
+    app.register_blueprint(polity_marks_bp)
+    from .routes.account import bp as account_bp, current_account
+    app.register_blueprint(account_bp)
+    app.add_template_global(current_account, 'current_account')
+    from .services.marks_inject import init_marks_inject
+    init_marks_inject(app)
+    from .routes.access import bp as access_bp
+    app.register_blueprint(access_bp)
 
     from .services import qdisplay
     app.jinja_env.globals.update(bi_kind=qdisplay.bi_kind, option_items=qdisplay.option_items, option_item=qdisplay.option_item)

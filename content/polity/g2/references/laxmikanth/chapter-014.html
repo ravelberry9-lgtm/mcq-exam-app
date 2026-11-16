@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part II — Complete Study Notes — Full-Depth Bilingual Notes, Print Edition (No WHY-Boxes)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  .why{background:#fff8ec;border:1px solid #e8c98a;border-left:4px solid #c98a2c;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .why .whytitle{font-weight:700;color:#8a5a12;margin-bottom:6px;font-size:14.3px}
+  .why p.eng{margin:6px 0 3px}
+  .why .te{margin:3px 0 10px}
+  .why .whyq{font-weight:700;color:#132a52}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 14 — Federal System</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Full-Depth Bilingual Study Notes</div>
+<div class="para">
+<div class="ptitle">Introduction — Classifying Governments: Unitary vs Federal</div>
+<p class="eng">Political scientists sort every government into one of two broad families — <span class="term">unitary</span> or <span class="term">federal</span> — and the test for this sorting is not how many houses of legislature a country has or how its elections work, but one specific relationship: <b>how the national government relates to its regional governments</b>. In a <b>unitary government</b>, all powers are vested in the national government, and regional governments — if they exist at all — merely derive their authority from it; they have no independent constitutional standing of their own. In a <b>federal government</b>, by contrast, powers are divided between the national government and the regional governments <b>by the Constitution itself</b>, and both levels then operate independently within their own assigned jurisdictions, answerable to the Constitution rather than to each other.</p>
+<div class="te">రాజకీయ శాస్త్రవేత్తలు ప్రతి ప్రభుత్వాన్నీ రెండు విస్తృత వర్గాలుగా విభజిస్తారు — <span class="term">Unitary</span>, <span class="term">Federal</span>. ఈ వర్గీకరణకు కొలమానం శాసనసభలో ఎన్ని సభలు ఉన్నాయో లేదా ఎన్నికలు ఎలా జరుగుతాయో కాదు — జాతీయ ప్రభుత్వానికి, ప్రాంతీయ ప్రభుత్వాలకు మధ్య ఉన్న సంబంధమే. <b>Unitary ప్రభుత్వం</b>లో అన్ని అధికారాలు జాతీయ ప్రభుత్వం వద్దే ఉంటాయి; ప్రాంతీయ ప్రభుత్వాలు ఉన్నా, అవి జాతీయ ప్రభుత్వం నుండే తమ అధికారాన్ని పొందుతాయి — వాటికి సొంత రాజ్యాంగ హోదా ఉండదు. దీనికి భిన్నంగా, <b>Federal ప్రభుత్వం</b>లో అధికారాలను <b>రాజ్యాంగమే స్వయంగా</b> జాతీయ, ప్రాంతీయ ప్రభుత్వాల మధ్య విభజిస్తుంది — రెండు స్థాయిలూ తమ తమ పరిధిలో స్వతంత్రంగా పనిచేస్తాయి, ఒకదానికొకటి కాకుండా నేరుగా రాజ్యాంగానికే జవాబుదారీగా ఉంటాయి.</div>
+<p class="eng">Examples make the split concrete: <b>Britain, France, Japan, China, Italy, Norway,</b> and <b>Sweden</b> follow a unitary model, while the <span class="hlg">US, Switzerland, Australia, Canada, Russia, Brazil,</span> and <span class="hlg">Argentina</span> follow a federal model. In a federal set-up, the national government carries different names in different countries — the <b>Federal</b>, <b>Central</b>, or <b>Union</b> government — while the regional units are called <b>state</b> or <b>provincial</b> governments.</p>
+<div class="te">ఉదాహరణలతో ఇది స్పష్టమవుతుంది — <b>బ్రిటన్, ఫ్రాన్స్, జపాన్, చైనా, ఇటలీ, నార్వే, స్వీడన్</b> Unitary మోడల్ ను అనుసరిస్తే, <span class="hlg">USA, స్విట్జర్లాండ్, ఆస్ట్రేలియా, కెనడా, రష్యా, బ్రెజిల్, అర్జెంటీనా</span> Federal మోడల్ ను అనుసరిస్తాయి. Federal వ్యవస్థలో జాతీయ ప్రభుత్వాన్ని దేశాన్ని బట్టి <b>Federal, Central, Union</b> ప్రభుత్వం అని పిలుస్తారు; ప్రాంతీయ యూనిట్లను <b>state / provincial</b> ప్రభుత్వం అని పిలుస్తారు.</div>
+<table>
+<caption>Table 14.1 — Comparing Features of Federal and Unitary Governments</caption>
+<thead><tr><th class="n">#</th><th>Federal Government</th><th class="rd">Unitary Government</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Dual government — national government <b>and</b> regional government</td><td>Single (national) government, which <i>may</i> create regional governments</td></tr>
+<tr><td class="n">2</td><td>Written Constitution</td><td>May be written (France) or unwritten (Britain)</td></tr>
+<tr><td class="n">3</td><td>Division of powers between national &amp; regional government</td><td>No division of powers — all powers vested in the national government</td></tr>
+<tr><td class="n">4</td><td>Supremacy of the Constitution</td><td>May be supreme (Japan) or may not be (Britain)</td></tr>
+<tr><td class="n">5</td><td>Rigid Constitution</td><td>May be rigid (France) or flexible (Britain)</td></tr>
+<tr><td class="n">6</td><td>Independent judiciary</td><td>May or may not be independent</td></tr>
+<tr><td class="n">7</td><td>Bicameral legislature</td><td>May be bicameral (Britain) or unicameral (China)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="para">
+<div class="stitle">Origin of the Term "Federation"</div>
+<p class="eng">The word <span class="hlb">'federation'</span> is derived from the Latin word <b>foedus</b>, meaning <b>'treaty'</b> or <b>'agreement'</b>. A federation, in this original sense, is a <b>new political system formed through a treaty or agreement between its constituent units</b>. Those units go by different names in different federations — <b>states</b> (as in the US), <b>cantons</b> (Switzerland), <b>provinces</b> (Canada), or <b>republics</b> (Russia) — but the underlying idea is the same: separate units coming under one political roof while retaining a defined space of their own.</p>
+<div class="te"><span class="hlb">'Federation'</span> అనే పదం లాటిన్ పదం <b>foedus</b> నుండి వచ్చింది — దీని అర్థం <b>'ఒప్పందం'</b> లేదా <b>'treaty'</b>. మూలార్థంలో federation అంటే దాని భాగస్వామ్య యూనిట్ల మధ్య ఒక ఒప్పందం ద్వారా ఏర్పడిన <b>కొత్త రాజకీయ వ్యవస్థ</b>. ఈ యూనిట్లను వేర్వేరు ఫెడరేషన్లలో వేర్వేరు పేర్లతో పిలుస్తారు — USA లో <b>states</b>, స్విట్జర్లాండ్‌లో <b>cantons</b>, కెనడాలో <b>provinces</b>, రష్యాలో <b>republics</b> — కానీ అంతర్లీన భావన ఒకటే: వేర్వేరు యూనిట్లు తమ సొంత పరిధిని కాపాడుకుంటూనే ఒకే రాజకీయ కప్పు కింద చేరడం.</div>
+<div class="stitle" style="border-bottom:none;margin-top:12px">Two Ways a Federation Can Form</div>
+<p class="eng">Laxmikanth identifies two distinct routes by which a federation comes into being. <b class="imp">By Integration</b>: a number of militarily weak or economically backward <b>independent states voluntarily come together</b> to form one big, strong union — the <span class="hlg">USA</span> is the classic example. It is the <b>first and oldest federation in the world</b>, formed in <span class="hlg">1787</span> following the American Revolution (1775-83); it originally comprised just 13 states and today has 50, and it is conventionally treated as the "model" federation against which others are compared. <b class="imp">By Disintegration</b>: a large <b>unitary state grants autonomy to its provinces</b> to accommodate regional interests, converting itself into a federation from within — <span class="hlg">Canada</span> illustrates this route, having formed in <span class="hlg">1867</span> with 4 provinces, now grown to 10.</p>
+<div class="te">ఒక federation ఏర్పడటానికి రెండు వేర్వేరు మార్గాలు ఉంటాయని లక్ష్మీకాంత్ చెబుతారు. <b class="imp">Integration ద్వారా</b>: సైనికంగా బలహీనమైన లేదా ఆర్థికంగా వెనుకబడిన కొన్ని <b>స్వతంత్ర రాష్ట్రాలు స్వచ్ఛందంగా కలిసి</b> ఒక పెద్ద, బలమైన union గా ఏర్పడతాయి — <span class="hlg">USA</span> దీనికి క్లాసిక్ ఉదాహరణ. ఇది ప్రపంచంలోనే <b>మొట్టమొదటి, పురాతనమైన federation</b> — అమెరికన్ విప్లవం (1775-83) తర్వాత <span class="hlg">1787</span>లో ఏర్పడింది; మొదట్లో 13 రాష్ట్రాలు మాత్రమే ఉండగా ఇప్పుడు 50 ఉన్నాయి, దీన్నే federation కు "మోడల్"గా భావిస్తారు. <b class="imp">Disintegration ద్వారా</b>: ఒక పెద్ద unitary రాష్ట్రం ప్రాంతీయ ప్రయోజనాలను తీర్చడానికి తన provinces కు స్వయంప్రతిపత్తి ఇచ్చి, లోపలి నుండే federation గా మారుతుంది — <span class="hlg">కెనడా</span> దీనికి ఉదాహరణ, 1867లో 4 provinces తో ఏర్పడి ఇప్పుడు 10 కి పెరిగింది.</div>
+</div>
+</div>
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Why India Adopted Federalism · 'Union of States' · Canadian vs American Model</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Why India Adopted a Federal System</div>
+<p class="eng">The framers of the Indian Constitution chose a federal system of government for <b>two main reasons</b>: the country's <b>large size</b>, and its deep <b>socio-cultural diversity</b> — of language, religion, region, and custom. They understood that a federal design would let the country be governed efficiently at both a national and a regional scale simultaneously, while also <b>reconciling national unity with regional autonomy</b> — letting diverse regions run their own local affairs without threatening the country's overall unity.</p>
+<div class="te">భారత రాజ్యాంగ నిర్మాతలు federal వ్యవస్థను ఎంచుకోవడానికి <b>రెండు ప్రధాన కారణాలు</b> ఉన్నాయి — దేశం యొక్క <b>పెద్ద పరిమాణం</b>, దాని లోతైన <b>సామాజిక-సాంస్కృతిక వైవిధ్యం</b> (భాష, మతం, ప్రాంతం, ఆచారాలు). Federal డిజైన్ వల్ల దేశాన్ని జాతీయ, ప్రాంతీయ స్థాయిల్లో ఒకేసారి సమర్థంగా పరిపాలించవచ్చని, అదే సమయంలో <b>జాతీయ ఐక్యతను, ప్రాంతీయ స్వయంప్రతిపత్తిని</b> కలిపి తీసుకెళ్లవచ్చని వారు గ్రహించారు — వైవిధ్యమైన ప్రాంతాలు తమ స్థానిక వ్యవహారాలను నడుపుకుంటూనే, దేశ మొత్తం ఐక్యతకు ఏ ముప్పూ కలగకుండా చూసుకోగలిగే ఏర్పాటు ఇది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">'Union of States', Not 'Federation' — Article 1</div>
+<p class="eng">Despite adopting a federal system in substance, the word <span class="hlb">'federation'</span> is <b>nowhere used</b> in the Constitution of India. Instead, <span class="hlg">Article 1</span> describes India as a <b class="imp">'Union of States'</b>. <span class="hlp">Dr. B.R. Ambedkar</span> explained that this phrase was deliberately preferred over 'Federation of States' to convey two specific things that distinguish the Indian case from a classical federation like the American one: first, that the Indian federation is <b>not the result of an agreement among the states</b> — unlike the American federation, which literally was formed by a treaty among 13 pre-existing sovereign states; and second, that <b>the states have no right to secede</b> from the union once formed. As Ambedkar put it, the federation is a union simply <b>"because it is indestructible."</b></p>
+<div class="te">భారతదేశం సారాంశంలో federal వ్యవస్థను అనుసరించినా, రాజ్యాంగంలో <span class="hlb">'federation'</span> అనే పదం <b>ఎక్కడా వాడబడదు</b>. బదులుగా <span class="hlg">Art. 1</span> భారతదేశాన్ని <b class="imp">'Union of States'</b> అని వర్ణిస్తుంది. <span class="hlp">డా. బి.ఆర్. అంబేద్కర్</span> ప్రకారం, 'Federation of States' కు బదులు ఈ పదాన్ని ఉద్దేశపూర్వకంగానే ఎంచుకున్నారు — భారత federation ను క్లాసిక్ అమెరికన్ federation నుండి వేరు చేసే రెండు విషయాలు చెప్పడానికి: మొదటిది, భారత federation రాష్ట్రాల మధ్య <b>ఒప్పందం వల్ల ఏర్పడలేదు</b> — అమెరికాలో మాదిరిగా కాదు — అక్కడ 13 స్వతంత్ర సార్వభౌమ రాష్ట్రాలు ఒప్పందం ద్వారా కలిసి federation ఏర్పరచుకున్నాయి; రెండోది, ఒకసారి ఏర్పడ్డాక <b>రాష్ట్రాలకు విడిపోయే హక్కు లేదు</b>. అంబేద్కర్ చెప్పినట్టు, ఈ federation ఒక Union ఎందుకంటే అది <b>"indestructible" (నశించనిది)</b> కాబట్టే.</div>
+
+<div class="stitle" style="border-bottom:none;margin-top:14px">India's Model: Canadian, Not American</div>
+<p class="eng">The Indian federal system is explicitly based on the <b class="imp">'Canadian model'</b>, not the 'American model'. The fundamental difference between the two is that the Canadian model establishes a <b>very strong centre</b> relative to its provinces, while the American model gives its states a comparatively stronger, more autonomous position. India resembles Canada in three distinct ways: <b>(i)</b> in its <b>formation</b> — by way of disintegration, not integration; <b>(ii)</b> in its <b>preference for the term 'Union'</b> — the Canadian federation is also officially called a 'Union'; and <b>(iii)</b> in its <b>centralising tendency</b> — vesting comparatively more power in the centre relative to the states, just as Canada does.</p>
+<div class="te">భారత federal వ్యవస్థ స్పష్టంగా <b class="imp">'Canadian model'</b> పై ఆధారపడింది, 'American model' పై కాదు. వీటి మధ్య మౌలిక తేడా — Canadian model ప్రావిన్సులతో పోలిస్తే <b>చాలా బలమైన కేంద్రాన్ని</b> ఏర్పరుస్తుంది, American model లో మాత్రం రాష్ట్రాలకు తులనాత్మకంగా ఎక్కువ స్వయంప్రతిపత్తి ఉంటుంది. భారత్ కెనడాను మూడు విధాలుగా పోలి ఉంటుంది — <b>(i)</b> <b>ఏర్పాటు</b> పద్ధతిలో — disintegration ద్వారానే, integration ద్వారా కాదు; <b>(ii)</b> <b>'Union' పదం</b> వాడకంలో — కెనడియన్ federation ను కూడా అధికారికంగా 'Union' అనే అంటారు; <b>(iii)</b> <b>కేంద్రీకరణ ధోరణి</b>లో — కెనడా మాదిరిగానే రాష్ట్రాలతో పోలిస్తే కేంద్రానికి తులనాత్మకంగా ఎక్కువ అధికారం ఇవ్వడం.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Classification, Origins &amp; Why India Chose This Model</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>What is the unitary vs federal classification test?</td><td>How the national government relates to regional governments — power vested solely centrally (unitary) vs divided by the Constitution itself (federal)</td></tr>
+<tr><td>What does "foedus" mean, and what does it tell us?</td><td>Latin for "treaty/agreement" — a federation is classically a new state formed by agreement between units</td></tr>
+<tr><td>Two ways a federation forms?</td><td>By integration (USA, 1787) or by disintegration (Canada, 1867)</td></tr>
+<tr><td>Why did India adopt federalism?</td><td>Large size + socio-cultural diversity — reconciles national unity with regional autonomy</td></tr>
+<tr><td>Why "Union of States," not "Federation"?</td><td>Signals: (i) not formed by inter-state agreement (ii) states cannot secede — a Union because it is indestructible</td></tr>
+<tr><td>Canadian model or American model?</td><td>Canadian — strong centre, formed by disintegration, uses the term "Union," centralising tendency</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Federal Features of the Constitution — Points 1-4 of 7</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Federal Features of the Constitution</div>
+<p class="eng">Laxmikanth lists <b>seven federal features</b> that the Indian Constitution genuinely possesses — features that satisfy the classical definition of a federation given at the start of this chapter. These sit alongside an even longer list of unitary features (covered from Page 5 onward), and reading both lists together is what eventually leads into the "is India really federal?" debate covered later in this chapter.</p>
+<div class="te">ఈ అధ్యాయం మొదట్లో ఇచ్చిన classical federation నిర్వచనాన్ని నిజంగా సంతృప్తిపరిచే <b>ఏడు federal లక్షణాలను</b> లక్ష్మీకాంత్ ఇస్తారు. వీటితో పాటు అంతకంటే పొడవైన unitary లక్షణాల జాబితా కూడా ఉంది (పేజీ 5 నుండి చూడండి) — ఈ రెండు జాబితాలనూ కలిపి చదివితేనే "భారత్ నిజంగా federal దేశమేనా?" అనే చర్చ (ఈ అధ్యాయం చివర్లో ఉంది) అర్థమవుతుంది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">1. Dual Polity</div>
+<p class="eng">The Constitution establishes a <b class="term">dual polity</b> — the Union at the Centre, and the states at the periphery — with <b>each level endowed with sovereign powers</b> to be exercised in the field assigned to it by the Constitution. The Union government handles matters of <b>national importance</b> — defence, foreign affairs, currency, communication, and so on — while the state governments look after matters of <b>regional and local importance</b> — public order, agriculture, health, local government, and so on.</p>
+<div class="te">రాజ్యాంగం <b class="term">dual polity</b> ను ఏర్పరుస్తుంది — కేంద్రంలో Union, పరిధిలో రాష్ట్రాలు — <b>ప్రతి స్థాయికీ</b> రాజ్యాంగం కేటాయించిన రంగంలో <b>sovereign అధికారాలు</b> ఉంటాయి. Union ప్రభుత్వం <b>జాతీయ ప్రాముఖ్యత</b> గల విషయాలు చూసుకుంటుంది — రక్షణ, విదేశీ వ్యవహారాలు, కరెన్సీ, కమ్యూనికేషన్ వంటివి; రాష్ట్ర ప్రభుత్వాలు <b>ప్రాంతీయ, స్థానిక ప్రాముఖ్యత</b> గల విషయాలు చూసుకుంటాయి — శాంతిభద్రతలు, వ్యవసాయం, ఆరోగ్యం, స్థానిక ప్రభుత్వం వంటివి.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">2. Written Constitution</div>
+<p class="eng">The Constitution of India is not merely written — it is the <b class="imp">lengthiest Constitution in the world</b>. Originally it contained a Preamble, <span class="hlg">395 Articles</span> (spread across 22 Parts), and <span class="hlg">8 Schedules</span>. Today it consists of a Preamble, roughly <span class="hlg">470 Articles</span> (across 25 Parts), and <span class="hlg">12 Schedules</span> — the growth reflecting the many amendments made since 1951. Its sheer detail specifies the structure, organisation, powers, and functions of both the Central and state governments, and the limits within which each must operate — which is precisely what avoids misunderstandings and disputes between the two levels.</p>
+<div class="te">భారత రాజ్యాంగం వ్రాతపూర్వకమే కాక, ప్రపంచంలోనే <b class="imp">అతిపొడవైన రాజ్యాంగం</b>. మొదట్లో Preamble, <span class="hlg">395 Articles</span> (22 Parts లో), <span class="hlg">8 Schedules</span> ఉండేవి. ఇప్పుడు Preamble, సుమారు <span class="hlg">470 Articles</span> (25 Parts లో), <span class="hlg">12 Schedules</span> ఉన్నాయి — 1951 నుండి జరిగిన అనేక సవరణల వల్ల ఈ పెరుగుదల వచ్చింది. దీని లోతైన వివరాలు కేంద్రం, రాష్ట్రాల నిర్మాణం, అధికారాలు, విధులు, ఒక్కొక్కటి పనిచేయాల్సిన పరిమితులను స్పష్టంగా నిర్దేశిస్తాయి — దీనివల్లే రెండు స్థాయిల మధ్య అపార్థాలు, వివాదాలు తగ్గుతాయి.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">3. Division of Powers</div>
+<p class="eng">The Constitution divides law-making powers between the Centre and the states through the <b>Union List, State List,</b> and <b>Concurrent List</b> in the <span class="hlg">Seventh Schedule</span>. As enumerated in this chapter, the Union List presently has <span class="hlg">100 subjects</span> (originally 97), the State List <span class="hlg">61 subjects</span> (originally 66), and the Concurrent List <span class="hlg">52 subjects</span> (originally 47). Both the Centre and the states can legislate on Concurrent List subjects, but if their laws conflict, the <b>Central law prevails</b>. Any subject falling in <b>none</b> of the three lists — a <b>residuary</b> subject — is given to the <b class="imp">Centre</b>.</p>
+<div class="te">రాజ్యాంగం చట్టాలు చేసే అధికారాలను <span class="hlg">7వ Schedule</span> లోని <b>Union List, State List, Concurrent List</b> ద్వారా కేంద్రం, రాష్ట్రాల మధ్య విభజిస్తుంది. ఈ అధ్యాయం ప్రకారం, ప్రస్తుతం Union List లో <span class="hlg">100 అంశాలు</span> (మొదట్లో 97), State List లో <span class="hlg">61 అంశాలు</span> (మొదట్లో 66), Concurrent List లో <span class="hlg">52 అంశాలు</span> (మొదట్లో 47) ఉన్నాయి. Concurrent List అంశాలపై కేంద్రం, రాష్ట్రాలు రెండూ చట్టం చేయగలవు, కానీ ఘర్షణ వస్తే <b>కేంద్ర చట్టమే</b> చెల్లుతుంది. మూడు జాబితాల్లో దేనిలోనూ లేని అంశం (<b>residuary</b>) <b class="imp">కేంద్రానికే</b> ఇవ్వబడుతుంది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">4. Supremacy of the Constitution</div>
+<p class="eng">The Constitution is the <b>supreme, or highest, law of the land</b>. Every law enacted by the Centre or by a state must conform to its provisions; otherwise the Supreme Court or a High Court can declare it invalid through the power of <b class="term">judicial review</b>. This means the organs of government — legislative, executive, and judicial — at both levels must operate strictly within the jurisdiction the Constitution prescribes for them; no organ, however powerful, can act outside that boundary and expect its act to stand.</p>
+<div class="te">రాజ్యాంగం దేశంలో <b>అత్యున్నత చట్టం</b>. కేంద్రం గానీ, రాష్ట్రం గానీ చేసే ప్రతి చట్టం రాజ్యాంగ నిబంధనలకు అనుగుణంగా ఉండాలి; లేకపోతే <b class="term">judicial review</b> అధికారంతో సుప్రీంకోర్టు లేదా హైకోర్టు దాన్ని చెల్లదని ప్రకటించగలవు. అంటే — legislative, executive, judicial మూడు అంగాలూ, రెండు స్థాయిల్లోనూ, రాజ్యాంగం నిర్దేశించిన పరిధిలోనే పనిచేయాలి — ఎంత శక్తివంతమైన అంగమైనా ఆ పరిధి దాటి చేసే చర్య నిలబడదు.</div>
+</div>
+</div>
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Federal Features of the Constitution — Points 5-7 of 7</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">5. Rigid Constitution</div>
+<p class="eng">The division of powers and the supremacy of the Constitution — the two federal features just discussed — can only be genuinely preserved if the process of amending the Constitution is itself <b>rigid</b>. Accordingly, the Constitution is rigid to the extent that provisions concerned with the <b>federal structure</b> — that is, Centre-state relations and judicial organisation — can be amended <b>only by the joint action of the Central and state governments</b>. Such provisions require a <b>special majority</b> in Parliament (a two-thirds majority of members of each House present and voting, and a majority of the total membership of each House) <b>plus</b> ratification by <b>half of the state legislatures</b>.</p>
+<div class="te">ఇప్పుడే చెప్పిన రెండు federal లక్షణాలు — అధికార విభజన, రాజ్యాంగ ఆధిక్యత — నిజంగా కాపాడబడాలంటే రాజ్యాంగ సవరణ ప్రక్రియ కూడా <b>రిజిడ్</b>గా ఉండాలి. అందుకే <b>federal structure</b> కు సంబంధించిన నిబంధనలు — అంటే కేంద్రం-రాష్ట్రాల సంబంధాలు, న్యాయవ్యవస్థ నిర్మాణం — <b>కేంద్రం, రాష్ట్రాల ఉమ్మడి చర్య ద్వారానే</b> సవరించగలవు. ఇలాంటి నిబంధనలకు పార్లమెంట్‌లో <b>ప్రత్యేక మెజారిటీ</b> (ప్రతి సభలో హాజరై ఓటు వేసిన సభ్యుల్లో మూడింట రెండొంతులు, మొత్తం సభ్యత్వంలో మెజారిటీ) <b>అదనంగా</b> <b>సగం రాష్ట్ర శాసనసభల ఆమోదం</b> అవసరం.</div>
+
+<div class="stitle" style="border-bottom:none;margin-top:14px">6. Independent Judiciary</div>
+<p class="eng">The Constitution establishes an independent judiciary headed by the Supreme Court, for <b>two distinct purposes</b>: first, to protect the supremacy of the Constitution by exercising the power of judicial review; and second, to <b>settle disputes</b> between the Centre and the states, or between states themselves. To keep this judiciary genuinely independent of the government of the day, the Constitution builds in safeguards such as <b>security of tenure</b> for judges and <b>fixed service conditions</b> that cannot be altered to their disadvantage.</p>
+<div class="te">సుప్రీంకోర్టు నేతృత్వంలో స్వతంత్ర న్యాయవ్యవస్థను రాజ్యాంగం రెండు ఉద్దేశాలతో ఏర్పరుస్తుంది — మొదటిది, judicial review ద్వారా రాజ్యాంగ ఆధిక్యతను కాపాడటం; రెండోది, కేంద్రం-రాష్ట్రాల మధ్య లేదా రాష్ట్రాల మధ్య <b>వివాదాలను పరిష్కరించడం</b>. ఈ న్యాయవ్యవస్థ నిజంగా ప్రభుత్వం నుండి స్వతంత్రంగా ఉండటానికి, న్యాయమూర్తులకు <b>పదవీకాల భద్రత</b>, మార్చలేని <b>నిర్ణీత సర్వీస్ నిబంధనలు</b> వంటి రక్షణలను రాజ్యాంగం కల్పిస్తుంది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">7. Bicameralism</div>
+<p class="eng">The Constitution provides for a <b class="term">bicameral</b> Parliament — an Upper House, the <b>Rajya Sabha</b>, and a Lower House, the <b>Lok Sabha</b>. The Rajya Sabha represents the <b>states</b> of the Indian federation, while the Lok Sabha represents the <b>people of India</b> as a whole. Even though the Rajya Sabha is the less powerful of the two chambers in most legislative matters, it is specifically required to maintain <b class="imp">federal equilibrium</b> by protecting the interests of the states against undue interference from the Centre.</p>
+<div class="te">రాజ్యాంగం <b class="term">bicameral</b> పార్లమెంట్‌ను ఏర్పరుస్తుంది — Upper House <b>రాజ్యసభ</b>, Lower House <b>లోక్‌సభ</b>. రాజ్యసభ భారత federation లోని <b>రాష్ట్రాలను</b> ప్రాతినిధ్యం వహిస్తే, లోక్‌సభ మొత్తం <b>భారత ప్రజలను</b> ప్రాతినిధ్యం వహిస్తుంది. చాలా శాసనపరమైన విషయాల్లో రాజ్యసభ తక్కువ శక్తివంతమైన సభే అయినా, కేంద్రం అనవసర జోక్యం నుండి రాష్ట్రాల ప్రయోజనాలను కాపాడుతూ <b class="imp">federal equilibrium</b> కాపాడాల్సిన బాధ్యత ప్రత్యేకంగా దీనిదే.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — All 7 Federal Features</caption>
+<thead><tr><th class="n">#</th><th>Feature</th><th>Key Point</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Dual Polity</td><td>Union + states, each sovereign in its own assigned field</td></tr>
+<tr><td class="n">2</td><td>Written Constitution</td><td>Lengthiest in the world — ~470 Articles, 25 Parts, 12 Schedules today</td></tr>
+<tr><td class="n">3</td><td>Division of Powers</td><td>7th Schedule — Union (98), State (59), Concurrent (52); residuary → Centre</td></tr>
+<tr><td class="n">4</td><td>Supremacy of Constitution</td><td>Highest law of the land; laws struck down via judicial review if inconsistent</td></tr>
+<tr><td class="n">5</td><td>Rigid Constitution</td><td>Federal-structure provisions need Parliament's special majority + half the states' ratification</td></tr>
+<tr><td class="n">6</td><td>Independent Judiciary</td><td>SC-headed; protects Constitution's supremacy + settles Centre-state/inter-state disputes</td></tr>
+<tr><td class="n">7</td><td>Bicameralism</td><td>Rajya Sabha (states) + Lok Sabha (people); Rajya Sabha maintains federal equilibrium</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Unitary Features of the Constitution — Points 1-4 of 14</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Unitary (Non-Federal) Features — Overview</div>
+<p class="eng">Alongside the seven federal features just discussed, the Indian Constitution also carries a much longer list — <b>fourteen</b> distinct <span class="term">unitary or non-federal features</span>. These are provisions that, on a strict reading of the classical federal test, actually pull power <b>away</b> from the states and toward the Centre. It is the sheer number and weight of these fourteen features — set against only seven genuinely federal ones — that fuels the entire "quasi-federal" debate covered later in this chapter.</p>
+<div class="te">ఇప్పుడే చెప్పిన ఏడు federal లక్షణాలతో పాటు, భారత రాజ్యాంగంలో అంతకంటే పొడవైన జాబితా కూడా ఉంది — <b>పద్నాలుగు</b> వేర్వేరు <span class="term">unitary లేదా non-federal లక్షణాలు</span>. ఇవి — classical federal test ప్రకారం చూస్తే — అధికారాన్ని రాష్ట్రాల నుండి కేంద్రం వైపు లాగే నిబంధనలు. కేవలం ఏడు నిజమైన federal లక్షణాలకు వ్యతిరేకంగా ఈ పద్నాలుగు లక్షణాల సంఖ్య, బరువే — ఈ అధ్యాయం చివర్లో ఉన్న "quasi-federal" చర్చకు మూలకారణం.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">1. Strong Centre</div>
+<p class="eng">The overall division of powers is <b>tilted in favour of the Centre</b> and is, from a strictly federal angle, highly inequitable — for four distinct reasons. <b>Firstly</b>, the Union List simply contains <b>more subjects</b> than the State List. <b>Secondly</b>, the <b>more important</b> subjects (defence, foreign affairs, currency, etc.) have been placed in the Union List rather than the State List. <b>Thirdly</b>, the Centre has <b>overriding authority</b> over the Concurrent List — its law prevails on conflict. <b>Finally</b>, <b>residuary powers</b> have also been left with the Centre, whereas in the US they are vested in the states. Taken together, these four choices make the Centre considerably stronger than a "neutral" federal division would produce.</p>
+<div class="te">మొత్తం అధికార విభజన <b>కేంద్రానికి అనుకూలంగా</b> మొగ్గి ఉంటుంది, కఠినమైన federal కోణం నుండి చూస్తే ఇది చాలా అసమానం — నాలుగు కారణాల వల్ల. <b>మొదటిది</b>, Union List లో State List కంటే <b>ఎక్కువ అంశాలు</b> ఉంటాయి. <b>రెండోది</b>, రక్షణ, విదేశీ వ్యవహారాలు వంటి <b>ఎక్కువ ప్రాముఖ్యత గల అంశాలు</b> Union List లోనే ఉంటాయి, State List లో కాదు. <b>మూడోది</b>, Concurrent List పై కేంద్రానికి <b>ఓవర్‌రైడింగ్ అధికారం</b> ఉంటుంది — ఘర్షణ వస్తే కేంద్ర చట్టమే గెలుస్తుంది. <b>చివరిది</b>, <b>residuary అధికారాలు</b> కూడా కేంద్రానికే ఇవ్వబడ్డాయి — USA లో మాత్రం ఇవి రాష్ట్రాలకు ఉంటాయి. ఈ నాలుగూ కలిపి చూస్తే, "తటస్థ" federal విభజన కంటే కేంద్రం చాలా బలంగా ఉంటుంది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">2. States Not Indestructible</div>
+<p class="eng">Unlike in some other federations, the states in India have <b>no right to territorial integrity</b>. <b>Parliament can unilaterally change the area, boundary, or name</b> of any state, and — notably — this requires only a <b>simple majority</b>, not a special majority. This is why the Indian Federation is famously described as <b class="imp">"an indestructible Union of destructible states."</b> The American Federation, by direct contrast, is described as <b class="imp">"an indestructible Union of indestructible states"</b> — since neither the Union nor any individual American state can be abolished or redrawn without that state's own consent.</p>
+<div class="te">కొన్ని ఇతర federations లా కాకుండా, భారత రాష్ట్రాలకు <b>territorial integrity హక్కు లేదు</b>. ఏ రాష్ట్రం యొక్క <b>వైశాల్యం, సరిహద్దులు, పేరును పార్లమెంట్ ఏకపక్షంగా మార్చగలదు</b> — గమనార్హం ఏమిటంటే, దీనికి <b>సాధారణ మెజారిటీ</b> చాలు, ప్రత్యేక మెజారిటీ అవసరం లేదు. అందుకే భారత Federation ను <b class="imp">"నశించని Union, నశించగల రాష్ట్రాలు"</b> అని ప్రసిద్ధంగా వర్ణిస్తారు. దీనికి పూర్తి వ్యతిరేకంగా, అమెరికన్ Federation ను <b class="imp">"నశించని Union, నశించని రాష్ట్రాలు"</b> అని వర్ణిస్తారు — ఎందుకంటే అక్కడ Union గానీ, ఏ ఒక్క రాష్ట్రం గానీ, ఆ రాష్ట్రం సొంత సమ్మతి లేకుండా రద్దుకాదు, మార్చబడదు.</div>
+
+<div class="stitle" style="border-bottom:none;margin-top:14px">3. Single Constitution</div>
+<p class="eng">Normally, in a federation, the states have the right to frame their <b>own Constitution</b>, separate from that of the Centre. In India, on the contrary, <b>no such power is given to the states</b> — the Constitution of India embodies <b>both</b> the Centre's Constitution and the states' Constitutions within a <b>single frame</b>. Both the Centre and the states must operate within this single document. The <b>only exception</b> to this in India's history was the erstwhile state of <span class="hlp">Jammu &amp; Kashmir</span>, which had its own separate state Constitution by virtue of <span class="hlg">Article 370</span> — until this special status was ended in <span class="hlg">2019</span>.</p>
+<div class="te">సాధారణంగా, federation లో రాష్ట్రాలకు కేంద్రం రాజ్యాంగం నుండి వేరుగా <b>సొంత రాజ్యాంగం</b> రూపొందించుకునే హక్కు ఉంటుంది. భారతదేశంలో మాత్రం <b>రాష్ట్రాలకు ఈ అధికారం లేదు</b> — భారత రాజ్యాంగమే కేంద్రం, రాష్ట్రాల రాజ్యాంగాలు రెండింటినీ <b>ఒకే ఫ్రేమ్</b>లో ఇముడ్చుకుంటుంది. కేంద్రం, రాష్ట్రాలు రెండూ ఈ ఒకే డాక్యుమెంట్ పరిధిలోనే పనిచేయాలి. దీనికి భారత చరిత్రలో <b>ఒకే ఒక్క మినహాయింపు</b> — పూర్వపు <span class="hlp">జమ్మూ &amp; కాశ్మీర్</span> రాష్ట్రం — <span class="hlg">Art. 370</span> కారణంగా దీనికి సొంత రాష్ట్ర రాజ్యాంగం ఉండేది, ఈ ప్రత్యేక హోదా <span class="hlg">2019</span>లో ముగిసేవరకు.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">4. Flexibility of the Constitution</div>
+<p class="eng">The process of amending the Indian Constitution is, taken as a whole, <b>less rigid</b> than what is found in most other federations. The <b>bulk</b> of the Constitution can be amended by the <b>unilateral action of Parliament</b> alone — through either a simple majority or a special majority, without needing any state's involvement. Further, the <b>power to initiate</b> a constitutional amendment lies <b>only with the Centre</b> — a bill to amend the Constitution can only be introduced in Parliament. This is unlike the US, where the <b>states can also propose</b> an amendment to the Constitution.</p>
+<div class="te">భారత రాజ్యాంగ సవరణ ప్రక్రియ — మొత్తంగా చూస్తే — ఇతర చాలా federations లో కంటే <b>తక్కువ రిజిడ్</b>. రాజ్యాంగంలో <b>అధిక భాగాన్ని</b> పార్లమెంట్ <b>ఒక్కటే, ఏకపక్షంగా</b> — సాధారణ మెజారిటీ లేదా ప్రత్యేక మెజారిటీతో, రాష్ట్రాల ప్రమేయం లేకుండానే — సవరించగలదు. అంతేకాక, రాజ్యాంగ సవరణను <b>ప్రారంభించే అధికారం కేంద్రానికి మాత్రమే</b> ఉంటుంది — సవరణ బిల్లును పార్లమెంట్‌లోనే ప్రవేశపెట్టాలి. USA లో మాత్రం <b>రాష్ట్రాలు కూడా</b> సవరణను ప్రతిపాదించగలవు — ఇది భారత్‌లో లేదు.</div>
+</div>
+</div>
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Unitary Features of the Constitution — Points 5-7 of 14</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">5. No Equality of State Representation</div>
+<p class="eng">States in India are given representation in the Rajya Sabha <b>on the basis of population</b> — as a direct result, membership per state varies enormously, from just <span class="hlg">1</span> to as many as <span class="hlg">31</span>. In the US, by contrast, the principle of <b>equality of state representation</b> in the Upper House is fully recognised — the American Senate has <span class="hlg">100 members</span>, exactly <b>two from every state</b> regardless of that state's population, a design specifically regarded as a <b>safeguard for smaller states</b>.</p>
+<div class="te">భారతదేశంలో రాష్ట్రాలకు రాజ్యసభలో ప్రాతినిధ్యం <b>జనాభా ప్రాతిపదికన</b> ఇవ్వబడుతుంది — దీని ప్రత్యక్ష ఫలితంగా, ఒక్కో రాష్ట్రానికి సభ్యుల సంఖ్య <span class="hlg">1</span> నుండి <span class="hlg">31</span> వరకు చాలా తేడాతో ఉంటుంది. దీనికి భిన్నంగా, USA లో Upper House లో <b>రాష్ట్రాలకు సమాన ప్రాతినిధ్యం</b> అనే సూత్రం పూర్తిగా గుర్తించబడింది — అమెరికన్ Senate లో <span class="hlg">100 మంది సభ్యులు</span> ఉంటారు, జనాభాతో సంబంధం లేకుండా ప్రతి రాష్ట్రం నుండి సరిగ్గా <b>ఇద్దరు చొప్పున</b> — ఇది ప్రత్యేకంగా <b>చిన్న రాష్ట్రాలకు రక్షణ</b>గా భావించే డిజైన్.</div>
+
+<div class="stitle" style="border-bottom:none;margin-top:14px">6. Emergency Provisions</div>
+<p class="eng">The Constitution stipulates <b>three types of emergency</b> — national, state, and financial. During any emergency, the <b>Central government becomes all-powerful</b> and the states come under the <b>total control</b> of the Centre. This effectively <b>converts the federal structure into a unitary one</b> — and, remarkably, it does so <b>without any formal amendment</b> of the Constitution; the transformation happens automatically once the emergency is proclaimed. This kind of built-in, automatic federal-to-unitary conversion is <b>not found in any other federation</b> in the world.</p>
+<div class="te">రాజ్యాంగం <b>మూడు రకాల ఎమర్జెన్సీలను</b> నిర్దేశిస్తుంది — జాతీయ, రాష్ట్ర, ఆర్థిక. ఏ ఎమర్జెన్సీ అయినా అమల్లో ఉన్నప్పుడు <b>కేంద్ర ప్రభుత్వం సర్వశక్తిమంతం</b> అవుతుంది, రాష్ట్రాలు కేంద్రం <b>పూర్తి నియంత్రణ</b>లోకి వెళ్తాయి. ఇది federal నిర్మాణాన్ని unitary నిర్మాణంగా <b>మార్చేస్తుంది</b> — ఆశ్చర్యకరంగా, దీనికి రాజ్యాంగానికి <b>ఏ ఫార్మల్ సవరణా అవసరం లేదు</b> — ఎమర్జెన్సీ ప్రకటించగానే ఈ మార్పు ఆటోమేటిక్‌గా జరిగిపోతుంది. ఇలాంటి అంతర్నిర్మిత, ఆటోమేటిక్ federal-to-unitary మార్పు ప్రపంచంలో <b>మరే ఇతర federation</b>లోనూ కనిపించదు.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">7. Single Citizenship</div>
+<p class="eng">Despite having a dual polity, the Constitution of India — like that of Canada — adopted the system of <b class="term">single citizenship</b>. There is only <b>Indian citizenship</b>; there is no separate state citizenship. Every citizen, regardless of the state in which they were born or currently reside, enjoys the <b>same rights</b> all over the country. Other federal states such as the <b>US and Australia</b> instead have <b>dual citizenship</b> — national citizenship as well as state citizenship.</p>
+<div class="te">dual polity ఉన్నప్పటికీ, భారత రాజ్యాంగం — కెనడా మాదిరిగానే — <b class="term">ఏకల పౌరసత్వ (single citizenship)</b> విధానాన్ని అవలంబించింది. ఇక్కడ కేవలం <b>భారత పౌరసత్వం</b> మాత్రమే ఉంటుంది, వేరుగా రాష్ట్ర పౌరసత్వం అంటూ ఉండదు. ఏ రాష్ట్రంలో పుట్టినా, నివసిస్తున్నా, ప్రతి పౌరుడూ దేశమంతటా <b>ఒకే విధమైన హక్కులు</b> అనుభవిస్తారు. USA, ఆస్ట్రేలియా వంటి ఇతర federal దేశాల్లో మాత్రం <b>dual citizenship</b> ఉంటుంది — జాతీయ పౌరసత్వంతో పాటు రాష్ట్ర పౌరసత్వం కూడా.</div>
+</div>
+</div>
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Unitary Features of the Constitution — Points 8-14 of 14</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">8. Integrated Judiciary</div>
+<p class="eng">The Indian Constitution has established a <b class="term">single, integrated judicial system</b> — the Supreme Court at the top, with the state High Courts below it, and subordinate courts below those. This one system of courts enforces <b>both Central laws and state laws</b> — the same judge could, on the same day, be applying an Act of Parliament to one case and a state Act to the next. In the US, by contrast, there is a <b>double system of courts</b>: federal laws are enforced by a separate federal judiciary, while state laws are enforced by a parallel, separate state judiciary.</p>
+<div class="te">భారత రాజ్యాంగం ఒకే <b class="term">ఇంటిగ్రేటెడ్ న్యాయవ్యవస్థ</b>ను ఏర్పరిచింది — పైన సుప్రీంకోర్టు, కింద రాష్ట్ర హైకోర్టులు, వాటి కింద అధీన కోర్టులు. ఈ ఒకే వ్యవస్థ <b>కేంద్ర చట్టాలను, రాష్ట్ర చట్టాలను రెండింటినీ</b> అమలు చేస్తుంది — ఒకే న్యాయమూర్తి, ఒకే రోజు, ఒక కేసులో పార్లమెంట్ చట్టాన్ని, తర్వాతి కేసులో రాష్ట్ర చట్టాన్ని వర్తింపజేయవచ్చు. దీనికి భిన్నంగా USA లో <b>రెండు వేర్వేరు కోర్టు వ్యవస్థలు</b> ఉంటాయి — ఫెడరల్ చట్టాలను ఫెడరల్ న్యాయవ్యవస్థ, రాష్ట్ర చట్టాలను రాష్ట్ర న్యాయవ్యవస్థ వేర్వేరుగా అమలు చేస్తాయి.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">9. All-India Services</div>
+<p class="eng">In the US, the Federal government and the state governments each maintain entirely separate public services. India, too, has separate public services for the Centre and for the states — but <b>in addition</b> to these, India has <b class="imp">All-India Services</b> — namely the <span class="hlg">IAS, IPS,</span> and <span class="hlg">IFoS</span> — which are <b>common to both</b> the Centre and the states; an IAS officer might spend part of a career in state-government postings and part in Central-government postings. Members of these services are <b>recruited and trained by the Centre</b>, which also holds <b>ultimate disciplinary control</b> over them even while they serve in a state. Laxmikanth is direct about the implication of this: these services, however administratively useful, <b>violate the principle of federalism</b> under the Constitution, since a state's senior officers ultimately answer to the Centre rather than solely to the state they serve.</p>
+<div class="te">USA లో ఫెడరల్ ప్రభుత్వానికి, రాష్ట్ర ప్రభుత్వాలకు పూర్తిగా వేర్వేరు public services ఉంటాయి. భారత్‌లో కూడా కేంద్రం, రాష్ట్రాలకు వేర్వేరు public services ఉంటాయి — కానీ వీటికి <b>అదనంగా</b>, భారత్‌లో <b class="imp">All-India Services</b> — అంటే <span class="hlg">IAS, IPS, IFoS</span> — ఉన్నాయి, ఇవి కేంద్రం, రాష్ట్రాలు రెండింటికీ <b>ఉమ్మడిగా</b> పనిచేస్తాయి — ఒక IAS అధికారి తన కెరీర్‌లో కొంతకాలం రాష్ట్ర పోస్టింగ్‌లో, కొంతకాలం కేంద్ర పోస్టింగ్‌లో పనిచేయవచ్చు. ఈ services సభ్యులను <b>కేంద్రమే రిక్రూట్ చేసి, ట్రైనింగ్ ఇస్తుంది</b>, రాష్ట్రంలో పనిచేస్తున్నప్పుడు కూడా వారిపై <b>అంతిమ క్రమశిక్షణ నియంత్రణ</b> కేంద్రానిదే. దీని పర్యవసానం గురించి లక్ష్మీకాంత్ నేరుగా చెబుతారు — ఎంత పరిపాలనా ఉపయోగకరమైనా, ఈ services రాజ్యాంగంలోని <b>federalism సూత్రాన్ని ఉల్లంఘిస్తాయి</b> — ఎందుకంటే రాష్ట్రంలోని సీనియర్ అధికారులు అంతిమంగా ఆ రాష్ట్రానికి మాత్రమే కాక కేంద్రానికి కూడా జవాబుదారీగా ఉంటారు.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">10. Integrated Audit Machinery</div>
+<p class="eng">The <b class="term">Comptroller and Auditor-General (CAG)</b> of India audits the accounts of <b>not only the Central government but also those of the states</b>. Yet the CAG's <b>appointment and removal is done entirely by the President</b>, with <b>no consultation with the states</b> whose accounts this office also audits. This arrangement, in effect, <b>restricts the financial autonomy</b> of the states. The American Comptroller-General, on the contrary, has <b>no role at all</b> with respect to the accounts of the individual American states.</p>
+<div class="te"><b class="term">Comptroller and Auditor-General (CAG)</b> కేంద్ర ప్రభుత్వం ఖాతాలతో పాటు <b>రాష్ట్రాల ఖాతాలను కూడా</b> ఆడిట్ చేస్తారు. కానీ CAG <b>నియామకం, తొలగింపు పూర్తిగా President</b> చేతిలోనే ఉంటుంది, ఆయన ఖాతాలను ఆడిట్ చేసే <b>రాష్ట్రాల అభిప్రాయంతో సంబంధం లేకుండానే</b>. ఈ ఏర్పాటు వాస్తవానికి రాష్ట్రాల <b>ఆర్థిక స్వయంప్రతిపత్తిని పరిమితం</b> చేస్తుంది. అమెరికన్ Comptroller-General కు మాత్రం వ్యక్తిగత అమెరికన్ రాష్ట్రాల ఖాతాలతో <b>ఏ సంబంధమూ ఉండదు</b>.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">11. Parliament's Authority Over State List</div>
+<p class="eng">Even within the limited sphere that is supposedly the states' own exclusive domain, the states do not enjoy exclusive control. <b>Parliament is empowered to legislate on any State List subject</b> if the <span class="hlg">Rajya Sabha</span> passes a resolution to that effect, declaring it to be in the <b>national interest</b>. This is a significant power because it means Parliament's legislative competence can be <b>extended without amending the Constitution at all</b> — and, notably, this route is available even when there is <b>no emergency of any kind</b> in force.</p>
+<div class="te">సాధారణంగా రాష్ట్రాలకే ప్రత్యేకమైనదిగా భావించే పరిమిత పరిధిలో కూడా రాష్ట్రాలకు పూర్తి నియంత్రణ ఉండదు. <span class="hlg">రాజ్యసభ</span> ఒక అంశాన్ని <b>జాతీయ ప్రయోజనం</b> అని తీర్మానం చేస్తే, ఆ <b>State List అంశంపై పార్లమెంట్ చట్టం చేయగలదు</b>. ఇది ముఖ్యమైన అధికారం, ఎందుకంటే దీనివల్ల పార్లమెంట్ శాసన పరిధి <b>రాజ్యాంగాన్ని సవరించకుండానే విస్తరించగలదు</b> — గమనార్హం ఏమిటంటే, ఏ రకమైన <b>ఎమర్జెన్సీ లేకపోయినా</b> ఈ మార్గం అందుబాటులో ఉంటుంది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">12. Appointment of Governor</div>
+<p class="eng">The <b>Governor</b>, who is the constitutional head of a state, is <b>appointed by the President</b> — not elected by the people of the state or by the state legislature. The Governor <b>holds office during the pleasure of the President</b>, and effectively <b>acts as an agent of the Centre</b> within the state — it is through the Governor that the Centre exercises a channel of influence and control over state-level constitutional processes. The American Constitution, by contrast, provides for an <b>elected head</b> in each state (the state Governor is directly elected by that state's voters). In choosing an appointed rather than an elected Governor, India again followed the <b>Canadian system</b>.</p>
+<div class="te">రాష్ట్రానికి రాజ్యాంగపరమైన అధిపతి అయిన <b>Governor</b> ను <b>President నియమిస్తారు</b> — రాష్ట్ర ప్రజలు గానీ, రాష్ట్ర శాసనసభ గానీ ఎన్నుకోరు. Governor <b>President ఇష్టపడినంత కాలం</b> పదవిలో కొనసాగుతారు, వాస్తవానికి రాష్ట్రంలో <b>కేంద్రం ఏజెంట్‌గా వ్యవహరిస్తారు</b> — Governor ద్వారానే కేంద్రం రాష్ట్ర-స్థాయి రాజ్యాంగ ప్రక్రియలపై తన ప్రభావ మార్గాన్ని కొనసాగిస్తుంది. అమెరికన్ రాజ్యాంగం మాత్రం ప్రతి రాష్ట్రానికీ <b>ఎన్నికైన అధిపతి</b>ని ఏర్పాటు చేస్తుంది (రాష్ట్ర Governor ను ఆ రాష్ట్ర ఓటర్లే నేరుగా ఎన్నుకుంటారు). నియమిత Governor వ్యవస్థను ఎంచుకోవడంలో భారత్ మళ్లీ <b>కెనడియన్ విధానాన్నే</b> అనుసరించింది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">13. Integrated Election Machinery</div>
+<p class="eng">The <b class="term">Election Commission</b> conducts elections <b>not only to the Central legislature but also to the state legislatures</b> — one body oversees both. Yet this body is <b>constituted entirely by the President</b>, and the <b>states have no say</b> in either its constitution or the removal of its members. The US, by contrast, has <b>entirely separate machineries</b> for conducting elections at the federal level and at the state level.</p>
+<div class="te"><b class="term">Election Commission</b> కేంద్ర శాసనసభకు మాత్రమే కాక <b>రాష్ట్ర శాసనసభలకు కూడా</b> ఎన్నికలు నిర్వహిస్తుంది — ఒకే సంస్థ రెండింటినీ చూసుకుంటుంది. కానీ ఈ సంస్థను <b>President ఒక్కరే ఏర్పాటు చేస్తారు</b>, దీని ఏర్పాటులో గానీ, సభ్యుల తొలగింపులో గానీ <b>రాష్ట్రాలకు ఏ మాటా చెల్లదు</b>. USA లో మాత్రం ఫెడరల్, రాష్ట్ర స్థాయి ఎన్నికలకు <b>పూర్తిగా వేర్వేరు యంత్రాంగాలు</b> ఉంటాయి.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">14. Veto Over State Bills</div>
+<p class="eng">The Governor is empowered to <b>reserve certain types of bills</b> passed by the state legislature for the <b>consideration of the President</b>. The President can then <b>withhold assent</b> to such a bill — not just the first time it is presented, but even a <b>second time</b> after the state legislature has reconsidered and re-passed it. This means the President enjoys an <b class="imp">absolute veto</b> — not merely a suspensive one — over state bills reserved in this way. No comparable reservation power exists in the US or Australia, where the states remain fully autonomous within their own legislative fields.</p>
+<div class="te">రాష్ట్ర శాసనసభ ఆమోదించిన <b>కొన్ని రకాల బిల్లులను President పరిశీలనకు రిజర్వ్</b> చేసే అధికారం Governor కు ఉంటుంది. ఆ తర్వాత President ఆ బిల్లుకు <b>ఆమోదం నిరాకరించవచ్చు</b> — మొదటిసారి మాత్రమే కాక, రాష్ట్ర శాసనసభ మళ్లీ పరిశీలించి తిరిగి ఆమోదించిన తర్వాత <b>రెండోసారి కూడా</b>. అంటే ఇలా రిజర్వ్ చేసిన రాష్ట్ర బిల్లులపై President కు కేవలం suspensive కాదు, <b class="imp">absolute veto</b> ఉంటుంది. USA, ఆస్ట్రేలియాలో ఇలాంటి reservation అధికారం ఉండదు — అక్కడ రాష్ట్రాలు తమ శాసన పరిధిలో పూర్తి స్వతంత్రంగా ఉంటాయి.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — All 14 Unitary Features</caption>
+<thead><tr><th class="n">#</th><th>Feature</th><th>Key Point</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Strong Centre</td><td>More/bigger Union List subjects, overriding Concurrent power, residuary → Centre</td></tr>
+<tr><td class="n">2</td><td>States Not Indestructible</td><td>Parliament redraws state boundaries by simple majority</td></tr>
+<tr><td class="n">3</td><td>Single Constitution</td><td>No separate state Constitutions; only exception was J&amp;K till 2019</td></tr>
+<tr><td class="n">4</td><td>Flexibility of Constitution</td><td>Bulk amendable by Parliament alone; only Centre can initiate amendments</td></tr>
+<tr><td class="n">5</td><td>No Equality of Representation</td><td>Rajya Sabha seats by population (1 to 31), unlike US Senate's 2-per-state</td></tr>
+<tr><td class="n">6</td><td>Emergency Provisions</td><td>Federal → unitary automatically during emergency, no formal amendment needed</td></tr>
+<tr><td class="n">7</td><td>Single Citizenship</td><td>Only Indian citizenship; no separate state citizenship (like Canada)</td></tr>
+<tr><td class="n">8</td><td>Integrated Judiciary</td><td>One court hierarchy enforces both Central and state laws</td></tr>
+<tr><td class="n">9</td><td>All-India Services</td><td>IAS/IPS/IFoS — Centre recruits, trains, ultimately controls</td></tr>
+<tr><td class="n">10</td><td>Integrated Audit Machinery</td><td>CAG audits states too, but appointed by President alone</td></tr>
+<tr><td class="n">11</td><td>Parliament's Authority Over State List</td><td>Rajya Sabha "national interest" resolution — no amendment/emergency needed</td></tr>
+<tr><td class="n">12</td><td>Appointment of Governor</td><td>President-appointed, pleasure of President, acts as Centre's agent</td></tr>
+<tr><td class="n">13</td><td>Integrated Election Machinery</td><td>Single EC for Centre + states, constituted by President alone</td></tr>
+<tr><td class="n">14</td><td>Veto Over State Bills</td><td>President's absolute (not suspensive) veto on reserved state bills</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Critical Evaluation — Is India Truly Federal? Scholars' Views</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Scholars' Views on India's Federal Character</div>
+<p class="eng">Taken together, the fourteen unitary features (Pages 5-7) so clearly outweigh the seven federal ones (Pages 3-4) that the Constitution of India can fairly be said to have <b>deviated from traditional federal systems</b> like the US, Switzerland, and Australia, deliberately <b>tilting the balance of power toward the Centre</b>. This has led constitutional experts, over the decades, to characterise India's federal character in several quite different ways — some emphasising the centralisation, others emphasising that genuine federalism still survives underneath it.</p>
+<div class="te">పద్నాలుగు unitary లక్షణాలు (పేజీలు 5-7), ఏడు federal లక్షణాల (పేజీలు 3-4) కంటే ఇంత స్పష్టంగా మించి ఉండటం వల్ల — భారత రాజ్యాంగం USA, స్విట్జర్లాండ్, ఆస్ట్రేలియా వంటి సంప్రదాయ federal వ్యవస్థల నుండి <b>వైదొలగింది</b>, ఉద్దేశపూర్వకంగా అధికార సమతూకాన్ని <b>కేంద్రం వైపు మొగ్గించింది</b> అని చెప్పవచ్చు. దీనివల్లే రాజ్యాంగ నిపుణులు దశాబ్దాలుగా భారత federal స్వభావాన్ని అనేక వేర్వేరు రకాలుగా వర్ణించారు — కొందరు కేంద్రీకరణను నొక్కి చెబితే, మరికొందరు దాని కింద నిజమైన federalism ఇంకా బతికే ఉందని నొక్కి చెబుతారు.</div>
+<p class="eng"><span class="hlp">K.C. Wheare</span> described the Constitution of India as <b class="imp">"quasi-federal,"</b> remarking that the Indian Union is best understood as <b>"a unitary state with subsidiary federal features"</b> rather than the reverse — that is, in his view, unitary character is the primary reality and federal features are secondary add-ons, not the other way around. <span class="hlp">K. Santhanam</span> pointed to <b>two specific factors</b> as responsible for this unitary bias: <b>(i)</b> the Centre's dominance in the financial sphere, and the states' consequent dependence on Central grants; and <b>(ii)</b> the emergence of a powerful erstwhile <span class="hlg">Planning Commission</span>, which controlled the developmental process in the states (this body was replaced by the <span class="hlg">NITI Aayog</span> in <span class="hlg">2015</span>). Santhanam summarised his view sharply: India has <b>"practically functioned as a unitary state"</b>, even while the Union and the states have tried to function, formally and legally, as a federation.</p>
+<div class="te"><span class="hlp">కె.సి. వ్హీర్</span> భారత రాజ్యాంగాన్ని <b class="imp">"quasi-federal"</b> అని వర్ణించారు — భారత Union ను <b>"subsidiary federal లక్షణాలు గల unitary రాష్ట్రం"</b>గా చూడాలని (దీనికి రివర్స్‌గా కాదు) అభిప్రాయపడ్డారు — అంటే, unitary స్వభావమే ప్రధాన వాస్తవం, federal లక్షణాలు దానికి అనుబంధంగా వచ్చినవి మాత్రమే అని ఆయన దృష్టి. <span class="hlp">కె. సంతానం</span> ఈ unitary మొగ్గుకు <b>రెండు నిర్దిష్ట కారణాలు</b> చూపించారు — <b>(i)</b> ఆర్థిక రంగంలో కేంద్రం ఆధిపత్యం, దాని ఫలితంగా కేంద్ర గ్రాంట్లపై రాష్ట్రాల ఆధారపడటం; <b>(ii)</b> రాష్ట్రాల అభివృద్ధి ప్రక్రియను నియంత్రించిన శక్తివంతమైన పూర్వపు <span class="hlg">Planning Commission</span> ఆవిర్భావం (దీన్ని <span class="hlg">2015</span>లో <span class="hlg">NITI Aayog</span> భర్తీ చేసింది). సంతానం తన అభిప్రాయాన్ని పదునుగా చెప్పారు — Union, రాష్ట్రాలు అధికారికంగా, చట్టపరంగా federation గా పనిచేయడానికి ప్రయత్నించినా, భారత్ <b>"ఆచరణలో unitary రాష్ట్రంగానే పనిచేసింది"</b> అని.</div>
+<p class="eng">Not every scholar agrees with this centralised reading, however. <span class="hlp">Paul Appleby</span> characterised the Indian system as <b class="imp">"extremely federal."</b> <span class="hlp">Morris Jones</span> termed it a <b class="imp">"bargaining federalism."</b> <span class="hlp">Ivor Jennings</span> described it as a <b class="imp">"federation with a strong centralising tendency,"</b> observing that the Indian Constitution is <b>"mainly federal with unique safeguards"</b> for enforcing national unity and growth. <span class="hlp">Alexandrowicz</span> stated that India is a case <b class="hlb">"sui generis"</b> — unique in character, not neatly fitting any existing category. And <span class="hlp">Granville Austin</span>, an American constitutional expert, called Indian federalism <b class="imp">"cooperative federalism"</b> — his point being that although the Constitution creates a strong Central government, it has <b>not</b> made the state governments weak, and has <b>not</b> reduced them to the level of mere administrative agencies executing Central policy.</p>
+<div class="te">అయితే ప్రతి పండితుడూ ఈ కేంద్రీకృత వ్యాఖ్యానంతో ఏకీభవించరు. <span class="hlp">పాల్ ఆప్లబీ</span> భారత వ్యవస్థను <b class="imp">"extremely federal"</b> అని వర్ణించారు. <span class="hlp">మోరిస్ జోన్స్</span> దీన్ని <b class="imp">"bargaining federalism"</b> అన్నారు. <span class="hlp">ఐవర్ జెన్నింగ్స్</span> దీన్ని <b class="imp">"strong centralising tendency గల federation"</b> అని వర్ణించి, జాతీయ ఐక్యత, అభివృద్ధి కోసం <b>"ప్రత్యేక రక్షణలు గల ప్రధానంగా federal"</b> రాజ్యాంగం అని అభిప్రాయపడ్డారు. <span class="hlp">అలెగ్జాండ్రోవిజ్</span> భారత్ ఒక <b class="hlb">"sui generis"</b> కేసు అన్నారు — స్వభావంలో ప్రత్యేకం, ఇప్పటికే ఉన్న ఏ వర్గంలోనూ సరిగ్గా ఇమడనిది. అమెరికన్ రాజ్యాంగ నిపుణుడైన <span class="hlp">గ్రాన్విల్ ఆస్టిన్</span> భారత federalism ను <b class="imp">"cooperative federalism"</b> అని పిలిచారు — రాజ్యాంగం బలమైన కేంద్ర ప్రభుత్వాన్ని సృష్టించినా, రాష్ట్ర ప్రభుత్వాలను బలహీనం చేయలేదని, కేంద్ర విధానాలను అమలు చేసే కేవలం పరిపాలనా ఏజెన్సీల స్థాయికి దిగజార్చలేదని ఆయన వాదన.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Scholars' Characterisations of Indian Federalism</caption>
+<thead><tr><th class="gn2" style="width:28%">Scholar</th><th>Characterisation</th></tr></thead>
+<tbody>
+<tr><td>K.C. Wheare</td><td>"Quasi-federal" — unitary state with subsidiary federal features</td></tr>
+<tr><td>K. Santhanam</td><td>Unitary bias due to Centre's financial dominance + erstwhile Planning Commission</td></tr>
+<tr><td>Paul Appleby</td><td>"Extremely federal"</td></tr>
+<tr><td>Morris Jones</td><td>"Bargaining federalism"</td></tr>
+<tr><td>Ivor Jennings</td><td>"Federation with a strong centralising tendency"</td></tr>
+<tr><td>Alexandrowicz</td><td>"Sui generis" — unique in character</td></tr>
+<tr><td>Granville Austin</td><td>"Cooperative federalism" — strong Centre, but states not reduced to agencies</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Ambedkar's View · Bommai Case (1994) · Federalism as Compromise · Trends</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Ambedkar's Observations in the Constituent Assembly</div>
+<p class="eng"><span class="hlp">Dr. B.R. Ambedkar</span> offered his own view of the Constitution's federal nature directly in the Constituent Assembly. He held that the Constitution is a <b>Federal Constitution</b> "in as much as it establishes a dual polity" — the Union is not a loose league of states, nor are the states mere agencies of the Union deriving their powers from it; instead, <b>both</b> the Union and the states are <b>created by the Constitution</b>, and <b>both derive their respective authority from the Constitution</b> itself, not from one another. At the same time, Ambedkar was candid that India's Constitution does not fit a rigid federal mould: he observed that it <b>"avoids the tight mould of federalism"</b> and could function as <b>both unitary and federal</b>, depending on the requirements of the time and circumstances. Responding directly to criticism that the Constitution over-centralised power and reduced the states to mere municipalities, he insisted that the states are <b>"co-equal"</b> with the Centre in this matter — the Centre cannot, by its own will, alter the boundary of this constitutional partition, and neither can the judiciary.</p>
+<div class="te"><span class="hlp">డా. బి.ఆర్. అంబేద్కర్</span> రాజ్యాంగం federal స్వభావంపై తన సొంత అభిప్రాయాన్ని నేరుగా Constituent Assembly లో వ్యక్తం చేశారు. రాజ్యాంగం "dual polity ఏర్పరుస్తుంది కాబట్టి" ఇది <b>Federal Constitution</b> అని ఆయన అభిప్రాయపడ్డారు — Union అనేది రాష్ట్రాల వదులైన కూటమి కాదు, రాష్ట్రాలు కూడా Union నుండి అధికారం పొందే ఏజెన్సీలు కావు — బదులుగా, Union, రాష్ట్రాలు <b>రెండూ రాజ్యాంగం సృష్టించినవే</b>, రెండూ ఒకదాని నుండి కాకుండా <b>రాజ్యాంగం నుండే</b> తమ తమ అధికారాన్ని పొందుతాయి. అదే సమయంలో, భారత రాజ్యాంగం కఠినమైన federal అచ్చులో ఇమడదని అంబేద్కర్ నిజాయితీగా అంగీకరించారు — ఇది <b>"federalism యొక్క గట్టి అచ్చును తప్పించుకుంటుంది"</b> అని, కాలం, పరిస్థితులను బట్టి <b>unitary, federal రెండూ</b> కాగలదని ఆయన అభిప్రాయపడ్డారు. రాజ్యాంగం అధికారాన్ని అతిగా కేంద్రీకరించి రాష్ట్రాలను కేవలం మున్సిపాలిటీల స్థాయికి దిగజార్చిందన్న విమర్శకు నేరుగా జవాబిస్తూ, ఈ విషయంలో రాష్ట్రాలు కేంద్రంతో <b>"co-equal"</b> అని ఆయన స్పష్టం చేశారు — ఈ రాజ్యాంగ విభజన సరిహద్దును కేంద్రం తన ఇష్టప్రకారం మార్చజాలదు, న్యాయవ్యవస్థ కూడా మార్చజాలదు.</div>
+</div>
+<div class="para">
+<div class="stitle">S.R. Bommai vs. Union of India (1994) — Federalism as a 'Basic Feature'</div>
+<p class="eng">In the landmark <span class="hlp">S.R. Bommai</span> case (<span class="hlg">1994</span>), the Supreme Court laid down that the Constitution of India is federal, and went further to characterise <b class="imp">federalism as one of its 'basic features'</b>. The Court observed that the fact that the Constitution confers greater power on the Centre relative to the states does not mean the states are mere appendages of the Centre — the states have an <b>independent constitutional existence</b>, and are <b>not satellites or agents</b> of the Centre; within the sphere allotted to them, the states are supreme. The Court also directly addressed the unitary features covered earlier in this chapter: the fact that during an emergency (and in certain other situations) state powers are overridden or invaded by the Centre does not destroy the Constitution's essential federal feature — these situations are, in the Court's words, <b>exceptions</b>, and exceptions are not the rule. Most memorably, the Court held that federalism in the Indian Constitution is <b>"not a matter of administrative convenience"</b> but one of principle — the outcome of India's own historical process and a recognition of ground realities.</p>
+<div class="te">చారిత్రాత్మకమైన <span class="hlp">S.R. Bommai</span> కేసు (<span class="hlg">1994</span>)లో, సుప్రీంకోర్టు భారత రాజ్యాంగం federal అని తీర్పు ఇచ్చి, ఇంకా ముందుకు వెళ్లి <b class="imp">federalism ను దాని 'basic features' లో ఒకటిగా</b> ప్రకటించింది. రాజ్యాంగం రాష్ట్రాలతో పోలిస్తే కేంద్రానికి ఎక్కువ అధికారం ఇచ్చినంత మాత్రాన రాష్ట్రాలు కేంద్రానికి కేవలం అనుబంధాలు కావని కోర్టు గమనించింది — రాష్ట్రాలకు <b>స్వతంత్ర రాజ్యాంగ ఉనికి</b> ఉంటుంది, అవి కేంద్రానికి <b>ఉపగ్రహాలు లేదా ఏజెంట్లు కావు</b> — వాటికి కేటాయించిన పరిధిలో రాష్ట్రాలే సర్వోన్నతం. ఈ అధ్యాయంలో ముందు చెప్పిన unitary లక్షణాలను కూడా కోర్టు నేరుగా ప్రస్తావించింది — ఎమర్జెన్సీ సమయంలో (మరికొన్ని ప్రత్యేక సందర్భాల్లో) రాష్ట్ర అధికారాలను కేంద్రం ఓవర్‌రైడ్ చేయడం, ఆక్రమించడం రాజ్యాంగం మౌలిక federal లక్షణాన్ని నాశనం చేయదని — ఇవి కోర్టు మాటల్లో <b>మినహాయింపులే</b>, మినహాయింపులు నియమం కావు. కోర్టు అత్యంత గుర్తుండిపోయే మాట ఏమిటంటే — భారత రాజ్యాంగంలో federalism అనేది <b>"పరిపాలనా సౌలభ్యానికి సంబంధించిన విషయం కాదు"</b> — ఇది ఒక సూత్రం, భారత్ సొంత చారిత్రక ప్రక్రియ ఫలితం, నేలవాస్తవాలను గుర్తించడం.</div>
+
+</div>
+<div class="para">
+<div class="stitle">Federalism as a Compromise</div>
+<p class="eng">Pulling all of the above together, Indian federalism can be understood as a deliberate <b>compromise between two conflicting considerations</b>: <b>(i)</b> the normal division of powers, under which states genuinely enjoy autonomy within their own spheres; and <b>(ii)</b> the need for <b>national integrity</b> and a strong Union government under exceptional circumstances. Neither consideration was allowed to fully dominate the other — the Constitution's federal features protect the first, its unitary features protect the second, and the resulting document is neither a pure federation nor a pure unitary state, but a considered balance between the two.</p>
+<div class="te">పైన చెప్పినదంతా కలిపి చూస్తే, భారత federalism ను <b>రెండు పరస్పర విరుద్ధ పరిగణనల మధ్య</b> ఉద్దేశపూర్వక రాజీగా అర్థం చేసుకోవచ్చు — <b>(i)</b> సాధారణ అధికార విభజన, దీని కింద రాష్ట్రాలు తమ సొంత పరిధిలో నిజమైన స్వయంప్రతిపత్తిని అనుభవిస్తాయి; <b>(ii)</b> అసాధారణ పరిస్థితుల్లో <b>జాతీయ సమగ్రత</b>, బలమైన Union ప్రభుత్వం అవసరం. ఈ రెండింటిలో ఏదీ మరొకదాన్ని పూర్తిగా అణచివేయకుండా చూశారు — రాజ్యాంగంలోని federal లక్షణాలు మొదటిదాన్ని, unitary లక్షణాలు రెండోదాన్ని కాపాడతాయి — ఫలితంగా వచ్చిన డాక్యుమెంట్ పూర్తి federation కాదు, పూర్తి unitary రాష్ట్రం కాదు, రెండింటి మధ్య ఆలోచనాత్మక సమతూకం.</div>
+</div>
+<div class="para">
+<div class="stitle">Trends Reflecting India's Federal Spirit — 7 Points</div>
+<p class="eng">Despite the heavy unitary tilt, Laxmikanth points to several ongoing trends in the actual working of the Indian political system that reflect a genuine, living federal spirit — evidence that the states are not passive subordinates but active political players asserting their own space within the union.</p>
+<div class="te">unitary వైపు గట్టిగా మొగ్గు ఉన్నప్పటికీ, భారత రాజకీయ వ్యవస్థ వాస్తవ పనితీరులో నిజమైన, సజీవమైన federal స్ఫూర్తిని ప్రతిబింబించే కొన్ని కొనసాగుతున్న ధోరణులను లక్ష్మీకాంత్ చూపిస్తారు — రాష్ట్రాలు నిష్క్రియ అధీనులు కాదని, Union లో తమ సొంత స్థానాన్ని చురుకుగా నొక్కిచెప్పే రాజకీయ ఆటగాళ్లని దీనికి నిదర్శనం.</div>
+<table>
+<caption>Trends Reflecting the Federal Spirit</caption>
+<thead><tr><th class="n">#</th><th>Trend</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td class="n">i</td><td>Territorial disputes between states</td><td>Maharashtra–Karnataka over Belgaum</td></tr>
+<tr><td class="n">ii</td><td>River-water sharing disputes between states</td><td>Karnataka–Tamil Nadu over Cauvery water</td></tr>
+<tr><td class="n">iii</td><td>Emergence of regional parties, coming to power in states</td><td>Andhra Pradesh, Tamil Nadu, etc.</td></tr>
+<tr><td class="n">iv</td><td>Creation of new states to fulfil regional aspirations</td><td>Mizoram, Jharkhand, Telangana</td></tr>
+<tr><td class="n">v</td><td>States demanding more financial grants from the Centre</td><td>For meeting developmental needs</td></tr>
+<tr><td class="n">vi</td><td>States asserting autonomy, resisting Central interference</td><td>—</td></tr>
+<tr><td class="n">vii</td><td>Supreme Court imposing procedural limitations on Central use of <span class="hlg">Article 356</span></td><td>President's Rule in the states</td></tr>
+</tbody>
+</table>
+<div class="te">ఏడు ధోరణులు — (i) రాష్ట్రాల మధ్య భూభాగ వివాదాలు (మహారాష్ట్ర-కర్ణాటక బెల్గాం); (ii) నదీ జల వివాదాలు (కర్ణాటక-తమిళనాడు కావేరి); (iii) ప్రాంతీయ పార్టీలు ఏర్పడి రాష్ట్రాల్లో అధికారంలోకి రావడం (ఆంధ్రప్రదేశ్, తమిళనాడు వంటివి); (iv) ప్రాంతీయ ఆకాంక్షలను నెరవేర్చడానికి కొత్త రాష్ట్రాల ఏర్పాటు (మిజోరం, జార్ఖండ్, తెలంగాణ); (v) అభివృద్ధి అవసరాల కోసం రాష్ట్రాలు కేంద్రం నుండి ఎక్కువ ఆర్థిక గ్రాంట్లు కోరడం; (vi) రాష్ట్రాలు స్వయంప్రతిపత్తిని నొక్కిచెప్పి, కేంద్రం జోక్యాన్ని ప్రతిఘటించడం; (vii) <span class="hlg">Art. 356</span> (President's Rule) వాడకంపై సుప్రీంకోర్టు అనేక procedural పరిమితులు విధించడం (ఇదే Bommai కేసుకు దారితీసింది).</div>
+</div>
+<div class="para">
+<table class="qs">
+<caption class="qs">Quick Summary — Ambedkar, Bommai, Compromise &amp; Federal-Spirit Trends</caption>
+<thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Ambedkar's core claim about the Constitution's federal nature?</td><td>Federal because it establishes a dual polity — both Union and states are created by, and derive authority from, the Constitution</td></tr>
+<tr><td>What did Bommai (1994) hold?</td><td>Federalism is a "basic feature" of the Constitution; states have independent constitutional existence, not mere agents of the Centre</td></tr>
+<tr><td>Why is federalism a "basic feature" even though state boundaries can be redrawn easily?</td><td>Basic structure protects the federal <i>principle</i> (independent, co-equal Centre and states), not every adjustable mechanical detail</td></tr>
+<tr><td>Indian federalism as a compromise — between what?</td><td>State autonomy within their own sphere vs national integrity/strong Union under exceptional circumstances</td></tr>
+<tr><td>One trend showing genuine federal spirit today?</td><td>SC's procedural limitations on the Centre's use of Art. 356 (President's Rule)</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="divider"><span class="dtitle">Ch.15 — Centre-State Relations</span><span class="dpart">Part II &middot; Complete Edition</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

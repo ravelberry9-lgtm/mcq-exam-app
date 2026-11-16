@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>6.9.1 · GBK and Laxmikanth</title>
+<style>
+body { margin:0; background:#f7f3ef; color:#241b20; font:16px system-ui,sans-serif; }
+header { padding:.7rem 1rem; }
+h1 { font-size:1.15rem; margin:0 0 .65rem; }
+nav { display:flex; flex-wrap:wrap; gap:.5rem; }
+button { padding:.55rem .8rem; border:1px solid #861944; border-radius:.35rem; background:#fff; color:#861944; font:inherit; cursor:pointer; }
+button[aria-pressed="true"] { background:#861944; color:#fff; }
+iframe { display:block; border:0; width:100%; height:calc(100dvh - 7rem); min-height:300px; }
+iframe[hidden] { display:none; }
+</style>
+</head>
+<body>
+<header>
+<p><a href="/learn/polity/g2/master-index">Master index · Units 6–10 / పూర్తి సూచిక</a></p>
+<h1>6.9.1 · Union and territory of India</h1>
+<p>GBK Chapter 7 · printed pages 66–78 · first transcription under review</p>
+<p><a href="./practice">Page-wise MCQs</a> · <a href="./Chapter-Test.html">Whole-chapter test / అధ్యాయ పరీక్ష</a> · <a href="./Chapter-Test-Answers.html">Answers / సమాధానాలు</a></p>
+<nav aria-label="Reading tabs">
+<button aria-controls="gbk" aria-pressed="true" type="button">GBK తెలుగు</button>
+<button aria-controls="laxmikanth" aria-pressed="false" type="button">Laxmikanth English / తెలుగు</button>
+</nav>
+</header>
+<iframe id="gbk" src="./Notes.html" title="GBK Telugu transcription"></iframe>
+<iframe hidden="" id="laxmikanth" src="./Laxmikanth.html" title="Laxmikanth bilingual companion"></iframe>
+<script>
+const buttons = document.querySelectorAll('button[aria-controls]');
+for (const button of buttons) {
+  button.addEventListener('click', () => {
+    for (const item of buttons) {
+      const selected = item === button;
+      item.setAttribute('aria-pressed', String(selected));
+      document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+    }
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "chapter": "7.5.1",
+  "review_date": "2026-11-09",
+  "scope": {
+    "chapter_questions": 10,
+    "original_preserved_pagewise": 3,
+    "original_whole_chapter": 7,
+    "verified_pyqs": 0
+  },
+  "checks": {
+    "english_telugu_stem_alignment": "passed",
+    "four_option_alignment_and_order": "passed",
+    "answer_range_and_key_consistency": "passed",
+    "terminology": "passed; judicial review, constitutional supremacy, federal equilibrium, legislative competence, basic structure and Ninth Schedule aligned",
+    "question_specific_explanations": "passed; all 10 IDs resolve",
+    "source_fact_coverage": "passed; all 10 fact IDs resolve",
+    "constitutional_precision": "passed; Article 13, Articles 32 and 226, three review categories, three principal grounds, basic-structure review and the Waman Rao cutoff are accurately distinguished",
+    "time_sensitive_data": "passed; 2025 assent-reference update, office-holders, current counts and dated case-status claims excluded",
+    "pyq_integrity": "passed; APPSC-G2-2025-C-078 remains under its canonical Unit 6 borrowed-feature fact"
+  },
+  "duplicate_audit": {
+    "inventory_compared": 1166,
+    "fields": [
+      "id",
+      "question_en exact normalized",
+      "question_te exact normalized"
+    ],
+    "collisions": 0,
+    "parse_failures": 0,
+    "scope_note": "Pending comparison with every parseable Questions.json outside 7.5.1 under content/polity/g2."
+  },
+  "locked_source_policy": {
+    "preserved_pages": "297-299",
+    "passes_each": 3,
+    "reopened_after_lock": false
+  },
+  "interface_review": {
+    "status": "deferred to milestone per user instruction"
+  },
+  "result": "passed_content_gate_pending_milestone_interface_review"
+}

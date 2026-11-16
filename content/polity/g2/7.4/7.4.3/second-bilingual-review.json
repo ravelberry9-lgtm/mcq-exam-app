@@ -1,0 +1,42 @@
+{
+  "chapter": "7.4.3",
+  "review_date": "2026-11-09",
+  "scope": {
+    "chapter_questions": 10,
+    "original_pagewise": 4,
+    "original_whole_chapter": 6,
+    "verified_pyqs": 0
+  },
+  "checks": {
+    "english_telugu_stem_alignment": "passed",
+    "four_option_alignment_and_order": "passed",
+    "answer_range_and_key_consistency": "passed",
+    "terminology": "passed; district judge, judicial service, subordinate-court control, magistrate classes and All India Judicial Service aligned",
+    "question_specific_explanations": "passed; all 10 IDs resolve",
+    "source_fact_coverage": "passed",
+    "constitutional_precision": "passed; Article 233 High Court consultation is distinguished from Article 234 dual consultation, Article 235 control and Article 236 definitions are preserved, Article 237 public-notification power is retained, and Article 312(3) floor is exact",
+    "time_sensitive_data": "passed; current judicial developments, AIJS implementation status, state-specific labels and unverified statutory limits excluded",
+    "pyq_integrity": "passed; no direct verified local PYQ found"
+  },
+  "duplicate_audit": {
+    "inventory_compared": 1127,
+    "fields": [
+      "id",
+      "question_en exact normalized",
+      "question_te exact normalized"
+    ],
+    "collisions": 0,
+    "parse_failures": 0,
+    "scope_note": "Compared with every parseable Questions.json outside 7.4.3 under content/polity/g2."
+  },
+  "locked_source_policy": {
+    "pages": "323-326",
+    "page_count": 4,
+    "passes_each": 3,
+    "reopened_after_lock": false
+  },
+  "interface_review": {
+    "status": "deferred to milestone per user instruction"
+  },
+  "result": "passed_content_gate_pending_milestone_interface_review"
+}

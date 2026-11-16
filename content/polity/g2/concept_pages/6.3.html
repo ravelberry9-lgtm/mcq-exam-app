@@ -1,0 +1,253 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+    background: #eef2f7;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px;
+    background: #fff;
+    padding: 13mm 12mm 11mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+    color: #fff;
+    border-radius: 9px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .hbadge {
+    background: rgba(255,255,255,0.2);
+    border-radius: 7px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .htitle h1 { font-size: 18px; font-weight: 700; }
+  .htitle h2 { font-size: 13.5px; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+  .hmeta { margin-left: auto; text-align: right; font-size: 13px; opacity: 0.8; line-height: 1.7; }
+
+  /* SECTION HEADING */
+  .sh {
+    font-size: 14px;
+    font-weight: 700;
+    color: #283593;
+    background: #e8eaf6;
+    border-left: 5px solid #5c6bc0;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 11px 0 7px;
+    letter-spacing: 0.3px;
+  }
+
+  /* GRIDS */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+
+  /* CARD */
+  .card {
+    background: #f5f7ff;
+    border: 1.5px solid #c5cae9;
+    border-radius: 7px;
+    padding: 8px 10px;
+  }
+  .ch {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1a237e;
+    border-bottom: 1px solid #c5cae9;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
+  }
+
+  /* FACT ROWS */
+  .fact { margin: 3px 0; font-size: 14.5px; }
+  .fact::before { content: "• "; color: #5c6bc0; font-weight: 700; }
+  .k { font-weight: 700; color: #1a237e; }
+  .kg { font-weight: 700; color: #1b5e20; }
+  .kt { font-weight: 700; color: #004d40; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    background: #3949ab;
+    color: #fff;
+    padding: 5px 7px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td { padding: 4px 7px; border-bottom: 1px solid #e8eaf6; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) td { background: #f0f2ff; }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .tg { background: #e8f5e9; color: #1b5e20; }
+  .tb { background: #e3f2fd; color: #0d47a1; }
+  .tp { background: #ede7f6; color: #4527a0; }
+  .tt { background: #e0f7fa; color: #00695c; }
+
+  /* PILLS */
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .pill {
+    background: #3949ab;
+    color: #fff;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .pg { background: #2e7d32; }
+  .pt { background: #00695c; }
+  .pp { background: #4527a0; }
+
+  /* SOURCE GRID */
+  .sgrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
+  .sitem {
+    background: #e8eaf6;
+    border: 1.5px solid #9fa8da;
+    border-radius: 6px;
+    padding: 5px 6px;
+    text-align: center;
+  }
+  .sc { font-size: 13px; font-weight: 700; color: #283593; }
+  .sv { font-size: 12.5px; color: #37474f; margin-top: 2px; line-height: 1.35; }
+
+  /* TIMELINE */
+  .tl { padding-left: 18px; }
+  .tli { position: relative; padding: 3px 0 3px 12px; }
+  .tli::before {
+    content: '';
+    position: absolute;
+    left: -1px; top: 8px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: #5c6bc0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1.5px #5c6bc0;
+  }
+  .tli::after {
+    content: '';
+    position: absolute;
+    left: 3px; top: 17px;
+    width: 2px;
+    height: calc(100% - 8px);
+    background: #c5cae9;
+  }
+  .tli:last-child::after { display: none; }
+  .ty { font-weight: 700; color: #283593; font-size: 14.5px; }
+  .tx { font-size: 14px; color: #333; }
+
+  .footer {
+    border-top: 1.5px solid #c5cae9;
+    margin-top: 10px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
+</style><div class="oldpart">
+<!-- ════════════════ PAGE 1 ════════════════ -->
+<div class="page">
+<div class="header">
+<div class="hbadge">Concept cards</div>
+<div class="htitle">
+<h1>Preamble — రాజ్యాంగ ప్రస్తావన</h1>
+<h2>Indian Polity · Lakshmikanth · APPSC Group 2</h2>
+</div>
+
+</div>
+<div class="sh">4.1 ప్రస్తావన పాఠం — Key Words</div>
+<div class="preamble-box">
+<div style="margin-bottom:5px; opacity:0.8;">మేము, భారత ప్రజలు, భారత్‌ను ఒక — WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India into a —</div>
+<div class="pw">SOVEREIGN   SOCIALIST   SECULAR   DEMOCRATIC   REPUBLIC</div>
+<div style="margin-top:5px; opacity:0.8;">మరియు పౌరులందరికీ నిర్ధారించడానికి — and to secure to all its citizens — JUSTICE · LIBERTY · EQUALITY · FRATERNITY</div>
+</div>
+<div class="g2" style="margin-top:6px;">
+<div class="card ncard" id="CC-6.3-01"><div class="ch">ప్రస్తావన నేపథ్యం · Background of the Preamble</div><div class="secl">Background of the Preamble</div><div class="fact"><span lang="te">రాజ్యాంగానికి ముందుమాటగా ప్రస్తావన పెట్టే ఆలోచన మొదట అమెరికా రాజ్యాంగం ("We the People...") నుంచి వచ్చింది.</span><br/><em class="en" lang="en">The idea of a Preamble was pioneered by the American Constitution ("We the People...").</em></div><div class="fact"><span lang="te">నెహ్రూ రూపొందించి 13 డిసెంబర్ 1946 న ప్రవేశపెట్టిన లక్ష్యాల తీర్మానం (Objectives Resolution) మీదే ప్రస్తావన ఆధారపడింది.</span><br/><em class="en" lang="en">Based on the Objectives Resolution drafted and moved by Nehru on 13 December 1946.</em></div><div class="fact"><span lang="te">ఈ తీర్మానాన్ని రాజ్యాంగ సభ 22 జనవరి 1947 న ఆమోదించింది.</span><br/><em class="en" lang="en">The Constituent Assembly adopted the Objectives Resolution on 22 January 1947.</em></div><div class="fact"><span lang="te">ఎన్.ఎ. పాల్కీవాలా ప్రస్తావనను "రాజ్యాంగపు గుర్తింపు కార్డు" (identity card) అన్నారు.</span><br/><em class="en" lang="en">N.A. Palkhivala called the Preamble the "identity card of the Constitution".</em></div><div class="fact"><span lang="te">మిగతా రాజ్యాంగం అంతా ఆమోదించిన తర్వాతే, దానికి సరిపోయేలా ప్రస్తావనను చివరగా ఆమోదించారు.</span><br/><em class="en" lang="en">The Preamble was enacted last, after the rest of the Constitution, so that it conformed to the adopted text.</em></div><div class="fact"><span lang="te">ప్రస్తావనను ఇప్పటివరకు ఒక్కసారే సవరించారు — 42వ సవరణ చట్టం, 1976.</span><br/><em class="en" lang="en">Amended only once: 42nd Amendment Act, 1976.</em> <em class="asof">as of 2026-11-09</em></div></div><div class="card ncard" id="CC-6.3-02"><div class="ch">ప్రస్తావన పాఠం, తేదీ, నాలుగు అంశాలు · Text, date and four ingredients</div><div class="secl">Text of the Preamble; Ingredients of the Preamble</div><div class="fact"><span lang="te">ప్రస్తావనలోనే ఆమోద తేదీ ఉంది — 26 నవంబర్ 1949.</span><br/><em class="en" lang="en">Adopted on 26 November 1949 ("this twenty-sixth day of November, 1949").</em></div><div class="fact"><span lang="te">అధికార మూలం: "భారత ప్రజలమైన మేము" — అంటే రాజ్యాంగానికి అధికారం ప్రజల నుంచే వస్తుంది.</span><br/><em class="en" lang="en">Source of authority: "We, the People of India" - the people.</em></div><div class="fact"><span lang="te">రాజ్య స్వభావం: సార్వభౌమ, సామ్యవాద, లౌకిక, ప్రజాస్వామ్య, గణతంత్ర — ఇదే వరుసలో.</span><br/><em class="en" lang="en">Nature of the State: Sovereign, Socialist, Secular, Democratic, Republic (in this order).</em></div><div class="fact"><span lang="te">లక్ష్యాలు: న్యాయం, స్వేచ్ఛ, సమానత్వం, సౌభ్రాతృత్వం — ఇదే వరుసలో.</span><br/><em class="en" lang="en">Objectives: Justice, Liberty, Equality, Fraternity (in this order).</em></div><div class="fact"><span lang="te">ప్రస్తావనలో "Federal" అనే పదం లేదు; "Freedom" అని కాదు, "Liberty" అనే పదం ఉంది.</span><br/><em class="en" lang="en">The words "Federal" and "Freedom" do not appear in the Preamble; it says "Liberty".</em></div><div class="fact"><span lang="te">26 నవంబర్‌ను రాజ్యాంగ దినోత్సవం (సంవిధాన్ దివస్)గా జరుపుకోవాలని కేంద్ర సామాజిక న్యాయ, సాధికారత మంత్రిత్వ శాఖ 19 నవంబర్ 2015 న గెజిట్‌లో ప్రకటించింది. అప్పటి నుంచి ప్రతి సంవత్సరం ఈ రోజును జరుపుకుంటున్నాం.</span><br/><em class="en" lang="en">Constitution Day (Samvidhan Divas), 26 November: notified by the Ministry of Social Justice and Empowerment in the Gazette on 19 November 2015, and observed every year since 2015.</em></div></div>
+<div class="card ncard" id="CC-6.3-13"><div class="ch">ప్రాముఖ్యత: ప్రముఖుల వర్ణనలు · Significance: famous descriptions</div><div class="secl">Significance of the Preamble</div><div class="fact"><span lang="te">అల్లాడి కృష్ణస్వామి అయ్యర్: "మనం ఇన్నాళ్లూ ఆలోచించినదాన్ని, కలగన్నదాన్ని ఇది వ్యక్తం చేస్తుంది".</span><br/><em class="en" lang="en">Alladi Krishnaswami Iyer: "expresses what we had thought or dreamt so long".</em></div><div class="fact"><span lang="te">కె.ఎం. మున్షీ: "మన సార్వభౌమ ప్రజాస్వామ్య గణతంత్రపు జాతకచక్రం".</span><br/><em class="en" lang="en">K.M. Munshi: "horoscope of our sovereign democratic republic".</em></div><div class="fact"><span lang="te">ఠాకూర్ దాస్ భార్గవ: రాజ్యాంగంలో "అత్యంత విలువైన భాగం", దాని "ఆత్మ", "తాళంచెవి", "రత్నం".</span><br/><em class="en" lang="en">Thakur Das Bhargava: "most precious part", its "soul", "key", "jewel".</em></div><div class="fact"><span lang="te">ఎర్నెస్ట్ బార్కర్: రాజ్యాంగానికి "కీ-నోట్" (మూల స్వరం); తన పుస్తకం Principles of Social and Political Theory (1951) మొదట్లో ఉదహరించారు.</span><br/><em class="en" lang="en">Ernest Barker: "key-note" to the Constitution; quoted it in Principles of Social and Political Theory (1951).</em></div><div class="fact"><span lang="te">ఎం. హిదయతుల్లా: "మన రాజ్యాంగ ఆత్మ"; అమెరికా స్వాతంత్ర్య ప్రకటన లాంటిదే, కానీ అంతకంటే ఎక్కువ.</span><br/><em class="en" lang="en">M. Hidayatullah: "soul of our Constitution"; like the US Declaration of Independence, but more.</em></div><div class="fact"><span lang="te">ఎన్.ఎ. పాల్కీవాలా: "రాజ్యాంగపు గుర్తింపు కార్డు".</span><br/><em class="en" lang="en">N.A. Palkhivala: "identity card of the Constitution".</em></div><div class="fact"><span lang="te">గమనిక: గ్రాన్‌విల్ ఆస్టిన్ "రాజ్యాంగ అంతరాత్మ" అన్నది ప్రాథమిక హక్కులు, ఆదేశిక సూత్రాలను — ప్రస్తావనను కాదు.</span><br/><em class="en" lang="en">Note: Granville Austin's "conscience of the Constitution" refers to FRs and DPSPs, not the Preamble.</em></div></div>
+</div>
+<div class="sh">4.2 &amp; 4.3 — SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC</div>
+<div class="card ncard" id="CC-6.3-03"><div class="ch">42వ సవరణ ప్రస్తావనలో చేసిన మార్పులు · 42nd Amendment changes to the Preamble</div><div class="secl">Background of the Preamble; Amendability of the Preamble</div><div class="fact"><span lang="te">1949 అసలు పాఠంలో "సార్వభౌమ ప్రజాస్వామ్య గణతంత్రం" అని మాత్రమే ఉంది.</span><br/><em class="en" lang="en">Original 1949 text: "Sovereign Democratic Republic".</em></div><div class="fact"><span lang="te">42వ సవరణ చట్టం, 1976 మూడు పదాలు చేర్చింది: సామ్యవాద (Socialist), లౌకిక (Secular), సమగ్రత (Integrity).</span><br/><em class="en" lang="en">42nd Amendment Act, 1976 added three words: Socialist, Secular, Integrity.</em></div><div class="fact"><span lang="te">"దేశ ఐక్యత" అన్నది "దేశ ఐక్యత మరియు సమగ్రత" గా మారింది.</span><br/><em class="en" lang="en">"Unity of the Nation" became "unity and integrity of the Nation".</em></div><div class="fact"><span lang="te">చట్టం సంవత్సరం 1976 అయినా, ప్రస్తావనలో మార్పులు 3 జనవరి 1977 నుంచి అమల్లోకి వచ్చాయి.</span><br/><em class="en" lang="en">The Preamble changes took effect on 3 January 1977 (Act year 1976).</em></div><div class="fact"><span lang="te">సార్వభౌమ, ప్రజాస్వామ్య, గణతంత్ర, "వ్యక్తి గౌరవం" — ఇవి మొదటి నుంచీ ఉన్నవే, సవరణతో వచ్చినవి కావు.</span><br/><em class="en" lang="en">Sovereign, Democratic, Republic and "dignity of the individual" were in the original text.</em></div><div class="fact"><span lang="te">ఈ సవరణ చెల్లుబాటు అవుతుందని తీర్పు వచ్చింది.</span><br/><em class="en" lang="en">This amendment was held valid.</em></div></div><div class="card ncard" id="CC-6.3-04"><div class="ch">సార్వభౌమ · Sovereign</div><div class="secl">Key Words — 1. Sovereign</div><div class="fact"><span lang="te">భారత్ ఏ దేశానికీ అధీనం కాదు, డొమినియన్ కూడా కాదు — దానిపై ఏ బాహ్య అధికారం లేదు.</span><br/><em class="en" lang="en">India is neither a dependency nor a dominion of any nation; no authority is above it.</em></div><div class="fact"><span lang="te">అంతర్గత, బాహ్య వ్యవహారాలను స్వతంత్రంగా నడుపుకుంటుంది (స్వతంత్ర విదేశాంగ విధానం).</span><br/><em class="en" lang="en">Free to conduct both internal and external affairs (independent foreign policy).</em></div><div class="fact"><span lang="te">1949 లో కామన్వెల్త్ సభ్యత్వం కొనసాగింపు రాజ్యాంగేతర, స్వచ్ఛంద ప్రకటన మాత్రమే — సార్వభౌమత్వానికి భంగం లేదు.</span><br/><em class="en" lang="en">Commonwealth membership (1949) is an extra-constitutional, voluntary declaration; it does not affect sovereignty.</em></div><div class="fact"><span lang="te">ఐక్యరాజ్యసమితి సభ్యత్వం కూడా సార్వభౌమత్వాన్ని తగ్గించదు.</span><br/><em class="en" lang="en">UN membership also places no limit on sovereignty.</em></div><div class="fact"><span lang="te">సార్వభౌమ దేశంగా భారత్ విదేశీ భూభాగాన్ని పొందగలదు, తన భూభాగాన్ని వేరే దేశానికి ఇవ్వగలదు.</span><br/><em class="en" lang="en">India can acquire foreign territory or cede its own territory to a foreign state.</em></div><div class="fact"><span lang="te">ఈ పదం 1949 అసలు ప్రస్తావనలోనే ఉంది.</span><br/><em class="en" lang="en">Present in the original 1949 Preamble.</em></div></div><div class="card ncard" id="CC-6.3-05"><div class="ch">సామ్యవాద · Socialist</div><div class="secl">Key Words — 2. Socialist</div><div class="fact"><span lang="te">42వ సవరణ (1976) చేర్చింది; అంతకుముందే ఆదేశిక సూత్రాల్లో ఈ భావం అంతర్లీనంగా ఉంది — ఇప్పుడు స్పష్టంగా చెప్పారు.</span><br/><em class="en" lang="en">Added by the 42nd Amendment, 1976; socialist content was already implicit in the DPSPs.</em></div><div class="fact"><span lang="te">కాంగ్రెస్ అవడి సమావేశం (1955) "సామ్యవాద తరహా సమాజం" లక్ష్యంగా తీర్మానం చేసింది.</span><br/><em class="en" lang="en">Congress Avadi session (1955) resolved for a "socialistic pattern of society".</em></div><div class="fact"><span lang="te">భారత్ ది ప్రజాస్వామ్య సామ్యవాదం — ప్రభుత్వ, ప్రైవేటు రంగాలు రెండూ కలిసి ఉండే మిశ్రమ ఆర్థిక వ్యవస్థ.</span><br/><em class="en" lang="en">Democratic socialism - a mixed economy where public and private sectors co-exist.</em></div><div class="fact"><span lang="te">అన్ని ఉత్పత్తి సాధనాలను జాతీయం చేసి ప్రైవేటు ఆస్తిని రద్దు చేసే కమ్యూనిస్ట్ (రాజ్య) సామ్యవాదం కాదు (ఉదా: USSR).</span><br/><em class="en" lang="en">Not communistic (state) socialism, which nationalises all means of production and abolishes private property (e.g. USSR).</em></div><div class="fact"><span lang="te">పేదరికం, అజ్ఞానం, వ్యాధి, అవకాశాల అసమానతలను తొలగించడమే దీని లక్ష్యం అని సుప్రీంకోర్టు చెప్పింది.</span><br/><em class="en" lang="en">Aims to end poverty, ignorance, disease and inequality of opportunity (SC).</em></div><div class="fact"><span lang="te">మార్క్సిజం, గాంధీయిజం కలయిక — ఎక్కువగా గాంధేయ సామ్యవాదం వైపు మొగ్గు.</span><br/><em class="en" lang="en">A blend of Marxism and Gandhism, leaning towards Gandhian socialism.</em></div><div class="fact"><span lang="te">1991 నూతన ఆర్థిక విధానం (సరళీకరణ, ప్రైవేటీకరణ, ప్రపంచీకరణ) సామ్యవాద లక్షణాలను కొంత తగ్గించింది.</span><br/><em class="en" lang="en">New Economic Policy, 1991 (LPG) diluted India's socialist credentials.</em></div></div><div class="card ncard" id="CC-6.3-06"><div class="ch">లౌకిక · Secular</div><div class="secl">Key Words — 3. Secular</div><div class="fact"><span lang="te">42వ సవరణ (1976) ద్వారా చేర్చారు.</span><br/><em class="en" lang="en">Added by the 42nd Amendment, 1976.</em></div><div class="fact"><span lang="te">"లౌకిక రాజ్యం" అనే మాట లేకపోయినా, రాజ్యాంగ నిర్మాతల ఉద్దేశం లౌకిక రాజ్యమే అని సుప్రీంకోర్టు 1974 లో చెప్పింది.</span><br/><em class="en" lang="en">SC (1974): though the words "secular state" were absent, the makers clearly intended a secular state.</em></div><div class="fact"><span lang="te">దీనికి రుజువు: మత స్వేచ్ఛ ఇచ్చే ప్రకరణలు 25-28 మొదటి నుంచీ రాజ్యాంగంలో ఉన్నాయి.</span><br/><em class="en" lang="en">Proof: Articles 25-28 (freedom of religion) were in the Constitution from the beginning.</em></div><div class="fact"><span lang="te">సానుకూల లౌకికవాదం: రాజ్యానికి అధికారిక మతం లేదు, అన్ని మతాలకూ సమాన హోదా, సమాన మద్దతు.</span><br/><em class="en" lang="en">Positive secularism: all religions get equal status and support from the State; no State religion.</em></div><div class="fact"><span lang="te">పోలిక: UK లో అధికారిక చర్చి (Church of England) ఉంది; భారత్ లో అలా లేదు.</span><br/><em class="en" lang="en">Contrast: UK has an established church (Church of England).</em></div><div class="fact"><span lang="te">ఎస్.ఆర్. బొమ్మై కేసు (1994): లౌకికవాదం రాజ్యాంగ మౌలిక లక్షణం.</span><br/><em class="en" lang="en">S.R. Bommai (1994): secularism is a basic feature of the Constitution.</em></div></div><div class="card ncard" id="CC-6.3-07"><div class="ch">ప్రజాస్వామ్య · Democratic</div><div class="secl">Key Words — 4. Democratic</div><div class="fact"><span lang="te">ప్రజా సార్వభౌమత్వం మీద ఆధారపడింది — అత్యున్నత అధికారం ప్రజలదే.</span><br/><em class="en" lang="en">Based on popular sovereignty - supreme power rests with the people.</em></div><div class="fact"><span lang="te">ప్రత్యక్ష ప్రజాస్వామ్యం (ఉదా: స్విట్జర్లాండ్) సాధనాలు: రిఫరెండం, ఇనిషియేటివ్, రీకాల్, ప్లెబిసైట్.</span><br/><em class="en" lang="en">Direct democracy (e.g. Switzerland) devices: Referendum, Initiative, Recall, Plebiscite.</em></div><div class="fact"><span lang="te">భారత్ లో ప్రాతినిధ్య పార్లమెంటరీ ప్రజాస్వామ్యం — కార్యనిర్వాహక వర్గం శాసనసభకు జవాబుదారీ.</span><br/><em class="en" lang="en">India: representative parliamentary democracy - executive responsible to legislature.</em></div><div class="fact"><span lang="te">లక్షణాలు: సార్వజనీన వయోజన ఓటుహక్కు, నిర్ణీత కాల ఎన్నికలు, చట్టబద్ధ పాలన, స్వతంత్ర న్యాయవ్యవస్థ, వివక్ష లేకపోవడం.</span><br/><em class="en" lang="en">Marks: universal adult franchise, periodic elections, rule of law, independent judiciary, non-discrimination.</em></div><div class="fact"><span lang="te">ఇక్కడ "ప్రజాస్వామ్యం" విస్తృత అర్థంలో — రాజకీయమే కాక సామాజిక, ఆర్థిక ప్రజాస్వామ్యం కూడా.</span><br/><em class="en" lang="en">Used in a broad sense: political plus social and economic democracy.</em></div><div class="fact"><span lang="te">అంబేద్కర్ (25 నవంబర్ 1949): సామాజిక ప్రజాస్వామ్యం పునాది లేకపోతే రాజకీయ ప్రజాస్వామ్యం నిలవదు; స్వేచ్ఛ-సమానత్వం-సౌభ్రాతృత్వం విడదీయలేని "త్రిమూర్తుల ఐక్యత".</span><br/><em class="en" lang="en">Ambedkar (25 Nov 1949): political democracy cannot last without social democracy; liberty-equality-fraternity a "union of trinity".</em></div></div><div class="card ncard" id="CC-6.3-08"><div class="ch">గణతంత్ర · Republic</div><div class="secl">Key Words — 5. Republic</div><div class="fact"><span lang="te">రాచరికంలో అధిపతి వంశపారంపర్యంగా వస్తారు (ఉదా: బ్రిటన్); గణతంత్రంలో నిర్ణీత కాలానికి ఎన్నికవుతారు (ఉదా: అమెరికా).</span><br/><em class="en" lang="en">Monarchy: hereditary head (e.g. Britain). Republic: elected head for a fixed period (e.g. USA).</em></div><div class="fact"><span lang="te">భారత అధిపతి రాష్ట్రపతి — పరోక్షంగా, ఐదేళ్ల నిర్ణీత కాలానికి ఎన్నికవుతారు.</span><br/><em class="en" lang="en">India's head, the President, is elected indirectly for a fixed term of five years.</em></div><div class="fact"><span lang="te">రాజకీయ సార్వభౌమత్వం రాజు లాంటి ఒక వ్యక్తిలో కాదు, ప్రజల్లో ఉంటుంది.</span><br/><em class="en" lang="en">Political sovereignty is vested in the people, not in one individual like a king.</em></div><div class="fact"><span lang="te">ప్రత్యేక వర్గం ఉండదు; అన్ని ప్రభుత్వ పదవులు వివక్ష లేకుండా ప్రతి పౌరుడికీ అందుబాటులో ఉంటాయి.</span><br/><em class="en" lang="en">No privileged class; all public offices open to every citizen without discrimination.</em></div><div class="fact"><span lang="te">గణతంత్రం అంటే ప్రతి పదవీ ఎన్నికతోనే రావాలని కాదు — చాలా పదవులు నియామకంతో వస్తాయి.</span><br/><em class="en" lang="en">A republic does not require every public office to be elected (many are appointed).</em></div><div class="fact"><span lang="te">"గణతంత్ర" అనే పదం 1949 నాటి అసలు ప్రస్తావనలోనే ఉంది. రాజ్యాంగ ఆధారాల పట్టికల్లో (లక్ష్మీకాంత్ అధ్యాయం 4, పట్టిక 4.4; GBK పేజీ 55) ఈ పదాన్ని ఫ్రెంచ్ రాజ్యాంగం నుంచి తీసుకున్నట్టు చూపిస్తారు. పరీక్షలో అడిగితే ఫ్రాన్స్ అనే జవాబు.</span><br/><em class="en" lang="en">"Republic" was in the original 1949 Preamble. The sources-of-the-Constitution tables (Laxmikanth Ch.4, Table 4.4; GBK p55) list it as taken from the French Constitution.</em></div></div>
+<div class="fact" style="margin-top:6px;"><span class="k">42వ సవరణ 1976</span> 3 పదాలు జోడించింది: <span class="kp">Socialist + Secular + Integrity</span> | అసలు (1949) లో: Sovereign, Democratic, Republic, Justice, Liberty, Equality, Fraternity<br/><em>42nd Amendment 1976 added 3 words: Socialist + Secular + Integrity | Words in Original (1949): Sovereign, Democratic, Republic, Justice, Liberty, Equality, Fraternity</em></div>
+<div class="sh">4.4 న్యాయం, స్వేచ్ఛ, సమానత్వం (Justice · Liberty · Equality)</div>
+<div class="g3">
+<div class="card ncard" id="CC-6.3-09"><div class="ch">న్యాయం: సామాజిక, ఆర్థిక, రాజకీయ · Justice: social, economic, political</div><div class="secl">Key Words — 6. Justice</div><div class="fact"><span lang="te">న్యాయం మూడు రకాలు — ప్రాథమిక హక్కులు, ఆదేశిక సూత్రాల ద్వారా అందిస్తారు.</span><br/><em class="en" lang="en">Three forms, secured through Fundamental Rights and DPSPs.</em></div><div class="fact"><span lang="te">సామాజిక న్యాయం: కులం, రంగు, జాతి, మతం, లింగం భేదం లేకుండా అందరినీ సమానంగా చూడటం; SC, ST, OBC, మహిళల అభ్యున్నతి.</span><br/><em class="en" lang="en">Social: equal treatment without distinction of caste, colour, race, religion, sex; uplift of SCs, STs, OBCs and women.</em></div><div class="fact"><span lang="te">ఆర్థిక న్యాయం: ఆర్థిక కారణాలతో వివక్ష లేకపోవడం; సంపద, ఆదాయం, ఆస్తిలో పెద్ద అసమానతలు తొలగించడం.</span><br/><em class="en" lang="en">Economic: no discrimination on economic factors; removing glaring inequalities of wealth, income, property.</em></div><div class="fact"><span lang="te">సామాజిక + ఆర్థిక న్యాయం కలిస్తే దాన్ని పంపిణీ న్యాయం (distributive justice) అంటారు.</span><br/><em class="en" lang="en">Social + economic justice together = distributive justice.</em></div><div class="fact"><span lang="te">రాజకీయ న్యాయం: అందరికీ సమాన రాజకీయ హక్కులు, పదవులకు సమాన అవకాశం, ప్రభుత్వంలో సమాన గొంతు.</span><br/><em class="en" lang="en">Political: equal political rights, equal access to political offices, equal voice in government.</em></div><div class="fact"><span lang="te">న్యాయం అనే ఆదర్శం రష్యన్ విప్లవం (1917) నుంచి తీసుకున్నారు.</span><br/><em class="en" lang="en">The ideal of justice is taken from the Russian Revolution (1917).</em></div></div>
+<div class="card ncard" id="CC-6.3-10"><div class="ch">స్వేచ్ఛ: ఐదు రకాలు · Liberty: five forms</div><div class="secl">Key Words — 7. Liberty</div><div class="fact"><span lang="te">స్వేచ్ఛ అంటే వ్యక్తిపై ఆంక్షలు లేకపోవడం, అదే సమయంలో వ్యక్తిత్వ వికాసానికి అవకాశాలు ఇవ్వడం.</span><br/><em class="en" lang="en">Liberty = absence of restraints plus opportunities to develop one's personality.</em></div><div class="fact"><span lang="te">ఐదు రకాలు: ఆలోచన, భావ వ్యక్తీకరణ, నమ్మకం, విశ్వాసం, ఆరాధన స్వేచ్ఛ.</span><br/><em class="en" lang="en">Five: thought, expression, belief, faith and worship.</em></div><div class="fact"><span lang="te">"ఆర్థిక స్వేచ్ఛ" ఈ జాబితాలో లేదు — "ఆర్థిక" అనే మాట న్యాయం భాగంలో ఉంది.</span><br/><em class="en" lang="en">"Economic liberty" is not in this list; "economic" appears in the Justice clause.</em></div><div class="fact"><span lang="te">ఇవి ప్రాథమిక హక్కుల ద్వారా లభిస్తాయి — భంగమైతే కోర్టులో అమలు చేయించుకోవచ్చు.</span><br/><em class="en" lang="en">Secured through Fundamental Rights, enforceable in courts.</em></div><div class="fact"><span lang="te">స్వేచ్ఛ అంటే ఇష్టం వచ్చినట్టు చేయడం కాదు — రాజ్యాంగ పరిమితులకు లోబడిన స్వేచ్ఛ, అపరిమితం కాదు.</span><br/><em class="en" lang="en">Liberty is not licence; it is qualified, not absolute.</em></div><div class="fact"><span lang="te">స్వేచ్ఛ, సమానత్వం, సౌభ్రాతృత్వం ఆదర్శాలు ఫ్రెంచ్ విప్లవం (1789-1799) నుంచి వచ్చాయి.</span><br/><em class="en" lang="en">Liberty, equality, fraternity: from the French Revolution (1789-1799).</em></div></div>
+<div class="card ncard" id="CC-6.3-11"><div class="ch">సమానత్వం: హోదా, అవకాశం · Equality: status and opportunity</div><div class="secl">Key Words — 8. Equality</div><div class="fact"><span lang="te">ప్రస్తావన హోదాలో సమానత్వం, అవకాశాల్లో సమానత్వం అనే రెండింటినీ హామీ ఇస్తుంది.</span><br/><em class="en" lang="en">Preamble promises equality of status and of opportunity.</em></div><div class="fact"><span lang="te">సమానత్వానికి మూడు కోణాలు: పౌర, రాజకీయ, ఆర్థిక.</span><br/><em class="en" lang="en">Three dimensions: civic, political, economic.</em></div><div class="fact"><span lang="te">పౌర సమానత్వం: ప్రకరణలు 14 (చట్టం ముందు సమానత్వం), 15, 16, 17 (అంటరానితనం రద్దు), 18 (బిరుదుల రద్దు).</span><br/><em class="en" lang="en">Civic equality: Articles 14, 15, 16, 17, 18.</em></div><div class="fact"><span lang="te">రాజకీయ సమానత్వం: ప్రకరణ 325 (మతం, జాతి, కులం, లింగం కారణంగా ఓటర్ల జాబితా నుంచి తొలగింపు లేదు), ప్రకరణ 326 (వయోజన ఓటుహక్కు).</span><br/><em class="en" lang="en">Political equality: Article 325 (no exclusion from electoral roll) and Article 326 (adult suffrage).</em></div><div class="fact"><span lang="te">ఆర్థిక సమానత్వం: ప్రకరణ 39 (ఆదేశిక సూత్రం) — స్త్రీ పురుషులకు సమాన జీవనోపాధి హక్కు, సమాన పనికి సమాన వేతనం.</span><br/><em class="en" lang="en">Economic equality: Article 39 (DPSP) - equal livelihood rights and equal pay for equal work.</em></div><div class="fact"><span lang="te">61వ సవరణ (1988) ఓటు వయసును 21 నుంచి 18 కి తగ్గించింది.</span><br/><em class="en" lang="en">Voting age lowered from 21 to 18 by the 61st Amendment, 1988.</em></div></div><div class="card ncard" id="CC-6.3-12"><div class="ch">సౌభ్రాతృత్వం: వ్యక్తి గౌరవం, ఐక్యత, సమగ్రత · Fraternity: dignity, unity and integrity</div><div class="secl">Key Words — 9. Fraternity</div><div class="fact"><span lang="te">సౌభ్రాతృత్వం అంటే సోదర భావం — ఏక పౌరసత్వం ద్వారా దీన్ని పెంపొందిస్తారు.</span><br/><em class="en" lang="en">Fraternity = a sense of brotherhood; promoted by single citizenship.</em></div><div class="fact"><span lang="te">ప్రకరణ 51A (ప్రాథమిక విధులు): మత, భాష, ప్రాంత భేదాలు దాటి సామరస్యం, సోదర భావం పెంచడం పౌరుడి విధి.</span><br/><em class="en" lang="en">Article 51A (Fundamental Duties): promote harmony and common brotherhood.</em></div><div class="fact"><span lang="te">సౌభ్రాతృత్వం రెండు విషయాలకు భరోసా ఇస్తుంది: వ్యక్తి గౌరవం, దేశ ఐక్యత మరియు సమగ్రత.</span><br/><em class="en" lang="en">Fraternity assures two things: dignity of the individual, and unity and integrity of the Nation.</em></div><div class="fact"><span lang="te">"సమగ్రత" (Integrity) పదాన్ని 42వ సవరణ (1976) చేర్చింది.</span><br/><em class="en" lang="en">"Integrity" was added by the 42nd Amendment, 1976.</em></div><div class="fact"><span lang="te">కె.ఎం. మున్షీ ప్రకారం "వ్యక్తి గౌరవం" అంటే ప్రతి వ్యక్తి వ్యక్తిత్వం పవిత్రమైనది అని రాజ్యాంగం గుర్తించడం.</span><br/><em class="en" lang="en">K.M. Munshi: "dignity of the individual" means every individual's personality is sacred.</em></div><div class="fact"><span lang="te">ప్రకరణ 1 భారత్ ను "రాష్ట్రాల యూనియన్" అంటుంది — రాష్ట్రాలు విడిపోయే హక్కు లేదు.</span><br/><em class="en" lang="en">Article 1 calls India a "Union of States" - States cannot secede.</em></div></div>
+</div>
+<div class="fact"><span class="k">ఫ్రాన్స్ విప్లవం 1789</span> — స్వేచ్ఛ + సమానత్వం + సోదరభావానికి ప్రేరణ<br/><em>France Revolution 1789 — inspiration for Liberty + Equality + Fraternity</em></div>
+<div class="footer">Chapter 4 · Page 1 of 2 · Indian Polity — Lakshmikanth · APPSC Group 2</div>
+</div>
+<!-- ════════════════ PAGE 2 ════════════════ -->
+<div class="page">
+<div class="header">
+<div class="hbadge">Concept cards</div>
+<div class="htitle">
+<h1>Preamble — రాజ్యాంగ ప్రస్తావన (Page 2)</h1>
+<h2>Indian Polity · Lakshmikanth · APPSC Group 2</h2>
+</div>
+
+</div>
+<div class="sh">4.6 ప్రస్తావన సవరణ సాధ్యత — 42వ సవరణ</div>
+<div class="g2">
+<div class="card ncard" id="CC-6.3-14"><div class="ch">ప్రస్తావన రాజ్యాంగంలో భాగమా? · Is the Preamble part of the Constitution?</div><div class="secl">Preamble as Part of the Constitution</div><div class="fact"><span lang="te">బెరుబారి యూనియన్ (1960, ప్రకరణ 143 కింద రాష్ట్రపతి అడిగిన సలహా అభిప్రాయం): ప్రస్తావన రాజ్యాంగంలో భాగం కాదు.</span><br/><em class="en" lang="en">Berubari Union (1960, advisory opinion on a reference under Article 143): Preamble is NOT part of the Constitution.</em></div><div class="fact"><span lang="te">అదే కేసులో — ప్రస్తావన రాజ్యాంగ నిర్మాతల మనసుకు తాళంచెవి అని, ప్రకరణలో పదాలు అస్పష్టంగా ఉంటే అర్థం చేసుకోవడానికి దీని సాయం తీసుకోవచ్చని చెప్పింది.</span><br/><em class="en" lang="en">Berubari also said it is a key to the minds of the makers and may aid interpretation where an Article is ambiguous.</em></div><div class="fact"><span lang="te">కేశవానంద భారతి (1973): బెరుబారి అభిప్రాయాన్ని తిరస్కరించి, ప్రస్తావన రాజ్యాంగంలో భాగమే అని తీర్పు ఇచ్చింది.</span><br/><em class="en" lang="en">Kesavananda Bharati (1973): rejected the Berubari view - Preamble IS part of the Constitution.</em></div><div class="fact"><span lang="te">ఎల్ఐసి ఆఫ్ ఇండియా కేసు (1995): ప్రస్తావన రాజ్యాంగ అంతర్భాగం అని మళ్లీ స్పష్టం చేసింది.</span><br/><em class="en" lang="en">LIC of India (1995): reaffirmed that the Preamble is an integral part.</em></div><div class="fact"><span lang="te">రాజ్యాంగ సభ కూడా "ప్రస్తావన రాజ్యాంగంలో భాగంగా ఉంటుంది" అనే తీర్మానాన్ని ఆమోదించింది.</span><br/><em class="en" lang="en">The Constituent Assembly itself voted that the "Preamble stands part of the Constitution".</em></div><div class="fact"><span lang="te">గమనిక 1: ప్రస్తావన శాసనసభకు అధికారం ఇవ్వదు, దాని అధికారాలపై నిషేధమూ కాదు.</span><br/><em class="en" lang="en">Caveat 1: not a source of power to the legislature, nor a limit on its powers.</em></div><div class="fact"><span lang="te">గమనిక 2: న్యాయస్థానాల్లో అమలు చేయించలేం (non-justiciable); కానీ అస్పష్టమైన నిబంధనల అర్థానికి కోర్టులు దీన్ని వాడతాయి.</span><br/><em class="en" lang="en">Caveat 2: non-justiciable - not enforceable in courts; but used to interpret ambiguous provisions.</em></div></div>
+<div class="card ncard" id="CC-6.3-15"><div class="ch">ప్రస్తావన సవరణ సాధ్యత · Amendability of the Preamble</div><div class="secl">Amendability of the Preamble</div><div class="fact"><span lang="te">ప్రకరణ 368 కింద ప్రస్తావనను సవరించవచ్చా అనే ప్రశ్న మొదటిసారి కేశవానంద భారతి (1973) లో వచ్చింది — బెరుబారిలో కాదు.</span><br/><em class="en" lang="en">The question of amending the Preamble under Article 368 first arose in Kesavananda Bharati (1973), not in Berubari.</em></div><div class="fact"><span lang="te">తీర్పు: ప్రకరణ 368 కింద ప్రస్తావనను సవరించవచ్చు.</span><br/><em class="en" lang="en">Held: the Preamble can be amended under Article 368.</em></div><div class="fact"><span lang="te">షరతు: అందులోని మౌలిక లక్షణాలను మార్చకూడదు (మౌలిక నిర్మాణ సిద్ధాంతం).</span><br/><em class="en" lang="en">Condition: its basic features cannot be altered (basic structure doctrine).</em></div><div class="fact"><span lang="te">సుప్రీంకోర్టు: "మన రాజ్యాంగ భవనం ప్రస్తావనలో చెప్పిన మౌలిక అంశాల మీదే నిలబడి ఉంది".</span><br/><em class="en" lang="en">SC: "The edifice of our Constitution is based upon the basic elements mentioned in the Preamble."</em></div><div class="fact"><span lang="te">ఇప్పటివరకు ఒక్కసారే సవరించారు — 42వ సవరణ, 1976 — అది చెల్లుబాటు అని తేలింది.</span><br/><em class="en" lang="en">Amended only once - 42nd Amendment, 1976 - held valid.</em> <em class="asof">as of 2026-11-09</em></div></div>
+</div>
+<div class="sh">4.7 ప్రస్తావన — న్యాయపర స్థితి (Legal Status)</div>
+<div class="g2">
+
+
+</div>
+<div class="sh">4.8 ముఖ్య వ్యత్యాసాలు — UK vs Republic · Direct vs Indirect Democracy</div>
+
+<div class="sh">⚖️ ముఖ్య కేసు చట్టాలు / Key Case Laws</div>
+<div class="g3">
+
+
+
+</div>
+<div class="sh">⚡ త్వరిత పునరావలోకన / Quick Revision Pills</div>
+<div class="pills">
+<span class="pill">ప్రస్తావన USA నుండి ప్రేరణ / Preamble inspired by USA</span>
+<span class="pill pg">లక్ష్య తీర్మానం — నెహ్రూ డిసెంబర్ 13, 1946 / Objective Resolution Dec 13, 1946</span>
+<span class="pill pb">ఆమోదం: నవంబర్ 26, 1949 / Adopted: Nov 26, 1949</span>
+<span class="pill">రాజ్యాంగ దినోత్సవం = నవంబర్ 26 (2015 నుండి) / Constitution Day = Nov 26</span>
+<span class="pill pg">42వ సవరణ 1976 = Socialist + Secular + Integrity జోడింపు</span>
+<span class="pill pp">న్యాయం = సాంఘిక + ఆర్థిక + రాజకీయ (3) / Justice = Social + Economic + Political</span>
+<span class="pill">స్వేచ్ఛ = ఆలోచన + వ్యక్తీకరణ + విశ్వాసం + మత విశ్వాసం + ఆరాధన (5) / Liberty = 5 types</span>
+<span class="pill pb">సమానత్వం = హోదా + అవకాశం (2) / Equality = Status + Opportunity</span>
+<span class="pill pg">ఫ్రాన్స్ విప్లవం 1789 = స్వేచ్ఛ + సమానత్వం + సోదరభావం / France Rev 1789</span>
+<span class="pill pp">బెరుబారి (1960) = భాగం కాదు | కేశవానంద (1973) = భాగమే / Berubari vs Kesavananda</span>
+<span class="pill">Ernest Barker = "రాజ్యాంగ నిర్మాతల మనస్సు తెరవడానికి తాళంచెవి"</span>
+<span class="pill pb">గణతంత్రం = ఎన్నికైన రాష్ట్రాధినేత (వంశపారంపర్యం కాదు) / Republic = Elected Head</span>
+<span class="pill pg">ప్రస్తావన న్యాయస్థానంలో అమలు పరచలేనిది / Preamble NOT justiciable</span>
+<span class="pill">WE THE PEOPLE = ప్రజలే అత్యున్నత అధికారానికి మూలం / People are ultimate authority</span>
+</div>
+<div class="footer">Chapter 4 · Page 2 of 2 · Indian Polity — Lakshmikanth · APPSC Group 2</div>
+</div>
+</div><div class="page"><div class="sh">➕ Added from Laxmikanth, GBK &amp; current affairs / అదనపు అంశాలు</div><div class="g2"><div class="card ncard" id="CC-6.3-16"><div class="ch">సామ్యవాద, లౌకిక పదాలు: బల్‌రామ్ సింగ్ కేసు, తర్వాత పరిణామాలు · Socialist and Secular: Balram Singh case and after</div><div class="secl">Current Affairs Update</div><div class="fact"><span lang="te">డా. బల్‌రామ్ సింగ్ vs భారత ప్రభుత్వం (2024 INSC 893; రిట్ పిటిషన్ (సివిల్) 645/2020, దానితో పాటు 1467/2020), 25 నవంబర్ 2024: ప్రస్తావనలో &quot;సామ్యవాద&quot;, &quot;లౌకిక&quot; పదాలను సవాలు చేసిన పిటిషన్లను సుప్రీంకోర్టు కొట్టివేసింది.</span><br><em class="en" lang="en">Dr. Balram Singh v. Union of India (2024 INSC 893; W.P.(C) 645 of 2020 with W.P.(C) 1467 of 2020), 25 Nov 2024: SC dismissed petitions challenging &quot;Socialist&quot; and &quot;Secular&quot; in the Preamble.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">ధర్మాసనం: CJI సంజీవ్ ఖన్నా, జస్టిస్ సంజయ్ కుమార్.</span><br><em class="en" lang="en">Bench: CJI Sanjiv Khanna and Justice Sanjay Kumar.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">ప్రస్తావనలో ఆమోద తేదీ (26 నవంబర్ 1949) ఉన్నంత మాత్రాన ప్రకరణ 368 కింద పార్లమెంటు సవరణ అధికారం తగ్గదు అని చెప్పింది.</span><br><em class="en" lang="en">Held: the adoption date (26 Nov 1949) does not limit Parliament&#x27;s Article 368 power over the Preamble.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">&quot;సామ్యవాద&quot; అంటే సామాజిక, ఆర్థిక న్యాయం పట్ల నిబద్ధత — ప్రైవేటు రంగాన్ని అడ్డుకోవడం కాదు అని కోర్టు చెప్పింది.</span><br><em class="en" lang="en">&quot;Socialist&quot; = commitment to economic and social justice, not a bar on private enterprise.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">24 జూలై 2025: ఈ రెండు పదాలను తొలగించే ఆలోచన ప్రభుత్వానికి లేదని న్యాయశాఖ మంత్రి అర్జున్ రామ్ మేఘ్వాల్ రాజ్యసభకు లిఖితపూర్వకంగా చెప్పారు.</span><br><em class="en" lang="en">24 July 2025: Law Minister Arjun Ram Meghwal told Rajya Sabha the government has no plan to remove the two words.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">5 డిసెంబర్ 2025: బీజేపీ రాజ్యసభ సభ్యుడు భీమ్ సింగ్ ఈ పదాల తొలగింపుకు ప్రైవేటు సభ్యుడి బిల్లు ప్రవేశపెట్టారు; అది ఆమోదం పొందలేదు.</span><br><em class="en" lang="en">5 Dec 2025: BJP Rajya Sabha MP Bhim Singh introduced a private member&#x27;s bill to remove them; not passed.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">ప్రస్తావన పాఠం ఇప్పటికీ మారలేదు.</span><br><em class="en" lang="en">Preamble text remains unchanged.</em> <em class="asof">as of 2026-11-09</em></div></div></div></div>

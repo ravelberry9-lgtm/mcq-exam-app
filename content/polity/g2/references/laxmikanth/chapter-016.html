@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part II — Complete Study Notes — Full-Depth Bilingual Notes, Print Edition (No WHY-Boxes)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  .why{background:#fff8ec;border:1px solid #e8c98a;border-left:4px solid #c98a2c;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .why .whytitle{font-weight:700;color:#8a5a12;margin-bottom:6px;font-size:14.3px}
+  .why p.eng{margin:6px 0 3px}
+  .why .te{margin:3px 0 10px}
+  .why .whyq{font-weight:700;color:#132a52}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 16 — Inter-State Relations</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Full-Depth Bilingual Study Notes</div>
+<div class="para">
+<div class="ptitle">Introduction — Why Inter-State Harmony Matters</div>
+<p class="eng">A federal system cannot survive on Centre-state goodwill alone — it also depends on the states getting along with <b>each other</b>, what Laxmikanth calls harmony <i>inter se</i> (among themselves). Water flows across state borders regardless of politics, trade goods cross state lines every day, and court judgments passed in one state routinely need to be honoured in another — so the Constitution builds in <b>four specific mechanisms</b> to keep this everyday inter-state traffic running smoothly: <b>(1)</b> a way to <b>adjudicate</b> water disputes between states, <b>(2)</b> a standing forum for <b>coordination</b> through inter-state councils, <b>(3)</b> a rule of <b>mutual recognition</b> for each other's public acts, records, and judicial proceedings, and <b>(4)</b> a constitutional guarantee of <b>free trade, commerce, and movement</b> across the whole country. Alongside these four, Parliament has separately set up <b class="imp">Zonal Councils</b> to further promote cooperation and coordination between neighbouring states.</p>
+<div class="te">ఒక federal వ్యవస్థ కేవలం కేంద్రం-రాష్ట్రాల మధ్య సఖ్యతతోనే నిలబడదు — రాష్ట్రాలు <b>ఒకదానితో ఒకటి</b> ఎలా కలిసిమెలిసి ఉంటాయో కూడా అంతే ముఖ్యం — దీన్నే లక్ష్మీకాంత్ <i>inter se</i> harmony (రాష్ట్రాల మధ్యే ఉండాల్సిన సామరస్యం) అంటారు. నీళ్లు రాజకీయాలతో సంబంధం లేకుండా రాష్ట్ర సరిహద్దులు దాటి ప్రవహిస్తాయి, వ్యాపార సరుకులు ప్రతిరోజూ రాష్ట్ర సరిహద్దులు దాటుతాయి, ఒక రాష్ట్రంలో ఇచ్చిన కోర్టు తీర్పులను మరో రాష్ట్రంలో గౌరవించాల్సి ఉంటుంది — అందుకే ఈ రోజువారీ అంతర్-రాష్ట్ర వ్యవహారాలు సాఫీగా సాగడానికి రాజ్యాంగం <b>నాలుగు నిర్దిష్ట యంత్రాంగాలను</b> కల్పిస్తుంది — <b>(1)</b> నీటి వివాదాలను <b>పరిష్కరించే</b> మార్గం, <b>(2)</b> inter-state councils ద్వారా <b>సమన్వయం</b> కోసం ఒక శాశ్వత వేదిక, <b>(3)</b> ఒక రాష్ట్రం చేసిన public acts, records, judicial proceedings ను మరో రాష్ట్రం <b>గుర్తించే</b> నియమం, <b>(4)</b> దేశమంతటా <b>స్వేచ్ఛా వ్యాపారం, వాణిజ్యం, రాకపోకలు</b> ఉండాలన్న రాజ్యాంగ హామీ. వీటికి తోడు, పొరుగు రాష్ట్రాల మధ్య సహకారం, సమన్వయం మరింత పెంచడానికి పార్లమెంట్ ప్రత్యేకంగా <b class="imp">Zonal Councils</b> ను కూడా ఏర్పాటు చేసింది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">Inter-State Water Disputes — Article 262</div>
+<p class="eng"><span class="hlg">Article 262</span> deals with disputes over the waters of inter-state rivers and river valleys, and makes <b>two distinct provisions</b>. <b>First</b>, Parliament may by law provide for the <b>adjudication</b> of any dispute concerning the use, distribution, or control of the waters of an inter-state river or river valley. <b>Second</b>, and more strikingly, Parliament may also provide that <b>neither the Supreme Court nor any other court</b> shall exercise jurisdiction over such a dispute at all — a court-exclusion power that Parliament holds over almost no other category of dispute in the Constitution.</p>
+<div class="te"><span class="hlg">Article 262</span> అంతర్-రాష్ట్ర నదులు, నదీ లోయల నీటి వివాదాలను డీల్ చేస్తుంది, రెండు వేర్వేరు నిబంధనలు ఇస్తుంది. <b>మొదటిది</b>, అంతర్-రాష్ట్ర నది లేదా నదీ లోయ నీటి వాడకం, పంపిణీ, నియంత్రణకు సంబంధించిన ఏ వివాదాన్నైనా <b>పరిష్కరించడానికి</b> పార్లమెంట్ చట్టం చేయగలదు. <b>రెండోది</b>, మరింత విశేషమేమిటంటే, ఇలాంటి వివాదంపై <b>సుప్రీంకోర్టు గానీ, మరే కోర్టు గానీ</b> అధికార పరిధిని కలిగి ఉండకూడదని కూడా పార్లమెంట్ నిర్దేశించగలదు — రాజ్యాంగంలో దాదాపు మరే ఇతర వివాద కేటగిరీపైనా పార్లమెంట్‌కు ఇలాంటి court-exclusion అధికారం లేదు.</div>
+<p class="eng">Parliament has used this power to enact <b>two laws</b>. The <b class="imp">River Boards Act, 1956</b> allows the Centre to set up a river board — at the request of the state governments concerned — for the regulation and development of an inter-state river or river valley; a river board's role here is purely to <b>advise</b> the states, nothing more. The <b class="imp">Inter-State River Water Disputes Act, 1956</b> goes much further: it empowers the Centre to set up an <b>ad hoc tribunal</b> to adjudicate a dispute between two or more states over an inter-state river's waters, and the tribunal's award is <b>final and binding</b> on the parties — with the Supreme Court and every other court barred from exercising jurisdiction over any dispute referred to such a tribunal.</p>
+<div class="te">ఈ అధికారాన్ని వాడుకుని పార్లమెంట్ <b>రెండు చట్టాలు</b> చేసింది. <b class="imp">River Boards Act, 1956</b> ప్రకారం — సంబంధిత రాష్ట్ర ప్రభుత్వాల అభ్యర్థన మేరకు — అంతర్-రాష్ట్ర నది లేదా నదీ లోయ నియంత్రణ, అభివృద్ధి కోసం కేంద్రం ఒక river board ను ఏర్పాటు చేయగలదు; ఈ board పాత్ర రాష్ట్రాలకు కేవలం <b>సలహా ఇవ్వడం</b> మాత్రమే, అంతకుమించి ఏమీ కాదు. <b class="imp">Inter-State River Water Disputes Act, 1956</b> దీనికంటే చాలా ముందుకు వెళ్తుంది — అంతర్-రాష్ట్ర నది నీటిపై రెండు లేదా అంతకంటే ఎక్కువ రాష్ట్రాల మధ్య వివాదాన్ని పరిష్కరించడానికి ఒక <b>ad hoc tribunal</b> ను ఏర్పాటు చేసే అధికారం కేంద్రానికి ఇస్తుంది, tribunal నిర్ణయం పక్షాలకు <b>అంతిమమైనది, కట్టుబడి ఉండేది</b> — ఇలా ఒక tribunal కు రిఫర్ చేసిన వివాదంపై సుప్రీంకోర్టుతో సహా ఏ కోర్టుకూ అధికార పరిధి ఉండదు.</div>
+
+<table>
+<caption>Table 16.1 — Inter-State Water Dispute Tribunals Set Up So Far</caption>
+<thead><tr><th class="n">#</th><th>Tribunal</th><th style="width:14%">Set up</th><th>States Involved</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Krishna Water Disputes Tribunal-I</td><td><span class="hlg">1969</span></td><td>Maharashtra, Karnataka, Andhra Pradesh</td></tr>
+<tr><td class="n">2</td><td>Godavari Water Disputes Tribunal</td><td><span class="hlg">1969</span></td><td>Maharashtra, Karnataka, AP, Madhya Pradesh, Odisha</td></tr>
+<tr><td class="n">3</td><td>Narmada Water Disputes Tribunal</td><td><span class="hlg">1969</span></td><td>Rajasthan, Gujarat, Madhya Pradesh, Maharashtra</td></tr>
+<tr><td class="n">4</td><td>Ravi &amp; Beas Water Disputes Tribunal</td><td><span class="hlg">1986</span></td><td>Punjab, Haryana, Rajasthan</td></tr>
+<tr><td class="n">5</td><td>Cauvery Water Disputes Tribunal</td><td><span class="hlg">1990</span></td><td>Karnataka, Kerala, Tamil Nadu, Puducherry</td></tr>
+<tr><td class="n">6</td><td>Krishna Water Disputes Tribunal-II</td><td><span class="hlg">2004</span></td><td>Maharashtra, Karnataka, Andhra Pradesh</td></tr>
+<tr><td class="n">7</td><td>Vansadhara Water Disputes Tribunal</td><td><span class="hlg">2010</span></td><td>Odisha, Andhra Pradesh</td></tr>
+<tr><td class="n">8</td><td>Mahadayi Water Disputes Tribunal</td><td><span class="hlg">2010</span></td><td>Goa, Karnataka, Maharashtra</td></tr>
+<tr><td class="n">9</td><td>Mahanadi Water Disputes Tribunal</td><td><span class="hlg">2018</span></td><td>Odisha, Chhattisgarh</td></tr>
+</tbody>
+</table>
+<table class="qs">
+<caption class="qs">Quick Summary — Article 262 &amp; Water Disputes</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>What are Art. 262's two provisions?</td><td>(i) Parliament may legislate to adjudicate inter-state river-water disputes (ii) Parliament may bar SC/other courts' jurisdiction over them</td></tr>
+<tr><td>River Boards Act, 1956 — role?</td><td>Advisory only — board set up by Centre at states' request to regulate/develop a river/valley</td></tr>
+<tr><td>Inter-State River Water Disputes Act, 1956 — role?</td><td>Centre sets up an ad hoc tribunal; award final &amp; binding; courts barred from that dispute</td></tr>
+<tr><td>Why bar even the Supreme Court's jurisdiction here?</td><td>Speed, finality, and technical expertise a specialised tribunal gives — ordinary multi-tier appeals are too slow for water sharing</td></tr>
+<tr><td>How many water dispute tribunals so far (per book)?</td><td>Nine, from Krishna Tribunal-I (1969) to Mahanadi Tribunal (2018)</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Inter-State Councils — Article 263</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Inter-State Councils — Article 263</div>
+<p class="eng"><span class="hlg">Article 263</span> envisages an <b class="term">Inter-State Council</b> as a coordination mechanism — between the states, and between the Centre and the states. Under this Article, the <b>President</b> may establish such a council whenever satisfied that doing so would serve the <b>public interest</b>, and the President is also empowered to define its duties, organisation, and procedure. Even so, Article 263 itself lists three specific duties that can be assigned to such a council: <b>(a)</b> enquiring into and advising upon disputes that may arise between states; <b>(b)</b> investigating and discussing subjects of <b>common interest</b> to the states, or to the Centre and states; and <b>(c)</b> making recommendations on any such subject, particularly for the <b>better coordination</b> of policy and action.</p>
+<div class="te"><span class="hlg">Article 263</span> రాష్ట్రాల మధ్య, కేంద్రం-రాష్ట్రాల మధ్య సమన్వయం కోసం ఒక <b class="term">Inter-State Council</b> ను ఊహిస్తుంది. ఈ Article ప్రకారం, ఇలాంటి council ఏర్పాటు <b>public interest</b> కు ఉపయోగపడుతుందని భావించినప్పుడల్లా <b>President</b> దాన్ని ఏర్పాటు చేయగలరు, దాని విధులు, నిర్మాణం, విధానాన్ని కూడా President నే నిర్దేశించగలరు. అయినప్పటికీ, ఇలాంటి council కు అప్పగించగల మూడు నిర్దిష్ట విధులను Article 263 స్వయంగా ఇస్తుంది — <b>(a)</b> రాష్ట్రాల మధ్య తలెత్తే వివాదాలపై విచారణ చేసి సలహా ఇవ్వడం; <b>(b)</b> రాష్ట్రాలకు, లేదా కేంద్రం-రాష్ట్రాలకు <b>ఉమ్మడి ఆసక్తి</b> గల అంశాలను పరిశోధించి చర్చించడం; <b>(c)</b> అలాంటి అంశాలపై, ముఖ్యంగా విధానం, చర్యల <b>మెరుగైన సమన్వయం</b> కోసం సిఫారసులు చేయడం.</div>
+<p class="eng">This dispute-related duty (a) sits <b>alongside</b>, not in place of, the Supreme Court's own original jurisdiction over inter-state legal disputes under <span class="hlg">Article 131</span> — the Council's role, as one legal commentator puts it, is <b>"complementary"</b> to that of the Court. The key difference is scope and force: the Council can take up <b>any</b> inter-state controversy, whether it is a strict legal dispute or a purely political/administrative disagreement, but whatever it produces is only <b>advisory</b> — unlike a court, which delivers a binding decision.</p>
+<div class="te">వివాదాలకు సంబంధించిన ఈ (a) విధి — <span class="hlg">Article 131</span> కింద అంతర్-రాష్ట్ర న్యాయ వివాదాలపై సుప్రీంకోర్టుకు ఉన్న original jurisdiction కు <b>బదులుగా కాదు, దానితో పాటే</b> ఉంటుంది — Council పాత్ర కోర్టు పాత్రకు <b>"complementary"</b> (అనుబంధంగా) ఉంటుందని ఒక న్యాయ నిపుణుడు వ్యాఖ్యానించారు. వీటి మధ్య ముఖ్యమైన తేడా — పరిధి, బలం: Council <b>ఏ</b> అంతర్-రాష్ట్ర వివాదాన్నైనా చేపట్టగలదు, అది కచ్చితమైన న్యాయ వివాదమైనా, పూర్తిగా రాజకీయ/పరిపాలనా అభిప్రాయభేదమైనా సరే — కానీ అది ఇచ్చేది <b>advisory</b> సలహా మాత్రమే — కోర్టు వలె కట్టుబడే తీర్పు కాదు.</div>
+
+<p class="eng">Under Article 263, the President has, over time, established a few other bodies with this coordination purpose — the <b>Central Council of Health and Family Welfare</b>, the <b>Central Council of Local Government</b> (originally set up in 1954 as the Central Council of Local Self-Government), and <b>four Regional Councils for Sales Tax</b>, one each for the Northern, Eastern, Western, and Southern zones.</p>
+<div class="te">Article 263 కింద, ఈ సమన్వయ ఉద్దేశంతో President కాలక్రమేణా మరికొన్ని సంస్థలను కూడా ఏర్పాటు చేశారు — <b>Central Council of Health and Family Welfare</b>, <b>Central Council of Local Government</b> (మొదట్లో 1954లో Central Council of Local Self-Government గా ఏర్పాటైంది), అలాగే ఉత్తర, తూర్పు, పశ్చిమ, దక్షిణ మండలాలకు ఒక్కొక్కటి చొప్పున <b>నాలుగు Regional Councils for Sales Tax</b>.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">Establishment of the (Permanent) Inter-State Council, 1990</div>
+<p class="eng">The <span class="hlp">Sarkaria Commission on Centre-State Relations</span> (<span class="hlg">1983-88</span>) made a strong case for a <b>permanent</b> Inter-State Council under Article 263 — it even recommended calling it the "Inter-Governmental Council" to distinguish it from the other bodies set up under the same Article, and suggested it be charged specifically with duties (b) and (c) above. Acting on this recommendation, the Janata Dal government headed by <span class="hlp">V.P. Singh</span> established the <b class="imp">Inter-State Council in 1990</b> (by an order dated 28 May 1990). Its composition is: <b>(i)</b> the <b>Prime Minister</b> as Chairman; <b>(ii)</b> Chief Ministers of all states; <b>(iii)</b> Chief Ministers of union territories having a legislative assembly; <b>(iv)</b> Administrators of union territories without a legislative assembly; <b>(v)</b> Governors of states under President's Rule; and <b>(vi)</b> six Central cabinet ministers, including the Home Minister, nominated by the PM. In addition, five Cabinet-rank/independent-charge Ministers of State, nominated by the Chairman, serve as <b>permanent invitees</b>.</p>
+<div class="te"><span class="hlp">Sarkaria Commission on Centre-State Relations</span> (<span class="hlg">1983-88</span>) Article 263 కింద ఒక <b>శాశ్వత</b> Inter-State Council కోసం గట్టిగా వాదించింది — ఈ Article కిందే ఏర్పడ్డ ఇతర సంస్థల నుండి దీన్ని వేరు చేయడానికి దీన్ని "Inter-Governmental Council" అని పిలవాలని కూడా సూచించింది, పైన చెప్పిన (b), (c) విధులను దీనికే ప్రత్యేకంగా అప్పగించాలని సిఫారసు చేసింది. ఈ సిఫారసుపై చర్య తీసుకుంటూ, <span class="hlp">వి.పి. సింగ్</span> నేతృత్వంలోని జనతా దళ్ ప్రభుత్వం <b class="imp">1990లో Inter-State Council</b> ను ఏర్పాటు చేసింది (28 మే 1990 నాటి ఆదేశం ద్వారా). దీని కూర్పు — <b>(i)</b> <b>ప్రధానమంత్రి</b> — Chairman; <b>(ii)</b> అన్ని రాష్ట్రాల ముఖ్యమంత్రులు; <b>(iii)</b> శాసనసభ ఉన్న union territories ముఖ్యమంత్రులు; <b>(iv)</b> శాసనసభ లేని union territories పరిపాలకులు; <b>(v)</b> President's Rule లో ఉన్న రాష్ట్రాల గవర్నర్లు; <b>(vi)</b> PM నామినేట్ చేసిన, హోం మంత్రితో సహా ఆరుగురు కేంద్ర కేబినెట్ మంత్రులు. వీటికి తోడు, Chairman నామినేట్ చేసిన ఐదుగురు కేబినెట్-హోదా/స్వతంత్ర బాధ్యత గల మంత్రులు (State) <b>permanent invitees</b>గా ఉంటారు.</div>
+<p class="eng">The Council functions as a <b>recommendatory</b> body on inter-state, Centre-state, and Centre-UT relations — it meets <b>at least thrice a year</b>, its meetings are held <b>in camera</b> (closed-door), and all its decisions are reached <b>by consensus</b>. A dedicated <b>Standing Committee</b>, set up in <span class="hlg">1996</span> for continuous consultation and to process matters before they reach the full Council, consists of the Union Home Minister as Chairman, five Union Cabinet Ministers, and nine Chief Ministers. The Council is served by the <b>Inter-State Council Secretariat</b>, set up in <span class="hlg">1991</span> and headed by a Secretary to the Government of India; since <span class="hlg">2011</span>, this same Secretariat has also functioned as the secretariat for the Zonal Councils (covered on Page 4).</p>
+<div class="te">Council అనేది కేంద్రం-రాష్ట్రాలు, అంతర్-రాష్ట్రాలు, కేంద్రం-UT ల మధ్య సంబంధాలపై <b>recommendatory</b> సంస్థగా పనిచేస్తుంది — ఇది సంవత్సరానికి <b>కనీసం మూడుసార్లు</b> సమావేశమవుతుంది, దీని సమావేశాలు <b>in camera</b> (మూసిన తలుపుల వెనుక) జరుగుతాయి, నిర్ణయాలన్నీ <b>consensus</b> ద్వారానే తీసుకుంటారు. పూర్తి Council కు చేరకముందే విషయాలను ప్రాసెస్ చేయడానికి, నిరంతర సంప్రదింపుల కోసం <span class="hlg">1996</span>లో ఏర్పాటైన ప్రత్యేక <b>Standing Committee</b> — Union హోం మంత్రి Chairman గా, ఐదుగురు Union కేబినెట్ మంత్రులు, తొమ్మిది ముఖ్యమంత్రులతో కూడి ఉంటుంది. Council కు <span class="hlg">1991</span>లో ఏర్పాటైన <b>Inter-State Council Secretariat</b> సేవలు అందిస్తుంది, దీనికి Government of India కు చెందిన ఒక Secretary నేతృత్వం వహిస్తారు; <span class="hlg">2011</span> నుండి ఇదే Secretariat Zonal Councils కు కూడా (పేజీ 4లో చూడండి) సెక్రటేరియట్‌గా పనిచేస్తోంది.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — Article 263 &amp; the Inter-State Council</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Who can establish an Inter-State Council, and when?</td><td>President, whenever satisfied it would serve the public interest</td></tr>
+<tr><td>Art. 263's three listed duties?</td><td>(a) advise on inter-state disputes (b) discuss common-interest subjects (c) recommend better coordination</td></tr>
+<tr><td>Council vs SC's Art. 131 jurisdiction?</td><td>Complementary — Council handles legal or non-legal matters but only advisory, not binding like a court</td></tr>
+<tr><td>Which Commission recommended a permanent Council, and when established?</td><td>Sarkaria Commission (1983-88) recommended it; established 1990 under V.P. Singh's government</td></tr>
+<tr><td>Council's Chairman and meeting frequency?</td><td>PM as Chairman; meets at least 3 times a year, in camera, decisions by consensus</td></tr>
+<tr><td>Standing Committee and Secretariat set up in?</td><td>Standing Committee — 1996; Secretariat — 1991 (also serves Zonal Councils since 2011)</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Public Acts, Records &amp; Judicial Proceedings · Inter-State Trade and Commerce — Art. 301-307</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Public Acts, Records and Judicial Proceedings — Article 261</div>
+<p class="eng">Under the Constitution, every state's jurisdiction is confined to its own territory — which raises an obvious practical problem: without a specific rule, one state might simply refuse to recognise another state's official acts or records. To close this gap, <span class="hlg">Article 261</span> lays down the <b class="imp">"Full Faith and Credit"</b> clause, with three specific components. <b>First</b>, full faith and credit must be given, throughout the territory of India, to the public acts, records, and judicial proceedings of the Centre and of every state — "public acts" covering both legislative and executive acts of a government, and "public record" covering any official book, register, or record kept by a public servant in the discharge of official duty. <b>Second</b>, the manner and conditions under which such acts, records, and proceedings are to be <b>proved</b>, and their legal effect, is left to be determined by <b>Parliament's law</b>. <b>Third</b>, the final judgments and orders of <b>civil courts</b> anywhere in India can be <b>executed anywhere else</b> in India without needing a fresh suit — but this rule applies only to <b>civil</b> judgments, not criminal ones; no state's courts are obliged to enforce another state's penal laws.</p>
+<div class="te">రాజ్యాంగం ప్రకారం, ప్రతి రాష్ట్ర అధికార పరిధి దాని సొంత భూభాగానికే పరిమితం — దీనివల్ల ఒక స్పష్టమైన ఆచరణాత్మక సమస్య వస్తుంది — ఒక నిర్దిష్ట నియమం లేకపోతే, ఒక రాష్ట్రం మరో రాష్ట్రం అధికారిక చర్యలను, రికార్డులను గుర్తించకుండా ఉండిపోవచ్చు. ఈ లోటును పూడ్చడానికి, <span class="hlg">Article 261</span> <b class="imp">"Full Faith and Credit"</b> నిబంధనను ఇస్తుంది, దీనికి మూడు నిర్దిష్ట భాగాలు ఉన్నాయి. <b>మొదటిది</b>, భారతదేశం మొత్తం కేంద్రం, ప్రతి రాష్ట్రం యొక్క public acts, records, judicial proceedings కు పూర్తి గుర్తింపు ఇవ్వాలి — "public acts" అంటే ప్రభుత్వం యొక్క legislative, executive చర్యలు రెండూ కలిపి; "public record" అంటే ఒక ప్రభుత్వ ఉద్యోగి తన అధికారిక విధి నిర్వహణలో ఉంచే ఏ అధికారిక పుస్తకం, రిజిస్టర్, రికార్డు అయినా. <b>రెండోది</b>, ఇలాంటి చర్యలు, రికార్డులు, ప్రొసీడింగ్స్ ను <b>రుజువు</b> చేసే విధానం, షరతులు, వాటి చట్టపరమైన ప్రభావం — వీటిని <b>పార్లమెంట్ చట్టం</b> నిర్ణయిస్తుంది. <b>మూడోది</b>, భారతదేశంలో ఎక్కడైనా <b>సివిల్ కోర్టుల</b> తుది తీర్పులు, ఆదేశాలను కొత్త దావా వేయకుండానే భారతదేశంలో <b>మరెక్కడైనా అమలు</b> చేయవచ్చు — కానీ ఈ నియమం <b>సివిల్</b> తీర్పులకు మాత్రమే వర్తిస్తుంది, క్రిమినల్ తీర్పులకు కాదు — ఏ రాష్ట్ర కోర్టులూ మరో రాష్ట్రం శిక్షాస్మృతి చట్టాలను అమలు చేయాల్సిన అవసరం లేదు.</div>
+
+<div class="stitle" style="border-bottom:none;margin-top:14px">Inter-State Trade and Commerce — Articles 301-307, Part XIII</div>
+<p class="eng"><span class="hlg">Articles 301 to 307</span>, in <b>Part XIII</b> of the Constitution, govern trade, commerce, and intercourse within Indian territory. <span class="hlg">Article 301</span> declares this freedom in the broadest terms: trade, commerce, and intercourse throughout India <b>shall be free</b>. The purpose is to break down border barriers between states and knit the country into <b>one economic unit</b>, encouraging the free flow of trade across it. Notably, this freedom is <b>not limited to inter-state</b> trade — it extends to <b>intra-state</b> trade too, and Article 301 is violated whether a restriction is imposed at a state's own frontier or at any earlier or later stage of a transaction.</p>
+<div class="te"><b>Part XIII</b> లోని <span class="hlg">Articles 301 నుండి 307</span> వరకు భారత భూభాగంలో వ్యాపారం, వాణిజ్యం, రాకపోకలను నియంత్రిస్తాయి. <span class="hlg">Article 301</span> ఈ స్వేచ్ఛను అత్యంత విస్తృతంగా ప్రకటిస్తుంది — భారతదేశం మొత్తం వ్యాపారం, వాణిజ్యం, రాకపోకలు <b>స్వేచ్ఛగా</b> ఉండాలి. దీని ఉద్దేశం రాష్ట్రాల మధ్య సరిహద్దు అడ్డంకులను తొలగించి, దేశాన్ని <b>ఒకే ఆర్థిక యూనిట్</b>గా అల్లడం, దేశమంతటా వ్యాపార స్వేచ్ఛా ప్రవాహాన్ని ప్రోత్సహించడం. గమనార్హం ఏమిటంటే, ఈ స్వేచ్ఛ <b>అంతర్-రాష్ట్ర</b> వ్యాపారానికే పరిమితం కాదు — <b>రాష్ట్రంలోపలి</b> వ్యాపారానికి కూడా వర్తిస్తుంది, ఒక లావాదేవీలో ఒక రాష్ట్రం సరిహద్దు వద్ద ఆంక్ష విధించినా, అంతకుముందు లేదా తర్వాతి దశలో విధించినా — Article 301 ఉల్లంఘనే.</div>
+<p class="eng">This freedom is not absolute — it stands subject only to the specific restrictions listed in <span class="hlg">Articles 302-305</span>. <b>Article 302</b>: Parliament may impose restrictions on trade, commerce, or intercourse — between states, or within a state — in the <b>public interest</b>, but it <b>cannot</b> give preference to one state over another or discriminate between states, <b>except</b> to deal with a genuine <b>scarcity of goods</b> somewhere in India. <b>Article 303</b> then states the general safeguard behind that exception explicitly: neither Parliament nor any state legislature may make a law giving preference to one state over another, or discriminating between states, in matters of trade and commerce — with the same scarcity-of-goods exception carved out for Parliament alone. <b>Article 304</b> covers what a <b>state legislature</b> may do: it can impose <b>reasonable restrictions</b> on trade, commerce, or intercourse with or within that state, in the public interest — but a bill for this purpose can be introduced only with the <b>President's prior sanction</b>, and the state, too, cannot discriminate between states; a state may also tax goods imported from other states or union territories, but only at the <b>same rate</b> applicable to similar locally-made goods, which rules out discriminatory local taxation. <b>Article 305</b> saves existing <b>nationalisation laws</b> — so the freedom under Article 301 does not prevent the Centre or a state from running a trade, business, industry, or service as a <b>state monopoly</b>, whether wholly or partly to the exclusion of private citizens. Finally, <b>Article 307</b> lets Parliament appoint an authority to carry out these purposes — but, notably, <b>no such authority has ever been appointed</b>; the US equivalent is its Inter-State Commerce Commission. A working example of Parliament's Article 302 power is the <b class="imp">Essential Commodities Act, 1955</b>, which lets the Centre control the production, supply, and distribution of essentials like petroleum, coal, iron, and steel.</p>
+<div class="te">ఈ స్వేచ్ఛ సంపూర్ణమైనది కాదు — <span class="hlg">Articles 302-305</span> లో ఇచ్చిన నిర్దిష్ట ఆంక్షలకు మాత్రమే ఇది లోబడి ఉంటుంది. <b>Article 302</b>: పార్లమెంట్ <b>public interest</b> లో — రాష్ట్రాల మధ్య గానీ, ఒక రాష్ట్రంలోపల గానీ — వ్యాపారం, వాణిజ్యం, రాకపోకలపై ఆంక్షలు విధించగలదు, కానీ ఒక రాష్ట్రానికి మరో రాష్ట్రం కంటే <b>ప్రాధాన్యత</b> ఇవ్వకూడదు, రాష్ట్రాల మధ్య వివక్ష చూపకూడదు — దేశంలో ఎక్కడైనా నిజమైన <b>వస్తువుల కొరత</b> ఉన్నప్పుడు <b>తప్ప</b>. <b>Article 303</b> ఈ మినహాయింపు వెనుక ఉన్న సాధారణ రక్షణను స్పష్టంగా చెబుతుంది — వ్యాపారం, వాణిజ్య విషయాల్లో ఒక రాష్ట్రానికి మరో రాష్ట్రం కంటే ప్రాధాన్యత ఇచ్చే, రాష్ట్రాల మధ్య వివక్ష చూపే చట్టాన్ని పార్లమెంట్ గానీ, ఏ రాష్ట్ర శాసనసభ గానీ చేయకూడదు — పార్లమెంట్‌కు మాత్రమే వస్తువుల కొరత మినహాయింపు వర్తిస్తుంది. <b>Article 304</b> <b>రాష్ట్ర శాసనసభ</b> ఏమి చేయగలదో చెబుతుంది — ఆ రాష్ట్రంతో లేదా ఆ రాష్ట్రంలోపల వ్యాపారం, వాణిజ్యం, రాకపోకలపై public interest లో <b>సహేతుకమైన ఆంక్షలు</b> విధించగలదు — కానీ దీనికి బిల్లును <b>President ముందస్తు అనుమతితోనే</b> ప్రవేశపెట్టాలి, రాష్ట్రం కూడా రాష్ట్రాల మధ్య వివక్ష చూపకూడదు; ఇతర రాష్ట్రాలు/UTల నుండి దిగుమతి చేసుకున్న వస్తువులపై రాష్ట్రం పన్ను విధించవచ్చు, కానీ స్థానికంగా తయారైన ఇదే తరహా వస్తువులకు వర్తించే <b>అదే రేటు</b> మాత్రమే వర్తింపజేయాలి — ఇది వివక్షాపూరిత స్థానిక పన్నులను నిరోధిస్తుంది. <b>Article 305</b> ఇప్పటికే ఉన్న <b>nationalisation చట్టాలను</b> కాపాడుతుంది — కాబట్టి Article 301 స్వేచ్ఛ కేంద్రం లేదా రాష్ట్రం ఒక వ్యాపారం, వ్యాపార సంస్థ, పరిశ్రమ, సేవను — ప్రైవేట్ పౌరులను పూర్తిగా లేదా పాక్షికంగా మినహాయించి — <b>state monopoly</b>గా నడపకుండా ఆపదు. చివరిగా, <b>Article 307</b> ఈ ఉద్దేశాల నెరవేర్పు కోసం ఒక అథారిటీని నియమించే అధికారం పార్లమెంట్‌కు ఇస్తుంది — కానీ గమనార్హం ఏమిటంటే <b>ఇప్పటివరకు ఇలాంటి అథారిటీని ఎప్పుడూ నియమించలేదు</b>; USA లో దీనికి సమానమైనది Inter-State Commerce Commission. పార్లమెంట్ Article 302 అధికారానికి ఒక ఆచరణాత్మక ఉదాహరణ <b class="imp">Essential Commodities Act, 1955</b> — దీనివల్ల పెట్రోలియం, బొగ్గు, ఇనుము, ఉక్కు వంటి నిత్యావసర వస్తువుల ఉత్పత్తి, సరఫరా, పంపిణీని కేంద్రం నియంత్రించగలదు.</div>
+
+
+<table class="qs">
+<caption class="qs">Quick Summary — Art. 261 &amp; Inter-State Trade/Commerce (Art. 301-307)</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>What does the "Full Faith and Credit" clause (Art. 261) do?</td><td>Requires recognition of every state's public acts/records throughout India; civil judgments executable anywhere, criminal ones not</td></tr>
+<tr><td>What does Art. 301 declare?</td><td>Trade, commerce, intercourse throughout India shall be free — applies to inter-state AND intra-state trade</td></tr>
+<tr><td>Art. 302 — Parliament's power?</td><td>Can restrict trade in public interest; cannot discriminate between states except during scarcity of goods</td></tr>
+<tr><td>Art. 304 — state legislature's power?</td><td>Reasonable restrictions with President's prior sanction; cannot discriminate; must tax imported goods at local rate</td></tr>
+<tr><td>Art. 305 &amp; Art. 307?</td><td>305 saves nationalisation/state-monopoly laws; 307 lets Parliament appoint a regulatory authority — none appointed so far</td></tr>
+<tr><td>Why isn't Art. 301's freedom absolute?</td><td>It targets state-level protectionism/trade wars specifically — 302-305 permit need-based regulation while banning discrimination</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Zonal Councils · North-Eastern Council · Article Reference Table</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Zonal Councils</div>
+<p class="eng">The <b class="term">Zonal Councils</b> are <b class="imp">statutory</b> bodies, not constitutional ones — they owe their existence to an ordinary Act of Parliament, the <b>States Reorganisation Act, 1956</b>, which divided the country into <b>five zones</b> — Northern, Central, Eastern, Western, and Southern — and provided a council for each. In forming these zones, several factors were weighed: the country's natural divisions, its river systems and communication links, cultural and linguistic affinity between neighbouring states, and shared needs around economic development, security, and law and order.</p>
+<div class="te"><b class="term">Zonal Councils</b> అనేవి <b class="imp">statutory</b> సంస్థలు, రాజ్యాంగబద్ధమైనవి కావు — ఇవి <b>States Reorganisation Act, 1956</b> అనే సాధారణ పార్లమెంట్ చట్టం వల్లే ఉనికిలోకి వచ్చాయి — ఈ చట్టం దేశాన్ని <b>ఐదు మండలాలు</b>గా — ఉత్తర, మధ్య, తూర్పు, పశ్చిమ, దక్షిణ — విభజించి, ఒక్కో మండలానికి ఒక council ను ఏర్పాటు చేసింది. ఈ మండలాలను ఏర్పాటు చేసేటప్పుడు — దేశం సహజ విభజనలు, నదీ వ్యవస్థలు, కమ్యూనికేషన్ మార్గాలు, పొరుగు రాష్ట్రాల మధ్య సాంస్కృతిక, భాషా సాన్నిహిత్యం, ఆర్థికాభివృద్ధి, భద్రత, శాంతిభద్రతల ఉమ్మడి అవసరాలు వంటి అనేక అంశాలను పరిగణించారు.</div>
+
+<p class="eng">Each zonal council consists of: <b>(a)</b> the Central Home Minister; <b>(b)</b> the Chief Ministers of all states in that zone; <b>(c)</b> two other ministers from each state in the zone; and <b>(d)</b> the Administrator of each union territory in the zone. Additionally, three officials serve as <b>advisors</b> without any voting right: a person nominated by <b>NITI Aayog</b>, the Chief Secretary of each state in the zone, and the Development Commissioner of each state in the zone. The <b>Central Home Minister</b> is the common chairman of all five zonal councils, while each Chief Minister takes a turn acting as <b>vice-chairman</b> for a one-year term, on a rotating basis.</p>
+<div class="te">ప్రతి zonal council లో — <b>(a)</b> కేంద్ర హోం మంత్రి; <b>(b)</b> ఆ మండలంలోని అన్ని రాష్ట్రాల ముఖ్యమంత్రులు; <b>(c)</b> మండలంలోని ప్రతి రాష్ట్రం నుండి మరో ఇద్దరు మంత్రులు; <b>(d)</b> మండలంలోని ప్రతి union territory పరిపాలకుడు ఉంటారు. వీటికి తోడు, ఓటు హక్కు లేకుండా ముగ్గురు అధికారులు <b>advisors</b>గా పనిచేస్తారు — <b>NITI Aayog</b> నామినేట్ చేసిన వ్యక్తి, మండలంలోని ప్రతి రాష్ట్రం Chief Secretary, ప్రతి రాష్ట్రం Development Commissioner. <b>కేంద్ర హోం మంత్రి</b> అన్ని ఐదు zonal councils కు ఉమ్మడి chairman గా ఉంటారు, ప్రతి ముఖ్యమంత్రి వంతుల వారీగా ఒక సంవత్సరం పాటు <b>vice-chairman</b>గా వ్యవహరిస్తారు.</div>
+<p class="eng">Zonal Councils are purely <b>deliberative and advisory</b> bodies, aimed at promoting cooperation between states, UTs, and the Centre — they discuss and recommend on matters like economic and social planning, linguistic minorities, border disputes, and inter-state transport. Their objectives, in detail, are to: achieve emotional integration of the country; help arrest the growth of acute state-consciousness, regionalism, linguism, and particularistic trends; help remove the after-effects of separation so reorganisation, integration, and economic advancement can proceed together; enable the Centre and states to cooperate and exchange ideas toward evolving uniform policies; cooperate in the speedy execution of major development projects; and secure a degree of political equilibrium between the country's different regions.</p>
+<div class="te">Zonal Councils పూర్తిగా <b>deliberative, advisory</b> సంస్థలు, రాష్ట్రాలు, UTలు, కేంద్రం మధ్య సహకారాన్ని ప్రోత్సహించడమే వీటి లక్ష్యం — ఆర్థిక, సామాజిక ప్రణాళిక, భాషా మైనారిటీలు, సరిహద్దు వివాదాలు, అంతర్-రాష్ట్ర రవాణా వంటి అంశాలపై చర్చించి సిఫారసులు చేస్తాయి. వీటి లక్ష్యాలు వివరంగా — దేశ భావోద్వేగ ఐక్యతను సాధించడం; తీవ్రమైన రాష్ట్ర-చైతన్యం, ప్రాంతీయవాదం, భాషావాదం, ప్రత్యేకవాద ధోరణుల పెరుగుదలను అరికట్టడంలో సహాయపడటం; పునర్వ్యవస్థీకరణ, ఏకీకరణ, ఆర్థిక పురోగతి కలిసి సాగేలా విభజన అనంతర ప్రభావాలను తొలగించడంలో సహాయపడటం; ఏకరీతి విధానాలు రూపొందించడానికి కేంద్రం, రాష్ట్రాలు సహకరించుకుని ఆలోచనలు మార్పిడి చేసుకోవడం; పెద్ద అభివృద్ధి ప్రాజెక్టుల వేగవంతమైన అమలులో సహకరించడం; దేశంలోని వేర్వేరు ప్రాంతాల మధ్య కొంత రాజకీయ సమతూకాన్ని పొందడం.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">North-Eastern Council</div>
+<p class="eng">Beyond the five Zonal Councils, a separate <b class="imp">North-Eastern Council</b> was created by its own Act of Parliament — the <b>North-Eastern Council Act, 1971</b> (in force from <span class="hlg">8 August 1972</span>). Its members are Assam, Manipur, Mizoram, Arunachal Pradesh, Nagaland, Meghalaya, and Tripura, with <span class="hlg">Sikkim</span> added as its <b>eighth member in 2002</b>. Its functions mirror those of the Zonal Councils, with two additions specific to the region: it must formulate a <b>unified, coordinated regional plan</b> covering matters of common importance, and it must periodically <b>review security and public-order</b> measures taken by member states.</p>
+<div class="te">ఐదు Zonal Councils కు అదనంగా, ప్రత్యేక పార్లమెంట్ చట్టం ద్వారా — <b>North-Eastern Council Act, 1971</b> (<span class="hlg">8 ఆగస్టు 1972</span> నుండి అమల్లోకి వచ్చింది) — ఒక <b class="imp">North-Eastern Council</b> ను ఏర్పాటు చేశారు. దీని సభ్యులు అస్సాం, మణిపూర్, మిజోరం, అరుణాచల్ ప్రదేశ్, నాగాలాండ్, మేఘాలయ, త్రిపుర — <span class="hlg">సిక్కిం</span> ను <b>2002లో ఎనిమిదో సభ్య రాష్ట్రంగా</b> చేర్చారు. దీని విధులు Zonal Councils విధులనే పోలి ఉంటాయి, ఈ ప్రాంతానికి ప్రత్యేకంగా రెండు అదనపు విధులు ఉంటాయి — ఉమ్మడి ప్రాముఖ్యత గల అంశాలను కవర్ చేసే <b>ఏకీకృత, సమన్వయ ప్రాంతీయ ప్రణాళికను</b> రూపొందించాలి, సభ్య రాష్ట్రాలు తీసుకున్న భద్రత, శాంతిభద్రతల చర్యలను కాలానుగుణంగా <b>సమీక్షించాలి</b>.</div>
+<table>
+<caption>Table 16.2 — Zonal Councils at a Glance</caption>
+<thead><tr><th class="n">#</th><th>Zone</th><th>Members (States/UTs)</th><th style="width:16%">HQ</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Northern</td><td>HP, Haryana, Punjab, Rajasthan, Delhi, Chandigarh, J&amp;K, Ladakh</td><td>New Delhi</td></tr>
+<tr><td class="n">2</td><td>Central</td><td>UP, Uttarakhand, Chhattisgarh, Madhya Pradesh</td><td>Prayagraj</td></tr>
+<tr><td class="n">3</td><td>Eastern</td><td>Bihar, Jharkhand, West Bengal, Odisha</td><td>Kolkata</td></tr>
+<tr><td class="n">4</td><td>Western</td><td>Gujarat, Maharashtra, Goa, Dadra &amp; Nagar Haveli and Daman &amp; Diu</td><td>Mumbai</td></tr>
+<tr><td class="n">5</td><td>Southern</td><td>AP, Telangana, Karnataka, TN, Kerala, Puducherry</td><td>Chennai</td></tr>
+</tbody>
+</table>
+<table>
+<caption>Table 16.3 — Key Articles on Inter-State Relations, at a Glance</caption>
+<thead><tr><th class="n" style="width:10%">Art.</th><th>Subject Matter</th></tr></thead>
+<tbody>
+<tr><td class="n">261</td><td>Public acts, records and judicial proceedings — "Full Faith and Credit"</td></tr>
+<tr><td class="n">262</td><td>Adjudication of disputes relating to waters of inter-state rivers or river valleys</td></tr>
+<tr><td class="n">263</td><td>Provisions with respect to an Inter-State Council</td></tr>
+<tr><td class="n">301</td><td>Freedom of trade, commerce and intercourse</td></tr>
+<tr><td class="n">302</td><td>Parliament's power to impose restrictions on trade, commerce and intercourse</td></tr>
+<tr><td class="n">303</td><td>Restrictions on the legislative powers of the Union and states regarding trade and commerce</td></tr>
+<tr><td class="n">304</td><td>Restrictions on trade, commerce and intercourse among states</td></tr>
+<tr><td class="n">305</td><td>Saving of existing laws and laws providing for state monopolies</td></tr>
+<tr><td class="n">307</td><td>Appointment of an authority for carrying out the purposes of Articles 301-304</td></tr>
+</tbody>
+</table>
+<table class="qs">
+<caption class="qs">Quick Summary — Zonal Councils &amp; North-Eastern Council</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Constitutional or statutory?</td><td>Statutory — created by the States Reorganisation Act, 1956, not the Constitution</td></tr>
+<tr><td>How many zones, and who chairs all of them?</td><td>Five zones (N/C/E/W/S); Central Home Minister is common chairman of all five</td></tr>
+<tr><td>Who acts as vice-chairman?</td><td>Each state's CM, by rotation, for a one-year term</td></tr>
+<tr><td>Nature of the councils' role?</td><td>Purely deliberative and advisory — no binding decision-making power</td></tr>
+<tr><td>North-Eastern Council — basis and members?</td><td>North-Eastern Council Act, 1971 (in force 1972); 8 members incl. Sikkim (added 2002)</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+<div class="para">
+<div class="ca">
+<div class="catitle">Current Affairs Update <span class="caasof">(as of August 2026 — verify again before exam, since these figures change independently of the Constitution's text)</span></div>
+<p class="eng"><span class="whyq">Inter-State Council reconstituted (November 2024).</span> The Inter-State Council was formally <b>reconstituted in November 2024</b>, with the <b>Prime Minister</b> continuing as its Chairman and the Chief Ministers of all states/UTs with a legislative assembly as members — the reconstitution notably accommodated NDA coalition allies among the invitee ministers. Separately, on <b>8 November 2024</b>, the Council's <b>Standing Committee</b> was also reconstituted, with the <b>Union Home Minister</b> named as its Chairman — the same structural role (PM chairs the Council, Home Minister chairs the Standing Committee) that this chapter describes from the book's original 1990/1996 design, just refreshed with current office-holders.</p>
+<div class="te"><span class="whyq">Inter-State Council పునర్వ్యవస్థీకరణ (నవంబర్ 2024).</span> Inter-State Council ను అధికారికంగా <b>నవంబర్ 2024</b>లో పునర్వ్యవస్థీకరించారు — <b>ప్రధానమంత్రి</b> దీనికి Chairman గా కొనసాగుతున్నారు, శాసనసభ ఉన్న అన్ని రాష్ట్రాలు/UTల ముఖ్యమంత్రులు సభ్యులుగా ఉన్నారు — ఈ పునర్వ్యవస్థీకరణలో NDA మిత్రపక్షాలను కూడా invitee మంత్రులుగా చేర్చారు. దీనికి వేరుగా, <b>8 నవంబర్ 2024</b>న Council <b>Standing Committee</b> ను కూడా పునర్వ్యవస్థీకరించారు — <b>Union హోం మంత్రి</b> దీనికి Chairman గా నియమితులయ్యారు — ఈ అధ్యాయంలో పుస్తకం వర్ణించిన 1990/1996 నాటి మౌలిక డిజైనే (PM Council కు, హోం మంత్రి Standing Committee కు chair) ఇప్పటి పదవీధారులతో కొనసాగుతోంది.</div>
+<p class="eng"><span class="whyq">Krishna and Mahadayi water dispute tribunals — still pending, tenures repeatedly extended.</span> Two of the tribunals listed in Table 16.1 remain unresolved years after their original constitution. The <b>Krishna Water Disputes Tribunal-II</b>'s tenure — after a prior extension to 31 July 2025 — was further extended, with the Centre allowing it time until <b>31 July 2026</b>, since discussions on utilisation of Krishna waters between Maharashtra, Karnataka, and Andhra Pradesh (and the AP-Telangana successor dispute) were still ongoing; its earlier report has not yet been formally notified. The <b>Mahadayi Water Disputes Tribunal</b> (Goa-Karnataka-Maharashtra) has similarly been granted repeated extensions beyond its 2018 report, after that report faced objections from all three states — illustrating, in practice, exactly the kind of prolonged multi-year dispute that Article 262's designers hoped a dedicated tribunal mechanism would resolve faster than ordinary litigation.</p>
+<div class="te"><span class="whyq">కృష్ణా, మహదాయి నీటి వివాద ట్రిబ్యునల్స్ — ఇంకా పరిష్కారం కాలేదు, గడువులు మళ్లీ మళ్లీ పొడిగింపు.</span> Table 16.1 లో పేర్కొన్న ట్రిబ్యునల్స్‌లో రెండు — వాటి అసలు ఏర్పాటు జరిగిన సంవత్సరాల తర్వాత కూడా ఇంకా పరిష్కారం కాలేదు. <b>Krishna Water Disputes Tribunal-II</b> గడువు — ముందు 31 జూలై 2025 వరకు పొడిగించగా — మహారాష్ట్ర, కర్ణాటక, ఆంధ్రప్రదేశ్ (అలాగే AP-తెలంగాణ వారసత్వ వివాదం) మధ్య కృష్ణా నీటి వినియోగంపై చర్చలు ఇంకా కొనసాగుతుండటంతో, కేంద్రం దీన్ని మరింత పొడిగించి <b>31 జూలై 2026</b> వరకు గడువు ఇచ్చింది; దీని మునుపటి నివేదిక ఇంకా అధికారికంగా నోటిఫై కాలేదు. <b>Mahadayi Water Disputes Tribunal</b> (గోవా-కర్ణాటక-మహారాష్ట్ర) కు కూడా, దాని 2018 నివేదికపై మూడు రాష్ట్రాలూ అభ్యంతరాలు వ్యక్తం చేయడంతో, పదేపదే గడువు పొడిగింపులు లభించాయి — Article 262 రూపశిల్పులు ప్రత్యేక tribunal యంత్రాంగం ద్వారా సాధారణ వ్యాజ్యం కంటే వేగంగా పరిష్కారం కాగలదని ఆశించిన తరహా దీర్ఘకాలిక వివాదానికి ఇది ఆచరణలో ఉదాహరణ.</div>
+<table class="ca2">
+<caption class="ca2">Current Affairs Snapshot — Inter-State Relations (as of August 2026)</caption>
+<thead><tr><th style="width:40%">Item</th><th>Latest Status</th></tr></thead>
+<tbody>
+<tr><td>Inter-State Council</td><td>Reconstituted Nov 2024 — PM as Chairman; NDA allies accommodated among invitees</td></tr>
+<tr><td>Inter-State Council Standing Committee</td><td>Reconstituted 8 Nov 2024 — Union Home Minister as Chairman</td></tr>
+<tr><td>Krishna Water Disputes Tribunal-II</td><td>Tenure extended to 31 July 2026; report not yet formally notified</td></tr>
+<tr><td>Mahadayi Water Disputes Tribunal</td><td>Report (2018) contested by all 3 states; tenure repeatedly extended, still unresolved</td></tr>
+</tbody>
+</table>
+<p class="eng" style="margin-top:8px;font-size:12.5px;color:#5a8a84">Sources checked via live web search (Aug 2026): ThePrint, Business Standard, and Deccan Herald reporting on the Inter-State Council reconstitution and Krishna/Mahadayi tribunal extensions. Re-verify office-holders and exact extension dates closer to your exam, since these are administrative/executive facts that change on their own schedule, independent of the Constitution's text.</p>
+</div>
+</div>
+</div>
+<div class="divider"><span class="dtitle">Ch.17 — Emergency Provisions</span><span class="dpart">Part II &middot; Complete Edition</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

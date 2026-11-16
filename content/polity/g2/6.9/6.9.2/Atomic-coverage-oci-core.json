@@ -1,0 +1,605 @@
+{
+  "id_map": {
+    "POL-692-OCI-DRAFT-001": "POL-692-P83-005",
+    "POL-692-OCI-DRAFT-002": "POL-692-P83-006",
+    "POL-692-OCI-DRAFT-003": "POL-692-P83-007",
+    "POL-692-OCI-DRAFT-004": "POL-692-P83-008",
+    "POL-692-OCI-DRAFT-005": "POL-692-P85-004",
+    "POL-692-OCI-DRAFT-006": "POL-692-P85-005"
+  },
+  "questions": [
+    {
+      "id": "POL-692-P83-005",
+      "source_page": 83,
+      "fact_ids": [
+        "POL-692-nri-indian-citizen-abroad",
+        "POL-618-oci-electoral-eligibility"
+      ],
+      "test_components": [
+        {
+          "id": "POL-692-nri-indian-citizen-abroad",
+          "gbk_page": 83,
+          "claim": "An NRI is an Indian citizen ordinarily residing abroad.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-005"
+          ],
+          "tested_component": "Reason in assertion–reason item.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "Table7.1 Who?/Visa rows; Eligibility and Rights final foreign-national distinction",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct identity/travel distinction; statutory qualification rejects GBK dual-citizenship shorthand and blanket generation/residency claims."
+          },
+          "source_scope": "Direct identity/travel distinction; statutory qualification rejects GBK dual-citizenship shorthand and blanket generation/residency claims."
+        }
+      ],
+      "existing_fact_reuse": [
+        "POL-618-oci-electoral-eligibility"
+      ],
+      "book_locators": {
+        "gbk": {
+          "printed_page": 83,
+          "section": "ప్రవాస భారతీయులు: భారత పాస్‌పోర్టు/వీసా; ఓవర్సీస్ సిటిజన్స్ ఆఫ్ ఇండియా",
+          "match": "Direct identity/travel distinction; statutory qualification rejects GBK dual-citizenship shorthand and blanket generation/residency claims.",
+          "new_image_reads": 0
+        },
+        "laxmikanth": {
+          "chapter": 7,
+          "section": "Table7.1 Who?/Visa rows; Eligibility and Rights final foreign-national distinction",
+          "source": "Full supplied prepared Chapter7, original English/Telugu order",
+          "match": "Direct identity/travel distinction; statutory qualification rejects GBK dual-citizenship shorthand and blanket generation/residency claims."
+        },
+        "primary": [
+          {
+            "url": "https://ociservices.gov.in/onlineOCI/images/OCIComparativeChart_23072021.pdf",
+            "locator": "PDF0 Who row; PDF7 explanation foreign national; NRI Indian passport"
+          },
+          {
+            "url": "https://ociservices.gov.in/onlineOCI/faq",
+            "locator": "Q25 explanation, Q26 separatevisa, Q29 Indianpassport"
+          }
+        ]
+      }
+    },
+    {
+      "id": "POL-692-P83-006",
+      "source_page": 83,
+      "fact_ids": [
+        "POL-692-oci-domestic-airfare-parity",
+        "POL-692-oci-property-purchase-exclusions",
+        "POL-692-oci-protected-area-permit",
+        "POL-692-oci-frro-intimation-despite-exemption"
+      ],
+      "test_components": [
+        {
+          "id": "POL-692-oci-domestic-airfare-parity",
+          "gbk_page": 83,
+          "claim": "OCI cardholders have specified domestic-airfare parity with Indian nationals.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-006"
+          ],
+          "tested_component": "Statement1 true.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph: FRRO exemption; domestic air fares; property parity",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Core benefit framework direct; property exclusions/permit/intimation qualifications supplied by actual official sources, not falsely claimed verbatim GBK."
+          },
+          "source_scope": "Core benefit framework direct; property exclusions/permit/intimation qualifications supplied by actual official sources, not falsely claimed verbatim GBK."
+        },
+        {
+          "id": "POL-692-oci-property-purchase-exclusions",
+          "gbk_page": 83,
+          "claim": "General OCI property-purchase parity excludes agricultural land, farmhouses and plantation property.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-006"
+          ],
+          "tested_component": "Statement2 false extension.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph: FRRO exemption; domestic air fares; property parity",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Core benefit framework direct; property exclusions/permit/intimation qualifications supplied by actual official sources, not falsely claimed verbatim GBK."
+          },
+          "source_scope": "Core benefit framework direct; property exclusions/permit/intimation qualifications supplied by actual official sources, not falsely claimed verbatim GBK."
+        },
+        {
+          "id": "POL-692-oci-protected-area-permit",
+          "gbk_page": 83,
+          "claim": "OCI card possession does not dispense with special permission for notified protected/restricted areas.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-006"
+          ],
+          "tested_component": "Statement3 false blanket exemption.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph: FRRO exemption; domestic air fares; property parity",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Core benefit framework direct; property exclusions/permit/intimation qualifications supplied by actual official sources, not falsely claimed verbatim GBK."
+          },
+          "source_scope": "Core benefit framework direct; property exclusions/permit/intimation qualifications supplied by actual official sources, not falsely claimed verbatim GBK."
+        },
+        {
+          "id": "POL-692-oci-frro-intimation-despite-exemption",
+          "gbk_page": 83,
+          "claim": "Normally resident OCI holders retain specified address/occupation intimation duties despite registration exemption.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-006"
+          ],
+          "tested_component": "Statement4 false removal of duty; exemption is context.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph: FRRO exemption; domestic air fares; property parity",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Core benefit framework direct; property exclusions/permit/intimation qualifications supplied by actual official sources, not falsely claimed verbatim GBK."
+          },
+          "source_scope": "Core benefit framework direct; property exclusions/permit/intimation qualifications supplied by actual official sources, not falsely claimed verbatim GBK."
+        }
+      ],
+      "existing_fact_reuse": [],
+      "book_locators": {
+        "gbk": {
+          "printed_page": 83,
+          "section": "ముఖ్యాంశాలు: మల్టిపుల్ ఎంట్రీ; నివాసం/పని; NRIలతో సమాన ప్రతిపత్తి అనే విస్తృత వాక్యం",
+          "match": "Core benefit framework direct; property exclusions/permit/intimation qualifications supplied by actual official sources, not falsely claimed verbatim GBK.",
+          "new_image_reads": 0
+        },
+        "laxmikanth": {
+          "chapter": 7,
+          "section": "OCI rights paragraph: FRRO exemption; domestic air fares; property parity",
+          "source": "Full supplied prepared Chapter7, original English/Telugu order",
+          "match": "Core benefit framework direct; property exclusions/permit/intimation qualifications supplied by actual official sources, not falsely claimed verbatim GBK."
+        },
+        "primary": [
+          {
+            "url": "https://ociservices.gov.in/onlineOCI/faq",
+            "locator": "Q25 benefits: domesticfares, propertyexclusions, specialpermits, registrationproviso"
+          },
+          {
+            "url": "https://ociservices.gov.in/onlineOCI/images/OCIComparativeChart_23072021.pdf",
+            "locator": "PDF4–6 corresponding benefits/provisos"
+          }
+        ]
+      }
+    },
+    {
+      "id": "POL-692-P83-007",
+      "source_page": 83,
+      "fact_ids": [
+        "POL-692-oci-president-ineligible",
+        "POL-692-oci-vicepresident-ineligible",
+        "POL-692-oci-SC-judgeship-ineligible",
+        "POL-692-oci-HC-judgeship-ineligible",
+        "POL-692-oci-parliament-membership-ineligible",
+        "POL-692-oci-state-legislature-membership-ineligible",
+        "POL-692-oci-public-post-special-order"
+      ],
+      "test_components": [
+        {
+          "id": "POL-692-oci-president-ineligible",
+          "gbk_page": 83,
+          "claim": "OCI status does not confer eligibility for election as President.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-007"
+          ],
+          "tested_component": "Match A to1; no separate Article58 number recall.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph denied-rights list; public services/posts exception",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+          },
+          "source_scope": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+        },
+        {
+          "id": "POL-692-oci-vicepresident-ineligible",
+          "gbk_page": 83,
+          "claim": "OCI status does not confer eligibility for election as Vice-President.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-007"
+          ],
+          "tested_component": "Match A to1; no separate Article66 number recall.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph denied-rights list; public services/posts exception",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+          },
+          "source_scope": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+        },
+        {
+          "id": "POL-692-oci-SC-judgeship-ineligible",
+          "gbk_page": 83,
+          "claim": "OCI status does not confer eligibility for Supreme Court judgeship.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-007"
+          ],
+          "tested_component": "Match B to1; no separate Article124 number recall.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph denied-rights list; public services/posts exception",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+          },
+          "source_scope": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+        },
+        {
+          "id": "POL-692-oci-HC-judgeship-ineligible",
+          "gbk_page": 83,
+          "claim": "OCI status does not confer eligibility for High Court judgeship.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-007"
+          ],
+          "tested_component": "Match B to1; no separate Article217 number recall.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph denied-rights list; public services/posts exception",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+          },
+          "source_scope": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+        },
+        {
+          "id": "POL-692-oci-parliament-membership-ineligible",
+          "gbk_page": 83,
+          "claim": "OCI status does not confer eligibility for parliamentary membership.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-007"
+          ],
+          "tested_component": "Match C to1.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph denied-rights list; public services/posts exception",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+          },
+          "source_scope": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+        },
+        {
+          "id": "POL-692-oci-state-legislature-membership-ineligible",
+          "gbk_page": 83,
+          "claim": "OCI status does not confer eligibility for State legislative membership.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-007"
+          ],
+          "tested_component": "Match C to1.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph denied-rights list; public services/posts exception",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+          },
+          "source_scope": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+        },
+        {
+          "id": "POL-692-oci-public-post-special-order",
+          "gbk_page": 83,
+          "claim": "The specified public-service/post bar has a Central Government special-order appointment exception, not a general constitutional-office exception.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-007"
+          ],
+          "tested_component": "Match D to2 versus A/B/C1.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI rights paragraph denied-rights list; public services/posts exception",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+          },
+          "source_scope": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+        }
+      ],
+      "existing_fact_reuse": [],
+      "book_locators": {
+        "gbk": {
+          "printed_page": 83,
+          "section": "ద్వంద్వ పౌరసత్వంలో ఓటింగు హక్కులుండవు; ప్రజా పదవులకు అర్హులు కారు అనే వాక్యాలు",
+          "match": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone.",
+          "new_image_reads": 0
+        },
+        "laxmikanth": {
+          "chapter": 7,
+          "section": "OCI rights paragraph denied-rights list; public services/posts exception",
+          "source": "Full supplied prepared Chapter7, original English/Telugu order",
+          "match": "Direct broad public-office exclusion; precise domain-specific exception from actual7B. No new vote-only clone."
+        },
+        "primary": [
+          {
+            "url": "https://indiankanoon.org/doc/80973385/",
+            "locator": "7B(2)(b)–(e),(g)–(i), actual statutory reproduction"
+          },
+          {
+            "url": "https://ociservices.gov.in/onlineOCI/faq",
+            "locator": "Q27 actual denied-rights list"
+          }
+        ]
+      }
+    },
+    {
+      "id": "POL-692-P83-008",
+      "source_page": 83,
+      "fact_ids": [
+        "POL-692-oci-adult-eligible-at-commencement",
+        "POL-692-oci-adult-incorporated-territory",
+        "POL-692-oci-adult-descendant-scope"
+      ],
+      "test_components": [
+        {
+          "id": "POL-692-oci-adult-eligible-at-commencement",
+          "gbk_page": 83,
+          "claim": "Adult OCI eligibility includes a qualifying foreign national eligible to become an Indian citizen at commencement, distinct from actual former citizenship.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-008"
+          ],
+          "tested_component": "Statement1 true; fullage/capacity assumptions are given, not separately tested.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "Eligibility, Rights and Bar on Pakistan/Bangladesh Ancestry: opening adult categories",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Adult connections precisely qualify the common Indian-origin eligibility topic; detailed dates/descendant scope partial in GBK, direct suppliedLax/primary. Not an independent administrative update."
+          },
+          "source_scope": "Adult connections precisely qualify the common Indian-origin eligibility topic; detailed dates/descendant scope partial in GBK, direct suppliedLax/primary. Not an independent administrative update."
+        },
+        {
+          "id": "POL-692-oci-adult-incorporated-territory",
+          "gbk_page": 83,
+          "claim": "Adult OCI eligibility includes the specified territory that became part of India after15August1947 connection.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-008"
+          ],
+          "tested_component": "Statement2 true.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "Eligibility, Rights and Bar on Pakistan/Bangladesh Ancestry: opening adult categories",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Adult connections precisely qualify the common Indian-origin eligibility topic; detailed dates/descendant scope partial in GBK, direct suppliedLax/primary. Not an independent administrative update."
+          },
+          "source_scope": "Adult connections precisely qualify the common Indian-origin eligibility topic; detailed dates/descendant scope partial in GBK, direct suppliedLax/primary. Not an independent administrative update."
+        },
+        {
+          "id": "POL-692-oci-adult-descendant-scope",
+          "gbk_page": 83,
+          "claim": "Qualifying adult descendants include children, grandchildren and great-grandchildren.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P83-008"
+          ],
+          "tested_component": "Statement3 child-only exclusion false.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "Eligibility, Rights and Bar on Pakistan/Bangladesh Ancestry: opening adult categories",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Adult connections precisely qualify the common Indian-origin eligibility topic; detailed dates/descendant scope partial in GBK, direct suppliedLax/primary. Not an independent administrative update."
+          },
+          "source_scope": "Adult connections precisely qualify the common Indian-origin eligibility topic; detailed dates/descendant scope partial in GBK, direct suppliedLax/primary. Not an independent administrative update."
+        }
+      ],
+      "existing_fact_reuse": [],
+      "book_locators": {
+        "gbk": {
+          "printed_page": 83,
+          "section": "ఇతరదేశాల్లో ఉన్న భారత సంతతికి చెందిన అందరికీ OCI హోదా అవకాశం అనే సాధారణీకరణ",
+          "match": "Adult connections precisely qualify the common Indian-origin eligibility topic; detailed dates/descendant scope partial in GBK, direct suppliedLax/primary. Not an independent administrative update.",
+          "new_image_reads": 0
+        },
+        "laxmikanth": {
+          "chapter": 7,
+          "section": "Eligibility, Rights and Bar on Pakistan/Bangladesh Ancestry: opening adult categories",
+          "source": "Full supplied prepared Chapter7, original English/Telugu order",
+          "match": "Adult connections precisely qualify the common Indian-origin eligibility topic; detailed dates/descendant scope partial in GBK, direct suppliedLax/primary. Not an independent administrative update."
+        },
+        "primary": [
+          {
+            "url": "https://ociservices.gov.in/onlineOCI/faq",
+            "locator": "Q1 adultforeignnationalcategories"
+          },
+          {
+            "url": "https://indiankanoon.org/doc/116997114/",
+            "locator": "7A(1)(a)(i)–(iv), actual statutory reproduction"
+          }
+        ]
+      }
+    },
+    {
+      "id": "POL-692-P85-004",
+      "source_page": 85,
+      "fact_ids": [
+        "POL-692-oci-cancellation-fraud",
+        "POL-692-oci-cancellation-disaffection",
+        "POL-692-oci-cancellation-enemy-dealing",
+        "POL-692-oci-cancellation-public-interests",
+        "POL-692-oci-cancellation-notified-other-law"
+      ],
+      "test_components": [
+        {
+          "id": "POL-692-oci-cancellation-fraud",
+          "gbk_page": 85,
+          "claim": "OCI registration fraud, false representation or concealment of material facts can be a Section7D cancellation ground.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P85-004"
+          ],
+          "tested_component": "Proposition1.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "Renunciation and Cancellation of OCI: cancellation grounds paragraph",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+          },
+          "source_scope": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+        },
+        {
+          "id": "POL-692-oci-cancellation-disaffection",
+          "gbk_page": 85,
+          "claim": "Constitutional disaffection can be a Section7D OCI cancellation ground.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P85-004"
+          ],
+          "tested_component": "Proposition2.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "Renunciation and Cancellation of OCI: cancellation grounds paragraph",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+          },
+          "source_scope": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+        },
+        {
+          "id": "POL-692-oci-cancellation-enemy-dealing",
+          "gbk_page": 85,
+          "claim": "Specified unlawful wartime enemy dealings can be a Section7D OCI cancellation ground.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P85-004"
+          ],
+          "tested_component": "Proposition3.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "Renunciation and Cancellation of OCI: cancellation grounds paragraph",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+          },
+          "source_scope": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+        },
+        {
+          "id": "POL-692-oci-cancellation-public-interests",
+          "gbk_page": 85,
+          "claim": "Section7D includes sovereignty/integrity, security, friendly relations and general-public-interest grounds.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P85-004"
+          ],
+          "tested_component": "Proposition4; statutory ground group, no individual current-case attribution.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "Renunciation and Cancellation of OCI: cancellation grounds paragraph",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+          },
+          "source_scope": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+        },
+        {
+          "id": "POL-692-oci-cancellation-notified-other-law",
+          "gbk_page": 85,
+          "claim": "The other-law limb of Section7D(da) retains Central Government notification specification.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P85-004"
+          ],
+          "tested_component": "Proposition5 false absence of notification requirement.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "Renunciation and Cancellation of OCI: cancellation grounds paragraph",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+          },
+          "source_scope": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+        }
+      ],
+      "existing_fact_reuse": [],
+      "book_locators": {
+        "gbk": {
+          "printed_page": 85,
+          "section": "OCI కార్డు రద్దు: అక్రమాలు, రాజ్యాంగ అవిధేయత, యుద్ధ సహకారం, రక్షణ/సార్వభౌమత్వం/చట్ట ఉల్లంఘనల జాబితా",
+          "match": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10.",
+          "new_image_reads": 0
+        },
+        "laxmikanth": {
+          "chapter": 7,
+          "section": "Renunciation and Cancellation of OCI: cancellation grounds paragraph",
+          "source": "Full supplied prepared Chapter7, original English/Telugu order",
+          "match": "Direct core cancellation grounds; clause-specific limits narrow GBK compression. Not a duplicate of citizenshipdeprivation under10."
+        },
+        "primary": [
+          {
+            "url": "https://indiankanoon.org/doc/99448343/",
+            "locator": "7D(a),(b),(c),(da),(e), actual full statutory reproduction"
+          }
+        ]
+      }
+    },
+    {
+      "id": "POL-692-P85-005",
+      "source_page": 85,
+      "fact_ids": [
+        "POL-692-oci-sentence-five-year-window",
+        "POL-692-oci-cancellation-reasonable-hearing"
+      ],
+      "test_components": [
+        {
+          "id": "POL-692-oci-sentence-five-year-window",
+          "gbk_page": 85,
+          "claim": "For the tested two-year sentences, imposition within five years after OCI registration distinguishes the qualifying case.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P85-005"
+          ],
+          "tested_component": "A2024 versusB2026 after2020registration; exact minimum below2 is not independently discriminated.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI cancellation: imprisonment2+years within5years; reasonable hearing paragraph",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct suppliedLax threshold/procedure; GBK omits/compresses precisewindow. No new2026administrativeclaim."
+          },
+          "source_scope": "Direct suppliedLax threshold/procedure; GBK omits/compresses precisewindow. No new2026administrativeclaim."
+        },
+        {
+          "id": "POL-692-oci-cancellation-reasonable-hearing",
+          "gbk_page": 85,
+          "claim": "A reasonable opportunity of being heard remains required before cancellation even where the stated sentence ground is met.",
+          "status": "tested",
+          "question_ids": [
+            "POL-692-P85-005"
+          ],
+          "tested_component": "Correctoption1 versusoption2 hearing dispensed.",
+          "laxmikanth": {
+            "chapter": 7,
+            "section": "OCI cancellation: imprisonment2+years within5years; reasonable hearing paragraph",
+            "source": "Full supplied prepared Chapter7, original English/Telugu order",
+            "match": "Direct suppliedLax threshold/procedure; GBK omits/compresses precisewindow. No new2026administrativeclaim."
+          },
+          "source_scope": "Direct suppliedLax threshold/procedure; GBK omits/compresses precisewindow. No new2026administrativeclaim."
+        }
+      ],
+      "existing_fact_reuse": [],
+      "book_locators": {
+        "gbk": {
+          "printed_page": 85,
+          "section": "OCI రద్దు జాబితాలో రెండేళ్ల శిక్షపై సంక్షిప్త వాక్యం",
+          "match": "Direct suppliedLax threshold/procedure; GBK omits/compresses precisewindow. No new2026administrativeclaim.",
+          "new_image_reads": 0
+        },
+        "laxmikanth": {
+          "chapter": 7,
+          "section": "OCI cancellation: imprisonment2+years within5years; reasonable hearing paragraph",
+          "source": "Full supplied prepared Chapter7, original English/Telugu order",
+          "match": "Direct suppliedLax threshold/procedure; GBK omits/compresses precisewindow. No new2026administrativeclaim."
+        },
+        "primary": [
+          {
+            "url": "https://indiankanoon.org/doc/99448343/",
+            "locator": "7D(d) and final reasonable-hearing proviso, actual full statutory reproduction"
+          }
+        ]
+      }
+    }
+  ],
+  "not_new_originals": "Existingvote/spouse/minor/renunciation/conversionquestions remaincanonical; no duplicatecreated.",
+  "publication": "Published after independent root review",
+  "source_images": 0,
+  "scope": "Selected core OCI component map only; not full Citizenship denominator. New guide facts and Article-number teaching are not automatically tested."
+}

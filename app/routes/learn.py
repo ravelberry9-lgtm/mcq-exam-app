@@ -53,6 +53,13 @@ def hub():
                            science_available=science_available)
 
 
+@bp.route("/practice")
+def practice_tab():
+    """Bottom-bar Practice tab: pick a subject to practise."""
+    science_available = any(science_content.load_book(item["slug"]) for item in science_content.CHAPTERS)
+    return render_template("ds/practice_tab.html", science_available=science_available)
+
+
 @bp.route("/section/<int:section_id>")
 def section(section_id):
     sec = db.session.get(ExamSection, section_id) or abort(404)
@@ -219,6 +226,10 @@ def _fresh_practice(slug, ch, live):
 
 @bp.route("/subject/<slug>")
 def subject(slug):
+    if slug == 'indian_constitution' and request.args.get('legacy') != '1':
+        from .polity_unit6 import enabled
+        if enabled():
+            return redirect(url_for('polity_unit6.home'))
     sub = Subject.query.filter_by(slug=slug).first_or_404()
     if sub.slug == syl.SUBJECT_SLUG and syl.is_loaded():
         return redirect(url_for("learn.ap_history"))

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Emergencies Memory Map</title>
+<style>
+:root{
+ --bg:#eef1f6;--surface:#ffffff;--ink:#16213a;--muted:#4b5970;--line:#d3dae5;--chip:#e7ecf3;--focus:#1d4ed8;--on-ink:#fff;
+ --n:#c2410c;--n-bg:#fff1e9;--n-line:#f6c3a6;--n-2:#e8590c;
+ --s:#6d28d9;--s-bg:#f3edff;--s-line:#cdb8fb;--s-2:#8b5cf6;
+ --f:#0f766e;--f-bg:#e3f6f2;--f-line:#9fdcd0;--f-2:#14a394;
+ --safe:#1d4ed8;--safe-bg:#e8efff;--safe-line:#b3c7f7;
+ --mark:#fff0a8;--mark-ink:#3d2f00;--shadow:0 1px 2px rgba(20,33,58,.06),0 6px 18px rgba(20,33,58,.06);
+ --font-d:'Sora','Noto Sans Telugu',system-ui,-apple-system,'Segoe UI',sans-serif;
+ --font-b:'Noto Sans','Noto Sans Telugu',system-ui,-apple-system,'Segoe UI',sans-serif;
+ color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#0e1623;--surface:#16233a;--ink:#e7edf6;--muted:#a6b6cc;--line:#2d3f5c;--chip:#22334f;--focus:#7cb3fb;--on-ink:#0e1623;
+ --n:#ff9466;--n-bg:#2e1c17;--n-line:#7a3d25;--n-2:#ff7a45;
+ --s:#bba2ff;--s-bg:#221b3b;--s-line:#4f3d8f;--s-2:#9b7bff;
+ --f:#3ddbc6;--f-bg:#0f2b2c;--f-line:#1f6660;--f-2:#22b8a6;
+ --safe:#86b6ff;--safe-bg:#15274a;--safe-line:#2f4f8a;
+ --mark:#5c4a00;--mark-ink:#fff3c4;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.25);color-scheme:dark}}
+:root[data-theme="dark"]{
+ --bg:#0e1623;--surface:#16233a;--ink:#e7edf6;--muted:#a6b6cc;--line:#2d3f5c;--chip:#22334f;--focus:#7cb3fb;--on-ink:#0e1623;
+ --n:#ff9466;--n-bg:#2e1c17;--n-line:#7a3d25;--n-2:#ff7a45;
+ --s:#bba2ff;--s-bg:#221b3b;--s-line:#4f3d8f;--s-2:#9b7bff;
+ --f:#3ddbc6;--f-bg:#0f2b2c;--f-line:#1f6660;--f-2:#22b8a6;
+ --safe:#86b6ff;--safe-bg:#15274a;--safe-line:#2f4f8a;
+ --mark:#5c4a00;--mark-ink:#fff3c4;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.25);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:15px;line-height:1.55;
+ padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px));overflow-wrap:break-word}
+body.is-te{font-size:15.5px}
+body:not(.is-te) .te{display:none!important}
+body.is-te .en{display:none!important}
+main{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:34px}
+.c352{--c:var(--n);--cb:var(--n-bg);--cl:var(--n-line);--c2:var(--n-2)}
+.c356{--c:var(--s);--cb:var(--s-bg);--cl:var(--s-line);--c2:var(--s-2)}
+.c360{--c:var(--f);--cb:var(--f-bg);--cl:var(--f-line);--c2:var(--f-2)}
+.csafe{--c:var(--safe);--cb:var(--safe-bg);--cl:var(--safe-line);--c2:var(--safe)}
+/* header */
+.hero{position:relative;padding:26px 0 0}
+.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:0 0 6px 6px;
+ background:linear-gradient(90deg,var(--n) 0 33.3%,var(--s) 33.3% 66.6%,var(--f) 66.6%)}
+header{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between}
+h1{font-family:var(--font-d);font-size:clamp(26px,5vw,40px);line-height:1.15;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1 .tri{display:inline-flex;gap:6px;vertical-align:middle;margin-left:4px}
+h1 .tri i{font-style:normal;font-size:.5em;font-weight:700;color:#fff;border-radius:7px;padding:2px 8px;background:var(--c)}
+:root[data-theme="dark"] h1 .tri i{color:#0e1623}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h1 .tri i{color:#0e1623}}
+.sub{margin:8px 0 0;color:var(--muted);max-width:64ch;font-size:14px}
+.ctl{display:flex;gap:8px;flex-wrap:wrap}
+.tog{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+button{font:inherit;font-size:14px;font-weight:600;padding:8px 16px;border:0;background:transparent;color:var(--muted);cursor:pointer;min-height:40px}
+.tog button[aria-pressed="true"]{background:var(--ink);color:var(--on-ink)}
+#bTh{border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink)}
+button:focus-visible,summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.hdr{margin-top:16px;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--on-ink);border-radius:12px;padding:10px 16px;font-weight:600;font-family:var(--font-d);font-size:15px}
+.hdr .dots{display:inline-flex;gap:4px;flex:none}.hdr .dots i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+h2{font-family:var(--font-d);font-size:20px;margin:0 0 4px;letter-spacing:-.005em}
+.lead{margin:0 0 14px;color:var(--muted);font-size:13.5px}
+.asof{font-size:12px;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+/* number tiles */
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.num{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--cb),var(--surface) 75%);border:1px solid var(--cl);border-radius:14px;padding:12px 14px 12px;min-width:0;box-shadow:var(--shadow)}
+.num::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--c)}
+.num .k{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--c);border:1px solid var(--cl);background:var(--surface);border-radius:999px;padding:0 8px}
+.num b{font-family:var(--font-d);font-size:30px;display:block;line-height:1.15;margin:6px 0 2px;color:var(--c);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+body.is-te .num b{font-size:25px}
+.num b.fit .en{font-size:25px;white-space:nowrap}
+.num>span.d{font-size:12.5px;color:var(--muted);display:block;line-height:1.4}
+.num.mix{--c:var(--ink);background:linear-gradient(135deg,var(--n-bg),var(--s-bg) 55%,var(--f-bg))}
+.num.mix::after{background:linear-gradient(var(--n),var(--s),var(--f))}
+.num.pair{--c:var(--ink);--cl:var(--line,rgba(127,127,127,.35));background:linear-gradient(135deg,var(--pa-bg),var(--surface) 50%,var(--pb-bg))}
+.num.pair::after{background:linear-gradient(var(--pa) 50%,var(--pb) 50%)}
+.num.p352356{--pa:var(--n);--pb:var(--s);--pa-bg:var(--n-bg);--pb-bg:var(--s-bg)}
+.num.p356360{--pa:var(--s);--pb:var(--f);--pa-bg:var(--s-bg);--pb-bg:var(--f-bg)}
+/* three emergency matrix */
+.matrix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto repeat(5,auto);gap:0 14px}
+.col{display:grid;grid-row:1 / span 6;grid-template-rows:subgrid;gap:0;min-width:0;grid-column:var(--col);
+ background:var(--surface);border:1px solid var(--cl);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.chead{margin:0;padding:14px 16px 12px;background:linear-gradient(135deg,var(--c),var(--c2));color:#fff;display:flex;gap:12px;align-items:center}
+:root[data-theme="dark"] .chead{color:#0e1623}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chead{color:#0e1623}}
+.chead svg{flex:none;width:40px;height:40px}
+.chead .art{display:block;font-family:var(--font-d);font-size:24px;line-height:1.1;font-weight:700}
+.chead .cn{display:block;font-family:var(--font-b);font-size:13.5px;font-weight:600;opacity:.92}
+.cell{padding:10px 16px 12px;border-top:1px solid var(--line);min-width:0;display:flex;flex-direction:column;gap:4px}
+.cell:nth-child(odd){background:color-mix(in srgb,var(--cb) 55%,transparent)}
+.rl{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.rl i{font-style:normal;display:inline-grid;place-items:center;width:18px;height:18px;border-radius:5px;background:var(--cb);border:1px solid var(--cl);font-size:11px;letter-spacing:0}
+body.is-te .rl{text-transform:none;letter-spacing:0;font-size:12.5px}
+.nd{margin:0;font-size:14px}
+.nd.sub2{margin-top:6px;padding-top:6px;border-top:1px dashed var(--cl);color:var(--muted);font-size:13.5px}
+mark{background:var(--mark);color:var(--mark-ink);border-radius:3px;padding:0 3px;font-weight:700}
+.ptr{font-size:13.5px;color:var(--muted);margin:0}
+.ptr a{color:var(--c);font-weight:600}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:st;position:relative}
+.step{position:relative;background:var(--surface);border:1px solid var(--n-line);border-radius:14px;padding:12px 14px 12px;margin-right:28px;min-width:0;box-shadow:var(--shadow)}
+.step:last-child{margin-right:0}
+.step::after{content:"";position:absolute;right:-24px;top:50%;width:20px;height:20px;transform:translateY(-50%);
+ background:var(--n);clip-path:polygon(0 30%,55% 30%,55% 0,100% 50%,55% 100%,55% 70%,0 70%)}
+.step:last-child::after{display:none}
+.step .no{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--n);color:#fff;font-family:var(--font-d);font-weight:700;font-size:13px;margin-bottom:6px}
+:root[data-theme="dark"] .step .no{color:#0e1623}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .step .no{color:#0e1623}}
+.step b{display:block;font-size:14.5px;line-height:1.35}
+.step small{display:block;margin-top:4px;color:var(--muted);font-size:12.5px;line-height:1.4}
+.step.hot{background:linear-gradient(160deg,var(--n-bg),var(--surface))}
+.exit{margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--n-bg);border:1px dashed var(--n);border-radius:12px;padding:10px 14px;font-size:14px}
+.exit .x{font-family:var(--font-d);font-weight:700;color:var(--n);font-size:18px;line-height:1}
+/* timeline */
+.tl{padding:16px 18px 14px}
+.tlrow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 14px;align-items:center;margin-bottom:16px}
+.tlname{font-family:var(--font-d);font-weight:700;color:var(--c);font-size:15px;line-height:1.2}
+.tlname small{display:block;font-family:var(--font-b);font-weight:500;color:var(--muted);font-size:12px}
+.track{position:relative;height:46px}
+.grid{position:absolute;top:0;bottom:0;width:0;border-left:1px dashed var(--line)}
+.apr{position:absolute;top:0;height:10px;border-radius:3px;background:var(--mark);border:1.5px solid var(--c)}
+.blk{position:absolute;top:16px;height:22px;border-radius:5px;background:var(--c);opacity:.92}
+.blk.alt{opacity:.7}
+.blk.hatch{background:repeating-linear-gradient(135deg,var(--c) 0 5px,transparent 5px 9px);border:1.5px solid var(--c);opacity:1}
+.blk.inf{background:linear-gradient(90deg,var(--c),transparent);opacity:.9;border-radius:5px 0 0 5px}
+.wall{position:absolute;top:8px;bottom:0;width:4px;border-radius:2px;background:var(--ink)}
+.tlnote{grid-column:2;font-size:12.5px;color:var(--muted);line-height:1.4;margin-top:-2px}
+.tlnote b{color:var(--c)}
+.axis{position:relative;height:22px;margin-left:164px;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.axis span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.axis span:first-child{transform:none}
+.axis .inf{transform:translateX(-100%);right:0;left:auto!important}
+.tlleg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+.tlleg i{display:inline-block;width:22px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+/* rights shield */
+.shield{display:grid;grid-template-columns:minmax(0,1fr) 250px minmax(0,1fr);gap:14px;align-items:center}
+.rcard{border-radius:14px;padding:14px 16px;background:linear-gradient(160deg,var(--cb),var(--surface) 80%);border:1px solid var(--cl);box-shadow:var(--shadow);min-width:0;display:flex;flex-direction:column;gap:8px}
+.rcard .tagline{display:flex;align-items:center;gap:8px;font-family:var(--font-d);font-weight:700;font-size:15px;color:var(--c)}
+.rcard .tagline .ic{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--c);color:#fff;font-size:16px;flex:none}
+:root[data-theme="dark"] .rcard .tagline .ic{color:#0e1623}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rcard .tagline .ic{color:#0e1623}}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px;border:1px solid currentColor;width:max-content;max-width:100%}
+.pill.off{color:var(--n)}.pill.on{color:var(--safe)}
+.svgbox{display:flex;align-items:center;justify-content:center;min-width:0}
+.svgbox svg{width:100%;max-width:200px;max-height:200px;height:auto;display:block}
+.sh-out{fill:var(--safe-bg);stroke:var(--safe);stroke-width:3}
+.sh-in{fill:none;stroke:var(--safe);stroke-width:1.2;stroke-dasharray:4 4;opacity:.7}
+.sh-big{fill:var(--safe);font-family:var(--font-d);font-weight:700;font-size:46px}
+.sh-sm{fill:var(--ink);font-family:var(--font-b);font-size:14px;font-weight:600}
+.sh-mut{fill:var(--muted);font-family:var(--font-b);font-size:11.5px}
+.nobar{margin-top:14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;border-radius:14px;padding:12px 16px;
+ background:linear-gradient(90deg,var(--s-bg),var(--f-bg));border:1px solid var(--line)}
+.nobar .badges{display:flex;gap:6px}
+.nobar .badges span{font-family:var(--font-d);font-weight:700;font-size:14px;color:#fff;border-radius:8px;padding:3px 9px;background:var(--c);text-decoration:line-through;text-decoration-thickness:2px}
+:root[data-theme="dark"] .nobar .badges span{color:#0e1623}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nobar .badges span{color:#0e1623}}
+/* cases + usage */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.case{border-radius:14px;padding:14px 16px;background:var(--surface);border:1px solid var(--cl);border-top:6px solid var(--c);box-shadow:var(--shadow);min-width:0}
+.case .tg{display:inline-block;font-size:11.5px;font-weight:700;color:var(--c);background:var(--cb);border-radius:6px;padding:1px 8px;margin-bottom:6px}
+.case p{margin:0;font-size:14.5px}
+.case .arrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
+.case .arrow span{font-family:var(--font-d);font-weight:700;font-size:13px;border-radius:8px;padding:3px 10px;background:var(--chip)}
+.case .arrow span.new{background:var(--safe-bg);color:var(--safe)}
+.use{padding:16px 18px}
+.usegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:10px 0 8px}
+.ub{border-radius:12px;padding:10px 14px;background:var(--cb);border:1px solid var(--cl);min-width:0}
+.ub .big{font-family:var(--font-d);font-weight:700;font-size:30px;line-height:1.1;color:var(--c)}
+.ub .lbl{font-size:12.5px;color:var(--muted)}
+.yrs{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.yrs span{font-family:var(--font-d);font-weight:700;font-size:13px;color:#fff;background:var(--c);border-radius:6px;padding:2px 9px}
+:root[data-theme="dark"] .yrs span{color:#0e1623}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .yrs span{color:#0e1623}}
+/* mnemonic */
+.mn{padding:18px;background:linear-gradient(135deg,var(--n-bg),var(--s-bg) 50%,var(--f-bg));border:1px solid var(--line);border-radius:16px}
+.mrow{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;margin:8px 0 12px}
+.clock{display:flex;align-items:flex-end;gap:6px}
+.clock .dg{display:flex;flex-direction:column;align-items:center}
+.clock .dg b{font-family:var(--font-d);font-size:52px;line-height:1;color:var(--c)}
+.clock .dg small{font-size:11.5px;font-weight:700;color:var(--c)}
+.clock .dash{font-family:var(--font-d);font-size:40px;color:var(--muted);line-height:1.2;padding-bottom:16px}
+.wea{display:flex;gap:8px;flex-wrap:wrap}
+.wea .lt{min-width:84px;border-radius:12px;padding:6px 10px;text-align:center;background:var(--surface);border:2px solid var(--n)}
+.wea .lt b{display:block;font-family:var(--font-d);font-size:26px;line-height:1.1;color:var(--n)}
+.wea .lt small{display:block;font-size:11.5px;color:var(--muted);line-height:1.3}
+.wea .lt.no{border-style:dashed;border-color:var(--muted);opacity:.85}
+.wea .lt.no b{color:var(--muted);text-decoration:line-through}
+.mn p{margin:0;font-size:14.5px}
+.lockc{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-d);font-weight:700;color:var(--safe);font-size:22px}
+/* quiz + traps */
+.quiz{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px}
+.quiz details{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:12px;padding:12px 14px;min-width:0;box-shadow:var(--shadow)}
+.quiz summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;display:flex;gap:10px;align-items:flex-start}
+.quiz summary::-webkit-details-marker{display:none}
+.quiz summary::before{content:"?";display:inline-grid;place-items:center;flex:none;width:22px;height:22px;border-radius:50%;background:var(--cb);color:var(--c);font-family:var(--font-d);font-weight:700;font-size:13px}
+.quiz details[open] summary::before{content:"\2713"}
+.quiz .a{margin:8px 0 0 32px;font-size:14px;padding:8px 10px;border-radius:8px;background:var(--cb)}
+.quiz .tap{margin-left:32px;font-size:12px;color:var(--muted);display:block;margin-top:4px}
+.quiz details[open] .tap{display:none}
+.traps{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px;padding:0;margin:0;list-style:none}
+.traps li{background:var(--surface);border:1px solid var(--cl);border-radius:12px;padding:12px 14px;font-size:14px;min-width:0;box-shadow:var(--shadow);position:relative}
+.traps b{display:flex;gap:8px;align-items:center;font-family:var(--font-d);font-size:14px;margin-bottom:4px;color:var(--c)}
+.traps b::before{content:"!";display:inline-grid;place-items:center;flex:none;width:20px;height:20px;border-radius:6px;background:var(--c);color:#fff;font-size:12px}
+:root[data-theme="dark"] .traps b::before{color:#0e1623}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .traps b::before{color:#0e1623}}
+.traps li span.te,.traps li span.en{display:block}
+.foot{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.foot p{margin:0 0 4px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);margin:0 0 12px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px;background:var(--c)}
+@media (max-width:900px){
+ .matrix{display:flex;flex-direction:column;gap:16px}
+ .col{display:flex;flex-direction:column}
+ .flow{grid-template-columns:minmax(0,1fr);gap:28px}
+ .step{margin-right:0}
+ .step::after{right:auto;left:50%;top:auto;bottom:-25px;transform:translateX(-50%) rotate(90deg)}
+ .shield{grid-template-columns:minmax(0,1fr)}
+ .svgbox svg{max-width:160px;max-height:160px}
+}
+@media (max-width:620px){
+ .tlrow{grid-template-columns:minmax(0,1fr)}
+ .tlnote{grid-column:1}
+ .axis{margin-left:0}
+ .two,.usegrid{grid-template-columns:minmax(0,1fr)}
+ .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .num b{font-size:24px}body.is-te .num b{font-size:20px}
+ .clock .dg b{font-size:44px}
+ .nobar{grid-template-columns:minmax(0,1fr)}
+}
+</style><style>html,body{max-width:100%;overflow-wrap:anywhere}#review-clarifications p{line-height:1.7}</style></head><body><nav style="padding:1rem;overflow-wrap:anywhere"><a href="/learn/polity/unit6/maps/MM-U6-EMERGENCIES/questions">Linked questions (30) / అనుసంధానించిన ప్రశ్నలు</a></nav>
+<main data-map-id="MM-U6-EMERGENCIES">
+<div class="hero">
+<header><div><h1><span class="en">Emergencies at a glance: Articles 352, 356, 360</span><span class="te" lang="te">అత్యవసర పరిస్థితులు ఒక్క చూపులో: ప్రకరణలు 352, 356, 360</span></h1>
+<p class="sub"><span class="en">APPSC Group II, Polity Unit 6. Three emergencies compared row by row. Status as of 9 November 2026.</span><span class="te" lang="te">APPSC గ్రూప్ II, పాలిటీ యూనిట్ 6. మూడు అత్యవసర పరిస్థితులు వరుస వారీగా పోలిక. 2026 నవంబర్ 9 నాటి స్థితి.</span></p></div>
+<div class="ctl"><div aria-label="Language / భాష" class="tog" role="group"><button aria-pressed="true" id="bEn" type="button">English</button><button aria-pressed="false" id="bTe" lang="te" type="button">తెలుగు</button></div><button aria-label="Light or dark theme" id="bTh" type="button">Light / Dark</button></div></header>
+<div class="hdr" data-fact-ref="F01" id="hdr"><span aria-hidden="true" class="dots"><i class="c352"></i><i class="c356"></i><i class="c360"></i></span><span class="en">Part XVIII: Articles 352–360</span><span class="te" lang="te">భాగం XVIII (18): ప్రకరణలు 352 నుంచి 360 వరకు</span></div>
+</div>
+<section aria-labelledby="h-num">
+<h2 id="h-num"><span class="en">Numbers to remember</span><span class="te" lang="te">గుర్తుంచుకోవాల్సిన సంఖ్యలు</span></h2>
+<p class="lead"><span class="en">Colour tells you which emergency: orange 352 National, purple 356 State, teal 360 Financial. Two-colour stripe = shared by both.</span><span class="te" lang="te">రంగే గుర్తు: నారింజ = ప్రకరణ 352 జాతీయ, ఊదా = ప్రకరణ 356 రాష్ట్రం, నీలి-ఆకుపచ్చ = ప్రకరణ 360 ఆర్థిక. రెండు రంగుల గీత = రెండింటికీ వర్తిస్తుంది.</span></p>
+<div class="nums">
+<div class="num c352" data-fact-ref="F05"><span class="k">352</span><b><span class="en">1 month</span><span class="te" lang="te">1 నెల</span></b><span class="d en">Parliament approval, special majority</span><span class="d te" lang="te">పార్లమెంటు ఆమోదం, ప్రత్యేక మెజారిటీ</span></div>
+<div class="num pair p356360" data-fact-ref="F09;F13"><span class="k">356 · 360</span><b><span class="en">2 months</span><span class="te" lang="te">2 నెలలు</span></b><span class="d en">Parliament approval, simple majority</span><span class="d te" lang="te">పార్లమెంటు ఆమోదం, సాధారణ మెజారిటీ</span></div>
+<div class="num pair p352356" data-fact-ref="F06;F10"><span class="k">352 · 356</span><b><span class="en">6 months</span><span class="te" lang="te">6 నెలలు</span></b><span class="d en">Life of one approval; then renew</span><span class="d te" lang="te">ఒక్కో ఆమోదం 6 నెలలు నిలుస్తుంది; తర్వాత మళ్లీ ఆమోదం కావాలి</span></div>
+<div class="num c356" data-fact-ref="F10"><span class="k">356</span><b class="fit"><span class="en">3 yrs max</span><span class="te" lang="te">గరిష్ఠం 3 ఏళ్లు</span></b><span class="d en">President's Rule cannot go beyond this</span><span class="d te" lang="te">రాష్ట్రపతి పాలన దీనిని మించకూడదు</span></div>
+<div class="num csafe" data-fact-ref="F16"><span class="k">359</span><b>20 &amp; 21</b><span class="d en">Articles never suspended</span><span class="d te" lang="te">ఎప్పుడూ నిలిపివేయలేని ప్రకరణలు</span></div>
+<div class="num mix" data-fact-ref="F03;F04;F16;F18"><span class="k">1978</span><b><span class="en">44th</span><span class="te" lang="te">44వ</span></b><span class="d en">Amendment: armed rebellion, Cabinet in writing, 20-21 protected</span><span class="d te" lang="te">సవరణ: సాయుధ తిరుగుబాటు, క్యాబినెట్ లిఖిత నిర్ణయం, ప్రకరణలు 20, 21 రక్షణ</span></div>
+</div>
+</section>
+<section aria-labelledby="h-mx">
+<h2 id="h-mx"><span class="en">The three emergencies, row by row</span><span class="te" lang="te">మూడు అత్యవసర పరిస్థితులు, వరుస వారీగా</span></h2>
+<p class="lead"><span class="en">Read across a row to compare: Ground, Approval, Duration, Rights, Federalism.</span><span class="te" lang="te">ఒక వరుసను అడ్డంగా చదివి పోల్చండి: కారణం, ఆమోదం, కాలపరిమితి, హక్కులు, కేంద్ర–రాష్ట్ర సంబంధాలు.</span></p>
+<div class="matrix">
+<section aria-labelledby="ch352" class="col c352" style="--col:1"><h3 class="chead" id="ch352"><svg aria-hidden="true" viewbox="0 0 40 40"><path d="M20 3 34 8v11c0 9-6 15-14 18C12 34 6 28 6 19V8z" fill="currentColor" opacity=".25"></path><path d="M20 3 34 8v11c0 9-6 15-14 18C12 34 6 28 6 19V8z" fill="none" stroke="currentColor" stroke-width="2"></path><path d="M14 12v16M14 12h12l-3 4 3 4H14" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg><span><span class="art"><span class="en">Article 352</span><span class="te" lang="te">ప్రకరణ 352</span></span><span class="cn"><span class="en">National</span><span class="te" lang="te">జాతీయ</span></span></span></h3>
+<div class="cell"><span class="rl"><i aria-hidden="true">1</i><span class="en">Ground</span><span class="te" lang="te">కారణం</span></span><p class="nd" data-fact-ref="F02" id="g352"><span class="en">National Emergency: war, external aggression or armed rebellion — whole India or a part</span><span class="te" lang="te">జాతీయ అత్యవసరం: యుద్ధం, బాహ్య దురాక్రమణ లేదా సాయుధ తిరుగుబాటు — దేశమంతటికీ లేదా ఒక భాగానికీ</span></p><p class="nd sub2" data-fact-ref="F03" id="g352b"><span class="en">44th Amendment replaced 'internal disturbance' with 'armed rebellion'</span><span class="te" lang="te">44వ సవరణ 'అంతర్గత అలజడి' స్థానంలో 'సాయుధ తిరుగుబాటు' పెట్టింది</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">2</i><span class="en">Approval</span><span class="te" lang="te">ఆమోదం</span></span><p class="nd" data-fact-ref="F04;F05" id="a352"><span class="en">Union Cabinet's written decision first (Art 352(3)); Parliament approves within <mark>1 month</mark> by <mark>special majority</mark></span><span class="te" lang="te">ముందు కేంద్ర క్యాబినెట్ లిఖితపూర్వక నిర్ణయం (ప్రకరణ 352(3)); తర్వాత <mark>1 నెలలో</mark> పార్లమెంటు <mark>ప్రత్యేక మెజారిటీతో</mark> ఆమోదించాలి</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">3</i><span class="en">Duration</span><span class="te" lang="te">కాలపరిమితి</span></span><p class="nd" data-fact-ref="F06;F07" id="d352"><span class="en">6 months at a time, renewable with no upper limit; Lok Sabha disapproval forces revocation</span><span class="te" lang="te">ఒక్కోసారి 6 నెలలు, ఎన్నిసార్లైనా పొడిగించవచ్చు; లోక్‌సభ తిరస్కరిస్తే రాష్ట్రపతి ఉపసంహరించాల్సిందే</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">4</i><span class="en">Rights</span><span class="te" lang="te">హక్కులు</span></span><p class="ptr"><span class="en">Only this emergency touches rights: Arts 358 and 359. See the <a href="#h-rs">Rights shield</a>.</span><span class="te" lang="te">హక్కులపై ప్రభావం ఈ అత్యవసరంలోనే: ప్రకరణలు 358, 359. కింద <a href="#h-rs">హక్కుల కవచం</a> చూడండి.</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">5</i><span class="en">Federalism</span><span class="te" lang="te">కేంద్ర–రాష్ట్ర సంబంధాలు</span></span><p class="nd" data-fact-ref="F20;F21" id="f352"><span class="en">Union can direct State executive (Art 353); Parliament can make laws on State List (Art 250); President can alter revenue sharing (Art 354)</span><span class="te" lang="te">రాష్ట్ర కార్యనిర్వాహకానికి కేంద్రం ఆదేశాలు (ప్రకరణ 353); రాష్ట్ర జాబితాపై పార్లమెంటు చట్టాలు (ప్రకరణ 250); ఆదాయ పంపిణీని రాష్ట్రపతి మార్చవచ్చు (ప్రకరణ 354)</span></p></div>
+</section>
+<section aria-labelledby="ch356" class="col c356" style="--col:2"><h3 class="chead" id="ch356"><svg aria-hidden="true" viewbox="0 0 40 40"><path d="M5 15 20 5l15 10z" fill="currentColor" opacity=".3" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path><path d="M9 18v12M16 18v12M24 18v12M31 18v12M5 34h30" stroke="currentColor" stroke-linecap="round" stroke-width="2.4"></path></svg><span><span class="art"><span class="en">Article 356</span><span class="te" lang="te">ప్రకరణ 356</span></span><span class="cn"><span class="en">State (President's Rule)</span><span class="te" lang="te">రాష్ట్రం (రాష్ట్రపతి పాలన)</span></span></span></h3>
+<div class="cell"><span class="rl"><i aria-hidden="true">1</i><span class="en">Ground</span><span class="te" lang="te">కారణం</span></span><p class="nd" data-fact-ref="F08" id="g356"><span class="en">President's Rule: State government cannot be carried on as per the Constitution — on Governor's report or otherwise</span><span class="te" lang="te">రాష్ట్రపతి పాలన: రాష్ట్ర ప్రభుత్వాన్ని రాజ్యాంగం ప్రకారం నడపలేని స్థితి — గవర్నర్ నివేదికపై గానీ, ఇతరత్రా గానీ</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">2</i><span class="en">Approval</span><span class="te" lang="te">ఆమోదం</span></span><p class="nd" data-fact-ref="F09" id="a356"><span class="en">Parliament approves within <mark>2 months</mark>, <mark>simple majority</mark></span><span class="te" lang="te"><mark>2 నెలల్లో</mark> పార్లమెంటు ఆమోదం, <mark>సాధారణ మెజారిటీ</mark> చాలు</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">3</i><span class="en">Duration</span><span class="te" lang="te">కాలపరిమితి</span></span><p class="nd" data-fact-ref="F10" id="d356"><span class="en">6 months at a time, maximum 3 years; beyond 1 year only with National Emergency + Election Commission certificate</span><span class="te" lang="te">ఒక్కోసారి 6 నెలలు, గరిష్ఠం 3 సంవత్సరాలు; 1 సంవత్సరం దాటాలంటే జాతీయ అత్యవసరం ఉండాలి, ఎన్నికల సంఘం ధ్రువీకరించాలి</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">4</i><span class="en">Rights</span><span class="te" lang="te">హక్కులు</span></span><p class="ptr"><span class="en">No rights suspension — Arts 358/359 need a 352 Proclamation</span><span class="te" lang="te">హక్కుల నిలుపుదల లేదు — ప్రకరణలు 358, 359కి ప్రకరణ 352 ప్రకటన కావాలి</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">5</i><span class="en">Federalism</span><span class="te" lang="te">కేంద్ర–రాష్ట్ర సంబంధాలు</span></span><p class="nd" data-fact-ref="F11" id="f356"><span class="en">President takes over State government; Parliament exercises State Legislature's powers; High Court untouched</span><span class="te" lang="te">రాష్ట్ర ప్రభుత్వ విధులు రాష్ట్రపతి చేతికి; రాష్ట్ర శాసనసభ అధికారాలు పార్లమెంటుకు; హైకోర్టు అధికారాల్ని మాత్రం తీసుకోలేరు</span></p></div>
+</section>
+<section aria-labelledby="ch360" class="col c360" style="--col:3"><h3 class="chead" id="ch360"><svg aria-hidden="true" viewbox="0 0 40 40"><ellipse cx="20" cy="11" fill="currentColor" opacity=".3" rx="12" ry="5" stroke="currentColor" stroke-width="2"></ellipse><path d="M8 11v8c0 2.8 5.4 5 12 5s12-2.2 12-5v-8M8 19v8c0 2.8 5.4 5 12 5s12-2.2 12-5v-8" fill="none" stroke="currentColor" stroke-width="2"></path></svg><span><span class="art"><span class="en">Article 360</span><span class="te" lang="te">ప్రకరణ 360</span></span><span class="cn"><span class="en">Financial</span><span class="te" lang="te">ఆర్థిక</span></span></span></h3>
+<div class="cell"><span class="rl"><i aria-hidden="true">1</i><span class="en">Ground</span><span class="te" lang="te">కారణం</span></span><p class="nd" data-fact-ref="F12" id="g360"><span class="en">Financial Emergency: threat to financial stability or credit of India or any part</span><span class="te" lang="te">ఆర్థిక అత్యవసరం: భారతదేశం లేదా దానిలోని ఏ ప్రాంతం ఆర్థిక స్థిరత్వానికైనా, పరపతికైనా ముప్పు</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">2</i><span class="en">Approval</span><span class="te" lang="te">ఆమోదం</span></span><p class="nd" data-fact-ref="F13" id="a360"><span class="en">Parliament approves within <mark>2 months</mark>, <mark>simple majority</mark></span><span class="te" lang="te"><mark>2 నెలల్లో</mark> పార్లమెంటు ఆమోదం, <mark>సాధారణ మెజారిటీ</mark> చాలు</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">3</i><span class="en">Duration</span><span class="te" lang="te">కాలపరిమితి</span></span><p class="nd" data-fact-ref="F13" id="d360"><span class="en">Once approved, continues until revoked — no maximum</span><span class="te" lang="te">ఒకసారి ఆమోదిస్తే ఉపసంహరించే వరకు కొనసాగుతుంది — గరిష్ఠ పరిమితి లేదు</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">4</i><span class="en">Rights</span><span class="te" lang="te">హక్కులు</span></span><p class="ptr"><span class="en">No rights suspension — Arts 358/359 need a 352 Proclamation</span><span class="te" lang="te">హక్కుల నిలుపుదల లేదు — ప్రకరణలు 358, 359కి ప్రకరణ 352 ప్రకటన కావాలి</span></p></div>
+<div class="cell"><span class="rl"><i aria-hidden="true">5</i><span class="en">Federalism</span><span class="te" lang="te">కేంద్ర–రాష్ట్ర సంబంధాలు</span></span><p class="nd" data-fact-ref="F14" id="f360"><span class="en">Union directions on financial propriety; State Money Bills can be required to be reserved for President; salaries can be cut, even of SC and HC judges</span><span class="te" lang="te">ఆర్థిక క్రమశిక్షణపై కేంద్రం ఆదేశాలు; రాష్ట్ర ద్రవ్య బిల్లులను రాష్ట్రపతి పరిశీలనకు పంపాలని ఆదేశించవచ్చు; జీతాలు తగ్గించవచ్చు — సుప్రీంకోర్టు, హైకోర్టు న్యాయమూర్తులకు కూడా</span></p></div>
+</section>
+</div>
+</section>
+<section aria-labelledby="h-fl">
+<h2 id="h-fl"><span class="en">Path of a National Emergency (Article 352)</span><span class="te" lang="te">జాతీయ అత్యవసరం దారి (ప్రకరణ 352)</span></h2>
+<p class="lead"><span class="en">Four steps, in order. Miss step 1 and the President cannot proclaim.</span><span class="te" lang="te">నాలుగు దశలు, ఈ క్రమంలోనే. మొదటి దశ లేకపోతే రాష్ట్రపతి ప్రకటించలేరు.</span></p>
+<ol class="flow" style="list-style:none;margin:0;padding:0">
+<li class="step" data-fact-ref="F04"><span class="no">1</span><b><span class="en">Union Cabinet's written decision</span><span class="te" lang="te">కేంద్ర క్యాబినెట్ లిఖితపూర్వక నిర్ణయం</span></b><small><span class="en">Art 352(3), added by the 44th Amendment</span><span class="te" lang="te">ప్రకరణ 352(3) — 44వ సవరణ ద్వారా చేర్చారు</span></small></li>
+<li class="step hot" data-fact-ref="F02"><span class="no">2</span><b><span class="en">President's Proclamation</span><span class="te" lang="te">రాష్ట్రపతి ప్రకటన</span></b><small><span class="en">War, external aggression or armed rebellion; whole India or a part</span><span class="te" lang="te">యుద్ధం, బాహ్య దురాక్రమణ లేదా సాయుధ తిరుగుబాటు; దేశమంతటికీ లేదా ఒక భాగానికీ</span></small></li>
+<li class="step" data-fact-ref="F05"><span class="no">3</span><b><span class="en">Both Houses approve within 1 month</span><span class="te" lang="te">1 నెలలో ఉభయ సభల ఆమోదం</span></b><small><span class="en">Special majority: majority of total membership and two-thirds of members present and voting, in each House</span><span class="te" lang="te">ప్రత్యేక మెజారిటీ: ప్రతి సభలో మొత్తం సభ్యుల మెజారిటీతో పాటు హాజరై ఓటు వేసినవారిలో మూడింట రెండొంతులు</span></small></li>
+<li class="step" data-fact-ref="F06"><span class="no">4</span><b><span class="en">Lasts 6 months, then renew</span><span class="te" lang="te">6 నెలలు అమలు, తర్వాత పొడిగింపు</span></b><small><span class="en">Fresh approval every 6 months; no upper limit</span><span class="te" lang="te">ప్రతి 6 నెలలకు మళ్లీ ఆమోదం; గరిష్ఠ పరిమితి లేదు</span></small></li>
+</ol>
+<div class="exit" data-fact-ref="F07"><span aria-hidden="true" class="x">✕</span><span><span class="en"><b>Exit door:</b> Lok Sabha disapproval forces revocation by the President.</span><span class="te" lang="te"><b>ఉపసంహరణ మార్గం:</b> లోక్‌సభ తిరస్కరిస్తే రాష్ట్రపతి అత్యవసరాన్ని ఉపసంహరించాల్సిందే.</span></span></div>
+</section>
+<section aria-labelledby="h-tl">
+<h2 id="h-tl"><span class="en">Approval and duration clock</span><span class="te" lang="te">ఆమోదం, కాలపరిమితి గడియారం</span></h2>
+<p class="lead"><span class="en">One shared time axis. Yellow strip on top = approval window; blocks below = how long it can run. Schematic: each block is 6 months.</span><span class="te" lang="te">మూడింటికీ ఒకే కాల రేఖ. పైన పసుపు పట్టీ = ఆమోద గడువు; కింది గడులు = ఎంత కాలం అమల్లో ఉండవచ్చు. నమూనా చిత్రం: ఒక్కో గడి = 6 నెలలు.</span></p>
+<div aria-label="Approval and duration of Articles 352, 356 and 360 on one time axis" class="card tl" role="img">
+<div class="tlrow c352" data-fact-ref="F05;F06"><div class="tlname"><span class="en">Art 352</span><span class="te" lang="te">ప్రకరణ 352</span><small><span class="en">National</span><span class="te" lang="te">జాతీయ</span></small></div>
+<div class="track"><i class="grid" style="left:0"></i><i class="grid" style="left:28.67%"></i><i class="grid" style="left:57.33%"></i><i class="grid" style="left:86%"></i>
+<i class="apr" style="left:0;width:2.39%"></i>
+<i class="blk" style="left:0;width:13.8%"></i><i class="blk alt" style="left:14.33%;width:13.8%"></i><i class="blk" style="left:28.67%;width:13.8%"></i><i class="blk alt" style="left:43%;width:13.8%"></i><i class="blk" style="left:57.33%;width:13.8%"></i><i class="blk alt" style="left:71.67%;width:13.8%"></i><i class="blk inf" style="left:86.2%;width:13.8%"></i></div>
+<div class="tlnote"><span class="en"><b>1 month</b> to approve · 6 months counted from Parliament's approval · <b>no upper limit</b></span><span class="te" lang="te">ఆమోదానికి <b>1 నెల</b> · పార్లమెంటు ఆమోదించిన రోజు నుంచి 6 నెలలు · <b>గరిష్ఠ పరిమితి లేదు</b></span></div></div>
+<div class="tlrow c356" data-fact-ref="F09;F10"><div class="tlname"><span class="en">Art 356</span><span class="te" lang="te">ప్రకరణ 356</span><small><span class="en">State (President's Rule)</span><span class="te" lang="te">రాష్ట్రం (రాష్ట్రపతి పాలన)</span></small></div>
+<div class="track"><i class="grid" style="left:0"></i><i class="grid" style="left:28.67%"></i><i class="grid" style="left:57.33%"></i>
+<i class="apr" style="left:0;width:4.78%"></i>
+<i class="blk" style="left:0;width:13.8%"></i><i class="blk alt" style="left:14.33%;width:13.8%"></i><i class="blk hatch" style="left:28.67%;width:13.8%"></i><i class="blk hatch" style="left:43%;width:13.8%"></i><i class="blk hatch" style="left:57.33%;width:13.8%"></i><i class="blk hatch" style="left:71.67%;width:13.8%"></i><i class="wall" style="left:86%"></i></div>
+<div class="tlnote"><span class="en"><b>2 months</b> to approve · after 1 year only with National Emergency + Election Commission certificate · <b>3 years max</b></span><span class="te" lang="te">ఆమోదానికి <b>2 నెలలు</b> · 1 సంవత్సరం దాటాలంటే జాతీయ అత్యవసరం + ఎన్నికల సంఘం ధ్రువీకరణ · <b>గరిష్ఠం 3 సంవత్సరాలు</b></span></div></div>
+<div class="tlrow c360" data-fact-ref="F13"><div class="tlname"><span class="en">Art 360</span><span class="te" lang="te">ప్రకరణ 360</span><small><span class="en">Financial</span><span class="te" lang="te">ఆర్థిక</span></small></div>
+<div class="track"><i class="grid" style="left:0"></i><i class="grid" style="left:28.67%"></i><i class="grid" style="left:57.33%"></i><i class="grid" style="left:86%"></i>
+<i class="apr" style="left:0;width:4.78%"></i>
+<i class="blk" style="left:0;width:86%;border-radius:5px 0 0 5px"></i><i class="blk inf" style="left:86%;width:14%"></i></div>
+<div class="tlnote"><span class="en"><b>2 months</b> to approve · one approval, runs <b>until revoked</b> · no renewal, no maximum</span><span class="te" lang="te">ఆమోదానికి <b>2 నెలలు</b> · ఒక్కసారి ఆమోదిస్తే <b>ఉపసంహరించే వరకు</b> · పొడిగింపు అక్కర్లేదు, గరిష్ఠ పరిమితి లేదు</span></div></div>
+<div aria-hidden="true" class="axis"><span style="left:0">0</span><span style="left:28.67%"><span class="en">1 year</span><span class="te" lang="te">1 సంవత్సరం</span></span><span style="left:57.33%"><span class="en">2 years</span><span class="te" lang="te">2 సంవత్సరాలు</span></span><span style="left:86%"><span class="en">3 years</span><span class="te" lang="te">3 సంవత్సరాలు</span></span></div>
+<div class="tlleg"><span><i style="background:var(--mark);border:1.5px solid var(--muted)"></i><span class="en">Approval window</span><span class="te" lang="te">ఆమోద గడువు</span></span><span><i style="background:var(--muted)"></i><span class="en">6-month block</span><span class="te" lang="te">6 నెలల గడి</span></span><span><i style="background:repeating-linear-gradient(135deg,var(--s) 0 4px,transparent 4px 7px);border:1px solid var(--s)"></i><span class="en">Needs National Emergency + EC certificate</span><span class="te" lang="te">జాతీయ అత్యవసరం + ఎన్నికల సంఘం ధ్రువీకరణ కావాలి</span></span><span><i style="background:var(--ink);width:4px"></i><span class="en">Hard stop</span><span class="te" lang="te">ఇక్కడితో ముగింపు</span></span></div>
+</div>
+</section>
+<section aria-labelledby="h-rs">
+<h2 id="h-rs"><span class="en">Rights shield: Articles 358 and 359</span><span class="te" lang="te">హక్కుల కవచం: ప్రకరణలు 358, 359</span></h2>
+<p class="lead"><span class="en">What goes under a National Emergency, and what always survives.</span><span class="te" lang="te">జాతీయ అత్యవసరంలో ఏ హక్కులు నిలిచిపోతాయి, ఏవి ఎప్పుడూ నిలిచే ఉంటాయి.</span></p>
+<div class="shield">
+<div class="rcard c352"><div class="tagline"><span aria-hidden="true" class="ic">⚡︎</span><span><span class="en">Art 358 · automatic</span><span class="te" lang="te">ప్రకరణ 358 · వాటంతట అవే</span></span></div>
+<span class="pill off"><span class="en">Suspended: Article 19</span><span class="te" lang="te">నిలిచిపోయేవి: ప్రకరణ 19</span></span>
+<p class="nd" data-fact-ref="F15" id="r358"><span class="en">Art 358: Article 19 freedoms suspended automatically — only for war / external aggression, not armed rebellion</span><span class="te" lang="te">ప్రకరణ 358: ప్రకరణ 19 లోని స్వేచ్ఛలు వాటంతట అవే నిలిచిపోతాయి — యుద్ధం / బాహ్య దురాక్రమణకే, సాయుధ తిరుగుబాటుకు కాదు</span></p></div>
+<div class="svgbox"><svg aria-labelledby="shT" role="img" viewbox="0 0 240 250"><title id="shT">Articles 20 and 21 always survive</title>
+<path class="sh-out" d="M120 8 222 42v70c0 64-44 108-102 130C62 220 18 176 18 112V42z"></path>
+<path class="sh-in" d="M120 24 206 53v59c0 54-37 92-86 112-49-20-86-58-86-112V53z"></path>
+<text class="sh-sm en" text-anchor="middle" x="120" y="74">Articles</text><text class="sh-sm te" text-anchor="middle" x="120" y="74">ప్రకరణలు</text>
+<text class="sh-big" text-anchor="middle" x="120" y="126">20 · 21</text>
+<text class="sh-sm en" text-anchor="middle" x="120" y="150">always survive</text><text class="sh-sm te" text-anchor="middle" x="120" y="150">ఎప్పుడూ సురక్షితం</text>
+<text class="sh-mut en" text-anchor="middle" x="120" y="171">44th Amendment, 1978</text><text class="sh-mut te" text-anchor="middle" x="120" y="171">44వ సవరణ, 1978</text>
+</svg></div>
+<div class="rcard c352"><div class="tagline"><span aria-hidden="true" class="ic">✎︎</span><span><span class="en">Art 359 · needs an order</span><span class="te" lang="te">ప్రకరణ 359 · ఉత్తర్వు కావాలి</span></span></div>
+<span class="pill on"><span class="en">Survive: Articles 20, 21</span><span class="te" lang="te">సురక్షితం: ప్రకరణలు 20, 21</span></span>
+<p class="nd" data-fact-ref="F16;F18" id="r359"><span class="en">Art 359: needs a separate Presidential order naming rights; Articles 20 and 21 can never be suspended (44th Amendment, 1978)</span><span class="te" lang="te">ప్రకరణ 359: ఏ హక్కుల అమలును నిలిపివేయాలో పేర్కొంటూ రాష్ట్రపతి ప్రత్యేక ఉత్తర్వు ఇవ్వాలి; ప్రకరణలు 20, 21ని ఎప్పుడూ నిలిపివేయలేరు (44వ సవరణ, 1978)</span></p></div>
+</div>
+<div class="nobar"><div aria-hidden="true" class="badges"><span class="c356">356</span><span class="c360">360</span></div><p class="nd" data-fact-ref="F17" id="r356_360"><span class="en">No rights suspension — Arts 358/359 work only with a 352 Proclamation</span><span class="te" lang="te">హక్కుల నిలుపుదల లేదు — ప్రకరణలు 358, 359 ప్రకరణ 352 ప్రకటనతోనే పనిచేస్తాయి</span></p></div>
+</section>
+<section aria-labelledby="hc">
+<h2 id="hc"><span class="en">Cases</span><span class="te" lang="te">కేసులు</span></h2>
+<div class="two">
+<div class="case c352"><span class="tg"><span class="en">Under Article 352</span><span class="te" lang="te">ప్రకరణ 352 కింద</span></span><p data-fact-ref="F22" id="c_adm"><span class="en">ADM Jabalpur (1976) → overruled by Puttaswamy (2017)</span><span class="te" lang="te">ఏడీఎం జబల్‌పూర్ (1976) → పుట్టస్వామి (2017) తీర్పు దాన్ని తోసిపుచ్చింది</span></p>
+<div aria-hidden="true" class="arrow"><span>1976</span><b>→</b><span class="new">2017</span></div></div>
+<div class="case c356"><span class="tg"><span class="en">Under Article 356</span><span class="te" lang="te">ప్రకరణ 356 కింద</span></span><p data-fact-ref="F23" id="c_bom"><span class="en">S.R. Bommai (1994): President's Rule is open to judicial review; floor test decides majority</span><span class="te" lang="te">ఎస్.ఆర్. బొమ్మై (1994): రాష్ట్రపతి పాలనపై న్యాయ సమీక్ష ఉంటుంది; మెజారిటీని సభలో బల పరీక్షే తేలుస్తుంది</span></p></div>
+</div>
+</section>
+<section aria-labelledby="hu" class="card use">
+<h2 id="hu"><span class="en">Usage so far (Articles 352 and 360)</span><span class="te" lang="te">ఇప్పటివరకు ఎన్నిసార్లు విధించారు (ప్రకరణలు 352, 360)</span></h2>
+<div aria-hidden="true" class="usegrid">
+<div class="ub c352"><div class="big"><span class="en">3 times</span><span class="te" lang="te">3 సార్లు</span></div><div class="lbl"><span class="en">National Emergency</span><span class="te" lang="te">జాతీయ అత్యవసరం</span></div><div class="yrs"><span>1962</span><span>1971</span><span>1975</span></div></div>
+<div class="ub c360"><div class="big"><span class="en">Never</span><span class="te" lang="te">ఒక్కసారీ లేదు</span></div><div class="lbl"><span class="en">Financial Emergency</span><span class="te" lang="te">ఆర్థిక అత్యవసరం</span></div></div>
+</div>
+<p class="nd" data-fact-ref="F24" id="use_asof"><span class="en">As of 9 Nov 2026: National Emergency used 3 times (1962, 1971, 1975); Financial Emergency never</span><span class="te" lang="te">9 నవంబర్ 2026 నాటికి: జాతీయ అత్యవసరం 3 సార్లు (1962, 1971, 1975); ఆర్థిక అత్యవసరం ఒక్కసారీ విధించలేదు</span></p>
+</section>
+<section aria-labelledby="hm" class="mn">
+<h2 id="hm"><span class="en">Memory hook</span><span class="te" lang="te">గుర్తుంచుకునే సూత్రం</span></h2>
+<div aria-hidden="true" class="mrow">
+<div class="clock"><div class="dg c352"><b>1</b><small>352</small></div><span class="dash">-</span><div class="dg c356"><b>2</b><small>356</small></div><span class="dash">-</span><div class="dg c360"><b>2</b><small>360</small></div></div>
+<div class="wea"><div class="lt"><b><span class="en">W</span><span class="te" lang="te">యు</span></b><small><span class="en">War · 358</span><span class="te" lang="te">యుద్ధం · 358</span></small></div><div class="lt"><b><span class="en">E</span><span class="te" lang="te">బా</span></b><small><span class="en">External · 358</span><span class="te" lang="te">బాహ్య · 358</span></small></div><div class="lt no"><b><span class="en">A</span><span class="te" lang="te">సా</span></b><small><span class="en">Armed · no 358</span><span class="te" lang="te">సాయుధ · 358 లేదు</span></small></div></div>
+<div class="lockc"><svg height="22" viewbox="0 0 16 16" width="22"><rect fill="currentColor" height="7" rx="1.5" width="10" x="3" y="7"></rect><path d="M5 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.6"></path></svg>20-21</div>
+</div>
+<p><span class="en">Approval clock '1-2-2': 352 in 1 month, 356 and 360 in 2 months. Grounds of 352 are W-E-A (War, External aggression, Armed rebellion); Art 358 bites only on W and E. Rights are hit only under 352, and 20-21 always survive.</span><span class="te" lang="te">ఆమోద గడియారం '1-2-2': ప్రకరణ 352కు 1 నెల, ప్రకరణ 356, 360లకు 2 నెలలు. ప్రకరణ 352 కారణాలు యు-బా-సా (యుద్ధం, బాహ్య దురాక్రమణ, సాయుధ తిరుగుబాటు); ప్రకరణ 358 యు, బా లకే వర్తిస్తుంది. హక్కులపై దెబ్బ ప్రకరణ 352 లోనే, అప్పుడు కూడా ప్రకరణలు 20, 21 సురక్షితం.</span></p>
+</section>
+<section aria-labelledby="ht">
+<h2 id="ht"><span class="en">Exam traps</span><span class="te" lang="te">పరీక్షలో తికమక పెట్టే అంశాలు</span></h2>
+<ul class="traps">
+<li class="c352" data-fact-ref="F15"><b><span class="en">Armed rebellion is not enough for 358</span><span class="te" lang="te">సాయుధ తిరుగుబాటుకు ప్రకరణ 358 వర్తించదు</span></b><span class="en">Article 19 goes automatically only on war or external aggression.</span><span class="te" lang="te">ప్రకరణ 19 వాటంతట అదే నిలిచిపోయేది యుద్ధం లేదా బాహ్య దురాక్రమణలోనే.</span></li>
+<li class="c352" data-fact-ref="F03"><b><span class="en">'Internal disturbance' is gone</span><span class="te" lang="te">'అంతర్గత అలజడి' ఇప్పుడు కారణం కాదు</span></b><span class="en">The 44th Amendment replaced it with 'armed rebellion'.</span><span class="te" lang="te">44వ సవరణ దాని స్థానంలో 'సాయుధ తిరుగుబాటు' పెట్టింది.</span></li>
+<li class="c356" data-fact-ref="F05;F09;F13"><b><span class="en">Special majority only for 352</span><span class="te" lang="te">ప్రత్యేక మెజారిటీ ప్రకరణ 352కే</span></b><span class="en">356 and 360 need only a simple majority, within 2 months.</span><span class="te" lang="te">ప్రకరణలు 356, 360కి 2 నెలల్లో సాధారణ మెజారిటీ చాలు.</span></li>
+<li class="c360" data-fact-ref="F10;F13"><b><span class="en">360 has no maximum</span><span class="te" lang="te">ప్రకరణ 360కి గరిష్ఠ పరిమితి లేదు</span></b><span class="en">The 3-year cap belongs to 356. A Financial Emergency runs until revoked.</span><span class="te" lang="te">3 సంవత్సరాల పరిమితి ప్రకరణ 356కే. ఆర్థిక అత్యవసరం ఉపసంహరించే వరకు కొనసాగుతుంది.</span></li>
+<li class="c356" data-fact-ref="F17"><b><span class="en">356 and 360 do not touch rights</span><span class="te" lang="te">ప్రకరణలు 356, 360 హక్కులను తాకవు</span></b><span class="en">Arts 358 and 359 work only with a 352 Proclamation.</span><span class="te" lang="te">ప్రకరణలు 358, 359 ప్రకరణ 352 ప్రకటనతోనే పనిచేస్తాయి.</span></li>
+<li class="c356" data-fact-ref="F11"><b><span class="en">The High Court stays</span><span class="te" lang="te">హైకోర్టు అలాగే ఉంటుంది</span></b><span class="en">Under President's Rule the High Court's powers cannot be taken over.</span><span class="te" lang="te">రాష్ట్రపతి పాలనలో హైకోర్టు అధికారాల్ని తీసుకోలేరు.</span></li>
+</ul>
+</section>
+<section aria-labelledby="hq">
+<h2 id="hq"><span class="en">Self-test: cover the answer</span><span class="te" lang="te">స్వీయ పరీక్ష: జవాబు చూడకుండా ప్రయత్నించండి</span></h2>
+<p class="lead"><span class="en">Say the answer aloud, then tap to check.</span><span class="te" lang="te">జవాబు ముందు మీరే చెప్పండి, తర్వాత నొక్కి సరిచూసుకోండి.</span></p>
+<div class="quiz">
+<details class="c352" data-node="a352"><summary><span class="en">Within how long must Parliament approve a National Emergency, and by what majority?</span><span class="te" lang="te">జాతీయ అత్యవసరాన్ని పార్లమెంటు ఎంత కాలంలో, ఏ మెజారిటీతో ఆమోదించాలి?</span></summary><p class="a"><span class="en">Within one month; majority of total membership and two-thirds of members present and voting, in each House.</span><span class="te" lang="te">ఒక నెలలో; ప్రతి సభలో మొత్తం సభ్యుల మెజారిటీతో పాటు హాజరై ఓటు వేసినవారిలో మూడింట రెండొంతులు.</span></p></details>
+<details class="c356" data-node="d356"><summary><span class="en">What is the maximum life of President's Rule, and what is needed to go beyond one year?</span><span class="te" lang="te">రాష్ట్రపతి పాలన గరిష్ఠంగా ఎంత కాలం? ఒక సంవత్సరం దాటాలంటే ఏం కావాలి?</span></summary><p class="a"><span class="en">Three years; beyond one year a National Emergency must be in operation and the Election Commission must certify.</span><span class="te" lang="te">మూడు సంవత్సరాలు; ఏడాది దాటాలంటే జాతీయ అత్యవసరం అమల్లో ఉండాలి, ఎన్నికల సంఘం ధ్రువీకరించాలి.</span></p></details>
+<details class="c352" data-node="r358"><summary><span class="en">An Emergency is proclaimed only on armed rebellion. Is Article 19 automatically suspended under Article 358?</span><span class="te" lang="te">సాయుధ తిరుగుబాటు కారణంగానే అత్యవసరం ప్రకటించారు. ప్రకరణ 358 కింద ప్రకరణ 19 వాటంతట అదే నిలిచిపోతుందా?</span></summary><p class="a"><span class="en">No. Article 358 applies only to war or external aggression.</span><span class="te" lang="te">లేదు. ప్రకరణ 358 యుద్ధం లేదా బాహ్య దురాక్రమణకు మాత్రమే వర్తిస్తుంది.</span></p></details>
+<details class="csafe" data-node="r359"><summary><span class="en">Which two Articles can never be suspended by an Article 359 order, and which amendment ensured this?</span><span class="te" lang="te">ప్రకరణ 359 ఉత్తర్వుతో ఏ రెండు ప్రకరణలను ఎప్పుడూ నిలిపివేయలేరు? ఇది ఏ సవరణ తెచ్చింది?</span></summary><p class="a"><span class="en">Articles 20 and 21; the 44th Amendment, 1978.</span><span class="te" lang="te">ప్రకరణలు 20, 21; 44వ సవరణ, 1978.</span></p></details>
+<details class="c360" data-node="f360"><summary><span class="en">Under which emergency can the salaries of Supreme Court and High Court judges be reduced?</span><span class="te" lang="te">ఏ అత్యవసర పరిస్థితిలో సుప్రీంకోర్టు, హైకోర్టు న్యాయమూర్తుల జీతాలు కూడా తగ్గించవచ్చు?</span></summary><p class="a"><span class="en">Financial Emergency (Article 360).</span><span class="te" lang="te">ఆర్థిక అత్యవసరం (ప్రకరణ 360).</span></p></details>
+<details class="c356" data-node="c_bom"><summary><span class="en">Which case held that a President's Rule proclamation is subject to judicial review?</span><span class="te" lang="te">రాష్ట్రపతి పాలన ప్రకటనపై న్యాయ సమీక్ష ఉంటుందని చెప్పిన కేసు ఏది?</span></summary><p class="a"><span class="en">S.R. Bommai v Union of India (1994).</span><span class="te" lang="te">ఎస్.ఆర్. బొమ్మై వర్సెస్ భారత ప్రభుత్వం (1994).</span></p></details>
+</div>
+</section>
+<footer class="foot"><p><span class="en">Linked questions: 30</span><span class="te" lang="te">సంబంధిత ప్రశ్నలు: 30</span></p></footer>
+<section id="review-clarifications" style="max-width:70rem;margin:1rem auto;padding:1rem;overflow-wrap:anywhere"><h2>Important distinctions / ముఖ్యమైన తేడాలు</h2><p data-fact-ref="F15 F16"><span class="en" lang="en">Article 358 is not blanket immunity for every emergency-period law. Its Article 19 protection applies only to a law containing the required emergency-related recital, and executive action under such a law (358(2)). Article 359(1) concerns judicial enforcement and excludes Articles 20 and 21; Article 359(1B) also qualifies clause (1A). Protection of Article 21 does not prohibit deprivation under a fair, constitutionally valid legal procedure.</span><span class="te" lang="te">ప్రకరణ 358 అత్యవసర కాలంలోని ప్రతి చట్టానికీ సంపూర్ణ రక్షణ ఇవ్వదు. అత్యవసర ప్రకటనతో సంబంధముందని నిర్దేశిత వివరణ ఉన్న చట్టానికి, ఆ చట్టం కింద కార్యనిర్వాహక చర్యలకు మాత్రమే ప్రకరణ 19 పరిమితుల నుంచి ఈ రక్షణ వర్తిస్తుంది (358(2)). ప్రకరణ 359(1) న్యాయస్థానాల ద్వారా అమలుకు సంబంధించినది; ప్రకరణలు 20, 21ను మినహాయిస్తుంది. ప్రకరణ 359(1B)లో (1A)కు అదనపు షరతు ఉంది. ప్రకరణ 21 రక్షణ ఉన్నా న్యాయసమ్మతమైన, రాజ్యాంగబద్ధమైన చట్టపద్ధతిలో స్వేచ్ఛను హరించడం పూర్తిగా నిషేధం కాదు.</span></p><p data-fact-ref="F08 F12"><span class="en" lang="en">Articles 356 and 360 do not activate the suspension mechanisms in Articles 358 and 359. The ordinary six-month continuation period under Article 356 runs from the proclamation; dissolution exceptions must be checked separately.</span><span class="te" lang="te">ప్రకరణలు 356, 360 వల్ల ప్రకరణలు 358, 359లోని నిలుపుదల విధానాలు అమలులోకి రావు. ప్రకరణ 356లో సాధారణ ఆరు నెలల కొనసాగింపు కాలం ప్రకటన తేదీ నుంచి లెక్కిస్తారు; లోక్‌సభ రద్దు సందర్భాల మినహాయింపులను విడిగా చూడాలి.</span></p></section></main><script>(function(){var b=document.body,en=document.getElementById('bEn'),te=document.getElementById('bTe'),th=document.getElementById('bTh'),r=document.documentElement;
+function set(t){b.classList.toggle('is-te',t);r.setAttribute('lang',t?'te':'en');en.setAttribute('aria-pressed',String(!t));te.setAttribute('aria-pressed',String(t));try{localStorage.setItem('em-lang',t?'te':'en')}catch(e){}}
+en.addEventListener('click',function(){set(false)});te.addEventListener('click',function(){set(true)});
+try{if(localStorage.getItem('em-lang')==='te')set(true)}catch(e){}
+function dark(){var t=r.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+th.addEventListener('click',function(){var d=!dark();r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('em-theme',d?'dark':'light')}catch(e){}});
+try{var s=localStorage.getItem('em-theme');if(s)r.setAttribute('data-theme',s)}catch(e){}
+})();</script></body></html>

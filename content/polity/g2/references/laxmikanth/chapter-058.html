@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part VIII &mdash; Book 1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 58 — State Human Rights Commission</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Protection of Human Rights Act, 1993 — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Establishment — A Statutory Body, Not a Constitutional One</div>
+  <p class="eng">The <b class="hlb">Protection of Human Rights Act, 1993</b> — the same Central Act that created the <b class="hlp">National Human Rights Commission (NHRC)</b> — also provides for a <b class="term">State Human Rights Commission (SHRC)</b> at the state level. Accordingly, a SHRC <b>may</b> be constituted by the <b class="imp">state government</b> — note the word "may": unlike, say, the State Public Service Commission (which every state must have under Article 315), setting up a SHRC is not constitutionally compulsory, since the SHRC itself is not a creature of the Constitution at all. Because it is created by an ordinary Act of Parliament rather than by the Constitution's text, the SHRC — exactly like the NHRC — is a <b class="imp">statutory body</b>, not a constitutional one. This is an important classification to keep straight: students sometimes assume any "Commission" discussed alongside constitutional bodies like the SPSC must itself be constitutional, but the SHRC is not.</p>
+  <div class="te"><b class="hlp">National Human Rights Commission (NHRC)</b> ను ఏర్పాటు చేసిన అదే Central Act — <b class="hlb">Protection of Human Rights Act, 1993</b> — state level లో <b class="term">State Human Rights Commission (SHRC)</b> ఏర్పాటుకు కూడా వీలు కల్పిస్తుంది. దీని ప్రకారం, <b class="imp">state government</b> SHRC ను ఏర్పాటు <b>చేయవచ్చు</b> — "చేయవచ్చు" అనే మాట గమనించండి: Article 315 కింద ప్రతి రాష్ట్రం తప్పనిసరిగా కలిగి ఉండాల్సిన State Public Service Commission లాగా కాకుండా, SHRC ఏర్పాటు రాజ్యాంగపరంగా తప్పనిసరి కాదు — ఎందుకంటే SHRC అనేదే రాజ్యాంగం సృష్టించిన body కాదు. ఇది Parliament సాధారణ చట్టం ద్వారా ఏర్పడింది కాబట్టి, NHRC లాగే SHRC కూడా <b class="imp">statutory body</b>, constitutional body కాదు. ఈ classification సరిగ్గా గుర్తుంచుకోవాలి — SPSC వంటి constitutional bodies పక్కనే చర్చించబడుతుంది కాబట్టి, SHRC కూడా constitutional body అని విద్యార్థులు అనుకోవచ్చు, కానీ అది కాదు.</div>
+
+  <p class="eng">The SHRC's headquarters are located wherever the state government, by notification, specifies — the Act does not fix any particular city or location, leaving this administrative choice entirely to the state.</p>
+  <div class="te">SHRC headquarters ఎక్కడ ఉండాలో state government notification ద్వారా నిర్ణయిస్తుంది — ఏ particular city నో Act నిర్దేశించలేదు, ఈ administrative choice పూర్తిగా state కు వదిలేసింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Establishment</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which Act creates the SHRC?</td><td>Protection of Human Rights Act, 1993 — same Act as NHRC</td></tr>
+      <tr><td>Is setting up a SHRC compulsory for a state?</td><td>No — "may be constituted" by the state government</td></tr>
+      <tr><td>Constitutional body or statutory body?</td><td>Statutory — created by ordinary Act, not by the Constitution</td></tr>
+      <tr><td>Who decides SHRC's headquarters location?</td><td>The state government, by notification</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Jurisdiction Limits — Two Traps Examiners Love</div>
+  <p class="eng">A State Human Rights Commission's inquiry power is confined to matters falling under the <b class="hlg">State List (List-II)</b> and the <b class="hlg">Concurrent List (List-III)</b> — the two lists of the Seventh Schedule that a state-level body can act on; the <b class="imp">Union List lies completely beyond its reach</b>. This is the SHRC's first structural boundary, a direct consequence of being a state-level authority operating inside India's federal division of legislative subjects.</p>
+  <div class="te">State Human Rights Commission తన inquiry అధికారాన్ని <b class="hlg">State List (List-II)</b>, <b class="hlg">Concurrent List (List-III)</b> పరిధిలో వచ్చే విషయాలకే పరిమితం చేసుకోగలదు — ఇవి రెండూ Seventh Schedule లో state-level body పనిచేయగల lists; <b class="imp">Union List దాని పరిధికి పూర్తిగా ఆవల ఉంటుంది</b>. ఇది SHRC కు ఉన్న మొదటి structural పరిమితి — India federal వ్యవస్థలో legislative subjects విభజనలో state-level authority గా పనిచేయడం వల్ల నేరుగా వచ్చే పరిణామం ఇది.</div>
+
+  <p class="eng"><b class="imp">Trap 1 — no overlapping inquiries:</b> if any human-rights case is already being inquired into by the NHRC or by any other statutory commission, the SHRC does <b class="imp">not</b> inquire into that same case. This overlap-avoidance rule prevents two commissions from duplicating (and potentially contradicting) each other's findings on the identical matter.</p>
+  <div class="te"><b class="imp">Trap 1 — overlapping inquiries ఉండకూడదు:</b> ఏదైనా human-rights కేసును NHRC లేదా వేరే statutory commission ఇప్పటికే విచారిస్తుంటే, SHRC అదే కేసును <b class="imp">విచారించదు</b>. ఈ overlap-avoidance rule, రెండు commissions ఒకే విషయంపై duplicate గా (వేర్వేరు, పరస్పర విరుద్ధమైన) findings ఇవ్వకుండా ఆపుతుంది.</div>
+
+  <p class="eng"><b class="imp">Trap 2 — armed forces are outside SHRC's reach entirely:</b> since <b>Defence</b> (which covers the armed forces) is an <b>Entry in the Union List</b>, human-rights matters relating to the armed forces automatically fall outside the "State List + Concurrent List" jurisdiction that defines the SHRC's scope. This is a crucial contrast with the NHRC: the NHRC itself has only a <b>limited</b> role regarding the armed forces (it can seek a report from the Central government and make recommendations, per the Act's special armed-forces provision), but that limited role is reserved <b class="imp">exclusively for the NHRC</b> — the SHRC has <b class="imp">no</b> role in armed-forces human-rights matters at all, not even a limited one. Students should not confuse "NHRC's limited armed-forces jurisdiction" with "SHRC has some armed-forces jurisdiction too" — the SHRC simply has none.</p>
+  <div class="te"><b class="imp">Trap 2 — armed forces విషయాలు SHRC పరిధికి పూర్తిగా బయట:</b> <b>Defence</b> (armed forces కూడా అందులోకే వస్తాయి) <b>Union List</b> లో ఒక Entry కావడం వల్ల, armed forces కు సంబంధించిన human-rights విషయాలు, SHRC పరిధిని నిర్వచించే "State List + Concurrent List" scope బయటే ఉంటాయి. NHRC తో పోల్చితే ఇది ఒక ముఖ్యమైన తేడా — NHRC కు కూడా armed forces విషయంలో <b>పరిమిత</b> role మాత్రమే ఉంది (Act ప్రత్యేక armed-forces provision ప్రకారం, Central government నుండి report కోరి, recommendations ఇవ్వగలదు) — కానీ ఆ పరిమిత role కూడా <b class="imp">కేవలం NHRC కే</b> reserved — SHRC కు armed-forces human-rights విషయాల్లో <b class="imp">ఏమాత్రం role లేదు</b>, పరిమితమైనది కూడా లేదు. "NHRC కు పరిమిత armed-forces jurisdiction ఉంది" అనే విషయాన్ని "SHRC కు కూడా కొంచెం ఉంటుంది" అని confuse కాకూడదు — SHRC కు అస్సలు లేదు.</div>
+
+  <p class="eng">The Central government <b>may confer</b> upon SHRCs the functions relating to human rights in <b>Union Territories</b>, with important exceptions. Under the original text, this exclusion covered the UTs of <b>Jammu and Kashmir</b> and <b>Ladakh</b> (per the 2020 adaptation orders that followed the UT's reorganisation). Functions relating to human rights in the UT of <b class="hlg">Delhi</b> are dealt with by the <b>NHRC</b> itself, not by any SHRC — this is the one consistent exception across versions of the provision.</p>
+  <div class="te">Central government <b>Union Territories</b> లో human rights functions ను SHRCs కు అప్పగించ<b>వచ్చు</b>, కానీ కొన్ని ముఖ్యమైన మినహాయింపులతో. original text ప్రకారం, ఈ మినహాయింపు <b>Jammu and Kashmir</b>, <b>Ladakh</b> UTs ను కవర్ చేస్తుంది (UT reorganisation తర్వాత వచ్చిన 2020 adaptation orders ప్రకారం). <b class="hlg">Delhi</b> UT లో human rights functions ను ఏ SHRC అయినా కాకుండా <b>NHRC</b> స్వయంగా చూసుకుంటుంది — ఈ provision లోని అన్ని versions లోనూ కనిపించే ఒకే ఒక్క స్థిరమైన మినహాయింపు ఇదే.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Jurisdiction Limits</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which Lists can SHRC inquire into?</td><td>State List (II) and Concurrent List (III) only — not Union List</td></tr>
+      <tr><td>What if NHRC/another statutory commission is already inquiring?</td><td>SHRC does not inquire into that same case</td></tr>
+      <tr><td>Does SHRC have any armed-forces jurisdiction?</td><td>No — none at all; that limited role belongs exclusively to the NHRC</td></tr>
+      <tr><td>Which UT's human-rights functions always stay with NHRC?</td><td>Delhi</td></tr>
+      <tr><td>Which UTs are also excepted per the 2020 adaptation orders?</td><td>Jammu &amp; Kashmir, and Ladakh</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Composition — Chairperson + 2 Members · Appointment by Governor on Committee's Recommendation</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Composition — A Much Smaller Body Than the NHRC</div>
+  <p class="eng">The SHRC's total strength is just three: a <b class="term">chairperson</b> plus <b class="hlg">two members</b> — a noticeably leaner body than the NHRC's chairperson, five members, and seven ex-officio members put together. Eligibility for the <b class="term">chairperson</b>'s post covers two categories: a <b>retired Chief Justice of a High Court</b>, <b>or</b> a <b>Judge of a High Court</b>. That second category — simply "a Judge of a High Court" — only entered the eligibility list through the <b class="hlg">2019 Amendment</b>; before it, nothing short of a retired HC Chief Justice would do, and the amendment opened the post to sitting/retired HC judges more broadly.</p>
+  <div class="te">SHRC మొత్తం strength కేవలం ముగ్గురు — <b class="term">chairperson</b> + <b class="hlg">ఇద్దరు members</b> — NHRC (chairperson + ఐదుగురు members + ఏడుగురు ex-officio members) తో పోల్చితే చాలా చిన్న body. <b class="term">Chairperson</b> పదవికి రెండు categories eligible — <b>retired High Court Chief Justice</b>, <b>లేదా</b> <b>High Court Judge</b>. ఈ రెండో category — కేవలం "High Court Judge" — <b class="hlg">2019 Amendment</b> ద్వారానే eligibility జాబితాలోకి వచ్చింది; అంతకుముందు, retired HC Chief Justice తప్ప మరేదీ సరిపోయేది కాదు, amendment ఈ పదవిని sitting/retired HC judges కు మరింత విస్తృతంగా తెరిచింది.</div>
+
+  <p class="eng">Two categories of people qualify as <b class="term">members</b>: first, someone currently or previously sitting as a <b>Judge of a High Court</b> — or alternatively, a <b>District Judge</b> within that state who has clocked at least <b class="hlg">seven years</b> on the District Judge bench; second, anyone with real knowledge or hands-on experience in human-rights work. Set this against the NHRC's members — a serving/retired SC judge, a serving/retired HC chief justice, and three human-rights-experienced persons (at least one of them a woman) — and the pattern is clear: SHRC's judicial-seniority bar sits one full rung lower, at the High-Court/District-Judge level rather than Supreme-Court level.</p>
+  <div class="te"><b class="term">Members</b> గా అర్హత పొందేవారు రెండు రకాలు — మొదటిది, ప్రస్తుతం లేదా గతంలో <b>High Court Judge</b> గా పనిచేసినవారు — లేదా, ఆ రాష్ట్రంలో కనీసం <b class="hlg">ఏడేళ్లు</b> District Judge బెంచ్ మీద పూర్తి చేసిన <b>District Judge</b>; రెండోది, human-rights పనిలో నిజమైన knowledge లేదా hands-on అనుభవం ఉన్న ఎవరైనా. దీన్ని NHRC members తో పోల్చండి — serving/retired SC judge, serving/retired HC chief justice, human-rights అనుభవం ఉన్న ముగ్గురు (కనీసం ఒకరు మహిళ) — pattern స్పష్టం: SHRC judicial-seniority బార్ Supreme-Court స్థాయి కంటే ఒక మెట్టు కిందే, High-Court/District-Judge స్థాయిలో ఉంటుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Composition</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>SHRC composition?</td><td>Chairperson + 2 members</td></tr>
+      <tr><td>Chairperson qualification (post-2019)?</td><td>Retired HC Chief Justice, OR a sitting/former HC Judge</td></tr>
+      <tr><td>What changed with the 2019 Amendment?</td><td>Added "or a Judge of a HC" — earlier only ex-HC-CJ qualified</td></tr>
+      <tr><td>Member qualifications?</td><td>Serving/retired HC judge OR District Judge (≥7 yrs) + a human-rights-experienced person</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Appointment — Governor, on a Committee's Recommendation</div>
+  <p class="eng">It is the <b class="hlp">Governor</b> who signs off on appointing the chairperson and members, but only after a recommending committee has named its choice. That committee's four seats are held by the <b>chief minister</b> (who heads it), the Legislative Assembly's <b>Speaker</b>, the <b>state home minister</b>, and that Assembly's <b>Leader of the Opposition</b>. The design mirrors how the NHRC itself is staffed — in both cases a compact, cross-party panel led by that level of government's chief executive puts forward names, and the constitutional/formal head of that government then makes the appointment, rather than the executive simply picking appointees on its own.</p>
+  <div class="te">Chairperson, members నియామకంపై చివరి సంతకం <b class="hlp">Governor</b> దే, కానీ ఒక recommending committee తన choice ను పేర్కొన్న తర్వాతే. ఈ committee లో నాలుగు స్థానాలు — <b>chief minister</b> (head గా), <b>Legislative Assembly Speaker</b>, రాష్ట్ర <b>Home Minister</b>, Assembly <b>Leader of the Opposition</b>. ఈ design, NHRC ఎలా staff చేయబడుతుందో దానికి అద్దం పడుతుంది — రెండు సందర్భాల్లోనూ, ఆ స్థాయి government chief executive నేతృత్వంలో ఉన్న ఒక చిన్న, cross-party panel పేర్లు సూచిస్తుంది, ఆ తర్వాత ఆ government head of state/formal head నియామకం చేస్తారు — executive తనంతట తానే appoint చేసుకోకుండా.</div>
+
+  <p class="eng">Bicameral states add two more names to this panel: the <b>Chairman of the Council</b> and the Council's own <b>Leader of the Opposition</b> — meaning a six-member committee wherever a <b class="term">Legislative Council</b> exists, versus four in unicameral states. One further safeguard applies specifically to serving judicial officers: moving a <b>sitting</b> High Court judge or a <b>sitting</b> District Judge into the SHRC requires <b>prior consultation</b> with that state's <b>High Court Chief Justice</b> — so the judiciary's own head gets a say before one of its serving officers is pulled into this role.</p>
+  <div class="te">Bicameral రాష్ట్రాలు ఈ panel కు మరో ఇద్దరిని జోడిస్తాయి — Council <b>Chairman</b>, Council సొంత <b>Leader of the Opposition</b> — అంటే <b class="term">Legislative Council</b> ఉన్న చోట ఆరుగురి committee, unicameral రాష్ట్రాల్లో నలుగురి committee. సర్వీసులో ఉన్న judicial officers విషయంలో మరో safeguard వర్తిస్తుంది — <b>sitting</b> High Court judge లేదా <b>sitting</b> District Judge ను SHRC లోకి తీసుకురావాలంటే ఆ రాష్ట్ర <b>High Court Chief Justice</b> తో <b>ముందుగా consultation</b> అవసరం — సర్వీసులో ఉన్న ఒక officer ను ఈ role లోకి లాగే ముందు judiciary సొంత head కు మాట చెప్పాల్సిందే.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Appointment</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who appoints SHRC chairperson/members?</td><td>The Governor</td></tr>
+      <tr><td>4-member committee (unicameral state)?</td><td>CM (head), Assembly Speaker, state Home Minister, Assembly LoP</td></tr>
+      <tr><td>Extra 2 members in bicameral states?</td><td>Chairman of the Legislative Council + Leader of Opposition in the Council</td></tr>
+      <tr><td>When is CJ-of-state-HC consultation required?</td><td>When appointing a sitting HC judge or sitting District Judge</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Tenure · Removal — the Single Biggest Trap in the Chapter</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Tenure</div>
+  <p class="eng">Office runs for <b class="hlg">three years</b>, capped by an upper age limit of <b class="hlg">70</b> — whichever milestone arrives first ends the term. Five years was the earlier figure; the <b class="hlg">2019 Amendment</b> cut it to three, applying that same cut to the NHRC in parallel. Re-appointment remains open to them. Once the term is over, though, neither the chairperson nor a member may take up <b class="imp">any further government job</b> — this bar covers a state government <b>and</b> the Central government alike, so it isn't confined to the particular state that had appointed them.</p>
+  <div class="te">పదవీకాలం <b class="hlg">మూడేళ్లు</b>, పైన <b class="hlg">70</b> ఏళ్ల వయో పరిమితితో — ఏది ముందు వస్తే అది term ను ముగిస్తుంది. ముందు ఐదేళ్లు ఉండేది; <b class="hlg">2019 Amendment</b> దాన్ని మూడేళ్లకు కుదించింది, అదే కోతను NHRC కు కూడా సమాంతరంగా వర్తింపజేసింది. వీరికి re-appointment అవకాశం ఉంటుంది. term ముగిశాక మాత్రం, chairperson గానీ member గానీ <b class="imp">ఏ ప్రభుత్వ ఉద్యోగం</b> లోనూ చేరకూడదు — ఈ నిషేధం state government, Central government రెండింటికీ వర్తిస్తుంది, కాబట్టి వారిని నియమించిన ఆ ఒక్క రాష్ట్రానికే పరిమితం కాదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Tenure</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Tenure of SHRC chairperson/member?</td><td>3 years or age 70, whichever earlier</td></tr>
+      <tr><td>What was it before the 2019 Amendment?</td><td>5 years</td></tr>
+      <tr><td>Eligible for re-appointment?</td><td>Yes</td></tr>
+      <tr><td>Post-tenure employment bar?</td><td>Not eligible under any state govt or the Central govt</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Removal — Appointed by Governor, Removed Only by President</div>
+  <p class="eng">If one fact from this chapter shows up on the exam, it's this one. The Governor <b>appoints</b> the SHRC's chairperson and members — yet has <b class="imp">zero</b> power to <b>remove</b> them. That authority rests solely with the <b class="hlp">President</b>. In other words, whoever makes the appointment does not control the exit — the same "appointer ≠ remover" split shows up for the State Public Service Commission too (Ch.45: Governor appoints, only the President removes), which tells you this is a deliberate, recurring design choice across state-level bodies, not something unique to the SHRC.</p>
+  <div class="te">ఈ chapter నుండి ఒకే ఒక్క fact exam లో వస్తే, అది ఇదే. Governor SHRC chairperson, members ను <b>appoint</b> చేస్తారు — కానీ వారిని <b>remove</b> చేసే అధికారం Governor కు <b class="imp">ఏమాత్రం లేదు</b>. ఆ అధికారం పూర్తిగా <b class="hlp">President</b> చేతిలోనే ఉంటుంది. అంటే, నియమించినవారికే exit మీద control ఉండదు — ఇదే "appointer ≠ remover" split State Public Service Commission (Ch.45) లో కూడా కనిపిస్తుంది (Governor appoint చేస్తారు, President మాత్రమే remove చేయగలరు) — ఇది state-level bodies అంతటా కనిపించే ఒక ఉద్దేశపూర్వక design, SHRC కు మాత్రమే ప్రత్యేకమైనది కాదు.</div>
+
+  <p class="eng">For the actual grounds and procedure, the President simply reuses the <b class="hlp">NHRC</b>'s own removal rulebook — the SHRC borrows that machinery wholesale, notwithstanding that the two commissions answer to <b class="imp">different appointing authorities</b> (Governor for the SHRC, President for the NHRC itself). Five of the grounds need no Supreme Court enquiry at all: <b>(1)</b> being declared an <b>insolvent</b>; <b>(2)</b> taking up <b>paid work</b> outside official duties while still in office; <b>(3)</b> becoming <b>unfit</b> for the post through mental or physical infirmity; <b>(4)</b> a competent court declaring the person of <b>unsound mind</b>; and <b>(5)</b> a <b>criminal conviction carrying a prison sentence</b>.</p>
+  <div class="te">వాస్తవ grounds, procedure విషయంలో, President <b class="hlp">NHRC</b> సొంత removal rulebook నే మళ్ళీ వాడతారు — రెండు commissions కు <b class="imp">వేరు వేరు appointing authorities</b> ఉన్నప్పటికీ (SHRC కు Governor, స్వయంగా NHRC కు President), SHRC ఈ machinery ను పూర్తిగా NHRC నుండే తీసుకుంటుంది. ఐదు grounds కు Supreme Court enquiry అస్సలు అవసరం లేదు: <b>(1)</b> <b>insolvent</b> గా declare అవడం; <b>(2)</b> పదవిలో ఉండగానే అధికారిక విధులకు వెలుపల <b>paid పని</b> చేపట్టడం; <b>(3)</b> mental లేదా physical infirmity వల్ల పదవికి <b>unfit</b> గా మారడం; <b>(4)</b> ఏదైనా competent court <b>unsound mind</b> గా declare చేయడం; <b>(5)</b> jail శిక్షతో కూడిన <b>criminal conviction</b>.</div>
+
+  <p class="eng">A sixth ground exists beyond these five — <b class="term">proved misbehaviour or incapacity</b> — but it comes with an extra procedural step: the President cannot act on it directly, and must instead send the matter to the <b>Supreme Court</b> for its own inquiry first. Removal follows only if the Court, having inquired, both upholds the ground and advises removal. Building in that SC step matters precisely because "misbehaviour or incapacity" is a far more subjective standard than the other five — routing it through the judiciary keeps the decision from becoming a purely political one.</p>
+  <div class="te">ఈ ఐదింటికి మించి ఆరో ground కూడా ఉంది — <b class="term">proved misbehaviour లేదా incapacity</b> — కానీ దీనికి అదనపు procedural అడ్డంకి ఉంటుంది: President దీనిపై నేరుగా చర్య తీసుకోలేరు, ముందుగా విషయాన్ని <b>Supreme Court</b> కు పంపి, దాని సొంత enquiry జరిపించాలి. Court, enquiry తర్వాత, ఆ ground ను upheld చేసి, removal కు advise చేస్తేనే తొలగింపు జరుగుతుంది. ఈ SC-step ముఖ్యమైనది ఎందుకంటే "misbehaviour లేదా incapacity" మిగతా ఐదింటి కంటే చాలా subjective standard — దీన్ని judiciary ద్వారా route చేయడం వల్ల ఈ నిర్ణయం పూర్తిగా political గా మారకుండా ఆగుతుంది.</div>
+
+  <table>
+    <caption>SHRC removal grounds at a glance (identical to NHRC's)</caption>
+    <thead><tr><th style="width:8%">#</th><th style="width:52%">Ground</th><th>SC enquiry needed?</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Adjudged insolvent</td><td>No</td></tr>
+      <tr><td class="n">2</td><td>Paid employment outside official duties, during term</td><td>No</td></tr>
+      <tr><td class="n">3</td><td>Unfit due to infirmity of mind or body</td><td>No</td></tr>
+      <tr><td class="n">4</td><td>Unsound mind, declared by a competent court</td><td>No</td></tr>
+      <tr><td class="n">5</td><td>Convicted and sentenced to imprisonment for an offence</td><td>No</td></tr>
+      <tr><td class="n">6</td><td>Proved misbehaviour or incapacity</td><td class="imp">Yes — SC's advice binding on President</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Removal (The Big Trap)</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who appoints SHRC chairperson/members?</td><td>Governor</td></tr>
+      <tr><td>Who removes them?</td><td class="imp">President — NOT the Governor</td></tr>
+      <tr><td>Whose removal grounds/manner does SHRC's removal copy?</td><td>The NHRC's (same grounds, same manner)</td></tr>
+      <tr><td>How many grounds need no SC enquiry?</td><td>5 (insolvency, outside employment, infirmity, unsound mind, imprisonment)</td></tr>
+      <tr><td>What's required for the misbehaviour/incapacity ground?</td><td>President refers to SC; only removes if SC upholds &amp; advises</td></tr>
+      <tr><td>Which other Ch.45 body shares this exact appoint/remove split?</td><td>State Public Service Commission — Governor appoints, only President removes</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Salary/Independence · Functions (9) — Compared with NHRC's 10</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Salary, Conditions of Service &amp; Overall Independence</div>
+  <p class="eng">Pay, allowances, and the rest of the service conditions for the chairperson/members come from the <b>state government</b>'s own budget — unlike the NHRC, where the <b>Central</b> government fixes these figures. Whichever government sets them, though, one protective rule holds in both cases: none of these terms may be <b class="imp">changed to the office-holder's disadvantage</b> once they have taken up the post. Add it all up — Governor's appointment routed through a cross-party committee, guaranteed tenure, removal locked to the President (with a judicial filter for the "misbehaviour" ground), and protected pay — and the design intent becomes obvious: every one of these features exists to shield the Commission's <b>autonomy, independence, and impartiality</b>.</p>
+  <div class="te">Chairperson/members జీతం, allowances, మిగతా service conditions <b>state government</b> సొంత బడ్జెట్ నుండే వస్తాయి — NHRC కు భిన్నంగా, అక్కడ ఈ figures <b>Central</b> government నిర్ణయిస్తుంది. ఏ government నిర్ణయించినా, ఒక protective rule మాత్రం రెండు సందర్భాల్లోనూ వర్తిస్తుంది — పదవి చేపట్టిన తర్వాత ఈ terms ను office-holder కు <b class="imp">నష్టం కలిగేలా మార్చకూడదు</b>. వీటన్నింటినీ కలిపి చూస్తే — cross-party committee ద్వారా Governor నియామకం, guaranteed tenure, "misbehaviour" ground కు judicial filter తో President కే లాక్ అయిన removal, రక్షిత జీతం — వీటి design ఉద్దేశం స్పష్టమే: ఇవన్నీ Commission <b>autonomy, independence, impartiality</b> ను కాపాడటానికే.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Salary &amp; Independence</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who fixes SHRC salaries/conditions of service?</td><td>The state government (NHRC's: Central govt)</td></tr>
+      <tr><td>Can conditions be changed post-appointment?</td><td>Not to the office-holder's disadvantage</td></tr>
+      <tr><td>What is the overall goal of these provisions?</td><td>Autonomy, independence, impartiality of the Commission</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Functions — 9 Functions, One Fewer Than the NHRC's 10</div>
+  <p class="eng">Nine distinct functions make up the SHRC's mandate. <b>(1)</b> It can open an inquiry into a public servant's human-rights violation, or into negligence that failed to prevent one — triggered on its own initiative (<b>suo motu</b>), through a petition it receives, or by a court's direction. <b>(2)</b> It can step into ongoing court proceedings wherever a human-rights violation is alleged. <b>(3)</b> It can walk into jails and other places of detention, look at how inmates are actually kept, and put forward recommendations based on what it finds. <b>(4)</b> It examines the constitutional and statutory protections already on the books for human rights and suggests how to make them work better in practice. <b>(5)</b> It looks at whatever is choking off the enjoyment of human rights — <b>terrorism</b> being one named example — and proposes fixes.</p>
+  <div class="te">SHRC mandate లో తొమ్మిది వేర్వేరు functions ఉంటాయి. <b>(1)</b> public servant వల్ల జరిగే human-rights violation పైన, లేదా దాన్ని నివారించడంలో negligence పైన inquiry మొదలుపెట్టగలదు — తనంతట తానే (<b>suo motu</b>), తనకు అందిన petition మీద, లేదా court directive మీద. <b>(2)</b> human-rights violation ఆరోపణ ఉన్న ఏ court proceeding లోనైనా జోక్యం చేసుకోగలదు. <b>(3)</b> జైళ్లు, ఇతర detention places లోకి వెళ్లి, ఖైదీలు నిజంగా ఎలా ఉంచబడుతున్నారో చూసి, తగిన recommendations ఇవ్వగలదు. <b>(4)</b> human rights కోసం ఇప్పటికే ఉన్న constitutional, statutory రక్షణలను పరిశీలించి, వాటిని practice లో మెరుగ్గా అమలు చేసేందుకు సూచనలు ఇస్తుంది. <b>(5)</b> human rights enjoyment ను అడ్డుకుంటున్న ఏ factor అయినా చూస్తుంది — <b>terrorism</b> అందులో ఒక ఉదాహరణ — పరిష్కారాలు సూచిస్తుంది.</div>
+
+  <p class="eng">Four more round out the list. <b>(6)</b> Research into human-rights questions — carrying it out directly, and encouraging others to do the same. <b>(7)</b> Public education: getting ordinary people literate about their rights and aware of the safeguards that exist to protect them. <b>(8)</b> Backing the work that <b class="hlb">non-governmental organizations (NGOs)</b> in this space are already doing. <b>(9)</b> A catch-all — any other function the Commission itself judges necessary to advance human rights. Line this up against the NHRC's ten, and exactly one is missing here: the NHRC's mandate to <b>examine treaties and other international human-rights instruments</b> and push for their proper implementation has no SHRC counterpart — unsurprising, since treaty-making and foreign relations sit on the Union List, well outside what a state-level body can touch.</p>
+  <div class="te">మిగతా నాలుగు జాబితాను పూర్తి చేస్తాయి. <b>(6)</b> human-rights ప్రశ్నలపై research — స్వయంగా చేపట్టడం, ఇతరులను కూడా ప్రోత్సహించడం. <b>(7)</b> ప్రజా విద్య — సాధారణ ప్రజలకు తమ rights గురించి అవగాహన కల్పించడం, వాటి రక్షణ కోసం ఉన్న safeguards గురించి awareness పెంచడం. <b>(8)</b> ఈ రంగంలో ఇప్పటికే పనిచేస్తున్న <b class="hlb">non-governmental organizations (NGOs)</b> కృషికి మద్దతు ఇవ్వడం. <b>(9)</b> ఒక catch-all — human rights ప్రమోషన్ కోసం Commission తానే అవసరమని భావించే ఏ ఇతర function అయినా. దీన్ని NHRC పది functions తో పోల్చితే, ఇక్కడ సరిగ్గా ఒక్కటే మిస్ అవుతుంది — NHRC కు ఉన్న <b>treaties, ఇతర international human-rights instruments</b> ను పరిశీలించి, వాటి సరైన అమలు కోసం ఒత్తిడి తెచ్చే function కు SHRC లో సమానమైనది లేదు — ఇది ఆశ్చర్యం కాదు, ఎందుకంటే treaty-making, foreign relations Union List విషయాలు — state-level body కు అందుబాటులో లేనివి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Functions</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How many functions does SHRC have?</td><td>9</td></tr>
+      <tr><td>The 3 inquiry-initiation routes?</td><td>Suo motu, petition, or court order</td></tr>
+      <tr><td>Which NHRC function is absent from SHRC's list?</td><td>Studying treaties/international human-rights instruments</td></tr>
+      <tr><td>Why is that function NHRC-only?</td><td>Treaties/int'l relations are Union subjects — outside a state body's reach</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Working — Procedure, Powers, Limitation Period · Post-Inquiry Steps · Reports</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Working — Procedure &amp; Powers</div>
+  <p class="eng">How the Commission conducts its own business is left to the Commission itself — it sets its own procedure. Functionally, it operates with every power a <b>civil court</b> holds, and what happens in its proceedings carries a <b class="term">judicial character</b>. It can also demand information or a report, whether from the state government or from any authority answerable to it — a genuinely muscular fact-finding power, especially given that what the Commission ultimately produces (as the next section shows) is only ever a recommendation, never a binding order.</p>
+  <div class="te">Commission తన సొంత వ్యవహారాలను ఎలా నడుపుకోవాలో దానికే వదిలేయబడింది — తన procedure ను తానే నిర్ణయించుకుంటుంది. Functionally, దానికి <b>civil court</b> కు ఉండే ప్రతి అధికారం ఉంటుంది, దాని proceedings లో జరిగేదానికి <b class="term">judicial character</b> ఉంటుంది. state government నుండి గానీ, దానికి జవాబుదారీగా ఉన్న ఏ authority నుండి గానీ సమాచారం లేదా report ను demand చేయగలదు — ఇది నిజంగా బలమైన fact-finding power, ముఖ్యంగా Commission చివరకు ఇచ్చేది (తర్వాతి section చూపినట్టు) కేవలం ఒక సిఫారసే తప్ప, binding order కాదు కాబట్టి.</div>
+
+  <p class="eng">There's a clock running on every complaint: the Commission <b class="imp">loses the power</b> to inquire once <b class="hlg">a year</b> has passed since the alleged violation took place. Miss that one-year window and the SHRC route is shut for good on that matter — a hard deadline applicants and their advocates cannot afford to overlook (other avenues, such as approaching the ordinary courts directly, are untouched by this particular time-bar, which binds only the SHRC's own inquiry power).</p>
+  <div class="te">ప్రతి complaint మీద ఒక గడియారం నడుస్తూ ఉంటుంది — ఆరోపిత violation జరిగిన నాటి నుండి <b class="hlg">ఒక సంవత్సరం</b> గడిచిపోతే, Commission కు inquire చేసే అధికారమే <b class="imp">పోతుంది</b>. ఆ ఒక్క సంవత్సరం window మిస్ అయితే, ఆ విషయం మీద SHRC route శాశ్వతంగా మూసుకుపోతుంది — దరఖాస్తుదారులు, వారి న్యాయవాదులు తప్పక గుర్తుంచుకోవాల్సిన కఠినమైన గడువు ఇది (సాధారణ courts ను నేరుగా approach కావడం వంటి ఇతర మార్గాలపై ఈ time-bar ప్రభావం ఉండదు — ఇది కేవలం SHRC సొంత inquiry అధికారానికే వర్తిస్తుంది).</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Working, Procedure &amp; Limitation</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Character of SHRC's proceedings?</td><td>Judicial — with all the powers of a civil court</td></tr>
+      <tr><td>Limitation period for an inquiry?</td><td>1 year from the date of the alleged violation</td></tr>
+      <tr><td>Does SHRC regulate its own procedure?</td><td>Yes</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Post-Inquiry Steps &amp; the Recommendatory-Only Role</div>
+  <p class="eng">While an inquiry is still running, or once it wraps up, four different courses of action are open to the Commission: <b>(1)</b> urge the state government or authority to hand the victim <b>compensation or damages</b>; <b>(2)</b> push the state government or authority to <b>set prosecution in motion</b>, or take some other action, against the public servant found at fault; <b>(3)</b> ask the state government or authority to grant the victim <b>immediate interim relief</b>; <b>(4)</b> go directly to the <b>Supreme Court</b> or the relevant <b>state High Court</b> seeking whatever directions, orders, or writs the situation calls for.</p>
+  <div class="te">Inquiry ఇంకా నడుస్తుండగా, లేదా అది పూర్తయిన తర్వాత, Commission ముందు నాలుగు దారులు ఉంటాయి — <b>(1)</b> బాధితుడికి <b>compensation లేదా damages</b> ఇవ్వమని state government/authority ను కోరడం; <b>(2)</b> దోషిగా తేలిన public servant పై <b>prosecution మొదలుపెట్టమని</b>, లేదా ఇతర చర్య తీసుకోమని state government/authority ను ఒత్తిడి చేయడం; <b>(3)</b> బాధితుడికి <b>immediate interim relief</b> ఇవ్వమని state government/authority ను అడగడం; <b>(4)</b> పరిస్థితికి తగిన directions, orders, writs కోసం నేరుగా <b>Supreme Court</b> లేదా సంబంధిత <b>state High Court</b> ను approach కావడం.</div>
+
+  <p class="eng">Notice what every one of those four options has in common — each is phrased as something the Commission "recommends" or "approaches," never something it orders. That's because the Commission's entire role here is <b class="term">recommendatory</b>, nothing more. It cannot <b class="imp">punish</b> anyone for violating human rights, and it cannot hand out relief of any kind — monetary or otherwise — to a victim on its own authority; the most it can do is ask the government to. Its recommendations, moreover, do <b class="imp">not bind</b> the state government or authority in any way — though the government does owe the Commission a report on what action was taken, and that report is due within <b class="hlg">one month</b>. One last obligation closes the loop: the Commission sends the state government its annual or special reports, and the government in turn tables these before the state legislature, together with a memorandum showing what action followed on each recommendation and, where a recommendation was rejected, why.</p>
+  <div class="te">ఈ నాలుగు options లో ప్రతిదానికీ ఒక common point గమనించండి — ప్రతి ఒక్కటీ Commission "సిఫారసు చేస్తుంది" లేదా "approach అవుతుంది" అనే రూపంలోనే ఉంటుంది, ఎప్పుడూ "order చేస్తుంది" అని కాదు. ఎందుకంటే Commission పాత్ర పూర్తిగా <b class="term">recommendatory</b> మాత్రమే. Human rights ఉల్లంఘించిన వారిని <b class="imp">శిక్షించే</b> అధికారం దానికి లేదు, బాధితుడికి — monetary గానీ మరేదైనా గానీ — ఏ relief నూ స్వయంగా ఇవ్వలేదు; అలా చేయమని government ను కోరడం మాత్రమే చేయగలదు. దీని సిఫారసులు state government/authority పై ఏ విధంగానూ <b class="imp">binding కావు</b> — అయితే, తీసుకున్న చర్యపై government Commission కు తప్పక తెలియజేయాలి, ఆ report <b class="hlg">ఒక నెల</b> లోపు రావాలి. చివరిగా ఒక బాధ్యత మిగిలింది — Commission తన annual లేదా special reports ను state government కు పంపుతుంది, government వాటిని state legislature ముందు ఉంచుతుంది — ప్రతి సిఫారసు మీద తీసుకున్న చర్యను చూపే memorandum తో పాటు, ఏదైనా సిఫారసు తిరస్కరించినట్టయితే దానికి కారణాలతో సహా.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Post-Inquiry Steps &amp; Reports</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>4 possible post-inquiry steps?</td><td>Recommend compensation, recommend prosecution, recommend interim relief, approach SC/state HC</td></tr>
+      <tr><td>Is SHRC's role punitive or recommendatory?</td><td>Purely recommendatory — no power to punish or award relief itself</td></tr>
+      <tr><td>Are its recommendations binding?</td><td>No — not binding on the state govt/authority</td></tr>
+      <tr><td>Deadline for govt to report action taken?</td><td>Within 1 month</td></tr>
+      <tr><td>Where do annual/special reports go?</td><td>State government → laid before the state legislature with an action-taken memorandum</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Human Rights Courts · 2019 Amendment Act — Full Provisions</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Human Rights Courts</div>
+  <p class="eng">Beyond the Commission itself, the same 1993 Act sets up a separate mechanism — a <b class="term">Human Rights Court</b> for each and every district, meant purely to fast-track trials of offences that stem from human-rights violations. Creating one is the <b>state government</b>'s job, but it cannot act alone: the <b>Chief Justice of that state's High Court</b> must first <b class="imp">agree</b> — the same "check with the state HC's Chief Justice" idea that showed up earlier when a sitting judge is being moved into the SHRC. Each such court also gets its own prosecutor — either a public prosecutor the state government names, or an <b>advocate of at least seven years' standing</b> whom it designates as special public prosecutor to handle that court's cases.</p>
+  <div class="te">Commission కు అదనంగా, అదే 1993 Act ఒక వేరే mechanism ను కూడా ఏర్పాటు చేస్తుంది — ప్రతి district కూ ఒక <b class="term">Human Rights Court</b>, human-rights ఉల్లంఘన నుండి పుట్టే offences ను వేగంగా విచారించడం కోసమే దీని ఉద్దేశం. దీన్ని ఏర్పాటు చేయడం <b>state government</b> పని, కానీ state ఒంటరిగా చేయజాలదు — ఆ రాష్ట్ర <b>High Court Chief Justice</b> ముందుగా <b class="imp">అంగీకరించాలి</b> — SHRC లోకి sitting judge ను తీసుకొచ్చేటప్పుడు ముందు చూసిన "state HC Chief Justice తో చెక్ చేయాలి" అనే ఆలోచనే ఇక్కడా. ప్రతి court కూ దాని సొంత prosecutor ఉంటారు — state government పేర్కొనే ఒక public prosecutor, లేదా కనీసం ఏడేళ్ల అనుభవం ఉన్న <b>advocate</b> ను ఆ court కేసుల కోసం special public prosecutor గా నియమించడం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Human Rights Courts</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Where is a Human Rights Court set up?</td><td>In every district</td></tr>
+      <tr><td>Who sets it up, and with whose concurrence?</td><td>State government, with the concurrence of the state HC's Chief Justice</td></tr>
+      <tr><td>Special public prosecutor's minimum experience?</td><td>7 years of practice as an advocate</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">2019 Amendment Act — All 8 Provisions</div>
+  <p class="eng">2019 brought a bundle of changes through the Protection of Human Rights (Amendment) Act — some touching only the NHRC, some only the SHRC, and some both at once. <b>(1)</b> NHRC's chairperson pool widened to include anyone who has served as a <b>Supreme Court judge</b>, not just a former CJI as before. <b>(2)</b> The count of NHRC members drawn from human-rights-experienced persons went up — <b class="hlg">from two to three</b> — with a rule that at least one of them be a <b>woman</b>. <b>(3)</b> Three new <b>ex-officio</b> seats joined the NHRC: the chairpersons of the <b>National Commission for BCs</b> and the <b>National Commission for Protection of Child Rights</b>, plus the <b>Chief Commissioner for Persons with Disabilities</b>. <b>(4)</b> Tenure for chairperson/members shrank at <b>both</b> commissions — NHRC and SHRC alike — <b class="hlg">from five years down to three</b>, with re-appointment now permitted for both.</p>
+  <div class="te">2019 లో Protection of Human Rights (Amendment) Act ద్వారా అనేక మార్పులు వచ్చాయి — కొన్ని కేవలం NHRC కు, కొన్ని కేవలం SHRC కు, కొన్ని రెండింటికీ వర్తిస్తాయి. <b>(1)</b> NHRC chairperson pool విస్తరించి, ఇంతకుముందు ఉన్న former CJI తో పాటు, <b>Supreme Court judge</b> గా పనిచేసిన ఎవరైనా కూడా చేరారు. <b>(2)</b> human-rights అనుభవం ఉన్న వ్యక్తుల నుండి తీసుకునే NHRC members సంఖ్య పెరిగింది — <b class="hlg">రెండు నుండి మూడుకు</b> — వారిలో కనీసం ఒకరు <b>మహిళ</b> అయి ఉండాలనే నిబంధనతో. <b>(3)</b> NHRC కు మూడు కొత్త <b>ex-officio</b> స్థానాలు చేరాయి — <b>National Commission for BCs</b>, <b>National Commission for Protection of Child Rights</b> chairpersons, <b>Chief Commissioner for Persons with Disabilities</b>. <b>(4)</b> NHRC, SHRC రెండింటిలోనూ chairperson/members పదవీకాలం తగ్గింది — <b class="hlg">ఐదేళ్ల నుండి మూడేళ్లకు</b> — ఇప్పుడు రెండింటికీ re-appointment అనుమతించారు.</div>
+
+  <p class="eng">The remaining four: <b>(5)</b> SHRC's own chairperson pool got the same treatment — a former <b>High Court judge</b> now qualifies too, alongside a former HC Chief Justice; this is exactly the change behind the chairperson eligibility rule covered earlier in this chapter. <b>(6)</b> SHRCs became eligible to take on human-rights functions for Union Territories if the Centre chooses to hand them over — <b>Delhi being the one standing exception</b>, since Delhi's human-rights functions stay parked with the NHRC. <b>(7)</b> NHRC's <b>Secretary-General</b> picked up authority over all administrative and financial matters (everything except judicial work and rule-making), answerable to the chairperson. <b>(8)</b> The SHRC's own <b>Secretary</b> got the parallel grant — administrative and financial control of the Commission, again under the chairperson's oversight.</p>
+  <div class="te">మిగతా నాలుగు — <b>(5)</b> SHRC సొంత chairperson pool కు కూడా అదే treatment వచ్చింది — former HC Chief Justice తోపాటు, ఇప్పుడు former <b>High Court judge</b> కూడా eligible; ఇది ఖచ్చితంగా ఈ chapter లో ముందు చర్చించిన chairperson eligibility rule కు మూలం. <b>(6)</b> Centre కోరుకుంటే, Union Territories కోసం human-rights functions ను SHRCs కు అప్పగించే వీలు వచ్చింది — <b>Delhi ఒక్కటే మినహాయింపు</b>, ఎందుకంటే Delhi human-rights functions NHRC దగ్గరే ఉంటాయి. <b>(7)</b> NHRC <b>Secretary-General</b> కు అన్ని administrative, financial విషయాలపై అధికారం వచ్చింది (judicial పని, rule-making తప్ప) — chairperson కు జవాబుదారీగా. <b>(8)</b> SHRC సొంత <b>Secretary</b> కు కూడా సమాంతర అధికారం వచ్చింది — Commission administrative, financial control — మళ్ళీ chairperson పర్యవేక్షణలో.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — 2019 Amendment Act</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which two chairperson qualifications were widened?</td><td>NHRC (added ex-SC judge); SHRC (added ex-HC judge)</td></tr>
+      <tr><td>Tenure change, and for whom?</td><td>5→3 years, for both NHRC and SHRC chairperson/members</td></tr>
+      <tr><td>3 new ex-officio NHRC members added?</td><td>Chairpersons of NCBC &amp; NCPCR + Chief Commissioner for PwD</td></tr>
+      <tr><td>UT exception for SHRC's conferred functions?</td><td>Delhi — stays with NHRC</td></tr>
+      <tr><td>Who got new admin/financial powers, under whose control?</td><td>NHRC Secretary-General &amp; SHRC Secretary — under the chairperson's control</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">NHRC vs SHRC — Full Comparison Table · Chapter Facts at a Glance</div>
+
+<div class="para">
+  <div class="ptitle gn" style="margin-top:0">NHRC vs SHRC — the Complete Comparison</div>
+  <p class="eng">The National and State Human Rights Commissions run on parallel structures under the same 1993 Act, but differ on several specific points — and share one crucial point that examiners love to test as a trap. The table below lays out the full comparison; the single most important row is <b class="imp">"Removes"</b> — despite different appointing authorities, <b>both</b> are removed only by the President.</p>
+  <div class="te">National, State Human Rights Commissions రెండూ ఒకే 1993 Act కింద parallel structures మీద నడుస్తాయి, కానీ కొన్ని specific points లో తేడా ఉంటుంది — మరియు examiners trap గా ఇష్టపడే ఒక కీలకమైన సారూప్యత కూడా ఉంది. కింద ఉన్న table పూర్తి పోలికను చూపిస్తుంది; అత్యంత ముఖ్యమైన row <b class="imp">"Removes"</b> — appointing authorities వేరైనా, <b>రెండింటినీ</b> President మాత్రమే తొలగించగలరు.</div>
+
+  <table>
+    <caption>NHRC vs SHRC — full comparison</caption>
+    <thead><tr><th style="width:24%">Point</th><th style="width:38%">NHRC</th><th>SHRC</th></tr></thead>
+    <tbody>
+      <tr><td>Governing Act</td><td colspan="2">Protection of Human Rights Act, 1993 (same Act for both)</td></tr>
+      <tr><td>Nature of body</td><td colspan="2">Statutory — not constitutional (both)</td></tr>
+      <tr><td>Level</td><td>National (Union)</td><td>State</td></tr>
+      <tr><td>Composition</td><td>Chairperson + 5 members + 7 ex-officio members</td><td>Chairperson + 2 members</td></tr>
+      <tr><td>Chairperson qualification</td><td>Retired CJI or a judge of the SC</td><td>Retired HC Chief Justice or a judge of a HC</td></tr>
+      <tr><td>Member qualification</td><td>Serving/retired SC judge; serving/retired HC chief justice; 3 HR-experienced persons (≥1 woman)</td><td>Serving/retired HC judge, or District Judge (≥7 yrs); 1 HR-experienced person</td></tr>
+      <tr><td>Appointing authority</td><td>President</td><td class="imp">Governor</td></tr>
+      <tr><td>Appointing committee</td><td>PM (head), LS Speaker, RS Deputy Chairman, LoP in both Houses, Union Home Minister</td><td>CM (head), Assembly Speaker, state Home Minister, Assembly LoP (+ Council Chairman &amp; Council LoP if bicameral)</td></tr>
+      <tr><td>Removing authority</td><td class="imp">President</td><td class="imp">President — SAME (the key trap)</td></tr>
+      <tr><td>Removal grounds/manner</td><td colspan="2">Identical for both (5 no-enquiry grounds + misbehaviour/incapacity via SC reference)</td></tr>
+      <tr><td>Tenure</td><td>3 years or age 70, whichever earlier</td><td>3 years or age 70, whichever earlier (same)</td></tr>
+      <tr><td>Salary/conditions fixed by</td><td>Central government</td><td>State government</td></tr>
+      <tr><td>Jurisdiction (subject-matter)</td><td>All subjects (Union, State, Concurrent)</td><td class="imp">Only State List + Concurrent List</td></tr>
+      <tr><td>Armed-forces jurisdiction</td><td>Limited (seek report from Centre + recommend)</td><td class="imp">None — entirely outside SHRC's reach</td></tr>
+      <tr><td>Overlap rule</td><td>N/A (NHRC is the "senior" body)</td><td>Cannot inquire if NHRC/other statutory commission already inquiring</td></tr>
+      <tr><td>Number of functions</td><td>10 (includes studying treaties/int'l instruments)</td><td>9 (no treaties function)</td></tr>
+      <tr><td>UT jurisdiction</td><td>Delhi always; J&amp;K, Ladakh (2020 orders)</td><td>Other UTs, if Centre confers — except Delhi, J&amp;K, Ladakh</td></tr>
+      <tr><td>Headquarters</td><td>Delhi</td><td>Wherever the state government notifies</td></tr>
+      <tr><td>Limitation period for inquiry</td><td colspan="2">1 year from the date of the alleged violation (both)</td></tr>
+      <tr><td>Nature of recommendations</td><td colspan="2">Recommendatory only, not binding (both) — govt must report action taken within 1 month</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — NHRC vs SHRC</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>The single biggest trap in this comparison?</td><td>Appointing authority differs (President vs Governor), but removal authority is President for BOTH</td></tr>
+      <tr><td>Which body has more members and ex-officio members?</td><td>NHRC (5 members + 7 ex-officio) vs SHRC (2 members, no ex-officio)</td></tr>
+      <tr><td>Which body has armed-forces jurisdiction, even if limited?</td><td>NHRC only — SHRC has none at all</td></tr>
+      <tr><td>Which body's function-list includes treaties/int'l instruments?</td><td>NHRC only</td></tr>
+      <tr><td>Whose salary does the Central govt fix, and whose does the state govt fix?</td><td>Central govt fixes NHRC's; state govt fixes SHRC's</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Chapter 58 — Facts at a Glance</div>
+  <table>
+    <caption>State Human Rights Commission — key facts, one table</caption>
+    <thead><tr><th style="width:34%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Governing Act</td><td>Protection of Human Rights Act, 1993 (same Act creates NHRC)</td></tr>
+      <tr><td>Body type</td><td>Statutory, not constitutional; state govt "may" constitute one</td></tr>
+      <tr><td>Composition</td><td>Chairperson + 2 members</td></tr>
+      <tr><td>Chairperson qualification (post-2019)</td><td>Retired HC Chief Justice or a HC judge</td></tr>
+      <tr><td>Appoints</td><td>Governor, on committee's recommendation (CM head, Speaker, Home Minister, LoP)</td></tr>
+      <tr><td>Removes</td><td>President only — NOT the Governor (key trap)</td></tr>
+      <tr><td>Tenure</td><td>3 years or age 70, whichever earlier (2019 Amendment: 5→3)</td></tr>
+      <tr><td>Salary fixed by</td><td>State government</td></tr>
+      <tr><td>Jurisdiction</td><td>Only State List + Concurrent List subjects; no armed-forces role</td></tr>
+      <tr><td>Cannot inquire if</td><td>NHRC or another statutory commission already inquiring into same case</td></tr>
+      <tr><td>Number of functions</td><td>9 (no "study treaties" function, unlike NHRC's 10)</td></tr>
+      <tr><td>Limitation period</td><td>1 year from date of alleged violation</td></tr>
+      <tr><td>Human Rights Courts</td><td>One per district; state govt sets up with concurrence of state HC's Chief Justice</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలాలు — Protection of Human Rights Act, 1993; Protection of Human Rights (Amendment) Act, 2019; Jammu and Kashmir Reorganisation (Adaptation of Central Laws) Order, 2020; Union Territory of Ladakh Reorganisation (Adaptation of Central Laws) Order, 2020.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — AP &amp; Telangana SHRC Chairperson Status <span class="caasof">(re-verified via live web search on 25.08.2026 — no change from the 17.08.2026 snapshot below; re-verify again closer to your exam date, since SHRC leadership vacancies/appointments change without a fixed schedule)</span></div>
+
+    <p class="eng"><b>1. Andhra Pradesh SHRC — chairperson post has been vacant/non-functional for an extended period, a directly APPSC-relevant fact:</b> The terms of AP SHRC chairperson <b class="hlp">Justice Mandhata Seetharama Murti</b> and members <b class="hlp">Dande Subrahmanyam</b> and <b class="hlp">Dr. G. Srinivasa Rao</b> (Justice Murti had been recommended for the post in March 2021) ended on <b class="hlg">23 March 2024</b>. Multiple reports through 2025 confirmed the Commission remained without a chairperson or members well beyond that date — a <b class="hlg">September 2025</b> report noted it had been non-functional for over <b class="hlg">17 months</b>, with more than <b class="imp">10,000 pending complaints</b> unaddressed and only a district revenue officer handling routine, non-adjudicatory administrative work in the interim. A government notification process to fill the posts, begun in late 2024, had still not concluded as of <b class="hlg">December 2025</b>. This makes AP a live, real-world illustration of exactly the situation the Act's "may constitute" language (and the absence of any strict mandatory-appointment or mandatory-timeline clause) makes possible — a state SHRC can lawfully be, and in AP's case has been, without a functioning chairperson/members for an extended stretch.</p>
+    <div class="te"><b>1. Andhra Pradesh SHRC — chairperson post చాలా కాలంగా ఖాళీగా/non-functional గా ఉంది, ఇది నేరుగా APPSC-relevant ఫ్యాక్ట్:</b> AP SHRC chairperson <b class="hlp">Justice Mandhata Seetharama Murti</b>, members <b class="hlp">Dande Subrahmanyam</b>, <b class="hlp">Dr. G. Srinivasa Rao</b> (Justice Murti ను 2021 మార్చిలో ఈ పదవికి సిఫారసు చేశారు) term <b class="hlg">2024 మార్చి 23</b>న ముగిసింది. 2025 అంతటా వచ్చిన అనేక reports ప్రకారం, ఆ తేదీ దాటినా Commission కు chairperson గానీ members గానీ లేరు — <b class="hlg">2025 సెప్టెంబర్</b> report ప్రకారం, ఇది <b class="hlg">17 నెలలకు పైగా</b> non-functional గా ఉంది, <b class="imp">10,000 పైగా పెండింగ్ complaints</b> పరిష్కారం కాకుండా ఉన్నాయి, ఈలోగా ఒక district revenue officer మాత్రమే routine, non-adjudicatory administrative పనులు చూసుకుంటున్నారు. ఈ posts నింపడానికి 2024 చివర్లో మొదలైన government notification ప్రక్రియ <b class="hlg">2025 డిసెంబర్</b> నాటికి కూడా పూర్తి కాలేదు. Act లోని "may constitute" భాష (మరియు తప్పనిసరి-appointment/తప్పనిసరి-timeline clause లేకపోవడం) వల్ల సాధ్యమయ్యే సరిగ్గా అలాంటి పరిస్థితికి AP ఒక live, real-world ఉదాహరణ — state SHRC చట్టపరంగా chairperson/members లేకుండా చాలా కాలం కొనసాగవచ్చు, AP విషయంలో అలాగే జరిగింది.</div>
+
+    <p class="eng"><b>2. Telangana SHRC — by contrast, currently has a sitting chairperson:</b> <b class="hlp">Justice Shameem Akther</b> assumed charge as Chairperson of the <b>Telangana State Human Rights Commission (TGHRC)</b> on <b class="hlg">17 April 2025</b>, along with members <b class="hlp">Sivadi Praveena</b> and <b class="hlp">B. Kishore</b>. This appointment followed the Governor-on-committee-recommendation route described earlier in this chapter (committee headed by the Chief Minister, with the Assembly Speaker, state Home Minister and Leader of the Opposition). The Telangana and Andhra Pradesh situations, side by side, are a useful illustration of the same statutory scheme producing very different practical outcomes in neighbouring states.</p>
+    <div class="te"><b>2. Telangana SHRC — దీనికి భిన్నంగా, ప్రస్తుతం ఒక sitting chairperson ఉన్నారు:</b> <b class="hlp">Justice Shameem Akther</b>, <b>Telangana State Human Rights Commission (TGHRC)</b> Chairperson గా <b class="hlg">2025 ఏప్రిల్ 17</b>న బాధ్యతలు స్వీకరించారు — members <b class="hlp">Sivadi Praveena</b>, <b class="hlp">B. Kishore</b> తో పాటు. ఈ నియామకం, ఈ chapter లో ముందు చెప్పిన Governor-on-committee-recommendation route ప్రకారమే జరిగింది (CM నేతృత్వంలోని committee, Assembly Speaker, state Home Minister, Leader of Opposition తో పాటు). పక్కపక్కనే ఉన్న Telangana, Andhra Pradesh పరిస్థితులు — ఒకే statutory scheme పొరుగు రాష్ట్రాల్లో ఎంత భిన్నమైన practical ఫలితాలను ఇవ్వగలదో చూపించే మంచి ఉదాహరణ.</div>
+
+    <p class="eng"><b>3. Exam-relevance note:</b> These are administrative/officeholder facts, not changes to the Constitution or the Act's text, so they do not alter anything in the main chapter above — treat Articles/Act provisions on this page as the stable core, and treat the two states' chairperson status only as a live current-affairs data point that can change before your exam. Given AP's extended vacancy has already drawn government and media attention, a fresh appointment there is plausible at any time — re-check closer to your exam date rather than relying on this page's snapshot.</p>
+    <div class="te"><b>3. Exam-relevance note:</b> ఇవి administrative/officeholder facts మాత్రమే, Constitution లో గానీ Act text లో గానీ మార్పులు కావు — కాబట్టి పైన ఉన్న main chapter లో దేనినీ ఇవి మార్చవు — ఈ page లో Articles/Act provisions ను స్థిరమైన core గానూ, రెండు రాష్ట్రాల chairperson status ను మీ exam కంటే ముందు మారిపోగల ఒక live current-affairs data point గానూ చూడండి. AP లో చాలా కాలంగా ఉన్న vacancy ఇప్పటికే government, media attention పొందింది కాబట్టి, ఎప్పుడైనా కొత్త appointment జరిగే అవకాశం ఉంది — exam తేదీకి దగ్గరగా మళ్ళీ verify చేసుకోండి, ఈ page snapshot మీద మాత్రమే ఆధారపడకండి.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — AP &amp; Telangana SHRC leadership, 2021-26</caption>
+      <thead><tr><th style="width:20%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">Mar 2021</td><td>Justice M. Seetharama Murti recommended as AP SHRC chairperson (with 2 members)</td></tr>
+        <tr><td class="hlg">23 Mar 2024</td><td>Terms of AP SHRC chairperson &amp; both members expire — commission left without leadership</td></tr>
+        <tr><td class="hlg">Late 2024</td><td>AP govt issues fresh notification to fill SHRC posts — process stalls</td></tr>
+        <tr><td class="hlg">17 Apr 2025</td><td>Justice Shameem Akther assumes charge as Telangana SHRC chairperson, with 2 members</td></tr>
+        <tr><td class="hlg">Sep 2025</td><td>Reports confirm AP SHRC non-functional for 17+ months; 10,000+ complaints pending</td></tr>
+        <tr><td class="hlg">Dec 2025</td><td>AP SHRC chairperson post still vacant — appointment process not concluded</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: cite the Act's core provisions (composition, Governor-appoints/President-removes, 3-year tenure, jurisdiction limits) as the stable, always-testable core. On current affairs, be ready for a question naming the sitting Telangana SHRC chairperson, or one testing awareness that the AP SHRC has faced a prolonged leadership vacancy — exactly the kind of state-specific, evolving fact the Rulebook flags as needing re-verification before each exam cycle.</p>
+    <div class="te">Exam కోసం — Act core provisions (composition, Governor-appoints/President-removes, 3-year tenure, jurisdiction limits) ను స్థిరమైన, ఎప్పుడైనా అడగదగిన core గా ఉదహరించండి. Current affairs లో — Telangana SHRC ప్రస్తుత chairperson పేరు అడగవచ్చు, లేదా AP SHRC చాలా కాలం leadership vacancy లో ఉందనే awareness పరీక్షించవచ్చు — ఇది సరిగ్గా ప్రతి exam cycle ముందూ re-verify చేయాల్సిన రకమైన, state-specific, evolving fact గా Rulebook సూచించింది.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 58 — State Human Rights Commission · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.59 — National Commission for Women</span><span class="dpart">Part VIII &middot; Book 1 of 3</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

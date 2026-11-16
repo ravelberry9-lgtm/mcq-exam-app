@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<main style="max-width:65rem;margin:auto;padding:1rem">
+<p><a href="{{ url_for('polity.master_index') }}">Master index · Units 6–10 / పూర్తి సూచిక</a></p>
+<h1>{{ section.id }} · {{ section.title }}</h1>
+<p>{{ section.chapters|length }} study chapters · అధ్యయన అధ్యాయాలు</p>
+<ol>
+{% for row in section.chapters %}
+<li style="margin:1rem 0">
+{% if row.reader_url %}<a href="{{ row.reader_url }}"><strong>{{ row.id }} · {{ row.title }}</strong></a>{% else %}<strong>{{ row.id }} · {{ row.title }}</strong>{% endif %}
+<p>GBK {% if row.gbk.chapter %}Chapter {{ row.gbk.chapter }}{% else %}{{ row.gbk.section }}{% endif %} · pp. {{ row.gbk.printed_pages[0] }}–{{ row.gbk.printed_pages[1] }}</p>
+<p>{{ row.content_status }}</p>
+</li>
+{% endfor %}
+</ol></main>
+{% endblock %}

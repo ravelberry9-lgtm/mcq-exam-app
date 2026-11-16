@@ -1,0 +1,29 @@
+{
+  "chapter": "7.4.2",
+  "applied": false,
+  "reason": "PreserveIDsandresolvercompatibility pendingcoordinatoraliasintegration.",
+  "items": [
+    {
+      "local_question_id": "POL-742-CH-02",
+      "local_fact_id": "POL-742-control",
+      "proposed_canonical": {
+        "chapter": "7.4.3",
+        "id": "POL-743-CH-02",
+        "fact_ids": [
+          "POL-743-control"
+        ]
+      },
+      "same_tested_claim": "Article235HighCourtcontroloverdistrict/subordinatecourts",
+      "incoming_reference_audit": {
+        "method": "SavedJSONtextsearch includinglegacyreviewrecords; notawarranttoremoveID",
+        "known_files": [
+          "content/polity/g2/_parallel/unit7/owned-heading-coverage-audit.json",
+          "content/polity/g2/7.4/7.4.2/Explanations.json",
+          "content/polity/g2/7.4/7.4.2/review-synthesis-test.json"
+        ],
+        "app_constraint": "Canonicalresolversearchesonlyquestions, sopreservelocalIDuntilaliasrouteisapproved."
+      },
+      "action_taken": "None; existingquestionandfactretainedunchanged."
+    }
+  ]
+}

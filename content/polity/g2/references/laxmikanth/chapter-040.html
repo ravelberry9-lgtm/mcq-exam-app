@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part V — Complete Study Notes</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 40 — Municipalities</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Part IX-A (The Municipalities) — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle">Urban Local Government — Meaning &amp; Central Ministries</div>
+  <p class="eng">The term <b class="term">'Urban Local Government'</b> in India signifies the governance of an urban area by the people through their own elected representatives. The jurisdiction of an urban local government is limited to a specific urban area, demarcated for this purpose by the <b>state government</b> — note that 'Local Government' itself is a subject placed in the <b class="hlb">State List</b> under the Seventh Schedule of the Constitution, which is why states, not the Centre, design and run this system. There are <b class="hlg">eight</b> types of urban local governments in India — municipal corporation, municipality, notified area committee, town area committee, cantonment board, township, port trust and special purpose agency — and this chapter studies each of them in turn, along with the constitutional framework, the <b class="imp">74th Constitutional Amendment Act, 1992</b>, that today governs most of them. At the Central level, three separate ministries share the subject, reflecting the different kinds of bodies involved: (i) the <b>Ministry of Housing and Urban Affairs</b> for the general run of urban bodies; (ii) the <b>Ministry of Defence</b>, specifically for cantonment boards; and (iii) the <b>Ministry of Home Affairs</b>, for urban local government in the Union Territories.</p>
+  <div class="te">భారతదేశంలో <b class="term">'Urban Local Government'</b> అంటే ఒక urban area ను ఆ ప్రాంత ప్రజలు తమ ఎన్నుకున్న ప్రతినిధుల ద్వారా పరిపాలించడం. Urban local government jurisdiction ఒక నిర్దిష్ట urban area కే పరిమితం — దాన్ని <b>రాష్ట్ర ప్రభుత్వమే</b> డీమార్కేట్ చేస్తుంది — 'Local Government' అనేది రాజ్యాంగం 7th Schedule లోని <b class="hlb">State List</b> లో ఉన్న subject అని గుర్తుంచుకోవాలి, అందుకే ఈ వ్యవస్థను Centre కాకుండా రాష్ట్రాలే design చేసి నడుపుతాయి. భారతదేశంలో <b class="hlg">ఎనిమిది</b> రకాల urban local governments ఉన్నాయి — municipal corporation, municipality, notified area committee, town area committee, cantonment board, township, port trust, special purpose agency — ఈ chapter వీటన్నింటినీ వరుసగా, వీటిలో ఎక్కువ భాగాన్ని ఇప్పుడు governs చేసే <b class="imp">74th Constitutional Amendment Act, 1992</b> తో సహా చదువుతుంది. Central స్థాయిలో, involved అయిన వేర్వేరు రకాల బాడీస్ ను బట్టి మూడు ministries ఈ subject ను పంచుకుంటాయి — (i) సాధారణ urban bodies కోసం <b>Ministry of Housing and Urban Affairs</b>; (ii) cantonment boards కోసం ప్రత్యేకంగా <b>Ministry of Defence</b>; (iii) Union Territories లోని urban local government కోసం <b>Ministry of Home Affairs</b>.</div>
+</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Evolution of Urban Bodies — Historical Perspective</div>
+  <p class="eng">The institutions of urban local government in modern India originated and developed during the period of <b>British rule</b>. The <b>first municipal corporation</b> in India was set up at <b class="hlp">Madras</b> — a charter for its establishment was issued on <b class="hlg">30 December 1687</b>, though the corporation actually came into existence on <b class="hlg">29 September 1688</b>; municipal corporations followed at <b class="hlp">Bombay and Calcutta in 1726</b>. <b class="hlp">Lord Mayo's Resolution of 1870</b> on financial decentralisation first visualised the development of local self-government institutions, but it was <b class="hlp">Lord Ripon's Resolution of 1882</b> that is hailed as the <b class="imp">'Magna Carta' of local self-government</b> — earning Ripon the title 'father of local self-government in India'. The <b class="hlp">Royal Commission on Decentralisation</b>, chaired by <b class="hlp">C.E.H. Hobhouse</b>, was appointed in <b class="hlg">1907</b> and submitted its report in <b class="hlg">1909</b>. Under the dyarchical scheme introduced by the <b class="hlb">Government of India Act of 1919</b>, local self-government became a <b>transferred subject</b> under an Indian minister's charge; the <b>Cantonments Act</b> was passed by the Central legislature in <b class="hlg">1924</b>; and finally, under the provincial autonomy scheme of the <b class="hlb">Government of India Act of 1935</b>, local self-government was declared a full <b>provincial subject</b>.</p>
+  <div class="te">ఆధునిక భారతదేశంలో urban local government సంస్థలు <b>British పాలన</b> కాలంలోనే మొదలై అభివృద్ధి చెందాయి. భారతదేశంలో <b>మొదటి municipal corporation</b> <b class="hlp">Madras</b> లో ఏర్పాటైంది — దీని స్థాపనకు charter <b class="hlg">డిసెంబర్ 30, 1687</b> న జారీ అయినా, corporation వాస్తవంగా <b class="hlg">సెప్టెంబర్ 29, 1688</b> న ఉనికిలోకి వచ్చింది; <b class="hlp">Bombay, Calcutta</b> లలో municipal corporations <b class="hlg">1726</b> లో వచ్చాయి. <b class="hlp">Lord Mayo 1870 Resolution</b> (financial decentralisation పై) local self-government సంస్థల అభివృద్ధిని మొదటిసారి visualise చేసినా, local self-government కు <b class="imp">'Magna Carta'</b> గా పేరుపొందింది <b class="hlp">Lord Ripon 1882 Resolution</b> — దీనివల్ల Ripon 'father of local self-government in India' అనిపించుకున్నారు. <b class="hlp">C.E.H. Hobhouse</b> అధ్యక్షతన <b class="hlp">Royal Commission on Decentralisation</b> <b class="hlg">1907</b> లో ఏర్పాటై <b class="hlg">1909</b> లో తన నివేదిక సమర్పించింది. <b class="hlb">Government of India Act 1919</b> తీసుకొచ్చిన dyarchy scheme కింద, local self-government ఒక Indian మంత్రి బాధ్యతలో <b>transferred subject</b> అయ్యింది; <b class="hlg">1924</b> లో Central legislature <b>Cantonments Act</b> పాస్ చేసింది; చివరగా, <b class="hlb">Government of India Act 1935</b> తీసుకొచ్చిన provincial autonomy scheme కింద, local self-government పూర్తి <b>provincial subject</b> గా ప్రకటించబడింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Meaning &amp; Historical Perspective</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>'Local Government' is a subject in which List?</td><td>State List, 7th Schedule</td></tr>
+      <tr><td>How many types of urban local govt bodies?</td><td>Eight</td></tr>
+      <tr><td>Three Central ministries handling urban local govt?</td><td>Housing &amp; Urban Affairs; Defence (cantonments); Home Affairs (UTs)</td></tr>
+      <tr><td>First municipal corporation in India — where, when?</td><td>Madras — came into existence 29 Sept 1688</td></tr>
+      <tr><td>'Magna Carta' of local self-government?</td><td>Lord Ripon's Resolution, 1882</td></tr>
+      <tr><td>Royal Commission on Decentralisation — chairman, years?</td><td>C.E.H. Hobhouse; appointed 1907, reported 1909</td></tr>
+      <tr><td>GoI Act 1935 — status of local self-government?</td><td>Declared a full provincial subject</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Committees &amp; Commissions · Road to the 74th Amendment</div>
+
+<div class="para">
+  <div class="ptitle gn" style="margin-top:0">Committees and Commissions on Urban Local Government (Table 40.1)</div>
+  <p class="eng">Over the decades, the Central Government appointed a series of committees and commissions to study and improve the functioning of urban local governments — these are summarised below (Table 40.1). Note how several of these reappear elsewhere in the chapter: the <b class="hlp">Nur-Ud-din Ahmed Committee</b> led directly to two national training institutions (see later in this chapter), and the <b class="hlp">A.P. Jain Committee</b>'s recommendation on town area committees is discussed under that body's own section.</p>
+  <div class="te">దశాబ్దాలుగా, urban local governments పనితీరును అధ్యయనం చేసి మెరుగుపరచడానికి Central Government వరుసగా committees, commissions నియమించింది — వీటిని కింద Table 40.1 లో summarise చేశాం. వీటిలో కొన్ని ఈ chapter లో మరోచోట కూడా కనిపిస్తాయని గమనించండి — <b class="hlp">Nur-Ud-din Ahmed Committee</b> నేరుగా రెండు national training institutions ఏర్పాటుకు దారితీసింది (ఈ chapter లో తర్వాత చూడండి), <b class="hlp">A.P. Jain Committee</b> town area committees పై చేసిన సిఫారసు దాని సొంత section లో చర్చించబడింది.</div>
+
+  <table>
+    <caption>Table 40.1 — Committees and Commissions on Urban Local Governments</caption>
+    <thead><tr><th style="width:14%">Year</th><th>Committee / Commission</th><th style="width:24%">Chairman</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">1949–51</td><td>Local Finance Enquiry Committee</td><td class="hlp">P.K. Wattal</td></tr>
+      <tr><td class="hlg">1953–54</td><td>Taxation Enquiry Commission</td><td class="hlp">John Matthai</td></tr>
+      <tr><td class="hlg">1963–65</td><td>Committee on the Training of Municipal Employees</td><td class="hlp">Nur-Ud-din Ahmed</td></tr>
+      <tr><td class="hlg">1963–66</td><td>Rural-Urban Relationship Committee</td><td class="hlp">A.P. Jain</td></tr>
+      <tr><td class="hlg">1963</td><td>Committee of Ministers on Augmentation of Financial Resources of ULBs</td><td class="hlp">Rafiq Zakaria</td></tr>
+      <tr><td class="hlg">1965–68</td><td>Committee on Service Conditions of Municipal Employees</td><td class="hlp">B.S. Murthy</td></tr>
+      <tr><td class="hlg">1974</td><td>Committee on Budgetary Reform in Municipal Administration</td><td class="hlp">Girijapati Mukharji</td></tr>
+      <tr><td class="hlg">1982</td><td>Study Group on Constitution, Powers and Laws of ULBs &amp; Municipal Corporations</td><td class="hlp">K.N. Sahaya</td></tr>
+      <tr><td class="hlg">1985–88</td><td>National Commission on Urbanisation</td><td class="hlp">C.M. Correa</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Committees &amp; Commissions</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Earliest committee (1949-51)?</td><td>Local Finance Enquiry Committee — P.K. Wattal</td></tr>
+      <tr><td>Chairman of Taxation Enquiry Commission (1953-54)?</td><td>John Matthai</td></tr>
+      <tr><td>Last one before constitutionalisation (1985-88)?</td><td>National Commission on Urbanisation — C.M. Correa</td></tr>
+      <tr><td>Which committee's recommendation created two training institutions?</td><td>Nur-Ud-din Ahmed Committee (1963-65)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle rd">Constitutionalisation — Three Attempts Before the 74th CAA</div>
+  <p class="eng">In <b class="hlg">August 1989</b>, the <b class="hlp">Rajiv Gandhi</b> government introduced the <b class="imp">65th Constitutional Amendment Bill</b> (the <span class="hlb">Nagarpalika Bill</span>) in the Lok Sabha, aiming to strengthen and revamp municipal bodies by giving them constitutional status. Though passed in the Lok Sabha, it was <b>defeated in the Rajya Sabha in October 1989</b> and hence lapsed. The National Front government under <b class="hlp">V.P. Singh</b> reintroduced a revised Nagarpalika Bill in <b class="hlg">September 1990</b>, but this too was never passed and lapsed when the Lok Sabha was dissolved. Finally, the <b class="hlp">P.V. Narasimha Rao</b> government introduced a modified Municipalities Bill in <b class="hlg">September 1991</b>, which eventually emerged as the <b class="imp">74th Constitutional Amendment Act, 1992</b> — passed by both Houses in <b class="hlg">December 1992</b>, ratified by the required number of state legislatures, assented to by the President in <b class="hlg">April 1993</b>, and brought into force from <b class="hlg">1 June 1993</b>.</p>
+  <div class="te"><b class="hlg">ఆగస్టు 1989</b> లో, <b class="hlp">Rajiv Gandhi</b> ప్రభుత్వం Lok Sabha లో <b class="imp">65వ రాజ్యాంగ సవరణ బిల్లు</b> (<span class="hlb">Nagarpalika Bill</span>) ప్రవేశపెట్టింది — municipal bodies కు constitutional status ఇచ్చి బలోపేతం చేయడమే దీని లక్ష్యం. ఇది Lok Sabha లో పాస్ అయినా, <b>అక్టోబర్ 1989 లో Rajya Sabha లో ఓడిపోయి</b> లాప్స్ అయ్యింది. <b class="hlp">V.P. Singh</b> నేతృత్వంలోని National Front ప్రభుత్వం <b class="hlg">సెప్టెంబర్ 1990</b> లో సవరించిన Nagarpalika Bill ను మళ్ళీ ప్రవేశపెట్టింది, కానీ ఇది కూడా పాస్ కాకుండా Lok Sabha dissolution తో లాప్స్ అయ్యింది. చివరగా, <b class="hlp">P.V. Narasimha Rao</b> ప్రభుత్వం <b class="hlg">సెప్టెంబర్ 1991</b> లో సవరించిన Municipalities Bill ను ప్రవేశపెట్టింది, ఇది చివరకు <b class="imp">74వ రాజ్యాంగ సవరణ చట్టం, 1992</b> గా రూపొందింది — <b class="hlg">డిసెంబర్ 1992</b> లో రెండు సభల్లో పాస్ అయ్యి, అవసరమైన రాష్ట్ర శాసనసభలు ratify చేశాక, President <b class="hlg">ఏప్రిల్ 1993</b> లో assent ఇచ్చారు, <b class="hlg">జూన్ 1, 1993</b> నుండి అమల్లోకి వచ్చింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Road to the 74th Amendment</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>65th Amendment Bill (Nagarpalika Bill) — who, when, fate?</td><td>Rajiv Gandhi govt, Aug 1989 — passed LS, defeated in RS Oct 1989</td></tr>
+      <tr><td>Second attempt — who, when, fate?</td><td>V.P. Singh govt, Sept 1990 — lapsed with LS dissolution</td></tr>
+      <tr><td>Successful attempt — who, when?</td><td>P.V. Narasimha Rao govt, Sept 1991 → 74th CAA, 1992</td></tr>
+      <tr><td>74th CAA — date of commencement?</td><td>1 June 1993</td></tr>
+      <tr><td>President's assent date?</td><td>April 1993</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">74th Amendment Act, 1992 — Overview, Three Types of Municipalities</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">74th Amendment Act, 1992 — Overview</div>
+  <p class="eng">This Act added a new <b class="term">Part IX-A</b>, titled <b>'The Municipalities'</b>, to the Constitution, containing provisions from <b class="hlg">Articles 243-P to 243-ZG</b>. It also added a new <b class="term">Twelfth Schedule</b> — dealt with under <b class="hlg">Article 243-W</b> — containing <b class="hlg">eighteen</b> functional items of municipalities. Crucially, the Act gave <b class="imp">constitutional status</b> to municipalities, bringing them within the <b>justiciable part</b> of the Constitution — in other words, state governments are now under a <b>constitutional obligation</b> to adopt this new municipal system, not merely a discretionary option as before. The underlying aim of the Act is to <b>revitalise and strengthen</b> urban governments so they can function effectively as genuine units of local self-government.</p>
+  <div class="te">ఈ Act రాజ్యాంగానికి <b class="term">Part IX-A</b> అనే కొత్త భాగాన్ని — పేరు <b>'The Municipalities'</b> — <b class="hlg">Articles 243-P నుండి 243-ZG</b> వరకూ ఉన్న నిబంధనలతో జోడించింది. దీంతో పాటు కొత్త <b class="term">Twelfth Schedule</b> ను — <b class="hlg">Article 243-W</b> కింద — జోడించింది, ఇందులో municipalities కు సంబంధించిన <b class="hlg">18</b> functional items ఉన్నాయి. ముఖ్యంగా, ఈ Act municipalities కు <b class="imp">constitutional status</b> ఇచ్చింది, వాటిని రాజ్యాంగంలోని <b>justiciable భాగం</b> లోకి తీసుకొచ్చింది — అంటే, రాష్ట్ర ప్రభుత్వాలు ఇప్పుడు ఈ కొత్త municipal వ్యవస్థను అనుసరించడం <b>constitutional obligation</b>, ముందులా discretionary విషయం కాదు. ఈ Act వెనుక ఉద్దేశం urban governments ను <b>revitalise, strengthen</b> చేసి, అవి local self-government యూనిట్లుగా నిజంగా సమర్థంగా పనిచేసేలా చేయడం.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Three Types of Municipalities &amp; the Industrial Township Exception</div>
+  <p class="eng">The Act provides for <b class="hlg">three</b> types of municipalities in every state: (1) a <b class="term">nagar panchayat</b> (by whatever name called) for a <b>transitional area</b> — an area transitioning from rural to urban; (2) a <b class="term">municipal council</b> for a <b>smaller urban area</b>; and (3) a <b class="term">municipal corporation</b> for a <b>larger urban area</b>. There is <b class="imp">one exception</b>: where municipal services in an urban area are already being provided by an industrial establishment, the <b>governor</b> may specify that area as an <b>industrial township</b> — and in that case a municipality need not be constituted at all.</p>
+  <div class="te">ప్రతి రాష్ట్రంలో ఈ Act <b class="hlg">మూడు</b> రకాల municipalities ఏర్పాటుకు అవకాశం ఇస్తుంది — (1) <b>transitional area</b> (గ్రామం నుండి పట్టణంగా మారుతున్న ప్రాంతం) కోసం <b class="term">nagar panchayat</b> (ఏ పేరుతో పిలిచినా); (2) <b>చిన్న urban area</b> కోసం <b class="term">municipal council</b>; (3) <b>పెద్ద urban area</b> కోసం <b class="term">municipal corporation</b>. దీనికి <b class="imp">ఒక్క మినహాయింపు</b> ఉంది — ఒక urban area లో municipal services ను ఇప్పటికే ఒక industrial establishment అందిస్తుంటే, ఆ ప్రాంతాన్ని <b>industrial township</b> గా <b>governor</b> specify చేయవచ్చు — అలాంటప్పుడు municipality ఏర్పాటు చేయాల్సిన అవసరమే ఉండదు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Factors the Governor Considers</div>
+  <p class="eng">In specifying whether an area is a transitional area, a smaller urban area or a larger urban area, the governor must keep the following factors in view: (1) population of the area; (2) density of population therein; (3) revenue generated for local administration; (4) percentage of employment in non-agricultural activities; (5) economic importance; and (6) such other factors as he/she may deem fit.</p>
+  <div class="te">ఒక ప్రాంతం transitional area నా, చిన్న urban area నా, పెద్ద urban area నా అని specify చేసేటప్పుడు, governor కింది factors ను దృష్టిలో ఉంచుకోవాలి — (1) ఆ ప్రాంత జనాభా; (2) అక్కడి జనాభా సాంద్రత (density); (3) local administration కోసం వచ్చే revenue; (4) non-agricultural activities లో ఉపాధి శాతం; (5) ఆర్థిక ప్రాముఖ్యత; (6) governor తగినదని భావించే ఇతర factors ఏవైనా.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — 74th CAA Overview &amp; Three Types</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>New Part added by 74th CAA?</td><td>Part IX-A, "The Municipalities", Art. 243P-243ZG</td></tr>
+      <tr><td>New Schedule added?</td><td>Twelfth Schedule (18 items), dealt with under Art. 243W</td></tr>
+      <tr><td>Three types of municipalities?</td><td>Nagar panchayat (transitional), municipal council (smaller urban), municipal corporation (larger urban)</td></tr>
+      <tr><td>Exception to constituting a municipality?</td><td>Industrial township — governor's discretion, if industrial establishment already provides services</td></tr>
+      <tr><td>Six factors governor considers?</td><td>Population, density, local revenue, non-agri employment %, economic importance, other factors</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Composition · Wards Committees · Other Committees</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Composition of Municipalities</div>
+  <p class="eng">All members of a municipality are <b>directly elected</b> by the people of the municipal area — each municipal area is divided into territorial constituencies known as <b class="term">wards</b> for this purpose. The state legislature may decide the manner of election of the <b>chairperson</b> of a municipality, and may also provide for the representation, in the municipality, of: (1) persons having special knowledge or experience in municipal administration, <b>without the right to vote</b> in municipality meetings; (2) members of the Lok Sabha and the state legislative assembly whose constituencies comprise wholly or partly the municipal area; (3) members of the Rajya Sabha and the state legislative council registered as electors within the municipal area; and (4) chairpersons of committees (other than wards committees). The reservation of seats for SCs, STs and women — studied in detail two sections ahead — governs the composition of the directly-elected part of this body.</p>
+  <div class="te">Municipality సభ్యులందరినీ ఆ municipal area ప్రజలు <b>నేరుగా ఎన్నుకుంటారు</b> — ఇందుకోసం ప్రతి municipal area ను <b class="term">wards</b> అనే territorial constituencies గా విభజిస్తారు. Municipality <b>chairperson</b> ఎన్నిక పద్ధతిని రాష్ట్ర శాసనసభ నిర్ణయించవచ్చు, అలాగే municipality లో కింది వారి representation కు కూడా ఏర్పాటు చేయవచ్చు — (1) municipal administration లో ప్రత్యేక పరిజ్ఞానం/అనుభవం ఉన్నవారు — municipality meetings లో ఓటు హక్కు లేకుండా; (2) municipal area పూర్తిగా లేదా కొంతభాగం తమ constituency లో ఉన్న Lok Sabha, రాష్ట్ర శాసనసభ సభ్యులు; (3) municipal area లో elector గా నమోదైన Rajya Sabha, రాష్ట్ర శాసన మండలి సభ్యులు; (4) (wards committees కాకుండా) ఇతర committees chairpersons. SC, ST, మహిళలకు seats reservation — దీన్ని రెండు sections తర్వాత వివరంగా చదువుతాం — ఈ body లో నేరుగా ఎన్నికయ్యే భాగం composition ను governs చేస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Wards Committees — Article 243S</div>
+  <p class="eng">Every municipality with a population of <b class="hlg">three lakh or more</b> must constitute a <b class="term">wards committee</b>, consisting of <b>one or more wards</b> within its territorial area. The state legislature makes provision with respect to (a) the composition and territorial area of a wards committee, and (b) the manner in which the seats in a wards committee shall be filled.</p>
+  <div class="te"><b class="hlg">మూడు లక్షలు లేదా అంతకంటే ఎక్కువ</b> జనాభా ఉన్న ప్రతి municipality లో <b class="term">wards committee</b> ను తప్పనిసరిగా ఏర్పాటు చేయాలి — ఇందులో దాని territorial area లో <b>ఒకటి లేదా అంతకంటే ఎక్కువ wards</b> ఉంటాయి. wards committee composition, territorial area, దాని seats ను ఎలా భర్తీ చేయాలో — వీటిపై రాష్ట్ర శాసనసభ ఏర్పాటు చేస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Other Committees</div>
+  <p class="eng">In addition to the wards committees, the state legislature is also allowed to make provision for the constitution of <b>other committees</b>. The chairpersons of such committees may be made members of the municipality — this is exactly the fourth category of representation mentioned above under Composition.</p>
+  <div class="te">wards committees కాకుండా, <b>ఇతర committees</b> ఏర్పాటుకు కూడా రాష్ట్ర శాసనసభ నిబంధనలు చేయవచ్చు. అలాంటి committees chairpersons ను municipality సభ్యులుగా చేయవచ్చు — ఇది పైన Composition కింద చెప్పిన నాలుగో representation category సరిగ్గా ఇదే.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Composition, Wards &amp; Other Committees</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How are municipality members chosen?</td><td>Directly elected by ward-wise territorial constituencies</td></tr>
+      <tr><td>Who has no voting right in municipality meetings?</td><td>Persons with special knowledge/experience nominated for representation</td></tr>
+      <tr><td>Article for wards committee?</td><td>Article 243S</td></tr>
+      <tr><td>When is a wards committee mandatory?</td><td>Municipality population 3 lakh or more</td></tr>
+      <tr><td>Who decides composition/territorial area of wards committee?</td><td>State legislature</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Reservation of Seats · Duration of Municipalities</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">Reservation of Seats — Article 243T</div>
+  <p class="eng">The Act provides for reservation of seats for the <b>scheduled castes and scheduled tribes</b> in every municipality, <b>in proportion</b> to their population's share of the total population of the municipal area. Further, it provides for reservation of <b class="imp">not less than one-third</b> of the total seats for <b>women</b> — this one-third figure already includes the seats reserved for women belonging to the SCs and STs, it is not an additional layer on top. The Act also <b class="imp">mandates</b> reservation of the <b>offices of chairpersons</b> in municipalities for SCs, STs and women — the state legislature only decides the <em>manner</em> in which this is carried out, not whether it happens — and it may separately extend reservation, of seats or of chairperson offices, to <b>backward classes</b> as well; this backward-classes reservation alone is discretionary, unlike the mandatory SC/ST/women reservation of both seats and chairperson offices. Both the reservation of seats and the reservation of chairperson offices for SCs and STs will <b class="imp">cease to have effect</b> once the period specified in <b class="hlg">Article 334</b> expires — this period presently runs for eighty years from the Constitution's commencement, that is, till <b class="hlg">2030</b>.</p>
+  <div class="te">ప్రతి municipality లో <b>scheduled castes, scheduled tribes</b> కు — ఆ municipal area మొత్తం జనాభాలో వారి జనాభా వాటాకు <b>అనుపాతంలో</b> — సీట్లు reserve చేయాలని ఈ Act చెబుతుంది. దీనికి తోడు, మొత్తం సీట్లలో <b class="imp">కనీసం మూడో వంతు</b> (1/3) <b>మహిళలకు</b> reserve చేయాలని కూడా చెబుతుంది — ఈ మూడో వంతులో SC, ST మహిళలకు reserve అయిన సీట్లు కూడా ఇప్పటికే కలిసే ఉంటాయి, ఇది అదనంగా కాదు. Municipalities లో <b>chairperson పదవుల</b> reservation ను SC, ST, మహిళలకు Act <b class="imp">తప్పనిసరి చేస్తుంది</b> — దీన్ని ఏ పద్ధతిలో అమలు చేయాలో మాత్రమే రాష్ట్ర శాసనసభ నిర్ణయిస్తుంది, చేయాలా వద్దా అన్నది కాదు — దీంతో పాటు <b>backward classes</b> కు కూడా (సీట్లలో గానీ, chairperson పదవుల్లో గానీ) అదనంగా reservation ఇవ్వొచ్చు — అయితే SC/ST/మహిళల reservation (సీట్లు, chairperson పదవులు రెండింటికీ) తప్పనిసరి అయితే, backward classes reservation మాత్రమే రాష్ట్ర శాసనసభ విచక్షణ మీద ఆధారపడి ఉంటుంది. <b class="hlg">Article 334</b> లో నిర్దేశించిన కాలం ముగిశాక, SC, ST లకు సీట్ల reservation, chairperson పదవుల reservation రెండూ <b class="imp">నిలిచిపోతాయి</b> — ప్రస్తుతం ఈ కాలం రాజ్యాంగం ప్రారంభమైనప్పటి నుండి 80 సంవత్సరాలు, అంటే <b class="hlg">2030</b> వరకూ ఉంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Reservation of Seats</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Basis for SC/ST seat reservation?</td><td>Proportional to their population share in the municipal area</td></tr>
+      <tr><td>Minimum reservation for women?</td><td>Not less than 1/3 of total seats — includes SC/ST women's seats</td></tr>
+      <tr><td>Is backward-classes reservation mandatory?</td><td>No — discretionary, state legislature may provide it</td></tr>
+      <tr><td>Article governing the sunset of SC/ST reservation?</td><td>Article 334 — presently till 2030 (80 years from commencement)</td></tr>
+      <tr><td>Which article covers reservation of seats?</td><td>Article 243T</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Duration of Municipalities — Article 243U</div>
+  <p class="eng">Every municipality has a term of <b class="hlg">five years</b> from the date of its first meeting, but it can be <b>dissolved</b> before completing that term. Fresh elections to reconstitute the municipality must be completed (a) before the expiry of its five-year duration, or (b) in case of dissolution, before the expiry of <b class="hlg">six months</b> from the date of dissolution — but where the remaining period (of what would have been the dissolved municipality's term) is itself less than six months, <b>no fresh election</b> is required for that short remaining period at all. A municipality reconstituted after premature dissolution does not get a fresh five years — it continues only for the <b>remainder</b> of the period the dissolved municipality would have served. Two further safeguards apply: a municipality must be given a <b>reasonable opportunity of being heard</b> before its dissolution; and no amendment to any law in force can, by itself, cause a municipality's dissolution before the expiry of its five-year term.</p>
+  <div class="te">ప్రతి municipality మొదటి meeting తేదీ నుండి <b class="hlg">ఐదు సంవత్సరాల</b> term కలిగి ఉంటుంది, కానీ ఆ term పూర్తయ్యేలోపు దాన్ని <b>dissolve</b> చేయవచ్చు. Municipality ను తిరిగి ఏర్పాటు చేయడానికి fresh elections — (a) దాని ఐదు సంవత్సరాల కాలం ముగిసేలోపే, లేదా (b) dissolution జరిగితే, dissolution తేదీ నుండి <b class="hlg">6 నెలల్లోపే</b> — పూర్తి కావాలి; అయితే dissolved municipality కు మిగిలిన కాలం ఆరు నెలల కంటే తక్కువ ఉంటే, ఆ కొద్ది మిగిలిన కాలానికి <b>fresh election అవసరం లేదు</b>. అకాల dissolution తర్వాత తిరిగి ఏర్పాటైన municipality కు కొత్తగా ఐదు సంవత్సరాలు రావు — dissolved municipality కు మిగిలి ఉన్న <b>మిగిలిన కాలం</b> వరకే అది కొనసాగుతుంది. దీనికి తోడు రెండు safeguards ఉన్నాయి — dissolution కు ముందు municipality కు <b>వినిపించుకునే సహేతుక అవకాశం</b> ఇవ్వాలి; ఇప్పుడు అమల్లో ఉన్న ఏ చట్టం సవరణ కూడా, ఐదు సంవత్సరాల term ముగియకముందే, తనంతట తానుగా municipality dissolution కు కారణం కాకూడదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Duration of Municipalities</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Normal term?</td><td>5 years from date of first meeting</td></tr>
+      <tr><td>Deadline for election after dissolution?</td><td>Within 6 months of dissolution</td></tr>
+      <tr><td>What if remaining period &lt; 6 months?</td><td>No fresh election needed for that residual period</td></tr>
+      <tr><td>Does a reconstituted municipality get a fresh 5 years?</td><td>No — only the remainder of the original term</td></tr>
+      <tr><td>Two safeguards on dissolution?</td><td>Reasonable opportunity of hearing; law amendment alone can't dissolve it early</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Disqualifications · State Election Commission · Powers &amp; Functions · Finances</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Disqualifications — Article 243V</div>
+  <p class="eng">A person is disqualified from being chosen as, or from being, a member of a municipality if disqualified (a) under any law in force for the purpose of elections to that state's legislature, or (b) under any law made by the state legislature itself. However, no person shall be disqualified merely on the ground of being under 25 years of age, <b>if he/she has attained the age of 21 years</b> — a distinctive, lower age threshold worth remembering. All questions of disqualification are referred to an authority that the state legislature determines.</p>
+  <div class="te">రాష్ట్ర శాసనసభకు ఎన్నికల కోసం అమల్లో ఉన్న ఏదైనా చట్టం కింద (a), లేదా రాష్ట్ర శాసనసభ చేసిన ఏదైనా చట్టం కింద (b) — ఒక వ్యక్తి disqualified అయితే, ఆయన municipality సభ్యుడిగా ఎన్నిక కావడానికి గానీ, సభ్యుడిగా కొనసాగడానికి గానీ అనర్హుడు. అయితే, <b>21 సంవత్సరాలు నిండి ఉంటే</b>, 25 సంవత్సరాలు నిండలేదన్న కారణంతో మాత్రమే ఎవరినీ disqualify చేయకూడదు — ఇది గుర్తుంచుకోదగ్గ, తక్కువ వయో పరిమితి. Disqualification ప్రశ్నలన్నీ రాష్ట్ర శాసనసభ నిర్ణయించిన authority కు రిఫర్ చేస్తారు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">State Election Commission — Article 243ZA</div>
+  <p class="eng">The superintendence, direction and control of preparing electoral rolls and conducting all elections to municipalities is vested in the <b class="term">State Election Commission</b> — the same commission that also conducts panchayat elections. The state legislature may make further provisions with respect to all matters relating to elections to municipalities.</p>
+  <div class="te">Municipalities ఎన్నికల కోసం electoral rolls తయారీ, అన్ని ఎన్నికల నిర్వహణ పై superintendence, direction, control — ఇవన్నీ <b class="term">State Election Commission</b> వద్దే ఉంటాయి — ఇదే commission panchayat ఎన్నికలను కూడా నిర్వహిస్తుంది. Municipality ఎన్నికలకు సంబంధించిన అన్ని విషయాలపై రాష్ట్ర శాసనసభ మరిన్ని నిబంధనలు చేయవచ్చు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Powers and Functions — Article 243W</div>
+  <p class="eng">The state legislature may endow municipalities with such powers and authority as necessary to enable them to function as institutions of self-government. This may include devolving upon municipalities, at the appropriate level, the responsibility for (a) preparing plans for economic development and social justice, and (b) implementing schemes for economic development and social justice, including those relating to the <b class="hlg">eighteen</b> matters listed in the <b class="term">Twelfth Schedule</b> — which we study in full a few pages ahead.</p>
+  <div class="te">Municipalities self-government సంస్థలుగా పనిచేయడానికి అవసరమైన powers, authority ను రాష్ట్ర శాసనసభ వాటికి ఇవ్వవచ్చు. ఇందులో, తగిన స్థాయిలో municipalities కు — (a) economic development, social justice కోసం plans తయారీ, (b) economic development, social justice కోసం schemes అమలు — వీటి బాధ్యతను <b class="term">Twelfth Schedule</b> లోని <b class="hlg">18</b> అంశాలతో సహా devolve చేయడం ఉండవచ్చు — దీన్ని కొన్ని పేజీల తర్వాత పూర్తిగా చదువుతాం.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Finances — Article 243X</div>
+  <p class="eng">The state legislature may (a) authorise a municipality to <b>levy, collect and appropriate</b> taxes, duties, tolls and fees; (b) <b>assign</b> to a municipality taxes, duties, tolls and fees levied and collected by the state government; (c) provide for making <b>grants-in-aid</b> to municipalities from the consolidated fund of the state; and (d) provide for the constitution of <b>funds</b> for crediting all moneys of the municipalities.</p>
+  <div class="te">రాష్ట్ర శాసనసభ — (a) taxes, duties, tolls, fees ను levy, collect, appropriate చేయడానికి municipality కు authorise చేయవచ్చు; (b) రాష్ట్ర ప్రభుత్వం levy, collect చేసిన taxes, duties, tolls, fees ను municipality కు assign చేయవచ్చు; (c) రాష్ట్ర consolidated fund నుండి municipalities కు grants-in-aid ఇచ్చేలా ఏర్పాటు చేయవచ్చు; (d) municipalities డబ్బు మొత్తాన్ని జమచేయడానికి funds ఏర్పాటుకు నిబంధనలు చేయవచ్చు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Disqualifications, SEC, Powers &amp; Finances</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Special age exception for disqualification?</td><td>Not disqualified for being under 25 if age 21+ attained</td></tr>
+      <tr><td>Body conducting municipal elections?</td><td>State Election Commission (Art. 243ZA)</td></tr>
+      <tr><td>Article for powers/functions of municipalities?</td><td>Article 243W — includes 18 Twelfth Schedule matters</td></tr>
+      <tr><td>Article for municipal finances?</td><td>Article 243X — 4 heads: levy/assign/grants/funds</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Finance Commission · Audit · UT Application · Exempted Areas</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Finance Commission — Article 243Y</div>
+  <p class="eng">The <b>same Finance Commission</b> that is constituted for panchayats also, every <b class="hlg">five years</b>, reviews the financial position of municipalities and makes recommendations to the <b>governor</b> as to: (1) the principles that should govern — (i) the distribution between the state and the municipalities of the net proceeds of the taxes, duties, tolls and fees levied by the state, and the allocation of shares amongst municipalities at all levels; (ii) which taxes, duties, tolls and fees may be assigned to municipalities; and (iii) grants-in-aid to municipalities from the state's consolidated fund; (2) the measures needed to improve the financial position of municipalities; and (3) any other matter referred to it by the governor in the interests of sound municipal finance. The governor must place the Commission's recommendations, along with an <b>action-taken report</b>, before the state legislature. Separately, the <b class="term">Central Finance Commission</b> also suggests measures needed to augment a state's consolidated fund, so as to supplement municipal resources — but it does so on the basis of the recommendations already made by that state's own finance commission (see Current Affairs Update at the end of this chapter for a live example of how municipal reservation/finance provisions are being litigated today).</p>
+  <div class="te">Panchayats కోసం ఏర్పాటైన <b>అదే Finance Commission</b>, ప్రతి <b class="hlg">5 సంవత్సరాలకూ</b>, municipalities ఆర్థిక స్థితిని review చేసి <b>governor</b> కు ఈ విషయాలపై సిఫారసులు చేస్తుంది — (1) ఈ సూత్రాలను నిర్దేశించడం — (i) రాష్ట్రం విధించి వసూలు చేసే taxes, duties, tolls, fees నికర రాబడిని రాష్ట్రం, municipalities మధ్య పంపిణీ, అన్ని స్థాయిల municipalities మధ్య వాటాల కేటాయింపు; (ii) municipalities కు ఏ taxes, duties, tolls, fees assign చేయవచ్చో నిర్ణయించడం; (iii) రాష్ట్ర consolidated fund నుండి municipalities కు grants-in-aid; (2) municipalities ఆర్థిక స్థితిని మెరుగుపరచడానికి అవసరమైన చర్యలు; (3) municipalities సౌండ్ ఫైనాన్స్ ప్రయోజనం కోసం governor రిఫర్ చేసే ఇతర ఏదైనా విషయం. Commission సిఫారసులను, <b>action-taken report</b> తో సహా, governor రాష్ట్ర శాసనసభ ముందు ఉంచాలి. దీనికి వేరుగా, <b class="term">Central Finance Commission</b> కూడా — ఆ రాష్ట్రం సొంత finance commission సిఫారసుల ఆధారంగా — municipalities వనరులను భర్తీ చేయడానికి రాష్ట్ర consolidated fund ను పెంచడానికి అవసరమైన చర్యలను సూచిస్తుంది (municipal reservation/finance నిబంధనలు ఈరోజు ఎలా litigate అవుతున్నాయో ఒక live ఉదాహరణ కోసం ఈ chapter చివర Current Affairs Update చూడండి).</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Finance Commission</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which Commission reviews municipal finances?</td><td>The State Finance Commission (same one constituted for panchayats)</td></tr>
+      <tr><td>Frequency of review?</td><td>Every 5 years</td></tr>
+      <tr><td>Who places recommendations before legislature?</td><td>Governor, with an action-taken report</td></tr>
+      <tr><td>Role of Central Finance Commission here?</td><td>Suggests measures to augment state's consolidated fund to supplement municipal resources</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Audit of Accounts — Article 243Z</div>
+  <p class="eng">The state legislature may make provisions with respect to the maintenance of accounts by municipalities and the auditing of such accounts.</p>
+  <div class="te">Municipalities accounts నిర్వహణ, వాటి auditing గురించి రాష్ట్ర శాసనసభ నిబంధనలు చేయవచ్చు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Application to Union Territories — Article 243ZB</div>
+  <p class="eng">The provisions of Part IX-A apply to Union Territories too, but the <b>President</b> may direct that they apply subject to such exceptions and modifications as specified. Exercising this power, the President — <b class="hlg">in 2001</b> — directed that <b class="hlg">Articles 243ZD</b> (District Planning Committee) and <b class="hlg">243ZE</b> (Metropolitan Planning Committee) shall <b class="imp">not apply</b> to the National Capital Territory of Delhi.</p>
+  <div class="te">Part IX-A నిబంధనలు Union Territories కు కూడా వర్తిస్తాయి, కానీ President పేర్కొన్న exceptions, modifications కు లోబడి అవి వర్తించేలా President ఆదేశించవచ్చు. ఈ అధికారాన్ని వినియోగించి, President <b class="hlg">2001</b> లో — <b class="hlg">Articles 243ZD</b> (District Planning Committee), <b class="hlg">243ZE</b> (Metropolitan Planning Committee) — National Capital Territory of Delhi కు <b class="imp">వర్తించవని</b> ఆదేశించారు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Exempted Areas — Article 243ZC</div>
+  <p class="eng">The Act does not apply to the <b>Scheduled Areas and tribal areas</b> in the states. It also does not affect the functions and powers of the <b class="hlp">Darjeeling Gorkha Hill Council</b> of West Bengal. However, Parliament may extend the provisions of this Part to the Scheduled Areas and tribal areas, subject to such exceptions and modifications as it may specify. (At present, <b class="hlg">ten</b> states have Scheduled Areas — Andhra Pradesh, Telangana, Jharkhand, Chhattisgarh, Gujarat, Himachal Pradesh, Madhya Pradesh, Maharashtra, Orissa and Rajasthan; and there are a total of <b class="hlg">ten</b> tribal areas/autonomous districts, across Assam (3), Meghalaya (3), Tripura (1) and Mizoram (3).)</p>
+  <div class="te">రాష్ట్రాల్లోని <b>Scheduled Areas, tribal areas</b> కు ఈ Act వర్తించదు. West Bengal లోని <b class="hlp">Darjeeling Gorkha Hill Council</b> functions, powers పై కూడా దీని ప్రభావం ఉండదు. అయితే, Parliament తాను పేర్కొన్న exceptions, modifications కు లోబడి, ఈ Part నిబంధనలను Scheduled Areas, tribal areas కు విస్తరించవచ్చు. (ప్రస్తుతం <b class="hlg">పది</b> రాష్ట్రాల్లో Scheduled Areas ఉన్నాయి — Andhra Pradesh, Telangana, Jharkhand, Chhattisgarh, Gujarat, Himachal Pradesh, Madhya Pradesh, Maharashtra, Orissa, Rajasthan; Assam(3), Meghalaya(3), Tripura(1), Mizoram(3) రాష్ట్రాల్లో కలిపి మొత్తం <b class="hlg">పది</b> tribal areas/autonomous districts ఉన్నాయి.)</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Audit, UT Application &amp; Exempted Areas</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Article on audit of municipal accounts?</td><td>Article 243Z</td></tr>
+      <tr><td>Which two articles President excluded for Delhi (2001)?</td><td>243ZD (DPC) and 243ZE (MPC)</td></tr>
+      <tr><td>Areas exempted from the whole Part?</td><td>Scheduled Areas &amp; tribal areas in states; Darjeeling Gorkha Hill Council powers unaffected</td></tr>
+      <tr><td>Who can extend the Part to Scheduled/tribal areas?</td><td>Parliament, with exceptions/modifications</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">District Planning Committee · Metropolitan Planning Committee</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">District Planning Committee — Article 243ZD</div>
+  <p class="eng">Every state must constitute, at the district level, a <b class="term">District Planning Committee (DPC)</b> — to consolidate the plans prepared by panchayats and municipalities in the district, and to prepare a <b>draft development plan</b> for the district as a whole. The state legislature makes provisions on the DPC's composition, manner of election of its members and chairperson, and its functions relating to district planning. The Act itself lays down that <b class="imp">four-fifths</b> of DPC members must be <b>elected</b> — by the elected members of the district panchayat and municipalities in the district, from amongst themselves — with their representation in the committee kept in proportion to the district's <b>rural-urban population ratio</b>. In preparing the draft plan, the DPC must have regard to (1) matters of common interest between panchayats and municipalities — spatial planning, sharing of water and other physical/natural resources, integrated infrastructure development, environmental conservation — and (2) the extent and type of available resources, financial or otherwise. The committee must also consult such institutions and organisations as the <b>governor</b> may specify, and its <b>chairperson</b> forwards the completed development plan to the state government.</p>
+  <div class="te">ప్రతి రాష్ట్రం district స్థాయిలో ఒక <b class="term">District Planning Committee (DPC)</b> ను ఏర్పాటు చేయాలి — ఆ district లోని panchayats, municipalities తయారుచేసిన plans ను consolidate చేయడానికి, మొత్తం district కోసం <b>draft development plan</b> తయారు చేయడానికి. DPC composition, దాని సభ్యులు/chairperson ఎన్నిక పద్ధతి, district planning కు సంబంధించిన దాని functions — వీటిపై రాష్ట్ర శాసనసభ నిబంధనలు చేస్తుంది. DPC సభ్యుల్లో <b class="imp">ఐదింట నాలుగు వంతులు (4/5)</b> — district panchayat, municipalities లోని ఎన్నికైన సభ్యులు తమలో తామే ఎన్నుకున్నవారు — <b>ఎన్నికయినవారే</b> ఉండాలని Act చెబుతుంది, committee లో వీరి representation ఆ district <b>rural-urban జనాభా నిష్పత్తికి</b> అనుపాతంలో ఉండాలి. Draft plan తయారీలో, DPC — (1) panchayats, municipalities మధ్య common interest విషయాలు (spatial planning, నీరు/ఇతర natural resources పంచుకోవడం, infrastructure integrated development, environmental conservation), (2) అందుబాటులో ఉన్న resources పరిమాణం, రకం (financial గానీ, ఇతరత్రా గానీ) — వీటిని పరిగణనలోకి తీసుకోవాలి. Governor పేర్కొనే institutions, organisations తో కూడా committee సంప్రదించాలి, పూర్తైన development plan ను దాని <b>chairperson</b> రాష్ట్ర ప్రభుత్వానికి పంపుతారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — District Planning Committee</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Article for DPC?</td><td>Article 243ZD</td></tr>
+      <tr><td>What does DPC prepare?</td><td>Draft development plan for the district, consolidating panchayat + municipality plans</td></tr>
+      <tr><td>Elected proportion of DPC members?</td><td>4/5th, elected by district panchayat + municipality members among themselves</td></tr>
+      <tr><td>Basis for representation of elected members?</td><td>Ratio of rural to urban population in the district</td></tr>
+      <tr><td>Who receives the final development plan?</td><td>State government, forwarded by DPC chairperson</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Metropolitan Planning Committee — Article 243ZE</div>
+  <p class="eng">Every <b class="term">metropolitan area</b> — defined as an area with a population of <b class="hlg">10 lakh or more</b>, spanning one or more districts, and consisting of two or more municipalities or panchayats or other contiguous areas — must have a <b class="term">Metropolitan Planning Committee (MPC)</b> to prepare a draft development plan. The state legislature provides for the MPC's composition, manner of election of its members and chairperson, its functions relating to planning and coordination for the metropolitan area, and the representation in it of the Central government, state government and other organisations. The Act lays down that <b class="imp">two-thirds</b> of MPC members must be <b>elected</b> — by the elected members of municipalities and the chairpersons of panchayats in the metropolitan area, from amongst themselves — proportional to the <b>population ratio between the municipalities and panchayats</b> in that area. In preparing its draft plan, the MPC must have regard to (1) plans already prepared by the municipalities and panchayats in the area; (2) matters of common interest — coordinated spatial planning, sharing of resources, integrated infrastructure, environmental conservation; (3) the overall objectives and priorities of the Government of India and the state government; and (4) the extent and nature of investments likely to be made in the area by Central/state agencies and other resources. Like the DPC, the MPC must consult institutions the governor specifies, and its chairperson forwards the plan to the state government.</p>
+  <div class="te"><b class="hlg">10 లక్షలు లేదా అంతకంటే ఎక్కువ</b> జనాభా ఉండి, ఒకటి లేదా అంతకంటే ఎక్కువ districts లో విస్తరించి, రెండు లేదా అంతకంటే ఎక్కువ municipalities లేదా panchayats లేదా ఇతర contiguous ప్రాంతాలతో కూడిన ప్రాంతాన్ని <b class="term">metropolitan area</b> గా నిర్వచిస్తారు — ప్రతి metropolitan area కు draft development plan తయారీ కోసం <b class="term">Metropolitan Planning Committee (MPC)</b> తప్పనిసరిగా ఉండాలి. MPC composition, దాని సభ్యులు/chairperson ఎన్నిక పద్ధతి, metropolitan area planning-coordination కు సంబంధించిన దాని functions, Central government/రాష్ట్ర ప్రభుత్వం/ఇతర organisations కు దీనిలో representation — వీటిపై రాష్ట్ర శాసనసభ నిబంధనలు చేస్తుంది. MPC సభ్యుల్లో <b class="imp">మూడింట రెండు వంతులు (2/3)</b> — ఆ metropolitan area లోని municipalities ఎన్నికైన సభ్యులు, panchayats chairpersons తమలో తామే ఎన్నుకున్నవారు — <b>ఎన్నికయినవారే</b> ఉండాలని Act చెబుతుంది, committee లో వీరి representation ఆ area లోని municipalities, panchayats <b>జనాభా నిష్పత్తికి</b> అనుపాతంలో ఉండాలి. Draft plan తయారీలో MPC — (1) ఆ area లోని municipalities, panchayats ఇప్పటికే తయారుచేసిన plans; (2) common interest విషయాలు (coordinated spatial planning, resources పంచుకోవడం, integrated infrastructure, environmental conservation); (3) Government of India, రాష్ట్ర ప్రభుత్వం నిర్దేశించిన overall objectives, priorities; (4) Central/రాష్ట్ర agencies, ఇతర resources ద్వారా ఆ area లో జరిగే అవకాశం ఉన్న investments పరిమాణం, స్వభావం — వీటిని పరిగణనలోకి తీసుకోవాలి. DPC లాగే, governor పేర్కొనే institutions తో MPC కూడా సంప్రదించాలి, దాని chairperson ప్లాన్ ను రాష్ట్ర ప్రభుత్వానికి పంపుతారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Metropolitan Planning Committee</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Article for MPC?</td><td>Article 243ZE</td></tr>
+      <tr><td>Definition of "metropolitan area"?</td><td>Population 10 lakh+, 1+ districts, 2+ municipalities/panchayats/contiguous areas</td></tr>
+      <tr><td>Elected proportion of MPC members?</td><td>2/3rd, elected by municipality members + panchayat chairpersons among themselves</td></tr>
+      <tr><td>Basis for representation of elected members?</td><td>Population ratio between municipalities and panchayats in the metro area</td></tr>
+      <tr><td>DPC vs MPC — elected fraction?</td><td>DPC = 4/5th elected; MPC = 2/3rd elected</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Continuance of Laws · Bar to Courts · Twelfth Schedule · Articles at a Glance</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Continuance of Existing Laws and Municipalities — Article 243ZF</div>
+  <p class="eng">All state laws relating to municipalities that were in force before the 74th Amendment continue to operate until the expiry of <b class="hlg">one year</b> from the Act's commencement — in other words, states had a maximum period of one year from <b class="hlg">1 June 1993</b> to adopt the new municipal system based on this Act. However, all municipalities existing immediately before the commencement of this Act continue till the expiry of their own term, <b>unless dissolved sooner</b> by the state legislature.</p>
+  <div class="te">74వ సవరణకు ముందు అమల్లో ఉన్న municipalities కు సంబంధించిన అన్ని రాష్ట్ర చట్టాలు, Act commencement నుండి <b class="hlg">ఒక సంవత్సరం</b> ముగిసేవరకూ కొనసాగుతాయి — అంటే, ఈ Act ఆధారంగా కొత్త municipal వ్యవస్థను అనుసరించడానికి రాష్ట్రాలకు <b class="hlg">జూన్ 1, 1993</b> నుండి గరిష్టంగా ఒక సంవత్సరం సమయం ఉంది. అయితే, ఈ Act commencement కు ముందు ఉన్న municipalities అన్నీ — రాష్ట్ర శాసనసభ <b>ముందుగానే dissolve చేస్తే తప్ప</b> — తమ term ముగిసేవరకూ కొనసాగుతాయి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Bar to Interference by Courts in Electoral Matters — Article 243ZG</div>
+  <p class="eng">The Act bars courts from interfering in the electoral matters of municipalities. It declares that the validity of any law relating to the <b>delimitation of constituencies</b>, or the <b>allotment of seats</b> to such constituencies, cannot be questioned in any court. It further lays down that no election to any municipality can be questioned except by an <b>election petition</b> presented to such authority, and in such manner, as provided by the state legislature.</p>
+  <div class="te">Municipalities electoral విషయాల్లో కోర్టులు జోక్యం చేసుకోకుండా ఈ Act అడ్డుకుంటుంది. <b>constituencies delimitation</b>, ఆ constituencies కు <b>సీట్ల allotment</b> కు సంబంధించిన ఏ చట్టం చెల్లుబాటును కూడా ఏ కోర్టులోనూ ప్రశ్నించకూడదని ఇది స్పష్టం చేస్తుంది. దీంతోపాటు, రాష్ట్ర శాసనసభ నిర్దేశించిన authority కు, నిర్దేశించిన పద్ధతిలో సమర్పించిన <b>election petition</b> ద్వారా తప్ప, ఏ municipality ఎన్నికనూ ప్రశ్నించకూడదని కూడా ఇది నిర్దేశిస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">The Twelfth Schedule — 18 Functional Items (Article 243W)</div>
+  <p class="eng">The Twelfth Schedule places the following <b class="hlg">18</b> functional items within the purview of municipalities — this is the municipal counterpart of the Eleventh Schedule's 29 items for panchayats.</p>
+  <div class="te">Panchayats కోసం Eleventh Schedule లో 29 అంశాలు ఉన్నట్టే, municipalities కోసం Twelfth Schedule లో ఈ కింది <b class="hlg">18</b> functional items ఉన్నాయి.</div>
+
+  <table>
+    <caption>Twelfth Schedule — 18 Functional Items</caption>
+    <thead><tr><th class="n" style="width:8%">#</th><th>Functional item</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Urban planning including town planning</td></tr>
+      <tr><td class="n">2</td><td>Regulation of land use and construction of buildings</td></tr>
+      <tr><td class="n">3</td><td>Planning for economic and social development</td></tr>
+      <tr><td class="n">4</td><td>Roads and bridges</td></tr>
+      <tr><td class="n">5</td><td>Water supply for domestic, industrial and commercial purposes</td></tr>
+      <tr><td class="n">6</td><td>Public health, sanitation, conservancy and solid waste management</td></tr>
+      <tr><td class="n">7</td><td>Fire services</td></tr>
+      <tr><td class="n">8</td><td>Urban forestry, protection of the environment and promotion of ecological aspects</td></tr>
+      <tr><td class="n">9</td><td>Safeguarding interests of weaker sections, incl. the handicapped and mentally retarded</td></tr>
+      <tr><td class="n">10</td><td>Slum improvement and upgradation</td></tr>
+      <tr><td class="n">11</td><td>Urban poverty alleviation</td></tr>
+      <tr><td class="n">12</td><td>Urban amenities/facilities — parks, gardens, playgrounds</td></tr>
+      <tr><td class="n">13</td><td>Promotion of cultural, educational and aesthetic aspects</td></tr>
+      <tr><td class="n">14</td><td>Burials/burial grounds, cremations/cremation grounds, electric crematoriums</td></tr>
+      <tr><td class="n">15</td><td>Cattle pounds, prevention of cruelty to animals</td></tr>
+      <tr><td class="n">16</td><td>Vital statistics incl. registration of births and deaths</td></tr>
+      <tr><td class="n">17</td><td>Public amenities — street lighting, parking lots, bus stops, public conveniences</td></tr>
+      <tr><td class="n">18</td><td>Regulation of slaughter houses and tanneries</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Table 40.3 — Articles Related to Municipalities at a Glance</div>
+  <table>
+    <caption>Articles 243P–243ZG (Part IX-A)</caption>
+    <thead><tr><th style="width:16%">Article</th><th>Subject-matter</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">243P</td><td>Definitions</td></tr>
+      <tr><td class="hlg">243Q</td><td>Constitution of municipalities</td></tr>
+      <tr><td class="hlg">243R</td><td>Composition of municipalities</td></tr>
+      <tr><td class="hlg">243S</td><td>Constitution and composition of wards committees, etc.</td></tr>
+      <tr><td class="hlg">243T</td><td>Reservation of seats</td></tr>
+      <tr><td class="hlg">243U</td><td>Duration of municipalities, etc.</td></tr>
+      <tr><td class="hlg">243V</td><td>Disqualifications for membership</td></tr>
+      <tr><td class="hlg">243W</td><td>Powers, authority and responsibilities of municipalities, etc.</td></tr>
+      <tr><td class="hlg">243X</td><td>Powers to impose taxes by, and funds of, the municipalities</td></tr>
+      <tr><td class="hlg">243Y</td><td>Finance commission</td></tr>
+      <tr><td class="hlg">243Z</td><td>Audit of accounts of municipalities</td></tr>
+      <tr><td class="hlg">243ZA</td><td>Elections to the municipalities</td></tr>
+      <tr><td class="hlg">243ZB</td><td>Application to union territories</td></tr>
+      <tr><td class="hlg">243ZC</td><td>Part not to apply to certain areas</td></tr>
+      <tr><td class="hlg">243ZD</td><td>Committee for district planning</td></tr>
+      <tr><td class="hlg">243ZE</td><td>Committee for metropolitan planning</td></tr>
+      <tr><td class="hlg">243ZF</td><td>Continuance of existing laws and municipalities</td></tr>
+      <tr><td class="hlg">243ZG</td><td>Bar to interference by courts in electoral matters</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Continuance, Bar to Courts, 12th Schedule &amp; Articles</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Deadline for states to adopt new system?</td><td>Within 1 year of 1 June 1993 (Art. 243ZF)</td></tr>
+      <tr><td>Can delimitation/seat-allotment laws be questioned in court?</td><td>No — barred by Art. 243ZG</td></tr>
+      <tr><td>How to challenge a municipal election?</td><td>Only via election petition, per state legislature's procedure</td></tr>
+      <tr><td>How many items in the Twelfth Schedule?</td><td>18 (vs 29 in the panchayats' Eleventh Schedule)</td></tr>
+      <tr><td>Which article deals with the Twelfth Schedule?</td><td>Article 243W</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 10 ═══════════ -->
+<div class="page">
+<div class="sub">Types of Urban Governments — Municipal Corporation &amp; Municipality</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Types of Urban Local Government — Eight Bodies</div>
+  <p class="eng">The following <b class="hlg">eight</b> types of urban local bodies are created in India for the administration of urban areas: Municipal Corporation, Municipality, Notified Area Committee, Town Area Committee, Cantonment Board, Township, Port Trust, and Special Purpose Agency. The first two are governed by the 74th CAA framework studied above; the remaining six sit largely outside that framework, each with its own distinct legal basis — the rest of this chapter studies all eight in turn.</p>
+  <div class="te">భారతదేశంలో urban areas పరిపాలన కోసం కింది <b class="hlg">ఎనిమిది</b> రకాల urban local bodies ఏర్పాటవుతాయి — Municipal Corporation, Municipality, Notified Area Committee, Town Area Committee, Cantonment Board, Township, Port Trust, Special Purpose Agency. మొదటి రెండింటినీ పైన చదివిన 74th CAA framework governs చేస్తుంది; మిగిలిన ఆరు ఎక్కువగా ఆ framework బయటే ఉంటాయి, ఒక్కొక్కదానికీ దాని సొంత legal basis ఉంటుంది — ఈ chapter మిగతా భాగం ఈ ఎనిమిదింటినీ వరుసగా చదువుతుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">1. Municipal Corporation</div>
+  <p class="eng">Municipal corporations are created for the administration of <b>big cities</b> like Delhi, Mumbai, Kolkata, Hyderabad, Bangalore and others. They are established, in the states, by acts of the concerned state legislatures, and in the union territories, by acts of Parliament — there may be one common act for all corporations in a state, or a separate act for each. A municipal corporation has <b class="hlg">three</b> authorities: the <b>council</b>, the <b>standing committees</b>, and the <b>commissioner</b>. The council — the deliberative and legislative wing — consists of councillors directly elected by the people, plus a few nominated persons with knowledge/experience of municipal administration; its composition, including reservation of seats for SCs, STs and women, is governed by the 74th CAA. The council is headed by a <b class="term">Mayor</b> (assisted by a Deputy Mayor), elected in most states for a one-year renewable term — the Mayor is essentially an <b class="imp">ornamental, formal head</b>, whose main function is to preside over council meetings, not to run the administration. Standing committees are created to facilitate the working of the council, which is too large to function as a single body — they deal with public works, education, health, taxation, finance and so on, taking decisions in their own fields. The <b class="term">municipal commissioner</b> is the <b class="imp">chief executive authority</b> of the corporation, responsible for implementing decisions of the council and its standing committees — appointed by the state government, generally a member of the <b class="hlb">IAS</b>.</p>
+  <div class="te">Delhi, Mumbai, Kolkata, Hyderabad, Bangalore వంటి <b>పెద్ద నగరాల</b> పరిపాలన కోసం municipal corporations ఏర్పాటవుతాయి. రాష్ట్రాల్లో సంబంధిత రాష్ట్ర శాసనసభల acts ద్వారా, union territories లో Parliament acts ద్వారా వీటిని ఏర్పాటు చేస్తారు — ఒక రాష్ట్రంలోని అన్ని corporations కు ఒకే common act ఉండొచ్చు, లేదా ఒక్కొక్క దానికీ separate act ఉండొచ్చు. Municipal corporation కు <b class="hlg">మూడు</b> authorities ఉంటాయి — <b>council</b>, <b>standing committees</b>, <b>commissioner</b>. Council — deliberative, legislative wing — ప్రజలు నేరుగా ఎన్నుకున్న councillors తో పాటు, municipal administration లో పరిజ్ఞానం/అనుభవం ఉన్న కొద్దిమంది నామినేటెడ్ వ్యక్తులతో కూడి ఉంటుంది; SC, ST, మహిళలకు సీట్ల reservation తో సహా దీని composition ను 74th CAA governs చేస్తుంది. Council కు <b class="term">Mayor</b> (Deputy Mayor సహాయంతో) అధిపతిగా ఉంటారు, ఎక్కువ రాష్ట్రాల్లో ఒక సంవత్సరం renewable term కు ఎన్నికవుతారు — Mayor ప్రధానంగా <b class="imp">ornamental, formal head</b> మాత్రమే, ఆయన ప్రధాన పని council meetings కు అధ్యక్షత వహించడమే తప్ప, administration నడపడం కాదు. Council చాలా పెద్దదిగా ఉండి ఒక్క body గా పనిచేయలేకపోవడం వల్ల, దాని పనిని సులభతరం చేయడానికి standing committees ఏర్పాటవుతాయి — public works, education, health, taxation, finance వంటి రంగాల్లో అవి తమ నిర్ణయాలు తీసుకుంటాయి. Corporation కు <b class="imp">chief executive authority</b> గా వ్యవహరించే <b class="term">municipal commissioner</b> — council, దాని standing committees తీసుకున్న నిర్ణయాలను అమలు చేయడానికి బాధ్యుడు — రాష్ట్ర ప్రభుత్వం నియమిస్తుంది, సాధారణంగా <b class="hlb">IAS</b> అధికారి అయ్యుంటారు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">2. Municipality</div>
+  <p class="eng">Municipalities are established for the administration of <b>towns and smaller cities</b>. Like corporations, they are set up in states by acts of state legislatures, and in union territories by acts of Parliament — they are also known by names like municipal council, municipal committee, municipal board, borough municipality, city municipality etc. A municipality too has three authorities — the council, standing committees, and a <b>chief executive officer</b> — but note the crucial difference at the head of the council. The council — deliberative, legislative wing — consists of directly elected councillors, headed by a <b class="term">president/chairman</b> (assisted by a vice-president/vice-chairman). Unlike the Mayor of a corporation, this president/chairman plays a <b class="imp">significant, non-ornamental role</b> and is the actual <b>pivot of municipal administration</b> — beyond presiding over council meetings, he/she also enjoys genuine executive powers. Standing committees deal with public works, taxation, health, finance and so on, as in a corporation. The <b class="term">chief executive officer / chief municipal officer</b> is responsible for day-to-day general administration, and is appointed by the state government.</p>
+  <div class="te"><b>పట్టణాలు, చిన్న నగరాల</b> పరిపాలన కోసం municipalities ఏర్పాటవుతాయి. Corporations మాదిరిగానే, రాష్ట్రాల్లో రాష్ట్ర శాసనసభల acts ద్వారా, union territories లో Parliament acts ద్వారా వీటిని ఏర్పాటు చేస్తారు — municipal council, municipal committee, municipal board, borough municipality, city municipality వంటి పేర్లతో కూడా వీటిని పిలుస్తారు. Municipality కు కూడా మూడు authorities ఉంటాయి — council, standing committees, <b>chief executive officer</b> — కానీ council అధిపతి విషయంలో కీలకమైన తేడా గమనించాలి. Council — deliberative, legislative wing — నేరుగా ఎన్నికైన councillors తో కూడి ఉంటుంది, దీనికి <b class="term">president/chairman</b> (vice-president/vice-chairman సహాయంతో) అధిపతిగా ఉంటారు. Corporation Mayor కు భిన్నంగా, ఈ president/chairman <b class="imp">నిజమైన, ప్రాముఖ్యత గల పాత్ర</b> పోషిస్తారు, municipal administration కు నిజమైన <b>pivot</b> గా ఉంటారు — council meetings కు అధ్యక్షత వహించడమే కాక, ఆయనకు నిజమైన executive powers కూడా ఉంటాయి. Corporation లాగే standing committees public works, taxation, health, finance వంటివి చూస్తాయి. Day-to-day general administration బాధ్యత <b class="term">chief executive officer / chief municipal officer</b> ది — దీన్ని రాష్ట్ర ప్రభుత్వం నియమిస్తుంది.</div>
+
+  <table>
+    <caption>Municipal Corporation vs Municipality</caption>
+    <thead><tr><th style="width:26%">Feature</th><th>Municipal Corporation</th><th>Municipality</th></tr></thead>
+    <tbody>
+      <tr><td>Administers</td><td>Big cities</td><td>Towns and smaller cities</td></tr>
+      <tr><td>Head of Council</td><td>Mayor (+ Deputy Mayor)</td><td>President/Chairman (+ Vice-President/Vice-Chairman)</td></tr>
+      <tr><td>Role of the head</td><td class="imp">Ornamental/formal — mainly presides</td><td class="imp">Significant — presides + real executive powers</td></tr>
+      <tr><td>Chief executive</td><td>Municipal Commissioner (usually IAS)</td><td>Chief Executive Officer / Chief Municipal Officer</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Municipal Corporation &amp; Municipality</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Three authorities of a corporation?</td><td>Council, standing committees, commissioner</td></tr>
+      <tr><td>Is the Mayor a real executive head?</td><td>No — ornamental/formal head, mainly presides over meetings</td></tr>
+      <tr><td>Who is chief executive authority of a corporation?</td><td>Municipal Commissioner — state-appointed, usually IAS</td></tr>
+      <tr><td>Who is the "pivot" of municipal (not corporation) administration?</td><td>The President/Chairman of the municipality council</td></tr>
+      <tr><td>Other names for "municipality"?</td><td>Municipal council/committee/board, borough/city municipality</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 11 ═══════════ -->
+<div class="page">
+<div class="sub">Notified Area Committee · Town Area Committee · Cantonment Board</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">3. Notified Area Committee</div>
+  <p class="eng">A notified area committee is created for the administration of two types of areas — a <b>fast-developing town</b> due to industrialisation, and a town that does not yet fulfil all the conditions necessary for a municipality but is still considered important by the state government. It is called a "notified" area committee because it is established by a <b>notification</b> in the government gazette; it functions within the framework of the State Municipal Act, but only those provisions notified in the gazette actually apply to it (it may also be entrusted powers under other acts). Its powers are almost equivalent to a municipality's, but unlike a municipality, it is an <b class="imp">entirely nominated body</b> — all its members, including the chairman, are nominated by the state government. It is therefore <b>neither an elected body nor a statutory body</b>.</p>
+  <div class="te">రెండు రకాల ప్రాంతాల పరిపాలన కోసం notified area committee ఏర్పాటవుతుంది — industrialisation వల్ల <b>వేగంగా అభివృద్ధి చెందుతున్న పట్టణం</b>, municipality కు అవసరమైన conditions అన్నీ ఇంకా పూర్తిగా satisfy చేయకపోయినా రాష్ట్ర ప్రభుత్వం ముఖ్యమైనదిగా భావించే పట్టణం. దీన్ని government gazette లో <b>notification</b> ద్వారా ఏర్పాటు చేస్తారు కాబట్టి "notified" area committee అంటారు; ఇది State Municipal Act framework లోనే పనిచేసినా, gazette లో notify చేసిన నిబంధనలే దీనికి వర్తిస్తాయి (ఇతర acts కింద కూడా దీనికి powers అప్పగించవచ్చు). దీని powers municipality powers కు దాదాపు సమానం, కానీ municipality కు భిన్నంగా, ఇది <b class="imp">పూర్తిగా నామినేటెడ్ body</b> — దీని సభ్యులందరినీ, chairman తో సహా, రాష్ట్ర ప్రభుత్వమే నామినేట్ చేస్తుంది. కాబట్టి ఇది <b>ఎన్నికైన body కాదు, statutory body కూడా కాదు</b>.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">4. Town Area Committee</div>
+  <p class="eng">A town area committee is set up for the administration of a <b>small town</b>. It is a <b>semi-municipal authority</b>, entrusted with a limited number of civic functions like drainage, roads, street lighting and conservancy. It is created by a separate act of the state legislature, which also governs its composition and functions — it may be <b>wholly elected, wholly nominated, or partly elected and partly nominated</b> by the state government. The <b class="hlp">Rural-Urban Relationship Committee (1963-66)</b>, headed by <b class="hlp">A.P. Jain</b>, recommended that small town area committees be merged with panchayati raj institutions, to avoid a multiplicity of local-body patterns.</p>
+  <div class="te">Town area committee <b>చిన్న పట్టణం</b> పరిపాలన కోసం ఏర్పాటవుతుంది. ఇది <b>semi-municipal authority</b>, దీనికి drainage, roads, street lighting, conservancy వంటి పరిమిత సంఖ్యలో civic functions అప్పగించారు. దీన్ని రాష్ట్ర శాసనసభ ప్రత్యేక చట్టం ద్వారా ఏర్పాటు చేస్తుంది, దీని composition, functions ను కూడా ఆ చట్టమే governs చేస్తుంది — ఇది <b>పూర్తిగా ఎన్నికైనది, పూర్తిగా నామినేటెడ్, లేదా రాష్ట్ర ప్రభుత్వం కొంతమందిని ఎన్నుకుని కొంతమందిని నామినేట్ చేసినది</b> కావొచ్చు. <b class="hlp">A.P. Jain</b> అధ్యక్షతన <b class="hlp">Rural-Urban Relationship Committee (1963-66)</b> — local bodies పద్ధతిలో ఎక్కువ రకాలు రాకుండా ఉండటానికి, చిన్న town area committees ను panchayati raj సంస్థల్లో విలీనం చేయాలని సిఫారసు చేసింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Notified &amp; Town Area Committees</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Is a Notified Area Committee elected?</td><td>No — entirely nominated, neither elected nor statutory</td></tr>
+      <tr><td>Two kinds of areas for a Notified Area Committee?</td><td>Fast-industrialising town; town important but not yet fit for a municipality</td></tr>
+      <tr><td>Town Area Committee — nature?</td><td>Semi-municipal authority, limited civic functions</td></tr>
+      <tr><td>Who recommended merging town area committees with PRIs?</td><td>A.P. Jain, Rural-Urban Relationship Committee (1963-66)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle rd">5. Cantonment Board</div>
+  <p class="eng">A cantonment board is established for municipal administration of the <b>civilian population</b> in a cantonment area (a delimited area where military forces are permanently stationed). It is set up under the <b class="imp">Cantonments Act of 2006</b> — a Central legislation that repealed the earlier Cantonments Act of 1924, aiming to consolidate/amend cantonment administration law with a view to greater democratisation, an improved financial base, and provisions for developmental activities. It works under the administrative control of the <b>Ministry of Defence</b>. Unlike the other urban bodies studied so far, all of which are created and administered by <b>state</b> governments, a cantonment board is created <b>as well as</b> administered by the <b class="imp">Central government</b>. At present, there are <b class="hlg">62</b> cantonment boards in the country, grouped into four categories by civil population (Table 40.2). A cantonment board consists of <b>partly elected and partly nominated</b> members — elected members hold office for a term of five years, while nominated (ex-officio) members continue so long as they hold office at that station. The military officer commanding the station is the <b>ex-officio president</b> of the board and presides over its meetings; the <b>vice-president</b> is elected by the elected members from amongst themselves, also for a five-year term.</p>
+  <div class="te">Cantonment area (సైనిక దళాలు శాశ్వతంగా మోహరించి ఉండే delimited ప్రాంతం) లోని <b>పౌర జనాభా</b> municipal administration కోసం cantonment board ఏర్పాటవుతుంది. దీన్ని <b class="imp">Cantonments Act, 2006</b> కింద ఏర్పాటు చేశారు — ఇది ఒక Central చట్టం, పాత 1924 Cantonments Act ను రద్దు చేసింది, greater democratisation, మెరుగైన financial base, developmental activities కోసం నిబంధనలు — ఇవి దీని లక్ష్యాలు. ఇది <b>Ministry of Defence</b> administrative control లో పనిచేస్తుంది. ఇప్పటివరకూ చదివిన ఇతర urban bodies అన్నీ <b>రాష్ట్ర</b> ప్రభుత్వం సృష్టించి, నిర్వహించేవే అయినప్పటికీ, cantonment board ను మాత్రం <b class="imp">Central government</b>నే సృష్టిస్తుంది, నిర్వహిస్తుంది కూడా. ప్రస్తుతం దేశంలో <b class="hlg">62</b> cantonment boards ఉన్నాయి, పౌర జనాభా ఆధారంగా వీటిని నాలుగు categories గా విభజించారు (Table 40.2). Cantonment board లో <b>కొంతమంది ఎన్నికైన, కొంతమంది నామినేటెడ్</b> సభ్యులు ఉంటారు — ఎన్నికైన సభ్యులు ఐదు సంవత్సరాల term కు పదవిలో ఉంటారు, నామినేటెడ్ (ex-officio) సభ్యులు ఆ station లో వారి పదవిలో ఉన్నంతకాలం కొనసాగుతారు. Station కు commanding military officer ex-officio <b>president</b> గా ఉండి board meetings కు అధ్యక్షత వహిస్తారు; <b>vice-president</b> ను ఎన్నికైన సభ్యులు తమలో తామే ఐదు సంవత్సరాల term కు ఎన్నుకుంటారు.</div>
+
+  <table>
+    <caption>Table 40.2 — Classification of Cantonment Boards</caption>
+    <thead><tr><th style="width:18%">Category</th><th>Civil Population</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">I</td><td>Above 50,000</td></tr>
+      <tr><td class="hlg">II</td><td>10,000 to 50,000</td></tr>
+      <tr><td class="hlg">III</td><td>2,500 to 10,000</td></tr>
+      <tr><td class="hlg">IV</td><td>Below 2,500</td></tr>
+    </tbody>
+  </table>
+
+  <p class="eng">A <b>Category I</b> cantonment board consists of: (1) a military officer commanding the station; (2) an executive engineer in the cantonment; (3) a health officer in the cantonment; (4) a first-class magistrate nominated by the district magistrate; (5) three military officers nominated by the officer commanding the station; (6) eight members elected by the people of the cantonment area; and (7) the Chief Executive Officer of the cantonment board. The functions performed by a cantonment board are similar to a municipality's, statutorily categorised into <b>obligatory</b> and <b>discretionary</b> functions, with income from both tax and non-tax revenue. The <b>executive officer</b> of the cantonment board is appointed by the <b>President of India</b> — he/she implements board/committee resolutions and belongs to a central cadre established for the purpose.</p>
+  <div class="te"><b>Category I</b> cantonment board లో ఈ సభ్యులు ఉంటారు — (1) station కు commanding military officer; (2) cantonment లో executive engineer; (3) cantonment లో health officer; (4) district magistrate నామినేట్ చేసిన first-class magistrate; (5) officer commanding the station నామినేట్ చేసిన ముగ్గురు military officers; (6) cantonment area ప్రజలు ఎన్నుకున్న ఎనిమిదిమంది సభ్యులు; (7) cantonment board Chief Executive Officer. Cantonment board చేసే పనులు municipality పనులకు దాదాపు సమానం — వీటిని <b>obligatory</b>, <b>discretionary</b> functions గా statutorily వర్గీకరించారు, tax, non-tax revenue రెండింటి నుండి ఆదాయం వస్తుంది. Cantonment board <b>executive officer</b> ను <b>President of India</b> నియమిస్తారు — ఆయన board/committees తీర్మానాలను అమలు చేస్తారు, ఇందుకోసం ఏర్పాటైన central cadre కు చెందినవారు అవుతారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Cantonment Board</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Governing Act, and Act it repealed?</td><td>Cantonments Act, 2006 — repealed Cantonments Act, 1924</td></tr>
+      <tr><td>Who creates AND administers cantonment boards?</td><td>Central government (unlike state-created other ULBs)</td></tr>
+      <tr><td>Ex-officio president of the board?</td><td>Military officer commanding the station</td></tr>
+      <tr><td>Total cantonment boards currently?</td><td>62, grouped into 4 categories by civil population</td></tr>
+      <tr><td>Who appoints the executive officer?</td><td>President of India — belongs to a central cadre</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 12 ═══════════ -->
+<div class="page">
+<div class="sub">Township · Port Trust · Special Purpose Agency</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">6. Township</div>
+  <p class="eng">This type of urban government is established by <b>large public enterprises</b> to provide civic amenities to their staff and workers living in housing colonies built near the plant. The enterprise appoints a <b class="term">town administrator</b> to look after the township's administration, assisted by engineers and other technical/non-technical staff. A township thus has <b class="imp">no elected members at all</b> — in effect, it is simply an extension of the enterprise's own bureaucratic structure, not a self-government body.</p>
+  <div class="te">ఈ రకమైన urban government ను <b>పెద్ద public enterprises</b> ఏర్పాటు చేస్తాయి — తమ ప్లాంట్ దగ్గర కట్టిన housing colonies లో నివసించే staff, workers కు civic amenities అందించడానికి. Township administration చూసుకోవడానికి enterprise ఒక <b class="term">town administrator</b> ను నియమిస్తుంది, ఆయనకు engineers, ఇతర technical/non-technical staff సహాయం చేస్తారు. కాబట్టి township లో <b class="imp">ఎన్నికైన సభ్యులు అస్సలు ఉండరు</b> — ఇది నిజానికి enterprise సొంత bureaucratic structure కు ఒక extension మాత్రమే, self-government body కాదు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">7. Port Trust</div>
+  <p class="eng">Port trusts are established in port areas like Mumbai, Kolkata, Chennai and so on, for <b>two purposes</b>: (a) to manage and protect the ports, and (b) to provide civic amenities. A port trust is created by an <b>Act of Parliament</b>, and consists of <b>both elected and nominated members</b>; its chairman is an official. Its civic functions are more or less similar to those of a municipality.</p>
+  <div class="te">Mumbai, Kolkata, Chennai వంటి port areas లో port trusts ఏర్పాటవుతాయి — వీటికి <b>రెండు purposes</b> ఉంటాయి — (a) ports ను manage చేసి, protect చేయడం, (b) civic amenities అందించడం. Port trust ను <b>Parliament Act</b> ద్వారా ఏర్పాటు చేస్తారు, దీనిలో <b>ఎన్నికైన, నామినేటెడ్ సభ్యులు రెండూ</b> ఉంటారు; దీని chairman ఒక official. దీని civic functions municipality functions కు దాదాపు సమానంగా ఉంటాయి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">8. Special Purpose Agency</div>
+  <p class="eng">Besides these seven area-based (multipurpose) urban bodies, states have also set up certain agencies to undertake designated activities or specific functions that 'legitimately' belong to the domain of municipal corporations, municipalities or other local urban governments. Unlike the other seven, these are <b class="imp">function-based, not area-based</b> — known as 'single purpose', 'uni-purpose' or 'special purpose' agencies, or 'functional local bodies'. Examples include: town improvement trusts, urban development authorities, water supply and sewerage boards, housing boards, pollution control boards, electricity supply boards, and city transport boards. These functional local bodies are established either as <b>statutory bodies</b> by an act of the state legislature, or as <b>departments</b> by an executive resolution. They function as <b>autonomous</b> bodies, dealing with their allotted functions independently of the local urban governments — they are therefore <b>not subordinate agencies</b> of municipal corporations or municipalities.</p>
+  <div class="te">ఈ ఏడు area-based (multipurpose) urban bodies కాకుండా, municipal corporations, municipalities లేదా ఇతర local urban governments 'legitimately' చేయాల్సిన నిర్దిష్ట activities లేదా functions చేయడానికి రాష్ట్రాలు కొన్ని agencies ను కూడా ఏర్పాటు చేశాయి. మిగతా ఏడింటికి భిన్నంగా, ఇవి <b class="imp">function-based, area-based కావు</b> — వీటిని 'single purpose', 'uni-purpose' లేదా 'special purpose' agencies, లేదా 'functional local bodies' అని పిలుస్తారు. ఉదాహరణలు — town improvement trusts, urban development authorities, water supply and sewerage boards, housing boards, pollution control boards, electricity supply boards, city transport boards. ఈ functional local bodies ను రాష్ట్ర శాసనసభ చట్టం ద్వారా <b>statutory bodies</b> గా, లేదా executive resolution ద్వారా <b>departments</b> గా ఏర్పాటు చేస్తారు. ఇవి <b>స్వతంత్రంగా</b> పనిచేస్తాయి, తమకు కేటాయించిన functions ను local urban governments తో సంబంధం లేకుండా చూసుకుంటాయి — కాబట్టి municipal corporations, municipalities కు ఇవి <b>subordinate agencies కావు</b>.</div>
+
+  <table>
+    <caption>All Eight Urban Local Bodies — Quick Comparison</caption>
+    <thead><tr><th style="width:24%">Body</th><th style="width:16%">Basis</th><th style="width:20%">Created by</th><th>Membership</th></tr></thead>
+    <tbody>
+      <tr><td>Municipal Corporation</td><td>Area</td><td>State (or Parl. for UTs)</td><td>Elected + a few nominated</td></tr>
+      <tr><td>Municipality</td><td>Area</td><td>State (or Parl. for UTs)</td><td>Elected + a few nominated</td></tr>
+      <tr><td>Notified Area Committee</td><td>Area</td><td>State (by gazette notification)</td><td>Entirely nominated</td></tr>
+      <tr><td>Town Area Committee</td><td>Area</td><td>State legislature act</td><td>Elected / nominated / mixed</td></tr>
+      <tr><td>Cantonment Board</td><td>Area</td><td class="imp">Central government</td><td>Partly elected, partly nominated</td></tr>
+      <tr><td>Township</td><td>Area</td><td>Public enterprise</td><td class="imp">No elected members</td></tr>
+      <tr><td>Port Trust</td><td>Area</td><td>Act of Parliament</td><td>Elected + nominated</td></tr>
+      <tr><td>Special Purpose Agency</td><td class="imp">Function, not area</td><td>State act / executive resolution</td><td>Varies — autonomous body</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Township, Port Trust, Special Purpose Agency</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who runs a township, and its member type?</td><td>Public enterprise's town administrator — no elected members</td></tr>
+      <tr><td>Port trust — two purposes?</td><td>Manage/protect ports; provide civic amenities</td></tr>
+      <tr><td>How is a Special Purpose Agency different from the other seven?</td><td>Function-based, not area-based</td></tr>
+      <tr><td>Are special purpose agencies subordinate to municipalities?</td><td>No — they function autonomously</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 13 ═══════════ -->
+<div class="page">
+<div class="sub">Municipal Personnel · Municipal Revenue</div>
+
+<div class="para">
+  <div class="ptitle gn" style="margin-top:0">Municipal Personnel — Three Systems</div>
+  <p class="eng">There are three types of municipal personnel systems in India, and personnel in urban governments may belong to any one, or all three, of them. (1) <b class="term">Separate Personnel System</b>: each local body appoints, administers and controls its own personnel — they are <b>not transferable</b> to other local bodies. It is the <b>most widely prevalent</b> system, upholding local autonomy and promoting undivided loyalty. (2) <b class="term">Unified Personnel System</b>: the <b>state government</b> appoints, administers and controls municipal personnel — state-wide cadres/services are created for all urban bodies in the state, and personnel are transferable <b>between local bodies</b> in the state. This system is prevalent in Andhra Pradesh, Tamil Nadu, Uttar Pradesh, Rajasthan, Madhya Pradesh and so on. (3) <b class="term">Integrated Personnel System</b>: personnel of the state government and of local bodies form part of the <b>same service</b> — municipal personnel are members of state services, transferable not only between local bodies but also between local bodies and state government departments, so there is <b class="imp">no distinction</b> between local civil service and state civil service. This system is prevalent in Odisha, Bihar, Karnataka, Punjab, Haryana and others.</p>
+  <div class="te">భారతదేశంలో municipal personnel systems మూడు రకాలు, urban governments లో పనిచేసే personnel వీటిలో ఏదో ఒక దానికి, లేదా మూడింటికీ చెందినవారు కావొచ్చు. (1) <b class="term">Separate Personnel System</b>: ఒక్కో local body తన సొంత personnel ను నియమించి, నిర్వహించి, నియంత్రిస్తుంది — వీరిని ఇతర local bodies కు <b>transfer చేయరు</b>. ఇది <b>అత్యంత విస్తృతంగా</b> అమల్లో ఉన్న వ్యవస్థ, local autonomy ను, ఒకే చోటికి పూర్తి విధేయతను ప్రోత్సహిస్తుంది. (2) <b class="term">Unified Personnel System</b>: municipal personnel ను <b>రాష్ట్ర ప్రభుత్వమే</b> నియమిస్తుంది, నిర్వహిస్తుంది, నియంత్రిస్తుంది — రాష్ట్రంలోని అన్ని urban bodies కోసం state-wide cadres/services ఏర్పాటు చేస్తారు, personnel రాష్ట్రంలోని <b>local bodies మధ్య transfer</b> అవుతారు. Andhra Pradesh, Tamil Nadu, Uttar Pradesh, Rajasthan, Madhya Pradesh వంటి రాష్ట్రాల్లో ఈ వ్యవస్థ అమల్లో ఉంది. (3) <b class="term">Integrated Personnel System</b>: రాష్ట్ర ప్రభుత్వ personnel, local bodies personnel రెండూ <b>ఒకే service</b> లో భాగం — municipal personnel రాష్ట్ర services సభ్యులే, local bodies మధ్యే కాక, local bodies, రాష్ట్ర ప్రభుత్వ departments మధ్య కూడా transfer అవుతారు — దీనివల్ల local civil service, state civil service మధ్య <b class="imp">తేడా ఉండదు</b>. Odisha, Bihar, Karnataka, Punjab, Haryana వంటి రాష్ట్రాల్లో ఈ వ్యవస్థ అమల్లో ఉంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">National Training Institutions for Municipal Personnel</div>
+  <p class="eng">Several national-level institutions provide training to municipal personnel: (1) the <b>All-India Institute of Local Self-Government</b> (Mumbai), constituted in <b class="hlg">1927</b> — a private registered society; (2) the <b>Centre for Urban and Environmental Studies</b> (New Delhi), set up in <b class="hlg">1967</b> on the recommendation of the Nur-ud-din Ahmed Committee (1963-65); (3) <b>Regional Centres</b> for Urban and Environmental Studies at Kolkata, Lucknow, Hyderabad and Mumbai, set up in <b class="hlg">1968</b>, again on that committee's recommendation; (4) the <b>National Institute of Urban Affairs</b> (New Delhi), established in <b class="hlg">1976</b>; and (5) the <b>Human Settlement Management Institute</b> (New Delhi), established in <b class="hlg">1985</b>.</p>
+  <div class="te">Municipal personnel కు training ఇచ్చే అనేక national-level institutions ఉన్నాయి — (1) <b class="hlg">1927</b> లో ఏర్పాటైన <b>All-India Institute of Local Self-Government</b> (Mumbai) — ఇది ఒక private registered society; (2) Nur-ud-din Ahmed Committee (1963-65) సిఫారసుపై <b class="hlg">1967</b> లో ఏర్పాటైన <b>Centre for Urban and Environmental Studies</b> (New Delhi); (3) అదే committee సిఫారసుపై <b class="hlg">1968</b> లో Kolkata, Lucknow, Hyderabad, Mumbai లలో ఏర్పాటైన <b>Regional Centres</b>; (4) <b class="hlg">1976</b> లో స్థాపించిన <b>National Institute of Urban Affairs</b> (New Delhi); (5) <b class="hlg">1985</b> లో స్థాపించిన <b>Human Settlement Management Institute</b> (New Delhi).</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Municipal Personnel</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Most widely prevalent personnel system?</td><td>Separate Personnel System</td></tr>
+      <tr><td>Which system has no local/state civil service distinction?</td><td>Integrated Personnel System</td></tr>
+      <tr><td>States with Unified Personnel System (examples)?</td><td>AP, Tamil Nadu, UP, Rajasthan, MP</td></tr>
+      <tr><td>Oldest training institution (1927)?</td><td>All-India Institute of Local Self-Government, Mumbai (private society)</td></tr>
+      <tr><td>Which committee's recommendation created 2 training bodies?</td><td>Nur-ud-din Ahmed Committee (1963-65) — CUES 1967 + Regional Centres 1968</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Municipal Revenue — Five Sources</div>
+  <p class="eng">There are five sources of income for urban local bodies: (1) <b class="term">Tax Revenue</b> — property tax (the <b class="imp">most important</b> tax revenue source), entertainment tax, advertisement tax, professional tax, water tax, animal tax, lighting tax, pilgrim tax, market tax, toll on new bridges, plus cesses like library/education/beggary cess; (2) <b class="term">Non-Tax Revenue</b> — rent on municipal properties, fees and fines, royalty, profits/dividends, interest, and <b>user charges</b> (payment for public utilities like water, sanitation, sewerage charges) plus miscellaneous receipts; (3) <b class="term">Grants</b> — from Central and state governments, for development programmes, infrastructure schemes and urban reform initiatives; (4) <b class="term">Devolution</b> — transfer of funds to urban local bodies from the state government, made on the basis of the <b>State Finance Commission's</b> recommendations; and (5) <b class="term">Loans</b> — raised from the state government and financial institutions to meet capital expenditure, though borrowing from financial institutions or other bodies requires the state government's approval.</p>
+  <div class="te">Urban local bodies కు ఆదాయం వచ్చే ఐదు మూలాలు ఉన్నాయి — (1) <b class="term">Tax Revenue</b> — property tax (<b class="imp">అత్యంత ముఖ్యమైన</b> tax revenue మూలం), entertainment tax, advertisement tax, professional tax, water tax, animal tax, lighting tax, pilgrim tax, market tax, కొత్త bridges పై toll, library/education/beggary cess వంటివి; (2) <b class="term">Non-Tax Revenue</b> — municipal properties పై rent, fees, fines, royalty, profits/dividends, interest, <b>user charges</b> (water, sanitation, sewerage charges వంటి public utilities కు చెల్లింపు), ఇతర receipts; (3) <b class="term">Grants</b> — development programmes, infrastructure schemes, urban reform initiatives కోసం Central, రాష్ట్ర ప్రభుత్వాల నుండి; (4) <b class="term">Devolution</b> — <b>State Finance Commission</b> సిఫారసుల ఆధారంగా రాష్ట్ర ప్రభుత్వం నుండి urban local bodies కు నిధుల బదిలీ; (5) <b class="term">Loans</b> — capital expenditure కోసం రాష్ట్ర ప్రభుత్వం, financial institutions నుండి తీసుకునే loans — financial institutions లేదా ఇతర బాడీస్ నుండి రుణం తీసుకోవాలంటే రాష్ట్ర ప్రభుత్వ ఆమోదం అవసరం.</div>
+
+  <table>
+    <caption>Five Sources of Municipal Revenue</caption>
+    <thead><tr><th style="width:20%">Source</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>Tax Revenue</td><td class="imp">Property tax (most important)</td></tr>
+      <tr><td>Non-Tax Revenue</td><td>User charges — water/sanitation/sewerage</td></tr>
+      <tr><td>Grants</td><td>Central + state, for development/infra schemes</td></tr>
+      <tr><td>Devolution</td><td>Fund transfer from state, per State Finance Commission</td></tr>
+      <tr><td>Loans</td><td>From state govt / financial institutions, for capital expenditure</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Municipal Revenue</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Most important tax revenue source?</td><td>Property tax</td></tr>
+      <tr><td>What are "user charges"?</td><td>Payment for public utilities — water, sanitation, sewerage</td></tr>
+      <tr><td>Basis of Devolution?</td><td>State Finance Commission's recommendations</td></tr>
+      <tr><td>Condition on borrowing from financial institutions?</td><td>Needs state government's approval</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 14 ═══════════ -->
+<div class="page">
+<div class="sub">Central Council of Local Government</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Central Council of Local Government</div>
+  <p class="eng">The <b class="term">Central Council of Local Government</b> was set up in <b class="hlg">1954</b>, constituted under <b class="hlg">Article 263</b> of the Constitution by an order of the President — Article 263 is the same provision that also allows for bodies like the Inter-State Council, since it empowers the President to establish a body to coordinate between the Centre and states. It was originally named the Central Council of Local <b>Self</b>-Government, but the word 'self-government' was found superfluous and dropped in the 1980s, renaming it simply the Central Council of Local Government. Till <b class="hlg">1958</b>, it dealt with both rural and urban local governments, but after 1958 it deals with <b class="imp">urban local government only</b> — rural local government having, in effect, moved to the panchayati raj framework studied in earlier chapters.</p>
+  <div class="te"><b class="term">Central Council of Local Government</b> ను <b class="hlg">1954</b> లో ఏర్పాటు చేశారు, రాజ్యాంగంలోని <b class="hlg">Article 263</b> కింద President ఆదేశం ద్వారా దీన్ని constitute చేశారు — Inter-State Council వంటి బాడీస్ ను కూడా అనుమతించే నిబంధన ఇదే, ఎందుకంటే Centre, రాష్ట్రాల మధ్య సమన్వయం కోసం ఒక బాడీ ఏర్పాటు చేసే అధికారం President కు Article 263 ఇస్తుంది. దీన్ని మొదట Central Council of Local <b>Self</b>-Government అని పిలిచేవారు, కానీ 'self-government' అనే పదం superfluous అని భావించి 1980ల్లో దాన్ని తీసేసి, కేవలం Central Council of Local Government గా పేరు మార్చారు. <b class="hlg">1958</b> వరకూ ఇది rural, urban local governments రెండింటినీ చూసేది, 1958 తర్వాత ఇది <b class="imp">urban local government ను మాత్రమే</b> చూస్తుంది — rural local government వాస్తవానికి ముందటి chapters లో చదివిన panchayati raj framework లోకి మారింది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Composition &amp; Functions</div>
+  <p class="eng">The Council is a purely <b class="imp">advisory body</b>. It consists of the <b>Minister for Housing and Urban Affairs</b> in the Government of India, and the ministers for local self-government in the states — the Union minister acts as the <b>Chairman</b> of the Council. Its functions with regard to local government include: (1) considering and recommending policy matters; (2) making proposals for legislation; (3) examining the possibility of cooperation between the Centre and states; (4) drawing up a common programme of action; (5) recommending Central financial assistance; and (6) reviewing the work done by local bodies with that Central financial assistance.</p>
+  <div class="te">ఈ Council పూర్తిగా <b class="imp">advisory body</b>. దీనిలో Government of India లోని <b>Minister for Housing and Urban Affairs</b>, రాష్ట్రాల్లోని local self-government మంత్రులు ఉంటారు — Union మంత్రి Council <b>Chairman</b> గా వ్యవహరిస్తారు. Local government విషయంలో దీని functions — (1) policy విషయాలను పరిశీలించి సిఫారసు చేయడం; (2) legislation కోసం ప్రతిపాదనలు చేయడం; (3) Centre, రాష్ట్రాల మధ్య సహకారం అవకాశాలను పరిశీలించడం; (4) common programme of action రూపొందించడం; (5) Central financial assistance సిఫారసు చేయడం; (6) ఆ Central financial assistance తో local bodies చేసిన పనిని review చేయడం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Central Council of Local Government</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Constitutional basis?</td><td>Article 263, by Presidential order (1954)</td></tr>
+      <tr><td>Original name, and why changed?</td><td>Central Council of Local Self-Government → "self" dropped as superfluous (1980s)</td></tr>
+      <tr><td>Scope after 1958?</td><td>Urban local government only</td></tr>
+      <tr><td>Who chairs the Council?</td><td>Union Minister for Housing and Urban Affairs</td></tr>
+      <tr><td>Is the Council's advice binding?</td><td>No — it is purely an advisory body</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలాలు — 74th Constitutional Amendment Act, 1992; Cantonments Act, 2006; Rural-Urban Relationship Committee Report (1963-66); Article 263, Constitution of India; M. Laxmikanth, Indian Polity, 8th Edition, Ch.40.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 15 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Municipal Governance in the News <span class="caasof">(as of 17.08.2026, verified via live web search on this date — re-verify closer to your exam date, since litigation and mission progress figures both keep evolving)</span></div>
+
+    <p class="eng"><b>1. Urban Local Body elections &amp; the "50% reservation ceiling" litigation:</b> The book's own text on Reservation of Seats (Article 243T) — SC/ST reservation proportional to population, women's reservation at not less than one-third — is exactly the constitutional backdrop against which a major, still-unfolding controversy has played out over OBC reservation in municipal and other local-body elections, particularly in <b>Maharashtra</b>. In <b class="hlp">Vikas Kishanrao Gawali vs State of Maharashtra</b> (<b class="hlg">4 March 2021</b>), the Supreme Court upheld OBC reservation in local bodies only subject to a <b class="term">"triple test"</b> — (i) setting up a dedicated commission to conduct a rigorous empirical inquiry into backwardness; (ii) specifying the proportion of OBC reservation warranted, local-body-wise, based on that inquiry; and (iii) ensuring that total SC+ST+OBC reservation does not exceed the <b class="imp">50% aggregate ceiling</b> the courts have read into Article 243T/243D. Because Maharashtra's OBC quota (27%) combined with existing SC/ST quotas was alleged to breach this ceiling in various local bodies, the Court stayed OBC reservation in numerous seats from December 2021 onward, causing municipal and other local-body elections across the state to be repeatedly postponed — some bodies went <b>years past the expiry</b> of their constitutional five-year term (Article 243U) without fresh elections, since delimitation and reservation disputes kept the State Election Commission from proceeding.</p>
+    <div class="te"><b>1. Urban Local Body ఎన్నికలు, "50% reservation ceiling" వ్యాజ్యం:</b> Reservation of Seats (Article 243T) పై పుస్తకం సొంత టెక్స్ట్ — SC/ST reservation జనాభాకు అనుపాతంలో, మహిళల reservation కనీసం మూడో వంతు — ఇదే constitutional నేపథ్యంలో, ముఖ్యంగా <b>Maharashtra</b> లో, municipal, ఇతర local-body ఎన్నికల్లో OBC reservation పై ఇప్పటికీ కొనసాగుతున్న ఒక పెద్ద వివాదం నడుస్తోంది. <b class="hlp">Vikas Kishanrao Gawali vs State of Maharashtra</b> (<b class="hlg">4 మార్చి 2021</b>) కేసులో, Supreme Court local bodies లో OBC reservation ను <b class="term">"triple test"</b> కు లోబడి మాత్రమే సమర్థించింది — (i) backwardness పై కఠినమైన empirical విచారణ చేయడానికి ప్రత్యేక commission ఏర్పాటు; (ii) ఆ విచారణ ఆధారంగా, local-body వారీగా ఎంత OBC reservation సబబో నిర్దేశించడం; (iii) మొత్తం SC+ST+OBC reservation courts Article 243T/243D లో చదివిన <b class="imp">50% aggregate ceiling</b> దాటకుండా చూడటం. Maharashtra OBC కోటా (27%) ఇప్పటికే ఉన్న SC/ST కోటాలతో కలిస్తే వివిధ local bodies లో ఈ ceiling దాటుతుందని ఆరోపణ రావడంతో, డిసెంబర్ 2021 నుండి Court అనేక సీట్లలో OBC reservation ను stay చేసింది — దీనివల్ల రాష్ట్రవ్యాప్తంగా municipal, ఇతర local-body ఎన్నికలు పదేపదే వాయిదా పడ్డాయి — కొన్ని బాడీస్ తమ constitutional ఐదు సంవత్సరాల term (Article 243U) ముగిశాక కూడా <b>సంవత్సరాల తరబడి</b> fresh ఎన్నికలు లేకుండా కొనసాగాయి, ఎందుకంటే delimitation, reservation వివాదాల వల్ల State Election Commission ముందుకు వెళ్ళలేకపోయింది.</div>
+
+    <p class="eng"><b>2. Resolution, the January 2026 deadline, and the actual outcome:</b> On <b class="hlg">6 May 2025</b>, the Supreme Court directed the State Election Commission to <b>notify</b> elections within four weeks and endeavour to conclude them within four months, and through 2025 the OBC quota dispute was progressively resolved for most bodies. Since that four-month target was still missed, a bench hearing complaints about the continuing delay set firm outer deadlines on <b class="hlg">16 September 2025</b> — directing that the <b>delimitation exercise</b> be finalised by <b class="hlg">31 October 2025</b>, EVM deployment compliance be reported by <b class="hlg">30 November 2025</b>, and that <b class="imp">all pending local body elections</b> in Maharashtra — spanning <b class="hlg">29 municipal corporations</b> (including the BMC) plus numerous Zila Parishads, Panchayat Samitis and municipalities — be completed by <b class="imp">31 January 2026</b>, with the Court initially rejecting the State Election Commission's excuses of staff shortages and EVM unavailability. <b>The deadline was met for the municipal-corporation tier that this chapter covers:</b> polling for the BMC and the other 28 municipal corporations was held on <b class="hlg">15 January 2026</b>, with counting the next day — results announced on <b class="hlg">16-17 January 2026</b> showed the BJP-Shiv Sena "Mahayuti" alliance sweeping most corporations, including the BMC. The panchayat-tier bodies covered by the same order — Zila Parishads and Panchayat Samitis (see the parallel Maharashtra update in Chapter 39, Panchayati Raj) — were <b>not</b> completed by 31 January: the Supreme Court subsequently permitted the State Election Commission a further extension for those polls, and Zila Parishad results (Mahayuti again dominant, winning 552 of the 731 declared seats) were announced only on <b class="hlg">10 February 2026</b>. This sequence is a live illustration of how Article 243T (reservation), Article 243U (five-year term/dissolution) and Article 243ZA (State Election Commission) interact in practice — and of how a case can be pending at the Supreme Court for years even though the book's underlying constitutional text has not changed at all.</p>
+    <div class="te"><b>2. పరిష్కారం, జనవరి 2026 గడువు, వాస్తవ ఫలితం:</b> <b class="hlg">6 మే 2025</b> న, నాలుగు వారాల్లో ఎన్నికలు <b>notify</b> చేయాలని, నాలుగు నెలల్లో పూర్తి చేయడానికి ప్రయత్నించాలని Supreme Court State Election Commission ను ఆదేశించింది, 2025 అంతటా చాలా బాడీస్ కు OBC కోటా వివాదం క్రమంగా పరిష్కారమైంది. ఆ నాలుగు నెలల గడువు కూడా చేరుకోలేకపోవడంతో, ఆలస్యంపై ఫిర్యాదులు విన్న ఒక bench <b class="hlg">16 సెప్టెంబర్ 2025</b> న గట్టి final గడువులు నిర్దేశించింది — <b>delimitation exercise</b> ను <b class="hlg">31 అక్టోబర్ 2025</b> నాటికి పూర్తి చేయాలని, EVM deployment compliance report <b class="hlg">30 నవంబర్ 2025</b> నాటికి ఇవ్వాలని, Maharashtra లో <b class="hlg">29 municipal corporations</b> (BMC తో సహా) తో పాటు అనేక Zila Parishads, Panchayat Samitis, municipalities లో <b class="imp">పెండింగ్ లో ఉన్న అన్ని local body ఎన్నికలను</b> <b class="imp">31 జనవరి 2026</b> నాటికి పూర్తి చేయాలని ఆదేశించింది — staff కొరత, EVM అందుబాటులో లేదన్న State Election Commission సాకులను Court మొదట్లో తిరస్కరించింది. <b>ఈ chapter కవర్ చేసే municipal-corporation tier వరకు ఈ గడువు వాస్తవంగా పాటించబడింది:</b> BMC, మిగతా 28 municipal corporations లకు <b class="hlg">15 జనవరి 2026</b> న పోలింగ్ జరిగింది, మరుసటి రోజు కౌంటింగ్ జరిగింది — <b class="hlg">16-17 జనవరి 2026</b> న వెల్లడైన ఫలితాల్లో BJP-Shiv Sena "Mahayuti" కూటమి BMC తో సహా చాలా corporations లో గెలిచింది. అదే ఆదేశంలో భాగమైన panchayat-tier బాడీస్ — Zila Parishads, Panchayat Samitis (Chapter 39, Panchayati Raj లో సమాంతర Maharashtra అప్‌డేట్ చూడండి) — జనవరి 31 నాటికి పూర్తి కాలేదు: ఆ ఎన్నికలకు State Election Commission కు Supreme Court తర్వాత మరో extension ఇచ్చింది, Zila Parishad ఫలితాలు (Mahayuti మళ్ళీ ఆధిపత్యం — ప్రకటించిన 731 సీట్లలో 552 గెలిచింది) <b class="hlg">10 ఫిబ్రవరి 2026</b> న మాత్రమే వెల్లడయ్యాయి. Article 243T (reservation), Article 243U (ఐదు సంవత్సరాల term/dissolution), Article 243ZA (State Election Commission) ఆచరణలో ఎలా కలిసి పనిచేస్తాయో చూపించే ఒక live ఉదాహరణ ఇది — పుస్తకం రాజ్యాంగ టెక్స్ట్ ఏమాత్రం మారకపోయినా, ఒక కేసు Supreme Court లో సంవత్సరాల తరబడి పెండింగ్ లో ఎలా ఉండగలదో కూడా ఇది చూపిస్తుంది.</div>
+
+    <p class="eng"><b>3. Smart Cities Mission — near-completion status:</b> The Smart Cities Mission (launched <b class="hlg">25 June 2015</b>, covering <b class="hlg">100</b> cities) formally ended on <b class="hlg">31 March 2025</b>, but implementation of its last projects continued afterward. Government figures released in <b class="hlg">August 2026</b> (data as of <b class="hlg">31 March 2026</b>) show <b class="imp">97%</b> of the Mission's <b class="hlg">8,064</b> sanctioned projects completed (7,790 projects), representing about <b class="hlg">95%</b> of total sanctioned project value (₹1,56,257 crore of ₹1,64,811 crore) — with roughly <b class="hlg">274</b> projects worth about ₹8,554 crore still incomplete, and performance varying significantly across cities. While the Smart Cities Mission itself is a <b>Central-sector scheme</b> rather than part of the 74th CAA's constitutional machinery, its projects were implemented through Special Purpose Vehicles working alongside municipal corporations, making it directly relevant to the "urban planning" and "public amenities" items of the Twelfth Schedule studied earlier in this chapter.</p>
+    <div class="te"><b>3. Smart Cities Mission — దాదాపు పూర్తి స్థితి:</b> Smart Cities Mission (<b class="hlg">25 జూన్ 2015</b> న ప్రారంభం, <b class="hlg">100</b> నగరాలు కవర్ చేస్తూ) అధికారికంగా <b class="hlg">31 మార్చి 2025</b> న ముగిసింది, కానీ దాని చివరి projects అమలు ఆ తర్వాత కూడా కొనసాగింది. <b class="hlg">ఆగస్టు 2026</b> లో విడుదలైన ప్రభుత్వ గణాంకాల ప్రకారం (డేటా <b class="hlg">31 మార్చి 2026</b> నాటికి) Mission కు sanction అయిన <b class="hlg">8,064</b> projects లో <b class="imp">97%</b> (7,790 projects) పూర్తయ్యాయి, మొత్తం sanctioned project విలువలో దాదాపు <b class="hlg">95%</b> (₹1,64,811 కోట్లలో ₹1,56,257 కోట్లు) పూర్తయినట్టు — దాదాపు <b class="hlg">274</b> projects (సుమారు ₹8,554 కోట్ల విలువ) ఇంకా అసంపూర్తిగానే ఉన్నాయి, నగరాల వారీగా పనితీరు గణనీయంగా మారుతోంది. Smart Cities Mission అనేది 74th CAA constitutional యంత్రాంగంలో భాగం కాకుండా ఒక <b>Central-sector scheme</b> అయినప్పటికీ, దీని projects ను municipal corporations తో పాటు పనిచేసే Special Purpose Vehicles ద్వారా అమలు చేశారు — దీనివల్ల ఇది ఈ chapter లో ముందు చదివిన Twelfth Schedule లోని "urban planning", "public amenities" అంశాలకు నేరుగా సంబంధించినది.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — ULB elections litigation &amp; Smart Cities Mission close-out</caption>
+      <thead><tr><th style="width:26%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">4 Mar 2021</td><td>Vikas Gawali case — SC lays down the "triple test" for OBC local-body reservation</td></tr>
+        <tr><td class="hlg">Dec 2021</td><td>SC stays OBC reservation in numerous seats — elections stall across Maharashtra</td></tr>
+        <tr><td class="hlg">6 May 2025</td><td>SC directs SEC to notify elections within 4 weeks, conclude within 4 months</td></tr>
+        <tr><td class="hlg">31 Mar 2025</td><td>Smart Cities Mission formally ends (implementation continues)</td></tr>
+        <tr><td class="hlg">16 Sep 2025</td><td>SC sets firm outer deadlines (delimitation, EVM compliance, final poll date)</td></tr>
+        <tr><td class="hlg">31 Oct 2025 / 30 Nov 2025</td><td>Court-ordered deadlines — delimitation finalised / EVM compliance reported</td></tr>
+        <tr><td class="hlg">15-17 Jan 2026</td><td>Polling (15 Jan), counting &amp; results — 29 Maharashtra municipal corporations; Mahayuti sweeps BMC and most corporations</td></tr>
+        <tr><td class="hlg">31 Jan 2026</td><td>Hard SC deadline — met for the 29 municipal corporations; Zila Parishad/Panchayat Samiti polls (Ch.39) separately extended by SC</td></tr>
+        <tr><td class="hlg">10 Feb 2026</td><td>Zila Parishad results declared — Mahayuti wins 552 of 731 declared seats</td></tr>
+        <tr><td class="hlg">Aug 2026</td><td>Smart Cities Mission — 97% of projects, ~95% of project value completed</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: continue to cite the book's constitutional-text position on reservation (Art. 243T), duration/dissolution (Art. 243U) and the State Election Commission (Art. 243ZA) as the stable, core answer. But be alert for current-affairs MCQs testing awareness of the Maharashtra ULB election saga and the Smart Cities Mission's closure — both are exactly the kind of live, evolving developments the Rulebook flags as needing re-verification before each exam cycle.</p>
+    <div class="te">Exam కోసం — reservation (Art. 243T), duration/dissolution (Art. 243U), State Election Commission (Art. 243ZA) పై పుస్తకం రాజ్యాంగ టెక్స్ట్ స్థానాన్నే స్థిరమైన, ప్రధాన సమాధానంగా కొనసాగించి చదవండి. కానీ Maharashtra ULB election వ్యవహారంపై, Smart Cities Mission ముగింపుపై అవగాహన పరీక్షించే current-affairs MCQs కు అప్రమత్తంగా ఉండండి — ఇవి రెండూ సరిగ్గా Rulebook సూచించిన రకమైన అంశాలు, ప్రతి exam cycle ముందూ re-verify చేయాల్సిన సజీవమైన, అభివృద్ధి చెందుతున్న పరిణామాలు.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 40 — Municipalities · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+</body></html>

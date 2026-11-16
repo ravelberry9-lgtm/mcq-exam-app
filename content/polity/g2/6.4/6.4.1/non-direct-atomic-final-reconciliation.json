@@ -1,0 +1,62 @@
+{
+  "chapter": "6.4.1",
+  "review_date": "2026-11-08",
+  "scope": "Reconcile the existing 211 non-direct source-occurrence rows against later finite dispositions, canonical questions and explicit exclusions. This is not a new inventory and not a certified unique-fact denominator.",
+  "inputs": [
+    "remaining-atomic-status-inventory-agent.json",
+    "finite-residual-closure-agent.json",
+    "atomic-audit-checkpoint-agent.json",
+    "review-closure-six-independent-solve.json",
+    "review-publisher-practice-closure.json"
+  ],
+  "reconciliation": {
+    "historical_non_direct_occurrence_rows": 211,
+    "certified_unique_denominator": false,
+    "finite_specific_residual_rows": 41,
+    "finite_rows_with_further_action_pending": 0,
+    "explicit_verified_gap_rows_after_finite_treatment": 0,
+    "independent_review_ids_previously_pending": 6,
+    "independent_review_ids_now_passed": 6,
+    "new_grouped_question_batch_required": false
+  },
+  "why_no_new_batch": [
+    "The 211 figure counts occurrences with repeated claims, context-only dates/names, partial components, source examples and strict provenance holds; it does not establish 211 unique missing facts.",
+    "All 41 later-identified specific residuals have a finite outcome: existing canonical test, newly accepted canonical test, qualified context, or a deliberate unscored exclusion.",
+    "The checkpoint records zero remaining explicit verified gap rows, and the six outstanding independent solves now pass without content changes.",
+    "Adding questions for already-tested components would clone facts; adding questions for unresolved quotations, blanket source claims or unidentified current-status assertions would convert uncertainty into misinformation."
+  ],
+  "canonical_or_scored_proof_classes": [
+    {
+      "class": "constitutional text and Article structure",
+      "evidence": "Fact-register and atomic page reports link Articles12-35, rights scope, remedies, emergencies and amendment limits to current questions."
+    },
+    {
+      "class": "case holdings and chronology",
+      "evidence": "Finite residual report records accepted questions or qualified unscored metadata for the remaining named-case components."
+    },
+    {
+      "class": "historical proposals and rights development",
+      "evidence": "The last six pending historical items were independently solved in both languages and passed."
+    },
+    {
+      "class": "publisher exercise concepts",
+      "evidence": "Two distinct items are approved; twelve duplicate concepts defer to canonical questions; thirteen source defects remain specifically unscored."
+    }
+  ],
+  "final_exclusions_not_question_gaps": [
+    "Unverified quotation or attribution claims, including the Macaulay attribution.",
+    "Unidentified or undated current-status assertions whose case/order/instrument is not established.",
+    "Blanket occupational, commercial-use, religious-exception or inter-State rules where the saved source overgeneralises the legal position.",
+    "Publisher stems with multiple defective answers, unspecified freedoms, overbroad abolition language or conflated legislative competence.",
+    "Exact GBK wording uncertainties remaining after the three-pass ceiling."
+  ],
+  "actual_remaining_limits": [
+    "The saved page maps are occurrence-oriented and do not prove a mathematically exhaustive unique-fact denominator.",
+    "Documented exact-transcription uncertainties cannot be removed without violating the no-fourth-scan rule.",
+    "Browser visual and interaction QA remains separate from successful Flask rendered-response checks.",
+    "Local reproduced Group I papers retain their honest reproduction labels."
+  ],
+  "conclusion": "No evidence-supported, ordinary, distinct and currently untested claim remains in the finite residual set that justifies another question batch. Existing canonical coverage and explicit exclusions close the actionable atomic/source-coverage work without claiming perfect source transcription or exhaustive mathematical coverage.",
+  "chapter_complete_claim": false,
+  "source_image_or_pdf_page_views": 0
+}

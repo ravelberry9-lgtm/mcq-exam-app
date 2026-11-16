@@ -1,0 +1,7 @@
+{% if unit6_is_admin() %}<section class="card u6-adminbar"><p class="small"><b>⚙ Admin</b></p>
+{% if question %}<div class="u6-actions"><a class="btn" href="{{ url_for('polity_admin.edit',item_id=question.id,back=request.full_path.rstrip('?')) }}">✏ Edit this question / సవరించు</a>
+<form method="post" action="{{ url_for('polity_admin.edit',item_id=question.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="back" value="{{ next_url or '' }}"><button class="btn danger" name="action" value="delete" onclick="return confirm('Delete this question? You can restore it later from Admin.')">🗑 Delete</button></form></div>{% endif %}
+<details><summary>➕ Add an MCQ to {{ add_chapter }} / ఈ అధ్యాయానికి MCQ జోడించండి</summary>
+<form method="post" action="{{ url_for('polity_admin.submit') }}" class="u6-admin"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="chapter" value="{{ add_chapter }}"><input type="hidden" name="back" value="{{ request.full_path.rstrip('?') }}">
+<textarea name="text" rows="7" maxlength="8000" required placeholder="Question&#10;A) …&#10;B) …&#10;C) …&#10;D) …&#10;Answer: B&#10;Explanation (optional)"></textarea><button class="btn primary">Save to database / సేవ్</button></form></details>
+<p class="small"><a href="{{ url_for('polity_admin.home') }}">All admin tools</a></p></section>{% endif %}

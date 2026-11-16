@@ -1,0 +1,385 @@
+<style>
+ .fix{display:inline-block;background:#fff3e0;color:#e65100;border-radius:4px;padding:0 5px;font-size:11.5px;font-weight:700;margin-right:3px}
+ .trap{background:#fff8e1;border-left:4px solid #f9a825;padding:4px 8px;border-radius:0 5px 5px 0;font-size:13.5px;margin:5px 0}
+ td.tr{font-size:13px}
+ .page{padding:11mm 11mm 9mm}
+ .fact,.tx{font-size:14px}
+ table.t2 td{font-size:13.5px}
+ /* Quick Revision recall sheet */
+ .qr{columns:2;column-gap:9px}
+ .qb{break-inside:avoid;page-break-inside:avoid;background:#f5f7ff;border:1.5px solid #c5cae9;border-radius:7px;padding:4px 8px 5px;margin:0 0 6px;display:inline-block;width:100%}
+ .qh{font-size:13.5px;font-weight:700;color:#1a237e;border-bottom:1px solid #c5cae9;padding-bottom:2px;margin-bottom:3px}
+ .qi{position:relative;padding-left:11px;margin:1px 0;font-size:12.5px;line-height:1.4}
+ .qi::before{content:"▸";position:absolute;left:0;top:0;color:#5c6bc0;font-weight:700}
+ .qi b{color:#1a237e}
+ .qtrap{background:#fffdf3;border-color:#f9a825}
+ .qtrap .qh{color:#e65100;border-bottom-color:#ffe082}
+ .cr{background:#f1f8e9;border:1.5px solid #aed581;border-radius:7px;padding:5px 9px 6px;margin-top:2px}
+ .cr .qh{color:#1b5e20;border-bottom-color:#c5e1a5}
+ .crg{display:grid;grid-template-columns:1fr 1fr;column-gap:14px}
+ .crq{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:1px dashed #c5e1a5;padding:2px 0;font-size:12.5px;line-height:1.35;break-inside:avoid}
+ .cra{flex:0 0 auto;max-width:50%;text-align:right;background:#fff;color:#1b5e20;border:1px dashed #7cb342;border-radius:5px;padding:0 6px;font-weight:700}
+ .crn{font-size:11.5px;color:#558b2f;margin-top:3px}
+ @media (max-width:760px){.page{width:100%;padding:10px}.g2,.g3{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr 1fr}.header{flex-wrap:wrap}.hmeta{margin-left:0;text-align:left}table{display:block;overflow-x:auto}.qr{columns:1}.crg{grid-template-columns:1fr}.crq{flex-wrap:wrap}.cra{max-width:100%;text-align:left}td,table.t2 td{padding:3px 4px;font-size:13px}td.tr{font-size:12.5px}th{padding:4px 5px;font-size:13px}}
+ @media print{.qb,.crq,.cr{break-inside:avoid;page-break-inside:avoid}}
+</style>
+<div id="recap" class="recap"><!-- PAGE 1 -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Unit 6.8</div>
+    <div class="htitle">
+      <h1>Basic Structure — మౌలిక నిర్మాణ సిద్ధాంతం (1)</h1>
+      <h2>Indian Polity · Lakshmikanth Ch.12 + GBK Ch.29 · APPSC Group 2 · Page 1 of 4</h2>
+    </div>
+    <div class="hmeta">మొదటి దశ: 1951 నుంచి 1973 వరకు<br>Telugu + English</div>
+  </div>
+
+  <div class="sh">❓ మూల ప్రశ్న — ప్రకరణ 368 vs ప్రకరణ 13</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">⚖️ ఘర్షణ ఎక్కడ?</div>
+      <div class="fact">ప్రశ్న: <span class="k">ప్రకరణ 368</span> కింద పార్లమెంటు <b>ప్రాథమిక హక్కులను (Fundamental Rights – FRs)</b> సవరించగలదా?</div>
+      <div class="fact"><span class="k">ప్రకరణ 13</span> ప్రకారం FRs ను తగ్గించే 'law' చెల్లదు. మరి రాజ్యాంగ సవరణ చట్టం కూడా ఈ 'law' కిందకు వస్తుందా? — ఇదే అసలు వివాదం.</div>
+      <div class="fact">పార్లమెంటు చేసే సాధారణ శాసనం <b>ordinary law</b>; రాజ్యాంగ సవరణ చట్టాన్ని మాత్రం <b>constituent power</b> (రాజ్యాంగ నిర్మాణ అధికారం) తో చేస్తుంది.</div>
+    </div>
+    <div class="card">
+      <div class="ch">🔄 సవరణ కూడా 'law' యేనా? ఎవరు ఏమన్నారు</div>
+      <div class="fact"><span class="k">Shankari Prasad (1951)</span>, <span class="k">Sajjan Singh (1964)</span>: <b>కాదు</b> అన్నాయి — కాబట్టి FRs ను తగ్గించే సవరణ కూడా చెల్లుతుంది.</div>
+      <div class="fact"><span class="k">Golak Nath (1967)</span>: <b>అవును</b> అంది — కాబట్టి పార్లమెంటు FRs ను తాకలేదు.</div>
+      <div class="fact"><span class="k">24th Amendment (1971)</span>: సవరణ 'law' <b>కాదు</b> అని రాజ్యాంగంలోనే స్పష్టంగా రాసింది.</div>
+      <div class="fact"><span class="k">Kesavananda Bharati (1973)</span>: సవరణ 'law' <b>కాదు, కానీ</b> సవరణ ద్వారా basic structure ను మార్చలేరు అంది.</div>
+    </div>
+  </div>
+
+  <div class="sh">📋 మొదటి దశ కేసులు &amp; సవరణలు (1951–1973)</div>
+  <table class="t2">
+    <thead><tr><th style="width:15%">కేసు / సవరణ</th><th style="width:7%">సం.</th><th>ముఖ్య విషయాలు (MCQ Facts)</th><th style="width:24%">గుర్తుంచుకోండి / ట్రాప్</th></tr></thead>
+    <tbody>
+      <tr><td><b>Shankari Prasad</b></td><td><span class="tag tb">1951</span></td>
+        <td>• ఆస్తి హక్కును తగ్గించిన <b>1వ సవరణ చట్టం, 1951</b> చెల్లుబాటును సవాలు చేశారు.<br>
+        • తీర్పు: ప్రకరణ 368 సవరణాధికారంలో <b>FRs ను సవరించే అధికారం కూడా ఉంది</b>.<br>
+        • ప్రకరణ 13 లోని 'law' అంటే సాధారణ శాసనం మాత్రమే; సవరణ చట్టం దాని కిందకు రాదు. కాబట్టి FR ను తగ్గించే సవరణ <b>void కాదు</b>.<br>
+        • GBK ప్రకారం 1వ సవరణ <b>ప్రకరణ 31A, 31B</b> ను (9వ షెడ్యూల్ రక్షణ కోసం) చేర్చింది.<br>
+        • అదే 1వ సవరణ <b>ప్రకరణ 15(4)</b> ను కూడా చేర్చింది — కుల ఆధారిత కోటాను కొట్టివేసిన <b>Champakam Dorairajan (1951)</b> తీర్పుకు ఇది జవాబు.</td>
+        <td class="tr">మొదటి కేసులో పార్లమెంటు గెలిచింది. PYQ (గత పరీక్షల ప్రశ్న) కాలక్రమం, పాతది నుంచి కొత్తదానికి: Champakam (1951), Golak Nath, Kesavananda, Minerva Mills.</td></tr>
+      <tr><td><b>Sajjan Singh</b></td><td><span class="tag tb">1964</span></td>
+        <td>• Shankari Prasad అభిప్రాయాన్నే <b>మళ్ళీ ధృవీకరించింది</b>.<br>
+        • తీర్పు ఇచ్చిన తేదీ <b>30 Oct 1964</b>; law report లో ప్రచురణ AIR (All India Reporter) <b>1965</b> SC 845.</td>
+        <td class="tr">1964 తీర్పు ఇచ్చిన సంవత్సరం; 1965 report లో ప్రచురించిన సంవత్సరం.</td></tr>
+      <tr><td><b>Golak Nath</b></td><td><span class="tag tp">1967</span></td>
+        <td>• సవాలు చేసినది: రాష్ట్ర భూసంస్కరణ చట్టాలను 9వ షెడ్యూల్ లో చేర్చిన <b>17వ సవరణ, 1964</b>.<br>
+        • <b>11 మంది</b> న్యాయమూర్తుల ధర్మాసనం <b>6:5</b> మెజారిటీతో తీర్పు ఇచ్చింది; అప్పటి CJI (ప్రధాన న్యాయమూర్తి) <b>K. Subba Rao</b>.<br>
+        • పాత రెండు తీర్పులను తిప్పికొట్టి, FRs కు <b>'transcendental and immutable'</b> (అతీతమైన, మార్చలేని) స్థానం ఇచ్చింది.<br>
+        • సవరణ చట్టం కూడా ప్రకరణ 13 లోని <b>'law'</b> యే అంది. అందువల్ల పార్లమెంటు ఏ FR నూ తగ్గించలేదు, తొలగించలేదు.<br>
+        • <b>Prospective overruling</b> (భవిష్యత్ ప్రభావ రద్దు): 17వ సవరణతో సహా గత సవరణలు చెల్లుతాయి; నిషేధం భవిష్యత్ సవరణలకే వర్తిస్తుంది.<br>
+        • GBK: ఈ సూత్రాన్ని <b>అమెరికా</b> న్యాయశాస్త్రం నుంచి తీసుకున్నారు; భారత్ లో మొదటిసారి ఈ కేసులోనే వాడారు.</td>
+        <td class="tr">ట్రాప్: GBK పట్టిక Golak Nath ను 17వ సవరణ ఎదుట చూపుతుంది — కానీ ఈ కేసు 17వ సవరణను <b>కొట్టివేయలేదు</b> (prospective overruling దాన్ని కాపాడింది).</td></tr>
+      <tr><td><b>24th Amendment</b></td><td><span class="tag tb">1971</span></td>
+        <td>• Golak Nath తీర్పు ప్రభావాన్ని తొలగించడానికి <b>పార్లమెంటు ఇచ్చిన జవాబు</b> ఇది.<br>
+        • <b>ప్రకరణ 13, ప్రకరణ 368</b> రెండింటినీ సవరించింది.<br>
+        • ప్రకరణ 368 కింద constituent power తో పార్లమెంటు ఏ FR నైనా తగ్గించవచ్చు / తొలగించవచ్చు; అలాంటి సవరణ ప్రకరణ 13 లోని 'law' కాదు అని ప్రకటించింది.<br>
+        • ఈ సవరణ చెల్లుబాటును <b>Kesavananda (1973)</b> సమర్థించింది.<br>
+        • GBK: ప్రకరణ 368 శీర్షికను 'Procedure for amendment' నుంచి <b>'Power … to amend … and procedure'</b> గా మార్చింది (అంటే శీర్షికలో 'Power' చేరింది); సవరణ బిల్లుకు <b>రాష్ట్రపతి ఆమోదం తప్పనిసరి</b> చేసింది (p.508, 511).<br>
+        • ప్రకరణ 368 ను ఇప్పటివరకు <b>రెండుసార్లు</b> మాత్రమే సవరించారు: <b>24వ (1971), 42వ (1976)</b> సవరణలతో (GBK p.509).</td>
+        <td class="tr">24వ సవరణ Golak Nath తీర్పుకు జవాబు. GBK PYQ: న్యాయ సమీక్షను పరిమితం చేసిన సవరణలు <b>24th, 42nd</b>.</td></tr>
+      <tr><td><b>25th Amendment</b></td><td><span class="tag tb">1971</span></td>
+        <td>• <b>ప్రకరణ 31C</b> ను చేర్చింది.<br>
+        • Kesavananda కేసులో ప్రకరణ 31C <b>మొదటి భాగాన్ని సమర్థించారు</b>; న్యాయ సమీక్షను అడ్డుకునే <b>రెండో భాగాన్ని కొట్టివేశారు</b> (GBK).</td>
+        <td class="tr">ప్రకరణ 31C పూర్తిగా పోలేదు — న్యాయ సమీక్షను అడ్డుకున్న రెండో భాగం మాత్రమే పోయింది.</td></tr>
+      <tr><td><b>Kesavananda Bharati</b> vs State of Kerala</td><td><span class="tag tp">1973</span></td>
+        <td>• తీర్పు తేదీ <b>24 April 1973</b>; <b>13 మంది</b> ధర్మాసనం (ఇప్పటివరకు అతిపెద్దది); మెజారిటీ <b>7:6</b>; అప్పటి CJI <b>S.M. Sikri</b>.<br>
+        • Golak Nath ను <b>overrule</b> చేసింది; 24వ సవరణను సమర్థించింది: పార్లమెంటు ఏ FR నైనా సవరించవచ్చు, తగ్గించవచ్చు, తొలగించవచ్చు.<br>
+        • <b>కొత్త పరిమితి</b>: ప్రకరణ 368 constituent power తో రాజ్యాంగ <b>'basic structure'</b> ను మార్చలేరు.<br>
+        • అంటే ఒక FR basic structure లో భాగం కానంత వరకు దాన్ని కూడా సవరించవచ్చు.<br>
+        • ఈ సిద్ధాంతం <b>judge-made</b> (న్యాయమూర్తులు రూపొందించినది); రాజ్యాంగంలో ఏ ప్రకరణ లోనూ స్పష్టంగా లేదు — 'amend' అనే పదం అర్థం, రాజ్యాంగ మొత్తం స్వరూపం నుంచి ఊహించినది (Laxmikanth). పార్లమెంటు ఏ చట్టం ద్వారానూ దీన్ని చేర్చలేదు (APPSC G1 2024).<br>
+        • ఈ కేసును <b>'Fundamental Rights case'</b> అని కూడా అంటారు.</td>
+        <td class="tr">Basic Structure సిద్ధాంతం <b>పుట్టిన</b> కేసు ఇదే. ఈ తీర్పు తేదీనే (24 Apr 1973) Waman Rao కేసు 9వ షెడ్యూల్ కు <b>cut-off</b> గా పెట్టింది.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sh">🏛 Kesavananda Bharati — వివరాలు &amp; గుర్తించిన మౌలిక లక్షణాలు</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">🔢 సంఖ్యలు (MCQ favourite)</div>
+      <div class="fact"><span class="k">13</span> మంది ధర్మాసనం, <span class="k">7:6</span> మెజారిటీ; అప్పటి CJI <span class="k">S.M. Sikri</span>.</div>
+      <div class="fact">వాదనలు ఎన్ని రోజులు? తీర్పు పాఠంలోనే (Hegde, Mukherjea JJ) <b>'65 కి పైగా పని దినాలు'</b> అని ఉంది. Laxmikanth ప్రకారం ఇది సుప్రీంకోర్టు (SC) చరిత్రలో <b>అతి సుదీర్ఘ విచారణ</b>, సుమారు <b>ఐదు నెలలు</b>.</div>
+      <div class="fact">తరచూ వినిపించే <b>'68 రోజులు'</b> అనే లెక్క తీర్పు పాఠంలో లేదు.</div>
+      <div class="fact">Golak Nath (11 మంది, 6:5) కంటే Kesavananda (13 మంది, 7:6) ధర్మాసనం పెద్దది; రెండూ అతి స్వల్ప (ఒక్క ఓటు తేడా) మెజారిటీలే.</div>
+    </div>
+    <div class="card">
+      <div class="ch">📜 Kesavananda చెప్పిన లక్షణాలు (Table 12.1, row 1)</div>
+      <div class="fact"><b>రాజ్యాంగ ఆధిక్యత</b> (Supremacy of the Constitution)</div>
+      <div class="fact">శాసన, కార్యనిర్వాహక, న్యాయ వ్యవస్థల మధ్య <b>separation of powers</b></div>
+      <div class="fact"><b>Republican, democratic</b> ప్రభుత్వ రూపం; <b>secular</b> స్వభావం</div>
+      <div class="fact"><b>Federal character</b>; భారత <b>సార్వభౌమత్వం, ఐక్యత</b></div>
+      <div class="fact">వ్యక్తి <b>స్వేచ్ఛ, గౌరవం</b>; <b>welfare state</b> నిర్మించాలనే బాధ్యత; <b>parliamentary system</b></div>
+      <div class="fact">GBK ఈ కేసు లక్షణాలలో <b>'Preamble ఆదర్శాలు'</b> ను కూడా చేర్చింది.</div>
+    </div>
+  </div>
+  <div class="trap">🚩 <b>ట్రాప్స్:</b> Kesavananda Golak Nath ను <b>overrule</b> చేసింది, కానీ పార్లమెంటుకు అపరిమిత అధికారం ఇవ్వలేదు — 'basic structure' అనే కొత్త హద్దు పెట్టింది. &nbsp;|&nbsp; వాదనలు '68 రోజులు' అని రాయకండి; తీర్పు పాఠం ప్రకారం 'over 65 working days'. &nbsp;|&nbsp; 'Basic structure' అనే పదం రాజ్యాంగంలో ఎక్కడా లేదు.</div>
+  <div class="footer">Indian Polity · Unit 6.8 · Page 1 of 4 · ⚠ = మూలాలు ఏకీభవించలేదు / నిర్ధారణ కాలేదు</div>
+</div>
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Unit 6.8</div>
+    <div class="htitle">
+      <h1>పార్లమెంటు vs సుప్రీంకోర్టు — రెండో దశ</h1>
+      <h2>Election case · 42nd Amendment · Minerva Mills · Waman Rao · Page 2 of 4</h2>
+    </div>
+    <div class="hmeta">1975 నుంచి 1980 వరకు (+ Coelho 2007)</div>
+  </div>
+
+  <div class="sh">📅 పోరాటం కాలక్రమం (Timeline)</div>
+  <div class="g2">
+    <div class="tl">
+      <div class="tli"><span class="ty">1951 — Shankari Prasad</span><br><span class="tx">• రాజ్యాంగ సవరణ ప్రకరణ 13 లోని 'law' కాదు; కాబట్టి FRs ను సవరించవచ్చు.</span></div>
+      <div class="tli"><span class="ty">1964 — Sajjan Singh</span><br><span class="tx">• Shankari Prasad అభిప్రాయాన్నే మళ్ళీ ధృవీకరించింది.</span></div>
+      <div class="tli"><span class="ty">1967 — Golak Nath</span><br><span class="tx">• FRs ను తాకలేరు అంది; prospective overruling తో గత సవరణలు నిలిచాయి.</span></div>
+      <div class="tli"><span class="ty">1971 — 24th &amp; 25th Amendments</span><br><span class="tx">• 24వ సవరణ Golak Nath కు జవాబు; 25వ సవరణ ప్రకరణ 31C ను చేర్చింది.</span></div>
+      <div class="tli"><span class="ty">24 Apr 1973 — Kesavananda Bharati</span><br><span class="tx">• ఈ తీర్పుతో basic structure సిద్ధాంతం పుట్టింది.</span></div>
+    </div>
+    <div class="tl">
+      <div class="tli"><span class="ty">7 Nov 1975 — Indira Nehru Gandhi vs Raj Narain</span><br><span class="tx">• సిద్ధాంతాన్ని <b>మొదటిసారి నిజంగా వాడి</b> ఒక సవరణను కొట్టివేశారు.</span></div>
+      <div class="tli"><span class="ty">1976 — 42nd Amendment</span><br><span class="tx">• Emergency లో ప్రకరణ 368(4), (5) చేర్చి అపరిమిత సవరణాధికారానికి ప్రయత్నించారు.</span></div>
+      <div class="tli"><span class="ty">1977 — 43rd Amendment</span><br><span class="tx">• 42వ సవరణ చేర్చిన ప్రకరణ 32A, 131A, 226A, 228A ను తొలగించింది.</span></div>
+      <div class="tli"><span class="ty">1980 — Minerva Mills</span><br><span class="tx">• ప్రకరణ 368(4), (5) కొట్టివేసింది; 'limited amending power' కూడా basic feature.</span></div>
+      <div class="tli"><span class="ty">1980 — Waman Rao</span><br><span class="tx">• 9వ షెడ్యూల్ కు cut-off తేదీ 24 Apr 1973 గా పెట్టింది.</span></div>
+    </div>
+  </div>
+
+  <div class="sh">📋 రెండో దశ — సంపూర్ణ వివరాలు</div>
+  <table class="t2">
+    <thead><tr><th style="width:15%">కేసు / సవరణ</th><th style="width:7%">సం.</th><th>ముఖ్య విషయాలు (MCQ Facts)</th><th style="width:24%">గుర్తుంచుకోండి / ట్రాప్</th></tr></thead>
+    <tbody>
+      <tr><td><b>Indira Nehru Gandhi</b> vs Raj Narain</td><td><span class="tag tp">1975</span></td>
+        <td>• ప్రసిద్ధ పేరు <b>'Election case'</b>; తీర్పు <b>7 Nov 1975</b>.<br>
+        • <b>39వ సవరణ, 1975</b> <b>ప్రకరణ 329A</b> ను చేర్చి, PM, Lok Sabha <b>Speaker</b> ఎన్నికల వివాదాలను అన్ని కోర్టుల పరిధి నుంచి తప్పించింది.<br>
+        • కోర్టు కొట్టివేసింది <b>ప్రకరణ 329A లోని clause (4)</b> ను మాత్రమే — మొత్తం 39వ సవరణను కాదు.<br>
+        • కారణం: ఆ clause వల్ల <b>free and fair elections</b>, న్యాయ సమీక్ష, rule of law దెబ్బతిన్నాయి.<br>
+        • గుర్తించిన లక్షణాలు: సార్వభౌమ ప్రజాస్వామ్య గణతంత్రం, హోదా-అవకాశాల సమానత్వం, లౌకికత &amp; మత స్వేచ్ఛ, rule of law, judicial review, స్వేచ్ఛాయుత ఎన్నికలు.</td>
+        <td class="tr">Basic structure సిద్ధాంతాన్ని <b>మొదట అమలు చేసిన</b> కేసు. ట్రాప్: '39వ సవరణ మొత్తం రద్దయింది' అనేది తప్పు; ప్రకరణ 329A(4) మాత్రమే పోయింది.</td></tr>
+      <tr><td><b>42nd Amendment</b></td><td><span class="tag tp">1976</span></td>
+        <td>• Emergency లో, basic structure సిద్ధాంతానికి <b>జవాబుగా</b> తెచ్చారు.<br>
+        • ఈ సవరణ చట్టంలోని <b>Section 55</b> ప్రకరణ 368 కు clause <b>(4), (5)</b> ను చేర్చింది.<br>
+        • <b>ప్రకరణ 368(4)</b>: ఏ రాజ్యాంగ సవరణనూ ఏ కోర్టులోనూ, ఏ కారణంతోనూ ప్రశ్నించకూడదు.<br>
+        • <b>ప్రకరణ 368(5)</b>: పార్లమెంటు constituent power కు <b>ఏ పరిమితీ లేదు</b>.<br>
+        • <b>Section 4</b>: ప్రకరణ 31C రక్షణను <b>అన్ని ఆదేశిక సూత్రాలకు (Directive Principles of State Policy – DPSPs)</b> విస్తరించింది.<br>
+        • ప్రకరణ <b>32A, 131A, 226A, 228A</b> ను కూడా చేర్చింది; వీటిని <b>43వ సవరణ (1977)</b> తొలగించింది.<br>
+        • ఫలితం: ప్రకరణ 226A పోయినందున High Courts (HCs) ప్రకరణ 226 కింద కేంద్ర చట్టాలనే కాదు, <b>రాజ్యాంగ సవరణల</b> చెల్లుబాటునూ పరిశీలించగలవు. ఉదా: Gujarat HC (2013) 97వ సవరణలోని ఒక భాగం చెల్లదంది; SC (20 Jul 2021, Rajendra N. Shah) ఆ తీర్పును ఎక్కువ భాగం సమర్థించింది.</td>
+        <td class="tr">ప్రకరణ 368(4): సవరణను కోర్టులో ప్రశ్నించకూడదు. ప్రకరణ 368(5): సవరణాధికారానికి పరిమితి లేదు. UPSC 2019 ట్రాప్: 'HC కేంద్ర చట్టాన్ని కొట్టివేయలేదు', 'సవరణను SC ప్రశ్నించలేదు' — <b>రెండూ తప్పు</b>.</td></tr>
+      <tr><td><b>Minerva Mills</b> vs Union of India</td><td><span class="tag tp">1980</span></td>
+        <td>• 42వ సవరణ చేర్చిన <b>ప్రకరణ 368(4), (5)</b> ను కొట్టివేసింది.<br>
+        • కారణం: అవి <b>judicial review</b> ను తొలగించాయి, judicial review ఒక basic feature.<br>
+        • తర్కం: <b>'a limited amending power is one of the basic features'</b>. పరిమిత అధికారం పొందిన పార్లమెంటు (donee) ఆ అధికారాన్ని తనకు తానే అపరిమితంగా మార్చుకోలేదు.<br>
+        • ప్రకరణ 31C ను <b>అన్ని DPSPs</b> కు విస్తరించిన 42వ సవరణ భాగాన్ని కూడా కొట్టివేసింది (GBK p.517).<br>
+        • గుర్తించిన లక్షణాలు: <b>limited amending power</b>, judicial review, <b>FRs-DPSPs మధ్య సామరస్యం, సమతుల్యం</b>.<br>
+        • అధికారిక రాజ్యాంగ పాఠంలో ప్రకరణ 368(4)-(5) ఇంకా ముద్రితమై ఉన్నాయి — అవి చెల్లవని <b>footnote</b> తో.</td>
+        <td class="tr">ట్రాప్: ప్రకరణ 368(4)-(5) ను రాజ్యాంగ పాఠం నుంచి తొలగించలేదు — footnote తో అలాగే ఉన్నాయి.</td></tr>
+      <tr><td><b>Waman Rao</b></td><td><span class="tag tb">1980</span></td>
+        <td>• Kesavananda చెప్పిన basic structure సిద్ధాంతానికే కట్టుబడింది.<br>
+        • 9వ షెడ్యూల్ కు <b>cut-off తేదీ: 24 April 1973</b> (Kesavananda తీర్పు తేదీ).<br>
+        • తేదీలు: short order <b>9 May 1980</b>; కారణాలతో పూర్తి తీర్పు <b>13 Nov 1980</b>; ప్రచురణ (1981) 2 SCC (Supreme Court Cases) 362.<br>
+        • Laxmikanth ఇచ్చే 1980 తీర్పు సంవత్సరం; GBK (p.513) ఇచ్చే 1981 report సంవత్సరం.</td>
+        <td class="tr">APPSC PYQ లో 1981 కూడా ఇచ్చారు.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sh">📑 9వ షెడ్యూల్ &amp; Cut-off — Waman Rao నుంచి I.R. Coelho వరకు</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">📌 Waman Rao — ఖచ్చితమైన పరిధి</div>
+      <div class="fact">24 Apr 1973 <b>కి ముందు</b> చట్టాలను 9వ షెడ్యూల్ లో చేర్చిన సవరణలు <span class="k">చెల్లుతాయి</span>.</div>
+      <div class="fact">ఆ తేదీన <b>లేదా తర్వాత</b> చేసిన అలాంటి సవరణలను basic structure ఆధారంగా <span class="k">సవాలు చేయవచ్చు</span>.</div>
+      <div class="fact">లెక్కలోకి వచ్చేది <b>చట్టాన్ని 9వ షెడ్యూల్ లో చేర్చిన సవరణ తేదీ</b> — ఆ చట్టం మొదట చేసిన తేదీ కాదు.</div>
+      <div class="fact">'సవాలు చేయవచ్చు' అంటే ఆటోమేటిక్ గా చెల్లదని కాదు; basic structure కు నష్టం జరిగిందని <b>రుజువు చేయాలి</b>.</div>
+      <div class="fact">తీర్పును వెనక్కి (1973 ముందు సవరణలకు) ఎందుకు వర్తింపజేయలేదు? దశాబ్దాలుగా స్థిరపడిన <b>భూసంస్కరణ / పన్ను చట్టాలు</b> కూలిపోకుండా ఉండాలని (Laxmikanth).</div>
+    </div>
+    <div class="card">
+      <div class="ch">🧾 I.R. Coelho — 'IX Schedule case'</div>
+      <div class="fact"><span class="k">9 మంది</span> ధర్మాసనం <span class="k">11 Jan 2007</span> న తీర్పు ఇచ్చింది.</div>
+      <div class="fact">Cut-off తర్వాత 9వ షెడ్యూల్ లో చేరిన చట్టాలను basic structure తో పరీక్షించవచ్చు — <b>ప్రకరణ 14, 19, 21</b> సారాంశంతో సహా.</div>
+      <div class="fact">సుప్రీంకోర్టు ఇప్పటికే సమర్థించిన చట్టాలను <b>మళ్ళీ తెరవరు</b>.</div>
+      <div class="fact">గుర్తించిన లక్షణాలు: rule of law, separation of powers, FRs వెనుక ఉన్న సూత్రాలు, judicial review, సమానత్వం.</div>
+    </div>
+  </div>
+  <div class="trap">🚩 <b>Decision year vs Report year:</b> Laxmikanth తీర్పు ఇచ్చిన సంవత్సరం ఇస్తుంది, GBK law report లో ప్రచురించిన సంవత్సరం ఇస్తుంది — రెండూ తప్పు కాదు. MCQ లో తీర్పు సంవత్సరాన్ని ఎంచుకోండి; అది ఆప్షన్ లో లేకపోతే report సంవత్సరం అంగీకరించండి (Waman Rao 1980/1981 · Sajjan Singh 1964/1965).</div>
+  <div class="footer">Indian Polity · Unit 6.8 · Page 2 of 4 · ⚠ = మూలాలు ఏకీభవించలేదు / నిర్ధారణ కాలేదు</div>
+</div>
+<!-- PAGE 3 -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Unit 6.8</div>
+    <div class="htitle">
+      <h1>మౌలిక లక్షణాలు &amp; కేసుల వారీ పరిణామం</h1>
+      <h2>Basic Features (open list) · Table 12.1 cases 1980–2015 · Page 3 of 4</h2>
+    </div>
+    <div class="hmeta">Laxmikanth: సుమారు 20 లక్షణాలు</div>
+  </div>
+
+  <div class="sh">🧩 మౌలిక లక్షణాలు — తెరిచి ఉన్న జాబితా (Non-exhaustive)</div>
+  <div class="fact">స్థిరపడిన స్థితి: పార్లమెంటు రాజ్యాంగంలో <b>ఏ భాగాన్నైనా</b> (FRs తో సహా) సవరించవచ్చు — basic structure కు భంగం కలగనంత వరకు. సుప్రీంకోర్టు <b>ఎప్పుడూ తుది జాబితా ఇవ్వలేదు</b>; కేసు కేసుకూ కొత్త లక్షణాలు బయటపడతాయి. Laxmikanth సుమారు <b>20</b> లక్షణాలు చెబుతుంది; జాబితా మారవచ్చు, కొత్తవి చేరవచ్చు అని GBK (p.514) చెబుతుంది; GBK జాబితాలో అదనంగా <b>హేతుబద్ధత</b> (reasonableness) కూడా ఉంది.</div>
+  <div class="g3" style="margin-top:6px">
+    <div class="card"><div class="ch">🏛 (1) రాజ్య స్వరూపం</div>
+      <div class="fact">రాజ్యాంగ ఆధిక్యత</div>
+      <div class="fact">సార్వభౌమ, ప్రజాస్వామ్య, గణతంత్ర స్వభావం</div>
+      <div class="fact">లౌకిక స్వభావం (Secular)</div>
+      <div class="fact">సమాఖ్య స్వభావం (Federal)</div>
+      <div class="fact">దేశ ఐక్యత, సమగ్రత</div>
+      <div class="fact">Separation of powers</div>
+      <div class="fact">Parliamentary system</div>
+      <div class="fact">Welfare state (సామాజిక-ఆర్థిక న్యాయం)</div></div>
+    <div class="card"><div class="ch">⚖️ (2) న్యాయవ్యవస్థ</div>
+      <div class="fact"><b>Judicial review</b></div>
+      <div class="fact">న్యాయవ్యవస్థ స్వతంత్రత</div>
+      <div class="fact">Rule of law</div>
+      <div class="fact">న్యాయం ప్రభావవంతంగా అందుబాటు (Effective access to justice)</div>
+      <div class="fact">SC అధికారాలు: ప్రకరణ <b>32, 136, 141, 142</b></div>
+      <div class="fact">HC అధికారాలు: ప్రకరణ <b>226, 227</b></div>
+      <div class="fact" style="font-size:13px">ప్రకరణ 136: special leave (ప్రత్యేక అనుమతి అప్పీలు) · ప్రకరణ 141: SC చెప్పిన చట్టం అన్ని కోర్టులకు బద్ధం · ప్రకరణ 142: complete justice (సంపూర్ణ న్యాయం) కోసం ఆదేశాలు</div></div>
+    <div class="card"><div class="ch">🗳 (3) హక్కులు, సమానత్వం, ప్రజాస్వామ్యం</div>
+      <div class="fact">వ్యక్తి స్వేచ్ఛ, గౌరవం</div>
+      <div class="fact">సమానత్వ సూత్రం</div>
+      <div class="fact">స్వేచ్ఛాయుత, న్యాయమైన ఎన్నికలు</div>
+      <div class="fact">FRs – DPSPs మధ్య సామరస్యం, సమతుల్యం</div>
+      <div class="fact">FRs వెనుక ఉన్న సూత్రాలు (essence)</div>
+      <div class="fact">పార్లమెంటు <b>పరిమిత</b> సవరణాధికారం</div></div>
+  </div>
+  <div class="trap">🚩 <b>Judicial activism</b> basic feature కాదు — దాన్ని <b>judicial review</b> తో కలపకండి. &nbsp;|&nbsp; పరీక్ష 'లేబుల్' కాదు, <b>ప్రభావం</b>: ఒక లక్షణానికి సంబంధించిన నిబంధనను తాకినంత మాత్రాన సవరణ చెల్లకుండా పోదు; ఆ లక్షణాన్ని <b>దెబ్బతీస్తేనే</b> చెల్లదు. &nbsp;|&nbsp; Federal character basic feature అయినంత మాత్రాన రాష్ట్ర సరిహద్దులు మార్చలేమని కాదు.</div>
+
+  <div class="sh">📋 Table 12.1 — ఏ కేసు ఏ లక్షణాన్ని గుర్తించింది (1980–2015)</div>
+  <table class="t2">
+    <thead><tr><th style="width:22%">కేసు</th><th style="width:9%">సం.</th><th>గుర్తించిన లక్షణం (MCQ Facts)</th><th style="width:24%">గుర్తుంచుకోండి / ట్రాప్</th></tr></thead>
+    <tbody>
+      <tr><td><b>Central Coal Fields Ltd.</b></td><td><span class="tag tb">1980</span></td><td>Effective access to justice (న్యాయం ప్రభావవంతంగా అందుబాటు)</td><td class="tr"></td></tr>
+      <tr><td><b>Bhim Singhji</b></td><td><span class="tag tb">1980</span></td><td>Welfare state (సామాజిక-ఆర్థిక న్యాయం); తీర్పు 13 Nov 1980</td><td class="tr">GBK: 1981 (report సం.)</td></tr>
+      <tr><td><b>S.P. Sampath Kumar</b></td><td><span class="tag tb">1986</span></td><td>Rule of law, judicial review; తీర్పు 9 Dec 1986</td><td class="tr">GBK: 1987 (report సం.)</td></tr>
+      <tr><td><b>P. Sambamurthy</b> vs State of A.P.</td><td><span class="tag tp">1986</span></td><td>Rule of law, judicial review; తీర్పు 20 Dec 1986<br>• <b>ప్రకరణ 371D(5)</b> (<b>32వ సవరణ, 1973</b>) ను కొట్టివేసింది — Administrative Tribunal ఆదేశాలను రాష్ట్ర ప్రభుత్వం మార్చడానికి / రద్దు చేయడానికి అనుమతించిన నిబంధన అది.</td><td class="tr"><b>AP కేసు!</b> GBK: 1987 (report సం.); APPSC PYQ లో 1987 ఇచ్చారు.</td></tr>
+      <tr><td><b>Delhi Judicial Service Assn.</b></td><td><span class="tag tb">1991</span></td><td>SC అధికారాలు — ప్రకరణ 32, 136, 141, 142</td><td class="tr"></td></tr>
+      <tr><td><b>Kihoto Hollohan</b> ('Defection case')</td><td><span class="tag tp">1992</span></td><td>Free and fair elections; సార్వభౌమ ప్రజాస్వామ్య గణతంత్ర నిర్మాణం; తీర్పు 18 Feb 1992<br>• <b>3:2</b> మెజారిటీతో 10వ షెడ్యూల్ <b>para 7</b> (<b>52వ సవరణ, 1985</b>) ను రాష్ట్రాల ఆమోదం లేనందున కొట్టివేసింది; మిగతా 10వ షెడ్యూల్ వేరుచేయదగినది (severable) కాబట్టి నిలిచింది.<br>• Speaker నిర్ణయం న్యాయ సమీక్షకు లోబడుతుంది.</td><td class="tr">GBK: 1993 (AIR report సం.)</td></tr>
+      <tr><td><b>Kumar Padma Prasad</b></td><td><span class="tag tb">1992</span></td><td>న్యాయవ్యవస్థ స్వతంత్రత<br>• <b>ప్రకరణ 217(2)</b> ప్రకారం అర్హత లేని వ్యక్తిని <b>HC న్యాయమూర్తిగా</b> నియమించడాన్ని రద్దు చేసింది.</td><td class="tr">APPSC G1 2024 ట్రాప్: welfare state ఈ కేసు చెప్పిన లక్షణం <b>కాదు</b> (అది Kesavananda, Bhim Singhji).</td></tr>
+      <tr><td><b>Indra Sawhney</b> ('Mandal case')</td><td><span class="tag tb">1992</span></td><td>Rule of law; తీర్పు 16 Nov 1992</td><td class="tr">ఇది Indra Sawhney I; 1993 = AIR report సం.</td></tr>
+      <tr><td><b>Raghunath Rao</b></td><td><span class="tag tb">1993</span></td><td>సమానత్వ సూత్రం; భారత ఐక్యత, సమగ్రత; తీర్పు 4 Feb 1993</td><td class="tr"></td></tr>
+      <tr><td><b>S.R. Bommai</b></td><td><span class="tag tp">1994</span></td><td><b>9 మంది</b> ధర్మాసనం; గుర్తించిన లక్షణాలు: federalism, secularism, democracy, ఐక్యత, social justice, judicial review<br>• <b>ప్రకరణ 356</b> (రాష్ట్రపతి పాలన) ప్రకటనలు న్యాయ సమీక్షకు లోబడతాయి.<br>• GBK: లౌకికతను దెబ్బతీసే రాష్ట్ర ప్రభుత్వాలపై ప్రకరణ 356 చర్య తీసుకోవచ్చు.</td><td class="tr">Federalism, Secularism కు ముఖ్య కేసు.</td></tr>
+      <tr><td><b>L. Chandra Kumar</b></td><td><span class="tag tp">1997</span></td><td><b>7 మంది</b> ధర్మాసనం; HC అధికారాలు — ప్రకరణ 226, 227<br>• ప్రకరణ <b>323A(2)(d), 323B(3)(d)</b> HC/SC పరిధిని అడ్డుకున్నంత మేరకు వాటిని కొట్టివేసింది.</td><td class="tr">Tribunals ఉన్నా HC సమీక్ష పోదు.</td></tr>
+      <tr><td><b>Indra Sawhney II</b></td><td><span class="tag tb">1999</span></td><td><b>ప్రకరణ 14</b> (దాని రూపమైన ప్రకరణ 16 తో) basic structure లో భాగం — సమానత్వ సూత్రం; తీర్పు 13 Dec 1999</td><td class="tr">GBK పట్టికలో లేదు; తీర్పు Laxmikanth నే ధృవీకరిస్తుంది.</td></tr>
+      <tr><td><b>All India Judges' Assn.</b></td><td><span class="tag tb">2002</span></td><td>'Independent and efficient judicial system' basic structure లో ఒకటి; తీర్పు 21 Mar 2002</td><td class="tr">2002 (GBK) సరైనది; Laxmikanth 2001 <b>తప్పు</b>.</td></tr>
+      <tr><td><b>Kuldip Nayar</b></td><td><span class="tag tb">2006</span></td><td>ప్రజాస్వామ్యం; free and fair elections</td><td class="tr"></td></tr>
+      <tr><td><b>M. Nagaraj</b></td><td><span class="tag tb">2006</span></td><td>సమానత్వ సూత్రం</td><td class="tr"></td></tr>
+      <tr><td><b>I.R. Coelho</b> ('IX Schedule case')</td><td><span class="tag tp">2007</span></td><td>Rule of law, separation of powers, FRs వెనుక ఉన్న సూత్రాలు, judicial review, సమానత్వం</td><td class="tr">9 మంది; తీర్పు 11 Jan 2007.</td></tr>
+      <tr><td><b>Ram Jethmalani</b></td><td><span class="tag tb">2011</span></td><td>SC అధికారాలు — ప్రకరణ 32</td><td class="tr"></td></tr>
+      <tr><td><b>Namit Sharma</b></td><td><span class="tag tb">2012</span></td><td>వ్యక్తి స్వేచ్ఛ, గౌరవం; తీర్పు 13 Sep 2012<br>• Review తీర్పు (3 Sep 2013) లో ఆ తీర్పు ఇచ్చిన ఆదేశాలను, ప్రకటనలను (Information Commissions పై) వెనక్కి తీసుకున్నారు.</td><td class="tr">GBK: 2013 (report సం.)</td></tr>
+      <tr><td><b>Madras Bar Association</b></td><td><span class="tag tb">2014</span></td><td>Judicial review; HC అధికారాలు — ప్రకరణ 226, 227</td><td class="tr"></td></tr>
+      <tr><td><b>SC Advocates-on-Record</b> (NJAC case)</td><td><span class="tag tp">2015</span></td><td>న్యాయవ్యవస్థ స్వతంత్రత; తీర్పు 16 Oct 2015</td><td class="tr">GBK పట్టికలో అదనంగా ఉంది.</td></tr>
+    </tbody>
+  </table>
+  <div class="footer">Indian Polity · Unit 6.8 · Page 3 of 4 · ⚠ = మూలాలు ఏకీభవించలేదు / నిర్ధారణ కాలేదు</div>
+</div>
+<!-- PAGE 4 -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Unit 6.8</div>
+    <div class="htitle">
+      <h1>కొట్టివేసిన సవరణలు · ప్రాముఖ్యత · సమకాలీనం</h1>
+      <h2>Struck-down Amendments · Significance &amp; Criticism · 2021–2026 updates · Page 4 of 4</h2>
+    </div>
+    <div class="hmeta">as of 9 Nov 2026</div>
+  </div>
+
+  <div class="sh">✂️ Basic structure ఆధారంగా కొట్టివేసిన సవరణలు</div>
+  <table class="t2">
+    <thead><tr><th style="width:17%">సవరణ</th><th style="width:7%">సం.</th><th>ఏ భాగం పోయింది, ఏ కేసులో (MCQ Facts)</th><th style="width:24%">గుర్తుంచుకోండి / ట్రాప్</th></tr></thead>
+    <tbody>
+      <tr><td><b>25th Amendment</b></td><td><span class="tag tb">1971</span></td><td>న్యాయ సమీక్షను అడ్డుకున్న <b>ప్రకరణ 31C రెండో భాగాన్ని</b> <b>Kesavananda Bharati (1973)</b> కొట్టివేసింది.</td><td class="tr">ప్రకరణ 31C మొదటి భాగం నిలిచింది.</td></tr>
+      <tr><td><b>32nd Amendment</b></td><td><span class="tag tb">1973</span></td><td><b>ప్రకరణ 371D(5)</b> ను <b>P. Sambamurthy vs State of A.P. (1986)</b> కొట్టివేసింది.</td><td class="tr">AP కి సంబంధించిన కేసు.</td></tr>
+      <tr><td><b>39th Amendment</b></td><td><span class="tag tb">1975</span></td><td>PM/Speaker ఎన్నికపై <b>ప్రకరణ 329A(4)</b> ను <b>Indira Nehru Gandhi (1975)</b> కొట్టివేసింది.</td><td class="tr">మొత్తం 39వ సవరణ పోలేదు.</td></tr>
+      <tr><td><b>42nd Amendment</b></td><td><span class="tag tp">1976</span></td><td><b>ప్రకరణ 368(4)-(5)</b> ను, ప్రకరణ 31C ను అన్ని DPSPs కు విస్తరించిన భాగాన్ని <b>Minerva Mills (1980)</b> కొట్టివేసింది.</td><td class="tr">కారణం: limited amending power కూడా basic feature.</td></tr>
+      <tr><td><b>52nd Amendment</b></td><td><span class="tag tb">1985</span></td><td>10వ షెడ్యూల్ <b>para 7</b> ను <b>Kihoto Hollohan (1992)</b> కొట్టివేసింది.</td><td class="tr">మిగతా 10వ షెడ్యూల్ నిలిచింది.</td></tr>
+      <tr><td><b>99th Amendment</b></td><td><span class="tag tp">2014</span></td><td><b>NJAC</b> (National Judicial Appointments Commission) ను SC Advocates-on-Record case లో <b>16 Oct 2015</b> న <b>5 మంది</b> ధర్మాసనం <b>4:1</b> తో కొట్టివేసింది; <b>మొత్తం సవరణ, NJAC Act, 2014</b> చెల్లవని ప్రకటించింది; న్యాయమూర్తుల నియామకానికి <b>collegium</b> వ్యవస్థ మళ్ళీ అమల్లోకి వచ్చింది.</td><td class="tr">ఇక్కడ మొత్తం సవరణే పోయింది. APPSC G2 2025 PYQ: '2015 లో కొట్టివేసిన సవరణ' సమాధానం <b>99th</b> (96th, 97th, 100th కాదు).</td></tr>
+    </tbody>
+  </table>
+  <div class="trap">🚩 <b>17th Amendment ట్రాప్:</b> GBK పట్టికలో Golak Nath ను 17వ సవరణ ఎదుట చూపారు — కానీ Golak Nath 17వ సవరణను కొట్టివేయలేదు; prospective overruling దాన్ని కాపాడింది.</div>
+
+  <div class="sh">⭐ సిద్ధాంత ప్రాముఖ్యత vs విమర్శ</div>
+  <div class="g2">
+    <div class="card"><div class="ch">✅ ప్రాముఖ్యత (Significance)</div>
+      <div class="fact">ప్రకరణ 368 సవరణాధికారానికి ఇది <b>అదుపు</b> పెడుతుంది — కానీ రాజ్యాంగ పాఠాన్ని స్తంభింపజేయదు.</div>
+      <div class="fact">రాజ్యాంగ మూలాన్ని కాపాడుతుంది: ప్రజాస్వామ్యం, లౌకికత, సమాఖ్య, rule of law, judicial review.</div>
+      <div class="fact">సుప్రీంకోర్టు రాజ్యాంగానికి <b>చివరి సంరక్షకుడు</b> (final guardian) అవుతుంది; సరైన విధానంలో ఆమోదం పొందిన సవరణనూ కొట్టివేయవచ్చు.</div>
+      <div class="fact">ప్రత్యేక మెజారిటీ, రాష్ట్రాల ఆమోదం (ratification) వంటి విధానం పాటించినా basic structure సమీక్ష నుంచి <b>మినహాయింపు లేదు</b>.</div></div>
+    <div class="card"><div class="ch">❌ విమర్శ &amp; పరిధి</div>
+      <div class="fact">విమర్శ: ఎన్నిక కాని న్యాయమూర్తులు, పార్లమెంటు అత్యున్నత ప్రజాస్వామ్య ప్రమాణం దాటి ఆమోదించిన సవరణను రద్దు చేస్తున్నారు — అందుకే ఇది <b>'undemocratic'</b> అంటారు.</div>
+      <div class="fact">సమర్థన: విధానం (మెజారిటీ, ratification) సవరణ <b>ఎలా</b> చేయాలో నియంత్రిస్తుంది, దేనిని <b>నాశనం</b> చేయవచ్చో కాదు — supermajority పైనా ఒక అదుపు అవసరం (Laxmikanth).</div>
+      <div class="fact">సాధారణ చట్టాలనూ కోర్టులు సమీక్షిస్తాయి, కానీ <b>వేరే కారణాలతో</b> (శాసన అధికార పరిధి, FRs ఉల్లంఘన); basic structure పరీక్ష ప్రధానంగా <b>రాజ్యాంగ సవరణలకే</b>.</div>
+      <div class="fact">ఈ సిద్ధాంతాన్ని ఇప్పటివరకు <b>ఏ కోర్టూ రద్దు చేయలేదు</b> <i>(as of 9 Nov 2026)</i>.</div></div>
+  </div>
+
+  <div class="sh">📰 ఇటీవలి తీర్పులు (2021–2024)</div>
+  <table class="t2">
+    <thead><tr><th style="width:20%">కేసు</th><th style="width:11%">తేదీ</th><th>ముఖ్య విషయాలు (MCQ Facts)</th><th style="width:22%">గుర్తుంచుకోండి / ట్రాప్</th></tr></thead>
+    <tbody>
+      <tr><td><b>Union of India vs Rajendra N. Shah</b></td><td><span class="tag tb">20 Jul 2021</span></td><td>97వ సవరణ (<b>Part IXB, సహకార సంఘాలు</b>) లో కొంత భాగం రాష్ట్రాల ఆమోదం లేనందున చెల్లదు; ఆ భాగం <b>బహుళ రాష్ట్ర</b> సహకార సంఘాలకు మాత్రమే నిలిచింది <i>(as of 20 Jul 2021)</i>.</td><td class="tr">కారణం <b>విధానపరమైనది</b> (ratification లేదు), basic structure కాదు.</td></tr>
+      <tr><td><b>Janhit Abhiyan</b></td><td><span class="tag tb">7 Nov 2022</span></td><td><b>3:2</b> మెజారిటీతో <b>103వ సవరణ</b> (ఆర్థికంగా బలహీన వర్గాలకు – EWS – <b>10%</b> రిజర్వేషన్) ను సమర్థించింది; ఇది basic structure ను ఉల్లంఘించదు <i>(as of 7 Nov 2022)</i>.</td><td class="tr">EWS కోటా సవరణ నిలిచింది (upheld).</td></tr>
+      <tr><td><b>Property Owners Assn.</b></td><td><span class="tag tp">5 Nov 2024</span></td><td><b>9 మంది</b> ధర్మాసనం: Kesavananda సమర్థించిన రూపంలో <b>ప్రకరణ 31C</b> Minerva Mills తర్వాత కూడా అమల్లోనే ఉంది <i>(as of 5 Nov 2024)</i>.</td><td class="tr">ప్రకరణ 31C మొదటి రూపం ఇంకా అమల్లోనే.</td></tr>
+      <tr><td><b>Balram Singh</b></td><td><span class="tag tp">25 Nov 2024</span></td><td>42వ సవరణ Preamble లో చేర్చిన <b>'socialist', 'secular'</b> పదాలను సవాలు చేసిన పిటిషన్లను కొట్టివేసింది.<br>• <b>లౌకికత basic structure లో భాగం</b>; 'socialist' అంటే సంక్షేమ రాజ్య నిబద్ధత, ఒక నిర్దిష్ట ఆర్థిక విధానం కాదు <i>(as of 25 Nov 2024)</i>.</td><td class="tr">Preamble పదాలు నిలిచాయి.</td></tr>
+    </tbody>
+  </table>
+  <div class="trap">⚠ <b>తాజాగా కొట్టివేసినది ఏది?</b> 9 Nov 2026 వరకు చూసినంతవరకు basic structure కారణంగా కొట్టివేసిన తాజా సవరణ <b>NJAC (2015)</b> దే అనిపిస్తుంది — మూలం వివాదాస్పదం, జాగ్రత్త. Rajendra N. Shah (2021) లో 97వ సవరణ భాగం పోయింది, కానీ <b>విధానపర కారణంతో</b> <i>(as of 9 Nov 2026)</i>.</div>
+
+  <div class="sh">🗳 సమకాలీన అంశాలు — రాజకీయ చర్చలో మౌలిక నిర్మాణం</div>
+  <div class="g2">
+    <div class="card"><div class="ch">👤 వ్యక్తులు</div>
+      <div class="fact">మాజీ ఉపరాష్ట్రపతి (VP) <b>Jagdeep Dhankhar</b> Kesavananda, NJAC తీర్పులను బహిరంగంగా విమర్శించారు; ఆయన <b>21 Jul 2025</b> న రాజీనామా చేశారు <i>(as of 21 Jul 2025)</i>.</div>
+      <div class="fact">ప్రస్తుత VP <b>C.P. Radhakrishnan</b>; Sep 2025 లో ఎన్నికయ్యారు <i>(as of 9 Nov 2026)</i>.</div></div>
+    <div class="card"><div class="ch">📜 పెండింగ్ బిల్లులు</div>
+      <div class="fact"><b>One Nation One Election (ONOE)</b>: రాజ్యాంగ (<b>129వ సవరణ</b>) బిల్లు, 2024 ఇంకా సంయుక్త పార్లమెంటరీ కమిటీ (<b>JPC</b>) వద్దే ఉంది; JPC గడువును Winter Session 2026 చివరి వారం మొదటి రోజు వరకు పొడిగించారు <i>(as of 29 Jul 2026)</i>. దీనికి ముందు మాజీ రాష్ట్రపతి <b>Ram Nath Kovind</b> ఉన్నత స్థాయి కమిటీ (Sep 2023 లో ఏర్పాటు) <b>Mar 2024</b> లో నివేదిక ఇచ్చింది.</div>
+      <div class="fact">ONOE సమాఖ్య స్వభావాన్ని (basic feature) దెబ్బతీస్తుందని ప్రతిపక్ష వాదన; బిల్లు ఆమోదం పొందలేదు, కోర్టు పరీక్ష జరగలేదు <i>(as of 29 Jul 2026)</i>.</div>
+      <div class="fact">⚠ రాజ్యాంగ (<b>130వ సవరణ</b>) బిల్లు, 2025: 5+ ఏళ్ల శిక్ష పడే ఆరోపణలపై <b>30 వరుస రోజులు</b> నిర్బంధంలో ఉన్న PM/CM/మంత్రులను తొలగించే బిల్లు (ప్రకరణ 75, 164, 239AA). Lok Sabha లో <b>20 Aug 2025</b> న ప్రవేశపెట్టి JPC కి పంపారు; <b>17 Jul 2026</b> న JPC నివేదిక ఆమోదాన్ని వాయిదా వేసింది; తర్వాతి నివేదిక / ఆమోదం కనిపించలేదు — నిర్ధారణ కాలేదు <i>(as of 9 Nov 2026)</i>.</div></div>
+  </div>
+
+  <div class="sh">⚡ Quick Revision — పరీక్ష ముందు ఒక్కసారి చదవండి</div>
+  <div class="qr">
+    <div class="qb"><div class="qh">📅 తేదీలు &amp; సంవత్సరాలు</div>
+      <div class="qi"><b>Shankari Prasad (1951), Sajjan Singh (1964)</b> → రాజ్యాంగ సవరణ ప్రకరణ 13 'law' కాదు, FRs ను సవరించవచ్చు అన్నాయి.</div>
+      <div class="qi"><b>Golak Nath (1967)</b> → పార్లమెంటు FRs ను తాకలేదు అంది; prospective overruling ను మొదటిసారి వాడింది.</div>
+      <div class="qi"><b>Kesavananda (24 Apr 1973)</b> → basic structure సిద్ధాంతం పుట్టింది; ఇదే తేదీ Waman Rao cut-off.</div>
+      <div class="qi"><b>Election case (7 Nov 1975)</b> → సిద్ధాంతాన్ని మొదట అమలు చేసి ప్రకరణ 329A(4) ను కొట్టివేసింది.</div>
+      <div class="qi"><b>Minerva Mills (1980)</b> → 42వ సవరణ (1976) చేర్చిన ప్రకరణ 368(4)-(5) ను కొట్టివేసింది.</div>
+    </div>
+    <div class="qb qtrap"><div class="qh">🆚 పోలికలు &amp; ట్రాప్స్</div>
+      <div class="qi"><b>Judicial activism</b> basic feature కాదు; <b>judicial review</b> మాత్రమే basic feature.</div>
+      <div class="qi"><b>Golak Nath</b> 17వ సవరణను కొట్టివేయలేదు — prospective overruling కాపాడింది.</div>
+      <div class="qi"><b>39వ సవరణ</b> మొత్తం పోలేదు; ప్రకరణ 329A(4) మాత్రమే పోయింది.</div>
+      <div class="qi"><b>తీర్పు సం. vs report సం.</b>: Waman Rao 1980/1981 రెండూ సరైనవే; ముందు తీర్పు సంవత్సరం ఎంచుకోండి.</div>
+      <div class="qi"><b>'Basic structure'</b> అనే పదం రాజ్యాంగంలో లేదు — ఇది judge-made సిద్ధాంతం.</div>
+    </div>
+    <div class="qb"><div class="qh">🔢 సంఖ్యలు — ధర్మాసనం, మెజారిటీ</div>
+      <div class="qi"><b>Golak Nath: 11 మంది, 6:5</b> (CJI Subba Rao); <b>Kesavananda: 13 మంది, 7:6</b> (CJI Sikri).</div>
+      <div class="qi"><b>9 మంది ధర్మాసనాలు</b>: S.R. Bommai (1994), I.R. Coelho (2007), Property Owners (2024).</div>
+      <div class="qi"><b>NJAC కేసు (16 Oct 2015)</b>: 5 మంది ధర్మాసనం 4:1 తో 99వ సవరణ మొత్తం చెల్లదు అంది.</div>
+      <div class="qi"><b>ప్రకరణ 368 ను 2 సార్లే</b> సవరించారు: 24వ (1971), 42వ (1976) సవరణలతో.</div>
+    </div>
+    <div class="qb"><div class="qh">👤 ఏ కేసు ఏ లక్షణం చెప్పింది</div>
+      <div class="qi"><b>Welfare state</b> → Kesavananda, Bhim Singhji చెప్పాయి; Kumar Padma Prasad కాదు.</div>
+      <div class="qi"><b>Kumar Padma Prasad (1992)</b> → న్యాయవ్యవస్థ స్వతంత్రత (ప్రకరణ 217(2) అర్హత కేసు).</div>
+      <div class="qi"><b>S.R. Bommai (1994)</b> → federalism, secularism; ప్రకరణ 356 ప్రకటనలపై న్యాయ సమీక్ష.</div>
+      <div class="qi"><b>L. Chandra Kumar (1997)</b> → HC అధికారాలు (ప్రకరణ 226, 227) basic feature.</div>
+    </div>
+    <div class="qb"><div class="qh">🆕 తాజా అంశాలు</div>
+      <div class="qi"><b>Rajendra N. Shah (2021)</b> → 97వ సవరణ భాగం పోయింది, కానీ విధానపర కారణంతో; basic structure కాదు.</div>
+      <div class="qi"><b>Balram Singh (25 Nov 2024)</b> → Preamble లోని 'socialist', 'secular' పదాలు నిలిచాయి.</div>
+      <div class="qi">⚠ <b>చివరి strike-down</b>: basic structure తో కొట్టివేసిన తాజా సవరణ NJAC (2015) అనిపిస్తుంది <i>(as of 9 Nov 2026)</i>.</div>
+    </div>
+  </div>
+  <div class="cr"><div class="qh">🙈 Cover &amp; recall — కుడివైపు సమాధానాన్ని చేతితో మూసి, మీరే చెప్పండి</div>
+    <div class="crg">
+      <div class="crq"><span>Basic structure పుట్టిన కేసు?</span><span class="cra">Kesavananda (1973)</span></div>
+      <div class="crq"><span>'Limited amending power' basic feature అన్న కేసు?</span><span class="cra">Minerva Mills (1980)</span></div>
+      <div class="crq"><span>Waman Rao పెట్టిన 9వ షెడ్యూల్ cut-off తేదీ?</span><span class="cra">24 Apr 1973</span></div>
+      <div class="crq"><span>ప్రకరణ 371D(5) ను కొట్టివేసిన AP కేసు?</span><span class="cra">P. Sambamurthy</span></div>
+      <div class="crq"><span>2015 లో కొట్టివేసిన సవరణ?</span><span class="cra">99th (NJAC)</span></div>
+      <div class="crq"><span>'IX Schedule case' ఏది?</span><span class="cra">I.R. Coelho (2007)</span></div>
+    </div>
+  </div>
+  <div class="footer">Indian Polity · Unit 6.8 · Page 4 of 4 · ⚠ = మూలాలు ఏకీభవించలేదు / నిర్ధారణ కాలేదు</div>
+</div></div>

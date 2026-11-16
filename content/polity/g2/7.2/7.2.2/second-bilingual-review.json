@@ -1,0 +1,10 @@
+{
+  "chapter":"7.2.2",
+  "review_date":"2026-11-08",
+  "scope":{"chapter_questions":8,"original_pagewise":6,"original_whole_chapter":2,"verified_pyqs_published_here":0,"verified_pyq_overlaps":1},
+  "checks":{"english_telugu_stem_alignment":"passed after correction","four_option_alignment_and_order":"passed","answer_range_and_key_consistency":"passed","terminology":"passed; joint sitting, Money Bill, effective majority, Appropriation Bill, cut motions, quorum and no-confidence terminology aligned","question_specific_explanations":"passed; all 8 IDs resolve","source_fact_coverage":"passed; every question maps to validated fact IDs","pyq_integrity":"passed; Q130 retained under primary owner 7.1.1 and documented only as overlap"},
+  "corrections":[{"id":"POL-722-P236-01","issue":"GBK p236 prints 114 as the majority of an effective strength of 225.","resolution":"Scored answer corrected to 113, the smallest integer greater than half of 225; explanation explicitly preserves the source-error distinction."}],
+  "duplicate_audit":{"inventory_compared":695,"fields":["id","question_en exact normalized","question_te exact normalized"],"collisions":0,"scope_note":"Compared with every parseable Questions.json outside 7.2.2 under content/polity/g2."},
+  "interface_review":{"status":"deferred to milestone per user instruction; not rerun for each chapter"},
+  "result":"passed_content_gate_pending_milestone_interface_review"
+}

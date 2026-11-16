@@ -1,0 +1,68 @@
+{
+  "chapter": "6.1.9",
+  "page": 88,
+  "tasks": [
+    {
+      "id": "H88-1895-authorship",
+      "claim": "DefiniteTilakauthorship",
+      "status": "verification_hold",
+      "reason": "Hosted primarytext read; editorial annotation flags uncertainauthorship. Do not treat annotation as primaryproof of identity."
+    },
+    {
+      "id": "H88-1911-congress",
+      "claim": "1911CalcuttaCongressrightsresolution",
+      "status": "verification_hold",
+      "reason": "Originalresolutionnotyetread."
+    },
+    {
+      "id": "H88-1922-gandhi",
+      "claim": "1922YoungIndiarightsstatement",
+      "status": "verification_hold",
+      "reason": "Exactissue/date/textneeded."
+    },
+    {
+      "id": "H88-1925-rights-text",
+      "claim": "1925Billrightsclause",
+      "status": "verified_component_tested",
+      "question_id": "POL-6.1.9-P88-04",
+      "remaining": "AnnieBesant/convention/parliamentarypresentationroles require originalproceedings before role-specific scoring."
+    },
+    {
+      "id": "H88-1927-congress",
+      "claim": "1927MadrasCongressrightsresolution",
+      "status": "verification_hold",
+      "reason": "Originalresolution/date/chairroleverificationneeded."
+    }
+  ],
+  "aggregate_hold_closed": false,
+  "GBK_scan_passes": 0,
+  "committee_cross_chapter_mapping": {
+    "chapter": "6.1.9",
+    "GBK_scan_passes": 0,
+    "notes_modified": false,
+    "new_questions": 0,
+    "source": "https://www.constitutionofindia.net/committee-report/report-of-the-advisory-committee-on-the-subject-of-minority-rights/",
+    "primary_locator": "Report signature heading and CR.ACMR.1; distinguish report text from editorial Remarks.",
+    "verified_components": [
+      {
+        "claim": "Advisory Committee appointed on 24 January 1947; Patel identifies himself as chairman in the report.",
+        "reuse_question_id": "POL-6.1.4-P36-06",
+        "coverage_limit": "Existing matching question tests the chair, not appointment date."
+      }
+    ],
+    "reuse_mappings": [
+      {
+        "concept": "Fundamental Rights and Minorities subcommittee chairs",
+        "question_id": "POL-6.1.4-P37-07",
+        "status": "Existing bilingual matching question located; no duplicate drafted; subcommittee date and membership not verified by this report."
+      }
+    ],
+    "remaining_holds": [
+      "Exact membership of 54 cannot be inferred from this report; nominations changed membership.",
+      "12 February 1947 and nine-member Fundamental Rights subcommittee require original appointment record.",
+      "Earlier Congress resolutions and Young India issue remain unresolved."
+    ],
+    "browser_visual_verified": false,
+    "aggregate_hold_closed": false
+  }
+}

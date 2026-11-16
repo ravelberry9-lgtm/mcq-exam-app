@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part VIII &mdash; Book 3</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 71 — Delimitation Commission of India</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Articles 81, 82, 170, 330 &amp; 332 — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">What "Delimitation" Means</div>
+  <p class="eng"><b class="term">Delimitation</b>, at its core, is about redrawing the map — deciding exactly where the boundary lines of <b>territorial constituencies</b> fall within a country or province that runs a legislative body. In India this specialised task falls to a high-powered body set up specifically for the purpose: the <b class="term">Delimitation Commission</b>, sometimes also called a <b class="hlb">Boundary Commission</b>. It is a job driven by population change — as people move and numbers shift, constituency lines need periodic updating to keep pace. Note the distinction from seat totals: delimitation decides <i>where the lines sit</i>, not how many constituencies exist — though in practice the two questions frequently move together.</p>
+  <div class="te"><b class="term">Delimitation</b> అంటే — legislative body ఉన్న ఒక దేశంలో (లేదా province లో) <b>territorial constituencies</b> హద్దులు/సరిహద్దులు నిర్ణయించే ప్రక్రియ. India లో, జనాభా మార్పులకు తగ్గట్టు constituency boundaries ను తిరిగి గీసే ఈ పని ఒక ప్రత్యేకంగా ఏర్పాటు చేసిన high-powered body కి అప్పగిస్తారు — దీన్నే <b class="term">Delimitation Commission</b> (<b class="hlb">Boundary Commission</b> అని కూడా అంటారు) అని పిలుస్తారు. Delimitation ను legislature లో total seats సంఖ్యతో confuse కాకూడదు — ఇది <i>గీతలు ఎక్కడ గీయాలి</i> అనే దాని గురించి, constituencies ఎన్ని ఉండాలి అనే దాని గురించి తప్పనిసరిగా కాదు — అయితే ఆచరణలో ఈ రెండు ప్రశ్నలు దగ్గరి సంబంధం కలిగి, చాలాసార్లు కలిసే మారతాయి.</div>
+
+  <div class="stitle">Rationale of Delimitation — Why It Matters</div>
+  <p class="eng"><b>1. Foundation of free and fair elections:</b> A genuinely democratic state is defined, above all, by its ability to hold free and fair elections — and parliamentary democracy earns its appeal precisely because ordinary citizens get to pick their own representatives through the ballot. Since India runs on <b class="hlb">single-member constituencies</b>, fairness for voters depends on boundaries being periodically redrawn in line with settled legal procedure and accepted norms; this makes delimitation a <b>legally mandated, recurring exercise</b>, not something done once and forgotten.</p>
+  <div class="te"><b>1. Free, fair ఎన్నికలకు పునాది:</b> నిజమైన democratic రాజ్యానికి Free and fair elections ముఖ్య లక్షణం — parliamentary democracy ను ఇష్టపడే governance system గా మార్చేది ఏమిటంటే, ప్రజలు తమ representatives ను electoral process ద్వారా స్వయంగా ఎన్నుకునే అవకాశం ఇవ్వడమే. India <b class="hlb">single-member constituencies</b> పద్ధతిలో representatives ను ఎన్నుకుంటుంది కాబట్టి, legal provisions, accepted norms పాటిస్తూ కాలానుగుణంగా electoral boundaries ను తిరిగి గీయడమే ప్రజలకు fair elections ను నిర్ధారిస్తుంది — కాబట్టి ఇది <b>legally mandated, పునరావృత</b> ప్రక్రియ, ఒకసారి చేసేది కాదు.</div>
+
+  <p class="eng"><b>2. Foundation for representative governance:</b> Delimitation is a complex, sensitive matter because it lays the foundation for democratic public representation through elections in the modern era. Theoretically, it is a stepping stone for creating a body politic that governs public affairs through the <b class="hlb">territorial concept</b> of elected representation — which is precisely why such exercises must be undertaken periodically, so they keep reflecting the changing ground realities (population growth, migration, new settlements) rather than freezing an outdated picture in place.</p>
+  <div class="te"><b>2. Representative governance కు పునాది:</b> Delimitation ఒక complex, sensitive విషయం — ఎందుకంటే ఇది ఆధునిక కాలంలో ఎన్నికల ద్వారా democratic public representation కు పునాది వేస్తుంది. Theoretically, ఇది ఎన్నికైన representation యొక్క <b class="hlb">territorial concept</b> ద్వారా public affairs ను నడిపే body polity సృష్టికి ఒక stepping stone — అందుకే ఈ ప్రక్రియను కాలానుగుణంగా చేపట్టాలి — జనాభా పెరుగుదల, వలసలు, కొత్త settlements వంటి మారుతున్న ground realities ను ప్రతిబింబిస్తూ ఉండటానికి, పాత చిత్రాన్నే స్తంభింపజేయకుండా.</div>
+
+  <p class="eng"><b>3. The "one man, one vote" value problem:</b> The principle of <b class="term">one man, one vote</b> envisages parity in the value of every elector's vote — an ideal that is difficult to achieve perfectly, and every democratic system departs from it to some degree. In delimitation, this shows up when one constituency's population differs from another's: although both constituencies still elect just one member each, the vote of an elector in the <b>less populous</b> constituency effectively carries <b class="imp">more weight</b> than the vote of an elector in the <b>more populous</b> one. Periodic, population-based delimitation is the corrective mechanism meant to keep this gap from widening indefinitely.</p>
+  <div class="te"><b>3. "one man, one vote" value సమస్య:</b> <b class="term">one man, one vote</b> సూత్రం ప్రకారం, ప్రతి elector ఓటు విలువలో parity ఉండాలి — ఇది ఆదర్శమే అయినా, పరిపూర్ణంగా సాధించడం కష్టం, ప్రతి democratic system ఏదో మేరకు దీని నుండి తప్పుకుంటుంది. Delimitation లో ఇది — ఒక constituency population మరో దాని కంటే భిన్నంగా ఉన్నప్పుడు కనిపిస్తుంది: రెండు constituencies ఒక్కో member నే ఎన్నుకున్నా, <b>తక్కువ జనాభా</b> ఉన్న constituency elector ఓటు, <b>ఎక్కువ జనాభా</b> ఉన్న constituency elector ఓటు కంటే వాస్తవానికి <b class="imp">ఎక్కువ బరువు</b> కలిగి ఉంటుంది. కాలానుగుణంగా, జనాభా-ఆధారిత delimitation చేయడమే ఈ అంతరం అపరిమితంగా పెరగకుండా ఆపే corrective మార్గం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Meaning &amp; Rationale of Delimitation</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What does "delimitation" mean?</td><td>Fixing/redrawing boundaries of territorial constituencies</td></tr>
+      <tr><td>Which body does this job?</td><td>Delimitation Commission (a.k.a. Boundary Commission)</td></tr>
+      <tr><td>Why is it needed periodically (3 reasons)?</td><td>(1) Secures free/fair elections in a single-member-constituency system, (2) keeps representation reflecting changing population, (3) corrects the "one man, one vote" value gap between constituencies</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Legal Status &amp; Commissions Constituted So Far</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">A Statutory (Not Constitutional) Body — With Final, Unchallengeable Orders</div>
+  <p class="eng">A key classification point to lock in about the <b class="term">Delimitation Commission of India</b>: it owes its existence to an ordinary law, <b class="imp">not</b> to the Constitution itself. Each time Parliament decides delimitation is due, it passes a fresh "Delimitation Act," and the Central Government sets up the Commission under that Act's authority — its whole job being to redraw the boundary lines of <b>Parliamentary and Assembly Constituencies</b> across the country. Examiners love this statutory-vs-constitutional distinction precisely because it contrasts so sharply with the Election Commission (a permanent constitutional creature under Article 324): the Delimitation Commission, by contrast, exists only when and because Parliament has chosen to legislate it into being for that round.</p>
+  <div class="te"><b class="term">Delimitation Commission of India</b> ఒక <b class="imp">statutory body</b> — ఇది <b class="imp">constitutional body కాదు</b>. దీన్ని Central Government, Parliament చేసిన చట్టం ("Delimitation Act") ప్రకారం ఏర్పాటు చేస్తుంది — దేశవ్యాప్తంగా <b>Parliamentary, Assembly Constituencies</b> హద్దులు నిర్ణయించడం దీని పని. Statutory-vs-constitutional తేడా తరచుగా అడిగే point — Election Commission (Article 324, constitutional body) లా కాకుండా, Delimitation Commission ఉనికే, ప్రతిసారీ delimitation అవసరమైనప్పుడు Parliament చట్టం చేయడం మీద ఆధారపడుతుంది.</div>
+
+  <p class="eng">Despite being a mere statutory creation, the Commission wields real teeth: whatever it orders <b class="imp">carries the force of law</b>, and there's <b class="imp">no court where that order can be contested</b>. Each order takes effect from whatever date the <b class="hlp">President of India</b> fixes, and a copy goes before the Lok Sabha and the relevant State Legislative Assembly purely for information — <b class="imp">neither House gets to alter a word of it</b>; tabling the order is a formality, not an invitation to amend.</p>
+  <div class="te">ఈ Commission నిజంగా శక్తివంతమైన body — దీని <b class="imp">orders చట్టబద్ధమైన శక్తి</b> కలిగి ఉంటాయి, వాటిని <b class="imp">ఏ కోర్టులోనూ challenge చేయలేరు</b>. ఈ orders <b class="hlp">President of India</b> నిర్ణయించే తేదీన అమల్లోకి వస్తాయి, వాటిని Lok Sabha, సంబంధిత State Legislative Assembly ముందు ఉంచుతారు — కానీ ముఖ్యమైన విషయం ఏంటంటే, ఆ order ను ఉంచినప్పుడు ఏ సభ కూడా <b class="imp">దానిలో మార్పులు చేయజాలదు</b> — legislature కేవలం order ను చూడగలదే తప్ప, సవరించజాలదు.</div>
+
+  <div class="stitle">Commissions Established So Far — Four So Far</div>
+  <p class="eng">So far, <b class="hlg">four</b> Delimitation Commissions have been constituted in India, each under a separate Act of Parliament:</p>
+  <div class="te">ఇప్పటివరకు India లో <b class="hlg">నాలుగు</b> Delimitation Commissions ఏర్పాటయ్యాయి — ప్రతిదీ Parliament చేసిన వేర్వేరు చట్టం కింద:</div>
+
+  <table>
+    <caption>Table 71.1 — Delimitation Commissions constituted so far</caption>
+    <thead><tr><th style="width:22%">Commission</th><th style="width:22%">Established in</th><th>Established under the Act</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">First</td><td class="hlg">1952</td><td>The Delimitation Commission Act, 1952</td></tr>
+      <tr><td class="hlg">Second</td><td class="hlg">1963</td><td>The Delimitation Commission Act, 1962</td></tr>
+      <tr><td class="hlg">Third</td><td class="hlg">1973</td><td>The Delimitation Act, 1972</td></tr>
+      <tr><td class="hlg">Fourth</td><td class="hlg">2002</td><td>The Delimitation Act, 2002</td></tr>
+    </tbody>
+  </table>
+  <p class="eng" style="margin-top:6px">Notice the pattern: the establishment year is always slightly after the Act's year (e.g. the Fourth Commission Act was passed in 2002 but the Commission itself, and its work, unfolded over the following years). Also note there is <b class="imp">no Delimitation Commission for 1981</b> — after the Third Commission (1973), the process was <b class="imp">frozen</b> from 1976 onward (see next page), so the Fourth Commission only came in 2002, a nearly 30-year gap.</p>
+  <div class="te">ఒక pattern గమనించండి — establishment సంవత్సరం, Act సంవత్సరం తర్వాత కొద్దిగా వస్తుంది (ఉదా. Fourth Commission Act 2002 లో పాస్ అయినా, Commission పని తర్వాతి సంవత్సరాల్లో సాగింది). ఇంకో ముఖ్య విషయం — <b class="imp">1981 కోసం ఏ Delimitation Commission లేదు</b> — Third Commission (1973) తర్వాత, 1976 నుండి ఈ ప్రక్రియ <b class="imp">freeze</b> అయింది (తర్వాతి పేజీ చూడండి) — అందుకే Fourth Commission 2002 లోనే వచ్చింది, దాదాపు 30 సంవత్సరాల గ్యాప్‌తో.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Legal Status &amp; Commissions So Far</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Constitutional or statutory body?</td><td>Statutory — established by a Parliament Act, not the Constitution itself</td></tr>
+      <tr><td>Can its orders be challenged in court?</td><td>No — orders have force of law, unchallengeable in any court</td></tr>
+      <tr><td>Can Parliament/Assembly amend a laid-down order?</td><td>No — only laid before them, no modification permitted</td></tr>
+      <tr><td>How many Commissions so far, and their Acts?</td><td>4 — 1952 Act, 1962 Act, 1972 Act, 2002 Act (established 1952, 1963, 1973, 2002)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Constitutional Provisions — Articles 81, 82, 170, 330, 332 &amp; the Delimitation Freeze</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">The Articles, and the 84th &amp; 87th Amendments</div>
+  <p class="eng"><b class="hlg">Articles 81, 82, 170, 330 and 332</b> of the Constitution deal with the delimitation of Parliamentary and Assembly Constituencies (Art. 81 — Lok Sabha composition; Art. 82 — readjustment after each census; Art. 170 — Assembly composition; Art. 330/332 — SC/ST reservation of seats in the Lok Sabha/Assemblies respectively). These Articles were amended by the <b class="hlg">84th Constitutional Amendment Act, 2001</b> and the <b class="hlg">87th Constitutional Amendment Act, 2003</b>. Understanding the <b class="imp">cumulative effect</b> of these two amendments is the single most important — and most exam-tested — part of this chapter, because it is exactly the provision at the centre of the 2026 political controversy (see the Current Affairs Update at the end of this chapter).</p>
+  <div class="te"><b class="hlg">Articles 81, 82, 170, 330, 332</b> — Parliamentary, Assembly Constituencies delimitation గురించి ఉంటాయి (Art. 81 — Lok Sabha composition; Art. 82 — ప్రతి census తర్వాత readjustment; Art. 170 — Assembly composition; Art. 330/332 — Lok Sabha/Assemblies లో SC/ST seats reservation). ఈ Articles ను <b class="hlg">84వ రాజ్యాంగ సవరణ చట్టం, 2001</b>, <b class="hlg">87వ రాజ్యాంగ సవరణ చట్టం, 2003</b> సవరించాయి. ఈ రెండు సవరణల <b class="imp">cumulative effect</b> అర్థం చేసుకోవడమే ఈ chapter లో అత్యంత ముఖ్యమైన, ఎక్కువగా అడిగే భాగం — ఇది సరిగ్గా 2026 రాజకీయ వివాదానికి కేంద్రంగా ఉన్న నిబంధనే (chapter చివర Current Affairs Update చూడండి).</div>
+
+  <p class="eng">Before these two amendments, the <b class="hlg">42nd Constitutional Amendment Act, 1976</b> had already frozen the total number of Lok Sabha and state Assembly seats at their <b class="hlg">1971 census</b> levels — a deliberate <b>population-control incentive</b>: if seat numbers kept rising strictly in proportion to population, states that succeeded in slowing population growth (mainly southern states) would end up <b class="imp">penalised</b> with a shrinking share of seats relative to states with faster-growing populations. Freezing seat numbers at the 1971 baseline removed that perverse incentive during the family-planning era. The 42nd Amendment's freeze was originally meant to last only until the year 2000; the 84th and 87th Amendments then pushed this freeze much further out, to the first census after 2026.</p>
+  <div class="te">ఈ రెండు సవరణలకు ముందే, <b class="hlg">42వ రాజ్యాంగ సవరణ చట్టం, 1976</b> Lok Sabha, state Assembly seats మొత్తం సంఖ్యను <b class="hlg">1971 census</b> స్థాయిలో freeze చేసింది — ఇది ఉద్దేశపూర్వక <b>population-control incentive</b>: seats సంఖ్య జనాభాకు నిష్పత్తిగా పెరుగుతూనే ఉంటే, జనాభా పెరుగుదలను తగ్గించుకున్న రాష్ట్రాలు (ఎక్కువగా దక్షిణాది రాష్ట్రాలు) వేగంగా పెరిగే జనాభా ఉన్న రాష్ట్రాలతో పోలిస్తే seats వాటా తగ్గి <b class="imp">నష్టపోతాయి</b>. 1971 baseline వద్ద seats సంఖ్యను freeze చేయడం వల్ల, family-planning యుగంలో ఈ వ్యతిరేక incentive తొలగింది. 42వ సవరణ freeze మొదట 2000 సంవత్సరం వరకే ఉద్దేశించారు; తర్వాత 84వ, 87వ సవరణలు ఈ freeze ను 2026 తర్వాతి census వరకు మరింత ముందుకు పొడిగించాయి.</div>
+
+  <p class="eng">The <b>cumulative effect</b> of the 84th (2001) and 87th (2003) Amendments can be stated as five linked rules:</p>
+  <div class="te">84వ (2001), 87వ (2003) సవరణల <b>cumulative effect</b> ను ఐదు అనుసంధాన నియమాలుగా చెప్పవచ్చు:</div>
+  <ul>
+    <li><b>(1) Lok Sabha seat totals stay frozen at 1971 levels — until the first census after 2026.</b> The total number of existing Lok Sabha seats allocated to various states on the basis of the 1971 census shall remain unaltered till the <b class="imp">first census taken after the year 2026</b>.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px">(1) Lok Sabha seats మొత్తం సంఖ్య 1971 స్థాయిలోనే freeze — 2026 తర్వాతి మొదటి census వరకు. 1971 census ఆధారంగా వివిధ రాష్ట్రాలకు కేటాయించిన Lok Sabha seats మొత్తం సంఖ్య <b class="imp">2026 తర్వాత తీసుకునే మొదటి census</b> వరకు మారదు.</div></li>
+    <li><b>(2) State Assembly seat totals — same freeze, same end-point.</b> The total number of existing seats in the Legislative Assemblies of all states (this "state" excludes the erstwhile J&amp;K, but includes the NCT of Delhi and UT of Puducherry), as fixed on the basis of the 1971 census, shall also remain unaltered till the first census taken after 2026.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px">(2) State Assembly seats మొత్తం సంఖ్య కూడా అదే freeze, అదే గడువు. అన్ని రాష్ట్రాల (ఇక్కడ "state" లో erstwhile J&amp;K లేదు, కానీ NCT Delhi, UT Puducherry ఉన్నాయి) Legislative Assembly లో 1971 census ఆధారంగా ఫిక్స్ అయిన మొత్తం seats సంఖ్య కూడా 2026 తర్వాతి మొదటి census వరకు మారదు.</div></li>
+    <li><b>(3) SC/ST reserved-seat counts — re-worked on 2001 census basis.</b> The number of seats reserved for the Scheduled Castes and Scheduled Tribes in the Lok Sabha and State Legislative Assemblies shall be re-worked out on the basis of the <b class="hlg">2001 census</b> — note this is a different, earlier census year than the seat-total freeze's reference point.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px">(3) SC/ST reserved seats లెక్క — 2001 census ఆధారంగా తిరిగి లెక్కించారు. Lok Sabha, State Legislative Assemblies లో SC/ST లకు రిజర్వ్ చేసిన seats సంఖ్యను <b class="hlg">2001 census</b> ఆధారంగా తిరిగి పని చేశారు — ఇది seat-total freeze reference point కంటే వేరైన, ముందటి census సంవత్సరం అని గమనించండి.</div></li>
+    <li><b>(4) Constituency boundaries (not counts) — redrawn on 2001 census, then frozen again till post-2026 census.</b> Each state's territorial parliamentary and assembly constituencies were re-delimited on the basis of the <b class="hlg">2001 census</b>, and the extent (boundaries) of these newly delimited constituencies remains frozen till the first census taken after 2026. This is the crucial distinction: while the <i>number</i> of seats stayed frozen at 1971 levels, the <i>boundaries</i> of existing seats were allowed to be redrawn using more recent (2001) population data.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px">(4) Constituency boundaries (సంఖ్య కాదు) — 2001 census ఆధారంగా తిరిగి గీశారు, తర్వాత 2026 తర్వాతి census వరకు మళ్ళీ freeze. ఇది కీలకమైన తేడా: seats <i>సంఖ్య</i> 1971 స్థాయిలోనే freeze అయినా, ఇప్పటికే ఉన్న seats <i>boundaries</i> మాత్రం మరింత ఇటీవలి (2001) జనాభా డేటాతో తిరిగి గీయడానికి అనుమతించారు.</div></li>
+    <li><b>(5) Equal-population principle within a state.</b> Constituencies are to be re-delimited such that the population (2001 census basis) of each parliamentary and assembly constituency within a state is, so far as practicable, the <b>same throughout the state</b> — i.e. equalising vote-value within a state even though the total seat count for that state stays fixed.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px">(5) రాష్ట్రం లోపల equal-population సూత్రం. Constituencies ను — ఒక రాష్ట్రంలో ప్రతి parliamentary, assembly constituency జనాభా (2001 census ఆధారంగా) సాధ్యమైనంత మేరకు రాష్ట్రమంతటా <b>ఒకేలా</b> ఉండేలా — తిరిగి delimit చేయాలి — అంటే రాష్ట్రం total seats సంఖ్య స్థిరంగా ఉన్నా, ఆ రాష్ట్రం లోపల vote-value ను సమానం చేయడం.</div></li>
+  </ul>
+
+  <p class="eng">Put together in plain language: <b class="imp">the freeze on how many seats each state gets extends until the first census after 2026 (in practice, expected to be the 2031 census)</b>, but <b class="imp">the boundaries of existing seats were last redrawn using 2001 census data</b> by the Fourth Delimitation Commission, and even those boundaries are themselves frozen until the same post-2026 census milestone. (See the Current Affairs Update at the end of this chapter for how this exact freeze became the centre of a major 2026 legislative battle.)</p>
+  <div class="te">సాదాసీదాగా చెప్పాలంటే: <b class="imp">ప్రతి రాష్ట్రానికి ఎన్ని seats వస్తాయనే దానిపై freeze, 2026 తర్వాతి మొదటి census వరకు (ఆచరణలో 2031 census అని అంచనా) కొనసాగుతుంది</b>, కానీ <b class="imp">ఇప్పటికే ఉన్న seats boundaries ను చివరిసారి 2001 census డేటాతో Fourth Delimitation Commission తిరిగి గీసింది</b>, ఆ boundaries కూడా అదే 2026 తర్వాతి census మైలురాయి వరకు freeze లోనే ఉన్నాయి. (ఈ freeze సరిగ్గా 2026 లో ఒక పెద్ద legislative యుద్ధానికి కేంద్రంగా ఎలా మారిందో chapter చివర Current Affairs Update లో చూడండి.)</div>
+
+  <table>
+    <caption>The freeze, at a glance — what's frozen, on which census, until when</caption>
+    <thead><tr><th style="width:30%">What</th><th style="width:24%">Census basis</th><th>Frozen until</th></tr></thead>
+    <tbody>
+      <tr><td>Total LS seats per state</td><td class="hlg">1971 census</td><td>First census after 2026</td></tr>
+      <tr><td>Total Assembly seats per state</td><td class="hlg">1971 census</td><td>First census after 2026</td></tr>
+      <tr><td>SC/ST reserved seat counts</td><td class="hlg">2001 census</td><td>—(re-worked, not "frozen" per se)</td></tr>
+      <tr><td>Constituency boundaries (of existing seats)</td><td class="hlg">2001 census</td><td>First census after 2026</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — The Delimitation Freeze</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which amendment first froze seat numbers, at what baseline?</td><td>42nd A.A., 1976 — froze at 1971 census levels</td></tr>
+      <tr><td>Why freeze seat numbers (the incentive logic)?</td><td>So states that slowed population growth aren't penalised with fewer seats</td></tr>
+      <tr><td>Which amendments extended the freeze, and to when?</td><td>84th A.A. 2001 &amp; 87th A.A. 2003 — extended till first census after 2026</td></tr>
+      <tr><td>Seat totals frozen on which census? Boundaries redrawn on which?</td><td>Totals — 1971 census; boundaries of existing seats — 2001 census</td></tr>
+      <tr><td>SC/ST reserved-seat counts based on which census?</td><td>2001 census</td></tr>
+      <tr><td>Which Articles carry these rules?</td><td>Articles 81, 82, 170, 330, 332</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Fourth Delimitation Commission (2002) — Composition &amp; Implementation</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Fourth Delimitation Commission — Task &amp; Composition</div>
+  <p class="eng">In pursuance of the constitutional provisions above, Parliament enacted the <b class="hlg">Delimitation Act, 2002</b> (itself later amended in 2003, 2008 and 2016) and provided for a Delimitation Commission. This Commission's brief was to overhaul Parliamentary and Assembly constituency boundaries across <b class="imp">every Indian state — bar the erstwhile state of Jammu &amp; Kashmir</b>, using the <b class="hlg">2001 census</b> as the population baseline.</p>
+  <div class="te">పైన చెప్పిన రాజ్యాంగ నిబంధనల ప్రకారం, Parliament <b class="hlg">Delimitation Act, 2002</b> ను చేసింది (దీన్నే తర్వాత 2003, 2008, 2016 లో సవరించారు) — ఒక Delimitation Commission ఏర్పాటుకు అవకాశం కల్పిస్తూ. ఈ Commission పని — <b class="imp">erstwhile Jammu &amp; Kashmir రాష్ట్రం మినహా India రాష్ట్రాలన్నిటిలో</b> Parliamentary, Assembly constituencies ను <b class="hlg">2001 census</b> ఆధారంగా తిరిగి సర్దుబాటు చేయడం.</div>
+
+  <p class="eng">The Fourth Delimitation Commission was a <b class="term">three-member body</b>: <b>(1)</b> a <b>Chairperson</b>, drawn from either sitting or retired judges of the <b class="hlp">Supreme Court</b>; <b>(2)</b> either the sitting <b class="hlp">Chief Election Commissioner</b> or an Election Commissioner the CEC nominates for the role, serving as an ex-officio member; <b>(3)</b> the <b>State Election Commissioner</b> of the concerned State or Union Territory as the other ex-officio member. This exact 3-member template (SC judge chair + CEC/EC nominee + State EC) is the standard composition formula used again for the later 2020 Commission (Page 5) — memorise it once, it applies both times.</p>
+  <div class="te">Fourth Delimitation Commission ఒక <b class="term">three-member body</b> — <b>(1)</b> <b>Chairperson</b> — <b class="hlp">Supreme Court</b> లో serving లేదా retired judge అయి ఉండాలి; <b>(2)</b> <b class="hlp">Chief Election Commissioner</b> — లేదా CEC నామినేట్ చేసిన Election Commissioner — ex-officio member గా; <b>(3)</b> సంబంధిత State/UT <b>State Election Commissioner</b> — మరో ex-officio member గా. ఈ exact 3-member template (SC judge chair + CEC/EC nominee + State EC) — తర్వాతి 2020 Commission (Page 5) కూడా ఇదే వాడింది — ఒక్కసారి గుర్తుపెట్టుకుంటే రెండు సందర్భాలకూ వర్తిస్తుంది.</div>
+
+  <p class="eng">Each state also contributed <b class="hlg">ten associate members</b> to the Commission — five drawn from that state's elected <b>Lok Sabha</b> MPs and another five from its <b>State Legislative Assembly</b>, chosen through nomination by the respective Speakers (if a state sent fewer than five MPs to the Lok Sabha, every one of them was roped in). Their role, though, stopped at giving input: these associate members could <b class="imp">neither cast a vote nor sign any Commission order</b> — a purely advisory seat at the table. <b class="hlp">Justice Kuldip Singh</b>, a retired Supreme Court judge, was appointed as the Chairperson of this Fourth Commission.</p>
+  <div class="te">అదనంగా, ఈ Commission కు ప్రతి రాష్ట్రానికి <b class="hlg">పది associate members</b> ఉండేవారు — ఆ రాష్ట్రం నుండి ఎన్నికైన ఐదుగురు <b>Lok Sabha</b> members, ఐదుగురు <b>State Legislative Assembly</b> members — వీరిని Lok Sabha, సంబంధిత State Assembly Speakers నామినేట్ చేసేవారు (ఒక రాష్ట్రంలో LS members ఐదు కంటే తక్కువ ఉంటే, వారంతా included). అయితే ఈ associate members కు Commission <b class="imp">order పై వోటు వేసే లేదా సంతకం చేసే హక్కు లేదు</b> — వీరు కేవలం consultative role మాత్రమే. <b class="hlp">Justice Kuldip Singh</b>, ఒక retired Supreme Court judge, ఈ Fourth Commission కు Chairperson గా నియమితులయ్యారు.</div>
+
+  <div class="stitle">Implementation of the Recommendations</div>
+  <p class="eng">By <b class="hlg">2007</b> the Commission had handed its recommendations over to the Government; a year later, in <b class="hlg">2008</b>, the President's signature on the implementing notification gave the new Parliamentary and Assembly Constituency boundaries legal effect. <b class="hlg">Five states</b>, though, stayed outside this rollout — <b>Assam, Arunachal Pradesh, Manipur, Nagaland and Jharkhand</b>. For the four north-eastern states the exercise was simply <b class="imp">put on hold</b>, while for Jharkhand the Commission's final order was <b class="imp">struck down</b> entirely.</p>
+  <div class="te">Commission తన సిఫారసులను <b class="hlg">2007</b> లో Government కి సమర్పించింది. President <b class="hlg">2008</b> లో ఈ సిఫారసుల అమలుకు notification పై సంతకం చేశారు — తద్వారా Parliamentary, Assembly Constituencies తిరిగి నిర్వచించారు. అయితే ఈ సిఫారసులు <b class="hlg">ఐదు రాష్ట్రాలకు</b> <b class="imp">వర్తించలేదు</b> — <b>Assam, Arunachal Pradesh, Manipur, Nagaland, Jharkhand</b>. నలుగు ఈశాన్య రాష్ట్రాల్లో Government delimitation exercise ను వాయిదా వేసింది, Jharkhand విషయంలో Commission తుది order ను వేరుగా <b class="imp">నిరాకరించింది (nullify)</b>.</div>
+
+  <p class="eng">The <b class="hlg">2009 General Elections</b> to the Lok Sabha were held for <b class="hlg">499 out of 543</b> Parliamentary constituencies in all states, the NCT of Delhi and the UT of Puducherry — <i>except</i> Assam, Arunachal Pradesh, Manipur, Nagaland, Jharkhand and the erstwhile J&amp;K — on the basis of these newly delimited constituencies. The remaining seats continued on the older (pre-2008) boundaries until later delimitation exercises caught up with them.</p>
+  <div class="te"><b class="hlg">2009 General Elections</b> — అన్ని రాష్ట్రాలు, NCT Delhi, UT Puducherry లో <b class="hlg">543 లో 499</b> Parliamentary constituencies కి — Assam, Arunachal Pradesh, Manipur, Nagaland, Jharkhand, erstwhile J&amp;K <i>మినహా</i> — ఈ కొత్తగా delimit చేసిన constituencies ఆధారంగానే జరిగాయి. మిగిలిన seats, తర్వాతి delimitation exercises వాటిని అందుకునే వరకు పాత (2008 కు ముందటి) boundaries మీదే కొనసాగాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Fourth Commission &amp; Implementation</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Fourth Commission's task &amp; census basis?</td><td>Readjust PC/AC in all states except erstwhile J&amp;K, on 2001 census</td></tr>
+      <tr><td>3-member composition?</td><td>SC judge (chair) + CEC/EC nominee + State Election Commissioner</td></tr>
+      <tr><td>Associate members?</td><td>10 per state (5 LS MPs + 5 MLAs), nominated by Speakers, no voting/signing right</td></tr>
+      <tr><td>Who chaired the Fourth Commission?</td><td>Justice Kuldip Singh (retired SC judge)</td></tr>
+      <tr><td>Submitted / notified when?</td><td>Submitted 2007; President's notification 2008</td></tr>
+      <tr><td>Which 5 states were excluded, and why?</td><td>Assam, Arunachal Pradesh, Manipur, Nagaland (deferred) + Jharkhand (order nullified)</td></tr>
+      <tr><td>2009 elections — how many PCs used new boundaries?</td><td>499 of 543</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Delimitation Commission (2020) — Composition, Timeline &amp; J&amp;K's Special History</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Delimitation Commission (2020) — Reviving the North-East + Bringing In J&amp;K</div>
+  <p class="eng">In <b class="hlg">February 2020</b>, the Government <b class="term">rescinded</b> its earlier 2008 notifications that had deferred delimitation in the four north-eastern states (Assam, Arunachal Pradesh, Manipur, Nagaland), citing a <b class="imp">significant improvement in the security situation</b> — reduced insurgency and improved law and order — that removed the original threat-to-unity/public-order justification for the deferral. Subsequently, in <b class="hlg">March 2020</b>, the Government set up a new <b>Delimitation Commission</b> to delimit Parliamentary and Assembly constituencies in these four states <i>and</i> the newly-created <b class="term">Union Territory of Jammu &amp; Kashmir (UT of J&amp;K)</b>.</p>
+  <div class="te"><b class="hlg">2020 ఫిబ్రవరి</b> లో, Government తన 2008 నాటి notifications ను — నలుగు ఈశాన్య రాష్ట్రాల్లో (Assam, Arunachal Pradesh, Manipur, Nagaland) delimitation వాయిదా వేసిన notifications ను — <b class="term">rescind</b> చేసింది — భద్రతా పరిస్థితిలో <b class="imp">గణనీయమైన మెరుగుదల</b> (insurgency తగ్గడం, law and order మెరుగుపడటం) కారణంగా, unity/public order కు ముప్పు అనే మొదటి కారణం ఇక లేదని. తర్వాత, <b class="hlg">2020 మార్చి</b> లో, Government కొత్త <b>Delimitation Commission</b> ను ఏర్పాటు చేసింది — ఈ నాలుగు రాష్ట్రాలు <i>మరియు</i> కొత్తగా ఏర్పడిన <b class="term">Union Territory of Jammu &amp; Kashmir (UT of J&amp;K)</b> లో Parliamentary, Assembly constituencies delimit చేయడానికి.</div>
+
+  <p class="eng">This Commission followed the same 3-member formula as the Fourth Commission: <b class="hlp">Justice Ranjana Prakash Desai</b> (retired SC judge) as Chairperson, appointed for a period of <b>one year or till further orders</b>, whichever was earlier; <b class="hlp">Sushil Chandra</b>, Election Commissioner, as ex-officio member; and the State Election Commissioner of the concerned State/UT as the other ex-officio member. Its task had two parts: <b>(1)</b> delimit constituencies in the four north-eastern states under the <b>Delimitation Act, 2002</b>; and <b>(2)</b> delimit constituencies in the UT of J&amp;K under the <b class="hlg">J&amp;K Reorganisation Act, 2019</b> read with the Delimitation Act, 2002.</p>
+  <div class="te">ఈ Commission కూడా Fourth Commission లాంటి 3-member formula నే పాటించింది — <b class="hlp">Justice Ranjana Prakash Desai</b> (retired SC judge) Chairperson గా, <b>ఒక సంవత్సరం లేదా further orders వరకు</b>, ఏది ముందైతే అది అనే నియామకంతో; <b class="hlp">Sushil Chandra</b>, Election Commissioner, ex-officio member గా; సంబంధిత State/UT State Election Commissioner మరో ex-officio member గా. దీని పని రెండు భాగాలు — <b>(1)</b> నలుగు ఈశాన్య రాష్ట్రాల్లో <b>Delimitation Act, 2002</b> కింద constituencies delimit చేయడం; <b>(2)</b> UT J&amp;K లో <b class="hlg">J&amp;K Reorganisation Act, 2019</b>, Delimitation Act 2002 తో కలిపి, constituencies delimit చేయడం.</div>
+
+  <p class="eng">However, in <b class="hlg">March 2021</b>, the Government <b class="imp">removed the four north-eastern states</b> from this Commission's purview altogether, while extending its term by one year (till <b class="hlg">March 2022</b>) so it could continue its J&amp;K work. It received a further two-month extension in <b class="hlg">February 2022</b> (till <b class="hlg">May 2022</b>). The Commission also associated <b class="hlg">five members</b> of the Lok Sabha elected from the UT of J&amp;K in its work (nominated by the Speaker, Lok Sabha), again without voting rights. It <b class="imp">completed its task in May 2022</b>, publishing its report titled <b>"Delimited Landscape of Union Territory of Jammu &amp; Kashmir."</b></p>
+  <div class="te">అయితే, <b class="hlg">2021 మార్చి</b> లో, Government నలుగు ఈశాన్య రాష్ట్రాలను ఈ Commission పరిధి నుండి <b class="imp">పూర్తిగా తొలగించింది</b> — J&amp;K పని కొనసాగించడానికి దాని పదవీకాలాన్ని ఒక సంవత్సరం (<b class="hlg">2022 మార్చి</b> వరకు) పొడిగించింది. <b class="hlg">2022 ఫిబ్రవరి</b> లో మరో రెండు నెలల పొడిగింపు (<b class="hlg">2022 మే</b> వరకు) వచ్చింది. Commission, UT J&amp;K నుండి ఎన్నికైన <b class="hlg">ఐదుగురు</b> Lok Sabha members ను కూడా తన పనిలో భాగస్వాములుగా చేసుకుంది (Speaker, Lok Sabha నామినేట్ చేశారు), వారికి కూడా వోటు హక్కు లేకుండానే. ఇది <b class="imp">2022 మేలో తన పనిని పూర్తి చేసింది</b> — <b>"Delimited Landscape of Union Territory of Jammu &amp; Kashmir"</b> అనే పేరుతో నివేదిక ప్రచురించింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Delimitation Commission (2020)</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Why rescind the 2008 NE deferral, when?</td><td>Feb 2020 — improved security/law-order situation in the 4 NE states</td></tr>
+      <tr><td>Commission set up when, for what?</td><td>March 2020 — for 4 NE states + UT of J&amp;K</td></tr>
+      <tr><td>Composition?</td><td>Justice Ranjana Prakash Desai (chair) + Sushil Chandra (EC) + State EC</td></tr>
+      <tr><td>What happened in March 2021?</td><td>NE states removed from its purview; term extended to March 2022 (for J&amp;K only)</td></tr>
+      <tr><td>Final extension, and completion date?</td><td>Feb 2022 extension to May 2022; task completed May 2022</td></tr>
+      <tr><td>Name of its report?</td><td>"Delimited Landscape of Union Territory of Jammu &amp; Kashmir"</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Delimitation in J&amp;K — Why Its History Is Different</div>
+  <p class="eng">J&amp;K's delimitation story took a <b class="imp">separate path</b> from the rest of India for decades, on account of the region's special status under Article 370 — a status the <b class="hlg">J&amp;K Reorganisation Act, 2019</b> finally ended. Before that Act, <b>Lok Sabha</b> seats in J&amp;K were delimited under the same national Constitution as everywhere else, but the State's own <b>Assembly</b> seats followed a completely different rulebook: the <i>Constitution of J&amp;K</i> together with the <i>J&amp;K Representation of the People Act, 1957</i>.</p>
+  <div class="te">J&amp;K లో delimitation చరిత్రపరంగా దేశంలోని మిగతా భాగం కంటే <b class="imp">వేరైన మార్గం</b> లో సాగింది — ఈ ప్రాంతం ప్రత్యేక హోదా (Article 370) కారణంగా — దీన్ని <b class="hlg">J&amp;K Reorganisation Act, 2019</b> ఉపసంహరించింది. అప్పటివరకు, J&amp;K లో <b>Lok Sabha</b> seats delimitation (మిగతా ప్రాంతాల్లాగే) India Constitution ప్రకారమే జరిగినా, <b>State Assembly</b> seats delimitation మాత్రం వేరుగా <i>J&amp;K Constitution</i>, <i>J&amp;K Representation of the People Act, 1957</i> ప్రకారం జరిగింది.</div>
+
+  <p class="eng">J&amp;K's Assembly seats were delimited in <b class="hlg">1957, 1966, 1975 and 1995</b>; the last of these was based on the <b class="hlg">1981 census</b> and formed the basis of the 1996 state elections. The state <b class="imp">skipped the 1991 census altogether</b>, and no Delimitation Commission followed after 2001 either — because J&amp;K's own Assembly had legislated a <b class="imp">freeze on fresh delimitation</b> until figures from the first census after 2026 come out (mirroring, at the state level, the very same freeze logic seen on Page 3). At that time the J&amp;K Assembly had <b class="hlg">111 seats</b>, including 4 in Ladakh, and <b class="hlg">24 seats</b> kept reserved (vacant) for <b>Pakistan-occupied J&amp;K (PoJ&amp;K)</b>.</p>
+  <div class="te">J&amp;K Assembly seats <b class="hlg">1957, 1966, 1975, 1995</b> లో delimit అయ్యాయి; వీటిలో చివరిది <b class="hlg">1981 census</b> ఆధారంగా జరిగింది, 1996 state elections కు పునాదిగా నిలిచింది. రాష్ట్రంలో <b class="imp">1991 లో census జరగలేదు</b>, 2001 తర్వాత కూడా ఏ Delimitation Commission ఏర్పాటు కాలేదు — ఎందుకంటే J&amp;K State Assembly స్వయంగా ఒక చట్టం చేసి, 2026 తర్వాతి మొదటి census గణాంకాలు ప్రచురించే వరకు కొత్త delimitation ను <b class="imp">freeze</b> చేసింది (Page 3 లో చూసిన అదే freeze logic ను రాష్ట్ర స్థాయిలో ప్రతిబింబిస్తూ). ఆ సమయంలో J&amp;K Assembly లో <b class="hlg">111 seats</b> ఉండేవి — వీటిలో 4 Ladakh లో, <b class="hlg">24 seats</b> <b>Pakistan-occupied J&amp;K (PoJ&amp;K)</b> కోసం రిజర్వ్ చేసి ఖాళీగా ఉంచేవారు.</div>
+
+  <p class="eng">The <b class="hlg">J&amp;K Reorganisation Act, 2019</b> created the UT of J&amp;K with a Legislative Assembly, fixing the total directly-elected seats at <b class="hlg">114</b> — a beneficent provision also allows the <b class="hlp">Lieutenant Governor</b> to nominate <b class="hlg">2 women</b> members if, in the LG's opinion, women are not adequately represented. As before, <b class="hlg">24 seats</b> for the PoJ&amp;K area remain vacant and excluded from delimitation. Net effect: an <b class="imp">increase of 7 seats</b> in the J&amp;K Assembly (111 → 114 directly-elected, plus the 2 nominable women's seats).</p>
+  <div class="te"><b class="hlg">J&amp;K Reorganisation Act, 2019</b> UT J&amp;K కు ఒక Legislative Assembly ఏర్పాటు చేసింది — direct ఎన్నికల ద్వారా నింపే మొత్తం seats సంఖ్యను <b class="hlg">114</b> గా ఫిక్స్ చేసింది — స్త్రీలకు తగినంత representation లేదని <b class="hlp">Lieutenant Governor</b> అభిప్రాయపడితే <b class="hlg">2 మంది women</b> members ను నామినేట్ చేసే beneficent provision కూడా ఉంది. మునుపటిలాగే, PoJ&amp;K ప్రాంతం కోసం <b class="hlg">24 seats</b> ఖాళీగా ఉండి, delimitation నుండి మినహాయించారు. నికర ఫలితం — J&amp;K Assembly లో <b class="imp">7 seats పెరుగుదల</b> (111 → 114 direct-election seats, పైగా 2 నామినేటబుల్ women's seats).</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — J&amp;K's Special Delimitation History</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Pre-2019: who governed LS vs Assembly seat delimitation in J&amp;K?</td><td>LS seats — Constitution of India; Assembly seats — J&amp;K Constitution + J&amp;K RP Act 1957</td></tr>
+      <tr><td>Assembly delimitation years, last basis?</td><td>1957, 1966, 1975, 1995 — last one on 1981 census</td></tr>
+      <tr><td>Why no delimitation after 2001?</td><td>J&amp;K Assembly's own law froze it until first census after 2026</td></tr>
+      <tr><td>Old J&amp;K Assembly seats (incl. Ladakh/PoJ&amp;K)?</td><td>111 total (4 Ladakh) + 24 vacant reserved for PoJ&amp;K</td></tr>
+      <tr><td>New UT of J&amp;K Assembly — total directly-elected seats, women's nomination?</td><td>114 directly elected; LG may nominate 2 women if under-represented</td></tr>
+      <tr><td>Net seat change from Reorganisation Act, 2019?</td><td>Increase of 7 seats (111 → 114)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">2011-Census Task for J&amp;K &amp; the May 2022 Order</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">The Commission's 2011-Census Task &amp; SC/ST Reservation in J&amp;K</div>
+  <p class="eng">The 2020 Commission's task in J&amp;K was to delimit the Parliamentary and Assembly constituencies of the UT on the basis of the <b class="hlg">2011 census</b> (not 2001, unlike the rest of the country's Fourth Commission) and in accordance with both the J&amp;K Reorganisation Act, 2019 and the Delimitation Act, 2002. This was necessary because the 2011 census population had grown by <b class="imp">more than 100%</b> over the 1981 census population that the last J&amp;K delimitation had used — meaning constituencies had become severely <b class="term">malapportioned</b> (badly mismatched in population) over three decades of no redrawing.</p>
+  <div class="te">2020 Commission J&amp;K లో పని — UT లోని Parliamentary, Assembly constituencies ను <b class="hlg">2011 census</b> ఆధారంగా (దేశంలోని మిగతా భాగానికి Fourth Commission వాడిన 2001 కాదు) — J&amp;K Reorganisation Act 2019, Delimitation Act 2002 రెండింటికీ అనుగుణంగా delimit చేయడం. ఇది అవసరమైంది ఎందుకంటే — చివరిసారి J&amp;K delimitation వాడిన 1981 census జనాభా కంటే 2011 census జనాభా <b class="imp">100% కంటే ఎక్కువ</b> పెరిగింది — అంటే మూడు దశాబ్దాలు తిరిగి గీయకుండా ఉండటం వల్ల constituencies తీవ్రంగా <b class="term">malapportioned</b> (జనాభాతో బాగా సరిపోకుండా) అయ్యాయి.</div>
+
+  <p class="eng">Reservation of seats for SCs and STs in the J&amp;K Assembly was worked out on the basis of the 2011 census, having regard to Articles 330 and 332 of the Constitution, the J&amp;K Reorganisation Act, 2019, and the Delimitation Act, 2002. Notably, the Constitution of the erstwhile State of J&amp;K had <b class="imp">not</b> provided for ST reservation in its Legislative Assembly at all — so ST reservation in J&amp;K's Assembly was, in effect, a <b class="term">first-time</b> provision introduced through this delimitation exercise.</p>
+  <div class="te">J&amp;K Assembly లో SC, ST లకు seats reservation ను — Constitution Article 330, 332, J&amp;K Reorganisation Act 2019, Delimitation Act 2002 దృష్టిలో పెట్టుకుని — 2011 census ఆధారంగా పని చేశారు. గమనించదగ్గ విషయం ఏమిటంటే — erstwhile J&amp;K State Constitution దాని Legislative Assembly లో ST reservation ను <b class="imp">అస్సలు అందించలేదు</b> — కాబట్టి J&amp;K Assembly లో ST reservation, ఈ delimitation exercise ద్వారా వాస్తవానికి <b class="term">మొదటిసారి</b> ప్రవేశపెట్టిన నిబంధన అయింది.</div>
+
+  <div class="stitle">Order of the Commission (May 2022)</div>
+  <p class="eng">In <b class="hlg">May 2022</b>, the Commission issued its final order on delimitation of Parliamentary and Assembly constituencies in the UT of J&amp;K, with these key provisions:</p>
+  <div class="te"><b class="hlg">2022 మే</b> లో, Commission UT J&amp;K లో Parliamentary, Assembly constituencies delimitation పై తుది order జారీ చేసింది — ఈ కీలక అంశాలతో:</div>
+  <ul>
+    <li>J&amp;K treated as a <b class="term">single entity</b> for delimitation — as a result, all <b class="hlg">5</b> Parliamentary constituencies now have an <b>equal 18 Assembly constituencies</b> each.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px">J&amp;K ను delimitation కోసం <b class="term">single entity</b> గా treat చేశారు — దీని ఫలితంగా, అన్ని <b class="hlg">5</b> Parliamentary constituencies కు ఇప్పుడు సమానంగా <b>18 Assembly constituencies</b> చొప్పున ఉన్నాయి.</div></li>
+    <li><b>Anantnag–Rajouri</b> Parliamentary constituency carved out by combining the Anantnag area (Kashmir region) with the Rajouri &amp; Poonch area (Jammu region) — a striking cross-regional constituency.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px"><b>Anantnag–Rajouri</b> Parliamentary constituency ను Anantnag area (Kashmir region), Rajouri &amp; Poonch area (Jammu region) కలిపి ఏర్పరిచారు — ఇది ఒక ప్రత్యేకమైన, రెండు regions ను దాటే constituency.</div></li>
+    <li>Out of <b class="hlg">90</b> total Assembly constituencies in J&amp;K, <b class="hlg">43</b> are for the Jammu region and <b class="hlg">47</b> for the Kashmir region.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px">మొత్తం <b class="hlg">90</b> Assembly constituencies లో <b class="hlg">43</b> Jammu region కు, <b class="hlg">47</b> Kashmir region కు.</div></li>
+    <li><b class="hlg">6</b> additional Assembly seats were carved out in the Jammu region, plus <b class="hlg">1</b> more in the Kashmir region — brand-new constituencies that didn't exist before.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px">Jammu region కోసం <b class="hlg">6</b> కొత్త, Kashmir region కోసం <b class="hlg">1</b> కొత్త Assembly constituency సృష్టించారు.</div></li>
+    <li>Reservation of <b class="hlg">9</b> Assembly constituencies for STs (6 in Jammu, 3 in Kashmir), and <b class="hlg">7</b> Assembly constituencies for SCs.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px">STs కోసం <b class="hlg">9</b> Assembly constituencies (Jammu లో 6, Kashmir లో 3) రిజర్వ్ చేశారు, SCs కోసం <b class="hlg">7</b> Assembly constituencies రిజర్వ్ చేశారు.</div></li>
+    <li>Some Assembly constituencies were renamed — e.g. one is now named <b class="hlp">Shri Mata Vaishno Devi</b>.
+      <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:6px 9px;margin:4px 0 8px">కొన్ని Assembly constituencies పేర్లు మారాయి — ఉదా. ఒకటి ఇప్పుడు <b class="hlp">Shri Mata Vaishno Devi</b> అని పిలుస్తున్నారు.</div></li>
+  </ul>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — 2011-Census Task &amp; May 2022 Order</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which census basis for J&amp;K delimitation, and why not 2001?</td><td>2011 census — because pop. had grown &gt;100% over 1981 basis, causing malapportionment</td></tr>
+      <tr><td>Was ST reservation new for J&amp;K's Assembly?</td><td>Yes — erstwhile J&amp;K Constitution had no ST reservation at all</td></tr>
+      <tr><td>Order date, and treatment of J&amp;K?</td><td>May 2022 — treated as a single entity; 5 PCs × 18 ACs each</td></tr>
+      <tr><td>Total ACs, Jammu vs Kashmir split?</td><td>90 total — 43 Jammu, 47 Kashmir</td></tr>
+      <tr><td>New ACs created?</td><td>6 in Jammu region, 1 in Kashmir region</td></tr>
+      <tr><td>SC/ST reservation in the new order?</td><td>ST — 9 (6 Jammu + 3 Kashmir); SC — 7</td></tr>
+      <tr><td>Cross-regional PC example?</td><td>Anantnag–Rajouri (Kashmir's Anantnag + Jammu's Rajouri &amp; Poonch)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Recommendations on Migrants &amp; Displaced Persons · Nodal Ministry</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Recommendations of the Commission — Kashmiri Migrants &amp; PoJ&amp;K Displaced Persons</div>
+  <p class="eng">During its public hearings, the Commission received numerous representations from two distinct groups: <b class="term">Kashmiri migrants</b> and <b class="term">displaced persons from Pakistan-occupied J&amp;K (PoJ&amp;K)</b> — the latter displaced across three episodes: <b>1947-48, 1965 and 1971</b>. Delegations representing the Kashmiri migrants described decades of persecution that had pushed them into internal exile — effectively refugees inside their own country for thirty years — and pressed the Commission to set aside seats for their community in both the J&amp;K Assembly and Parliament so their political voice would not be lost. PoJ&amp;K displaced persons similarly requested a few reserved seats in the J&amp;K Assembly.</p>
+  <div class="te">తన public hearings సమయంలో, Commission కి రెండు వేర్వేరు గ్రూపుల నుండి అనేక representations వచ్చాయి — <b class="term">Kashmiri migrants</b>, <b class="term">Pakistan-occupied J&amp;K (PoJ&amp;K) నుండి displaced persons</b> — వీరు మూడు దశల్లో displace అయ్యారు — <b>1947-48, 1965, 1971</b>. Kashmiri migrant delegations, తాము మూడు దశాబ్దాలుగా తమ సొంత దేశంలోనే శరణార్థులుగా persecution ఎదుర్కొని, exile లో జీవించాల్సి వచ్చిందని Commission కి తెలిపి, తమ political rights కాపాడటానికి J&amp;K Assembly, Parliament లో seats రిజర్వ్ చేయాలని కోరారు. PoJ&amp;K displaced persons కూడా J&amp;K Assembly లో కొన్ని రిజర్వ్డ్ seats కోసం అభ్యర్థించారు.</div>
+
+  <p class="eng">Accordingly, the Commission made two distinct recommendations to the Central Government (note: these are <b class="imp">recommendations</b>, not part of the binding May 2022 delimitation order itself): <b>(1) Kashmiri Migrants</b> — provision of at least <b class="hlg">two members</b> (one of whom must be a <b class="term">female</b>) from the Kashmiri-migrant community in the J&amp;K Assembly, with powers at par with the nominated members of the Puducherry Assembly. <b>(2) Displaced Persons from PoJ&amp;K</b> — the Central Government may consider giving them some representation in the J&amp;K Assembly, by way of <b class="term">nomination</b>.</p>
+  <div class="te">అందుకు అనుగుణంగా, Commission Central Government కి రెండు వేర్వేరు సిఫారసులు చేసింది (గమనిక — ఇవి <b class="imp">సిఫారసులు</b> మాత్రమే, 2022 మే బైండింగ్ delimitation order లో భాగం కాదు): <b>(1) Kashmiri Migrants</b> — J&amp;K Assembly లో Kashmiri-migrant community నుండి కనీసం <b class="hlg">ఇద్దరు</b> members (వారిలో ఒకరు తప్పనిసరిగా <b class="term">స్త్రీ</b> అయి ఉండాలి) — Puducherry Assembly నామినేటెడ్ members కు సమానమైన అధికారాలతో. <b>(2) PoJ&amp;K నుండి Displaced Persons</b> — Central Government, J&amp;K Assembly లో <b class="term">nomination</b> ద్వారా వారికి కొంత representation ఇవ్వడాన్ని పరిశీలించవచ్చు.</div>
+
+  <div class="stitle">Nodal Ministry — Where Delimitation Commission Sits in the Government</div>
+  <p class="eng">Laxmikanth's book carries a general reference table of national commissions/central bodies and the ministries they fall under; the entries relevant here are the <b class="hlp">Election Commission of India</b> and the <b class="hlp">Delimitation Commission of India</b> — both under the <b class="term">Ministry of Law and Justice</b>. (Several of the recent Delimitation Act/Commission notifications cited on Page 4-5 were, correspondingly, issued by the Ministry of Law and Justice.)</p>
+  <div class="te">Laxmikanth పుస్తకంలో national commissions/central bodies, వాటికి సంబంధించిన ministries జాబితా ఉన్న ఒక general reference table ఉంది; ఇక్కడ సంబంధించిన entries — <b class="hlp">Election Commission of India</b>, <b class="hlp">Delimitation Commission of India</b> — రెండూ <b class="term">Ministry of Law and Justice</b> కిందకే వస్తాయి. (Page 4-5 లో ప్రస్తావించిన ఇటీవలి Delimitation Act/Commission notifications చాలావరకూ, తదనుగుణంగా, Ministry of Law and Justice జారీ చేసినవే.)</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Recommendations &amp; Nodal Ministry</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>PoJ&amp;K displacement episodes?</td><td>1947-48, 1965, 1971</td></tr>
+      <tr><td>Recommendation for Kashmiri migrants?</td><td>≥2 J&amp;K Assembly members (1 must be female), power at par with Puducherry nominated members</td></tr>
+      <tr><td>Recommendation for PoJ&amp;K displaced persons?</td><td>Central Govt may consider nomination-based representation in J&amp;K Assembly</td></tr>
+      <tr><td>Are these recommendations legally binding, part of the May 2022 order?</td><td>No — recommendations to the Central Government, distinct from the binding order</td></tr>
+      <tr><td>Nodal ministry for Delimitation Commission &amp; Election Commission?</td><td>Ministry of Law and Justice (both)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — The 2026 Delimitation Freeze: Bills, Defeat &amp; Where Things Stand <span class="caasof">(as of 17.08.2026, verified via live web search on this date — this is a live, unresolved political-constitutional question; re-verify closer to your exam date)</span></div>
+
+    <p class="eng">This chapter's own text on the freeze — the total seat-count freeze running "till the first census taken after the year 2026" (Page 3) — turned out to be exactly the constitutional provision at the centre of one of 2026's biggest political-constitutional battles. As explained on Page 3, the freeze (Articles 81, 82, 170, 330, 332) does <b class="imp">not</b> literally expire on the calendar date "2026" — it runs until the <b>first census taken after 2026</b> is published, which points to the 2026 Census (whose figures are expected only around late 2027) as the actual trigger point, not a fixed year. <b class="hlb">Note for cross-referencing:</b> Part IV's <b>State Legislature</b> chapter (see <i>deep_state_legislature.html</i>, Current Affairs Update) covers this same 2026 episode in fuller legislative-procedure detail since it concerns a constitutional amendment bill going through Parliament; this page summarises it from the Delimitation Commission's own institutional angle without duplicating that chapter's full account.</p>
+    <div class="te">ఈ chapter టెక్స్ట్ లోనే ఉన్న freeze గురించిన వాక్యం — మొత్తం seat-count freeze "2026 తర్వాత తీసుకునే మొదటి census వరకు" (Page 3) కొనసాగుతుందని — ఇది సరిగ్గా 2026లో జరిగిన అతిపెద్ద రాజకీయ-రాజ్యాంగ యుద్ధాల్లో ఒకదానికి కేంద్రంగా ఉన్న నిబంధనే అని తేలింది. Page 3 లో వివరించినట్టు, ఈ freeze (Articles 81, 82, 170, 330, 332) "2026" అనే calendar సంవత్సరంలో అక్షరాలా ముగియదు — ఇది <b>2026 తర్వాతి మొదటి census</b> ప్రచురించే వరకు కొనసాగుతుంది — అంటే 2026 Census (దీని గణాంకాలు 2027 చివర్లో మాత్రమే వస్తాయని అంచనా) అసలైన trigger point, స్థిర సంవత్సరం కాదు. <b class="hlb">Cross-reference గమనిక:</b> Part IV <b>State Legislature</b> chapter (<i>deep_state_legislature.html</i>, Current Affairs Update చూడండి) ఈ 2026 ఎపిసోడ్ నే legislative-procedure వివరాలతో సహా పూర్తిగా కవర్ చేసింది — ఎందుకంటే ఇది Parliament లో నడిచిన constitutional amendment bill కు సంబంధించింది; ఈ పేజీ దాన్ని Delimitation Commission institutional కోణం నుండి, ఆ chapter పూర్తి కథను మళ్ళీ చెప్పకుండా, సంక్షిప్తంగా summarise చేస్తుంది.</div>
+
+    <p class="eng">In April 2026, the government introduced three linked bills to pre-empt this long wait: the <b>Delimitation Bill, 2026</b> (which would have <b class="imp">replaced the Delimitation Act, 2002</b> covered throughout this chapter), the <b>Constitution (131st Amendment) Bill, 2026</b>, and the <b>Union Territories Laws (Amendment) Bill, 2026</b>. Together they sought to abandon the "wait for the post-2026 census" approach and instead delimit afresh using the already-available <b class="hlg">2011</b> census, while enlarging the Lok Sabha to as many as <b class="hlg">850</b> seats (815 for states + up to 35 for UTs) and operationalising the women's-reservation mechanism (Article 334A, from the 106th Amendment Act, 2023) immediately after this delimitation rather than waiting for a post-census exercise. Notably, the proposed new Delimitation Commission under the 2026 Bill would have kept the <b class="imp">exact same 3-member composition formula</b> this chapter already teaches — SC judge (chair) + CEC/nominated EC + concerned State Election Commissioner — showing this chapter's institutional design was treated as settled even while the census-basis question was fiercely contested.</p>
+    <div class="te">2026 ఏప్రిల్ లో, ఈ సుదీర్ఘ నిరీక్షణను ముందస్తుగా అధిగమించడానికి ప్రభుత్వం మూడు అనుసంధాన బిల్లులు ప్రవేశపెట్టింది — <b>Delimitation Bill, 2026</b> (ఇది ఈ chapter అంతటా చర్చించిన Delimitation Act, 2002 స్థానంలో <b class="imp">వచ్చేది</b>), <b>Constitution (131st Amendment) Bill, 2026</b>, <b>Union Territories Laws (Amendment) Bill, 2026</b>. ఈ బిల్లులు కలిసి "2026 తర్వాతి census కోసం వేచి ఉండటం" విధానాన్ని వదిలేసి, అప్పటికే అందుబాటులో ఉన్న <b class="hlg">2011</b> census ఆధారంగా తాజా delimitation చేయాలని, అదే సమయంలో Lok Sabha ను <b class="hlg">850</b> seats వరకు (states కు 815 + UTs కు 35 వరకు) పెంచాలని, women's-reservation mechanism (Article 334A, 106వ సవరణ చట్టం 2023 నుండి) ను post-census exercise కోసం వేచి ఉండకుండా ఈ delimitation తర్వాత వెంటనే అమలు చేయాలని కోరాయి. గమనించదగ్గది — 2026 Bill కింద ప్రతిపాదించిన కొత్త Delimitation Commission, ఈ chapter ఇప్పటికే నేర్పిన <b class="imp">అదే 3-member composition formula</b> ను కొనసాగించేది — SC judge (chair) + CEC/నామినేటెడ్ EC + సంబంధిత State Election Commissioner — census-basis ప్రశ్న తీవ్రంగా వివాదాస్పదమైనా, ఈ చాప్టర్ institutional design మాత్రం స్థిరపడినట్టుగానే treat చేయబడింది.</div>
+
+    <p class="eng">The <b>Constitution (131st Amendment) Bill, 2026</b> was put to vote in the <b>Lok Sabha on 17 April 2026</b> and was <b class="imp">defeated</b> — <b class="hlg">298</b> votes in favour against <b class="hlg">230</b> opposing, out of 528 members present and voting, short of Article 368's two-thirds special majority. The government withdrew the two companion bills — Delimitation Bill 2026 and UT Laws (Amendment) Bill 2026 — that same day. Opposition came primarily from southern states (Tamil Nadu, Kerala, Andhra Pradesh, Karnataka, Telangana), whose slower population growth since the 1971 baseline meant a 2011-census reallocation would have shifted seats northward at their relative expense — a concern amplified because it directly affects APPSC-relevant Andhra Pradesh's own future Lok Sabha/Assembly seat share. <b class="term">Result: the freeze survives unchanged</b> — this chapter's Page 3 account (42nd A.A. 1976 → 84th A.A. 2001 → 87th A.A. 2003, frozen till first census after 2026) remains the current, operative law exactly as written, with no successful amendment to date.</p>
+    <div class="te"><b>Constitution (131st Amendment) Bill, 2026</b> ను <b>2026 ఏప్రిల్ 17</b> న Lok Sabha లో ఓటింగ్ కు పెట్టారు, అది <b class="imp">ఓడిపోయింది</b> — 528 మంది హాజరై ఓటేసిన వారిలో <b class="hlg">298</b> ఓట్లు అనుకూలంగా, <b class="hlg">230</b> ఓట్లు వ్యతిరేకంగా — Article 368 కోరే 2/3 special majority కు తక్కువగా. ప్రభుత్వం అదే రోజు రెండు అనుబంధ బిల్లులు — Delimitation Bill 2026, UT Laws (Amendment) Bill 2026 — ను ఉపసంహరించుకుంది. వ్యతిరేకత ప్రధానంగా దక్షిణాది రాష్ట్రాల (Tamil Nadu, Kerala, Andhra Pradesh, Karnataka, Telangana) నుండి వచ్చింది — 1971 baseline నుండి వీటి జనాభా పెరుగుదల మందగించడం వల్ల, 2011-census reallocation చేస్తే seats ఉత్తరం వైపు మారేవి — ఇది APPSC కు సంబంధించిన Andhra Pradesh సొంత భవిష్యత్ Lok Sabha/Assembly seat వాటాను నేరుగా తాకుతుంది కాబట్టి ఈ ఆందోళన మరింత పెరిగింది. <b class="term">ఫలితం: freeze ఎలాంటి మార్పు లేకుండా కొనసాగుతోంది</b> — ఈ chapter Page 3 లో ఉన్న వివరణ (42వ సవరణ 1976 → 84వ సవరణ 2001 → 87వ సవరణ 2003, 2026 తర్వాతి మొదటి census వరకు freeze) ఇప్పటికీ, ఇప్పటివరకు ఏ విజయవంతమైన సవరణ లేకుండా, రాసినట్టుగానే ప్రస్తుతం అమల్లో ఉన్న చట్టం గా కొనసాగుతోంది.</div>
+
+    <table class="ca2">
+      <caption class="ca2">2026 Delimitation Episode — Key Facts (Delimitation Commission angle)</caption>
+      <thead><tr><th style="width:34%">Item</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Bills (introduced 16 Apr 2026)</td><td>Delimitation Bill 2026 (would replace 2002 Act); Constitution (131st A.A.) Bill 2026; UT Laws (Amendment) Bill 2026</td></tr>
+        <tr><td>Core proposal</td><td>Delimit using 2011 census (not post-2026 census); Lok Sabha up to 850 seats; fast-track 106th A.A. 2023 women's reservation</td></tr>
+        <tr><td>New Commission's proposed composition</td><td>Unchanged from this chapter — SC judge (chair) + CEC/nominated EC + State EC</td></tr>
+        <tr><td>Vote on 131st A.A. Bill</td><td class="imp">Defeated — 298 for vs 230 against (528 present &amp; voting), 17 Apr 2026</td></tr>
+        <tr><td>Aftermath</td><td>Delimitation Bill 2026 &amp; UT Laws Bill 2026 withdrawn same day, 17 Apr 2026; freeze continues per 84th/87th A.A. as before</td></tr>
+        <tr><td>Path forward (as of Aug 2026)</td><td>Unresolved — 2026 Census data expected ~late 2027; government lacks numbers to re-attempt the amendment; possible future options include another freeze extension or seat increases without reducing any state's current share</td></tr>
+      </tbody>
+    </table>
+
+    <p class="eng">For the exam: continue to cite this chapter's constitutional-history sequence exactly as written — 42nd A.A. 1976 (freeze at 1971 level) → 84th A.A. 2001 (extended till first census after 2026) → 87th A.A. 2003 (2001-census boundaries, no seat-count change) — while being ready for a question testing whether this freeze <b>actually changed in 2026</b> (it did <b>not</b>, the amendment attempt failed) and why (a constitutional amendment bill fell short of Article 368's special majority). Do not confuse the <i>proposed</i> 2026 Delimitation Bill/Commission composition with the <i>actual, currently operative</i> Delimitation Act, 2002 and its Fourth/2020 Commissions detailed on Pages 4-6 — as of today, the 2002 Act remains the governing law.</p>
+    <div class="te">Exam కోసం — ఈ chapter రాజ్యాంగ చరిత్ర క్రమాన్ని రాసినట్టుగానే కొనసాగించి చదవండి — 42వ సవరణ, 1976 (1971 స్థాయిలో freeze) → 84వ సవరణ, 2001 (2026 తర్వాతి మొదటి census వరకు పొడిగింపు) → 87వ సవరణ, 2003 (2001-census boundaries, seat-count మార్పు లేదు) — కానీ ఈ freeze <b>నిజంగా 2026లో మారిందా</b> (మారలేదు, సవరణ ప్రయత్నం విఫలమైంది) అని, ఎందుకు విఫలమైందని (constitutional amendment bill Article 368 special majority కు తక్కువగా ఉండటం వల్ల) అడిగే ప్రశ్నకు సిద్ధంగా ఉండండి. <i>ప్రతిపాదిత</i> 2026 Delimitation Bill/Commission composition ను, Pages 4-6 లో వివరించిన <i>వాస్తవ, ప్రస్తుతం అమల్లో ఉన్న</i> Delimitation Act, 2002, దాని Fourth/2020 Commissions తో confuse కాకూడదు — ఈ రోజు నాటికి, 2002 Act నే governing law గా కొనసాగుతోంది.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 71 — Delimitation Commission of India · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.72 — North Eastern Council</span><span class="dpart">Part VIII &middot; Book 3 of 3</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>
