@@ -1,0 +1,872 @@
+{
+ "lesson": 21,
+ "reviewed": "2026-11-16",
+ "keep": [
+  "GEO-NEW-21-001",
+  "GEO-NEW-21-002",
+  "GEO-NEW-21-003",
+  "GEO-NEW-21-004",
+  "GEO-NEW-21-005",
+  "GEO-NEW-21-006",
+  "GEO-NEW-21-007",
+  "GEO-NEW-21-008",
+  "GEO-NEW-21-009",
+  "GEO-NEW-21-010",
+  "GEO-NEW-21-011",
+  "GEO-NEW-21-012",
+  "GEO-NEW-21-013",
+  "GEO-NEW-21-014",
+  "GEO-NEW-21-015",
+  "GEO-NEW-21-016",
+  "GEO-NEW-21-017",
+  "GEO-NEW-21-018",
+  "GEO-NEW-21-019",
+  "GEO-NEW-21-020",
+  "GEO-NEW-21-021",
+  "GEO-NEW-21-022",
+  "GEO-NEW-21-023",
+  "GEO-NEW-21-024",
+  "GEO-NEW-21-025",
+  "GEO-NEW-21-026",
+  "GEO-NEW-21-027",
+  "GEO-NEW-21-028",
+  "GEO-NEW-21-029",
+  "GEO-NEW-21-030",
+  "GEO-NEW-21-031",
+  "GEO-NEW-21-032",
+  "GEO-NEW-21-033",
+  "GEO-NEW-21-034",
+  "GEO-NEW-21-035",
+  "GEO-NEW-21-036",
+  "GEO-NEW-21-037",
+  "GEO-NEW-21-038",
+  "GEO-NEW-21-039",
+  "GEO-NEW-21-040",
+  "GEO-NEW-21-041",
+  "GEO-NEW-21-042",
+  "GEO-NEW-21-043",
+  "GEO-NEW-21-044",
+  "GEO-NEW-21-045",
+  "GEO-NEW-21-046",
+  "GEO-NEW-21-047",
+  "GEO-NEW-21-048",
+  "GEO-NEW-21-049",
+  "GEO-NEW-21-050",
+  "GEO-NEW-21-051",
+  "GEO-NEW-21-052",
+  "GEO-NEW-21-053",
+  "GEO-NEW-21-054",
+  "GEO-NEW-21-055",
+  "GEO-NEW-21-056",
+  "GEO-NEW-21-057",
+  "GEO-NEW-21-058",
+  "GEO-NEW-21-059",
+  "GEO-NEW-21-060",
+  "GEO-NEW-21-061",
+  "GEO-NEW-21-062",
+  "GEO-NEW-21-063",
+  "GEO-NEW-21-064",
+  "GEO-NEW-21-065",
+  "GEO-NEW-21-066",
+  "GEO-NEW-21-067",
+  "GEO-NEW-21-068",
+  "GEO-ORIG-49-001",
+  "GEO-ORIG-49-002",
+  "GEO-ORIG-49-003",
+  "GEO-ORIG-49-004",
+  "GEO-ORIG-49-005",
+  "GEO-ORIG-49-006",
+  "GEO-ORIG-49-007",
+  "GEO-ORIG-49-008",
+  "GEO-ORIG-49-009",
+  "GEO-ORIG-49-010",
+  "GEO-ORIG-49-011",
+  "GEO-ORIG-49-013",
+  "GEO-ORIG-49-014",
+  "GEO-ORIG-49-015",
+  "GEO-ORIG-49-022",
+  "GEO-ORIG-49-023",
+  "GEO-ORIG-49-024",
+  "GEO-ORIG-50-012",
+  "GEO-ORIG-50-015",
+  "GEO-ORIG-50-024",
+  "GEO-ORIG-51-005",
+  "GEO-ORIG-51-006",
+  "GEO-ORIG-51-007",
+  "GEO-ORIG-51-008",
+  "GEO-ORIG-51-009",
+  "GEO-ORIG-51-010",
+  "GEO-ORIG-51-011",
+  "GEO-ORIG-51-012",
+  "GEO-ORIG-51-014",
+  "GEO-ORIG-51-015",
+  "GEO-ORIG-51-022",
+  "GEO-ORIG-51-023",
+  "GEO-ORIG-52-002",
+  "GEO-ORIG-52-003",
+  "GEO-ORIG-52-004",
+  "GEO-ORIG-52-005",
+  "GEO-ORIG-52-006",
+  "GEO-ORIG-52-007",
+  "GEO-ORIG-52-008",
+  "GEO-ORIG-52-009",
+  "GEO-ORIG-52-010",
+  "GEO-ORIG-52-011",
+  "GEO-ORIG-52-012",
+  "GEO-ORIG-52-013",
+  "GEO-ORIG-52-014",
+  "GEO-ORIG-52-015",
+  "GEO-ORIG-52-022",
+  "GEO-ORIG-52-023",
+  "GEO-ORIG-52-024",
+  "IA08-P369-Q001",
+  "IA08-P369-Q002",
+  "IA08-P369-Q003",
+  "IA08-P369-Q004",
+  "IA08-P369-Q005",
+  "IA08-P369-Q006",
+  "IA08-P369-Q007",
+  "IA08-P369-Q008",
+  "IA08-P369-Q009",
+  "IA08-P370-Q001",
+  "IA08-P370-Q002",
+  "IA08-P370-Q003",
+  "IA08-P370-Q004",
+  "IA08-P370-Q005",
+  "IA08-P370-Q006",
+  "IA08-P376-Q001",
+  "IA08-P392-Q006",
+  "IA08-P393-Q002",
+  "IA08-P393-Q004",
+  "IA08-P393-Q006",
+  "IA08-P394-Q001",
+  "IA08-P394-Q002",
+  "IA08-P394-Q005",
+  "IA08-P395-Q003",
+  "IA08-P395-Q007",
+  "IA08-P400-Q006",
+  "IA08-P400-Q007",
+  "IA08-P400-Q009",
+  "IA08-P401-Q006",
+  "IA08-P402-Q002",
+  "IA08-P402-Q003",
+  "IA08-P402-Q004"
+ ],
+ "fix": {
+  "GEO-ORIG-49-012": {
+   "question_en": "Which industry is the clearest example of labour (skill) orientation?",
+   "question_te": "కింది వాటిలో శ్రామికుల మొగ్గుకు (Labour / skill orientation) అత్యంత స్పష్టమైన ఉదాహరణ ఏది?",
+   "options_en": [
+    "Diamond cutting and jewellery",
+    "Cement manufacturing",
+    "Aluminium smelting",
+    "Soft-drink bottling"
+   ],
+   "options_te": [
+    "వజ్రాల కోత, ఆభరణాల తయారీ",
+    "సిమెంటు తయారీ",
+    "అల్యూమినియం కరిగింపు",
+    "శీతల పానీయాల బాట్లింగ్"
+   ],
+   "explanation_en": "Diamond cutting and jewellery are labour-oriented because fine, skilled handwork matters more than any raw material. Such industries locate where trained artisans and the right wage–productivity balance exist. Cement is raw-material oriented, aluminium is power oriented and soft drinks are market oriented.",
+   "explanation_te": "వజ్రాల కోత, ఆభరణాల తయారీ శ్రామికుల మొగ్గు (Labour orientation) కు స్పష్టమైన ఉదాహరణ; ఇక్కడ ముడి పదార్థం కంటే సూక్ష్మమైన నైపుణ్యమే ముఖ్యం. శిక్షణ పొందిన కళాకారులు, జీతం–ఉత్పాదకత సమతుల్యత ఉన్న చోటుకే ఇలాంటి పరిశ్రమలు వెళ్తాయి. సిమెంటు ముడి పదార్థ మొగ్గు, అల్యూమినియం విద్యుత్తు మొగ్గు, శీతల పానీయాలు మార్కెట్ మొగ్గు.",
+   "option_explanations_en": [
+    "Correct. Skilled fine work is the main pull, so these industries follow trained workers.",
+    "Wrong. Cement processes bulky limestone and locates near the mines (raw-material orientation).",
+    "Wrong. Aluminium smelting needs huge continuous power for electrolysis (power orientation).",
+    "Wrong. Soft drinks gain weight (mostly water) and are made near buyers (market orientation)."
+   ],
+   "option_explanations_te": [
+    "సరైనది. సూక్ష్మ నైపుణ్యమే ప్రధాన ఆకర్షణ; అందుకే ఇవి నైపుణ్యం ఉన్న కార్మికుల దగ్గరికి వెళ్తాయి.",
+    "తప్పు. సిమెంటు బరువైన సున్నపురాయిని ప్రాసెస్ చేస్తుంది, గనుల దగ్గర ఉంటుంది (ముడి పదార్థ మొగ్గు).",
+    "తప్పు. అల్యూమినియం కరిగింపుకు విద్యుత్ విశ్లేషణ (Electrolysis) కోసం భారీ నిరంతర కరెంటు కావాలి (విద్యుత్తు మొగ్గు).",
+    "తప్పు. శీతల పానీయాల్లో ఎక్కువ భాగం నీరు; బరువు పెరుగుతుంది కాబట్టి మార్కెట్ దగ్గర తయారవుతాయి (మార్కెట్ మొగ్గు)."
+   ],
+   "reason": "Duplicate of IA08-P369-Q009 (footloose definition; also in GEO-ORIG-49-015 matching). Rewritten to a new fact: labour (skill) orientation example."
+  },
+  "GEO-ORIG-49-016": {
+   "question_en": "Consider the following statements: I. Weber's least-cost theory adds up the cost of bringing raw material, the cost of sending the finished product and labour cost. II. In Weber's theory, if raw material loses much weight in manufacture, the factory is pulled towards the raw material. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. Weber కనిష్ఠ వ్యయ (Least-cost) సిద్ధాంతం ముడి పదార్థం తెచ్చే ఖర్చు, తయారైన వస్తువు పంపే ఖర్చు, కార్మికుల ఖర్చు — ఈ మూడింటినీ కలిపి చూస్తుంది. II. Weber సిద్ధాంతంలో తయారీలో ముడి పదార్థం బరువు బాగా తగ్గితే ఫ్యాక్టరీ ముడి పదార్థం దగ్గరికి వెళ్తుంది. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Both statements are correct: Weber (1909) located a factory where the combined cost of raw-material transport, finished-product transport and labour is lowest. When manufacture loses much weight, carrying raw material is costlier than carrying the product, so the plant moves to the raw material. This is why sugar mills sit among cane fields.",
+   "explanation_te": "రెండు వాక్యాలూ సరైనవి: Weber (1909) ప్రకారం ముడి పదార్థం రవాణా, తయారైన వస్తువు రవాణా, కార్మికుల ఖర్చు కలిపి ఎక్కడ తక్కువైతే అక్కడ ఫ్యాక్టరీ పెట్టాలి. తయారీలో బరువు బాగా తగ్గితే ముడి పదార్థం మోయడమే ఖరీదు కాబట్టి ఫ్యాక్టరీ ముడి పదార్థం దగ్గరికి వెళ్తుంది. చక్కెర మిల్లులు చెరకు పొలాల మధ్య ఉండేది ఇందుకే.",
+   "option_explanations_en": [
+    "Wrong. Both statements correctly describe Weber's theory.",
+    "Correct. Statement I gives Weber's three cost elements and Statement II the weight-loss pull towards raw material.",
+    "Wrong. Statement II is also correct: weight-losing processes pull the plant to the raw material.",
+    "Wrong. Statement I is also correct: Weber counts raw-material transport, product transport and labour costs."
+   ],
+   "option_explanations_te": [
+    "తప్పు. రెండు వాక్యాలూ Weber సిద్ధాంతాన్ని సరిగ్గా చెబుతున్నాయి.",
+    "సరైనది. I వాక్యం Weber చెప్పిన మూడు ఖర్చులను, II వాక్యం బరువు తగ్గే పరిశ్రమ ముడి పదార్థం వైపు వెళ్లడాన్ని సరిగ్గా చెబుతున్నాయి.",
+    "తప్పు. II వాక్యం కూడా సరైనదే: బరువు తగ్గే తయారీ ఫ్యాక్టరీని ముడి పదార్థం దగ్గరికి లాగుతుంది.",
+    "తప్పు. I వాక్యం కూడా సరైనదే: Weber ముడి పదార్థం రవాణా, వస్తువు రవాణా, కార్మికుల ఖర్చులను లెక్కిస్తారు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-49-001/002 and the GEO-ORIG-49-013 matching (raw-material and market orientation). Rewritten to a new fact: the three cost elements and weight-loss pull in Weber's theory."
+  },
+  "GEO-ORIG-49-017": {
+   "question_en": "Consider the following statements: I. Port linkage matters most for industries that use imported raw material or export their output. II. Milk and fish processing are classed as footloose industries. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. దిగుమతి ముడి పదార్థం వాడే, ఉత్పత్తిని ఎగుమతి చేసే పరిశ్రమలకు రేవు సంబంధం (Port linkage) ఎక్కువ ముఖ్యం. II. పాలు, చేపల ప్రాసెసింగ్ స్వేచ్ఛా పరిశ్రమలు (Footloose industries). పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Only Statement I is correct: port linkage connects industrial freight to sea routes, so it matters most to import-dependent and exporting industries. Milk and fish spoil quickly, so their processing units stay near the source of supply; they are raw-material based, not footloose. Footloose industries, such as electronics assembly and IT, are not tied to any one bulky raw material.",
+   "explanation_te": "I వాక్యం మాత్రమే సరైనది: రేవు సంబంధం (Port linkage) పారిశ్రామిక సరుకును సముద్ర మార్గాలకు కలుపుతుంది, కాబట్టి దిగుమతులు, ఎగుమతులపై ఆధారపడే పరిశ్రమలకు ఇది ఎక్కువ ముఖ్యం. పాలు, చేపలు త్వరగా పాడవుతాయి కాబట్టి వాటి ప్రాసెసింగ్ యూనిట్లు సరఫరా దగ్గరే ఉంటాయి; అవి ముడి పదార్థ ఆధార పరిశ్రమలు, స్వేచ్ఛా పరిశ్రమలు కావు. ఎలక్ట్రానిక్స్ అసెంబ్లీ, IT వంటివే స్వేచ్ఛా పరిశ్రమలు.",
+   "option_explanations_en": [
+    "Correct. Port linkage is key for import- and export-based industries; Statement II is false.",
+    "Wrong. Statement II is false: milk and fish processing are raw-material (perishable-input) based.",
+    "Wrong. Statement II is false, and Statement I is true.",
+    "Wrong. Statement I is true: port linkage matters most to import- and export-oriented units."
+   ],
+   "option_explanations_te": [
+    "సరైనది. దిగుమతి, ఎగుమతి పరిశ్రమలకు రేవు సంబంధం ముఖ్యం; II వాక్యం తప్పు.",
+    "తప్పు. II వాక్యం తప్పు: పాలు, చేపల ప్రాసెసింగ్ త్వరగా పాడయ్యే ముడి పదార్థంపై ఆధారపడే పరిశ్రమలు.",
+    "తప్పు. II వాక్యం తప్పు; I వాక్యం సరైనది.",
+    "తప్పు. I వాక్యం సరైనది: దిగుమతి, ఎగుమతి పరిశ్రమలకు రేవు సంబంధం ఎక్కువ ముఖ్యం."
+   ],
+   "reason": "Duplicate of GEO-ORIG-49-003/004 and GEO-ORIG-49-013 (labour orientation, transport node). Statement II was also a weak 'another name' straw man. Rewritten to new facts: who needs port linkage; perishable inputs make milk/fish raw-material oriented."
+  },
+  "GEO-ORIG-49-018": {
+   "question_en": "Consider the following statements: I. A large new factory usually discourages small industries from coming up around it. II. The chemical industry is a hub of inter-industry linkages because it supplies inputs to almost every other industry. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. కొత్తగా వచ్చిన పెద్ద ఫ్యాక్టరీ సాధారణంగా దాని చుట్టూ చిన్న పరిశ్రమలు రాకుండా చేస్తుంది. II. రసాయన పరిశ్రమ దాదాపు ప్రతి పరిశ్రమకూ ముడి పదార్థం ఇస్తుంది కాబట్టి పరిశ్రమల మధ్య సంబంధాలకు (Linkages) అది కేంద్రం. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Only Statement II is correct: chemicals feed almost every industry, so the chemical industry sits at the centre of linkages. Statement I is the opposite of what happens: a big factory creates work on both sides — suppliers upstream (backward linkage) and users downstream (forward linkage) — so small industries grow around it.",
+   "explanation_te": "II వాక్యం మాత్రమే సరైనది: రసాయనాలు దాదాపు ప్రతి పరిశ్రమకూ కావాలి కాబట్టి రసాయన పరిశ్రమ సంబంధాలకు కేంద్రం. I వాక్యం జరిగేదానికి వ్యతిరేకం: పెద్ద ఫ్యాక్టరీ వస్తే ఎగువన సరఫరాదారులకు (Backward linkage), దిగువన వాడుకునేవాళ్లకు (Forward linkage) పని దొరుకుతుంది; అందుకే దాని చుట్టూ చిన్న పరిశ్రమలు పుడతాయి.",
+   "option_explanations_en": [
+    "Wrong. Statement I is false and Statement II is true.",
+    "Wrong. Statement I is false: a large plant attracts small suppliers and users around it.",
+    "Correct. Chemicals are a linkage hub; Statement I reverses the real effect of a big plant.",
+    "Wrong. Statement I is false, so both cannot be correct."
+   ],
+   "option_explanations_te": [
+    "తప్పు. I వాక్యం తప్పు, II వాక్యం సరైనది.",
+    "తప్పు. I వాక్యం తప్పు: పెద్ద ఫ్యాక్టరీ చుట్టూ చిన్న సరఫరాదారులు, వినియోగదారులు వస్తారు.",
+    "సరైనది. రసాయన పరిశ్రమ సంబంధాలకు కేంద్రం; I వాక్యం పెద్ద ఫ్యాక్టరీ అసలు ప్రభావాన్ని తిప్పి చెబుతోంది.",
+    "తప్పు. I వాక్యం తప్పు, కాబట్టి రెండూ సరైనవి కావు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-49-005/006 and GEO-ORIG-49-014 (backward/forward linkage definitions). Rewritten to new facts: a big plant spawns small units on both sides; chemicals as a linkage hub."
+  },
+  "GEO-ORIG-49-019": {
+   "question_en": "Consider the following statements: I. The upstream side of a factory refers to its buyers, such as car makers buying steel. II. The downstream side of a factory refers to its suppliers, such as iron-ore and coal suppliers. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. ఒక ఫ్యాక్టరీ ఎగువ వైపు (Upstream) అంటే దాని కొనుగోలుదారులు, ఉదా: ఉక్కు కొనే కార్ల కంపెనీలు. II. ఒక ఫ్యాక్టరీ దిగువ వైపు (Downstream) అంటే దాని సరఫరాదారులు, ఉదా: ఇనుప ఖనిజం, బొగ్గు ఇచ్చేవాళ్లు. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Neither statement is correct: the two terms are swapped. Upstream is the supply side — iron ore, coal, limestone and power flowing into a steel plant (backward linkage). Downstream is the user side — car makers, builders and pipe makers buying the steel (forward linkage). Inputs flow to the factory like water from the upper reaches of a river.",
+   "explanation_te": "రెండు వాక్యాలూ తప్పు: రెండు పదాలను తారుమారు చేశారు. ఎగువ (Upstream) అంటే సరఫరా వైపు — ఉక్కు ఫ్యాక్టరీకి వచ్చే ఇనుప ఖనిజం, బొగ్గు, సున్నపురాయి, కరెంటు (Backward linkage). దిగువ (Downstream) అంటే వాడుకునే వైపు — ఉక్కు కొనే కార్ల కంపెనీలు, భవన నిర్మాణ సంస్థలు (Forward linkage). నది పైభాగం నుంచి నీరు వచ్చినట్లు ఇన్‌పుట్‌లు ఫ్యాక్టరీకి వస్తాయి.",
+   "option_explanations_en": [
+    "Wrong. Statement I is false: buyers are the downstream side, not upstream.",
+    "Correct. Both statements swap the terms; upstream = suppliers, downstream = buyers.",
+    "Wrong. Statement II is false: suppliers are the upstream side, not downstream.",
+    "Wrong. Both statements reverse the meanings, so neither is correct."
+   ],
+   "option_explanations_te": [
+    "తప్పు. I వాక్యం తప్పు: కొనుగోలుదారులు దిగువ వైపు, ఎగువ కాదు.",
+    "సరైనది. రెండు వాక్యాలూ పదాలను తారుమారు చేశాయి; ఎగువ = సరఫరాదారులు, దిగువ = కొనుగోలుదారులు.",
+    "తప్పు. II వాక్యం తప్పు: సరఫరాదారులు ఎగువ వైపు, దిగువ కాదు.",
+    "తప్పు. రెండు వాక్యాలూ అర్థాలను తిప్పి చెబుతున్నాయి, కాబట్టి ఏదీ సరైనది కాదు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-49-007/008 and GEO-ORIG-49-014 (agglomeration economy/diseconomy definitions). Rewritten to a new fact: meaning of upstream and downstream with the steel example."
+  },
+  "GEO-ORIG-49-020": {
+   "question_en": "Consider the following statements: I. The Index of Eight Core Industries includes fertilisers and cement. II. The Annual Survey of Industries (ASI), released by MoSPI, covers output, value added, employment and investment of registered factories. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. ఎనిమిది కీలక పరిశ్రమల సూచీ (Index of Eight Core Industries) లో ఎరువులు, సిమెంటు ఉన్నాయి. II. MoSPI విడుదల చేసే పరిశ్రమల వార్షిక సర్వే (ASI) నమోదైన ఫ్యాక్టరీల ఉత్పత్తి, విలువ జోడింపు, ఉద్యోగాలు, పెట్టుబడిని చూపుతుంది. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Both statements are correct. The Eight Core index (released monthly by DPIIT) covers coal, crude oil, natural gas, refinery products, fertilisers, steel, cement and electricity. The ASI, released annually by MoSPI, gives output, value added, employment and investment of registered factories.",
+   "explanation_te": "రెండు వాక్యాలూ సరైనవి. ఎనిమిది కీలక పరిశ్రమల సూచీ (DPIIT ప్రతి నెల విడుదల) లో బొగ్గు, ముడి చమురు, సహజ వాయువు, రిఫైనరీ ఉత్పత్తులు, ఎరువులు, ఉక్కు, సిమెంటు, విద్యుత్తు ఉన్నాయి. MoSPI ఏటా విడుదల చేసే ASI నమోదైన ఫ్యాక్టరీల ఉత్పత్తి, విలువ జోడింపు, ఉద్యోగాలు, పెట్టుబడిని చూపుతుంది.",
+   "option_explanations_en": [
+    "Wrong. Statement I is also correct: fertilisers and cement are two of the eight core industries.",
+    "Wrong. Both statements are correct.",
+    "Correct. Fertilisers and cement are in the Eight Core index, and the ASI (MoSPI) covers registered factories.",
+    "Wrong. Statement II is also correct: the ASI is MoSPI's annual survey of registered factories."
+   ],
+   "option_explanations_te": [
+    "తప్పు. I వాక్యం కూడా సరైనదే: ఎరువులు, సిమెంటు ఎనిమిది కీలక పరిశ్రమల్లో ఉన్నాయి.",
+    "తప్పు. రెండు వాక్యాలూ సరైనవి.",
+    "సరైనది. ఎరువులు, సిమెంటు Eight Core సూచీలో ఉన్నాయి; ASI (MoSPI) నమోదైన ఫ్యాక్టరీల వివరాలు ఇస్తుంది.",
+    "తప్పు. II వాక్యం కూడా సరైనదే: ASI నమోదైన ఫ్యాక్టరీలపై MoSPI వార్షిక సర్వే."
+   ],
+   "reason": "Duplicate of GEO-ORIG-49-009/010 and GEO-ORIG-49-015 (gross output, value added). Rewritten to new facts: coverage of the Eight Core index and of the ASI."
+  },
+  "GEO-ORIG-49-021": {
+   "question_en": "Consider the following statements: I. The use-based classification of the IIP has six groups, one of which is infrastructure/construction goods. II. The IIP measures monthly output of mining, manufacturing and agriculture. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. వాడకం ఆధారంగా (Use-based) IIP ఆరు గుంపులుగా ఉంటుంది; వాటిలో ఒకటి Infrastructure/Construction goods. II. IIP గనులు, తయారీ, వ్యవసాయ రంగాల నెలవారీ ఉత్పత్తిని కొలుస్తుంది. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Only Statement I is correct: the use-based IIP has six groups — primary, capital, intermediate, infrastructure/construction goods, consumer durables and consumer non-durables. Statement II is wrong because the IIP's three sectors are mining, manufacturing and electricity, not agriculture. The IIP is released monthly by MoSPI; from the April 2026 data its base year is 2022–23.",
+   "explanation_te": "I వాక్యం మాత్రమే సరైనది: వాడకం ఆధారంగా IIP ఆరు గుంపులు — Primary, Capital, Intermediate, Infrastructure/Construction goods, Consumer durables, Consumer non-durables. II వాక్యం తప్పు, ఎందుకంటే IIP లోని మూడు రంగాలు గనులు, తయారీ, విద్యుత్తు; వ్యవసాయం కాదు. IIP ని MoSPI ప్రతి నెల విడుదల చేస్తుంది; ఏప్రిల్ 2026 గణాంకాల నుంచి ఆధార సంవత్సరం 2022–23.",
+   "option_explanations_en": [
+    "Wrong. Statement I is correct: the use-based IIP has six groups.",
+    "Wrong. Statement II is false: the IIP covers electricity, not agriculture.",
+    "Correct. The six use-based groups are right; the IIP's sectors are mining, manufacturing and electricity.",
+    "Wrong. Statement II is false: agriculture is not an IIP sector."
+   ],
+   "option_explanations_te": [
+    "తప్పు. I వాక్యం సరైనది: వాడకం ఆధారంగా IIP కి ఆరు గుంపులు ఉన్నాయి.",
+    "తప్పు. II వాక్యం తప్పు: IIP లో విద్యుత్తు ఉంది, వ్యవసాయం లేదు.",
+    "సరైనది. ఆరు గుంపులు సరైనవే; IIP రంగాలు గనులు, తయారీ, విద్యుత్తు.",
+    "తప్పు. II వాక్యం తప్పు: వ్యవసాయం IIP రంగం కాదు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-49-011 and GEO-ORIG-49-015 (labour productivity); Statement II was a straw man. Rewritten to new facts: IIP sectoral coverage and its six use-based groups."
+  },
+  "GEO-ORIG-50-020": {
+   "question_en": "Consider the following statements: I. An industry whose finished product is fragile, such as glassware, tends to be market-oriented. II. Bakeries are market-oriented because bread spoils quickly. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. తుది వస్తువు సులువుగా పగిలేదైతే (ఉదా: గాజు సామాను) ఆ పరిశ్రమకు మార్కెట్ మొగ్గు ఉంటుంది. II. బ్రెడ్ త్వరగా పాడవుతుంది కాబట్టి బేకరీలకు మార్కెట్ మొగ్గు ఉంటుంది. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Both statements are correct: when the finished product is fragile (glassware) or perishable (bread), long-distance transport causes losses, so the factory is set up near buyers. This is market orientation, the same pull that weight-gaining products such as soft drinks feel.",
+   "explanation_te": "రెండు వాక్యాలూ సరైనవి: తుది వస్తువు పగిలేదైతే (గాజు సామాను) లేదా త్వరగా పాడయ్యేదైతే (బ్రెడ్) దూరం తరలిస్తే నష్టం, కాబట్టి ఫ్యాక్టరీని కొనుగోలుదారుల దగ్గరే పెడతారు. ఇదే మార్కెట్ మొగ్గు (Market orientation); బరువు పెరిగే శీతల పానీయాలకూ ఇదే లాగుడు.",
+   "option_explanations_en": [
+    "Wrong. Both statements describe market orientation correctly.",
+    "Correct. Fragile and perishable finished goods are made near the market.",
+    "Wrong. Statement II is also correct: perishable bread pulls bakeries to buyers.",
+    "Wrong. Statement I is also correct: fragile glassware is made near the market."
+   ],
+   "option_explanations_te": [
+    "తప్పు. రెండు వాక్యాలూ మార్కెట్ మొగ్గును సరిగ్గా చెబుతున్నాయి.",
+    "సరైనది. పగిలే, పాడయ్యే తుది వస్తువులు మార్కెట్ దగ్గరే తయారవుతాయి.",
+    "తప్పు. II వాక్యం కూడా సరైనదే: త్వరగా పాడయ్యే బ్రెడ్ వల్ల బేకరీలు కొనుగోలుదారుల దగ్గర ఉంటాయి.",
+    "తప్పు. I వాక్యం కూడా సరైనదే: పగిలే గాజు సామాను మార్కెట్ దగ్గర తయారవుతుంది."
+   ],
+   "reason": "Duplicate of GEO-ORIG-50-015 matching (cement and sugar chains). Rewritten to a new fact: fragile and perishable finished products pull industry to the market."
+  },
+  "GEO-ORIG-50-021": {
+   "question_en": "Consider the following statements: I. Aluminium smelting needs continuous heavy power because alumina is converted into aluminium by electrolysis. II. Polythene and rubber industries are classed as raw-material-based industries. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. Alumina ను అల్యూమినియంగా మార్చడం విద్యుత్ విశ్లేషణ (Electrolysis) తో జరుగుతుంది కాబట్టి అల్యూమినియం కరిగింపుకు నిరంతర భారీ కరెంటు కావాలి. II. పాలిథీన్, రబ్బరు పరిశ్రమలను ముడి పదార్థ ఆధార పరిశ్రమలుగా వర్గీకరిస్తారు. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Only Statement I is correct: alumina is reduced to aluminium by electrolysis, which needs huge, uninterrupted power day and night, so smelters are power oriented. In the six-way location classification, polythene and rubber are also listed with aluminium among power-based industries, not raw-material-based ones.",
+   "explanation_te": "I వాక్యం మాత్రమే సరైనది: Alumina ను అల్యూమినియంగా మార్చే విద్యుత్ విశ్లేషణకు రాత్రింబవళ్లు ఆగని భారీ కరెంటు కావాలి, అందుకే కరిగింపు కేంద్రాలకు విద్యుత్తు మొగ్గు. స్థానాన్ని బట్టి ఆరు వర్గాల విభజనలో పాలిథీన్, రబ్బరు కూడా అల్యూమినియంతో పాటు విద్యుచ్ఛక్తి ఆధార పరిశ్రమలే; ముడి పదార్థ ఆధార పరిశ్రమలు కావు.",
+   "option_explanations_en": [
+    "Wrong. Statement I is true, so 'neither' cannot be the answer.",
+    "Wrong. Statement II is false: polythene and rubber are power-based industries.",
+    "Wrong. Statement II is false, while Statement I is true.",
+    "Correct. Electrolysis makes aluminium power oriented; polythene and rubber are power-based, not raw-material-based."
+   ],
+   "option_explanations_te": [
+    "తప్పు. I వాక్యం సరైనది కాబట్టి 'రెండూ తప్పు' అనడం తప్పు.",
+    "తప్పు. II వాక్యం తప్పు: పాలిథీన్, రబ్బరు విద్యుచ్ఛక్తి ఆధార పరిశ్రమలు.",
+    "తప్పు. II వాక్యం తప్పు; I వాక్యం సరైనది.",
+    "సరైనది. విద్యుత్ విశ్లేషణ వల్ల అల్యూమినియానికి విద్యుత్తు మొగ్గు; పాలిథీన్, రబ్బరు విద్యుచ్ఛక్తి ఆధారమే, ముడి పదార్థ ఆధారం కాదు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-50-015 matching (cotton chain, IT services); Statement II was a straw man. Rewritten to new facts: why aluminium is power oriented, and which other industries are power-based."
+  },
+  "GEO-ORIG-51-018": {
+   "question_en": "Consider the following statements: I. Weight-losing industries tend to locate near their markets. II. Government policy, such as licences, subsidies and industrial parks, can change where an industry locates. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. బరువు కోల్పోయే పరిశ్రమలు మార్కెట్ దగ్గర ఉంటాయి. II. లైసెన్సులు, రాయితీలు, పారిశ్రామిక పార్కుల వంటి ప్రభుత్వ విధానం కూడా పరిశ్రమ చోటును మారుస్తుంది. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Only Statement II is correct: besides raw material, market, labour and power, government policy — licences, subsidies, industrial parks — also shifts industrial location. Statement I is wrong because a weight-losing industry (sugar, cement, iron smelting) locates near its raw material, not its market.",
+   "explanation_te": "II వాక్యం మాత్రమే సరైనది: ముడి పదార్థం, మార్కెట్, కార్మికులు, కరెంటుతో పాటు లైసెన్సులు, రాయితీలు, పారిశ్రామిక పార్కుల వంటి ప్రభుత్వ విధానం కూడా పరిశ్రమ చోటును మారుస్తుంది. I వాక్యం తప్పు, ఎందుకంటే బరువు కోల్పోయే పరిశ్రమ (చక్కెర, సిమెంటు, ఇనుము కరిగింపు) ముడి పదార్థం దగ్గర ఉంటుంది, మార్కెట్ దగ్గర కాదు.",
+   "option_explanations_en": [
+    "Wrong. Statement I is false: weight-losing industries go to the raw material.",
+    "Wrong. Statement II is true: policy is a recognised location factor.",
+    "Correct. Policy changes location; weight-losing industries locate at the raw material, not the market.",
+    "Wrong. Statement I is false, so both cannot be correct."
+   ],
+   "option_explanations_te": [
+    "తప్పు. I వాక్యం తప్పు: బరువు కోల్పోయే పరిశ్రమలు ముడి పదార్థం దగ్గరికి వెళ్తాయి.",
+    "తప్పు. II వాక్యం సరైనది: ప్రభుత్వ విధానం కూడా స్థాన కారకమే.",
+    "సరైనది. విధానం చోటును మారుస్తుంది; బరువు కోల్పోయే పరిశ్రమలు ముడి పదార్థం దగ్గర ఉంటాయి, మార్కెట్ దగ్గర కాదు.",
+    "తప్పు. I వాక్యం తప్పు, కాబట్టి రెండూ సరైనవి కావు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-51-005/006 and GEO-ORIG-51-014 matching (port linkage, utility reliability). Rewritten to new facts: government policy as a location factor; weight-losing industries go to raw material."
+  },
+  "GEO-ORIG-51-019": {
+   "question_en": "Consider the following statements: I. Alfred Weber, who gave the least-cost theory of industrial location, was a French geographer. II. Fish processing is a market-oriented industry. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. పరిశ్రమల స్థానంపై కనిష్ఠ వ్యయ సిద్ధాంతం ఇచ్చిన Alfred Weber ఫ్రెంచ్ భూగోళ శాస్త్రవేత్త. II. చేపల ప్రాసెసింగ్ మార్కెట్ మొగ్గు ఉన్న పరిశ్రమ. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Neither statement is correct. Alfred Weber was a German economist who gave the least-cost theory in 1909. Fish spoil quickly, so fish processing is raw-material oriented and is done close to the landing centres, not near distant markets.",
+   "explanation_te": "రెండు వాక్యాలూ తప్పు. Alfred Weber జర్మన్ ఆర్థికవేత్త; 1909 లో కనిష్ఠ వ్యయ సిద్ధాంతం ఇచ్చారు. చేపలు త్వరగా పాడవుతాయి కాబట్టి చేపల ప్రాసెసింగ్ ముడి పదార్థ మొగ్గు ఉన్న పరిశ్రమ; దూరపు మార్కెట్ దగ్గర కాకుండా చేపలు దిగే చోటు దగ్గరే జరుగుతుంది.",
+   "option_explanations_en": [
+    "Wrong. Statement I is false: Weber was a German economist.",
+    "Wrong. Statement II is false: fish processing is raw-material oriented.",
+    "Correct. Weber was German, not French, and fish processing follows the perishable raw material.",
+    "Wrong. Both statements are false."
+   ],
+   "option_explanations_te": [
+    "తప్పు. I వాక్యం తప్పు: Weber జర్మన్ ఆర్థికవేత్త.",
+    "తప్పు. II వాక్యం తప్పు: చేపల ప్రాసెసింగ్ ముడి పదార్థ మొగ్గు ఉన్న పరిశ్రమ.",
+    "సరైనది. Weber ఫ్రెంచ్ కాదు, జర్మన్; చేపల ప్రాసెసింగ్ త్వరగా పాడయ్యే ముడి పదార్థం దగ్గరే ఉంటుంది.",
+    "తప్పు. రెండు వాక్యాలూ తప్పు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-51-007/008 and GEO-ORIG-51-014 matching (skill ecosystem, cluster). Rewritten to new facts: Weber's nationality; fish processing as raw-material oriented."
+  },
+  "GEO-ORIG-51-020": {
+   "question_en": "Consider the following statements: I. A news line such as 'the company signed an MoU' indicates that the project is only at the proposed stage. II. Approval of a project can come in two steps: in-principle approval and final approval. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. 'కంపెనీ MoU చేసుకుంది' అనే వార్త ప్రాజెక్టు ఇంకా ప్రతిపాదిత (Proposed) దశలోనే ఉందని సూచిస్తుంది. II. ప్రాజెక్టు ఆమోదం రెండు అంచెల్లో రావచ్చు: సూత్రప్రాయ ఆమోదం (In-principle), తుది ఆమోదం (Final). పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Both statements are correct. An MoU is only a statement of intent, so a project announced through an MoU is at the proposed stage. Approval itself may come first in principle and later as final approval, and each step has its own date. For example, Prakasam NIMZ has final approval while Chittoor NIMZ has only in-principle approval.",
+   "explanation_te": "రెండు వాక్యాలూ సరైనవి. MoU కేవలం ఉద్దేశాన్ని చెప్పే ఒప్పందం, కాబట్టి MoU తో ప్రకటించిన ప్రాజెక్టు ప్రతిపాదిత దశలోనే ఉంటుంది. ఆమోదం కూడా మొదట సూత్రప్రాయంగా, తర్వాత తుది ఆమోదంగా రావచ్చు; ప్రతి అంచెకు ఒక తేదీ ఉంటుంది. ఉదా: ప్రకాశం NIMZ కు తుది ఆమోదం ఉంది, చిత్తూరు NIMZ కు సూత్రప్రాయ ఆమోదం మాత్రమే.",
+   "option_explanations_en": [
+    "Wrong. Statement I is also correct: an MoU marks the proposed stage.",
+    "Wrong. Statement II is also correct: approval may be in-principle and then final.",
+    "Wrong. Both statements are correct.",
+    "Correct. An MoU means 'proposed', and approval can be in-principle followed by final."
+   ],
+   "option_explanations_te": [
+    "తప్పు. I వాక్యం కూడా సరైనదే: MoU ప్రతిపాదిత దశను సూచిస్తుంది.",
+    "తప్పు. II వాక్యం కూడా సరైనదే: ఆమోదం సూత్రప్రాయంగా, తర్వాత తుదిగా రావచ్చు.",
+    "తప్పు. రెండు వాక్యాలూ సరైనవి.",
+    "సరైనది. MoU అంటే ప్రతిపాదిత దశ; ఆమోదం సూత్రప్రాయం, తర్వాత తుది అనే రెండు అంచెల్లో రావచ్చు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-51-009/010 and GEO-ORIG-51-015 matching (proposed/approved definitions). Rewritten to new facts: MoU signals the proposed stage; two-step (in-principle/final) approval."
+  },
+  "GEO-ORIG-51-021": {
+   "question_en": "Consider the following statements: I. Under the EIA Notification, 2006, a public hearing must be held for most projects before environmental clearance. II. The Bhopal gas disaster, which showed the danger of weak industrial safety, occurred in 1994. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. EIA Notification, 2006 ప్రకారం చాలా ప్రాజెక్టులకు పర్యావరణ అనుమతికి ముందు ప్రజాభిప్రాయ సేకరణ (Public hearing) జరగాలి. II. పారిశ్రామిక భద్రత లోపం ఎంత ప్రమాదమో చూపిన భోపాల్ గ్యాస్ దుర్ఘటన 1994 లో జరిగింది. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Only Statement I is correct: most projects needing environmental clearance under the EIA Notification, 2006 must hold a public hearing so that affected people are heard first. Statement II is wrong: the Bhopal gas disaster happened in 1984, not 1994. It remains the standard example of what happens when hazardous industries lack safeguards.",
+   "explanation_te": "I వాక్యం మాత్రమే సరైనది: EIA Notification, 2006 కింద పర్యావరణ అనుమతి కావాల్సిన చాలా ప్రాజెక్టులకు ముందుగా ప్రజాభిప్రాయ సేకరణ జరగాలి; ప్రభావితులైన ప్రజల మాట ముందే వినాలి. II వాక్యం తప్పు: భోపాల్ గ్యాస్ దుర్ఘటన 1984 లో జరిగింది, 1994 లో కాదు. ప్రమాదకర పరిశ్రమల్లో జాగ్రత్తలు లేకపోతే ఏమవుతుందో చూపే ప్రధాన ఉదాహరణ ఇదే.",
+   "option_explanations_en": [
+    "Wrong. Statement II is false, but Statement I is true, so 'neither' is wrong.",
+    "Wrong. Statement II is false: Bhopal happened in 1984.",
+    "Correct. Public hearing is required for most projects; Bhopal was in 1984, not 1994.",
+    "Wrong. Statement II is false, so both cannot be correct."
+   ],
+   "option_explanations_te": [
+    "తప్పు. II వాక్యం తప్పే కానీ I వాక్యం సరైనది, కాబట్టి 'రెండూ తప్పు' కాదు.",
+    "తప్పు. II వాక్యం తప్పు: భోపాల్ దుర్ఘటన 1984 లో జరిగింది.",
+    "సరైనది. చాలా ప్రాజెక్టులకు ప్రజాభిప్రాయ సేకరణ తప్పనిసరి; భోపాల్ 1984 లో, 1994 లో కాదు.",
+    "తప్పు. II వాక్యం తప్పు, కాబట్టి రెండూ సరైనవి కావు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-51-011/012 and GEO-ORIG-51-015 matching (under-construction/operational definitions); Statement II was a straw man. Rewritten to new facts: public hearing under EIA 2006; year of the Bhopal disaster."
+  },
+  "GEO-ORIG-51-024": {
+   "options_en": [
+    "Groundwater surplus inland together with low land prices",
+    "Earthquake exposure of Seismic Zone V across the whole state",
+    "Cyclone and flood exposure together with water-supply constraints",
+    "Landslide and snowfall hazards along the coastal plains"
+   ],
+   "options_te": [
+    "లోపలి ప్రాంతాల్లో అధిక భూగర్భజలం, తక్కువ భూమి ధరలు",
+    "రాష్ట్రమంతటా Seismic Zone V భూకంప ముప్పు",
+    "తుఫాను, వరద ముప్పుతో పాటు నీటి సరఫరా పరిమితి",
+    "తీర మైదానాల్లో కొండచరియలు, మంచు ముప్పు"
+   ],
+   "explanation_en": "Cyclone–flood exposure together with water-supply limits is the key siting risk combination in Andhra Pradesh. Coastal districts face cyclones, storm surges and floods, while interior areas such as Rayalaseema and Prakasam face water scarcity. Sensitive coasts (mangroves, fishing grounds), land acquisition and forest clearance must also be checked.",
+   "explanation_te": "తుఫాను–వరద ముప్పు, నీటి సరఫరా పరిమితి — ఈ రెండూ కలిసి AP లో ఫ్యాక్టరీ స్థల ఎంపికలో ముఖ్యమైన ముప్పులు. తీర జిల్లాల్లో తుఫానులు, ఉప్పెనలు, వరదలు; రాయలసీమ, ప్రకాశం వంటి లోపలి ప్రాంతాల్లో నీటి కొరత. మడ అడవుల వంటి సున్నిత తీరం, భూసేకరణ, అటవీ అనుమతి కూడా చూడాలి.",
+   "option_explanations_en": [
+    "Wrong. Interior AP (Rayalaseema, Prakasam) faces water scarcity, not surplus groundwater.",
+    "Wrong. Andhra Pradesh is not in Seismic Zone V; earthquakes are not its main siting hazard.",
+    "Correct. Coastal cyclone–flood exposure plus inland water constraints is the key AP combination.",
+    "Wrong. Snowfall and landslides are not hazards of AP's coastal plains."
+   ],
+   "option_explanations_te": [
+    "తప్పు. లోపలి AP (రాయలసీమ, ప్రకాశం) లో నీటి కొరత ఉంది, అధిక భూగర్భజలం కాదు.",
+    "తప్పు. ఆంధ్రప్రదేశ్ Seismic Zone V లో లేదు; భూకంపం ఇక్కడ ప్రధాన స్థల ముప్పు కాదు.",
+    "సరైనది. తీరంలో తుఫాను–వరద, లోపలి ప్రాంతాల్లో నీటి పరిమితి — ఇదే AP ముఖ్య ముప్పు జత.",
+    "తప్పు. మంచు, కొండచరియలు AP తీర మైదానాల ముప్పులు కావు."
+   ],
+   "reason": "Distractors were non-parallel instructions ('Treat…') and an off-topic market option; rewritten as parallel hazard combinations."
+  },
+  "GEO-ORIG-52-001": {
+   "question_en": "Between which two end points does the Delhi–Mumbai Industrial Corridor (DMIC) run?",
+   "question_te": "Delhi–Mumbai Industrial Corridor (DMIC) ఏ రెండు చివరల మధ్య విస్తరించి ఉంది?",
+   "options_en": [
+    "Ludhiana and Dankuni",
+    "Amritsar and Kolkata",
+    "Delhi and Nagpur",
+    "Dadri (Delhi NCR) and JNPT (Mumbai)"
+   ],
+   "options_te": [
+    "లుధియానా, దంకుని",
+    "అమృత్‌సర్, కోల్‌కతా",
+    "ఢిల్లీ, నాగ్‌పూర్",
+    "దాద్రి (Delhi NCR), JNPT (ముంబై)"
+   ],
+   "explanation_en": "DMIC runs about 1,504 km from Dadri in Delhi NCR to JNPT near Mumbai, along the Western Dedicated Freight Corridor. It was India's first industrial corridor, planned with Japanese cooperation, and passes through Delhi, UP, Haryana, Rajasthan, MP, Gujarat and Maharashtra.",
+   "explanation_te": "DMIC సుమారు 1,504 km పొడవుతో Delhi NCR లోని దాద్రి నుంచి ముంబై దగ్గరి JNPT వరకు, Western Dedicated Freight Corridor వెంట ఉంది. జపాన్ సహకారంతో ప్రణాళిక చేసిన దేశంలో మొదటి కారిడార్ ఇదే; ఢిల్లీ, UP, హర్యానా, రాజస్థాన్, MP, గుజరాత్, మహారాష్ట్ర గుండా వెళ్తుంది.",
+   "option_explanations_en": [
+    "Wrong. Ludhiana–Dankuni is the Eastern Dedicated Freight Corridor route, not DMIC.",
+    "Wrong. Amritsar–Kolkata is the AKIC (1,839 km).",
+    "Wrong. Delhi–Nagpur is a separate corridor (DNIC).",
+    "Correct. DMIC runs from Dadri (Delhi NCR) to JNPT (Mumbai), about 1,504 km."
+   ],
+   "option_explanations_te": [
+    "తప్పు. లుధియానా–దంకుని Eastern Dedicated Freight Corridor మార్గం, DMIC కాదు.",
+    "తప్పు. అమృత్‌సర్–కోల్‌కతా AKIC (1,839 km).",
+    "తప్పు. ఢిల్లీ–నాగ్‌పూర్ వేరే కారిడార్ (DNIC).",
+    "సరైనది. DMIC దాద్రి (Delhi NCR) నుంచి JNPT (ముంబై) వరకు, సుమారు 1,504 km."
+   ],
+   "reason": "Duplicate of IA08-P400-Q009 (definition of an industrial corridor; also GEO-ORIG-52-013 matching). Rewritten to a new fact: the end points of DMIC."
+  },
+  "GEO-ORIG-52-016": {
+   "question_en": "Consider the following statements: I. The Delhi–Mumbai Industrial Corridor was planned with the cooperation of the Government of Japan. II. The Chennai–Bengaluru Industrial Corridor is about 560 km long. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. Delhi–Mumbai Industrial Corridor ను జపాన్ ప్రభుత్వ సహకారంతో ప్రణాళిక చేశారు. II. Chennai–Bengaluru Industrial Corridor పొడవు సుమారు 560 km. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Both statements are correct. DMIC, the first corridor, was planned with the Government of Japan's cooperation. CBIC is about 560 km long and runs from Tamil Nadu through southern Andhra Pradesh to Karnataka, with Krishnapatnam as its AP node; JICA helped prepare its plan.",
+   "explanation_te": "రెండు వాక్యాలూ సరైనవి. మొదటి కారిడార్ DMIC ను జపాన్ ప్రభుత్వ సహకారంతో ప్రణాళిక చేశారు. CBIC పొడవు సుమారు 560 km; తమిళనాడు నుంచి దక్షిణ AP మీదుగా కర్ణాటకకు వెళ్తుంది; AP నోడ్ కృష్ణపట్నం; దీని ప్రణాళికకు JICA సాయం చేసింది.",
+   "option_explanations_en": [
+    "Wrong. Statement II is also correct: CBIC is about 560 km.",
+    "Wrong. Statement I is also correct: DMIC was planned with Japanese cooperation.",
+    "Wrong. Both statements are correct.",
+    "Correct. DMIC had Japanese cooperation and CBIC is about 560 km long."
+   ],
+   "option_explanations_te": [
+    "తప్పు. II వాక్యం కూడా సరైనదే: CBIC సుమారు 560 km.",
+    "తప్పు. I వాక్యం కూడా సరైనదే: DMIC కు జపాన్ సహకారం ఉంది.",
+    "తప్పు. రెండు వాక్యాలూ సరైనవి.",
+    "సరైనది. DMIC కు జపాన్ సహకారం, CBIC పొడవు సుమారు 560 km."
+   ],
+   "reason": "Duplicate of GEO-ORIG-52-001/002 and GEO-ORIG-52-013 matching (corridor and node definitions). Rewritten to new facts: Japanese cooperation in DMIC; CBIC length."
+  },
+  "GEO-ORIG-52-017": {
+   "question_en": "Consider the following statements: I. The 12 greenfield industrial city projects approved under NICDP on 28 August 2024 have an estimated cost of about ₹28,602 crore. II. Rajpura–Patiala, one of the sites named in that approval, is in Haryana. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. 28 ఆగస్టు 2024 న NICDP కింద ఆమోదించిన 12 గ్రీన్‌ఫీల్డ్ పారిశ్రామిక నగరాల ప్రాజెక్టుల అంచనా వ్యయం సుమారు ₹28,602 కోట్లు. II. ఆ ఆమోదంలో పేర్కొన్న రాజ్‌పురా–పటియాలా హర్యానాలో ఉంది. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Only Statement I is correct: the Union Cabinet approved 12 projects across 10 States on 28 August 2024 at an estimated ₹28,602 crore. Rajpura–Patiala is in Punjab, not Haryana. The approval names sites such as Khurpia (Uttarakhand), Dighi (Maharashtra), Gaya (Bihar), Zaheerabad (Telangana), and Orvakal and Kopparthy (AP).",
+   "explanation_te": "I వాక్యం మాత్రమే సరైనది: 28 ఆగస్టు 2024 న కేంద్ర మంత్రివర్గం 10 రాష్ట్రాల్లో 12 ప్రాజెక్టులను సుమారు ₹28,602 కోట్ల అంచనా వ్యయంతో ఆమోదించింది. రాజ్‌పురా–పటియాలా పంజాబ్‌లో ఉంది, హర్యానాలో కాదు. ఆ జాబితాలో ఖుర్పియా (ఉత్తరాఖండ్), దిఘీ (మహారాష్ట్ర), గయ (బిహార్), జహీరాబాద్ (తెలంగాణ), ఓర్వకల్లు, కొప్పర్తి (AP) వంటి ప్రదేశాలు ఉన్నాయి.",
+   "option_explanations_en": [
+    "Correct. The cost estimate is right; Rajpura–Patiala is in Punjab, so Statement II is false.",
+    "Wrong. Statement II is false: Rajpura–Patiala is in Punjab.",
+    "Wrong. Statement II is false and Statement I is true.",
+    "Wrong. Statement I is true: the estimate was about ₹28,602 crore."
+   ],
+   "option_explanations_te": [
+    "సరైనది. అంచనా వ్యయం సరైనదే; రాజ్‌పురా–పటియాలా పంజాబ్‌లో ఉంది కాబట్టి II వాక్యం తప్పు.",
+    "తప్పు. II వాక్యం తప్పు: రాజ్‌పురా–పటియాలా పంజాబ్‌లో ఉంది.",
+    "తప్పు. II వాక్యం తప్పు; I వాక్యం సరైనది.",
+    "తప్పు. I వాక్యం సరైనది: అంచనా వ్యయం సుమారు ₹28,602 కోట్లు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-52-003/004 and GEO-ORIG-52-013 matching (park, last-mile link); Statement II was a straw man. Rewritten to new facts: cost of the 2024 approval; state of Rajpura–Patiala."
+  },
+  "GEO-ORIG-52-018": {
+   "question_en": "Consider the following statements: I. Cleaner production means treating pollution after it has been generated, at the end of the process. II. Fly ash from a thermal power plant being used to make cement or bricks is an example of industrial symbiosis. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. కాలుష్యం పుట్టిన తర్వాత ప్రక్రియ చివర శుద్ధి చేయడమే Cleaner production. II. థర్మల్ విద్యుత్ కేంద్రం బూడిద (Fly ash) ను సిమెంటు, ఇటుకల తయారీకి వాడడం Industrial symbiosis కు ఉదాహరణ. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Only Statement II is correct: fly ash, a by-product of thermal power plants, becomes a raw material for cement and bricks — a classic industrial symbiosis exchange, done after safety checks. Statement I is wrong because cleaner production changes the process itself so that waste is not generated; treating pollution afterwards is end-of-pipe control.",
+   "explanation_te": "II వాక్యం మాత్రమే సరైనది: థర్మల్ విద్యుత్ కేంద్రం ఉప ఉత్పత్తి అయిన Fly ash సిమెంటు, ఇటుకలకు ముడి పదార్థం అవుతుంది — ఇది Industrial symbiosis కు మంచి ఉదాహరణ; సురక్షితమని పరీక్షించాకే పంపాలి. I వాక్యం తప్పు, ఎందుకంటే Cleaner production ఉత్పత్తి ప్రక్రియనే మార్చి వ్యర్థం పుట్టకుండా చూస్తుంది; పుట్టిన తర్వాత శుద్ధి చేయడం చివరి దశ (End-of-pipe) నియంత్రణ మాత్రమే.",
+   "option_explanations_en": [
+    "Wrong. Statement II is true: fly ash use is industrial symbiosis.",
+    "Wrong. Statement I is false: cleaner production prevents waste at source.",
+    "Correct. Fly ash reuse is symbiosis; cleaner production is prevention, not end-of-pipe treatment.",
+    "Wrong. Statement I is false, Statement II is true."
+   ],
+   "option_explanations_te": [
+    "తప్పు. II వాక్యం సరైనది: Fly ash వినియోగం Industrial symbiosis.",
+    "తప్పు. I వాక్యం తప్పు: Cleaner production మూలం దగ్గరే వ్యర్థాన్ని నివారిస్తుంది.",
+    "సరైనది. Fly ash పునర్వినియోగం symbiosis; Cleaner production అంటే నివారణ, చివర శుద్ధి కాదు.",
+    "తప్పు. I వాక్యం తప్పు, II వాక్యం సరైనది."
+   ],
+   "reason": "Duplicate of GEO-ORIG-52-005/006 and GEO-ORIG-52-014 matching (symbiosis, cleaner production definitions). Rewritten to new facts: cleaner production is not end-of-pipe treatment; fly ash as a symbiosis example."
+  },
+  "GEO-ORIG-52-019": {
+   "question_en": "Consider the following statements: I. A Common Effluent Treatment Plant (CETP) is built by one large unit only for treating its own effluent. II. In interior areas of Andhra Pradesh such as Rayalaseema and Prakasam, cyclone storm surge rather than water scarcity is the main industrial siting risk. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. సామూహిక మురుగునీటి శుద్ధి కేంద్రం (CETP) ను ఒక పెద్ద యూనిట్ తన సొంత మురుగునీటి కోసమే కట్టుకుంటుంది. II. రాయలసీమ, ప్రకాశం వంటి AP లోపలి ప్రాంతాల్లో పరిశ్రమ స్థల ఎంపికకు ప్రధాన ముప్పు నీటి కొరత కాదు, తుఫాను ఉప్పెన. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Neither statement is correct. A CETP is a shared plant used by all units of a cluster, because small units cannot each afford their own treatment plant. Storm surges are a coastal hazard; the main siting risk in interior areas such as Rayalaseema and Prakasam is water scarcity.",
+   "explanation_te": "రెండు వాక్యాలూ తప్పు. CETP ఒక క్లస్టర్‌లోని యూనిట్లన్నీ కలిసి వాడుకునే ఉమ్మడి కేంద్రం; చిన్న యూనిట్లు ఒక్కొక్కటి సొంత శుద్ధి కేంద్రం కట్టుకోలేవు కాబట్టే దీన్ని పెడతారు. ఉప్పెన తీర ముప్పు; రాయలసీమ, ప్రకాశం వంటి లోపలి ప్రాంతాల్లో ప్రధాన ముప్పు నీటి కొరత.",
+   "option_explanations_en": [
+    "Wrong. Statement II is false: water scarcity is the main inland risk.",
+    "Wrong. Statement I is false: a CETP is shared by many units of a cluster.",
+    "Wrong. Both statements are false.",
+    "Correct. A CETP is a common plant, and inland AP's key risk is water scarcity, not storm surge."
+   ],
+   "option_explanations_te": [
+    "తప్పు. II వాక్యం తప్పు: లోపలి ప్రాంతాల ప్రధాన ముప్పు నీటి కొరత.",
+    "తప్పు. I వాక్యం తప్పు: CETP ను క్లస్టర్‌లోని అనేక యూనిట్లు పంచుకుంటాయి.",
+    "తప్పు. రెండు వాక్యాలూ తప్పు.",
+    "సరైనది. CETP ఉమ్మడి కేంద్రం; లోపలి AP ముఖ్య ముప్పు నీటి కొరత, ఉప్పెన కాదు."
+   ],
+   "reason": "Duplicate of GEO-ORIG-52-007/008 and GEO-ORIG-52-014 matching (resource efficiency, circularity definitions). Rewritten to new facts: CETP is shared by cluster units; inland AP's main siting risk is water scarcity."
+  },
+  "GEO-ORIG-52-020": {
+   "question_en": "Consider the following statements: I. The EIA Notification, 2006 was issued on 14 September 2006. II. Under the EIA Notification, 2006, Category A projects receive environmental clearance from the Union MoEFCC. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. EIA Notification, 2006 ను 14 సెప్టెంబర్ 2006 న జారీ చేశారు. II. EIA Notification, 2006 ప్రకారం Category A ప్రాజెక్టులకు కేంద్ర పర్యావరణ మంత్రిత్వ శాఖ (MoEFCC) పర్యావరణ అనుమతి ఇస్తుంది. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Both statements are correct. The EIA Notification was issued on 14 September 2006 under the Environment (Protection) Act, 1986, replacing the 1994 notification. Category A projects are cleared by the Union MoEFCC, while Category B projects are cleared by the State-level SEIAA.",
+   "explanation_te": "రెండు వాక్యాలూ సరైనవి. EIA Notification ను Environment (Protection) Act, 1986 కింద 14 సెప్టెంబర్ 2006 న జారీ చేశారు; ఇది 1994 నాటి notification స్థానంలో వచ్చింది. Category A ప్రాజెక్టులకు కేంద్ర MoEFCC, Category B ప్రాజెక్టులకు రాష్ట్ర సంస్థ SEIAA అనుమతి ఇస్తాయి.",
+   "option_explanations_en": [
+    "Wrong. Statement I is also correct: the notification is dated 14 September 2006.",
+    "Correct. The date is right and Category A clearance is given by MoEFCC.",
+    "Wrong. Both statements are correct.",
+    "Wrong. Statement II is also correct: MoEFCC clears Category A projects."
+   ],
+   "option_explanations_te": [
+    "తప్పు. I వాక్యం కూడా సరైనదే: తేదీ 14 సెప్టెంబర్ 2006.",
+    "సరైనది. తేదీ సరైనదే; Category A కు అనుమతి ఇచ్చేది MoEFCC.",
+    "తప్పు. రెండు వాక్యాలూ సరైనవి.",
+    "తప్పు. II వాక్యం కూడా సరైనదే: Category A ప్రాజెక్టులకు MoEFCC అనుమతి ఇస్తుంది."
+   ],
+   "reason": "Duplicate of GEO-ORIG-52-009/010 and GEO-ORIG-52-015 matching (impact assessment, monitoring definitions). Rewritten to new facts: date of the EIA Notification; Category A clearance authority."
+  },
+  "GEO-ORIG-52-021": {
+   "question_en": "Consider the following statements: I. An industrial project on forest land in Andhra Pradesh needs forest clearance in addition to its other approvals. II. Mangroves and fishing grounds along the Andhra Pradesh coast are not treated as environmentally sensitive when choosing an industrial site. Which of the statements given above is/are correct?",
+   "question_te": "కింది వాక్యాలను పరిశీలించండి: I. AP లో అటవీ భూమిలో పెట్టే పారిశ్రామిక ప్రాజెక్టుకు మిగతా అనుమతులతో పాటు అటవీ అనుమతి కూడా కావాలి. II. పారిశ్రామిక స్థలం ఎంచుకునేటప్పుడు AP తీరంలోని మడ అడవులు, చేపల వేట ప్రాంతాలను సున్నిత పర్యావరణంగా పరిగణించరు. పై వాక్యాల్లో సరైనవి ఏవి?",
+   "explanation_en": "Only Statement I is correct: a project on forest land needs separate forest clearance besides other approvals. Statement II is wrong: mangroves and fishing grounds on the AP coast are sensitive environments that must be weighed when choosing a site, along with cyclone–flood exposure, water limits and farmers' livelihoods.",
+   "explanation_te": "I వాక్యం మాత్రమే సరైనది: అటవీ భూమిలో ప్రాజెక్టు పెట్టాలంటే మిగతా అనుమతులతో పాటు అటవీ అనుమతి విడిగా కావాలి. II వాక్యం తప్పు: AP తీరంలోని మడ అడవులు, చేపల వేట ప్రాంతాలు సున్నిత పర్యావరణం; స్థల ఎంపికలో తుఫాను–వరద ముప్పు, నీటి పరిమితి, రైతుల జీవనోపాధితో పాటు వీటినీ చూడాలి.",
+   "option_explanations_en": [
+    "Correct. Forest land needs forest clearance; coastal mangroves and fishing grounds are sensitive, so II is false.",
+    "Wrong. Statement II is false: mangroves and fishing grounds are sensitive areas.",
+    "Wrong. Statement II is false and Statement I is true.",
+    "Wrong. Statement I is true: forest land needs forest clearance."
+   ],
+   "option_explanations_te": [
+    "సరైనది. అటవీ భూమికి అటవీ అనుమతి కావాలి; మడ అడవులు, చేపల వేట ప్రాంతాలు సున్నితమైనవి కాబట్టి II తప్పు.",
+    "తప్పు. II వాక్యం తప్పు: మడ అడవులు, చేపల వేట ప్రాంతాలు సున్నిత ప్రాంతాలే.",
+    "తప్పు. II వాక్యం తప్పు; I వాక్యం సరైనది.",
+    "తప్పు. I వాక్యం సరైనది: అటవీ భూమికి అటవీ అనుమతి కావాలి."
+   ],
+   "reason": "Duplicate of GEO-ORIG-52-011/012 and GEO-ORIG-52-015 matching (resilient infrastructure, inclusive development definitions); Statement II was a straw man. Rewritten to new facts: forest clearance and coastal sensitive areas in AP siting."
+  },
+  "IA08-P385-Q006": {
+   "question_en": "Consider the following on cooperatives: 1. Frederick Nicholson's rural-credit recommendations preceded the Cooperative Credit Societies Act, 1904. 2. Since the Supreme Court's 2021 ruling, Part IXB added by the 97th Amendment no longer applies uniformly to State and multi-State cooperatives. 3. The 2023 central goal is to set up two lakh new multipurpose PACS, dairy and fisheries cooperatives in uncovered areas within five years. Which are correct?",
+   "question_te": "సహకార సంఘాల గురించి కింది వాక్యాలను పరిశీలించండి: 1. Frederick Nicholson గ్రామీణ రుణ సూచనల తర్వాత సహకార పరపతి సంఘాల చట్టం, 1904 వచ్చింది. 2. 2021 సుప్రీంకోర్టు తీర్పు తర్వాత 97వ సవరణ చేర్చిన Part IXB రాష్ట్ర, బహుళ రాష్ట్ర సహకార సంఘాలకు ఒకేలా వర్తించదు. 3. 2023 కేంద్ర లక్ష్యం: సహకార సంఘాలు లేని ప్రాంతాల్లో ఐదేళ్లలో రెండు లక్షల కొత్త బహుళార్థ సాధక PACS, పాడి, మత్స్య సహకార సంఘాలు ఏర్పాటు చేయడం. సరైనవి ఏవి?",
+   "reason": "Statement 2 was a convoluted double-negative ('cannot be described as applying identically'); reworded as a direct fact. Key and facts unchanged, explanation still fits."
+  },
+  "IA08-P392-Q004": {
+   "question_en": "How is central support structured under the India Semiconductor Mission?",
+   "question_te": "India Semiconductor Mission (భారత సెమీకండక్టర్ మిషన్) కింద కేంద్ర సాయం ఎలా ఉంటుంది?",
+   "options_en": [
+    "The programme ended in 2021 and no support is now being paid",
+    "Fabs, ATMP units and chip design get support differing in base and form",
+    "ATMP units and chip-design firms get one identical form of support",
+    "The mission subsidises imported chips instead of Indian units"
+   ],
+   "options_te": [
+    "ఈ పథకం 2021 లోనే ముగిసింది, ఇప్పుడు ఏ సాయమూ లేదు",
+    "ఫ్యాబ్‌లు, ATMP యూనిట్లు, చిప్ డిజైన్‌కు సాయం ఆధారం, రూపం వేర్వేరు",
+    "ATMP యూనిట్లకు, చిప్ డిజైన్ సంస్థలకు ఒకే రకమైన సాయం",
+    "మిషన్ భారత యూనిట్లకు కాకుండా దిగుమతి చిప్‌లకు సబ్సిడీ ఇస్తుంది"
+   ],
+   "reason": "Stem was a 'why is it imprecise to say…' meta framing; now asks the fact directly. Options polished, same meaning and key; explanation still fits.",
+   "explanation_en": "Silicon fabs and display fabs get up to 50% of project cost (pari-passu). Compound-semiconductor and ATMP/OSAT units get up to 50% of eligible capital expenditure. Chip design is supported separately through the Design Linked Incentive (DLI). So one flat 50% subsidy for every activity is wrong.",
+   "explanation_te": "Semiconductor fab, Display fab లకు ప్రాజెక్టు ఖర్చులో 50% వరకు (pari-passu పద్ధతిలో) సాయం. Compound semiconductor, ATMP/OSAT యూనిట్లకు అర్హమైన మూలధన ఖర్చులో 50% వరకు. చిప్ డిజైన్‌కు వేరుగా Design Linked Incentive (DLI) ఉంది. కాబట్టి \"ప్రతి పనికీ ఒకే 50%\" అనడం సరికాదు.",
+   "option_explanations_en": [
+    "Incorrect: the mission was approved in December 2021, and ISM 2.0 was approved in July 2026.",
+    "Correct: fab, ATMP and design support use different cost bases and instruments.",
+    "Incorrect: ATMP (assembly and packaging) and chip design are different stages of the value chain.",
+    "Incorrect: the mission promotes domestic chip-making capability."
+   ],
+   "option_explanations_te": [
+    "తప్పు: మిషన్‌ను డిసెంబర్ 2021 లో ఆమోదించారు; ISM 2.0 ను జులై 2026 లో ఆమోదించారు.",
+    "సరైనది: ఫ్యాబ్, ATMP, డిజైన్ సాయాలకు ఖర్చు ఆధారం, పద్ధతి వేర్వేరు.",
+    "తప్పు: ATMP (ప్యాకింగ్, పరీక్ష), చిప్ డిజైన్ చిప్ గొలుసులో వేర్వేరు దశలు.",
+    "తప్పు: మిషన్ దేశీయ చిప్ తయారీ సామర్థ్యాన్ని పెంచడానికి ఉద్దేశించినది."
+   ]
+  },
+  "IA08-P392-Q008": {
+   "question_en": "Which statement about the DMIC and the AKIC is correct?",
+   "question_te": "DMIC, AKIC గురించి సరైన వాక్యం ఏది?",
+   "options_en": [
+    "DMIC runs along the Western DFC; AKIC is about 1,839 km long",
+    "AKIC runs along the Western DFC; DMIC is about 1,839 km long",
+    "DMIC runs along the Eastern DFC; AKIC is about 1,504 km long",
+    "DMIC ends at Kolkata; AKIC ends at JNPT, Mumbai"
+   ],
+   "options_te": [
+    "DMIC Western DFC వెంట ఉంది; AKIC పొడవు సుమారు 1,839 km",
+    "AKIC Western DFC వెంట ఉంది; DMIC పొడవు సుమారు 1,839 km",
+    "DMIC Eastern DFC వెంట ఉంది; AKIC పొడవు సుమారు 1,504 km",
+    "DMIC కోల్‌కతాలో, AKIC ముంబై JNPT లో ముగుస్తాయి"
+   ],
+   "explanation_en": "DMIC uses the Western Dedicated Freight Corridor as its backbone, and AKIC is about 1,839 km long. AKIC runs along the Eastern DFC through six States, so it is longer than DMIC (about 1,504 km, Dadri to JNPT).",
+   "explanation_te": "DMIC కు Western Dedicated Freight Corridor వెన్నెముక; AKIC పొడవు సుమారు 1,839 km. AKIC ఆరు రాష్ట్రాల గుండా Eastern DFC వెంట వెళ్తుంది, కాబట్టి DMIC (సుమారు 1,504 km, దాద్రి–JNPT) కంటే పొడవైనది.",
+   "option_explanations_en": [
+    "Correct. DMIC is on the Western DFC and AKIC is about 1,839 km.",
+    "Wrong. The DFCs and lengths are swapped: AKIC is on the Eastern DFC and DMIC is about 1,504 km.",
+    "Wrong. DMIC is on the Western DFC, and 1,504 km is DMIC's length, not AKIC's.",
+    "Wrong. DMIC ends at JNPT (Mumbai) and AKIC at Kolkata."
+   ],
+   "option_explanations_te": [
+    "సరైనది. DMIC Western DFC వెంట, AKIC సుమారు 1,839 km.",
+    "తప్పు. DFC లు, పొడవులు తారుమారు: AKIC Eastern DFC వెంట, DMIC సుమారు 1,504 km.",
+    "తప్పు. DMIC Western DFC వెంట ఉంది; 1,504 km DMIC పొడవు, AKIC ది కాదు.",
+    "తప్పు. DMIC JNPT (ముంబై) లో, AKIC కోల్‌కతాలో ముగుస్తాయి."
+   ],
+   "reason": "Stem cited a source ('supported by NICDC documents') and distractors were absurd (a shipping route, 'just a road'). Now asks the fact directly with near-miss distractors."
+  },
+  "IA08-P393-Q001": {
+   "options_en": [
+    "A corridor lying entirely within Andhra Pradesh",
+    "A corridor network with nodes such as Krishnapatnam and Tumakuru",
+    "A corridor running along NH-44 through Rayalaseema",
+    "The first phase of the East Coast Economic Corridor"
+   ],
+   "options_te": [
+    "పూర్తిగా ఆంధ్రప్రదేశ్ సరిహద్దుల్లోనే ఉన్న కారిడార్",
+    "కృష్ణపట్నం, తుమకూరు వంటి నోడ్లతో కూడిన కారిడార్ వ్యవస్థ",
+    "రాయలసీమ మీదుగా NH-44 వెంట వెళ్లే కారిడార్",
+    "తూర్పు తీర ఆర్థిక కారిడార్ (ECEC) మొదటి దశ"
+   ],
+   "explanation_en": "CBIC is a corridor network whose first-phase nodes include Krishnapatnam (AP), Tumakuru (Karnataka) and Ponneri (Tamil Nadu). It is about 560 km long and crosses three States. The NH-44 corridor through Rayalaseema is HBIC, and the first phase of ECEC is VCIC.",
+   "explanation_te": "CBIC ఒక కారిడార్ వ్యవస్థ; మొదటి దశ నోడ్లు కృష్ణపట్నం (AP), తుమకూరు (కర్ణాటక), పొన్నేరి (తమిళనాడు). పొడవు సుమారు 560 km, మూడు రాష్ట్రాల గుండా వెళ్తుంది. రాయలసీమ మీదుగా NH-44 వెంట వెళ్లేది HBIC; ECEC మొదటి దశ VCIC.",
+   "option_explanations_en": [
+    "Wrong. CBIC crosses Tamil Nadu, Andhra Pradesh and Karnataka.",
+    "Correct. Krishnapatnam and Tumakuru are CBIC nodes (with Ponneri).",
+    "Wrong. The NH-44 corridor through Rayalaseema is HBIC.",
+    "Wrong. The first phase of ECEC is VCIC, not CBIC."
+   ],
+   "option_explanations_te": [
+    "తప్పు. CBIC తమిళనాడు, AP, కర్ణాటక గుండా వెళ్తుంది.",
+    "సరైనది. కృష్ణపట్నం, తుమకూరు (పొన్నేరితో పాటు) CBIC నోడ్లు.",
+    "తప్పు. రాయలసీమ మీదుగా NH-44 వెంట వెళ్లేది HBIC.",
+    "తప్పు. ECEC మొదటి దశ VCIC, CBIC కాదు."
+   ],
+   "reason": "Distractor 'All places in old textbook lists are completed industrial cities' was meta/absurd and 'a shipping route' implausible. Replaced with near-miss corridor descriptions."
+  },
+  "IA08-P393-Q003": {
+   "question_en": "Consider the following about VCIC: 1. It forms the first phase of the East Coast Economic Corridor. 2. ADB's 2016 plan lists Visakhapatnam, Kakinada, Gannavaram–Kankipadu and Yerpedu–Srikalahasti as its nodes. 3. VCIC is financed entirely by JICA. Which statements are correct?",
+   "question_te": "VCIC గురించి కింది వాక్యాలను పరిశీలించండి: 1. ఇది తూర్పు తీర ఆర్థిక కారిడార్ (East Coast Economic Corridor) మొదటి దశ. 2. ADB 2016 ప్రణాళిక దీని నోడ్లుగా విశాఖపట్నం, కాకినాడ, గన్నవరం–కంకిపాడు, ఏర్పేడు–శ్రీకాళహస్తి లను పేర్కొంది. 3. VCIC కు పూర్తిగా JICA నిధులు ఇస్తోంది. సరైన వాక్యాలు ఏవి?",
+   "explanation_en": "Statements 1 and 2 are correct. VCIC is the first phase of the ADB-supported East Coast Economic Corridor, and ADB's 2016 Concept Development Plan named Visakhapatnam, Kakinada, Gannavaram–Kankipadu and Yerpedu–Srikalahasti as nodes. Statement 3 is wrong: ADB, not JICA, is VCIC's lead partner (about US$631 million approved in 2016), with government counterpart funds.",
+   "explanation_te": "1, 2 వాక్యాలు సరైనవి. VCIC, ADB సహకారంతో నడిచే తూర్పు తీర ఆర్థిక కారిడార్ మొదటి దశ; ADB 2016 Concept Development Plan విశాఖపట్నం, కాకినాడ, గన్నవరం–కంకిపాడు, ఏర్పేడు–శ్రీకాళహస్తి లను నోడ్లుగా చెప్పింది. 3వ వాక్యం తప్పు: VCIC కు ప్రధాన భాగస్వామి ADB (2016 లో సుమారు US$631 మిలియన్లు), JICA కాదు; మిగతా భాగం ప్రభుత్వం పెడుతుంది.",
+   "option_explanations_en": [
+    "Correct. VCIC is ECEC's first phase and ADB's 2016 plan lists those four nodes; JICA does not fund it.",
+    "Wrong. Statement 3 is false: VCIC's lead financier is ADB, not JICA.",
+    "Wrong. Statement 3 is false, and Statement 2 is true.",
+    "Wrong. Statement 3 is false, so all three cannot be correct."
+   ],
+   "option_explanations_te": [
+    "సరైనది. VCIC ECEC మొదటి దశ; ADB 2016 ప్రణాళిక ఆ నాలుగు నోడ్లను చెప్పింది; JICA నిధులు ఇవ్వడం లేదు.",
+    "తప్పు. 3వ వాక్యం తప్పు: VCIC ప్రధాన ఆర్థిక భాగస్వామి ADB, JICA కాదు.",
+    "తప్పు. 3వ వాక్యం తప్పు; 2వ వాక్యం సరైనది.",
+    "తప్పు. 3వ వాక్యం తప్పు, కాబట్టి మూడూ సరైనవి కావు."
+   ],
+   "reason": "Statement 3 was a meta claim about 'older plans'; replaced with a plausible false fact (financing by JICA alone) so the key '1 and 2 only' still holds."
+  },
+  "IA08-P393-Q005": {
+   "question_en": "Which group lists the four NICDP industrial cities whose main infrastructure was complete as of 2026?",
+   "question_te": "2026 నాటికి ప్రధాన మౌలిక వసతులు పూర్తయిన నాలుగు NICDP పారిశ్రామిక నగరాలు ఉన్న సమూహం ఏది?",
+   "options_en": [
+    "Orvakal, Kopparthy, Zaheerabad, Palakkad",
+    "Dholera, Orvakal, Greater Noida, Vikram Udyogpuri",
+    "Krishnapatnam, Tumakuru, Ponneri, Dholera",
+    "Dholera, Shendra–Bidkin, Greater Noida, Vikram Udyogpuri"
+   ],
+   "options_te": [
+    "ఓర్వకల్లు, కొప్పర్తి, జహీరాబాద్, పాలక్కాడ్",
+    "ధోలేరా, ఓర్వకల్లు, గ్రేటర్ నోయిడా, విక్రమ్ ఉద్యోగపురి",
+    "కృష్ణపట్నం, తుమకూరు, పొన్నేరి, ధోలేరా",
+    "ధోలేరా, షేంద్రా–బిడ్కిన్, గ్రేటర్ నోయిడా, విక్రమ్ ఉద్యోగపురి"
+   ],
+   "explanation_en": "Dholera SIR (Gujarat), Shendra–Bidkin/AURIC (Maharashtra), the Integrated Industrial Township at Greater Noida (UP) and Vikram Udyogpuri (MP) are the four cities with main infrastructure complete and land being allotted (NICDC, 2026). Orvakal, Kopparthy, Zaheerabad and Palakkad were only approved in 2024 and are under construction.",
+   "explanation_te": "ధోలేరా SIR (గుజరాత్), షేంద్రా–బిడ్కిన్/AURIC (మహారాష్ట్ర), గ్రేటర్ నోయిడా సమగ్ర పారిశ్రామిక టౌన్‌షిప్ (UP), విక్రమ్ ఉద్యోగపురి (MP) — ఈ నాలుగింటిలోనే ప్రధాన వసతులు పూర్తయి భూమి కేటాయింపు జరుగుతోంది (NICDC, 2026 నాటికి). ఓర్వకల్లు, కొప్పర్తి, జహీరాబాద్, పాలక్కాడ్ 2024 లో ఆమోదం పొంది నిర్మాణ దశలో ఉన్నాయి.",
+   "option_explanations_en": [
+    "Wrong. These four were approved in 2024 and are still being built.",
+    "Wrong. Orvakal is a 2024-approved node under construction; Shendra–Bidkin is missing.",
+    "Wrong. Krishnapatnam, Tumakuru and Ponneri are CBIC nodes, not completed cities.",
+    "Correct. These are the four NICDP cities with main infrastructure complete as of 2026."
+   ],
+   "option_explanations_te": [
+    "తప్పు. ఈ నాలుగూ 2024 లో ఆమోదం పొంది ఇంకా నిర్మాణంలో ఉన్నాయి.",
+    "తప్పు. ఓర్వకల్లు 2024 ఆమోదం పొందిన, నిర్మాణంలో ఉన్న నోడ్; షేంద్రా–బిడ్కిన్ లేదు.",
+    "తప్పు. కృష్ణపట్నం, తుమకూరు, పొన్నేరి CBIC నోడ్లు, పూర్తయిన నగరాలు కావు.",
+    "సరైనది. 2026 నాటికి ప్రధాన వసతులు పూర్తయిన నాలుగు NICDP నగరాలు ఇవే."
+   ],
+   "reason": "Options carried giveaway tags ('all approved in 2024', 'a mix of nodes and new projects'); rewritten as four parallel city lists. Stem dated directly instead of 'as per NICDC'."
+  },
+  "IA08-P394-Q003": {
+   "question_en": "Up to what amount can the board of a Maharatna CPSE invest in a single project without government approval?",
+   "question_te": "మహారత్న CPSE బోర్డు ప్రభుత్వ అనుమతి లేకుండా ఒక ప్రాజెక్టులో ఎంతవరకు పెట్టుబడి పెట్టవచ్చు?",
+   "reason": "'Printed-error-correction' meta stem ('How should the ₹5,000 crore figure be understood?') replaced by a direct question. Options and key unchanged; explanation still fits."
+  },
+  "IA08-P394-Q004": {
+   "question_en": "Which statement about HAL's Ratna status is correct?",
+   "question_te": "HAL రత్న హోదా గురించి సరైన వాక్యం ఏది?",
+   "reason": "Removed source-flavoured 'officially verified' wording from the stem; options and key unchanged."
+  },
+  "IA08-P400-Q008": {
+   "question_en": "Regarding NIMZ under the 2011 National Manufacturing Policy: 1. It was conceived as a large integrated manufacturing township. 2. A 25% manufacturing share of GDP and 100 million additional jobs were policy targets. 3. NIMZ was introduced as part of the Make in India programme of 2014. Which are correct?",
+   "question_te": "2011 జాతీయ తయారీ విధానం (National Manufacturing Policy) లోని జాతీయ పెట్టుబడి–తయారీ మండలం (NIMZ) గురించి కింది వాక్యాలను పరిశీలించండి: 1. పెద్ద సమగ్ర తయారీ పట్టణంగా ప్రతిపాదించారు. 2. GDP లో తయారీ వాటాను 25% కు పెంచడం, 10 కోట్ల (100 million) అదనపు ఉద్యోగాలు విధాన లక్ష్యాలు. 3. NIMZ ను 2014 Make in India కార్యక్రమంలో భాగంగా ప్రవేశపెట్టారు. సరైనవి ఏవి?",
+   "explanation_en": "Statements 1 and 2 are correct: the National Manufacturing Policy, 2011 proposed NIMZs as large integrated industrial townships, aiming to raise manufacturing to 25% of GDP and create 100 million jobs. Statement 3 is wrong because NIMZ came with the 2011 policy, three years before Make in India was launched on 25 September 2014.",
+   "explanation_te": "1, 2 వాక్యాలు సరైనవి: జాతీయ తయారీ విధానం, 2011 NIMZ లను పెద్ద సమగ్ర పారిశ్రామిక పట్టణాలుగా ప్రతిపాదించింది; GDP లో తయారీ వాటా 25%, 10 కోట్ల ఉద్యోగాలు దాని లక్ష్యాలు. 3వ వాక్యం తప్పు, ఎందుకంటే NIMZ 2011 విధానంతోనే వచ్చింది; Make in India 25 సెప్టెంబర్ 2014 న, మూడేళ్ల తర్వాత మొదలైంది.",
+   "option_explanations_en": [
+    "Correct. NIMZ is a 2011 NMP township with the 25% / 100 million targets; it predates Make in India.",
+    "Wrong. Statement 3 is false: NIMZ came with the 2011 policy, not Make in India (2014).",
+    "Wrong. Statement 3 is false and Statement 1 is true.",
+    "Wrong. Statement 3 is false, so all three cannot be correct."
+   ],
+   "option_explanations_te": [
+    "సరైనది. NIMZ 2011 NMP పట్టణం; 25% / 10 కోట్ల ఉద్యోగాల లక్ష్యాలు; Make in India కంటే ముందుది.",
+    "తప్పు. 3వ వాక్యం తప్పు: NIMZ 2011 విధానంతో వచ్చింది, Make in India (2014) తో కాదు.",
+    "తప్పు. 3వ వాక్యం తప్పు; 1వ వాక్యం సరైనది.",
+    "తప్పు. 3వ వాక్యం తప్పు, కాబట్టి మూడూ సరైనవి కావు."
+   ],
+   "reason": "Statement 3 was a meta claim ('approval in principle proves…'); replaced with a plausible false fact so the key '1 and 2 only' still holds."
+  },
+  "IA08-P401-Q001": {
+   "question_en": "Regarding CBIC, consider: 1. Early planning identified Tumakuru, Ponneri and Krishnapatnam nodes. 2. JICA alone financed the construction of the entire corridor. 3. Focus sectors include automobiles, electronics and agro-food processing. Which are correct?",
+   "question_te": "చెన్నై–బెంగళూరు పారిశ్రామిక కారిడార్ (CBIC) గురించి కింది వాక్యాలను పరిశీలించండి: 1. ప్రారంభ ప్రణాళికలో తుమకూరు, పొన్నేరి, కృష్ణపట్నం నోడ్లను గుర్తించారు. 2. మొత్తం కారిడార్ నిర్మాణానికి JICA ఒక్కటే నిధులు ఇచ్చింది. 3. ప్రాధాన్య రంగాల్లో వాహనాలు, ఎలక్ట్రానిక్స్, వ్యవసాయ ఆహార శుద్ధి ఉన్నాయి. సరైనవి ఏవి?",
+   "explanation_en": "Statements 1 and 3 are correct: the first phase chose Ponneri (TN), Tumakuru (Karnataka) and Krishnapatnam (AP), with automobiles and parts, electronics and agro-food processing as focus sectors. Statement 2 is wrong: JICA helped prepare the plan, while NICDC and the State SPVs build the nodes; the agencies have different roles.",
+   "explanation_te": "1, 3 వాక్యాలు సరైనవి: మొదటి దశలో పొన్నేరి (తమిళనాడు), తుమకూరు (కర్ణాటక), కృష్ణపట్నం (AP) నోడ్లను ఎంచుకున్నారు; వాహనాలు–విడిభాగాలు, ఎలక్ట్రానిక్స్, వ్యవసాయ ఆహార శుద్ధి ప్రాధాన్య రంగాలు. 2వ వాక్యం తప్పు: JICA ప్రణాళిక తయారీలో సాయం చేసింది; నిర్మాణం NICDC, రాష్ట్ర SPV లు చేస్తాయి; పాత్రలు వేర్వేరు.",
+   "option_explanations_en": [
+    "Correct. The three first-phase nodes and focus sectors are right; JICA did not fund the whole build.",
+    "Wrong. Statement 2 is false: JICA assisted planning, not the entire construction.",
+    "Wrong. Statement 2 is false and Statement 1 is true.",
+    "Wrong. Statement 2 is false, so all three cannot be correct."
+   ],
+   "option_explanations_te": [
+    "సరైనది. మూడు నోడ్లు, ప్రాధాన్య రంగాలు సరైనవే; మొత్తం నిర్మాణానికి JICA నిధులు ఇవ్వలేదు.",
+    "తప్పు. 2వ వాక్యం తప్పు: JICA ప్రణాళికకు సాయం చేసింది, మొత్తం నిర్మాణానికి కాదు.",
+    "తప్పు. 2వ వాక్యం తప్పు; 1వ వాక్యం సరైనది.",
+    "తప్పు. 2వ వాక్యం తప్పు, కాబట్టి మూడూ సరైనవి కావు."
+   ],
+   "reason": "Statement 2 was a straw man ('necessarily performed the same role'); replaced with a plausible false fact so the key '1 and 3 only' still holds."
+  },
+  "IA08-P401-Q005": {
+   "question_en": "Regarding VCIC: 1. Metals, pharmaceuticals and petrochemicals are priority sectors for its northern part. 2. Visakhapatnam and Srikalahasti–Chittoor were given first priority among its nodes. 3. Kopparthy was one of the four nodes in ADB's original 2016 plan. Which are correct?",
+   "question_te": "VCIC గురించి: 1. దీని ఉత్తర భాగానికి లోహాలు, ఫార్మా, పెట్రో రసాయనాలు ప్రాధాన్య రంగాలు. 2. దీని నోడ్లలో విశాఖపట్నం, శ్రీకాళహస్తి–చిత్తూరు లకు మొదటి ప్రాధాన్యం ఇచ్చారు. 3. ADB 2016 అసలు ప్రణాళికలోని నాలుగు నోడ్లలో కొప్పర్తి ఒకటి. సరైనవి ఏవి?",
+   "explanation_en": "Statements 1 and 2 are correct: VCIC's plan gives metals, pharma and petrochemicals to the northern part (and food processing, leather and automobiles to the southern part), and Visakhapatnam and Srikalahasti–Chittoor were the first-priority nodes. Statement 3 is wrong: Kopparthy (YSR Kadapa) was added to VCIC later; ADB's 2016 nodes were Visakhapatnam, Kakinada, Gannavaram–Kankipadu and Yerpedu–Srikalahasti.",
+   "explanation_te": "1, 2 వాక్యాలు సరైనవి: VCIC ప్రణాళికలో ఉత్తర భాగానికి లోహాలు, ఫార్మా, పెట్రో రసాయనాలు (దక్షిణ భాగానికి ఆహార శుద్ధి, తోలు, వాహనాలు) ప్రాధాన్య రంగాలు; విశాఖపట్నం, శ్రీకాళహస్తి–చిత్తూరు మొదటి ప్రాధాన్య నోడ్లు. 3వ వాక్యం తప్పు: కొప్పర్తి (YSR కడప) ను తర్వాత VCIC లో చేర్చారు; ADB 2016 నోడ్లు విశాఖపట్నం, కాకినాడ, గన్నవరం–కంకిపాడు, ఏర్పేడు–శ్రీకాళహస్తి.",
+   "option_explanations_en": [
+    "Correct. Northern-sector priorities and the two priority nodes are right; Kopparthy was added later.",
+    "Wrong. Statement 3 is false: Kopparthy was not in ADB's original four nodes.",
+    "Wrong. Statement 3 is false and Statement 1 is true.",
+    "Wrong. Statement 3 is false, so all three cannot be correct."
+   ],
+   "option_explanations_te": [
+    "సరైనది. ఉత్తర భాగపు ప్రాధాన్య రంగాలు, రెండు ప్రాధాన్య నోడ్లు సరైనవే; కొప్పర్తి తర్వాత చేరింది.",
+    "తప్పు. 3వ వాక్యం తప్పు: ADB అసలు నాలుగు నోడ్లలో కొప్పర్తి లేదు.",
+    "తప్పు. 3వ వాక్యం తప్పు; 1వ వాక్యం సరైనది.",
+    "తప్పు. 3వ వాక్యం తప్పు, కాబట్టి మూడూ సరైనవి కావు."
+   ],
+   "reason": "Near-duplicate of IA08-P393-Q003 (VCIC as ECEC first phase, ADB four-node plan; same key '1 and 2 only'), and Statement 3 was meta. Rewritten to new facts: VCIC sector priorities, priority nodes, Kopparthy added later."
+  },
+  "IA08-P401-Q007": {
+   "question_en": "In 2016, about how much did the Asian Development Bank approve in loans and grants for the Vizag–Chennai Industrial Corridor?",
+   "question_te": "2016 లో Vizag–Chennai Industrial Corridor కోసం ఆసియా అభివృద్ధి బ్యాంకు (ADB) సుమారు ఎంత రుణాలు, గ్రాంట్ల ప్యాకేజీని ఆమోదించింది?",
+   "options_en": [
+    "About US$250 million",
+    "About US$1.2 billion",
+    "About US$375 million",
+    "About US$631 million"
+   ],
+   "options_te": [
+    "సుమారు US$250 మిలియన్లు",
+    "సుమారు US$1.2 బిలియన్లు",
+    "సుమారు US$375 మిలియన్లు",
+    "సుమారు US$631 మిలియన్లు"
+   ],
+   "explanation_en": "ADB approved a package of about US$631 million in loans and grants for VCIC in 2016, with the government providing counterpart funds. The money is released in tranches, each with its own amount and share, so a figure should always be tied to its project or tranche.",
+   "explanation_te": "2016 లో ADB VCIC కోసం సుమారు US$631 మిలియన్ల రుణాలు, గ్రాంట్ల ప్యాకేజీని ఆమోదించింది; మిగతా భాగాన్ని (counterpart) ప్రభుత్వం పెడుతుంది. ఈ డబ్బు విడతలుగా (tranches) వస్తుంది; ప్రతి విడతకు వేరే మొత్తం, వేరే నిష్పత్తి ఉంటాయి.",
+   "option_explanations_en": [
+    "Wrong. The 2016 ADB package was about US$631 million, not US$250 million.",
+    "Wrong. US$1.2 billion overstates the 2016 package of about US$631 million.",
+    "Wrong. The approved package was about US$631 million.",
+    "Correct. ADB approved about US$631 million in loans and grants for VCIC in 2016."
+   ],
+   "option_explanations_te": [
+    "తప్పు. 2016 ADB ప్యాకేజీ సుమారు US$631 మిలియన్లు, US$250 మిలియన్లు కాదు.",
+    "తప్పు. US$1.2 బిలియన్లు ఎక్కువ; అసలు ప్యాకేజీ సుమారు US$631 మిలియన్లు.",
+    "తప్పు. ఆమోదించిన ప్యాకేజీ సుమారు US$631 మిలియన్లు.",
+    "సరైనది. 2016 లో ADB VCIC కోసం సుమారు US$631 మిలియన్లు ఆమోదించింది."
+   ],
+   "reason": "Meta stem ('the correct way to state VCIC financing') with instruction-style options; rewritten as a direct fact question on the ADB 2016 package."
+  },
+  "IA08-P402-Q001": {
+   "question_en": "Regarding HBIC: 1. NH-44 is its transport spine. 2. Orvakal in Kurnool district is an Andhra Pradesh priority node. 3. In Andhra Pradesh, HBIC runs along NH-16 through the coastal districts. Which are correct?",
+   "question_te": "హైదరాబాద్–బెంగళూరు పారిశ్రామిక కారిడార్ (HBIC) గురించి కింది వాక్యాలను పరిశీలించండి: 1. NH-44 దీని రవాణా వెన్నెముక. 2. కర్నూలు జిల్లాలోని ఓర్వకల్లు ఆంధ్రప్రదేశ్ ప్రాధాన్య నోడ్. 3. ఆంధ్రప్రదేశ్‌లో HBIC తీర జిల్లాల గుండా NH-16 వెంట వెళ్తుంది. సరైనవి ఏవి?",
+   "explanation_en": "Statements 1 and 2 are correct: HBIC follows NH-44, which in AP passes through Kurnool, Nandyal (Dhone), Anantapur and Sri Sathya Sai districts, and its AP priority node is Orvakal in Kurnool. Statement 3 is wrong: HBIC crosses Rayalaseema, not the coast; the coastal corridor is VCIC.",
+   "explanation_te": "1, 2 వాక్యాలు సరైనవి: HBIC NH-44 వెంట వెళ్తుంది; AP లో NH-44 కర్నూలు, నంద్యాల (డోన్), అనంతపురం, శ్రీ సత్యసాయి జిల్లాల గుండా వెళ్తుంది; AP ప్రాధాన్య నోడ్ కర్నూలు జిల్లాలోని ఓర్వకల్లు. 3వ వాక్యం తప్పు: HBIC రాయలసీమ మీదుగా వెళ్తుంది, తీరం వెంట కాదు; తీర కారిడార్ VCIC.",
+   "option_explanations_en": [
+    "Correct. NH-44 is the spine and Orvakal the AP node; HBIC does not follow NH-16.",
+    "Wrong. Statement 3 is false: HBIC runs through Rayalaseema on NH-44.",
+    "Wrong. Statement 3 is false and Statement 1 is true.",
+    "Wrong. Statement 3 is false, so all three cannot be correct."
+   ],
+   "option_explanations_te": [
+    "సరైనది. వెన్నెముక NH-44, AP నోడ్ ఓర్వకల్లు; HBIC NH-16 వెంట వెళ్లదు.",
+    "తప్పు. 3వ వాక్యం తప్పు: HBIC NH-44 వెంట రాయలసీమ మీదుగా వెళ్తుంది.",
+    "తప్పు. 3వ వాక్యం తప్పు; 1వ వాక్యం సరైనది.",
+    "తప్పు. 3వ వాక్యం తప్పు, కాబట్టి మూడూ సరైనవి కావు."
+   ],
+   "reason": "Statement 3 was a meta claim about master-plan acreage; replaced with a plausible false fact (NH-16) so the key '1 and 2 only' still holds."
+  },
+  "IA08-P404-Q006": {
+   "question_en": "Regarding the Andhra Pradesh Drone Policy 2024–29: 1. It promotes drone manufacturing, research, training and services. 2. Making AP the 'Drone capital of India' is a policy ambition, not an achieved rank. 3. The proposed Drone City is at Lepakshi in Sri Sathya Sai district. Which are correct?",
+   "question_te": "ఆంధ్రప్రదేశ్ డ్రోన్ విధానం 2024–29 (AP Drone Policy 2024–29) గురించి కింది వాక్యాలను పరిశీలించండి: 1. డ్రోన్ తయారీ, పరిశోధన, శిక్షణ, సేవలను ప్రోత్సహిస్తుంది. 2. AP ని 'Drone capital of India' గా చేయడం విధాన ఆశయం; సాధించిన స్థానం కాదు. 3. ప్రతిపాదిత Drone City శ్రీ సత్యసాయి జిల్లాలోని లేపాక్షిలో ఉంది. సరైనవి ఏవి?",
+   "explanation_en": "Statements 1 and 2 are correct: the Drone Policy (approved November 2024) promotes drone manufacturing, research, training and services, and 'Drone capital of India' is its stated ambition. Statement 3 is wrong: the proposed Drone City, of about 300 acres, is at Orvakal in Kurnool district. The policy targets about ₹1,000 crore investment and about 40,000 jobs.",
+   "explanation_te": "1, 2 వాక్యాలు సరైనవి: డ్రోన్ విధానం (నవంబర్ 2024 ఆమోదం) డ్రోన్ తయారీ, పరిశోధన, శిక్షణ, సేవలను ప్రోత్సహిస్తుంది; 'Drone capital of India' దాని ఆశయం. 3వ వాక్యం తప్పు: సుమారు 300 ఎకరాల ప్రతిపాదిత Drone City కర్నూలు జిల్లా ఓర్వకల్లులో ఉంది. లక్ష్యాలు సుమారు ₹1,000 కోట్ల పెట్టుబడి, సుమారు 40,000 ఉద్యోగాలు.",
+   "option_explanations_en": [
+    "Correct. The policy's scope and its 'Drone capital' ambition are right; the Drone City is at Orvakal.",
+    "Wrong. Statement 3 is false: the Drone City is proposed at Orvakal, Kurnool.",
+    "Wrong. Statement 3 is false and Statement 1 is true.",
+    "Wrong. Statement 3 is false, so all three cannot be correct."
+   ],
+   "option_explanations_te": [
+    "సరైనది. విధాన పరిధి, 'Drone capital' ఆశయం సరైనవే; Drone City ఓర్వకల్లులో ఉంది.",
+    "తప్పు. 3వ వాక్యం తప్పు: Drone City ని కర్నూలు జిల్లా ఓర్వకల్లులో ప్రతిపాదించారు.",
+    "తప్పు. 3వ వాక్యం తప్పు; 1వ వాక్యం సరైనది.",
+    "తప్పు. 3వ వాక్యం తప్పు, కాబట్టి మూడూ సరైనవి కావు."
+   ],
+   "reason": "Policy misnamed 'Drone Policy 4.0' (it is the AP Drone Policy 2024–29, not one of the 4.0 set; cf. GEO-NEW-21-066), and Statement 3 was a meta claim. Statement 3 replaced with a plausible false location so the key '1 and 2 only' holds."
+  }
+ }
+}
