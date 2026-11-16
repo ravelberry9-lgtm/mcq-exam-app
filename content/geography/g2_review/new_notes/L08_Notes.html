@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+
+<html lang="te">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<title>పాఠం 8: Atmosphere, temperature, pressure, winds, clouds and rainfall</title>
+<style>
+:root{color-scheme:light;--ink:#20302d;--muted:#526760;--green:#125b4c;--deep:#083d36;--mint:#e5f4ed;--paper:#fffefa;--sand:#f6efe1;--line:#dbe5dc;--accent:#d99a3d;font-family:system-ui,'Noto Sans Telugu','Nirmala UI','Gautami',sans-serif;font-size:16px;line-height:1.8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eaf0eb;color:var(--ink)}a{color:#086959;text-decoration-thickness:1px;text-underline-offset:3px}a:hover,a:focus-visible{color:#064b3f;text-decoration-thickness:2px}a:focus-visible{outline:3px solid #e8a449;outline-offset:3px}
+.page{max-width:1080px;min-height:100vh;margin:auto;background:var(--paper);box-shadow:0 16px 70px #143a2820}.hero{background:radial-gradient(circle at 85% 5%,#307c68 0,transparent 31%),linear-gradient(128deg,#083d36,#176b57);color:white;padding:clamp(27px,5vw,56px) clamp(20px,6vw,74px) clamp(30px,5vw,60px);position:relative;overflow:hidden}.hero:after{content:'';position:absolute;width:220px;height:220px;right:-80px;bottom:-125px;border:2px solid #d8f7df57;border-radius:50%;box-shadow:0 0 0 35px #d8f7df16,0 0 0 70px #d8f7df0c;pointer-events:none}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:#c8f4d9}.eyebrow:before{content:'';width:9px;height:9px;background:#e9b657;border-radius:50%}.hero h1{font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.36;letter-spacing:-.025em;max-width:820px;margin:17px 0}.hero p{max-width:730px;margin:0;color:#e1f2e9}.hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:21px}.hero .tags span{border:1px solid #d8f6e363;background:#ffffff15;padding:4px 12px;border-radius:100px;font-size:.77rem;font-weight:650}
+.body{padding:clamp(20px,5vw,58px) clamp(20px,6vw,74px) 68px}.body>*{max-width:79ch}.body>h2,.body>h3,.body>.table-wrap{max-width:none}.body>p{margin:0 0 1.15em}.body>p:first-child{font-size:1.07rem;color:#3d5850}.body h2{font-size:clamp(1.4rem,2.5vw,1.85rem);line-height:1.42;color:var(--deep);margin:2.1em 0 .68em;padding-top:.3em;border-top:1px solid var(--line)}.body h2:first-child{border:0;margin-top:0}.body h3{font-size:1.16rem;line-height:1.48;color:var(--green);margin:1.9em 0 .55em}.body h2+h3{margin-top:.8em}.body strong{color:#0d5549}.body ul,.body ol{padding-left:1.5em;margin:0 0 1.3em}.body li{padding-left:.25em;margin:.4em 0}.body li::marker{color:var(--green)}.body blockquote{margin:1.5em 0;padding:15px 22px;border-left:5px solid var(--accent);border-radius:0 16px 16px 0;background:#fff5e5;color:#51422d}.body blockquote p:last-child{margin-bottom:0}.body hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.table-wrap{overflow-x:auto;margin:1.4em 0 1.8em;border:1px solid var(--line);border-radius:16px;background:white;box-shadow:0 7px 24px #163e2a0b}.body table{border-collapse:collapse;width:100%;min-width:560px;font-size:.94rem;line-height:1.65}.body th{background:#e4f2e9;color:#103f35;text-align:left;font-weight:750}.body td,.body th{padding:12px 15px;border-bottom:1px solid var(--line);vertical-align:top}.body tr:last-child td{border-bottom:0}.body tbody tr:nth-child(even){background:#f8fbf8}.body code{background:#eef4ef;padding:.12em .3em;border-radius:5px;overflow-wrap:anywhere}.body img{display:block;max-width:100%;height:auto;margin:1.5em auto;border-radius:15px}.endnote{border-top:1px solid var(--line);padding:22px clamp(20px,6vw,74px) 35px;color:var(--muted);font-size:.82rem;background:#f6faf6}.endnote p{margin:0}.back{display:inline-flex;align-items:center;gap:5px;margin-bottom:18px;color:var(--green);font-size:.9rem;font-weight:700;text-decoration:none}
+.data-figure{max-width:none!important;margin:1.8em 0;padding:clamp(16px,3vw,28px);background:linear-gradient(145deg,#eef7f0,#f8f4e8);border:1px solid #cde0d3;border-radius:20px;box-shadow:0 10px 28px #22462a12}.data-figure figcaption{font-size:1.08rem;line-height:1.5;color:var(--deep);margin-bottom:17px}.data-figure .bars{display:grid;gap:11px}.bar-row{display:grid;grid-template-columns:minmax(125px,180px) minmax(80px,1fr) 32px;gap:12px;align-items:center;font-weight:700;font-size:.9rem;line-height:1.3}.bar-row small{display:block;font-weight:500;color:var(--muted);font-size:.76rem}.bar-track{height:21px;background:#dce7db;border-radius:99px;overflow:hidden}.bar-track i{display:block;height:100%;background:linear-gradient(90deg,#167963,#43ad86);border-radius:99px}.bar-row.control .bar-track i{background:linear-gradient(90deg,#a97533,#dfac5a)}.bar-row b{font-variant-numeric:tabular-nums;color:var(--deep)}.data-figure p{font-size:.81rem;line-height:1.55;color:var(--muted);margin:17px 0 0}
+@media(max-width:620px){:root{font-size:15.5px}.hero{padding-top:28px}.body{padding-bottom:42px}.body h2{margin-top:1.65em}.body table{min-width:500px}.table-wrap{margin-left:-4px;margin-right:-4px}.body td,.body th{padding:10px 12px}.bar-row{grid-template-columns:95px minmax(50px,1fr) 25px;gap:7px;font-size:.79rem}.bar-row small{font-size:.69rem}.data-figure{margin-left:-4px;margin-right:-4px}}
+@media print{@page{size:A4;margin:15mm}body{background:white}.page{box-shadow:none;max-width:none}.hero{padding:18px 23px 22px;print-color-adjust:exact;-webkit-print-color-adjust:exact}.hero h1{font-size:23pt}.body{padding:12px 23px 20px}.body h2{break-after:avoid}.body h3{break-after:avoid}.body p,.body li{orphans:3;widows:3}.table-wrap{overflow:visible;box-shadow:none;break-inside:avoid}.body table{min-width:0}.endnote{padding:13px 23px}.back{display:none}}
+</style>
+<style id="rebuilt-lesson-blocks">
+.body>.box,.body>.toc{max-width:79ch}
+.box{margin:1.3em 0;padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:white}
+.box>p:last-child,.box>ul:last-child,.box>ol:last-child{margin-bottom:0}.box>p{margin:.3em 0 .6em}
+.box:before{display:block;font-size:.74rem;font-weight:750;letter-spacing:.06em;margin-bottom:4px}
+.box.fact{background:var(--mint);border-color:#bfe0cf;border-left:5px solid var(--green)}.box.fact:before{content:'ముఖ్య వాస్తవం · Fact';color:var(--green)}
+.box.exam{background:#eef3fb;border-color:#cbd8ec;border-left:5px solid #2f5f9a}.box.exam:before{content:'పరీక్షలో · Exam';color:#2f5f9a}
+.box.trap{background:#fff3ec;border-color:#f0cdb8;border-left:5px solid #b4532a}.box.trap:before{content:'పొరపాటు జాగ్రత్త · Trap';color:#9a4320}
+.box.analogy{background:var(--sand);border-color:#eadcbf;border-left:5px solid var(--accent)}.box.analogy:before{content:'పోలిక · Analogy';color:#8a5a14}
+.box.intro{background:#f3f8f4;border-left:5px solid var(--deep);font-size:1.03rem}.box.intro:before{content:'ఈ పాఠం ఎలా చదవాలి';color:var(--deep)}
+.box.terms{background:#fbfaf4}.box.terms:before{content:'ముఖ్య పదాలు · Key terms';color:var(--green)}
+.box.changing{background:#f7f3fb;border-left:5px solid #6b4c9a}.box.changing:before{content:'మారే విలువ';color:#6b4c9a}
+.toc{margin:1.6em 0;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:#f8fbf8}
+.toc>strong{display:block;margin-bottom:6px;color:var(--deep)}.toc details{border-top:1px solid var(--line);padding:6px 0}
+.toc summary{cursor:pointer;font-weight:700;color:var(--green)}.toc ol{margin:.4em 0 .5em;font-size:.94rem}.toc li{margin:.2em 0}
+.body h2[id],.body h3[id]{scroll-margin-top:20px}.body p,.body li,.body td{overflow-wrap:anywhere}
+@media(max-width:620px){.box{padding:12px 13px;margin-left:-4px;margin-right:-4px}.toc{padding:12px}}
+@media print{.toc details{display:block}.box{break-inside:avoid}}
+</style>
+</head>
+<body><main class="page"><header class="hero"><p class="eyebrow">పాఠం 8</p><h1>అధ్యాయం 8: వాతావరణ పొరలు, ఉష్ణోగ్రత, పీడనం, పవనాలు, మేఘాలు, వర్షపాతం మరియు చక్రవాతాలు</h1></header><nav class="toc"><ol><li><a href="#weather-climate">Weather, Climate ఒకటేనా?</a></li><li><a href="#composition">గాలిలో ఏమేమి ఉన్నాయి?</a></li><li><a href="#layers">గాలి పొరలు ఎన్ని? ఎత్తుకు వెళ్తే ఎందుకు చల్లగా, మళ్లీ వేడిగా?</a></li><li><a href="#ionosphere">Ionosphere ఒక పొరా? Radio తరంగాలు ఎలా తిరిగి వస్తాయి?</a></li><li><a href="#insolation">సూర్యుడి నుంచి వచ్చిన శక్తి ఎటు వెళ్తుంది?</a></li><li><a href="#heat-transfer">వేడి ఎలా ప్రయాణిస్తుంది? ఉష్ణోగ్రతను ఎలా కొలుస్తారు?</a></li><li><a href="#temperature-distribution">ఉష్ణోగ్రత ఎక్కడ ఎంత? ఎత్తుకు వెళ్తే ఎంత తగ్గుతుంది?</a></li><li><a href="#isolines">పటంలో సమాన విలువల గీతలు: Isotherm, Isobar …</a></li><li><a href="#pressure">గాలికి బరువు ఉందా? Pressure ఎందుకు మారుతుంది?</a></li><li><a href="#wind-forces">గాలిని ఏ శక్తులు కదిలిస్తాయి?</a></li><li><a href="#pressure-belts">భూమి మీద పీడన మేఖలలు ఎన్ని? ఎందుకు ఏర్పడ్డాయి?</a></li><li><a href="#planetary-winds">Trade winds, Westerlies, Polar easterlies ఎలా వీస్తాయి?</a></li><li><a href="#monsoon-winds">Monsoon అంటే వర్షమా, గాలా?</a></li><li><a href="#local-winds">ఒక్క ప్రాంతానికే పరిమితమైన గాలులు: Local winds</a></li><li><a href="#jet-streams">Jet streams అంటే ఏమిటి? మన వాతావరణాన్ని ఎలా నడిపిస్తాయి?</a></li><li><a href="#humidity">గాలిలో తేమ ఎంత ఉంది? Relative humidity, Dew point</a></li><li><a href="#condensation-forms">మంచు, పొగమంచు, Smog, Sleet ఎలా ఏర్పడతాయి?</a></li><li><a href="#clouds">మేఘాలు ఎన్ని రకాలు? ఆకాశం చూసి వాతావరణం చెప్పగలమా?</a></li><li><a href="#precipitation">వర్షం ఎలా పడుతుంది? మూడు రకాల వర్షపాతం</a></li><li><a href="#air-masses">వాయురాశులు (Air masses) అంటే ఏమిటి? cP, mT కోడ్ ఎలా చదవాలి?</a></li><li><a href="#fronts">రెండు వాయురాశులు కలిసే చోట ఏమవుతుంది? Fronts</a></li><li><a href="#tropical-cyclones">ఉష్ణమండల చక్రవాతం ఎలా పుడుతుంది? మన తీరాన్ని ఎందుకు తాకుతుంది?</a></li><li><a href="#temperate-cyclones">సమశీతోష్ణ చక్రవాతం వేరేనా? ప్రతిచక్రవాతం అంటే?</a></li><li><a href="#pairs">ముఖ్య జతలు</a></li><li><a href="#selfcheck">స్వయం పరీక్ష</a></li><li><a href="#sources">ఆధారాలు</a></li></ol></nav><article aria-label="పాఠం" class="body"><p>పాఠాలు 4–7 లో నేల గురించి చూశాం; ఇప్పుడు నేల పైన ఉన్న గాలి వైపు చూద్దాం. ముందు గాలిలో ఏ వాయువులు ఉన్నాయో, గాలి ఎన్ని పొరలుగా ఉందో, సూర్యుడి వేడి భూమికి ఎలా వచ్చి గాలిని ఎలా వేడి చేస్తుందో, ఉష్ణోగ్రత ఎక్కడ ఎంత ఉంటుందో చూస్తాం. తరువాత పీడనం, పవనాలు, జెట్ ప్రవాహాలు; చివరగా తేమ, మేఘాలు, వర్షం, వాయురాశులు, వాతాగ్రాలు, చక్రవాతాలు. ప్రపంచ శీతోష్ణ మండలాలు (Climate regions) తర్వాతి పాఠం 9 లో వస్తాయి.</p>
+<p>ముఖ్య పదాలు:</p>
+<ul>
+<li>Weather (వాతావరణం) / Climate (శీతోష్ణస్థితి) — కొద్ది సమయపు గాలి స్థితి / సుమారు 30 ఏళ్ల గాలి స్వభావం.</li>
+<li>Troposphere, Stratosphere, Mesosphere, Thermosphere, Exosphere — ఉష్ణోగ్రత ఆధారంగా కింది నుంచి పైకి ఐదు పొరలు.</li>
+<li>Ionosphere (అయానో ఆవరణం) — Electrons విడిపోయిన కణాలు ఎక్కువగా ఉండి Radio తరంగాలను వెనక్కి పంపే పై గాలి భాగం.</li>
+<li>Insolation (సూర్యపుటం), Albedo — భూమికి చేరే సూర్య వికిరణం / అందులో ప్రతిఫలించే భాగం.</li>
+<li>Lapse rate (ఉష్ణోగ్రత క్షీణత రేటు), Temperature inversion (ఉష్ణోగ్రత విలోమం) — ఎత్తుతో ఉష్ణోగ్రత తగ్గే రేటు / ఎత్తుతో ఉష్ణోగ్రత పెరిగే పొర.</li>
+<li>Isoline (సమాన విలువ రేఖ) — Isotherm, Isobar లాగా పటంలో సమాన విలువ గల చోట్లను కలిపే గీత.</li>
+<li>Pressure gradient force, Coriolis force — గాలిని అల్పపీడనం వైపు నెట్టే బలం / భూభ్రమణం వల్ల గాలి దిశ వంగడం.</li>
+<li>Pressure belts (పీడన మేఖలలు), Planetary winds — భూమి చుట్టూ ఉన్న ఏడు పీడన పట్టీలు / వాటి మధ్య వీచే Trade winds, Westerlies, Polar easterlies.</li>
+<li>Monsoon (రుతుపవనాలు), Jet stream (జెట్ ప్రవాహం) — కాలంతో దిశ తిరగబడే పవనాలు / Tropopause దగ్గర వేగమైన గాలి నది.</li>
+<li>Relative humidity (సాపేక్ష ఆర్ద్రత), Dew point (తుషార స్థానం) — గాలి పట్టగలిగిన ఆవిరిలో ఉన్న శాతం / గాలి సంతృప్తమయ్యే ఉష్ణోగ్రత.</li>
+<li>Air mass (వాయురాశి), Front (వాతాగ్రం) — విశాల ప్రాంతంపై ఒకే స్వభావం గల గాలి ముద్ద / రెండు వాయురాశుల సరిహద్దు.</li>
+<li>Cyclone (చక్రవాతం), Anticyclone (ప్రతి చక్రవాతం) — అల్పపీడనం చుట్టూ లోపలికి తిరిగే గాలి / అధిక పీడనం నుంచి బయటికి తిరిగే గాలి.</li>
+</ul>
+<h2 id="weather-climate">Weather, Climate ఒకటేనా?</h2>
+<p>పొద్దున్నే అమ్మ "ఈ రోజు మబ్బుగా ఉంది, గొడుగు తీసుకెళ్లు" అంటుంది; అది ఈ రోజు గురించి మాట. "విశాఖపట్నంలో చలికాలం పెద్దగా చలి ఉండదు" అనేది ఒక రోజు గురించి కాదు; ఎన్నో ఏళ్లుగా అక్కడ ఎలా ఉంటుందో చెప్పే మాట. ఈ రెండు మాటల తేడానే Weather, Climate తేడా.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Weather (వాతావరణం)</strong></th>
+<th><strong>Climate (శీతోష్ణస్థితి)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>కాలం</td>
+<td>గంటలు, రోజులు, వారాలు</td>
+<td>సాధారణంగా 30 ఏళ్ల లెక్కలు</td>
+</tr>
+<tr>
+<td>ఏమి చెబుతుంది</td>
+<td>ఒక చోట ఈ సమయంలో గాలి స్థితి: ఉష్ణోగ్రత, గాలి, మబ్బు, వాన</td>
+<td>అదే చోట చాలా ఏళ్ల Weather స్వభావం: సగటు, కాలాల క్రమం, ఏటా మార్పులు, తీవ్ర సంఘటనలు</td>
+</tr>
+<tr>
+<td>ఉదాహరణ</td>
+<td>"ఈ రోజు మధ్యాహ్నం విజయవాడలో 42 °C"</td>
+<td>"విజయవాడలో మే అత్యంత వేడి నెల"</td>
+</tr>
+</tbody>
+</table></div>
+<p>Weather అంటే ఒక చోట, కొద్ది సమయంలో గాలి ఎలా ఉందో చెప్పేది: ఉష్ణోగ్రత ఎంత, గాలి ఏ వైపు వీస్తోంది, మబ్బు ఉందా, వాన పడుతోందా. Climate అంటే అదే చోట, ఒక విశాల ప్రాంతంలో, చాలా ఏళ్ల Weather ను కలిపి చూసినప్పుడు కనిపించే స్వభావం. Climate లో సగటు ఒక్కటే ఉండదు. ఏ నెలలో వేడి, ఏ నెలలో వాన అనే కాలాల క్రమం ఉంటుంది; ఏటా ఎంత మారుతుంది (Variability) అనేది ఉంటుంది; కరువు, వడగాలి, భారీ వాన లాంటి తీవ్ర సంఘటనలు (Extremes) కూడా ఉంటాయి. అందుకే రెండు ఊళ్లకు ఒకే సగటు వర్షం ఉన్నా వాటి Climate వేరు కావచ్చు: ఒక ఊరిలో ప్రతి ఏటా వర్షం స్థిరంగా పడుతుంది, ఇంకో ఊరిలో ఒక ఏడాది వరద, మరో ఏడాది కరువు.</p>
+<p>ఒక సరళమైన చిత్రం: ఒక విద్యార్థి ఒక పరీక్షలో తెచ్చిన మార్కులు Weather లాంటివి; పది తరగతుల్లో ఆమె మార్కుల తీరు, ఏ సబ్జెక్టులో బలం, ఎప్పుడెప్పుడు తగ్గింది అనేది Climate లాంటిది.</p>
+<p>30 ఏళ్ల సగటును Climate normal అంటారు. ఒక ఏడాది ఆ సగటు నుంచి ఎంత దూరం జరిగిందో దాన్ని Anomaly అంటారు. ఈ లెక్కలు <a href="/learn/geography/g2/9/notes#climate-statistics">పాఠం 9: శీతోష్ణస్థితి గణాంకాలు</a> లో చూస్తాం.</p>
+<h3>Climate ను తయారుచేసేవి, నిర్ణయించేవి</h3>
+<p>Weather ను, Climate ను వర్ణించే అంశాలను Elements అని, ఒక చోటి Climate ను నిర్ణయించే కారణాలను Controls అని రెండు గుంపులుగా చూస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>గుంపు</th>
+<th>ఏవి</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Elements (శీతోష్ణ అంశాలు)</strong></td>
+<td>ఉష్ణోగ్రత (Temperature), పీడనం (Pressure), పవనం (Wind), ఆర్ద్రత (Humidity), మేఘాలు (Clouds), అవపాతం (Precipitation)</td>
+</tr>
+<tr>
+<td><strong>Controls (నిర్ణయించే అంశాలు)</strong></td>
+<td>Latitude (అక్షాంశం), ఎత్తు (Altitude), సముద్రం నుంచి దూరం, సముద్ర ప్రవాహాలు (Ocean currents), పవనాలు, వాయురాశులు, పర్వతాల అమరిక (Relief)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Elements అనేవి మనం కొలిచే విషయాలు; ఈ పాఠం మొత్తం ఆ ఆరింటి గురించే. Controls అనేవి ఆ కొలతలు ఒక చోట ఎందుకు అలా ఉన్నాయో చెప్పే కారణాలు. ఉదాహరణకు "సముద్రం నుంచి దూరం" ను ఏ పరికరంతోనూ కొలవం; కానీ అది ఉష్ణోగ్రతను మారుస్తుంది, కాబట్టి అది Control. పవనాలు, వాయురాశులు ఈ పాఠంలోనే తరువాత వస్తాయి; సముద్ర ప్రవాహాలు సముద్రాల పాఠంలో.</p>
+<h3>ఎవరు కొలుస్తారు?</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>సంస్థ</th>
+<th>ఏమిటి</th>
+<th>ఎక్కడ</th>
+<th>ఎప్పటి నుంచి</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WMO</strong> (World Meteorological Organization, ప్రపంచ వాతావరణ సంస్థ)</td>
+<td>ఐక్యరాజ్యసమితి (UN) ప్రత్యేక సంస్థ; దేశాల Weather సేవలను కలుపుతుంది</td>
+<td>Geneva, Switzerland</td>
+<td>Convention అమల్లోకి 23 మార్చి 1950; ఆ రోజే ఏటా World Meteorological Day</td>
+</tr>
+<tr>
+<td><strong>IMD</strong> (India Meteorological Department, భారత వాతావరణ శాఖ)</td>
+<td>భారత ప్రభుత్వ Weather సేవ; అంచనాలు, తుఫాను హెచ్చరికలు</td>
+<td>New Delhi</td>
+<td>1875</td>
+</tr>
+<tr>
+<td><strong>IITM</strong> (Indian Institute of Tropical Meteorology)</td>
+<td>రుతుపవనాలు, ఉష్ణమండల వాతావరణం మీద భారత పరిశోధన సంస్థ</td>
+<td>Pune</td>
+<td>1962 (IMD లో భాగంగా); 1971 నుంచి స్వతంత్ర సంస్థ</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="composition">గాలిలో ఏమేమి ఉన్నాయి?</h2>
+<p>మనం పీల్చే గాలి ఒకే వాయువు కాదు; చాలా వాయువుల మిశ్రమం. అందులో నీటి ఆవిరి, సన్నని ధూళి కణాలు కూడా కలిసి ఉంటాయి. గాలిలోని పదార్థాలను మూడు గుంపులుగా చూస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>గుంపు</th>
+<th>ఏమిటి</th>
+<th>ఎంత మారుతుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. పొడి గాలి వాయువులు (Dry air)</strong></td>
+<td>Nitrogen, Oxygen, Argon, CO₂, ఇతర స్వల్ప వాయువులు</td>
+<td>నిష్పత్తి భూమి అంతా దాదాపు ఒకటే (CO₂ నెమ్మదిగా పెరుగుతోంది)</td>
+</tr>
+<tr>
+<td><strong>2. నీటి ఆవిరి (Water vapour)</strong></td>
+<td>వాయు రూపంలో ఉన్న నీరు</td>
+<td>చోటును బట్టి 0% నుంచి సుమారు 4% వరకు</td>
+</tr>
+<tr>
+<td><strong>3. Aerosols (ఏరోసోల్స్)</strong></td>
+<td>ధూళి, సముద్రపు ఉప్పు, పొగ, పుప్పొడి, అగ్నిపర్వత బూడిద లాంటి తేలే సూక్ష్మ కణాలు</td>
+<td>చోటును, కాలాన్ని బట్టి బాగా మారుతుంది</td>
+</tr>
+</tbody>
+</table></div>
+<h3>పొడి గాలి అంటే ఎందుకు?</h3>
+<p>వానాకాలంలో విజయవాడ గాలిలో నీటి ఆవిరి చాలా ఎక్కువ; Thar ఎడారి గాలిలో దాదాపు సున్నా. ఇంత మారే నీటి ఆవిరిని కలిపి లెక్కిస్తే ప్రతి చోటా వాయువుల శాతాలు మారిపోతాయి. అందుకే శాస్త్రవేత్తలు నీటి ఆవిరిని తీసేసి మిగిలిన గాలిని లెక్కిస్తారు; దాన్నే Dry air (పొడి గాలి) అంటారు. కాబట్టి పొడి గాలి పట్టికలో నీటి ఆవిరి కనిపించదు; నిజమైన గాలిలో మాత్రం అది ఉంటుంది.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>వాయువు</th>
+<th>పొడి గాలిలో (ఘనపరిమాణం ప్రకారం)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nitrogen (N₂)</strong></td>
+<td>78.08%</td>
+</tr>
+<tr>
+<td><strong>Oxygen (O₂)</strong></td>
+<td>20.95%</td>
+</tr>
+<tr>
+<td><strong>Argon (Ar)</strong></td>
+<td>0.93%</td>
+</tr>
+<tr>
+<td><strong>Carbon dioxide (CO₂)</strong></td>
+<td>సుమారు 0.04% (2025 సగటు 426.8 ppm ≈ 0.043%; పెరుగుతోంది)</td>
+</tr>
+<tr>
+<td>Neon (Ne)</td>
+<td>0.0018%</td>
+</tr>
+<tr>
+<td>Helium (He)</td>
+<td>0.0005%</td>
+</tr>
+<tr>
+<td>Methane (CH₄)</td>
+<td>సుమారు 0.0002% (2025 సగటు సుమారు 1,948 ppb)</td>
+</tr>
+<tr>
+<td>Krypton (Kr)</td>
+<td>0.0001%</td>
+</tr>
+<tr>
+<td>Hydrogen (H₂)</td>
+<td>0.00005%</td>
+</tr>
+<tr>
+<td>Ozone (O₃)</td>
+<td>చాలా స్వల్పం; ఎత్తును బట్టి మారుతుంది</td>
+</tr>
+</tbody>
+</table></div>
+<p>క్రమం Nitrogen &gt; Oxygen &gt; Argon. ఈ మూడు వాయువులే కలిపి 99.96% పైగా ఉంటాయి; మిగిలినవన్నీ కలిపినా ఒక శాతంలో చిన్న భాగమే. ఆ మిగిలిన వాయువులను Trace gases (స్వల్ప వాయువులు) అంటారు. ppm అంటే పది లక్షల భాగాల్లో ఎన్ని భాగాలు, ppb అంటే వంద కోట్ల భాగాల్లో ఎన్ని. CO₂, Methane విలువలు WMO Greenhouse Gas Bulletin No. 22 (అక్టోబర్ 2026) లోని 2025 ప్రపంచ సగటులు. బొగ్గు, పెట్రోలు, గ్యాస్ మండించడం, అడవులు తగ్గడం వల్ల గాలిలో CO₂ ప్రతి ఏటా పెరుగుతోంది; పాత పుస్తకాల్లో కనిపించే 0.03% ఆ కాలం నాటి విలువ.</p>
+<h3>ఏ వాయువు ఏం చేస్తుంది?</h3>
+<p>Nitrogen చర్య జరపని వాయువు; Oxygen ను పలుచన చేసి మంటలను అదుపులో ఉంచుతుంది. Oxygen శ్వాసకు, మండటానికి అవసరం. CO₂ మొక్కల కిరణజన్య సంయోగక్రియకు (Photosynthesis) అవసరం.</p>
+<p>స్వల్పం అంటే తక్కువ ప్రాముఖ్యం కాదు. CO₂ గాలిలో 0.04% మాత్రమే, కానీ భూమి బయటికి పంపే వేడిలో కొంత భాగాన్ని పట్టుకుని ఉంచుతుంది; Methane కూడా అలాగే వేడిని పట్టి ఉంచుతుంది. Ozone ఇంకా తక్కువ, కానీ Stratosphere లోని Ozone సూర్యుడి నుంచి వచ్చే హానికర Ultraviolet (UV) కిరణాలను చాలా వరకు పీల్చుకుంటుంది. ఈ పని నీటి ఆవిరిది కాదు; Ozone దే. Ozone ఎక్కువ భాగం Stratosphere లోని 15–35 km మధ్య ఉంటుంది (<a href="#layers">వివరంగా</a>); Troposphere లో కాదు.</p>
+<p>ఎత్తును బట్టి కూడా వాయువులు మారతాయి. NCERT ప్రకారం Oxygen సుమారు 120 km పైన దాదాపు ఉండదు; CO₂, నీటి ఆవిరి సుమారు 90 km వరకే ఉంటాయి.</p>
+<h3>నీటి ఆవిరి, Aerosols</h3>
+<p>నీటి ఆవిరి ఎడారుల్లో, ధ్రువాల దగ్గర దాదాపు 0%; తేమ ఎక్కువ ఉన్న ఉష్ణమండల ప్రాంతాల్లో సుమారు 4% వరకు ఉంటుంది. నీటి ఆవిరి దాదాపు అంతా కింది పొర Troposphere లోనే ఉంటుంది. ఆర్ద్రత, మేఘాలు, వాన, మంచు, తుఫానులు, జలచక్రం అన్నీ ఈ ఆవిరి నుంచే పుడతాయి; అందుకే Weather కు అతి ముఖ్యమైన వాయువు నీటి ఆవిరి.</p>
+<p>Aerosols కూడా వానకు అవసరం. ఆవిరి నీటి చుక్కగా మారాలంటే ఇలాంటి కణం మీద అతుక్కోవాలి; ఆ కణాలను సాంద్రీకరణ కేంద్రకాలు (Condensation nuclei) అంటారు (<a href="#precipitation">వివరంగా</a>).</p>
+<h3>గాలి బరువు ఎక్కడ ఉంది? పై అంచు ఎక్కడ?</h3>
+<p>Gravity గాలిని భూమి వైపు లాగుతుంది. దాంతో గాలి ఎక్కువ భాగం నేలకు దగ్గరగా కుక్కి ఉంటుంది; పైకి వెళ్లేకొద్దీ పలచబడుతుంది. గాలి మొత్తం ద్రవ్యరాశి (Mass) లో సగం సుమారు 5.5 km లోపలే ఉంది; సుమారు 99% ద్రవ్యరాశి సుమారు 30–32 km లోపలే ఉంది (NCERT: 32 km). ద్రవ్యరాశి లెక్క, నీటి ఆవిరి లెక్క వేర్వేరు: 99% ద్రవ్యరాశి 30 km లోపల ఉంటే, నీటి ఆవిరి దాదాపు అంతా అంతకంటే చాలా కింద Troposphere లోనే ఉంటుంది.</p>
+<p>గాలికి గోడ లాంటి పై అంచు లేదు. సాంద్రత పలచబడుతూ, పలచబడుతూ నెమ్మదిగా అంతరిక్షంలో కలిసిపోతుంది.</p>
+<h3>కలిసిపోయిన గాలి, విడిపోయిన గాలి</h3>
+<p>కలయిక, సంఘటనం (Mixing, Composition) ఆధారంగా గాలిని రెండు భాగాలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>భాగం</th>
+<th>ఎత్తు</th>
+<th>స్వభావం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Homosphere</strong></td>
+<td>నేల నుంచి సుమారు 80–100 km (పై అంచు Homopause)</td>
+<td>వాయువులు బాగా కలగలిసి ఉంటాయి; ప్రధాన వాయువుల నిష్పత్తి దాదాపు ఒకటే</td>
+</tr>
+<tr>
+<td><strong>Heterosphere (విరుద్ధ ఆవరణం)</strong></td>
+<td>సుమారు 100 km పైన</td>
+<td>వాయువులు బరువును బట్టి పొరలుగా విడిపోతాయి</td>
+</tr>
+</tbody>
+</table></div>
+<p>కింది భాగంలో గాలి పైకి లేస్తూ, దిగుతూ, సుడి తిరుగుతూ (Turbulent mixing) బాగా కలిసిపోతుంది; పాలలో కలిపిన చక్కెర లాగా ప్రతి చెంచాలో ఒకే రుచి. అందుకే Homosphere లో పొడి గాలి నిష్పత్తి ప్రతి ఎత్తులోనూ దాదాపు ఒకటే.</p>
+<p>Homopause పైన గాలి చాలా పలుచగా ఉంటుంది; కలిపే సుడులు బలహీనం. దాంతో ప్రతి వాయువు తన అణు బరువును బట్టి అమరుతుంది (Molecular diffusion): కింద బరువైన Nitrogen, పైకి వెళ్లేకొద్దీ Oxygen పరమాణువులు, Helium, చివర్న తేలికైన Hydrogen. అందుకే Heterosphere లో ఎత్తుకు వెళ్లేకొద్దీ Helium, Hydrogen లాంటి తేలికైన వాయువుల వాటా పెరుగుతుంది. ఉష్ణోగ్రత పొరలతో పోల్చి చూస్తే Troposphere, Stratosphere, Mesosphere కలిపి Homosphere; Thermosphere, Exosphere కలిపి Heterosphere అని స్థూలంగా గుర్తుంచుకోవచ్చు.</p>
+<h3>గాలిని మూడు ఆధారాలతో విభజిస్తారు</h3>
+<p>ఒకే గాలిని మూడు వేర్వేరు ప్రశ్నలతో చూడొచ్చు; దేని ఆధారంగా విడదీశారో తెలిస్తే పొరల పేర్లు కలగాపులగం కావు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఆధారం</th>
+<th>ఏ ప్రశ్న</th>
+<th>వచ్చే భాగాలు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఉష్ణోగ్రత</strong></td>
+<td>ఎత్తుకు వెళ్తే వేడి పెరుగుతుందా, తగ్గుతుందా?</td>
+<td>Troposphere, Stratosphere, Mesosphere, Thermosphere, Exosphere (<a href="#layers">వివరంగా</a>)</td>
+</tr>
+<tr>
+<td><strong>అయనీకరణ (Ionisation)</strong></td>
+<td>Electrons విడిపోయిన కణాలు ఎంత ఉన్నాయి?</td>
+<td>Ionosphere లోని D, E, F భాగాలు (<a href="#ionosphere">వివరంగా</a>)</td>
+</tr>
+<tr>
+<td><strong>కలయిక, సంఘటనం</strong></td>
+<td>వాయువులు కలిసి ఉన్నాయా, విడిపోయాయా?</td>
+<td>Homosphere, Heterosphere</td>
+</tr>
+</tbody>
+</table></div>
+<h3>ఈ వివరాలు ఎలా తెలిశాయి?</h3>
+<p>1950ల వరకు పై గాలి గురించి తెలిసింది తక్కువ. అప్పుడు 67 దేశాలు కలిసి 18 నెలల పాటు Balloons, Rockets తో భూమి, గాలి, సూర్యుడి మీద ఒకేసారి కొలతలు తీసుకున్నాయి. ఈ కాలాన్ని International Geophysical Year (IGY, అంతర్జాతీయ భూభౌతిక సంవత్సరం) అంటారు; IGY 1 జూలై 1957 నుంచి 31 డిసెంబర్ 1958 వరకు జరిగింది. ఈ కాలంలోనే 4 అక్టోబర్ 1957 న మొదటి కృత్రిమ ఉపగ్రహం Sputnik 1 అంతరిక్షంలోకి వెళ్లింది.</p>
+<h2 id="layers">గాలి పొరలు ఎన్ని? ఎత్తుకు వెళ్తే ఎందుకు చల్లగా, మళ్లీ వేడిగా?</h2>
+<p>అరకు ఘాట్ ఎక్కేకొద్దీ చల్లగా అనిపిస్తుంది. కానీ పైకి వెళ్తూ ఉంటే ఉష్ణోగ్రత ఒకసారి తగ్గుతుంది, మళ్లీ పెరుగుతుంది, మళ్లీ తగ్గుతుంది, మళ్లీ పెరుగుతుంది. ఉష్ణోగ్రత దిశ మారిన ప్రతి చోట ఒక కొత్త పొర మొదలవుతుంది. ఉష్ణోగ్రత ఆధారంగా గాలిని ఐదు పొరలుగా విభజిస్తారు (కింది నుంచి పైకి):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పొర</th>
+<th>ఎత్తు (సుమారు)</th>
+<th>ఎత్తుకు వెళ్తే ఉష్ణోగ్రత</th>
+<th>ముఖ్య లక్షణం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Troposphere (ట్రోపో ఆవరణం)</strong></td>
+<td>నేల నుంచి ధ్రువాల మీద 8 km, Equator మీద 18 km</td>
+<td>తగ్గుతుంది</td>
+<td>దాదాపు Weather అంతా ఇక్కడే</td>
+</tr>
+<tr>
+<td><strong>2. Stratosphere (స్ట్రాటో ఆవరణం)</strong></td>
+<td>Tropopause నుంచి 50 km</td>
+<td>పెరుగుతుంది</td>
+<td>Ozone layer; స్థిరం, ప్రశాంతం</td>
+</tr>
+<tr>
+<td><strong>3. Mesosphere (మీసో ఆవరణం)</strong></td>
+<td>50 నుంచి 80–85 km</td>
+<td>తగ్గుతుంది</td>
+<td>గాలిలో అతి చల్లని చోటు; ఉల్కలు మండేది ఇక్కడే</td>
+</tr>
+<tr>
+<td><strong>4. Thermosphere (థర్మో ఆవరణం)</strong></td>
+<td>80–85 నుంచి 500–1,000 km</td>
+<td>పెరుగుతుంది</td>
+<td>1,000 °C దాటే Kinetic ఉష్ణోగ్రత; Aurora</td>
+</tr>
+<tr>
+<td><strong>5. Exosphere (ఎక్సో ఆవరణం)</strong></td>
+<td>500–1,000 km పైన, సుమారు 10,000 km వరకు</td>
+<td>—</td>
+<td>Hydrogen, Helium; అంతరిక్షంలో కలిసిపోతుంది</td>
+</tr>
+</tbody>
+</table></div>
+<p>ప్రతి రెండు పొరల మధ్య సరిహద్దుకు "-pause" పేరు: Tropopause, Stratopause, Mesopause; Thermosphere పై అంచు Exobase.</p>
+<p>ఉష్ణోగ్రత ఇలా ఎందుకు మారుతుందో ఒక్కటే సూత్రంతో అర్థమవుతుంది: గాలి ఎక్కడ శక్తిని పీల్చుకుంటే అక్కడ వేడెక్కుతుంది. కింద నేల సూర్యుడి వేడిని పీల్చి గాలిని కింది నుంచి వేడి చేస్తుంది; నేలకు దూరం అయ్యేకొద్దీ గాలి చల్లబడుతుంది. పైన Ozone UV ని పీల్చుకుంటుంది; అక్కడ మళ్లీ వేడి. ఇంకా పైన అతి శక్తివంతమైన సూర్యకిరణాలను పలుచని గాలి పీల్చుకుంటుంది; అక్కడ మళ్లీ వేడి.</p>
+<h3>1. Troposphere (ట్రోపో ఆవరణం)</h3>
+<p>Troposphere నేలకు ఆనుకుని ఉన్న అతి కింది పొర. దీని మందం ధ్రువాల మీద సుమారు 8 km, Equator మీద సుమారు 18 km. Equator మీద బాగా వేడెక్కిన గాలి చాలా ఎత్తు వరకు బలంగా లేచి పొరను పైకి నెడుతుంది; చల్లని ధ్రువాల మీద గాలి అలా లేవదు. అదే కారణంతో వేసవిలో Tropopause ఎత్తు పెరుగుతుంది, చలికాలంలో తగ్గుతుంది. అంటే Tropopause ఎత్తు Latitude ను, కాలాన్ని బట్టి మారుతుంది.</p>
+<p>Troposphere సన్నగా ఉన్నా, గాలి మొత్తం ద్రవ్యరాశిలో సుమారు 75–80% ఇందులోనే ఉంది. దాదాపు నీటి ఆవిరి అంతా, ధూళి కణాలు (Aerosols) దాదాపు అన్నీ ఇక్కడే. అందుకే మేఘాలు, వాన, గాలులు, తుఫానులు దాదాపు అన్నీ Troposphere లోనే జరుగుతాయి. గాలి ఎప్పుడూ కలగలిసిపోతూ, మారుతూ ఉంటుంది కాబట్టి ఈ పొరను మిశ్రమ ఆవరణం, గందరగోళ ఆవరణం అని కూడా అంటారు. "దాదాపు అన్నీ" అనడానికి కారణం ఉంది: చాలా బలమైన ఉరుము మేఘాల (Cumulonimbus) తలలు Tropopause ను దాటి Stratosphere కింది భాగంలోకి చొచ్చుకుపోతాయి.</p>
+<p>Troposphere లో ఎత్తుకు వెళ్లేకొద్దీ ఉష్ణోగ్రత సగటున ప్రతి km కు సుమారు 6.5 °C తగ్గుతుంది; ఈ ప్రామాణిక సగటు రేటే Lapse rate (<a href="#temperature-distribution">వివరంగా</a>). కొన్ని చోట్ల ఈ క్రమం తిరగబడి కొంత మందం వరకు ఎత్తుతో ఉష్ణోగ్రత పెరుగుతుంది; దాన్ని Temperature inversion అంటారు (<a href="#temperature-distribution">వివరంగా</a>).</p>
+<p>Tropopause ఉష్ణోగ్రత Equator మీద సుమారు −80 °C, ధ్రువాల మీద సుమారు −45 °C. Equator మీద 18 km వరకు ఉష్ణోగ్రత తగ్గుతూనే ఉంటుంది కాబట్టి అక్కడి Tropopause ఎక్కువ చల్లగా ఉంటుంది. ఈ విలువలు స్థిరం కావు; Latitude, కాలం, ఆ రోజు Weather ను బట్టి మారతాయి.</p>
+<h3>2. Stratosphere (స్ట్రాటో ఆవరణం)</h3>
+<p>Stratosphere Tropopause పైన సుమారు 50 km వరకు ఉంటుంది. ఈ పొరలో ఎత్తుకు వెళ్లేకొద్దీ ఉష్ణోగ్రత పెరుగుతుంది; కారణం Ozone. Stratosphere లోని 15–35 km మధ్య Ozone ఎక్కువగా ఉంటుంది; ఆ భాగాన్నే Ozone layer (ఓజోన్ ఆవరణం) అంటారు. సూర్యుడి UV కిరణాలను Ozone పీల్చుకుంటుంది; పీల్చుకున్న శక్తి వేడిగా మారి పొర పై భాగాన్ని వేడి చేస్తుంది. పై అంచు Stratopause (సుమారు 50 km) దగ్గర ఉష్ణోగ్రత సుమారు 0 °C; ఈ విలువ కూడా Latitude, కాలాన్ని బట్టి కొంచెం మారే సుమారు సంఖ్య.</p>
+<p>Stratosphere పై భాగం వెచ్చగా, కింది భాగం చల్లగా ఉంటుంది. చల్లని బరువైన గాలి కింద, వెచ్చని తేలికైన గాలి పైన ఉంటే గాలి పైకీ కిందికీ కలగలవదు. దాంతో Stratosphere చాలా స్థిరంగా, ప్రశాంతంగా ఉంటుంది; మేఘాలు, ధూళి దాదాపు ఉండవు. గాలి స్థిరంగా, దాదాపు మేఘాలు లేకుండా ఉండటం వల్లే పెద్ద జెట్ విమానాలు Stratosphere కింది భాగంలో ప్రయాణిస్తాయి. అందుకే ఈ పొరను ప్రశాంత మండలం అని కూడా అంటారు. మినహాయింపు ధ్రువాలు: చలికాలంలో ధ్రువాల మీద Stratosphere లో అప్పుడప్పుడు ముత్యపు రంగు మేఘాలు (Nacreous clouds) కనిపిస్తాయి (<a href="#clouds">వివరంగా</a>).</p>
+<h3>3. Mesosphere (మీసో ఆవరణం)</h3>
+<p>Mesosphere Stratopause పైన సుమారు 50 నుంచి 80–85 km వరకు ఉంటుంది. ఇక్కడ Ozone దాదాపు లేదు; గాలిని వేడి చేసేది ఏదీ లేదు. కాబట్టి ఎత్తుకు వెళ్లేకొద్దీ ఉష్ణోగ్రత మళ్లీ తగ్గుతుంది. పై అంచు Mesopause దగ్గర ఉష్ణోగ్రత సుమారు −90 °C నుంచి −100 °C; గాలి పొరలన్నిటిలో అతి తక్కువ ఉష్ణోగ్రత Mesopause దగ్గరే.</p>
+<p>ఆకాశంలో రాలే నక్షత్రం (Meteor) మెరుపు గీత ఎక్కువగా Mesosphere లోనే కనిపిస్తుంది (<a href="/learn/geography/g2/3/notes#meteor-stages">పాఠం 3: Meteoroid, Meteor, Meteorite</a>). ఒక చిన్న రాతి ముక్క సెకనుకు పదుల km వేగంతో గాలిలోకి దూసుకొస్తుంది. దాని ముందున్న గాలి ఒక్కసారిగా నొక్కుకుపోయి బాగా వేడెక్కుతుంది; గాలి కణాలు ముక్కను ఢీకొంటాయి. ఆ వేడికి ముక్క పై భాగం కరిగి, ఆవిరై, ముక్కలవుతుంది. ఈ మొత్తం ప్రక్రియను Ablation అంటారు. అంటే ఉల్క మండటానికి కారణం రాపిడి (Friction) ఒక్కటే కాదు; గాలి నొక్కుకుపోవడం, ఢీకొనడం, Ablation అన్నీ కలిసి పని చేస్తాయి.</p>
+<p>Balloons Mesosphere అంత ఎత్తుకు వెళ్లలేవు; Satellites అంత కిందికి రాలేవు. Mesosphere ను నేరుగా గమనించడం కష్టం కాబట్టి దీన్ని సరదాగా Ignorosphere అంటారు. వేసవి రాత్రుల్లో అధిక అక్షాంశాల్లో ఈ పొరలో వెండిలా మెరిసే మేఘాలు (Noctilucent clouds) కనిపిస్తాయి (<a href="#clouds">వివరంగా</a>).</p>
+<h3>4. Thermosphere (థర్మో ఆవరణం)</h3>
+<p>Thermosphere Mesopause పైన సుమారు 500–1,000 km వరకు ఉంటుంది. ఇక్కడ ఎత్తుకు వెళ్లేకొద్దీ ఉష్ణోగ్రత మళ్లీ పెరుగుతుంది. సూర్యుడి నుంచి వచ్చే అతి శక్తివంతమైన X-rays, UV కిరణాలను ఇక్కడి పలుచని Oxygen, Nitrogen పీల్చుకుంటాయి; దాంతో కణాలు చాలా వేగంగా కదులుతాయి. కణాల వేగాన్ని బట్టి లెక్కించే ఉష్ణోగ్రత (Kinetic temperature) 1,000 °C కూడా దాటుతుంది.</p>
+<p>మరి అక్కడికి వెళ్తే కాలిపోతామా? లేదు. ప్రతి కణం వేడిగా ఉన్నా గాలి చాలా పలుచగా ఉంటుంది; శరీరాన్ని తాకే కణాలు చాలా అరుదు కాబట్టి వేడి అందదు. International Space Station (ISS) సుమారు 400 km ఎత్తులో, Thermosphere లోనే తిరుగుతోంది. ధ్రువాల దగ్గర కనిపించే Aurora కాంతులు కూడా Thermosphere లోనే ఏర్పడతాయి (<a href="/learn/geography/g2/3/notes#sun-storms-aurora">పాఠం 3: Aurora</a>). Mesosphere లో ఎత్తుతో ఉష్ణోగ్రత తగ్గితే, Thermosphere లో పెరుగుతుంది; రెండు పొరల తీరు వ్యతిరేకం.</p>
+<h3>5. Exosphere (ఎక్సో ఆవరణం)</h3>
+<p>Exosphere గాలి చివరి, అత్యంత పలుచని పొర. ఇక్కడ ఎక్కువగా Hydrogen, Helium లాంటి తేలికైన పరమాణువులు ఉంటాయి. Exosphere కింది అంచు Exobase సుమారు 500–1,000 km మధ్య ఉంటుంది; Exobase ఎత్తు సూర్యుడి చురుకుదనాన్ని బట్టి పైకీ కిందికీ మారుతుంది. Exobase పైన వేగంగా కదిలే కొన్ని పరమాణువులు భూమి Gravity ని తప్పించుకుని అంతరిక్షంలోకి వెళ్లిపోతాయి. Exosphere సుమారు 10,000 km వరకు ఉంటుందని చెప్పే సంఖ్య ఒక సుమారు అంచనా; అక్కడ గోడ లాంటి అంచు లేదు. Thermosphere లాగే Exosphere లోనూ Kinetic ఉష్ణోగ్రత ఎక్కువ, కానీ కణాలు అతి తక్కువ కాబట్టి వేడి దాదాపు అందదు.</p>
+<p>Exosphere లోని Hydrogen సూర్యుడి UV ని అన్ని వైపులా వెదజల్లుతుంది. దాంతో భూమి చుట్టూ UV Camera కు మాత్రమే కనిపించే మసక వలయం ఏర్పడుతుంది; దాన్ని Geocorona అంటారు.</p>
+<p>ఈ ఐదు పొరలకు అదనంగా Ionosphere అనే పేరు కూడా వినిపిస్తుంది; అది ఆరో పొర కాదు, Mesosphere, Thermosphere లలో పరుచుకున్న అయనీకరణ ప్రాంతం. పొర–లక్షణం జతగా: Troposphere–Weather; Stratosphere–Ozone వల్ల వేడెక్కడం; Mesosphere–ఉల్కల Ablation; Ionosphere–Radio తరంగాలు (<a href="#ionosphere">వివరంగా</a>).</p>
+<h2 id="ionosphere">Ionosphere ఒక పొరా? Radio తరంగాలు ఎలా తిరిగి వస్తాయి?</h2>
+<p>రాత్రిపూట పాత Radio లో Short wave ట్యూన్ చేస్తే వేల km దూరంలో ఉన్న దేశాల స్టేషన్లు కూడా వినిపిస్తాయి. Radio తరంగాలు సరళ రేఖలో వెళ్తాయి, భూమి గుండ్రంగా ఉంది; మరి అవి భూమి వంపు దాటి ఎలా వచ్చాయి? ఆకాశంలో ఏదో ఒకటి వాటిని అద్దంలా వెనక్కి పంపి ఉండాలి. ఆ "అద్దమే" Ionosphere.</p>
+<p>ఎత్తును బట్టి Ionosphere ను మూడు ప్రధాన భాగాలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>భాగం</th>
+<th>ఎత్తు (సుమారు)</th>
+<th>పగలు / రాత్రి</th>
+<th>Radio మీద ప్రభావం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>D region</strong></td>
+<td>60–90 km</td>
+<td>పగలు మాత్రమే బలంగా; రాత్రి దాదాపు మాయం</td>
+<td>పగలు Medium, High Frequency తరంగాలను పీల్చుకుంటుంది; Low Frequency ని ప్రతిఫలిస్తుంది</td>
+</tr>
+<tr>
+<td><strong>E region (Kennelly–Heaviside layer)</strong></td>
+<td>90–150 km</td>
+<td>పగలు స్పష్టం; రాత్రి బలహీనం</td>
+<td>Medium Frequency ని ప్రతిఫలిస్తుంది; లోపల అప్పుడప్పుడు Sporadic E</td>
+</tr>
+<tr>
+<td><strong>F region (Appleton layer)</strong></td>
+<td>150 km పైన, సుమారు 500 km వరకు</td>
+<td>పగలు F1, F2 గా రెండు; రాత్రి ఒకటిగా కలుస్తాయి</td>
+<td>High Frequency ని చాలా దూరాలకు ప్రతిఫలిస్తుంది</td>
+</tr>
+</tbody>
+</table></div>
+<p>Frequency అంటే సెకనుకు తరంగం ఎన్నిసార్లు ఊగుతుందో. Low Frequency (LF) &lt; Medium Frequency (MF; మనం వినే AM radio) &lt; High Frequency (HF; Short wave).</p>
+<h3>Ionisation అంటే ఏమిటి? Ionosphere ఎక్కడ ఉంది?</h3>
+<p>ప్రతి అణువులో మధ్యలో Nucleus, చుట్టూ Electrons ఉంటాయి. చాలా ఎత్తులో సూర్యుడి UV, X-rays నేరుగా వచ్చి గాలి అణువులను ఢీకొంటాయి; ఆ దెబ్బకు అణువు నుంచి ఒక Electron ఊడిపోతుంది. Electron పోయిన అణువుకు విద్యుదావేశం (Charge) వస్తుంది; ఆ అణువును Ion అంటారు. ఇలా Electrons విడిపోయి Ions, స్వేచ్ఛా Electrons ఏర్పడటాన్ని Ionisation (అయనీకరణ) అంటారు. Ions, స్వేచ్ఛా Electrons ఎక్కువగా ఉన్న పై గాలి భాగాన్ని Ionosphere (అయానో ఆవరణం) అంటారు.</p>
+<p>Ionosphere ఆరో పొర కాదు. ఐదు పొరలను ఉష్ణోగ్రతతో విడదీశారు; Ionosphere ను Electrons సంఖ్యతో గుర్తిస్తారు. సుమారు 60 km నుంచి 1,000 km వరకు ఉండే Ionosphere లోకి Mesosphere పై భాగం, Thermosphere వస్తాయి; అంటే Ionosphere ఆ రెండు పొరలతో కలిసి (Overlap) ఉంటుంది. Ionosphere, Thermosphere ఎక్కువ భాగం ఒకే ఎత్తులో ఉండటం వల్ల కొన్ని పాఠ్యపుస్తకాలు Thermosphere నే Ionosphere అంటాయి.</p>
+<p>Ionosphere హద్దులు స్థిరంగా ఉండవు. Electrons ను పుట్టించేది సూర్యుడు కాబట్టి పగలు ఎక్కువ, రాత్రి తక్కువ; సూర్యుడు చురుకుగా ఉన్న ఏళ్లలో (Solar maximum) ఎక్కువ, ప్రశాంతంగా ఉన్న ఏళ్లలో తక్కువ.</p>
+<h3>Radio తరంగాలకు ఏం జరుగుతుంది?</h3>
+<p>Electrons ఎక్కువగా ఉన్న భాగాన్ని Radio తరంగం తాకినప్పుడు మూడు పనుల్లో ఒకటి జరుగుతుంది. తరంగం వంగి (Refraction) వెనక్కి భూమి వైపు రావచ్చు; బయటి నుంచి చూస్తే అది ప్రతిఫలించినట్టే (Reflection) కనిపిస్తుంది. లేదా ఆ భాగం తరంగ శక్తిని పీల్చుకోవచ్చు (Absorption). లేదా తరంగం దాటిపోయి అంతరిక్షంలోకి వెళ్లవచ్చు. ఏది జరుగుతుందనేది తరంగ Frequency ని, ఆ సమయంలో Electrons సంఖ్యను బట్టి ఉంటుంది.</p>
+<h3>D region: రాత్రి ఎందుకు మాయం?</h3>
+<p>D region లో గాలి కొంచెం దట్టం. సూర్యుడు అస్తమించగానే కొత్త Electrons పుట్టడం ఆగుతుంది; ఉన్నవి దగ్గరలోని Ions తో త్వరగా కలిసిపోతాయి. దాంతో D region రాత్రి దాదాపు మాయమవుతుంది. పగలు AM, Short wave తరంగాలను పీల్చుకునేది D region. రాత్రి D region లేకపోవడంతో ఆ తరంగాలు పైన ఉన్న E, F భాగాల వరకు వెళ్లి దూరంగా ప్రతిఫలిస్తాయి. అందుకే దూర ప్రాంతాల AM, Short wave స్టేషన్లు పగలు కంటే రాత్రి బాగా వినిపిస్తాయి.</p>
+<h3>E region, Sporadic E</h3>
+<p>1901 లో Marconi Radio సంకేతాన్ని Atlantic దాటించాడు. 1902 లో America కు చెందిన Arthur Kennelly, England కు చెందిన Oliver Heaviside వేర్వేరుగా కారణం చెప్పారు: పైన విద్యుదావేశం ఉన్న ఒక పొర తరంగాలను వెనక్కి పంపుతోంది. అందుకే E region ను Kennelly–Heaviside layer అంటారు. ఆ పొర నిజంగా ఉందని 1924 డిసెంబర్‌లో Edward Appleton ప్రయోగంతో నిరూపించాడు.</p>
+<p>E region లోపల (సుమారు 90–125 km) అప్పుడప్పుడు, అనుకోని చోట, Electrons దట్టంగా ఉండే సన్నని, కొద్దిసేపు ఉండే మచ్చలు ఏర్పడతాయి. ఆ మచ్చలు పగలు, రాత్రి ఎప్పుడైనా రావచ్చు; Latitude, కాలాన్ని బట్టి మారతాయి. "Sporadic" అంటే అప్పుడప్పుడు; అందుకే ఆ మచ్చలకు Sporadic E (Es) అని పేరు. Sporadic E వల్ల కొన్నిసార్లు Radio తరంగాలు అనుకోకుండా దూర ప్రాంతాలకు ప్రతిఫలిస్తాయి.</p>
+<h3>F region (Appleton layer)</h3>
+<p>Appleton తన ప్రయోగాలు కొనసాగిస్తూ E కంటే ఇంకా పైన, 150 km పైగా, ఇంకో ప్రతిఫలించే పొరను కనుగొన్నాడు; దాన్నే Appleton layer, అంటే F region, అంటారు. పగలు F region రెండుగా విడిపోతుంది: F1 (సుమారు 150–200 km), F2 (సుమారు 200–400 km పైన). రాత్రి రెండూ కలిసి ఒకే F భాగం అవుతాయి. F2 లో Electrons అత్యధికం, పైగా F2 రాత్రి కూడా నిలిచి ఉంటుంది; కాబట్టి దూర ప్రాంతాల Short wave (HF) ప్రసారానికి F2 అత్యంత ముఖ్యం. Ionosphere పరిశోధనకు Appleton కు 1947 లో Physics Nobel బహుమతి వచ్చింది.</p>
+<h2 id="insolation">సూర్యుడి నుంచి వచ్చిన శక్తి ఎటు వెళ్తుంది?</h2>
+<p>ఎండాకాలం మధ్యాహ్నం ముఖానికి తగిలే వేడి సుమారు 15 కోట్ల km దూరం నుంచి, ఖాళీ అంతరిక్షం దాటి వచ్చింది; తరంగాల రూపంలో. సూర్యుడి నుంచి భూమి వరకు శక్తికి సంబంధించిన నాలుగు ముఖ్య పదాలు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పదం</th>
+<th>అర్థం</th>
+<th>తరంగం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Solar radiation (సౌర వికిరణం)</strong></td>
+<td>సూర్యుడు అన్ని వైపులా పంపే UV, కనిపించే వెలుగు (Visible light), Infrared (IR) కలిసిన విద్యుదయస్కాంత శక్తి</td>
+<td>ఎక్కువగా Shortwave</td>
+</tr>
+<tr>
+<td><strong>Insolation (సూర్యపుటం)</strong></td>
+<td>ఆ శక్తిలో భూమికి (లేదా ఒక ఉపరితలానికి) చేరే భాగం; Incoming solar radiation కు చిన్న రూపం</td>
+<td>Shortwave</td>
+</tr>
+<tr>
+<td><strong>Albedo</strong></td>
+<td>ఒక ఉపరితలం మీద పడిన వెలుగులో వెనక్కి ప్రతిఫలించే భాగం</td>
+<td>Shortwave</td>
+</tr>
+<tr>
+<td><strong>Terrestrial radiation (భౌమ వికిరణం)</strong></td>
+<td>భూమి ఉపరితలం, గాలి బయటికి పంపే వేడి</td>
+<td>Longwave Infrared</td>
+</tr>
+</tbody>
+</table></div>
+<p>Insolation అనే పదం భూమి మొత్తానికే కాదు; పొలానికో డాబాకో చేరే సూర్యశక్తిని కూడా Insolation అనే అంటారు.</p>
+<h3>భూమికి ఎంత వస్తుంది?</h3>
+<p>సూర్యుడు అన్ని దిక్కులకు శక్తి పంపుతాడు; ఆ దిక్కుల్లో భూమి ఒక చిన్న చుక్క మాత్రమే. అందుకే సూర్యుడి మొత్తం శక్తిలో భూమికి చేరేది అతి చిన్న భాగం: కచ్చితంగా లెక్కిస్తే సుమారు 220 కోట్లలో (2.2 billion) ఒక వంతు; NCERT దీన్ని గుండ్రంగా "2,000 million లో ఒక భాగం" అంటుంది.</p>
+<p>గాలి పై అంచు దగ్గర, భూమి–సూర్యుడి సగటు దూరంలో, సూర్యకిరణాలకు ఎదురుగా ఒక చదరపు మీటరు పెడితే దానికి సుమారు 1,361 W (వాట్లు) శక్తి అందుతుంది, అంటే 1,361 W/m². దీన్ని Solar constant అనేవారు; ఇప్పుడు Total Solar Irradiance (TSI) అంటారు. 1,361 W/m² విలువ NASA SORCE ఉపగ్రహ కొలతల ఆధారంగా 2011 లో వచ్చింది; అంతకు ముందు పుస్తకాల్లో సుమారు 1,366–1,367 W/m², ఇంకా పాత పుస్తకాల్లో 1.94 cal/cm²/min (సుమారు 2 Calories) అని ఉంటుంది. పేరు "constant" అయినా TSI సూర్యుడి 11 ఏళ్ల చక్రంతో సుమారు 0.1% మారుతుంది.</p>
+<h3>చిన్న తరంగాలు లోపలికి, పొడవైన తరంగాలు బయటికి</h3>
+<p>ఒక వస్తువు ఎంత వేడిగా ఉంటే అంత చిన్న తరంగాలను పంపుతుంది. సూర్యుడి ఉపరితలం సుమారు 5,500 °C; అందుకే సూర్య వికిరణం ఎక్కువగా చిన్న తరంగాలు (Shortwave). భూమి సూర్యుడి కంటే చాలా చల్లనిది (సగటు సుమారు 15 °C); అందుకే భూమి బయటికి పంపేవి పొడవైన Infrared తరంగాలు (Longwave). ఈ Longwave వేడే Terrestrial radiation. నేలకు చేరిన సూర్యశక్తిని Terrestrial radiation అనకూడదు; Terrestrial radiation అంటే భూమి తనంతట తాను బయటికి పంపే Infrared వేడి.</p>
+<p>గాలి Shortwave సూర్యకాంతిని ఎక్కువగా పీల్చుకోకుండా దాటనిస్తుంది. ఆ కాంతి నేలను వేడి చేస్తుంది; వేడెక్కిన నేల Longwave వేడిని పంపుతుంది; ఆ Longwave ను గాలిలోని నీటి ఆవిరి, CO₂ బాగా పీల్చుకుంటాయి. అంటే Troposphere గాలి వేడెక్కేది సూర్యుడి నుంచి నేరుగా కాదు; ఎక్కువగా కింది నేల పంపే Terrestrial radiation నుంచి. అందుకే నేలకు దగ్గర వేడి, పైకి వెళ్తే చల్లదనం. ఈ ప్రక్రియే Greenhouse effect కు ఆధారం (<a href="/learn/geography/g2/3/notes#inner-greenhouse">పాఠం 3: Greenhouse effect</a>).</p>
+<p>భూమికి కొంచెం వేడి లోపలి నుంచి కూడా వస్తుంది (Geothermal heat; <a href="/learn/geography/g2/4/notes#mantle-core">పాఠం 4</a>). కానీ ఆ వేడి సూర్యుడి నుంచి పీల్చుకునే వేడితో పోలిస్తే చాలా చిన్నది; భూమి బయటికి పంపే వేడికి ప్రధాన ఆధారం పీల్చుకున్న సూర్యకాంతే.</p>
+<h3>Albedo</h3>
+<p>ఎండాకాలం తెల్ల చొక్కా వేసుకుంటే చల్లగా, నల్ల చొక్కా వేసుకుంటే వేడిగా ఉంటుంది; తెలుపు ఎక్కువ వెలుగును వెనక్కి పంపుతుంది, నలుపు పీల్చుకుంటుంది. ఒక ఉపరితలం మీద పడిన వెలుగులో ఎంత భాగం వెనక్కి ప్రతిఫలిస్తుందో ఆ భాగాన్నే Albedo అంటారు: 0 అంటే ఏమీ ప్రతిఫలించదు, 1 అంటే అంతా ప్రతిఫలిస్తుంది. భూమి మొత్తం Albedo సుమారు 0.30; అంటే వచ్చిన సూర్యకాంతిలో సుమారు 30% నేరుగా అంతరిక్షంలోకి తిరిగి వెళ్తుంది. ఆ ప్రతిఫలనంలో ఎక్కువ భాగం మేఘాలదే.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఉపరితలం</th>
+<th>Albedo (సుమారు)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>తాజా మంచు</td>
+<td>0.8–0.9</td>
+</tr>
+<tr>
+<td>ఎడారి ఇసుక</td>
+<td>0.3–0.4</td>
+</tr>
+<tr>
+<td>అడవి</td>
+<td>0.1–0.2</td>
+</tr>
+<tr>
+<td>సముద్రం (సూర్యుడు పైన ఉన్నప్పుడు)</td>
+<td>సుమారు 0.06</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఈ సంఖ్యలు స్థిర విలువలు కావు, పరిధులు. మంచు పాతబడి మట్టి పడితే Albedo తగ్గుతుంది; సూర్యుడు వాలుగా ఉంటే సముద్రం ఎక్కువ ప్రతిఫలిస్తుంది; తడి, పొడి నేలల మధ్యా తేడా ఉంది.</p>
+<h3>శక్తి లెక్క: Heat budget</h3>
+<p>భూమి నిరంతరం సూర్యుడి నుంచి శక్తి తీసుకుంటోంది, అయినా ఏటా విపరీతంగా వేడెక్కిపోవడం లేదు; ఎందుకంటే వచ్చిన శక్తికి సమానంగా బయటికి కూడా పంపుతోంది. ఈ వచ్చే–పోయే లెక్కనే Heat budget (Energy budget) అంటారు. గాలి పై అంచుకు 100 భాగాలు వచ్చాయనుకుని లెక్కిస్తారు; రెండు మూలాలు వేర్వేరు అంకెలు ఇస్తాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>100 భాగాల్లో</th>
+<th>NASA (ఇప్పటి అంచనా)</th>
+<th>NCERT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>నేరుగా ప్రతిఫలించి అంతరిక్షానికి (Albedo)</td>
+<td>29</td>
+<td>35</td>
+</tr>
+<tr>
+<td>గాలి (వాయువులు, ధూళి, మేఘాలు) పీల్చుకునేది</td>
+<td>23</td>
+<td>14</td>
+</tr>
+<tr>
+<td>నేల, సముద్రం పీల్చుకునేది</td>
+<td>48</td>
+<td>51</td>
+</tr>
+</tbody>
+</table></div>
+<p>NCERT లోని 35 ప్రతిఫలన భాగాలు ఇలా: మేఘాల పైభాగం 27, గాలి చెదరగొట్టడం (Scattering) 6, మంచు కప్పిన ప్రాంతాలు 2. NASA లెక్కలో పీల్చుకున్న 71 భాగాలు చివరికి Longwave గా అంతరిక్షానికి వెళ్తాయి; వచ్చేది, పోయేది సమానం. ఈ మూడు ప్రవాహాల (లోపలికి వచ్చే సూర్య వికిరణం, ప్రతిఫలించే Shortwave, బయటికి వెళ్లే Longwave) లెక్కను Radiation budget అంటారు.</p>
+<p>భూమి మొత్తానికి లెక్క సరిపోయినా ప్రతి అక్షాంశానికీ సరిపోదు. సుమారు 40°N, 40°S మధ్య వచ్చేది పోయేదానికంటే ఎక్కువ (Surplus, మిగులు); ధ్రువాల వైపు తక్కువ (Deficit, లోటు). ఆ అదనపు వేడిని గాలులు, సముద్ర ప్రవాహాలు ధ్రువాల వైపు మోసుకెళ్తాయి. సూర్యుడు దాదాపు నెత్తి మీద ఉన్నా భూమధ్యరేఖ ఉపరితలానికి అత్యధిక Insolation రాదు; దట్టమైన భూమధ్యరేఖ మేఘాలు కాంతిని ప్రతిఫలించి అడ్డుకుంటాయి. ఉపరితలానికి అత్యధిక Insolation మేఘాలు లేని ఉపఅయనరేఖా ఎడారుల (Subtropical deserts) మీద వస్తుంది.</p>
+<h3>ఎక్కడ ఎక్కువ, ఎక్కడ తక్కువ?</h3>
+<p>ఒక చోటికి వచ్చే Insolation ను నాలుగు అంశాలు నిర్ణయిస్తాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అంశం</th>
+<th>ప్రభావం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. కిరణాలు పడే కోణం (Angle of incidence)</strong></td>
+<td>నిటారు కిరణాలు ఎక్కువ వేడి; వాలు కిరణాలు తక్కువ</td>
+</tr>
+<tr>
+<td><strong>2. పగటి పొడవు (Day length)</strong></td>
+<td>పగలు ఎక్కువ గంటలు అయితే ఎక్కువ శక్తి</td>
+</tr>
+<tr>
+<td><strong>3. గాలి పారదర్శకత (Transparency)</strong></td>
+<td>మేఘాలు, ధూళి, Aerosols శక్తిని తగ్గిస్తాయి</td>
+</tr>
+<tr>
+<td><strong>4. భూమి–సూర్యుడి దూరం</strong></td>
+<td>చిన్న ప్రభావం మాత్రమే</td>
+</tr>
+</tbody>
+</table></div>
+<p>కిరణాల కోణం. సూర్యుడు నెత్తి మీద ఉంటే కిరణాలు నిటారుగా పడతాయి; వాలుగా ఉంటే వాలుగా. వాలు కిరణాలు రెండు విధాలుగా నష్టపోతాయి. మొదటిది, అదే శక్తి పెద్ద ప్రాంతం మీద పరుచుకుంటుంది కాబట్టి ఒక్కో చదరపు మీటరుకు తక్కువ వస్తుంది. రెండోది, వాలు కిరణాలు గాలిలో ఎక్కువ దూరం ప్రయాణిస్తాయి కాబట్టి దారిలో ఎక్కువ శక్తి పోతుంది. Latitude పెరిగేకొద్దీ కిరణాలు వాలుగా పడతాయి కాబట్టి ధ్రువాల వైపు Insolation తగ్గుతుంది (<a href="/learn/geography/g2/2/notes#latlong-heatzones">పాఠం 2: Latitude, Heat zones</a>).</p>
+<p>పగటి పొడవు. Equator మీద ఏడాది పొడుగునా పగలు, రాత్రి రెండూ దాదాపు 12 గంటల చొప్పున. వేసవి అర్ధగోళంలో Equator నుంచి ధ్రువం వైపు వెళ్లేకొద్దీ పగలు పెరుగుతుంది. 66½° (66°30′; Arctic Circle, Antarctic Circle) దగ్గర వేసవిలో ఒక రోజు సుమారు 24 గంటల పగలు వస్తుంది; ధ్రువ పగలు (Midnight Sun) మొదలయ్యే హద్దులు ఈ రెండు వృత్తాలే. ఇంకా పైన ఆ పగలు రోజుల తరబడి, ధ్రువం మీద ఆరు నెలలు ఉంటుంది (<a href="/learn/geography/g2/2/notes#seasons-polar">పాఠం 2: ధ్రువాల పగలు</a>).</p>
+<p>గాలి పారదర్శకత. దట్టమైన మేఘాలు, ధూళి, పొగ, Aerosols సూర్యకాంతిని మూడు విధాలుగా తగ్గిస్తాయి: కొంత వెనక్కి ప్రతిఫలిస్తాయి (Reflection), కొంత అన్ని వైపులా చెదరగొడతాయి (Scattering), కొంత పీల్చుకుంటాయి (Absorption). అందుకే మబ్బు రోజు, దుమ్ము తుఫాను రోజు నేల తక్కువ వేడెక్కుతుంది.</p>
+<p>భూమి–సూర్యుడి దూరం. భూమి సూర్యుడికి అతి దగ్గరగా (Perihelion) జనవరి మొదట్లో, అతి దూరంగా (Aphelion) జూలై మొదట్లో ఉంటుంది (<a href="/learn/geography/g2/3/notes#motion-perihelion-aphelion">పాఠం 3: Perihelion, Aphelion</a>). ఈ దూరం వల్ల Insolation లో కొద్ది శాతం తేడానే వస్తుంది. ఋతువులకు కారణం దూరం కాదు; భూ అక్షం వంపు వల్ల మారే కిరణాల కోణం, పగటి పొడవు (<a href="/learn/geography/g2/2/notes#seasons-why">పాఠం 2: ఋతువులు ఎందుకు</a>).</p>
+<h2 id="heat-transfer">వేడి ఎలా ప్రయాణిస్తుంది? ఉష్ణోగ్రతను ఎలా కొలుస్తారు?</h2>
+<p>నేల ఎండకు వేడెక్కింది; మరి పైన గాలి ఎలా వేడెక్కుతుంది? వేడి ఒక చోటి నుంచి ఇంకో చోటికి నాలుగు దారుల్లో ప్రయాణిస్తుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>దారి</th>
+<th>ఎలా</th>
+<th>దిశ / పరిధి</th>
+<th>వంటింటి ఉదాహరణ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Conduction (ఉష్ణవాహనం)</strong></td>
+<td>తాకడం ద్వారా</td>
+<td>నేలకు ఆనుకున్న అతి కింది గాలి పొర</td>
+<td>వేడి పెనం తాకితే వేలు కాలడం</td>
+</tr>
+<tr>
+<td><strong>2. Convection (సంవహనం)</strong></td>
+<td>వేడెక్కిన గాలి పైకి లేవడం ద్వారా</td>
+<td>నిలువు (Vertical)</td>
+<td>పొయ్యి మీద కాగే నీరు పైకీ కిందికీ తిరగడం</td>
+</tr>
+<tr>
+<td><strong>3. Advection (ఉష్ణప్రవాహం)</strong></td>
+<td>పవనం అడ్డంగా మోసుకెళ్లడం ద్వారా</td>
+<td>అడ్డం (Horizontal)</td>
+<td>పొయ్యి వేడి గాలి ఫ్యాన్‌కు పక్క గదిలోకి వెళ్లడం</td>
+</tr>
+<tr>
+<td><strong>4. Radiation (వికిరణం)</strong></td>
+<td>తరంగాల ద్వారా; మధ్యలో పదార్థం అక్కర్లేదు</td>
+<td>అన్ని వైపులా; ఖాళీ అంతరిక్షంలో కూడా</td>
+<td>పొయ్యి పక్కన తాకకుండానే ముఖానికి తగిలే వేడి</td>
+</tr>
+</tbody>
+</table></div>
+<p>Conduction లో ఎండకు కాలిన నేల తనకు ఆనుకుని ఉన్న అతి కింది గాలి పొరను తాకడం ద్వారా వేడి చేస్తుంది. గాలి వేడిని సరిగా మోయదు (Poor conductor) కాబట్టి Conduction నేలకు దగ్గరి కొన్ని సెంటీమీటర్లు, మీటర్ల వరకే పని చేస్తుంది.</p>
+<p>Convection లో నేల దగ్గర వేడెక్కిన గాలి వ్యాకోచించి, తేలికై (సాంద్రత తగ్గి) పైకి లేస్తుంది; దాని స్థానంలోకి చల్లని గాలి వస్తుంది. ఇలా వేడి కింది నుంచి పైకి, నిలువుగా ప్రయాణిస్తుంది. Convection ఎక్కువగా Troposphere లో జరుగుతుంది.</p>
+<p>Advection లో పవనం వేడి గాలినో చల్లని గాలినో ఒక ప్రాంతం నుంచి ఇంకో ప్రాంతానికి అడ్డంగా మోసుకెళ్తుంది. వేసవిలో వాయవ్య భారతదేశం మీదుగా వీచే Loo వేడి గాలి (<a href="#local-winds">వివరంగా</a>) Advection కు ఉదాహరణ. మధ్య అక్షాంశాల్లో రోజువారీ ఉష్ణోగ్రత మార్పులకు ఎక్కువ కారణం Advection. Advection, Convection రెండూ కదిలే గాలి వల్లే జరుగుతాయి; తేడా దిశలో: Advection అడ్డం, Convection నిలువు.</p>
+<p>Radiation కు మధ్యలో ఏ పదార్థమూ (Medium) అక్కర్లేదు; అందుకే సూర్యుడి వేడి ఖాళీ అంతరిక్షాన్ని దాటి వస్తుంది. Conduction కు తాకే పదార్థం కావాలి, Convection కు కదిలే గాలి లేదా నీరు కావాలి; ఖాళీ (Vacuum) లో రెండూ ఉండవు. Vacuum లో పని చేసేది Radiation ఒక్కటే.</p>
+<p>గాలి వేడెక్కే పద్ధతులను ఒక్కో మాటలో చెప్పాలంటే: Advection–క్షితిజ సమాంతర తాపం, Convection–నిలువు తాపం, Insolation–ప్రత్యక్ష తాపం (సూర్యుడి నుంచి నేరుగా), Conduction–దిగువ పొరలు తాకడం ద్వారా వేడెక్కడం.</p>
+<h3>Sensible heat, Latent heat</h3>
+<p>ఉష్ణోగ్రతను మార్చే, Thermometer లో కనిపించే, "చేతికి తెలిసే" వేడిని Sensible heat అంటారు. నీరు ఆవిరి అయ్యేటప్పుడు తీసుకునే వేడి మాత్రం ఉష్ణోగ్రతను పెంచదు; ఆవిరిలో దాక్కుంటుంది. ఆ దాగిన వేడిని Latent heat (గుప్తోష్ణం; <a href="#humidity">వివరంగా</a>) అంటారు. Sensible heat ను Terrestrial radiation తో కలపకూడదు; Terrestrial radiation భూమి పంపే Longwave తరంగాలు (<a href="#insolation">వివరంగా</a>).</p>
+<h3>ఉష్ణోగ్రత స్కేళ్లు</h3>
+<p>మనం జ్వరం Fahrenheit (°F) లో చూస్తాం, Weather report Celsius (°C) లో వింటాం, శాస్త్రవేత్తలు Kelvin (K) లో లెక్కిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>స్థితి</th>
+<th>Celsius</th>
+<th>Fahrenheit</th>
+<th>Kelvin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>స్వచ్ఛమైన నీరు గడ్డకట్టడం (సాధారణ పీడనం)</td>
+<td>0 °C</td>
+<td>32 °F</td>
+<td>273.15 K</td>
+</tr>
+<tr>
+<td>స్వచ్ఛమైన నీరు మరగడం (సాధారణ పీడనం)</td>
+<td>100 °C</td>
+<td>212 °F</td>
+<td>373.15 K</td>
+</tr>
+<tr>
+<td>మనిషి శరీర ఉష్ణోగ్రత</td>
+<td>37 °C</td>
+<td>98.6 °F</td>
+<td>310.15 K</td>
+</tr>
+</tbody>
+</table></div>
+<p>నీరు గడ్డకట్టడం నుంచి మరగడం వరకు Celsius లో 100 భాగాలు, Fahrenheit లో 180 భాగాలు. కాబట్టి °F = (9/5 × °C) + 32. ఉదాహరణ: 9/5 × 37 = 66.6; దానికి 32 కలిపితే 98.6 °F. వెనక్కి: 0 °F = (0 − 32) × 5/9, అంటే సుమారు −17.8 °C. Kelvin డిగ్రీ పరిమాణం Celsius దే, కానీ Kelvin లెక్క Absolute zero (−273.15 °C) నుంచి మొదలవుతుంది: K = °C + 273.15. Kelvin కు డిగ్రీ గుర్తు వాడరు; "300 K" అని రాస్తారు.</p>
+<h3>ఉష్ణోగ్రతను కొలిచే పరికరాలు</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పరికరం</th>
+<th>పని</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Thermometer</strong></td>
+<td>ఆ క్షణం ఉష్ణోగ్రత చూపుతుంది</td>
+</tr>
+<tr>
+<td><strong>Maximum–minimum thermometer (Six's thermometer)</strong></td>
+<td>ఒక కాలంలో వచ్చిన అత్యధిక, అత్యల్ప ఉష్ణోగ్రతలను సూచికలతో నిలిపి ఉంచుతుంది</td>
+</tr>
+<tr>
+<td><strong>Thermograph</strong></td>
+<td>తిరిగే కాగితం డ్రమ్ మీద ఉష్ణోగ్రతను నిరంతరం గీతగా నమోదు చేస్తుంది</td>
+</tr>
+<tr>
+<td><strong>Pyrometer (పైరోమీటర్)</strong></td>
+<td>చాలా ఎక్కువ ఉష్ణోగ్రతను తాకకుండా, వస్తువు పంపే వికిరణం చూసి కొలుస్తుంది</td>
+</tr>
+</tbody>
+</table></div>
+<p>Maximum–minimum thermometer ను ఉదయం చూస్తే రాత్రి కనిష్ఠం తెలుస్తుంది. Pyrometer ను కొలిములు, పరిశ్రమలు, గనుల్లో వాడతారు. సూర్యుడి ఉష్ణోగ్రతను Thermometer తో కొలవడం అసాధ్యం; సూర్యకాంతిని రంగులుగా విడదీసి (Spectrum), వికిరణ నియమాలతో (Radiation laws), సరిచూసిన Detectors తో లెక్కిస్తారు. పీడనానికి స్పందించే Bourdon tube లాంటి పీడన పరికరాలు <a href="#pressure">Pressure</a> భాగంలో వస్తాయి.</p>
+<h3>రోజులో ఎప్పుడు ఎక్కువ వేడి?</h3>
+<p>మధ్యాహ్నం 12 గంటల ప్రాంతంలో సూర్యుడు అత్యంత ఎత్తులో ఉంటాడు (Solar noon). కానీ రోజు అత్యధిక ఉష్ణోగ్రత అప్పుడు రాదు; సాధారణంగా మధ్యాహ్నం సుమారు 2 గంటలకు, అంటే Solar noon తర్వాత కొంతసేపటికి వస్తుంది. 12 దాటినా నేల బయటికి పోగొట్టుకునే దానికంటే ఎక్కువ వేడిని సూర్యుడి నుంచి తీసుకుంటూనే ఉంటుంది; వేడి పోగవుతూనే ఉంటుంది. వచ్చేది, పోయేది సమానమయ్యే వరకు, అంటే మధ్యాహ్నం 2–3 గంటల వరకు, ఉష్ణోగ్రత పెరుగుతుంది.</p>
+<p>రాత్రంతా నేల వేడిని పోగొట్టుకుంటుంది. కాబట్టి రోజు అత్యల్ప ఉష్ణోగ్రత తెల్లవారుజామున, సూర్యోదయం దగ్గర వస్తుంది. మేఘాలు, వాన, వేరే చోటి నుంచి వచ్చే గాలి ఈ సమయాలను కొంచెం మార్చవచ్చు.</p>
+<h2 id="temperature-distribution">ఉష్ణోగ్రత ఎక్కడ ఎంత? ఎత్తుకు వెళ్తే ఎంత తగ్గుతుంది?</h2>
+<p>మే నెలలో విజయవాడ 45 °C ఉన్న రోజే అరకు చల్లగా, Antarctica గడ్డకట్టి ఉంటుంది. ఉష్ణోగ్రత ఎలా పరుచుకుని ఉందో దాన్ని Temperature distribution (ఉష్ణోగ్రత విస్తరణ) అంటారు. ఉష్ణోగ్రత విస్తరణను రెండు రకాలుగా చూస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రకం</th>
+<th>ఏ మార్పు</th>
+<th>ముఖ్య విషయాలు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Horizontal (క్షితిజ సమాంతర) విస్తరణ</strong></td>
+<td>ఒకే ఎత్తులో ప్రాంతం నుంచి ప్రాంతానికి</td>
+<td>Latitude, నేల–సముద్రం, సముద్ర ప్రవాహాలు, ఎత్తు, పవనాలు, మేఘాలు; పటంలో Isotherms</td>
+</tr>
+<tr>
+<td><strong>Vertical (ఊర్ధ్వ) విస్తరణ</strong></td>
+<td>ఒకే చోట ఎత్తును బట్టి</td>
+<td>Lapse rate, Temperature inversion</td>
+</tr>
+</tbody>
+</table></div>
+<h3>అడ్డంగా: ప్రాంతం నుంచి ప్రాంతానికి</h3>
+<p>ఒకే ఎత్తులో ఉన్న వేర్వేరు చోట్ల ఉష్ణోగ్రత ఎలా మారుతుందో దాన్ని Horizontal temperature distribution అంటారు. దాన్ని మార్చే అంశాలు ఇవి:</p>
+<ul>
+<li>Latitude: Equator నుంచి ధ్రువాల వైపు కిరణాలు వాలుగా పడి Insolation తగ్గుతుంది (<a href="#insolation">వివరంగా</a>).</li>
+<li>నేల, సముద్రం: నేల త్వరగా వేడెక్కి త్వరగా చల్లబడుతుంది; సముద్రం నెమ్మదిగా. కాబట్టి తీరాలు వేసవిలో కొంచెం చల్లగా, చలికాలంలో కొంచెం వెచ్చగా ఉంటాయి; సముద్రానికి దూరంగా ఉన్న ఖండాల లోపలి భాగాల్లో వేసవి, చలికాలం రెండూ తీవ్రం.</li>
+<li>సముద్ర ప్రవాహాలు: వెచ్చని ప్రవాహం పక్కన తీరం వెచ్చగా, చల్లని ప్రవాహం పక్కన తీరం చల్లగా.</li>
+<li>ఎత్తు: ఎత్తైన చోట్లు చల్లగా (కింద చూద్దాం).</li>
+<li>పవనాలు: Advection ద్వారా వేడి గాలినో చల్లని గాలినో అడ్డంగా మోసుకొస్తాయి (<a href="#heat-transfer">వివరంగా</a>).</li>
+<li>మేఘాలు: పగలు ఎండను అడ్డుకుంటాయి, రాత్రి వేడిని పోనివ్వవు.</li>
+</ul>
+<p>ఈ ప్రపంచ ఉష్ణోగ్రత తీరును పటం మీద సమోష్ణ రేఖలతో (Isotherms) చూపుతారు (<a href="#isolines">వివరంగా</a>).</p>
+<p>Latitude ఆధారంగా భూమిని మూడు రకాల ఉష్ణ మండలాలుగా, మొత్తం 5 పట్టీలుగా విడదీస్తారు (<a href="/learn/geography/g2/2/notes#latlong-heatzones">పాఠం 2: Heat zones</a>): Torrid (ఉష్ణ) మండలం 23.5°N నుంచి 23.5°S వరకు ఒకటి; Temperate (సమశీతోష్ణ) మండలాలు రెండు అర్ధగోళాల్లో 23.5° నుంచి 66.5° వరకు రెండు; Frigid (శీతల) మండలాలు 66.5° నుంచి 90° వరకు రెండు. కొన్ని పాత పాఠ్యపుస్తకాలు సమశీతోష్ణ మండలాన్ని వెచ్చని (23½°–45°), చల్లని (45°–66½°) భాగాలుగా ఇంకా విడదీస్తాయి; అది బోధన కోసం చేసిన ఉప విభజన. వర్షం, పవనాలు కలిపి చేసే శీతోష్ణ మండలాలు <a href="/learn/geography/g2/9/notes#classification">పాఠం 9: శీతోష్ణస్థితి వర్గీకరణ</a> లో వస్తాయి.</p>
+<p>ఉష్ణోగ్రతను మాటల్లో చెప్పడానికి కొన్ని పుస్తకాలు ఇలాంటి పట్టిక ఇస్తాయి: −10 °C కంటే తక్కువ అతి శీతలం, −10 నుంచి 0 °C శీతలం, 0 నుంచి 10 °C చల్లగా, 10 నుంచి 21 °C వెచ్చగా, 21 నుంచి 30 °C వేడి, 30 °C పైన అతి వేడి. ఆ పట్టిక మాటల అర్థాన్ని చూపే ఉదాహరణ మాత్రమే; శాస్త్రీయ హద్దులు కావు.</p>
+<h3>పైకి: ఎత్తుకు వెళ్తే ఎంత తగ్గుతుంది?</h3>
+<p>ఎత్తును బట్టి ఉష్ణోగ్రత మారడాన్ని Vertical temperature distribution అంటారు. Troposphere లో ఎత్తుకు వెళ్లేకొద్దీ ఉష్ణోగ్రత తగ్గుతుంది; రెండు కారణాలు. మొదటిది, గాలి వేడెక్కేది కింది నేల నుంచి (<a href="#insolation">వివరంగా</a>); నేలకు దూరం అయ్యేకొద్దీ వేడి అందదు. రెండోది, పైకి వెళ్లేకొద్దీ గాలి పలుచబడుతుంది; పలుచని గాలిలో వేడిని పట్టి ఉంచే నీటి ఆవిరి, ధూళి తక్కువ.</p>
+<p>చుట్టూ ఉన్న గాలిలో ఎత్తుకు వెళ్లేకొద్దీ ఉష్ణోగ్రత ఎంత చొప్పున మారుతుందో ఆ రేటే Environmental lapse rate (ఉష్ణోగ్రత క్షీణత రేటు). ప్రపంచ సగటుగా తీసుకునే International Standard Atmosphere విలువ ప్రతి 1,000 m (1 km) కు సుమారు 6.5 °C. ఈ ప్రామాణిక సగటును పుస్తకాలు కొంచెం వేర్వేరుగా రాస్తాయి: ప్రతి 1,000 m కు 6.4 °C అని, లేదా "ప్రతి 165 m కు 1 °C" (NCERT; ≈ 6 °C/km) అని. ఈ విలువలన్నీ ఒకే సగటు రేటుకు దగ్గరి రూపాలే; నిజమైన రేటు రోజును, చోటును బట్టి మారుతుంది.</p>
+<p>AP ఉదాహరణ: విశాఖపట్నం సముద్ర మట్టంలో ఉంది; అరకు లోయ సుమారు 900 m ఎత్తులో ఉంది. 0.9 km × 6.5 °C ≈ 6 °C. అంటే మిగతా పరిస్థితులు ఒకటే అయితే అరకు విశాఖ కంటే సుమారు 6 °C చల్లగా ఉంటుంది; అందుకే వేసవిలో జనం అరకు వెళ్తారు.</p>
+<p>పైకి లేచే గాలి ముద్ద తనంతట తాను వ్యాకోచించి చల్లబడే రేటు వేరు; దాన్ని Adiabatic rate అంటారు (<a href="#precipitation">వివరంగా</a>). Environmental lapse rate చుట్టూ ఉన్న నిశ్చల గాలి గురించి; Adiabatic rate కదిలే గాలి ముద్ద గురించి.</p>
+<h3>తిరగబడిన క్రమం: Temperature inversion</h3>
+<p>కొన్ని సందర్భాల్లో గాలి పొరలో కొంత మందం వరకు ఎత్తుకు వెళ్లేకొద్దీ ఉష్ణోగ్రత తగ్గడానికి బదులు పెరుగుతుంది; అంటే కింద చల్లని గాలి, పైన వెచ్చని గాలి. ఈ స్థితిని Temperature inversion (ఉష్ణోగ్రత విలోమం) అంటారు. Inversion సాధారణంగా కొన్ని వందల మీటర్ల పొరకు పరిమితం.</p>
+<p>చలికాలపు పొడవైన రాత్రి, మేఘాలు లేవు, గాలి వీచడం లేదు అనుకోండి. నేల తన వేడిని వేగంగా అంతరిక్షానికి పోగొట్టుకుంటుంది. నేలకు ఆనుకున్న గాలి బాగా చల్లబడుతుంది; కొంచెం పైన ఉన్న గాలి అంత చల్లబడదు. తెల్లవారే సరికి కింద చల్లని పొర, పైన వెచ్చని పొర ఏర్పడతాయి. Inversion ఎక్కువగా జరిగే చోట్లు:</p>
+<ul>
+<li>పర్వతాల మధ్య లోయలు: రాత్రి కొండ వాలుల మీద చల్లబడిన బరువైన గాలి కిందికి జారి లోయ అడుగున చేరుతుంది (Mountain breeze; <a href="#local-winds">వివరంగా</a>). అందుకే లోయ అడుగున మంచు పడినా వాలుల మీద తోటలు బతుకుతాయి.</li>
+<li>మంచు కప్పిన ప్రాంతాలు: మంచు ఎండను ప్రతిఫలించి, వేడిని త్వరగా పోగొట్టుకుంటుంది; ధ్రువాల మీద Inversion దాదాపు ఏడాదంతా ఉంటుంది.</li>
+<li>చలికాలం తెల్లవారుజాము: పొడవైన, నిర్మల, ప్రశాంత రాత్రుల తరువాత.</li>
+<li>నగరాలు, పారిశ్రామిక ప్రాంతాలు: Inversion ఏర్పడితే పైన ఉన్న వెచ్చని పొర మూతలా పని చేస్తుంది. పొగ, ధూళి పైకి పోలేక నేల దగ్గరే చిక్కుకుని Smog అవుతాయి; చలికాలం Delhi పొగమంచు ఒక ఉదాహరణ.</li>
+</ul>
+<p>నగరం చుట్టూ ఉన్న గ్రామాల కంటే వెచ్చగా ఉండటాన్ని Urban heat island అంటారు; అది Inversion కాదు, వేరే విషయం.</p>
+<h3>పగలు–రాత్రి తేడా, వేసవి–చలికాలం తేడా</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కొలత</th>
+<th>ఎలా లెక్కిస్తారు</th>
+<th>ఎక్కువ</th>
+<th>తక్కువ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Diurnal range (దినసరి ఉష్ణోగ్రత వ్యత్యాసం)</strong></td>
+<td>ఒక రోజు అత్యధిక − అత్యల్ప ఉష్ణోగ్రత</td>
+<td>పొడి ఎడారులు, ఖండాంతర ప్రాంతాలు</td>
+<td>తేమ ఉన్న Equator ప్రాంతాలు, తీరాలు, మబ్బు రోజులు</td>
+</tr>
+<tr>
+<td><strong>Annual range (సాంవత్సరిక ఉష్ణోగ్రత వ్యత్యాసం)</strong></td>
+<td>అత్యంత వేడి నెల సగటు − అత్యంత చల్లని నెల సగటు</td>
+<td>మధ్య, అధిక అక్షాంశాల ఖండాల లోపలి భాగాలు</td>
+<td>Equator దగ్గర</td>
+</tr>
+</tbody>
+</table></div>
+<p>Diurnal range ఉదాహరణ: గరిష్ఠం 34 °C, కనిష్ఠం 18 °C అయితే Diurnal range = 34 − 18 = 16 °C. ఎడారుల్లో ఈ తేడా చాలా ఎక్కువ, ఎందుకంటే అక్కడ మేఘాలు, తేమ లేవు. పగలు ఎండ నేరుగా ఇసుకను కాలుస్తుంది; రాత్రి వేడిని పట్టి ఉంచేది ఏదీ లేక నేల వేడి వేగంగా అంతరిక్షానికి పోతుంది. అందుకే Thar ఎడారిలోని Jaisalmer లో పగలు–రాత్రి తేడా చాలా ఎక్కువ. తేమ ఉన్న Equator ప్రాంతాల్లో, తీరాల్లో పరిస్థితి వ్యతిరేకం: పగలు మేఘాలు ఎండను అడ్డుకుంటాయి; రాత్రి మేఘాలు, తేమ వేడిని దుప్పటిలా కప్పి నేల చల్లబడటాన్ని నెమ్మదిస్తాయి; సముద్రం ఉష్ణోగ్రతను సమంగా ఉంచుతుంది. అందుకే విశాఖ, కాకినాడ లాంటి తీర నగరాల్లో పగలు–రాత్రి తేడా అనంతపురం కంటే తక్కువ.</p>
+<p>Annual range కు రెండూ నెల సగటులే వాడాలి. ఒక రోజు వచ్చిన తీవ్ర విలువను ఒక నెల సగటుతో కలిపి తీసివేస్తే రెండు వేర్వేరు కొలతలు కలిసిపోయి తప్పు సంఖ్య వస్తుంది; ఒక రోజు గరిష్ఠం, కనిష్ఠం Diurnal range కు మాత్రమే.</p>
+<p>Annual range ఎక్కడ ఎక్కువో రెండు కారణాలు చెబుతాయి. Equator దగ్గర సూర్యుడు ఏడాది పొడుగునా దాదాపు నెత్తి మీదే, పగలు దాదాపు 12 గంటలే; ప్రతి నెలా దాదాపు ఒకే వేడి, కాబట్టి Annual range కొన్ని డిగ్రీలే. అధిక Latitudes లో వేసవి పగళ్లు, చలికాలం రాత్రులు పొడవు. పైగా ఖండం మధ్యలో, సముద్రానికి దూరంగా ఉంటే నేల వేసవిలో బాగా వేడెక్కి చలికాలంలో బాగా చల్లబడుతుంది. ఈ రెండూ కలిసిన చోట Annual range అత్యధికం. ప్రసిద్ధ ఉదాహరణ Siberia లోని Verkhoyansk (వెర్కోయాన్స్క్): జూలై సగటు +16.5 °C, జనవరి సగటు −44.7 °C (1991–2020 సగటులు); Annual range సుమారు 61 °C (<a href="/learn/geography/g2/9/notes#taiga">పాఠం 9: Taiga</a>).</p>
+<h3>ఉష్ణోగ్రత రికార్డులు, శీతల ధ్రువం</h3>
+<p>ప్రపంచ ఉష్ణోగ్రత రికార్డులు <a href="/learn/geography/g2/1/notes#heights-temperature">పాఠం 1: ఉష్ణోగ్రత రికార్డులు</a> లో వివరంగా చూశాం; WMO అధికారిక రికార్డులు (2026 నాటికి):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రికార్డు</th>
+<th>విలువ</th>
+<th>చోటు, తేదీ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ప్రపంచ అత్యధిక గాలి ఉష్ణోగ్రత</strong></td>
+<td>56.7 °C</td>
+<td>Furnace Creek, Death Valley (USA), 10 జూలై 1913</td>
+</tr>
+<tr>
+<td><strong>ప్రపంచ అత్యల్ప గాలి ఉష్ణోగ్రత</strong></td>
+<td>−89.2 °C</td>
+<td>Vostok Station, Antarctica, 21 జూలై 1983</td>
+</tr>
+<tr>
+<td><strong>ఉత్తరార్ధగోళ అత్యల్పం</strong></td>
+<td>−69.6 °C</td>
+<td>Klinck station, Greenland, 22 డిసెంబర్ 1991</td>
+</tr>
+</tbody>
+</table></div>
+<p>Death Valley 1913 కొలత మీద కొందరు శాస్త్రవేత్తలకు సందేహాలు ఉన్నా, అదే ఇప్పటికీ WMO అధికారిక రికార్డు. Libya లోని Al ‘Aziziyah లో 1922 లో నమోదైన 58 °C ఒకప్పుడు ప్రపంచ రికార్డుగా ఉండేది; 2012 లో WMO ఆ కొలతను రద్దు చేసింది.</p>
+<p>Siberia లోని Verkhoyansk, Oymyakon (ఒమ్యాకోన్) ఊళ్లను "శీతల ధ్రువం" (Pole of cold) అంటారు; ప్రజలు నివసించే ఊళ్లలో ఇవి అత్యంత చల్లనివి. Verkhoyansk లో −67.8 °C (ఫిబ్రవరి 1892), Oymyakon లో సుమారు −67.7 °C (ఫిబ్రవరి 1933) నమోదయ్యాయి; పుస్తకాలు ఈ రెండు సంఖ్యలను కొన్నిసార్లు తారుమారుగా ఇస్తాయి. Klinck రికార్డు రాక ముందు పాత పుస్తకాలు Verkhoyansk నే ఉత్తరార్ధగోళ రికార్డుగా చూపేవి. Oymyakon ప్రజలు నివసించే చాలా చల్లని ఊరే కానీ "ప్రపంచంలో అత్యంత చల్లని చోటు" కాదు; ఆ రికార్డు Antarctica లోని Vostok దే. Oymyakon లో కొన్ని వందల మందే ఉంటారు; పంటలు పండవు, Reindeer పెంపకమే జీవనాధారం.</p>
+<h2 id="isolines">పటంలో సమాన విలువల గీతలు: Isotherm, Isobar …</h2>
+<p>వాతావరణ పటం చూస్తే వందల ఊళ్ల ఉష్ణోగ్రతలు అంకెలుగా ఉంటాయి; అన్ని అంకెలనూ ఒక్కసారిగా చదవడం కష్టం. అందుకే ఒకే విలువ ఉన్న ప్రదేశాలను ఒక గీతతో కలుపుతారు: 30 °C ఉన్న అన్ని ఊళ్లనూ ఒక గీత, 25 °C ఉన్నవాటిని ఇంకో గీత. ఇప్పుడు అంకెలు చదవక్కర్లేదు; గీతల ఆకారం చూస్తే చాలు.</p>
+<p>ఇలా సమాన విలువ ఉన్న బిందువులను కలిపే గీతను Isoline లేదా Isopleth (సమాన విలువ రేఖ) అంటారు. "Iso" అంటే గ్రీకులో "సమానం". ఏ విలువను కలుపుతున్నామో దాన్ని బట్టి గీతకు పేరు మారుతుంది. కలిపే విలువను బట్టి Isolines ను ఇలా గుంపులు చేయవచ్చు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>గుంపు</th>
+<th>గీత</th>
+<th>కలిపేది (సమాన విలువ)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ఉష్ణోగ్రత, పీడనం</td>
+<td><strong>Isotherm (సమోష్ణోగ్రత రేఖ)</strong></td>
+<td>ఉష్ణోగ్రత</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isobar (సమభార రేఖ)</strong></td>
+<td>వాతావరణ పీడనం (<a href="#pressure">వివరంగా</a>)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isohypse</strong></td>
+<td>పై గాలి పటంలో ఒక పీడన తలం ఉండే సమాన ఎత్తు (Geopotential height)</td>
+</tr>
+<tr>
+<td>వర్షం, సూర్యరశ్మి, మేఘాలు, మంచు</td>
+<td><strong>Isohyet</strong></td>
+<td>ఒక నిర్ణీత కాలంలో కురిసిన వర్షపాతం</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isohel</strong></td>
+<td>సూర్యరశ్మి పడిన గంటలు</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isoneph</strong></td>
+<td>మేఘావరణం (ఆకాశంలో మేఘాల శాతం)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isonif (Isonival) / Isochion</strong></td>
+<td>మంచు (Snow) లోతు</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isoryme</strong></td>
+<td>Frost (తుషారం) పడే తరచుదనం</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isobront</strong></td>
+<td>ఉరుము తుఫాను ఒకే దశలో (ఉదా: మొదటి ఉరుము) ఉన్న చోట్లు</td>
+</tr>
+<tr>
+<td>పవనం</td>
+<td><strong>Isotach</strong></td>
+<td>పవన వేగం</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isogon</strong></td>
+<td>పవన దిశ</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isodop</strong></td>
+<td>Doppler Radar లో Radial velocity</td>
+</tr>
+<tr>
+<td>సముద్రం</td>
+<td><strong>Isobath</strong></td>
+<td>నీటి లోతు</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isohaline</strong></td>
+<td>సముద్రపు నీటి లవణీయత (Salinity)</td>
+</tr>
+<tr>
+<td>నేల, ఇతరాలు</td>
+<td><strong>Contour</strong></td>
+<td>భూపటంలో సముద్ర మట్టం నుంచి ఎత్తు (<a href="/learn/geography/g2/1/notes#reading-contours">పాఠం 1: Contours</a>)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isoseismal</strong></td>
+<td>ఒక భూకంపం కలిగించిన సమాన ప్రభావం (Intensity)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Isochrone</strong></td>
+<td>ఒక సంఘటన జరిగిన సమాన సమయం (ఉదా: ప్రయాణ సమయం)</td>
+</tr>
+</tbody>
+</table></div>
+<p>"Isoh…" తో మొదలయ్యే మూడు పేర్లు తికమక పెడతాయి; మూల పదాలు గుర్తుంచుకుంటే సులువు: Hyetos = వర్షం (Isohyet), Helios = సూర్యుడు (Isohel), Halos = ఉప్పు (Isohaline).</p>
+<h3>Isotherms ఎలా కనిపిస్తాయి?</h3>
+<p>Isotherm ఒకే సమయంలో, లేదా ఒకే కాలపు సగటులో, సమాన ఉష్ణోగ్రత ఉన్న ప్రదేశాలను కలిపే గీత. ప్రపంచ పటాల్లో సాధారణంగా రెండు నెలల Isotherms గీస్తారు: జనవరి, జులై. జనవరి ఉత్తరార్ధగోళంలో చలికాలం, దక్షిణార్ధగోళంలో వేసవి; జులై దానికి తిరుగు. ఈ రెండు నెలలతో రెండు అర్ధగోళాల తీవ్ర రుతువులు ఒకేసారి కనిపిస్తాయి. Isotherms తీరు మూడు నియమాలతో అర్థమవుతుంది:</p>
+<ul>
+<li>తూర్పు–పడమరగా సాగుతాయి. సూర్యశక్తి ప్రధానంగా అక్షాంశాన్ని బట్టి మారుతుంది (<a href="/learn/geography/g2/2/notes#latlong-heatzones">పాఠం 2: ఉష్ణ మండలాలు</a>); ఒకే అక్షాంశం మీద ఉన్న ఊళ్లకు దాదాపు ఒకే శక్తి అందుతుంది. అందుకే Isotherms స్థూలంగా అక్షాంశాలకు సమాంతరంగా ఉంటాయి.</li>
+<li>నేల, సముద్రం కలిసే చోట వంగుతాయి. నేల త్వరగా వేడెక్కి త్వరగా చల్లారుతుంది; సముద్రం నెమ్మదిగా. జనవరిలో ఉత్తరార్ధగోళంలో ఒకే అక్షాంశం మీద ఖండాలు సముద్రం కంటే చల్లగా ఉంటాయి. కాబట్టి ఖండాల మీద Isotherms భూమధ్యరేఖ వైపు (దక్షిణానికి) వంగుతాయి; సముద్రాల మీద ధ్రువం వైపు (ఉత్తరానికి) వంగుతాయి. జులైలో దీనికి తిరుగు: వేడెక్కిన ఖండాల మీద ఉత్తరానికి, సముద్రాల మీద దక్షిణానికి.</li>
+<li>దక్షిణార్ధగోళంలో ఎక్కువ క్రమబద్ధంగా ఉంటాయి. దక్షిణార్ధగోళంలో నేల తక్కువ, సముద్రం ఎక్కువ; నేల–సముద్రం తేడా తక్కువ కాబట్టి వంపులు తక్కువ. ఉత్తరార్ధగోళంలో పెద్ద ఖండాలు, బలమైన నేల–సముద్రం తేడా ఉండటం వల్ల Isotherms బాగా వంకరగా ఉంటాయి.</li>
+</ul>
+<h3>మిగతా గీతల గురించి కొన్ని మాటలు</h3>
+<p>Contour గీతలు ఒకదానికొకటి దగ్గరగా ఉంటే, అంటే అదే Contour interval, అదే Scale ఉన్న పటంలో గీతలు దగ్గరగా ఉంటే, ఆ చోట వాలు నిటారు (Steep); దూరంగా ఉంటే వాలు మెల్లగా ఉంటుంది.</p>
+<p>Isoseismal గీతలు భూకంపం పరిమాణాన్ని (Magnitude) కాదు, ప్రతి ప్రదేశంలో కనిపించిన కుదుపు ప్రభావాన్ని (Intensity) కలుపుతాయి. Magnitude భూకంపం ఎంత పెద్దదో చెబుతుంది (ఒక భూకంపానికి ఒకటే); Intensity ఒక్కో చోట ఎంత నష్టం, కుదుపు కలిగిందో చెబుతుంది (<a href="/learn/geography/g2/5/notes#magnitude">పాఠం 5: Magnitude, Intensity</a>).</p>
+<p>Isodop ను Doppler Radar పటాల్లో గాలి Radar వైపు వస్తోందా, దూరంగా పోతోందా అని చూడటానికి వాడతారు. Zero isodop మీద ఆ Radial velocity సున్నా. గాలి దిశను చూపడానికి Streamline గీతలు కూడా వాడతారు: Streamline మీద ఏ బిందువు దగ్గర స్పర్శరేఖ (Tangent) గీసినా అది ఆ క్షణం ప్రవాహ దిశ (<a href="#wind-forces">వివరంగా</a>).</p>
+<p>Hypsographic curve (హిప్సోగ్రాఫిక్ వక్రరేఖ) పటం మీద గీత కాదు, ఒక గ్రాఫ్: భూమి ఉపరితల వైశాల్యంలో ఎంత శాతం ఏ ఎత్తు లేదా లోతులో ఉందో చూపుతుంది. Hypsographic curve లో నిలువు అక్షం ఎత్తు/లోతు, అడ్డ అక్షం వైశాల్య శాతం.</p>
+<h2 id="pressure">గాలికి బరువు ఉందా? Pressure ఎందుకు మారుతుంది?</h2>
+<p>మన తల మీద కొన్ని కిలోమీటర్ల ఎత్తు వరకు గాలి ఉంది. ఆ గాలి స్తంభం మన మీద బరువుగా నొక్కుతుంది. ఆ బరువు ఒక నిర్ణీత వైశాల్యం మీద కలిగించే బలాన్ని Atmospheric pressure (వాతావరణ పీడనం) అంటారు. బారోమీటర్ రీడింగ్ అంటే ఆ ప్రదేశం పైన ఉన్న మొత్తం గాలి స్తంభం కలిపి చూపే ప్రభావం. మనకు ఆ బరువు తెలియదు, ఎందుకంటే మన శరీరం లోపలి నుంచి కూడా అంతే బలం బయటకు నెడుతుంది. భూమి వాతావరణం మొత్తం ద్రవ్యరాశి సుమారు 5.1 × 10¹⁸ kg, అంటే సుమారు 5,100 లక్షల కోట్ల టన్నులు.</p>
+<h3>పీడనాన్ని ఎలా కనుక్కున్నారు, ఎలా కొలుస్తారు?</h3>
+<p>గాలికి బరువు ఉందని Galileo వాదించాడు. బావుల నుంచి నీరు తోడే Pump లు సుమారు 10 m కంటే పైకి నీటిని లాగలేవని ఆయన గమనించాడు. దానికి కారణాన్ని ఆయన శిష్యుడు Evangelista Torricelli 1643 లో చూపించాడు. Torricelli ఒక గాజు గొట్టంలో పాదరసం (Mercury) నింపి, పాదరసం గిన్నెలో తలకిందులుగా పెట్టాడు. గొట్టంలో పాదరసం కొంత కిందకు దిగి సుమారు 76 cm ఎత్తు దగ్గర ఆగింది. గిన్నె మీద గాలి నొక్కే బలమే ఆ స్తంభాన్ని నిలబెట్టింది. ఆ గొట్టమే మొదటి Barometer (బారమితి / పీడన మాపకం).</p>
+<p>పీడనాన్ని కొలిచే పరికరాలు నాలుగు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పరికరం</th>
+<th>ఎలా పనిచేస్తుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mercury barometer</strong></td>
+<td>పీడనం = గొట్టంలో పాదరసం స్తంభం ఎత్తు</td>
+</tr>
+<tr>
+<td><strong>Aneroid barometer (అనార్ద్ర భారమితి)</strong></td>
+<td>ద్రవం లేదు; గాలి తీసేసిన పలుచని, సాగే లోహపు డబ్బా (Capsule) పీడనంతో నొక్కుకుని, ఉబ్బి, Dial మీద ముల్లును కదిలిస్తుంది</td>
+</tr>
+<tr>
+<td><strong>Barograph</strong></td>
+<td>Aneroid కు కలం, తిరిగే Drum కలిపి పీడనంలో మార్పును రోజంతా గ్రాఫ్‌గా గీస్తుంది</td>
+</tr>
+<tr>
+<td><strong>Microbarograph</strong></td>
+<td>చిన్న, వేగమైన పీడన మార్పులను ఎక్కువ సున్నితంగా నమోదు చేస్తుంది</td>
+</tr>
+</tbody>
+</table></div>
+<p>యంత్రాల్లో వాడే Pressure gauges లో Bourdon tube ఉంటుంది: పీడనం పెరిగితే కొంచెం నిటారై ముల్లును కదిపే వంకర, సాగే లోహ గొట్టం. పేరులో పోలిక ఉన్నా Sling psychrometer పీడనాన్ని కొలవదు; అది Relative humidity ని అంచనా వేసే పరికరం (<a href="#humidity">తేమ</a>).</p>
+<h3>ప్రమాణాలు, సాధారణ విలువలు, రికార్డులు</h3>
+<p>వాతావరణ శాస్త్రంలో పీడనాన్ని Millibar (mb) లేదా Hectopascal (hPa) లో చెప్తారు. ఈ రెండు ప్రమాణాలు సమానం: 1 hPa = 1 mb = 100 Pa. పీడనానికి SI ప్రమాణం Pascal (Pa); 1 bar = 1,000 mb = 10⁵ Pa. సముద్ర మట్టం దగ్గర ప్రామాణిక పీడనం 1013.25 hPa (= 1013.25 mb); అదే విలువను 760 mm పాదరసం స్తంభంగా, లేదా 29.92 అంగుళాల పాదరసంగా కూడా చెప్తారు.</p>
+<p>సాధారణ వాతావరణ వ్యవస్థల్లో సముద్ర మట్టం పీడనం సుమారు 900 నుంచి 1030 hPa మధ్య ఉంటుంది. ఈ పరిధి ఒక స్థూల అంచనా మాత్రమే, హద్దు కాదు: తీవ్రమైన తుఫానుల్లో పీడనం దీని కంటే తగ్గుతుంది, చలికాలపు సైబీరియా, మంగోలియాలో దీని కంటే పెరుగుతుంది. World Meteorological Organization (WMO) పీడన రికార్డులను సముద్ర మట్టానికి మార్చి ఉంచుతుంది. ఎత్తైన ప్రదేశం పీడనాన్ని అలా మార్చినప్పుడు లెక్కలో తేడా వస్తుంది కాబట్టి అత్యధిక పీడనానికి రెండు వర్గాలు ఉన్నాయి (WMO Weather and Climate Extremes Archive, 2025 నాటికి):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రికార్డు</th>
+<th>విలువ</th>
+<th>ఎక్కడ, ఎప్పుడు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>అత్యధిక పీడనం (750 m కంటే తక్కువ ఎత్తు)</strong></td>
+<td>1083.8 hPa</td>
+<td>Agata, Krasnoyarsk ప్రాంతం, సైబీరియా (Russia), 31 డిసెంబర్ 1968</td>
+</tr>
+<tr>
+<td><strong>అత్యధిక పీడనం (750 m కంటే ఎక్కువ ఎత్తు)</strong></td>
+<td>1089.1 hPa</td>
+<td>Tosontsengel, Mongolia, 30 డిసెంబర్ 2004</td>
+</tr>
+<tr>
+<td><strong>అత్యల్ప పీడనం (Tornado లు కాకుండా)</strong></td>
+<td>870 hPa</td>
+<td>Typhoon Tip, పశ్చిమ Pacific, 12 అక్టోబర్ 1979</td>
+</tr>
+</tbody>
+</table></div>
+<p>పాత పుస్తకాలు వర్గం చెప్పకుండా Agata (సుమారు 1083 mb) నే ప్రపంచ అత్యధికంగా ఇస్తాయి. Typhoon Tip ఒక తుఫాను పేరు, ప్రదేశం కాదు.</p>
+<h3>పీడనాన్ని మార్చే మూడు అంశాలు</h3>
+<p>పీడనాన్ని మార్చే అంశాలు మూడు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అంశం</th>
+<th>ఏం జరుగుతుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఎత్తు</strong></td>
+<td>పైకి వెళ్లే కొద్దీ పీడనం తగ్గుతుంది</td>
+</tr>
+<tr>
+<td><strong>ఉష్ణోగ్రత</strong></td>
+<td>వేడెక్కి గాలి పైకి లేస్తే Thermal low; చల్లని గాలి దిగితే అధిక పీడనం</td>
+</tr>
+<tr>
+<td><strong>తేమ</strong></td>
+<td>ఒకే ఉష్ణోగ్రత, పీడనం దగ్గర తడిగాలి పొడిగాలి కంటే తేలిక</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఎత్తు. పైకి వెళ్లే కొద్దీ మన మీద ఉండే గాలి స్తంభం పొట్టిదవుతుంది; పైన బరువు తక్కువ, కాబట్టి పీడనం తగ్గుతుంది. సముద్ర మట్టం దగ్గర సుమారు ప్రతి 10 m కు 1 mb తగ్గుతుంది. ఈ లెక్క కింది కొన్ని వందల మీటర్లకే పనిచేసే స్థూల అంచనా. పైకి వెళ్లే కొద్దీ గాలి పలచబడి తగ్గుదల రేటు కూడా తగ్గుతుంది; సుమారు 5.5 km ఎత్తుకు పీడనం సముద్ర మట్టం విలువలో సగానికి పడిపోతుంది.</p>
+<p>ఉష్ణోగ్రత. ఒక ప్రాంతం బాగా వేడెక్కితే అక్కడి గాలి వ్యాకోచించి పైకి లేచి, పై పొరల్లో పక్కలకు వెళ్లిపోతుంది. ఆ ప్రాంతం మీద గాలి స్తంభం బరువు తగ్గి అల్పపీడనం ఏర్పడుతుంది. ఈ అల్పపీడనాన్ని Thermal low అంటారు (ఉదా: వేసవిలో వాయవ్య భారతదేశం మీది అల్పపీడనం). చల్లని ప్రాంతంలో గాలి కుంచించుకుని కిందకు దిగుతుంది, పై నుంచి గాలి వచ్చి చేరుతుంది, అధిక పీడనం వస్తుంది. అంటే పీడనాన్ని తగ్గించేది "వేడి" ఒక్కటే కాదు; వేడి వల్ల గాలి లేచి పక్కలకు జరగడం. ఉష్ణోగ్రత ఒక్కటే పీడనాన్ని నిర్ణయించదు; 30° దగ్గరి అధిక పీడనం లాంటివి గాలి కదలిక వల్ల వస్తాయి (<a href="#pressure-belts">పీడన మేఖలలు</a>).</p>
+<p>తేమ. ఆశ్చర్యంగా అనిపిస్తుంది కానీ ఒకే ఉష్ణోగ్రత, పీడనం దగ్గర తడిగాలి పొడిగాలి కంటే తేలిక. నీటి ఆవిరి (H₂O) అణుభారం 18; పొడిగాలి సగటు అణుభారం సుమారు 29 (Nitrogen 28, Oxygen 32). ఒకే ఉష్ణోగ్రత, పీడనం దగ్గర ఒకే ఘనపరిమాణంలో అణువుల సంఖ్య సమానం. బరువైన N₂, O₂ అణువుల స్థానంలో తేలికైన H₂O అణువులు వస్తే గాలి సాంద్రత తగ్గుతుంది. వర్షాకాలంలో గాలి "భారంగా" అనిపించేది చెమట ఆరకపోవడం వల్ల, గాలి బరువు వల్ల కాదు. అయినా "తేమ పెరిగితే బారోమీటర్ రీడింగ్ తప్పకుండా పడిపోతుంది" అనడం సరికాదు; పీడనం గాలి కదలికలు, ఉష్ణోగ్రత, వాతావరణ వ్యవస్థలు అన్నిటి మీదా ఆధారపడుతుంది.</p>
+<h2 id="wind-forces">గాలిని ఏ శక్తులు కదిలిస్తాయి?</h2>
+<p>నేలకు సమాంతరంగా (అడ్డంగా) కదిలే గాలిని Wind (పవనం) అంటారు. నిలువుగా పైకి లేచే లేదా కిందకు దిగే గాలిని Air current (వాయు ప్రవాహం) అంటారు. గాలి అధిక పీడనం నుంచి అల్ప పీడనం వైపు కదులుతుంది, కానీ నేరుగా గీత గీసినట్టు వెళ్లదు: భూభ్రమణం, నేల రాపిడి, వంపు తిరిగే దారి గాలి మార్గాన్ని మారుస్తాయి.</p>
+<h3>పవనానికి పేరు, కొలత</h3>
+<p>పవనానికి అది ఎటు నుంచి వస్తోందో ఆ దిశ పేరు పెడతారు, ఎటు వెళ్తోందో కాదు. పడమర నుంచి తూర్పుకు వీచే గాలి Westerly (పశ్చిమ పవనం); ఈశాన్యం నుంచి వచ్చే గాలి North-easterly. వేగం చెప్పేటప్పుడు ప్రమాణం తప్పనిసరి: m/s, km/h, లేదా Knots (నాట్లు; 1 Knot = గంటకు 1 Nautical mile = 1.852 km).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పరికరం / స్కేలు</th>
+<th>ఏం చెప్తుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wind vane (పవన సూచిక)</strong></td>
+<td>దిశ; బాణం గాలి వచ్చే వైపు చూపుతుంది</td>
+</tr>
+<tr>
+<td><strong>Cup anemometer (ఎనిమోమీటర్)</strong></td>
+<td>వేగం; గిన్నెలు ఎంత వేగంగా తిరుగుతున్నాయో దాన్ని బట్టి</td>
+</tr>
+<tr>
+<td><strong>Beaufort scale</strong></td>
+<td>కంటికి కనిపించే ప్రభావాలతో పవన బలం; 0 (ప్రశాంతం) నుంచి 12 (Hurricane force, గంటకు 118 km లేదా ఎక్కువ)</td>
+</tr>
+<tr>
+<td><strong>Radiosonde / GPS balloon, Radar</strong></td>
+<td>పై గాలి పొరల్లో దిశ, వేగం</td>
+</tr>
+</tbody>
+</table></div>
+<p>Wind vane, Anemometer తరచూ ఒకే పరికరంగా కలిపి ఉంటాయి. వాటిని ఇంటి కప్పు మీద పెడితే సరిపోదు, ఎందుకంటే భవనాలు, చెట్లు, గోడలు గాలిలో సుడులు (Turbulence) పుట్టిస్తాయి; అందుకే WMO ప్రమాణం ప్రకారం వాటిని అడ్డు లేని బహిరంగ ప్రదేశంలో నేల నుంచి 10 m ఎత్తులో పెడతారు. Beaufort scale ను 1805 లో బ్రిటిష్ నౌకాదళ అధికారి Francis Beaufort తయారుచేశాడు; పరికరాలు లేని కాలంలో నావికులు తెరచాపలు, అలలు చూసి గాలి బలం చెప్పడానికి ఉపయోగపడిన ఈ స్కేలు అనుభవం మీద ఆధారపడింది (Empirical). పై గాలి కోసం Radiosonde ను Balloon కు కట్టి వదిలి, ఆ Balloon ఒక సమయంలో ఎటు, ఎంత దూరం కొట్టుకుపోయిందో GPS లేదా Radar తో లెక్కించి గాలి దిశ, వేగం కనుక్కుంటారు.</p>
+<p>పటంలో సమాన పీడనం ఉన్న ప్రదేశాలను కలిపే గీతను Isobar (సమభార రేఖ) అంటారు (<a href="#isolines">Isolines</a>). గాలి కదలికను అర్థం చేసుకోవడానికి Isobar లే మొదటి సాధనం.</p>
+<h3>పవనాన్ని నడిపే నాలుగు బలాలు</h3>
+<p>పవనాన్ని నడిపే బలాలను నాలుగుగా చెప్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>బలం</th>
+<th>ఏం చేస్తుంది</th>
+<th>ఎక్కడ ముఖ్యం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Pressure gradient force (పీడన ప్రవణ బలం)</strong></td>
+<td>గాలిని అధిక పీడనం నుంచి అల్ప పీడనం వైపు, Isobars కు లంబంగా నెడుతుంది; కదలిక మొదలుపెట్టించేది ఇదే</td>
+<td>అన్ని చోట్లా</td>
+</tr>
+<tr>
+<td><strong>2. Coriolis force (కొరియాలిస్ / అపవర్తన బలం)</strong></td>
+<td>ఉత్తరార్ధగోళంలో కుడివైపుకు, దక్షిణార్ధగోళంలో ఎడమవైపుకు మళ్లిస్తుంది; దిశ మారుస్తుంది, వేగం కాదు</td>
+<td>ధ్రువాల వైపు ఎక్కువ; భూమధ్యరేఖ వద్ద సున్నా</td>
+</tr>
+<tr>
+<td><strong>3. Friction (ఘర్షణ బలం)</strong></td>
+<td>గాలి వేగం తగ్గిస్తుంది</td>
+<td>నేల నుంచి సుమారు 1 km ఎత్తు వరకు; గరుకు నేల మీద ఎక్కువ</td>
+</tr>
+<tr>
+<td><strong>4. Centripetal / Centrifugal (వంపు ప్రభావం)</strong></td>
+<td>వంపు దారిలో గాలిని కేంద్రం వైపు తిప్పుతుంది</td>
+<td>Tornado, Hurricane లాంటి గట్టి వంపులు</td>
+</tr>
+</tbody>
+</table></div>
+<p>Pressure gradient force. రెండు ప్రదేశాల మధ్య పీడన తేడాను వాటి మధ్య అడ్డ దూరంతో భాగిస్తే వచ్చేది Pressure gradient (పీడన ప్రవణత); ఉదాహరణకు 100 km దూరంలో 4 hPa తేడా. ఈ తేడా గాలిని అధిక పీడనం నుంచి అల్ప పీడనం వైపు Isobars కు లంబంగా (90°) నెడుతుంది. నిశ్చలంగా ఉన్న గాలిని కదలడం మొదలుపెట్టించేది ఈ బలమే; మిగతా మూడు బలాలు గాలి కదిలాకే పని మొదలుపెడతాయి. Isobars దగ్గర దగ్గరగా ఉంటే తక్కువ దూరంలో ఎక్కువ పీడన తేడా, అంటే బలమైన ప్రవణత, సాధారణంగా వేగమైన గాలి; దూరదూరంగా ఉంటే బలహీన ప్రవణత, మెల్లని గాలి. వాలు నేల మీద బంతిని ఊహించండి: వాలు నిటారుగా ఉంటే బంతి వేగంగా దొర్లుతుంది. Isobars దగ్గరగా ఉండటం నిటారు వాలు లాంటిది. అయితే Isobars మధ్య దూరం ఒక్కటే గాలి వేగాన్ని ఖచ్చితంగా చెప్పదు; ఘర్షణ, దారి వంపు, గాలి స్థిరత్వం కూడా వేగాన్ని మారుస్తాయి.</p>
+<p>పీడన ప్రవణతకు, గాలి దిశకు సంబంధించిన సులభ నియమం Buys Ballot's law: 1857 లో డచ్ శాస్త్రవేత్త C. H. D. Buys Ballot ఇచ్చిన ఈ నియమం ప్రకారం ఉత్తరార్ధగోళంలో గాలికి వీపు పెట్టి నిలబడితే అల్పపీడనం మీ ఎడమ వైపు ఉంటుంది; దక్షిణార్ధగోళంలో కుడి వైపు.</p>
+<p>Coriolis force. భూభ్రమణం వల్ల కదిలే వస్తువులు ఉత్తరార్ధగోళంలో కుడివైపుకు, దక్షిణార్ధగోళంలో ఎడమవైపుకు తిరిగినట్టు కనిపిస్తాయి. ఈ ప్రభావం ఎందుకు వస్తుందో <a href="/learn/geography/g2/2/notes#motion-coriolis">పాఠం 2: Coriolis effect</a> లో చూశాం. ఈ పేరు 1835 లో దీన్ని గణితంగా వివరించిన ఫ్రెంచ్ ఇంజనీర్, శాస్త్రవేత్త Gaspard-Gustave de Coriolis పేరు మీద వచ్చింది. "ఉత్తరాన కుడికి, దక్షిణాన ఎడమకు" అనే అదే నియమాన్ని Ferrel's law అని కూడా అంటారు (William Ferrel; <a href="#planetary-winds">Ferrel cell</a>). పవనానికి సంబంధించి Coriolis బలం మూడు లక్షణాలు:</p>
+<ul>
+<li>Coriolis బలం గాలి కదిలే దిశకు లంబంగా పనిచేస్తుంది. కాబట్టి దిశను మారుస్తుంది, వేగాన్ని నేరుగా మార్చదు.</li>
+<li>గాలి వేగం పెరిగితే Coriolis బలం కూడా పెరుగుతుంది; నిశ్చలంగా ఉన్న గాలి మీద Coriolis పనిచేయదు.</li>
+<li>అక్షాంశం పెరిగే కొద్దీ Coriolis బలం పెరుగుతుంది; ధ్రువాల వద్ద గరిష్ఠం. భూమధ్యరేఖ దగ్గర భ్రమణ అక్షం నేలకు సమాంతరంగా ఉండటం వల్ల అడ్డంగా కదిలే గాలి మీద Coriolis బలం (Coriolis parameter) సున్నా. అందుకే భూమధ్యరేఖకు సుమారు 5° లోపల తుఫానులు పుట్టవు (<a href="#tropical-cyclones">వివరంగా</a>).</li>
+</ul>
+<p>భూమికి సుమారు 1 km పైన ఘర్షణ దాదాపు ఉండదు. అక్కడ గాలి మొదట ప్రవణత బలంతో అల్పపీడనం వైపు కదులుతుంది; కదలగానే Coriolis దాన్ని పక్కకు మళ్లిస్తుంది; వేగం పెరిగే కొద్దీ మళ్లింపు పెరుగుతుంది. చివరికి ఈ రెండు బలాలు సమానమై వ్యతిరేక దిశల్లో నిలుస్తాయి, గాలి Isobars కు సమాంతరంగా వీస్తుంది. ఈ సమతుల్య పై గాలిని Geostrophic wind (జియోస్ట్రాఫిక్ పవనం) అంటారు.</p>
+<p>Friction. నేల దగ్గర చెట్లు, కొండలు, భవనాలు గాలిని అడ్డుకుని వేగాన్ని తగ్గిస్తాయి. వేగం తగ్గితే Coriolis బలం కూడా తగ్గుతుంది, ఎందుకంటే Coriolis వేగం మీద ఆధారపడుతుంది. ఇప్పుడు ప్రవణత బలం గెలుస్తుంది. అందుకే నేల దగ్గరి గాలి Isobars కు సమాంతరంగా కాకుండా వాటిని ఒక కోణంలో దాటి అల్పపీడనం వైపు లోపలికి వీస్తుంది. గరుకైన నేల మీద ఘర్షణ ఎక్కువ కాబట్టి ఈ కోణం పెద్దది; నునుపైన సముద్రం మీద ఘర్షణ తక్కువ కాబట్టి సముద్ర గాలి వేగంగా, Isobars కు దాదాపు సమాంతరంగా వీస్తుంది.</p>
+<p>వంపు దారి. తుఫాను చుట్టూ గాలి గుండ్రంగా తిరుగుతుంది. ఏ వస్తువైనా గుండ్రంగా తిరగాలంటే దాన్ని కేంద్రం వైపు లాగే లోపలి త్వరణం కావాలి; ఆ త్వరణాన్ని Centripetal acceleration (అభికేంద్ర త్వరణం) అంటారు. తిరిగే వ్యవస్థలో నిలబడి చూసేవాళ్లకు వస్తువు బయటకు నెట్టబడినట్టు అనిపిస్తుంది; ఆ కనిపించే బయటి బలాన్ని Centrifugal force (అపకేంద్ర బలం) అంటారు. వంపు వ్యాసార్థం చిన్నగా, గాలి వేగం ఎక్కువగా ఉన్నప్పుడు (Tornado, Hurricane) ఈ ప్రభావం ముఖ్యం అవుతుంది. ప్రవణత బలం, Coriolis, వంపు ప్రభావం మూడూ కలిసి సమతుల్యం అయిన గాలిని Gradient wind అంటారు; Gradient wind వంపు తిరిగే Isobars వెంట వీస్తుంది.</p>
+<p>ప్రవాహ పటాల్లో గాలి దిశను Streamline గీతలతో చూపుతారు: గీత మీద ఏ బిందువు దగ్గర స్పర్శరేఖ (Tangent) గీసినా అది ఆ క్షణం ప్రవాహ దిశ. Streamline దిశను చూపుతుంది, వేగాన్ని కాదు.</p>
+<h2 id="pressure-belts">భూమి మీద పీడన మేఖలలు ఎన్ని? ఎందుకు ఏర్పడ్డాయి?</h2>
+<p>ఎంత కాలం, ఏ నియమంతో వీస్తాయనే దాన్ని బట్టి పవనాలను మూడు రకాలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రకం</th>
+<th>లక్షణం</th>
+<th>ఉదాహరణ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Permanent / Planetary winds (ప్రపంచ పవనాలు)</strong></td>
+<td>సంవత్సరం పొడవునా దాదాపు ఒకే దిశలో</td>
+<td>Trade winds, Westerlies (<a href="#planetary-winds">వివరంగా</a>)</td>
+</tr>
+<tr>
+<td><strong>Seasonal winds (కాలిక పవనాలు)</strong></td>
+<td>రుతువును బట్టి దిశ మారుస్తాయి</td>
+<td>Monsoon (<a href="#monsoon-winds">వివరంగా</a>)</td>
+</tr>
+<tr>
+<td><strong>Local winds (స్థానిక పవనాలు)</strong></td>
+<td>ఒక చిన్న ప్రాంతానికే పరిమితం</td>
+<td>Sea breeze, Loo (<a href="#local-winds">వివరంగా</a>)</td>
+</tr>
+</tbody>
+</table></div>
+<p>ప్రపంచ పవనాలు ఎటు వీస్తాయో తెలియాలంటే ముందు భూమి మీద అధిక, అల్ప పీడనాలు ఎక్కడ ఉన్నాయో తెలియాలి. అక్షాంశాల వెంట పట్టీల్లా సాగే ఈ ప్రాంతాలను Pressure belts (పీడన మేఖలలు) అంటారు. ఆదర్శ నమూనాలో పీడన మేఖలలను నాలుగు రకాలుగా, మొత్తం ఏడుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>మేఖల</th>
+<th>సుమారు అక్షాంశం</th>
+<th>సంఖ్య</th>
+<th>మూలం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Equatorial low (భూమధ్యరేఖా అల్పపీడన మేఖల)</strong></td>
+<td>0°–5°/10° N, S</td>
+<td>1</td>
+<td>ఉష్ణ (Thermal)</td>
+</tr>
+<tr>
+<td><strong>Subtropical high (ఉప అయనరేఖా అధిక పీడన మేఖల)</strong></td>
+<td>25°–35° N, S</td>
+<td>2</td>
+<td>గతిక (Dynamic)</td>
+</tr>
+<tr>
+<td><strong>Subpolar low (ఉప ధ్రువ అల్పపీడన మేఖల)</strong></td>
+<td>సుమారు 60° N, S</td>
+<td>2</td>
+<td>గతిక (Dynamic)</td>
+</tr>
+<tr>
+<td><strong>Polar high (ధ్రువ అధిక పీడన మేఖల)</strong></td>
+<td>ధ్రువాల దగ్గర (సుమారు 80°–90°)</td>
+<td>2</td>
+<td>ఉష్ణ (Thermal)</td>
+</tr>
+</tbody>
+</table></div>
+<p>ప్రపంచ భూగోళ పుస్తకం ఉప అయనరేఖా మేఖలకు 23½°–35°, ఉపధ్రువ మేఖలకు 45°–66½° అనే విశాల పరిధులు ఇస్తుంది; NCERT లాంటి పుస్తకాలు మధ్య విలువలు సుమారు 30°, 60° చెప్తాయి.</p>
+<p>మూలం పట్టికను గమనించండి: అన్ని అధిక పీడనాలూ చలి వల్ల, అన్ని అల్పపీడనాలూ వేడి వల్ల రావు. 30° దగ్గర పెద్దగా చలి లేకపోయినా పై నుంచి గాలి దిగడం వల్ల పీడనం ఎక్కువ; 60° దగ్గర వేడి లేకపోయినా గాలులు కలిసి పైకి లేవడం వల్ల పీడనం తక్కువ.</p>
+<h3>1. Equatorial low</h3>
+<p>భూమధ్యరేఖ దగ్గర సూర్యుడు ఏడాది పొడవునా దాదాపు నిట్టనిలువుగా ఉంటాడు. నేల, సముద్రం బాగా వేడెక్కుతాయి; వెచ్చని, తేమ గాలి పైకి లేస్తుంది. రెండు అర్ధగోళాల నుంచి వచ్చే వ్యాపార పవనాలు ఈ పట్టీలో కలుస్తాయి. ఈ కలయిక పట్టీని ITCZ (Inter-Tropical Convergence Zone), అంటే అయనరేఖల మధ్య పవనాలు కలిసే మండలం అంటారు. గాలి పైకి లేవడం వల్ల ITCZ లో ఎత్తైన మేఘాలు, మధ్యాహ్నపు ఉరుముల వర్షాలు సాధారణం.</p>
+<p>ఉపరితలం మీద గాలి ప్రధానంగా పైకి లేస్తుంది కాబట్టి అడ్డ గాలి బలహీనంగా, దిశ మారుతూ ఉంటుంది. అందుకే ఈ ప్రాంతాన్ని Doldrums (నిర్వాత మండలం / ప్రశాంత మండలం) లేదా Equatorial calms అన్నారు. "నిర్వాత" అంటే గాలే లేదని కాదు: సగటు అడ్డ గాలి బలహీనం, కానీ నిలువుగా లేచే గాలి, ఉరుముల తుఫానులు చాలా చురుకుగా ఉంటాయి; ITCZ తో పాటు Doldrums కూడా ఉత్తరానికి, దక్షిణానికి జరుగుతాయి.</p>
+<h3>2. Subtropical highs</h3>
+<p>భూమధ్యరేఖ దగ్గర పైకి లేచిన గాలి పై పొరల్లో ధ్రువాల వైపు కదులుతుంది. దారిలో చల్లబడుతుంది, Coriolis తో తూర్పు వైపుకు మళ్లుతుంది, సుమారు 30° దగ్గర పోగుపడి కిందకు దిగుతుంది. కిందకు దిగే గాలి వల్ల ఉపరితలం మీద గాలి బరువు పెరిగి అధిక పీడనం ఏర్పడుతుంది. ఈ అధిక పీడనం చలి వల్ల కాదు, గాలి కదలిక వల్ల వచ్చింది; అందుకే దీని మూలం గతికం (Dynamic).</p>
+<p>ఈ మేఖలలో కూడా ఉపరితల గాలి ప్రశాంతంగా ఉంటుంది. ఈ పట్టీని Horse latitudes అంటారు; ఉత్తరాన Calms of Cancer, దక్షిణాన Calms of Capricorn. గాలి లేక నిలిచిపోయిన ఓడల్లో నీరు, మేత అయిపోయి గుర్రాలను సముద్రంలో పడేసేవారనే కథను ఈ పేరుకు మూలంగా చెప్తారు.</p>
+<p>చాలా వేడి ఎడారులు ఈ మేఖల దగ్గరే ఎందుకు ఉన్నాయి? కిందకు దిగే గాలి ఒత్తిడికి గురై వేడెక్కుతుంది (<a href="#precipitation">Adiabatic warming</a>); ఆ గాలిలో తేమ సాంద్రీకరణం చెందదు, మేఘాలు పుట్టవు. అందుకే చాలా వేడి ఎడారులు సుమారు 15°–30° అక్షాంశాల మధ్య, ఖండాల పడమటి వైపున ఉన్నాయి. అయితే ఒక ఎడారిని పూర్తిగా అర్థం చేసుకోవాలంటే అక్షాంశం, దిగే గాలితో పాటు తీరం వెంట చల్లని సముద్ర ప్రవాహాలు, Rain shadow, సముద్రానికి దూరం (Continentality) అన్నీ కలిపి చూడాలి (<a href="/learn/geography/g2/9/notes#hot-desert">పాఠం 9: ఉష్ణ ఎడారులు</a>).</p>
+<h3>3. Subpolar lows</h3>
+<p>సుమారు 60° దగ్గర ఉప అయనరేఖల నుంచి వచ్చే వెచ్చని పశ్చిమ పవనాలు, ధ్రువాల నుంచి వచ్చే చల్లని ధ్రువ తూర్పు పవనాలు కలుస్తాయి. కలిసిన గాలి పైకి లేస్తుంది, అల్పపీడనం ఏర్పడుతుంది. ఈ కలయిక సరిహద్దే <a href="#planetary-winds">Polar front</a>; అక్కడ చక్రవాతాలు తరచూ పుడతాయి. Subpolar low కూడా గాలి కదలిక వల్ల వచ్చిన గతిక మేఖల.</p>
+<h3>4. Polar highs</h3>
+<p>ధ్రువాల దగ్గర గాలి చాలా చల్లగా, దట్టంగా ఉంటుంది. బరువైన చల్లని గాలి కిందకు దిగి అధిక పీడనం కలిగిస్తుంది. Polar high మూలం ఉష్ణం (Thermal), అంటే చలి.</p>
+<h3>మేఖలలు కదులుతాయి, విరుగుతాయి</h3>
+<p>పై పట్టిక ఆదర్శ నమూనా. సూర్యుడు జూన్‌లో కర్కట రేఖ వైపు, డిసెంబర్‌లో మకర రేఖ వైపు జరిగినట్టు కనిపిస్తాడు (<a href="/learn/geography/g2/2/notes#seasons-overhead-sun">పాఠం 2: నిట్టనిలువు సూర్యుడు</a>). సూర్యుడితో పాటు మేఖలలు కూడా ఆదర్శ నమూనాలో సుమారు 5°–10° ఉత్తరానికి, దక్షిణానికి జరుగుతాయి; అసలు జరుగుదల ప్రాంతాన్ని, రుతువును బట్టి మారుతుంది. పెద్ద ఖండాల మీద వేసవిలో వేడి అల్పపీడనాలు, చలికాలంలో అధిక పీడనాలు ఏర్పడి పట్టీలను విడివిడి కేంద్రాలుగా విరగ్గొడతాయి. ఉత్తరార్ధగోళంలో నేల ఎక్కువ కాబట్టి ఈ విరుగుడు ఉత్తరార్ధగోళంలో ఎక్కువ.</p>
+<h2 id="planetary-winds">Trade winds, Westerlies, Polar easterlies ఎలా వీస్తాయి?</h2>
+<p>పీడన మేఖలలు తెలిస్తే ప్రపంచ పవనాలు సులభం. రెండు నియమాలు చాలు: గాలి అధిక పీడన మేఖల నుంచి పక్కనున్న అల్పపీడన మేఖల వైపు వీస్తుంది; దారిలో Coriolis గాలిని ఉత్తరార్ధగోళంలో కుడివైపుకు, దక్షిణార్ధగోళంలో ఎడమవైపుకు మళ్లిస్తుంది. ఈ పవనాల వెనుక నిలువుగా తిరిగే మూడు గాలి చక్రాలు (Cells) ఉన్నాయి.</p>
+<p>ప్రపంచ పవనాలను మూడు రకాలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పవనం</th>
+<th>అక్షాంశం</th>
+<th>ఉత్తరార్ధగోళం / దక్షిణార్ధగోళం</th>
+<th>ఎక్కడి నుంచి ఎక్కడికి</th>
+<th>Cell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trade winds (వ్యాపార పవనాలు)</strong></td>
+<td>0°–30°</td>
+<td>NE trades / SE trades</td>
+<td>ఉప అయనరేఖా అధికం → భూమధ్యరేఖా అల్పం</td>
+<td>Hadley cell</td>
+</tr>
+<tr>
+<td><strong>Westerlies (పశ్చిమ పవనాలు)</strong></td>
+<td>30°–60°</td>
+<td>SW westerlies / NW westerlies</td>
+<td>ఉప అయనరేఖా అధికం → ఉపధ్రువ అల్పం</td>
+<td>Ferrel cell</td>
+</tr>
+<tr>
+<td><strong>Polar easterlies (ధ్రువ తూర్పు పవనాలు)</strong></td>
+<td>60°–90°</td>
+<td>NE polar easterlies / SE polar easterlies</td>
+<td>ధ్రువ అధికం → ఉపధ్రువ అల్పం</td>
+<td>Polar cell</td>
+</tr>
+</tbody>
+</table></div>
+<p>మూడు చక్రాల పోలిక:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>ఎక్కడ లేస్తుంది / దిగుతుంది</th>
+<th>స్వభావం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hadley cell</strong></td>
+<td>ITCZ వద్ద లేచి, సుమారు 30° వద్ద దిగుతుంది</td>
+<td>వేడి నేరుగా నడిపేది (Thermally direct)</td>
+</tr>
+<tr>
+<td><strong>Ferrel cell</strong></td>
+<td>సుమారు 60° వద్ద లేచి, 30° వద్ద దిగుతుంది</td>
+<td>Thermally indirect; మధ్య అక్షాంశాల సుడులు నడుపుతాయి</td>
+</tr>
+<tr>
+<td><strong>Polar cell</strong></td>
+<td>ధ్రువం మీద దిగి, 60° వద్ద లేస్తుంది</td>
+<td>మూడింటిలో అతి చిన్నది, అతి బలహీనమైనది</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Trade winds, Hadley cell</h3>
+<p>30° దగ్గరి అధిక పీడనం నుంచి భూమధ్యరేఖ వైపు గాలి వస్తుంది. ఉత్తరార్ధగోళంలో దక్షిణానికి వచ్చే గాలి కుడివైపు (పడమటికి) మళ్లి ఈశాన్యం నుంచి వీస్తుంది: North-east trades (ఈశాన్య వ్యాపార పవనాలు). దక్షిణార్ధగోళంలో ఉత్తరానికి వచ్చే గాలి ఎడమవైపు మళ్లి ఆగ్నేయం నుంచి వీస్తుంది: South-east trades (ఆగ్నేయ వ్యాపార పవనాలు). రెండు వ్యాపార పవనాలూ తూర్పు వైపు నుంచి వస్తాయి కాబట్టి వీటిని Tropical easterlies అని కూడా అంటారు. వ్యాపార పవనాలు ఏడాది పొడవునా చాలా స్థిరంగా వీస్తాయి; తెరచాప ఓడల వ్యాపారం వీటి మీద ఆధారపడింది.</p>
+<p>వ్యాపార పవనాలు సముద్రం మీదుగా తూర్పు నుంచి వచ్చి తేమను మోసుకొస్తాయి. ముందుగా ఖండాల తూర్పు తీరాలను, ఉష్ణమండల దీవుల కొండల గాలి వైపు వాలులను (Windward slopes) తాకి పైకి లేచి వర్షం ఇస్తాయి (<a href="#precipitation">Orographic rainfall</a>). ఖండం దాటి పడమటి వైపుకు చేరేసరికి వ్యాపార పవనాలు పొడిగా మారతాయి.</p>
+<p>వ్యాపార పవనాలు ఎందుకు వీస్తాయో 1735 లో బ్రిటిష్ న్యాయవాది, శాస్త్ర ఔత్సాహికుడు George Hadley ఒక గాలి చక్రంతో వివరించాడు. ఆ Hadley cell నాలుగు దశలు:</p>
+<ol>
+<li>ITCZ దగ్గర వెచ్చని, తేమ గాలి పైకి లేస్తుంది; భారీ వర్షం.</li>
+<li>Troposphere పైభాగంలో (సుమారు 12–15 km) ఆ గాలి ధ్రువాల వైపు కదులుతుంది.</li>
+<li>సుమారు 30° దగ్గర చల్లబడి కిందకు దిగుతుంది (Subsidence); అధిక పీడనం, పొడి వాతావరణం. పొడిగా దిగుతూ వేడెక్కే ఈ గాలే ఉప అయనరేఖా ఎడారులకు అనుకూలం.</li>
+<li>ఉపరితలం మీద తిరిగి భూమధ్యరేఖ వైపు వస్తుంది; ఆ ఉపరితల గాలే వ్యాపార పవనం.</li>
+</ol>
+<h3>Westerlies, Ferrel cell</h3>
+<p>30° దగ్గరి అధిక పీడనం నుంచి 60° దగ్గరి అల్పపీడనం వైపు ధ్రువం దిశగా గాలి వెళ్తుంది. ఉత్తరార్ధగోళంలో ఉత్తరానికి వెళ్లే గాలి కుడివైపు (తూర్పుకు) మళ్లి నైరుతి (SW) నుంచి వీస్తుంది. దక్షిణార్ధగోళంలో దక్షిణానికి వెళ్లే గాలి ఎడమవైపు మళ్లి వాయువ్యం (NW) నుంచి వీస్తుంది. రెండూ స్థూలంగా పడమర నుంచి వస్తాయి; అందుకే Westerlies. వాయువ్యం నుంచి వీచే Westerlies దక్షిణార్ధగోళానివి, ఉత్తరార్ధగోళానివి కావు. సాధారణ నమూనాలో Westerlies సుమారు 30°–60° మధ్య (Ferrel cell పరిధిలో) వీస్తాయి; ప్రపంచ భూగోళ పుస్తకం 40°–60° అని ఇస్తుంది.</p>
+<p>వ్యాపార పవనాల్లా Westerlies స్థిరంగా ఉండవు. చక్రవాతాలు, ప్రతిచక్రవాతాలు, పై గాలిలోని <a href="#jet-streams">Jet streams</a>, పెద్ద ఖండాలు, పర్వతాలు, సముద్రాలు Westerlies దిశను, వేగాన్ని తరచూ మారుస్తాయి.</p>
+<p>దక్షిణార్ధగోళంలో 40° దాటాక దాదాపు నేల లేదు; భూమిని చుట్టి Southern Ocean మాత్రమే ఉంది. పెద్ద నేల అడ్డంకులు లేకపోవడంతో అక్కడ పశ్చిమ పవనాలు చాలా బలంగా, నిరంతరంగా వీస్తాయి. నావికులు పెట్టిన పేర్లు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అక్షాంశం</th>
+<th>పేరు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>సుమారు 40°S</td>
+<td><strong>Roaring Forties (గర్జించే నలభైలు)</strong></td>
+</tr>
+<tr>
+<td>సుమారు 50°S</td>
+<td><strong>Furious Fifties (భీకర యాభైలు)</strong></td>
+</tr>
+<tr>
+<td>సుమారు 60°S</td>
+<td><strong>Shrieking / Screaming Sixties (అరిచే అరవైలు)</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>పశ్చిమ పవనాలు సముద్రం మీదుగా వచ్చి ఖండాల పడమటి తీరాలకు వర్షం ఇస్తాయి (బ్రిటన్, నార్వే, దక్షిణ Chile). చలికాలంలో పీడన మేఖలలు భూమధ్యరేఖ వైపు జరిగినప్పుడు పశ్చిమ పవనాలు, వాటి వాతాగ్ర చక్రవాతాలు 30°–40° అక్షాంశాల వరకు వస్తాయి. అదే Mediterranean ప్రాంతానికి చలికాలపు వర్షం ఇస్తుంది (<a href="/learn/geography/g2/9/notes#mediterranean">పాఠం 9: Mediterranean</a>).</p>
+<p>30°–60° మధ్య ఉండే రెండో చక్రాన్ని 1856 లో అమెరికా వాతావరణ శాస్త్రవేత్త William Ferrel వివరించాడు. Ferrel cell లో ఉపరితల గాలి ధ్రువం వైపు, తూర్పు వైపు (పశ్చిమ పవనాలుగా) కదులుతుంది; 60° దగ్గర లేచి, పై పొరల్లో భూమధ్యరేఖ వైపు తిరిగి, 30° దగ్గర దిగుతుంది. ఈ చక్రంలో చల్లని వైపు గాలి లేస్తుంది, వెచ్చని వైపు దిగుతుంది; అంటే వేడి నేరుగా నడిపే చక్రం కాదు. అందుకే Ferrel cell ను Thermally indirect cell అంటారు. దాన్ని నిలబెట్టేవి పక్క రెండు చక్రాలు, మధ్య అక్షాంశాల చక్రవాతాలు, ప్రతిచక్రవాతాల సుడులు (Eddies); ఈ సుడులే వేడిని ఉష్ణ మండలం నుంచి ధ్రువాల వైపు మోసుకెళ్తాయి.</p>
+<h3>Polar easterlies, Polar cell, Polar front</h3>
+<p>ధ్రువాల దగ్గరి అధిక పీడనం నుంచి 60° దగ్గరి అల్పపీడనం వైపు చల్లని గాలి వీస్తుంది. Coriolis తో ఈ గాలి ఉత్తరార్ధగోళంలో ఈశాన్యం నుంచి, దక్షిణార్ధగోళంలో ఆగ్నేయం నుంచి వీస్తుంది. ధ్రువ తూర్పు పవనాలు చల్లగా, పొడిగా, బలహీనంగా, తక్కువ స్థిరంగా ఉంటాయి. Polar cell లో ధ్రువం మీద చల్లబడిన దట్టమైన గాలి కిందకు దిగుతుంది, ఉపరితలం మీద ధ్రువ తూర్పు పవనాలుగా 60° వైపు వస్తుంది, అక్కడ లేచి పై పొరల్లో ధ్రువానికి తిరిగి వెళ్తుంది.</p>
+<p>60° దగ్గర చల్లని ధ్రువ తూర్పు పవనాలు, వెచ్చని పశ్చిమ పవనాలు కలుస్తాయి. రెండు గాలుల మధ్య ఉష్ణోగ్రతలో బలమైన తేడా ఉన్న ఈ సరిహద్దు పట్టీని Polar front (ధ్రువ వాతాగ్రం) అంటారు. గాలులు కలిసి లేవడం, బలమైన ఉష్ణోగ్రత తేడా కలిసి Polar front మీద సమశీతోష్ణ చక్రవాతాలు పుట్టడానికి అనుకూలిస్తాయి. Front ఎలా పనిచేస్తుందో <a href="#fronts">వాతాగ్రాలు</a> లో, దాని మీద చక్రవాతాలు ఎలా పుడతాయో <a href="#temperate-cyclones">సమశీతోష్ణ చక్రవాతాలు</a> లో చూస్తాం.</p>
+<h2 id="monsoon-winds">Monsoon అంటే వర్షమా, గాలా?</h2>
+<p>కొన్ని ప్రాంతాల్లో ఒక రుతువులో గాలి ఒక దిశ నుంచి, ఇంకో రుతువులో దాదాపు వ్యతిరేక దిశ నుంచి వీస్తుంది. రుతువు మారగానే ప్రధాన దిశ స్పష్టంగా మారిపోయే ఇలాంటి పవనాలను Seasonal winds (కాలిక పవనాలు) అంటారు. కాలిక పవనాల్లో అతి పెద్ద ఉదాహరణ Monsoon.</p>
+<p>Monsoon అనే పదం అరబిక్ "Mausim" నుంచి వచ్చింది; Mausim అంటే "రుతువు". అరబ్ నావికులు అరేబియా సముద్రంలో గాలి వేసవిలో నైరుతి నుంచి, చలికాలంలో ఈశాన్యం నుంచి మారడాన్ని గమనించి ఓడల ప్రయాణాలు ఆ ప్రకారం చేసేవారు. కాబట్టి Monsoon (రుతుపవనాలు) అసలు అర్థం: రుతువును బట్టి ప్రధాన పవనాల దిశ తారుమారు కావడం. మనం "Monsoon వచ్చింది" అంటే వర్షం వచ్చింది అనుకుంటాం, కానీ Monsoon అంటే గాలుల వ్యవస్థ; వర్షాకాలం ఆ గాలుల ఫలితం. చలికాలపు ఈశాన్య Monsoon ఉత్తర భారతంలో పొడి గాలి; వర్షం ఇవ్వకపోయినా అది Monsoon గాలే.</p>
+<h3>దక్షిణ ఆసియాలో రెండు Monsoon లు</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Monsoon</th>
+<th>కాలం</th>
+<th>దిశ</th>
+<th>స్వభావం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>South-west monsoon (నైరుతి రుతుపవనాలు)</strong></td>
+<td>జూన్–సెప్టెంబర్</td>
+<td>నైరుతి నుంచి, సముద్రం → నేల</td>
+<td>తేమతో నిండి దేశానికి ఎక్కువ వర్షం</td>
+</tr>
+<tr>
+<td><strong>North-east monsoon (ఈశాన్య రుతుపవనాలు)</strong></td>
+<td>అక్టోబర్–డిసెంబర్</td>
+<td>ఈశాన్యం / తూర్పు నుంచి, నేల → సముద్రం</td>
+<td>ఎక్కువగా పొడి</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఈశాన్య Monsoon నేల నుంచి సముద్రం వైపు వీస్తుంది కాబట్టి ఉత్తర భారతంలో దాని దగ్గర తేమ తక్కువ. అదే గాలి బంగాళాఖాతం దాటేటప్పుడు తేమ పట్టుకుని తమిళనాడు, దక్షిణ కోస్తా ఆంధ్రకు వర్షం ఇస్తుంది (<a href="/learn/geography/g2/9/notes#koppen-india">పాఠం 9: AP వర్షపాతం</a>).</p>
+<h3>వేసవి Monsoon ఎలా పుడుతుంది?</h3>
+<p>ప్రాథమిక వివరణ నాలుగు అడుగులు:</p>
+<ol>
+<li>వేసవిలో నేల సముద్రం కంటే త్వరగా వేడెక్కుతుంది.</li>
+<li>వేడెక్కిన నేల మీద (వాయవ్య భారతం, పాకిస్తాన్) అల్పపీడనం ఏర్పడుతుంది.</li>
+<li>చల్లని సముద్రం మీద పీడనం ఎక్కువ; తేమ నిండిన సముద్ర గాలి నేల వైపు వస్తుంది.</li>
+<li>ఆ గాలి కొండలను తాకి లేదా వేడి వల్ల పైకి లేచి, చల్లబడి, వర్షం ఇస్తుంది.</li>
+</ol>
+<p>ఒక సరళమైన చిత్రం: Monsoon అంటే <a href="#local-winds">Sea breeze</a> ను పెద్దది చేసిన రూపం; Sea breeze ఒక రోజులో దిశ మారుస్తుంది, Monsoon ఒక సంవత్సరంలో.</p>
+<p>కానీ నేల–సముద్రం వేడి తేడా ఒక్కటే Monsoon ను పూర్తిగా వివరించదు. ఆధునిక వివరణ పీడన మార్పు, నేల–సముద్రం తేడాతో పాటు ఈ గాలి వ్యవస్థ మార్పులను కలుపుతుంది:</p>
+<ul>
+<li>ITCZ ఉత్తరానికి జరగడం: వేసవిలో ITCZ గంగా మైదానం మీదికి వచ్చి Monsoon trough (రుతుపవన ద్రోణి) గా మారుతుంది.</li>
+<li>భూమధ్యరేఖను దాటే గాలి: దక్షిణార్ధగోళపు ఆగ్నేయ వ్యాపార పవనాలు భూమధ్యరేఖ దాటగానే Coriolis తో కుడివైపు మళ్లి నైరుతి పవనాలుగా మారతాయి. ఆఫ్రికా తూర్పు తీరం వెంట కింది ఎత్తులో వేగంగా వీచే ఈ ప్రవాహాన్ని Somali jet అంటారు.</li>
+<li>పై గాలి: Tibet పీఠభూమి వేసవిలో వేడెక్కి దాని పైన అధిక పీడనం (Tibetan high) ఏర్పడుతుంది; దక్షిణ భారతం మీద Tropical easterly jet వీస్తుంది (<a href="#jet-streams">Jet streams</a>).</li>
+<li>భూస్వరూపం: పశ్చిమ కనుమలు, హిమాలయాలు గాలిని పైకి లేపి వర్షాన్ని పెంచుతాయి, ఎక్కడ కురవాలో నిర్ణయిస్తాయి.</li>
+</ul>
+<p>భారత వర్షాకాల రుతువులు, IMD నాలుగు రుతువులు, ప్రపంచ Monsoon వాతావరణ ప్రాంతాలు <a href="/learn/geography/g2/9/notes#tropical-monsoon">పాఠం 9: ఉష్ణమండల రుతుపవన వాతావరణం</a> లో.</p>
+<h2 id="local-winds">ఒక్క ప్రాంతానికే పరిమితమైన గాలులు: Local winds</h2>
+<p>ఒక చిన్న ప్రాంతంలో నేల, నీరు, కొండల వల్ల వచ్చే వేడి–చలి తేడాలు, వాటి నుంచి పుట్టే పీడన తేడాలు Local winds (స్థానిక పవనాలు) ను పుట్టిస్తాయి. స్థానిక పవనాలు కొన్ని km నుంచి కొన్ని వందల km వరకే ఉంటాయి, కొన్ని గంటలు లేదా రోజులు వీస్తాయి. ఆ ప్రాంతం మీద బలమైన ప్రపంచ పవనం వీస్తుంటే స్థానిక గాలి బలహీనపడుతుంది లేదా దాని దిశ పక్కకు జరుగుతుంది.</p>
+<p>స్థానిక పవనాలను నాలుగు రకాలుగా చూడవచ్చు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రకం</th>
+<th>కారణం</th>
+<th>ఉదాహరణలు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>రోజువారీ గాలులు</strong></td>
+<td>పగలు–రాత్రి నేల, నీరు, వాలుల వేడి తేడా</td>
+<td>Sea / Land breeze, Valley / Mountain breeze</td>
+</tr>
+<tr>
+<td><strong>Foehn రకం వేడి గాలులు</strong></td>
+<td>పర్వతం అవతలి వాలు దిగుతూ ఒత్తిడితో వేడెక్కడం</td>
+<td>Foehn, Chinook, Santa Ana, Zonda, Berg</td>
+</tr>
+<tr>
+<td><strong>ఎడారి వేడి గాలులు</strong></td>
+<td>వేడి ఎడారుల నుంచి వీచడం</td>
+<td>Sirocco, Simoom, Harmattan, Brickfielder, Loo</td>
+</tr>
+<tr>
+<td><strong>చల్లని గాలులు</strong></td>
+<td>చల్లని పీఠభూములు, ధ్రువ గాలి దూసుకురావడం</td>
+<td>Mistral, Bora, Bise, Pampero, Norte, Buran, Southerly Buster</td>
+</tr>
+</tbody>
+</table></div>
+<h3>రోజువారీ గాలులు: తీరం, కొండ</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>గాలి</th>
+<th>ఎప్పుడు</th>
+<th>దిశ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sea breeze (సముద్ర / జల పవనం)</strong></td>
+<td>పగలు</td>
+<td>సముద్రం → నేల</td>
+</tr>
+<tr>
+<td><strong>Land breeze (భూ / స్థల పవనం)</strong></td>
+<td>రాత్రి</td>
+<td>నేల → సముద్రం</td>
+</tr>
+<tr>
+<td><strong>Valley breeze (లోయ పవనం; Anabatic)</strong></td>
+<td>పగలు</td>
+<td>లోయ → వాలు పైకి</td>
+</tr>
+<tr>
+<td><strong>Mountain breeze (పర్వత పవనం; Katabatic)</strong></td>
+<td>రాత్రి</td>
+<td>వాలు → లోయలోకి</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sea breeze. పగలు నేల సముద్రం కంటే త్వరగా వేడెక్కుతుంది. నేల మీది గాలి వేడెక్కి, వ్యాకోచించి పైకి లేస్తుంది; నేల మీద పీడనం తగ్గుతుంది. సముద్రం మీద గాలి చల్లగా, పీడనం ఎక్కువ. కాబట్టి మధ్యాహ్నం నుంచి సాయంత్రం వరకు ఉపరితలం మీద గాలి సముద్రం నుంచి నేల వైపు వీస్తుంది. పైకి లేచిన గాలి సుమారు 1 km ఎత్తులో నేల నుంచి సముద్రం వైపు తిరిగి వెళ్తుంది (Return flow); ఇలా ఒక చిన్న చక్రం పూర్తవుతుంది. వేసవిలో విశాఖపట్నం, చెన్నై, ముంబై లాంటి తీర నగరాలు లోపలి ఊళ్ల కంటే చల్లగా ఉండటానికి Sea breeze కారణం.</p>
+<p>Land breeze. రాత్రి నేల సముద్రం కంటే త్వరగా చల్లబడుతుంది. ఇప్పుడు నేల మీద పీడనం ఎక్కువ, సముద్రం మీద తక్కువ; గాలి నేల నుంచి సముద్రం వైపు వీస్తుంది. రాత్రి నేల–సముద్రం ఉష్ణోగ్రత తేడా పగటి కంటే తక్కువ కాబట్టి Land breeze Sea breeze కంటే బలహీనంగా, తక్కువ లోతుగా ఉంటుంది.</p>
+<p>Valley breeze. పగలు ఎండ కొండ వాలులను వేడి చేస్తుంది. వాలు మీది గాలి, అదే ఎత్తులో లోయ మధ్యలో ఉన్న గాలి కంటే ఎక్కువ వేడెక్కి, వాలు వెంట పైకి పాకుతుంది. పగలు లోయ నుంచి వాలు పైకి వీచే ఈ గాలిని Anabatic wind అని కూడా అంటారు.</p>
+<p>Mountain breeze. రాత్రి ఆకాశం నిర్మలంగా ఉంటే కొండ వాలులు వేడిని కోల్పోయి త్వరగా చల్లబడతాయి. వాలు మీది గాలి చల్లబడి, బరువెక్కి, వాలు వెంట కిందకు జారుతుంది. రాత్రి వాలు నుంచి లోయలోకి దిగే ఈ గాలిని Katabatic wind అని కూడా అంటారు. చల్లని గాలి లోయ అడుగున పోగుపడుతుంది (Cold-air pooling); అలా లోయల్లో <a href="#temperature-distribution">Temperature inversion</a> ఏర్పడుతుంది.</p>
+<h3>కొండ దిగే వేడి, పొడి గాలులు: Foehn కుటుంబం</h3>
+<p>తేమ గాలి పర్వతం ఎక్కుతూ గాలి వైపు వాలు మీద తేమను వర్షంగా కోల్పోతుంది; ఆ సాంద్రీకరణంలో విడుదలైన గుప్తోష్ణం గాలిని వెచ్చగా ఉంచుతుంది. పొడిగా మారిన గాలి అవతలి (Leeward) వాలు దిగుతూ పెరిగే పీడనంతో ఒత్తిడికి గురై (Adiabatic compression) వేడెక్కుతుంది. పర్వతం అవతలి వాలు మీద దిగే ఈ వేడి, పొడి గాలిని Foehn (ఫాన్) అంటారు; యంత్రాంగం <a href="#precipitation">Orographic rainfall</a> లో వివరంగా ఉంది. Foehn వేడికి కారణం కొండ మీద రాపిడి కాదు; దిగుతూ ఒత్తిడికి గురై వేడెక్కడమే ప్రధాన కారణం. పేరు Alps నుంచి వచ్చింది: Switzerland, Austria, దక్షిణ జర్మనీ లోయల్లోకి దిగే ఈ గాలి కొన్ని గంటల్లో ఉష్ణోగ్రతను 10 °C కంటే ఎక్కువ పెంచవచ్చు; ఎంత పెరుగుతుందనేది ఒక్కో సంఘటన బలాన్ని, వచ్చే గాలి స్వభావాన్ని బట్టి మారుతుంది.</p>
+<p>ప్రపంచంలో ఇదే రకం గాలులకు వేర్వేరు పేర్లు ఉన్నాయి. Chinook (చినూక్) అమెరికా, కెనడాలలో Rocky పర్వతాలకు తూర్పు (అవతలి) వైపు దిగే వేడి పొడి గాలి; చలికాలంలో, వసంతంలో కొన్ని గంటల్లో మంచును కరిగించి, ఆవిరి చేసేస్తుంది కాబట్టి Chinook ను "Snow eater" (హిమభక్షకి) అంటారు. Santa Ana (శాంటా అనా) శరదృతువు, చలికాలంలో Nevada–Utah మీది Great Basin అధిక పీడనం నుంచి దక్షిణ California తీరం వైపు, సముద్రం మీది అల్పపీడనం దిశగా, కొండలు దిగుతూ వచ్చే వేడి, చాలా పొడి గాలి; Santa Ana వల్ల California లో కార్చిచ్చులు (Wildfires) వేగంగా వ్యాపిస్తాయి. Zonda (జోండా) Argentina లో Andes పర్వతాల తూర్పు (అవతలి) వైపు దిగే Foehn రకం గాలి. Berg wind (బర్గ్) దక్షిణాఫ్రికాలో లోపలి పీఠభూమి నుంచి తీరం వైపు దిగుతూ వేడెక్కే వేడి, పొడి గాలి; Berg వల్ల కూడా కార్చిచ్చుల ప్రమాదం ఉంటుంది.</p>
+<h3>ఎడారి నుంచి వచ్చే వేడి గాలులు</h3>
+<p>Sirocco (సిరోకో) Sahara, ఉత్తర ఆఫ్రికా నుంచి Mediterranean మీదుగా దక్షిణ యూరప్ (Italy, Sicily, Malta, Greece) వైపు వీచే గాలి. ఆఫ్రికా తీరం దగ్గర Sirocco వేడిగా, పొడిగా, దుమ్ముతో ఉంటుంది; సముద్రం దాటేటప్పుడు తేమ పట్టుకుని యూరప్‌లో వెచ్చని ఉక్కపోత గాలి అవుతుంది. Sirocco తెచ్చిన ఎర్రని ఎడారి దుమ్ము వర్షంతో కలిసి కురిస్తే దాన్ని "Blood rain" అంటారు. Sirocco కు ప్రాంతీయ పేర్లు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ప్రాంతం</th>
+<th>పేరు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Libya</td>
+<td><strong>Ghibli</strong></td>
+</tr>
+<tr>
+<td>Tunisia</td>
+<td><strong>Chili</strong></td>
+</tr>
+<tr>
+<td>Egypt</td>
+<td><strong>Khamsin</strong></td>
+</tr>
+<tr>
+<td>ఆగ్నేయ Spain</td>
+<td><strong>Leveche</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Brickfielder (ఆగ్నేయ Australia కు లోపలి ఎడారి నుంచి వచ్చే వేడి పొడి గాలి), Black Roller (అమెరికాలో దుమ్ము తుఫాను గాలి) Sirocco కు మారుపేర్లు కావు; అవి వేరే ప్రాంతాల వేరే గాలులు.</p>
+<p>Simoom / Simoon (సైమూమ్) Arabia, Sahara ఎడారుల్లో, ఎక్కువగా వసంతం, వేసవిలో, చాలా వేడిగా, పొడిగా, ఇసుక దుమ్ముతో సుడులు తిరుగుతూ వీచే గాలి. Harmattan (హర్మటన్) చలికాలంలో (సుమారు నవంబర్ చివరి నుంచి మార్చి మధ్య వరకు) Sahara నుంచి పశ్చిమ ఆఫ్రికా తీరం (Ghana, Nigeria, Gulf of Guinea) వైపు వీచే పొడి, దుమ్ము నిండిన ఈశాన్య వ్యాపార పవనం. Harmattan తీర ఉక్కపోత నుంచి ఉపశమనం ఇస్తుంది కాబట్టి "Doctor wind" అంటారు; కానీ దాని దుమ్ము కళ్లకు, ఊపిరితిత్తులకు ఇబ్బంది కలిగిస్తుంది, దృశ్యతను తగ్గిస్తుంది.</p>
+<h3>భారతదేశపు స్థానిక గాలులు, వానలు</h3>
+<ul>
+<li>Loo (లూ). మే–జూన్ మధ్యాహ్నాలు Thar వైపు నుంచి వాయవ్య, ఉత్తర భారత మైదానాల్లో (పంజాబ్, హర్యానా, ఢిల్లీ, ఉత్తర ప్రదేశ్, బిహార్ వరకు) వీచే బలమైన, చాలా వేడి, పొడి పడమటి/వాయవ్య గాలి. 45 °C పైన ఉష్ణోగ్రతతో వీచే Loo వల్ల శరీరంలో నీరు తగ్గిపోవడం (Dehydration), వడదెబ్బ (Heatstroke) వస్తాయి.</li>
+<li>Nor'westers / Kalbaisakhi (కాలబైశాఖి). ఏప్రిల్–మే లో, Monsoon ముందు, సాయంత్రాలు వాయవ్యం నుంచి దూసుకొచ్చే తీవ్ర ఉరుముల తుఫానులు (Convective thunderstorms). పశ్చిమ బెంగాల్, అస్సాం, పక్కనే ఉన్న బిహార్, ఝార్ఖండ్, ఒడిశాలలో వస్తాయి; బెంగాల్‌లో Nor'westers ను Kalbaisakhi ("బైశాఖ మాసపు విపత్తు") అంటారు.</li>
+<li>Mango showers. కేరళ, కర్ణాటకలో Monsoon ముందు కురిసి మామిడి కాయలు పండటానికి సహాయపడే జల్లులు; Mango showers Nor'westers కాదు.</li>
+<li>Western Disturbances (పశ్చిమ అలజడులు). చలికాలంలో Mediterranean వైపు నుంచి వచ్చి వాయవ్య భారతానికి వర్షం, Himalaya కు మంచు తెచ్చే అల్పపీడనాలు; Western Disturbances వేడి గాలులు కావు (<a href="#temperate-cyclones">సమశీతోష్ణ చక్రవాతాలు</a>).</li>
+</ul>
+<h3>చల్లని స్థానిక గాలులు</h3>
+<p>Mistral (మిస్ట్రల్) చలికాలం, వసంతంలో దక్షిణ France లో Rhône లోయ గుండా Mediterranean వైపు ఉత్తరం/వాయవ్యం నుంచి వీచే బలమైన, చల్లని, పొడి గాలి. Bora (బోరా) Croatia, Slovenia కొండల నుంచి ఉత్తర Adriatic తీరానికి దిగే చల్లని, ఈశాన్య, కుదుపులతో వీచే (Gusty) గాలి; Bora కొన్నిసార్లు గంటకు 100 km దాటుతుంది. Bise (బీజ్) Switzerland, France లో ఉత్తరం/ఈశాన్యం నుంచి వీచే చల్లని పొడి గాలి. Pampero (పాంపెరో) Argentina, Uruguay లోని Pampas గడ్డి మైదానాల మీద దక్షిణం/నైరుతి నుంచి దూసుకొచ్చే చల్లని, కుదుపుల గాలి; Pampero ముందు ఉరుములు వస్తాయి. Norte (నోర్టే) Mexico, Gulf of Mexico తీరంలో ఉత్తరం నుంచి ఒక్కసారిగా దూసుకొచ్చే చల్లని గాలి (అమెరికా Texas లో Norther). Buran, Purga (బురాన్, పుర్గా) సైబీరియా, రష్యా Tundra లో చలికాలంలో మంచు తుఫాను తెచ్చే బలమైన చల్లని గాలులు. Southerly Buster (సదర్లీ బస్టర్) వేడి రోజు తర్వాత ఆగ్నేయ Australia లో, ముఖ్యంగా New South Wales తీరంలో (Sydney), ఒక్కసారిగా దక్షిణం నుంచి దూసుకొచ్చే బలమైన చల్లని గాలి.</p>
+<p>Blizzard (బ్లిజార్డ్) ఒక ప్రాంతపు పేరున్న గాలి కాదు; బలమైన గాలి, మంచు, దాదాపు కనిపించని దృశ్యత కలిసిన తీవ్ర మంచు తుఫాను స్థితి. ఉత్తర అమెరికా, యూరప్, ఆసియాలోని చల్లని ప్రాంతాల్లో, ధ్రువ ప్రాంతాల్లో Blizzards వస్తాయి.</p>
+<h3>అన్ని స్థానిక గాలులు ఒకే చోట</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>గాలి</th>
+<th>ప్రాంతం</th>
+<th>స్వభావం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Foehn</strong></td>
+<td>Alps (Switzerland, Austria, జర్మనీ)</td>
+<td>వేడి, పొడి</td>
+</tr>
+<tr>
+<td><strong>Chinook</strong></td>
+<td>Rocky పర్వతాల తూర్పు (USA, కెనడా)</td>
+<td>వేడి, పొడి</td>
+</tr>
+<tr>
+<td><strong>Santa Ana</strong></td>
+<td>దక్షిణ California</td>
+<td>వేడి, పొడి</td>
+</tr>
+<tr>
+<td><strong>Zonda</strong></td>
+<td>Argentina (Andes తూర్పు)</td>
+<td>వేడి, పొడి</td>
+</tr>
+<tr>
+<td><strong>Berg</strong></td>
+<td>దక్షిణాఫ్రికా</td>
+<td>వేడి, పొడి</td>
+</tr>
+<tr>
+<td><strong>Sirocco</strong></td>
+<td>Sahara → దక్షిణ యూరప్</td>
+<td>వేడి, దుమ్ము (యూరప్‌లో ఉక్కపోత)</td>
+</tr>
+<tr>
+<td><strong>Simoom</strong></td>
+<td>Arabia, Sahara</td>
+<td>వేడి, పొడి, దుమ్ము</td>
+</tr>
+<tr>
+<td><strong>Harmattan</strong></td>
+<td>Sahara → పశ్చిమ ఆఫ్రికా</td>
+<td>పొడి, దుమ్ము</td>
+</tr>
+<tr>
+<td><strong>Brickfielder</strong></td>
+<td>ఆగ్నేయ Australia</td>
+<td>వేడి, పొడి</td>
+</tr>
+<tr>
+<td><strong>Loo</strong></td>
+<td>వాయవ్య, ఉత్తర భారతం</td>
+<td>వేడి, పొడి</td>
+</tr>
+<tr>
+<td><strong>Mistral</strong></td>
+<td>దక్షిణ France (Rhône)</td>
+<td>చల్లని, పొడి</td>
+</tr>
+<tr>
+<td><strong>Bora</strong></td>
+<td>ఉత్తర Adriatic (Croatia)</td>
+<td>చల్లని, కుదుపుల</td>
+</tr>
+<tr>
+<td><strong>Bise</strong></td>
+<td>Switzerland, France</td>
+<td>చల్లని, పొడి</td>
+</tr>
+<tr>
+<td><strong>Pampero</strong></td>
+<td>Argentina, Uruguay</td>
+<td>చల్లని</td>
+</tr>
+<tr>
+<td><strong>Norte</strong></td>
+<td>Mexico, Gulf of Mexico</td>
+<td>చల్లని</td>
+</tr>
+<tr>
+<td><strong>Buran, Purga</strong></td>
+<td>సైబీరియా, రష్యా</td>
+<td>చల్లని, మంచు</td>
+</tr>
+<tr>
+<td><strong>Southerly Buster</strong></td>
+<td>New South Wales (Australia)</td>
+<td>చల్లని</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="jet-streams">Jet streams అంటే ఏమిటి? మన వాతావరణాన్ని ఎలా నడిపిస్తాయి?</h2>
+<p>భూమికి సుమారు 10 km పైన, విమానాలు ఎగిరే ఎత్తులో, కొన్ని ఇరుకైన, పొడవైన పట్టీల్లో గాలి చుట్టుపక్కల కంటే చాలా వేగంగా వీస్తుంది. ఈ పట్టీలను Jet streams (జెట్ ప్రవాహాలు) అంటారు. Jet streams Troposphere పైభాగంలో, Tropopause దగ్గర ఉంటాయి; వేల km పొడవు, వందల km వెడల్పు, కొన్ని km మందం ఉంటాయి. ప్రధాన Jet streams ఎక్కువగా పడమర నుంచి తూర్పుకు వీస్తాయి.</p>
+<p>Jet stream ను సన్నని గొట్టంలా ఊహించకూడదు. Jet stream మూడు కొలతల్లో విస్తరించిన ఒక గాలి ప్రాంతం; దాని మధ్యభాగం (Core) లో వేగం గరిష్ఠం, అంచుల వైపు తగ్గుతుంది. Jet stream అక్షం పాములా వంకరలు తిరుగుతుంది (Meanders), చోటు మారుతుంది, రెండుగా చీలుతుంది, మళ్లీ కలుస్తుంది. ఈ పెద్ద వంకరలను Rossby waves అంటారు (వీటిని వివరించిన Carl-Gustaf Rossby పేరు). అందుకే గ్లోబ్ బొమ్మల్లో గీసే రంగు Jet పట్టీలు ఒక సరళీకరించిన చిత్రం మాత్రమే; అసలు Jet స్థానం రోజురోజుకూ మారుతుంది.</p>
+<h3>ఎందుకు పుడతాయి?</h3>
+<p>ఉష్ణమండలం నుంచి ధ్రువాల వరకు ఉష్ణోగ్రత క్రమంగా కాదు, కొన్ని పట్టీల్లో ఒక్కసారిగా తగ్గుతుంది. ఆ పట్టీల్లో వెచ్చని వైపు గాలి స్తంభం పొడవుగా, చల్లని వైపు పొట్టిగా ఉంటుంది. కాబట్టి ఎత్తుకు వెళ్లే కొద్దీ రెండు వైపుల మధ్య పీడన తేడా పెరుగుతుంది. పై పొరల్లో ఆ బలమైన ప్రవణత బలం గాలిని ధ్రువం వైపు నెడుతుంది; Coriolis దాన్ని తూర్పుకు మళ్లిస్తుంది. ఫలితం: పడమర నుంచి తూర్పుకు బలమైన Geostrophic గాలి. అంటే Jet కు ప్రధాన కారణం బలమైన క్షితిజ సమాంతర (ఉత్తర–దక్షిణ) ఉష్ణోగ్రత ప్రవణత; Coriolis ఒక్కటే Jet ను పుట్టించదు, పీడన ప్రవణత, వాతావరణ తరంగాలతో కలిసి పనిచేస్తుంది.</p>
+<h3>ఎంత ఎత్తు, ఎంత వేగం?</h3>
+<p>NOAA National Weather Service ప్రకారం Jet streams సుమారు 8 నుంచి 14 km ఎత్తులో, Tropopause దగ్గర ఉంటాయి; పాత పుస్తకాలు 9,000–12,000 m అని ఇస్తాయి. 9–12 km ఒక ఉపయోగపడే స్థూల విలువ, కఠిన హద్దు కాదు: ఉష్ణమండలంలో Tropopause ఎత్తుగా ఉంటుంది కాబట్టి అక్కడి Jets ఎత్తుగా, ధ్రువాల వైపు తక్కువ ఎత్తులో ఉంటాయి. వేగం కూడా మారుతుంది: మధ్యభాగంలో సాధారణంగా గంటకు 100 km దాటుతుంది, బలమైన Cores లో గంటకు 400 km కూడా దాటుతుంది (పాత పుస్తకాలు: సగటు గంటకు 144 km, గరిష్ఠం 480 km).</p>
+<h3>రెండు ప్రధాన Jets</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Jet</th>
+<th>అక్షాంశం</th>
+<th>దేనితో ముడిపడింది</th>
+<th>ఎత్తు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Subtropical jet (ఉప అయనరేఖా జెట్)</strong></td>
+<td>సుమారు 30° N, S</td>
+<td>Hadley cell ధ్రువం వైపు అంచు</td>
+<td>ఎక్కువ (సుమారు 12–14 km)</td>
+</tr>
+<tr>
+<td><strong>Polar front jet (ధ్రువ వాతాగ్ర జెట్)</strong></td>
+<td>సుమారు 50°–60° N, S</td>
+<td>Polar front ఉష్ణోగ్రత తేడా, మధ్య అక్షాంశ తరంగాలు</td>
+<td>తక్కువ</td>
+</tr>
+</tbody>
+</table></div>
+<p>Hadley cell పై గాలి ధ్రువం వైపు వెళ్తూ Coriolis తో తూర్పుకు మళ్లి వేగం పుంజుకోవడం Subtropical jet కు మూలం. చల్లని ధ్రువ గాలి, వెచ్చని మధ్య అక్షాంశ గాలి మధ్య ఉష్ణోగ్రత తేడా, మధ్య అక్షాంశాల సుడులు Polar front jet ను నడుపుతాయి. Polar front jet స్థానం చాలా మారుతుంది, ఒక్కోసారి 40° వరకు, అంతకంటే కిందికి కూడా దిగుతుంది. రెండు Jets విడిగా ఉండవచ్చు, లేదా కొన్ని చోట్ల కలిసి ఒక విశాల పశ్చిమ పట్టీగా మారవచ్చు. Jet streams 60° దాటాకే ఉంటాయనుకోవడం తప్పు.</p>
+<h3>రుతువుతో మార్పు</h3>
+<p>Jet ను నడిపేది వేడి ఎంత ఉంది అని కాదు; భూమధ్యరేఖకు, ధ్రువానికి మధ్య ఉష్ణోగ్రత తేడా. చలికాలంలో ధ్రువం చాలా చల్లబడి ఆ తేడా పెరుగుతుంది; అందుకే Jets చలికాలంలో బలంగా, భూమధ్యరేఖ వైపు జరిగి ఉంటాయి. వేసవిలో తేడా తగ్గుతుంది; Jets సగటున బలహీనపడి ధ్రువాల వైపు జరుగుతాయి.</p>
+<h3>భారతదేశం మీద Jets</h3>
+<p>చలికాలంలో Subtropical westerly jet హిమాలయాలకు దక్షిణాన, ఉత్తర భారతం మీద వీస్తుంది. పశ్చిమం నుంచి వచ్చే Western Disturbances ను ఈ Jet మోసుకొస్తుంది (<a href="#temperate-cyclones">వివరంగా</a>). వేసవి మొదలయ్యాక ఈ Jet హిమాలయాలకు, Tibet కు ఉత్తరానికి జరిగిపోతుంది; ఆ తర్వాతే నైరుతి రుతుపవనాలు వేగంగా వ్యాపిస్తాయి (<a href="/learn/geography/g2/9/notes#tropical-monsoon">పాఠం 9: రుతుపవన యంత్రాంగం</a>). వేసవిలో దక్షిణ భారతం మీద సుమారు 15°N దగ్గర, సుమారు 14–16 km ఎత్తులో తూర్పు నుంచి పడమరకు Tropical easterly jet (ఉష్ణమండల తూర్పు జెట్) వీస్తుంది. Jets Monsoon తో కలిసి పనిచేస్తాయి, కానీ Monsoon కు అవే ఏకైక కారణం కాదు (<a href="#monsoon-winds">Monsoon</a>).</p>
+<h3>ఉపరితల వాతావరణం మీద ప్రభావం</h3>
+<p>Jet స్థానం, బలం కింది వాతావరణాన్ని నడిపిస్తాయి:</p>
+<ul>
+<li>తుఫానులు, చక్రవాతాలు, వాయురాశులు ఏ దారిలో వెళ్లాలో Jet నిర్ణయిస్తుంది (Steering).</li>
+<li>Jet కింద పై గాలి వేరుపడి (Divergence) ఉపరితల అల్పపీడనాలు లోతుగా మారడానికి సహాయపడుతుంది.</li>
+<li>Jet తరంగాలు బాగా వంకరలు తిరిగి ఒక చోట నిలిచిపోతే (Blocking), దారి చూపే గాలే ఆగిపోవడంతో తుఫానులు, వాయురాశులు కదలవు; ఒకే వాతావరణం రోజుల తరబడి, వారాల తరబడి ఉంటుంది: ఉష్ణ తరంగాలు, చలి, కరువు, భారీ వర్షాలు.</li>
+<li>తూర్పుకు వెళ్లే విమానాలు Jet ను వెనుక గాలి (Tailwind) గా వాడుకుని సమయం, ఇంధనం ఆదా చేస్తాయి.</li>
+<li>Jet మధ్యభాగం దగ్గర గాలి వేగం ఎత్తుతో, పక్కలతో ఒక్కసారిగా మారే చోట (Wind shear) మేఘాలు లేకపోయినా విమానాలు కుదుపులకు లోనవుతాయి; ఈ కుదుపులను Clear-air turbulence అంటారు.</li>
+</ul>
+<h3>ఎలా కనుక్కున్నారు?</h3>
+<p>Jet streams గురించిన జ్ఞానం Balloon పరిశీలనలు, యుద్ధకాలపు విమానాల అనుభవం నుంచి పెరిగింది. 1920 లలో జపాన్ వాతావరణ శాస్త్రవేత్త Wasaburo Ōishi, Tokyo దగ్గరి Tateno నుంచి Balloons వదిలి పై గాలిలో బలమైన పశ్చిమ గాలులను నమోదు చేశాడు; ఆయన నివేదికలు Esperanto భాషలో ఉండటం వల్ల బయటి ప్రపంచానికి తెలియలేదు. 1939 లో జర్మన్ వాతావరణ శాస్త్రవేత్త Heinrich Seilkopf ఈ గాలికి "Strahlströmung" (Jet stream) అనే పేరు వాడాడు. 1944 లో జపాన్ మీదికి ఎగిరిన అమెరికా B-29 పైలట్లు బలమైన ఎదురు గాలులను ఎదుర్కోవడంతో Jet streams విస్తృతంగా తెలిశాయి.</p>
+<h2 id="humidity">గాలిలో తేమ ఎంత ఉంది? Relative humidity, Dew point</h2>
+<p>వేసవిలో విజయవాడలో 38 °C ఉన్నా చెమట ఆరదు, ఒళ్లంతా జిడ్డుగా ఉంటుంది. అనంతపురంలో అదే 38 °C ఉన్నా చెమట వెంటనే ఆరిపోతుంది. తేడా గాలిలో ఉన్న నీటి ఆవిరిలో ఉంది. గాలిలో ఉన్న, కంటికి కనిపించని నీటి ఆవిరి పరిమాణాన్నే Humidity (ఆర్ద్రత) అంటాం. Humidity ని కొలిచే పరికరం Hygrometer (ఆర్ద్రతా మాపకం).</p>
+<h3>ఆవిరి ఎక్కడి నుంచి వస్తుంది?</h3>
+<p>గాలిలోకి ఆవిరి మూడు దారుల్లో చేరుతుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>దారి</th>
+<th>ఏం జరుగుతుంది</th>
+<th>వాటా</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Evaporation (బాష్పీభవనం)</strong></td>
+<td>సముద్రాలు, నదులు, తడి నేల నుంచి నీరు ఆవిరి అవుతుంది</td>
+<td>సుమారు 90%</td>
+</tr>
+<tr>
+<td><strong>Transpiration (బాష్పోత్సేకం)</strong></td>
+<td>మొక్కలు ఆకుల ద్వారా ఆవిరి వదులుతాయి</td>
+<td>సుమారు 10%</td>
+</tr>
+<tr>
+<td><strong>Sublimation (ఉత్పతనం)</strong></td>
+<td>Ice నీరుగా మారకుండా నేరుగా ఆవిరి అవుతుంది (కర్పూరం కరగకుండా మాయమైనట్లు)</td>
+<td>చాలా తక్కువ</td>
+</tr>
+</tbody>
+</table></div>
+<p>Evaporation ను పెంచేవి: ఎక్కువ ఉష్ణోగ్రత, పొడి గాలి (తక్కువ RH), గాలి వీచడం (తడి గాలిని తీసుకుపోతుంది), పెద్ద నీటి ఉపరితలం, నీరు అందుబాటులో ఉండటం. గాలి ఇప్పటికే తడిగా ఉంటే Evaporation తగ్గుతుంది. అందుకే గాలిలో తేమ వెచ్చని ఉష్ణమండల సముద్రాలు, భూమధ్యరేఖ ప్రాంతాల మీద ఎక్కువ; ఎడారులు, ధ్రువాల మీద తక్కువ.</p>
+<h3>Humidity ని ఎన్ని రకాలుగా కొలుస్తారు?</h3>
+<p>Humidity ని నాలుగు రకాలుగా కొలుస్తారు; తేడా "ఆవిరిని దేనితో పోలుస్తున్నాం" అనేదే:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కొలత</th>
+<th>ఏమిటి</th>
+<th>యూనిట్</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Specific humidity (విశిష్ట ఆర్ద్రత)</strong></td>
+<td>నీటి ఆవిరి బరువు / ఆవిరితో కలిసిన మొత్తం (తడి) గాలి బరువు</td>
+<td>g/kg</td>
+</tr>
+<tr>
+<td><strong>Mixing ratio</strong></td>
+<td>నీటి ఆవిరి బరువు / పొడి గాలి (Dry air) బరువు</td>
+<td>g/kg</td>
+</tr>
+<tr>
+<td><strong>Absolute humidity (నిరపేక్ష ఆర్ద్రత)</strong></td>
+<td>ఒక ఘనపు మీటరు గాలిలో ఉన్న నీటి ఆవిరి బరువు</td>
+<td>g/m³</td>
+</tr>
+<tr>
+<td><strong>Relative humidity (సాపేక్ష ఆర్ద్రత)</strong></td>
+<td>ఉన్న ఆవిరి (Vapour pressure) ÷ అదే ఉష్ణోగ్రత వద్ద Saturation విలువ × 100</td>
+<td>%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Specific humidity, Mixing ratio బరువును బరువుతో పోలుస్తాయి; గాలి వ్యాకోచించినా (Expand) ఈ రెండూ మారవు. Absolute humidity ఘనపరిమాణం (Volume) మీద ఆధారపడుతుంది; గాలి వ్యాకోచిస్తే అదే ఆవిరి ఎక్కువ స్థలంలో పరుచుకుని Absolute humidity తగ్గుతుంది.</p>
+<h3>Relative humidity ఎందుకు అంత ముఖ్యం?</h3>
+<p>గాలికి ఒక "గ్లాసు" ఉందనుకోండి. వేడి గాలి పెద్ద గ్లాసు, ఎక్కువ ఆవిరి పడుతుంది; చల్లని గాలి చిన్న గ్లాసు. ఒక ఉష్ణోగ్రత వద్ద గాలి పట్టగలిగే గరిష్ఠ ఆవిరిని Saturation (సంతృప్త స్థితి) విలువ అంటారు. ఉన్న ఆవిరి ఆ గరిష్ఠంలో ఎంత శాతమో చెప్పేదే Relative humidity (RH). లెక్క: ఒక ఉష్ణోగ్రత వద్ద Saturation vapour pressure 50, ఉన్న Vapour pressure 30 అయితే RH = 30 ÷ 50 × 100 = 60%.</p>
+<p>గాలి చల్లబడితే, ఆవిరి ఏమీ కలపకపోయినా RH పెరుగుతుంది: ఆవిరి అంతే ఉంది, కానీ చల్లని గాలికి Saturation విలువ తక్కువ, అంటే "గ్లాసు" చిన్నదైంది. అందుకే తెల్లవారుజామున, రోజులో అత్యంత చల్లని సమయంలో, RH ఎక్కువగా ఉంటుంది. Saturation విలువ ఉష్ణోగ్రత మీద ఆధారపడుతుంది కాబట్టి RH ఒక్కటే చూసి గాలిలో అసలు ఎంత ఆవిరి ఉందో చెప్పలేం. RH 100% అంటే గాలి ఆ ఉష్ణోగ్రత వద్ద Saturate అయింది (నిండిన గ్లాసు); RH 0% అంటే గాలిలో ఆవిరి అసలు లేదు, ఇది సిద్ధాంతపరమైన హద్దు మాత్రమే.</p>
+<p>RH ను Sling psychrometer తో అంచనా వేస్తారు. Sling psychrometer లో పొడి బల్బు (Dry bulb), తడి గుడ్డ చుట్టిన బల్బు (Wet bulb) గల రెండు Thermometers ఉంటాయి. గాలిలో తిప్పినప్పుడు తడి బల్బు మీది నీరు ఆవిరై ఆ బల్బు చల్లబడుతుంది. గాలి ఎంత పొడిగా ఉంటే రెండు రీడింగ్‌ల తేడా అంత ఎక్కువ; Saturate అయిన గాలిలో తేడా ఉండదు. ఈ తేడా నుంచి RH లెక్కిస్తారు.</p>
+<h3>Dew point</h3>
+<p>గాలిని చల్లబరుస్తూ పోతే ఒక ఉష్ణోగ్రత దగ్గర RH 100% అవుతుంది. ఆవిరి కలపకుండా, పీడనం మార్చకుండా, గాలి Saturate అవ్వాలంటే ఎంత ఉష్ణోగ్రతకు చల్లబడాలో ఆ ఉష్ణోగ్రతనే Dew point (తుషార స్థానం) అంటారు. ఇంకా చల్లబడితే అదనపు ఆవిరి చిన్న నీటి బిందువులుగా మారుతుంది. చల్లని నీళ్ల గ్లాసు బయట నీటి చుక్కలు ఏర్పడటం ఇదే: గ్లాసు పక్కన గాలి Dew point కంటే చల్లబడింది. ఆ బిందువులు మంచు, పొగమంచు, మేఘాలుగా ఎలా మారతాయో <a href="#condensation-forms">Condensation రూపాలు</a> లో.</p>
+<h3>ఆవిరి నీరుగా, నీరు ఆవిరిగా మారేటప్పుడు వేడి ఏమవుతుంది?</h3>
+<p>నీరు ఆవిరి కావడానికి శక్తి కావాలి; నీరు ఆ శక్తిని చుట్టూ ఉన్నదాని నుంచి తీసుకుంటుంది. అందుకే చెమట ఆరితే ఒళ్లు చల్లబడుతుంది: ఆవిరవుతున్న చెమట చర్మం నుంచి వేడి తీసుకుంటుంది. ఈ శక్తి ఆవిరిలో దాగి ఉంటుంది, Thermometer చూపదు; అందుకే దాన్ని Latent heat (గుప్తోష్ణం, దాగి ఉన్న వేడి) అంటారు. దీనికి భిన్నంగా, Thermometer తో కొలవగలిగే, మనకు తగిలే వేడిని Sensible heat అంటారు.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ప్రక్రియ</th>
+<th>మార్పు</th>
+<th>Latent heat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Evaporation (బాష్పీభవనం)</strong></td>
+<td>నీరు → ఆవిరి</td>
+<td>గ్రహిస్తుంది</td>
+</tr>
+<tr>
+<td><strong>Condensation (సాంద్రీకరణం)</strong></td>
+<td>ఆవిరి → నీరు</td>
+<td>విడుదల చేస్తుంది</td>
+</tr>
+<tr>
+<td><strong>Deposition</strong></td>
+<td>ఆవిరి → నేరుగా Ice (0 °C కంటే తక్కువ వద్ద)</td>
+<td>విడుదల చేస్తుంది</td>
+</tr>
+</tbody>
+</table></div>
+<p>మేఘాల్లో Condensation వల్ల విడుదలయ్యే ఈ Latent heat తుఫానులను నడిపించే ఇంధనం (<a href="#tropical-cyclones">వివరంగా</a>).</p>
+<h2 id="condensation-forms">మంచు, పొగమంచు, Smog, Sleet ఎలా ఏర్పడతాయి?</h2>
+<p>చలికాలం తెల్లవారుజామున అరకు లోయలో పచ్చిక మీద నీటి చుక్కలు, రోడ్డు మీద పొగమంచు కనిపిస్తాయి. రెండింటికీ కారణం ఒకటే: గాలి Dew point కంటే చల్లబడింది (<a href="#humidity">Dew point</a>). ఆవిరి ఎక్కడ, ఏ రూపంలో మారుతుంది అనేదాన్ని బట్టి ఈ రూపాలను మూడు గుంపులుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>గుంపు</th>
+<th>రూపాలు</th>
+<th>ఎక్కడ ఏర్పడుతుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. ఉపరితలం మీద చేరేవి</strong></td>
+<td>Dew, Frost (Hoar frost), Frozen dew, Glaze</td>
+<td>చల్లని నేల, గడ్డి, ఆకులు, తీగల మీద</td>
+</tr>
+<tr>
+<td><strong>2. గాలిలో తేలేవి</strong></td>
+<td>Fog, Mist, Smog, Haze</td>
+<td>నేల దగ్గరి గాలిలోనే; కింద పడవు</td>
+</tr>
+<tr>
+<td><strong>3. మేఘం నుంచి పడేవి</strong></td>
+<td>Snow, Sleet, Hail, Virga</td>
+<td>మేఘం నుంచి కిందికి</td>
+</tr>
+</tbody>
+</table></div>
+<h3>ఉపరితలం మీద: Dew, Frost, Glaze</h3>
+<p>రాత్రి నేల, గడ్డి, ఆకులు వేడిని కోల్పోయి చల్లబడతాయి. వాటిని తాకిన గాలి Dew point కంటే చల్లబడితే ఆవిరి చిన్న నీటి బిందువులుగా వాటి మీదే చేరుతుంది; ఆ బిందువులే Dew (మంచు బిందువులు). నిర్మల ఆకాశం, ప్రశాంత గాలి, ఎక్కువ RH, పొడవైన చల్లని రాత్రి Dew కు అనుకూలం. మేఘాలు లేకపోతే నేల వేడి నేరుగా అంతరిక్షంలోకి పోతుంది, గాలి కదలకపోతే చల్లబడిన పొర కలిసిపోకుండా నేల దగ్గరే ఉంటుంది; అందుకే అలాంటి రాత్రుల్లో గడ్డి త్వరగా Dew point కంటే కిందికి చల్లబడుతుంది.</p>
+<p>ఉపరితలం 0 °C కంటే చల్లగా ఉంటే ఆవిరి నీరుగా మారకుండా నేరుగా Ice స్ఫటికాలుగా అంటుకుంటుంది. ఈ మార్పును Deposition అంటారు; ఫలితం Frost (తుషారం). తెల్లని ముళ్ల లాంటి ఆ స్ఫటికాలను Hoar frost అంటారు; తెలుగు పుస్తకాలు దీన్ని శ్వేత తుహినం (White frost) అంటాయి. ముందు ద్రవ Dew గా ఏర్పడి, తర్వాత గడ్డకట్టిన బిందువులు Frost కావు; వాటిని Frozen dew అంటారు. రెండింటి తేడా దారిలోనే: Frost ఆవిరి నుంచి నేరుగా Ice, Frozen dew నీటి నుంచి Ice.</p>
+<p>వాతావరణ కేంద్రం గాలి ఉష్ణోగ్రతను సుమారు 1.5 m ఎత్తులో కొలుస్తుంది. ఆ ఎత్తులో గాలి 0 °C కంటే ఎక్కువ ఉన్నా, నేల మీద గడ్డి, ఆకులు 0 °C కంటే చల్లబడి Ground frost ఏర్పడవచ్చు.</p>
+<p>Glaze వేరే దారిలో వస్తుంది. Supercooled (0 °C కంటే చల్లగా ఉన్నా ఇంకా ద్రవంగానే ఉన్న) వర్షపు చుక్కలు లేదా చినుకులు చల్లని రోడ్డు, తీగలు, చెట్లను తాకగానే గడ్డకట్టి గాజు లాంటి పారదర్శక Ice పొర వేస్తాయి; ఆ పొరే Glaze. Hoar frost ఆవిరి నుంచి పెరిగిన స్ఫటికాలు, Glaze ద్రవం గడ్డకట్టిన పూత.</p>
+<h3>గాలిలో తేలేవి: Fog, Mist, Smog, Haze</h3>
+<p>నేల దగ్గర గాలే Dew point కంటే చల్లబడితే బిందువులు ఉపరితలం మీద కాకుండా గాలిలోనే తేలుతాయి. ఎంత దూరం కనిపిస్తుంది (Visibility) అనేదాన్ని బట్టి WMO పేరు పెడుతుంది: Visibility 1 km కంటే తక్కువ అయితే Fog (పొగమంచు); 1 km లేదా అంతకంటే ఎక్కువ, కొన్ని km వరకు అయితే Mist (పలుచని పొగమంచు). Fog లో బిందువులు ఎక్కువ, అందుకే తక్కువ దూరమే కనిపిస్తుంది. కొన్ని పాఠ్యపుస్తకాలు Mist కు "1–2 km" అని ఇస్తాయి; WMO హద్దు 1 km.</p>
+<p>Fog బిందువులు గాలిలో తేలుతూనే ఉంటాయి, కింద పడవు; కాబట్టి Fog అవపాతం (Precipitation) కాదు. Fog, Stratus మేఘం ఒకే రకమైన బిందువుల పొర; పొర నేలను తాకుతూ ఉంటే Fog, అడుగు నేల పైన ఉంటే Stratus (<a href="#clouds">Stratus</a>).</p>
+<p>గాలి ఎలా చల్లబడిందో దాన్ని బట్టి Fog కు పేర్లు ఉన్నాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Fog రకం</th>
+<th>గాలి ఎలా చల్లబడుతుంది</th>
+<th>ఉదాహరణ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Radiation fog</strong></td>
+<td>స్పష్టమైన చలికాలపు రాత్రి నేల వేడిని కోల్పోయి, దగ్గరి గాలిని చల్లబరుస్తుంది</td>
+<td>డిసెంబర్–జనవరి ఉత్తర భారత మైదానాలు</td>
+</tr>
+<tr>
+<td><strong>Advection fog</strong></td>
+<td>వెచ్చని తేమ గాలి చల్లని నేల లేదా చల్లని సముద్రం మీదకు అడ్డంగా కదిలి చల్లబడుతుంది</td>
+<td>Grand Banks (<a href="/learn/geography/g2/9/notes#laurentian">పాఠం 9: Laurentian</a>)</td>
+</tr>
+<tr>
+<td><strong>Upslope fog</strong></td>
+<td>కొండ వాలు ఎక్కుతూ గాలి వ్యాకోచించి చల్లబడుతుంది</td>
+<td>కొండ వాలులు</td>
+</tr>
+<tr>
+<td><strong>Frontal fog</strong></td>
+<td>Front దగ్గర వెచ్చని వాన చుక్కలు కింది చల్లని గాలిలో ఆవిరై దాన్ని Saturate చేస్తాయి</td>
+<td>Warm front ముందు</td>
+</tr>
+<tr>
+<td><strong>Steam fog</strong></td>
+<td>చల్లని గాలి వెచ్చని నీటి మీదకు వస్తే ఆవిరి పొగలా లేస్తుంది</td>
+<td>చలికాలంలో సరస్సులు</td>
+</tr>
+</tbody>
+</table></div>
+<p>Smog అనే పదం Smoke (పొగ) + Fog కలిపి 1905 ప్రాంతంలో పుట్టింది. డిసెంబర్ 1952 London Great Smog లో బొగ్గు పొగ, Fog కలిసి కొన్ని వేల మంది చనిపోయారు. ఇప్పటి నగరాల్లో ఇంకో రకం ఉంది: Photochemical smog. వాహనాల పొగలోని Nitrogen oxides (NOx), Hydrocarbons ఎండలో Sunlight తో చర్య జరిపి నేల దగ్గర Ozone, ఇతర హానికర వాయువులను తయారు చేస్తాయి. చలికాలం Delhi పొగ మాత్రం ప్రధానంగా దుమ్ము, పొగ కణాలు (Particulate matter) Fog తో కలిసినది.</p>
+<p>Haze లో బిందువులు ఉండవు. చాలా సూక్ష్మమైన పొడి కణాలు (దుమ్ము, పొగ, ఉప్పు) గాలిలో తేలుతూ ఆకాశాన్ని మసకబార్చడాన్నే Haze అంటారు.</p>
+<h3>మేఘం నుంచి పడేవి: Snow, Sleet, Hail, Virga</h3>
+<p>వర్షం ఎలా తయారవుతుందో <a href="#precipitation">తర్వాతి section</a> లో; ఇక్కడ మంచు రూపాలు, నేలను చేరని వాన.</p>
+<p>మేఘంలోని Ice స్ఫటికాలు ఒకదానికొకటి అంటుకుని Snowflakes గా పడటమే Snow (మంచు). Snow నేలను చేరాలంటే నేల దగ్గర గాలి 0 °C కంటే తక్కువే ఉండాలనే నియమం లేదు; గాలి కొంచెం ఎక్కువ (సుమారు 1–2 °C) ఉన్నా Snowflakes పూర్తిగా కరగకముందే నేలను చేరవచ్చు.</p>
+<p>Sleet అనే పదానికి రెండు అర్థాలు. US లో Sleet అంటే Ice pellets: పై పొరలో కరిగిన చుక్క కింది చల్లని పొరలో మళ్లీ గడ్డకట్టి చిన్న Ice గుళికగా పడుతుంది. Britain లో, భారత పుస్తకాల్లో Sleet అంటే వర్షం, మంచు కలిసి పడటం. రెండు సందర్భాల్లోనూ రోడ్లు జారి ప్రమాదాలు జరుగుతాయి.</p>
+<p>Hail (వడగళ్లు) బలమైన Cumulonimbus లోనే పెరుగుతాయి. ఆ మేఘంలో వేగంగా పైకి లేచే గాలి ప్రవాహం (Updraft) ఒక Ice ముక్కను మళ్లీ మళ్లీ పైకి ఎత్తుతుంది; ప్రతిసారీ Supercooled బిందువులు ముక్క మీద గడ్డకట్టి కొత్త పొర చేరుతుంది. ఉల్లిపాయ పొరల్లా పెరిగిన ముక్క Updraft మోయలేనంత బరువైనప్పుడు కిందపడుతుంది. మన దగ్గర ఏప్రిల్–మే ఉరుముల వానలో పడే వడగళ్లు ఇవే.</p>
+<p>Virga అంటే మేఘం నుంచి పడిన చుక్కలు లేదా స్ఫటికాలు కింది పొడి గాలిలో ఆవిరై (స్ఫటికాలు అయితే నీరు కాకుండానే నేరుగా ఆవిరిగా మారి) నేలను చేరకపోవడం. చుక్కలు ఆవిరయ్యేటప్పుడు చుట్టూ ఉన్న గాలి వేడి కోల్పోయి చల్లబడి, బరువై, వేగంగా కిందికి దూకుతుంది. దాని వల్ల Microburst (నేలను బలంగా ఢీకొనే ఆకస్మిక కిందిగాలి) రావచ్చు; తక్కువ ఎత్తులో ఎగిరే విమానాలకు Microburst ప్రమాదం.</p>
+<h2 id="clouds">మేఘాలు ఎన్ని రకాలు? ఆకాశం చూసి వాతావరణం చెప్పగలమా?</h2>
+<p>మన పెద్దలు ఆకాశం చూసి "వాన వస్తుంది" అనేవారు. మేఘం ఎంత ఎత్తులో, ఏ ఆకారంలో ఉందో చూస్తే గాలి ఎలా కదులుతోందో తెలుస్తుంది.</p>
+<p>గాలి పైకి లేచి Dew point కంటే చల్లబడితే ఆవిరి చిన్న నీటి బిందువులుగా లేదా Ice స్ఫటికాలుగా మారుతుంది. అవి చాలా చిన్నవి కాబట్టి గాలిలోనే తేలుతాయి. ఇలా తేలుతున్న నీటి బిందువులు, Ice స్ఫటికాలు లేదా రెండింటి కనిపించే గుంపే Cloud (మేఘం). మేఘం అడుగు (Cloud base) ఎత్తును Ceilometer (సీలోమీటర్) కొలుస్తుంది; Ceilometer పైకి Laser కాంతి పంపి, మేఘం అడుగు నుంచి తిరిగి వచ్చే సమయంతో ఎత్తు లెక్కిస్తుంది.</p>
+<h3>పేర్లు, ఎత్తు కుటుంబాలు</h3>
+<p>మేఘాలకు లాటిన్ పేర్లతో మొదటి వర్గీకరణ ఇచ్చింది ఇంగ్లాండ్‌కు చెందిన Luke Howard (1803). పేర్లు నాలుగు లాటిన్ మూల పదాలతో తయారవుతాయి: Cirrus = వెంట్రుక పోగు, Stratus = పొర, Cumulus = కుప్ప, Nimbus = వర్షం ఇచ్చేది; మధ్య ఎత్తు మేఘాలకు "Alto" చేరుతుంది. ఈ రోజు WMO International Cloud Atlas మేఘాలను 10 ప్రధాన రకాలుగా (Genera) గుర్తిస్తుంది. ఎత్తును బట్టి ఈ పది రకాలను నాలుగు కుటుంబాలుగా విభజిస్తారు (ఎత్తులు సమశీతోష్ణ మండలానికి, WMO):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కుటుంబం</th>
+<th>ఎత్తు (Temperate)</th>
+<th>Genus</th>
+<th>ఎలా కనిపిస్తుంది</th>
+<th>వాతావరణం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High (ఎత్తైన)</strong></td>
+<td>సుమారు 5–13 km</td>
+<td>Cirrus (Ci)</td>
+<td>తెల్లని పట్టు (Silky) దారాల్లాంటి పోగులు, కొక్కేలు</td>
+<td>వర్షం నేలకు చేరదు</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Cirrostratus (Cs)</td>
+<td>పలుచని పాల వంటి (Milky) తెల్లని తెర; సూర్యుడు, చంద్రుడి చుట్టూ Halo</td>
+<td>Warm front ముందు రావచ్చు</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Cirrocumulus (Cc)</td>
+<td>చిన్న తెల్లని గోళాకార గింజలు, అలలు; నీడ ఉండదు</td>
+<td>Mackerel sky</td>
+</tr>
+<tr>
+<td><strong>Middle (మధ్య)</strong></td>
+<td>సుమారు 2–7 km</td>
+<td>Altostratus (As)</td>
+<td>బూడిద లేదా నీలి బూడిద షీట్; పలుచగా ఉంటే సూర్యుడు మసకగా</td>
+<td>మందమై Nimbostratus అవుతుంది</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Altocumulus (Ac)</td>
+<td>గుండ్రటి ముద్దలు, వరుసలు, కొంచెం నీడ; Corona</td>
+<td>Castellanus అయితే అస్థిరత</td>
+</tr>
+<tr>
+<td><strong>Low (దిగువ)</strong></td>
+<td>సుమారు 0–2 km</td>
+<td>Stratocumulus (Sc)</td>
+<td>దిగువన ముద్దలు, చుట్టలు (Rolls)</td>
+<td>ఎక్కువగా పొడి, కొన్నిసార్లు చిరుజల్లు</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Stratus (St)</td>
+<td>ఒకే రకమైన బూడిద పొర</td>
+<td>చినుకులు (Drizzle)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Nimbostratus (Ns)</td>
+<td>మందమైన, చీకటి, ఆకారం లేని పొర</td>
+<td>ఎడతెరిపి లేని వర్షం లేదా మంచు</td>
+</tr>
+<tr>
+<td><strong>Vertical (నిలువుగా పెరిగేవి)</strong></td>
+<td>అడుగు దిగువన, పైభాగం ఎత్తైన స్థాయి వరకు</td>
+<td>Cumulus (Cu)</td>
+<td>చదునైన, కొంచెం చీకటి అడుగు; స్పష్టమైన అంచు; కాలీఫ్లవర్ లాంటి పైభాగం</td>
+<td>ఎండ వాతావరణం; పెరిగితే జల్లులు</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Cumulonimbus (Cb)</td>
+<td>పర్వతంలా ఎత్తైన మేఘం, పైన దాగలి (Anvil)</td>
+<td>ఉరుములు, మెరుపులు, వడగళ్లు, ఈదురుగాలి</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఈ ఎత్తు పట్టీలు స్థిరమైన గీతలు కావు. ఉష్ణమండలంలో Troposphere ఎత్తుగా ఉంటుంది కాబట్టి పట్టీలు పైకి జరుగుతాయి; ధ్రువాల దగ్గర కిందికి దిగుతాయి. పాఠ్యపుస్తకాలు ఇచ్చే "2 km లోపు, 2–6 km, 6–12 km" పట్టీలు కూడా సమశీతోష్ణ మండలానికి బోధన కోసం చెప్పే సుమారు విలువలే. Cumulus, Cumulonimbus అడుగు దిగువన ఉన్నా పైభాగం ఎత్తైన స్థాయి వరకు పెరుగుతుంది; అందుకే ఈ రెండు మేఘాలను ఏ ఒక్క పట్టీకీ పరిమితం చేయకుండా Vertical development కుటుంబంగా విడిగా చెబుతారు. కొన్ని పాత పుస్తకాల్లో మేఘాలు "9 రకాలు" అని ఉంటుంది; WMO గుర్తించేవి 10.</p>
+<h3>ఎత్తైన, మధ్య మేఘాలు</h3>
+<p>ఎత్తైన మూడు మేఘాలు 5 km పైన, సాధారణంగా −20 °C కంటే చల్లని గాలిలో ఉంటాయి; అందుకే అవి ప్రధానంగా Ice స్ఫటికాలతో ఉంటాయి. వంగిన కొక్కేల్లా ఉండే Cirrus ను "Mare's tails" (గుర్రపు తోక మేఘాలు) అంటారు. Cirrus నుంచి పడే స్ఫటికాలు కింది గాలిలో Virga గా ఆవిరైపోతాయి; Cirrus నుంచి వర్షం నేలను చేరడం చాలా అరుదు.</p>
+<p>Cirrostratus లోని Ice స్ఫటికాలు సూర్య–చంద్రుల వెలుగును వంచి, వాటి చుట్టూ పెద్ద వెలుగు వలయం (Halo) చూపిస్తాయి. Halo తరచుగా Warm front దగ్గరపడుతోందని సూచిస్తుంది (<a href="#fronts">Fronts</a>), కానీ వెంటనే వర్షం వస్తుందని హామీ కాదు. Warm front దగ్గరవుతున్న కొద్దీ Cirrostratus కింద Altostratus వస్తుంది; ఆ Altostratus ఇంకా మందమై, కిందికి దిగి Nimbostratus అవుతుంది.</p>
+<p>Cirrocumulus లో చిన్న గింజలు చేప పొలుసుల్లా వరుసలుగా పరుచుకుంటాయి; ఈ ఆకాశాన్ని Mackerel sky (చేప పొలుసుల ఆకాశం) అంటారు. Mackerel sky Cirrocumulus లో ఎక్కువ; Altocumulus తో కూడా అలాంటి నమూనా రావచ్చు. Altocumulus ముద్దలు పెద్దవి, నీడ ఉంటుంది; Altocumulus లోని నీటి బిందువులు సూర్య–చంద్రులకు దగ్గరగా చిన్న రంగు వలయం (Corona) చూపిస్తాయి. Altocumulus పైభాగాలు కోట బురుజుల్లా లేస్తే (Castellanus) మధ్య స్థాయిలో గాలి అస్థిరంగా ఉందని అర్థం; తర్వాత ఉరుముల వాన రావచ్చు.</p>
+<h3>దిగువ మేఘాలు: Stratus, Nimbostratus</h3>
+<p>తేమ గాలి నెమ్మదిగా చల్లబడినప్పుడు, లేదా మెల్లగా పైకి లేచినప్పుడు, తీరాలు, కొండల మీద కొన్ని వందల మీటర్ల (సుమారు 300 m) ఎత్తులో Stratus ఏర్పడుతుంది. Stratus ఒకే రకమైన బూడిద పొర; దాని నుంచి చినుకులు (Drizzle) లేదా చాలా తేలికపాటి వాన మాత్రమే పడుతుంది.</p>
+<p>గంటల తరబడి ఆగకుండా కురిసే స్థిర వర్షం Nimbostratus నుంచి వస్తుంది, Cumulonimbus నుంచి కాదు. Nimbostratus విశాల ప్రాంతంలో నెమ్మదిగా పైకి లేచే గాలిలో ఏర్పడుతుంది, కాబట్టి వర్షం నెమ్మదిగా, ఎక్కువసేపు, విశాలంగా పడుతుంది. Cumulonimbus వేగమైన, ఇరుకైన Updraft లో ఏర్పడుతుంది, కాబట్టి దాని వర్షం భారీగా, కొద్దిసేపు, చిన్న ప్రాంతంలో పడుతుంది.</p>
+<h3>Cumulus నుంచి Cumulonimbus వరకు</h3>
+<p>ఎండ రోజు కనిపించే "దూది మేఘాలు" Cumulus. ప్రతి Cumulus హానిలేనిది కాదు: గాలి అస్థిరంగా ఉంటే Cumulus పైకి పెరిగి Cumulus congestus అయి జల్లులు ఇస్తుంది; ఇంకా పెరిగితే Cumulonimbus అవుతుంది.</p>
+<p>Cumulonimbus (Cb) లోతైన Convection మేఘం. Cb లో వేడి తేమ గాలి బలమైన Updraft లో పైకి లేచి, వ్యాకోచించి, చల్లబడుతుంది. Condensation లో విడుదలయ్యే Latent heat ఆ గాలిని ఇంకా తేలిక చేసి పైకి నెడుతుంది (<a href="#humidity">Latent heat</a>). పరిపక్వ Cb లో పైకి లేచే Updraft, వర్షంతో కిందికి దిగే గాలి (Downdraft) రెండూ ఉంటాయి. Cb పైభాగం స్థిరమైన Tropopause (Troposphere పై హద్దు) ను తాకి ఆగిపోతుంది; అక్కడి బలమైన గాలులు దాన్ని పక్కలకు లాగి కమ్మరి దాగలి (Anvil) ఆకారం ఇస్తాయి (<a href="#layers">Tropopause</a>). WMO ఈ Anvil ను "Incus" అంటుంది. Cb ఎత్తుకు ఒక స్థిర పరిమితి (ఉదా: 7 km) లేదు; Tropopause ఎత్తును బట్టి అక్షాంశం, కాలంతో మారుతుంది. ఉష్ణమండలంలో Cb పైభాగం 12–15 km దాటుతుంది. Cb ఉరుములు, మెరుపులు, భారీ జల్లులు, ఈదురుగాలులు, వడగళ్లు ఇస్తుంది. "King of clouds" (మేఘాల రాజు) అనేది Cb కు ముద్దుపేరు, WMO పదం కాదు.</p>
+<p>ఎండ వల్ల వచ్చే Cb మధ్యాహ్నం తర్వాత, సాయంత్రం ఎక్కువ. కానీ Cb సాయంత్రం మాత్రమే పుడుతుందనేది తప్పు: Fronts, గాలుల కలయిక (Convergence), కొండలు గాలిని ఎత్తినప్పుడు రోజులో ఏ సమయంలోనైనా Cb ఏర్పడుతుంది.</p>
+<p>కొండల మీద ఒక బలమైన Cb కదలకుండా నిలిచిపోతే చిన్న ప్రాంతంలో అతి భారీ వర్షం పడుతుంది. సుమారు 20–30 km² ప్రాంతంలో గంటకు 100 mm (10 cm) లేదా అంతకంటే ఎక్కువ వర్షం పడితే IMD దాన్ని Cloudburst (కుంభవృష్టి) అంటుంది; Uttarakhand, Himachal Pradesh లో Cloudbursts ఎక్కువ.</p>
+<h3>Troposphere పైన మేఘాలు</h3>
+<p>దాదాపు అన్ని మేఘాలు Troposphere లోనే ఉంటాయి. అధిక అక్షాంశాల్లో అరుదుగా రెండు రకాలు అంతకంటే పైన కనిపిస్తాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>మేఘం</th>
+<th>పొర, ఎత్తు</th>
+<th>ఎప్పుడు, ఎక్కడ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nacreous clouds (Polar stratospheric clouds, PSC)</strong></td>
+<td>Stratosphere, సుమారు 15–25 km</td>
+<td>ధ్రువ శీతాకాలం; Antarctica లో, Arctic లో కూడా</td>
+</tr>
+<tr>
+<td><strong>Noctilucent clouds (రాత్రి మెరిసే మేఘాలు)</strong></td>
+<td>Mesosphere పై భాగం, Mesopause దగ్గర, సుమారు 76–85 km</td>
+<td>వేసవిలో 50°–70° అక్షాంశాల్లో, సూర్యాస్తమయం తర్వాత</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nacreous clouds శాస్త్రీయ పేరు Polar stratospheric clouds (PSC). ముత్యపు చిప్పలా రంగులు మెరుస్తాయి కాబట్టి Nacreous అనే పేరు. PSC ఉపరితలం మీద జరిగే రసాయన చర్యలు Chlorine ను చురుకైన రూపంలోకి మారుస్తాయి (Chlorine activation). వసంతంలో సూర్యకాంతి రాగానే ఆ Chlorine Ozone ను నాశనం చేస్తుంది. Antarctic Ozone hole కు PSC ఒక ముఖ్య కారణం (<a href="#layers">Ozone పొర</a>).</p>
+<p>Noctilucent clouds Mesosphere లోని అతి చల్లని గాలిలో ఏర్పడే Ice మేఘాలు; కొద్దిపాటి ఆవిరి, ఉల్కల నుంచి మిగిలిన సూక్ష్మ ధూళి (Meteor dust) చుట్టూ Ice గా గడ్డకడుతుంది. కింద నేల చీకటిలో ఉన్నా అంత ఎత్తులో ఇంకా సూర్యకాంతి పడుతుంది; ఆ కాంతిని పరావర్తనం చేయడం వల్లే ఈ మేఘాలు మెరుస్తాయి, సొంతంగా వెలుగు ఇవ్వవు. Noctilucent clouds Cumulonimbus లో ఒక రకం కావు.</p>
+<h2 id="precipitation">వర్షం ఎలా పడుతుంది? మూడు రకాల వర్షపాతం</h2>
+<p>మేఘం నుంచి ఏ రూపంలో నీరు నేలను చేరినా దాన్ని Precipitation (అవపాతం) అంటారు. రూపాలు: వర్షం (Rain), చినుకులు (Drizzle), గడ్డకట్టే వర్షం (Freezing rain), Sleet, మంచు (Snow), వడగళ్లు (Hail) (<a href="#condensation-forms">మంచు రూపాలు</a>). Fog, Dew పై నుంచి పడవు; అవి అవపాతం కావు. కురిసిన వర్షాన్ని Rain gauge (వర్షమాపకం; Pluviometer, Ombrometer అని కూడా) తో mm లో కొలుస్తారు.</p>
+<h3>మేఘం ఉన్న ప్రతిసారీ వర్షం ఎందుకు పడదు?</h3>
+<p>మేఘ బిందువు సుమారు 0.01–0.02 mm మాత్రమే; కొద్దిపాటి పైకి లేచే గాలి కూడా దాన్ని పైకి ఎత్తి ఉంచుతుంది. వర్షం పడాలంటే ఒక్కో చుక్క లక్షల మేఘ బిందువులంత పెరగాలి. పెరిగినా, కింద గాలి పొడిగా ఉంటే చుక్క మధ్యలోనే ఆవిరైపోవచ్చు (<a href="#condensation-forms">Virga</a>). బిందువు పుట్టడం, పెరగడం మూడు దశల్లో జరుగుతుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>దశ</th>
+<th>ఏమి జరుగుతుంది</th>
+<th>ఎక్కడ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Condensation nuclei</strong></td>
+<td>ఆవిరి దుమ్ము, సముద్రపు ఉప్పు, పొగ వంటి సూక్ష్మ కణాల చుట్టూ అంటుకుని బిందువు అవుతుంది</td>
+<td>అన్ని మేఘాలు</td>
+</tr>
+<tr>
+<td><strong>2. Collision–coalescence</strong></td>
+<td>పెద్ద బిందువు కిందికి కదులుతూ చిన్నవాటిని ఢీకొని కలుపుకుంటుంది</td>
+<td>0 °C కంటే వెచ్చని మేఘాలు</td>
+</tr>
+<tr>
+<td><strong>3. Ice-crystal (Bergeron) process</strong></td>
+<td>ఆవిరి Supercooled బిందువుల నుంచి Ice స్ఫటికాల వైపు చేరి, స్ఫటికాలు త్వరగా పెరుగుతాయి</td>
+<td>0 °C కంటే చల్లని మేఘాలు</td>
+</tr>
+</tbody>
+</table></div>
+<p>Condensation nuclei ని తెలుగులో సాంద్రీకరణ కేంద్రకాలు అంటారు (పుస్తకంలో "గ్రహణ శీలకాలు"). Bergeron process లో పెరిగిన స్ఫటికాలు కిందికి పడుతూ వెచ్చని పొర దాటితే కరిగి వర్షం అవుతాయి.</p>
+<p>0.5 mm కంటే చిన్న చుక్కలు చినుకులు (Drizzle); అంతకంటే పెద్దవి వానచుక్కలు, సాధారణంగా 0.5 mm నుంచి 5 mm వరకు. పడే చుక్కను Gravity కిందికి లాగుతుంది, గాలి అడ్డుకుంటుంది; రెండూ సమానమైనప్పుడు వచ్చే స్థిర వేగాన్ని Terminal velocity అంటారు. చుక్క పరిమాణాన్ని బట్టి వేగం మారుతుంది: పెద్ద చుక్కలు సుమారు 9 m/s (గంటకు సుమారు 30 km) వేగంతో పడతాయి; చినుకులు చాలా నెమ్మదిగా పడతాయి.</p>
+<h3>గాలి పైకి లేస్తే ఎందుకు చల్లబడుతుంది?</h3>
+<p>సైకిల్ టైరు నుంచి గాలి వదిలితే వాల్వ్ దగ్గర చల్లగా తగులుతుంది; బయటికి వచ్చిన గాలి వ్యాకోచిస్తూ తన శక్తిని ఖర్చు చేసి చల్లబడుతుంది. పైకి లేచే గాలి ముద్ద (Parcel) కూడా అంతే: పైన పీడనం తక్కువ, కాబట్టి Parcel వ్యాకోచించి చల్లబడుతుంది. బయటి నుంచి వేడి తీసుకోకుండా, ఇవ్వకుండా ఇలా చల్లబడటాన్ని Adiabatic cooling అంటారు (పుస్తకంలో స్థిరోష్ణక శీతలీకరణం). పొడి గాలి సుమారు ప్రతి km కు 10 °C చల్లబడుతుంది; Saturate అయిన గాలి సుమారు 5–6 °C/km మాత్రమే, ఎందుకంటే Condensation లో విడుదలయ్యే Latent heat కొంత వేడిని తిరిగి ఇస్తుంది. కిందికి దిగే గాలి కుంచించుకుపోయి (Compress) వేడెక్కుతుంది; దాన్ని Adiabatic warming అంటారు. నిశ్చల గాలిలో ఎత్తుకు ఉష్ణోగ్రత తగ్గే Lapse rate వేరే విషయం (<a href="#temperature-distribution">Lapse rate</a>).</p>
+<h3>వర్షపాతం మూడు రకాలు</h3>
+<p>వర్షం పడాలంటే గాలి పైకి లేవాలి. గాలిని ఏది పైకి ఎత్తుతుంది అనేదాన్ని బట్టి వర్షపాతాన్ని మూడు రకాలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రకం</th>
+<th>గాలిని ఎత్తేది</th>
+<th>ఎలాంటి వర్షం</th>
+<th>ఉదాహరణ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Convectional rainfall (సంవహన వర్షపాతం)</strong></td>
+<td>ఎండకు వేడెక్కిన నేల</td>
+<td>ఉరుములతో కొద్దిసేపు భారీ జల్లులు</td>
+<td>భూమధ్యరేఖ ప్రాంతం; మన వేసవి, రుతుపవనాలకు ముందు ఉరుముల వానలు</td>
+</tr>
+<tr>
+<td><strong>2. Orographic rainfall (పర్వతీయ వర్షపాతం)</strong></td>
+<td>గాలికి అడ్డంగా ఉన్న పర్వతం</td>
+<td>Windward వాలు మీద భారీ వర్షం; Leeward వైపు వర్షచ్ఛాయ</td>
+<td>పశ్చిమ కనుమల పశ్చిమ వాలు</td>
+</tr>
+<tr>
+<td><strong>3. Cyclonic / Frontal rainfall (చక్రవాత వర్షం)</strong></td>
+<td>అల్పపీడనం వైపు గాలుల కలయిక; Fronts</td>
+<td>విశాల ప్రాంతంలో రోజుల తరబడి</td>
+<td>ఆంధ్ర తీరంలో అక్టోబర్–డిసెంబర్ తుఫాను వర్షాలు</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Convectional rainfall.</strong> ఎండ నేలను బాగా వేడెక్కిస్తుంది. నేల దగ్గర గాలి వేడెక్కి, తేలికై, పైకి లేస్తుంది. పైకి వెళ్తూ Adiabatic గా చల్లబడి, Saturate అయి, Cumulus గా, తర్వాత Cumulonimbus గా పెరిగి ఉరుములతో జల్లులు కురిపిస్తుంది. క్రమం: నేల వేడెక్కడం → గాలి పైకి లేవడం → చల్లబడటం → Saturation → జల్లులు. భూమధ్యరేఖ ప్రాంతంలో బలమైన ఎండ, ఎక్కువ తేమ, అస్థిర గాలి మూడూ ఉంటాయి కాబట్టి అక్కడ Convectional జల్లులు దాదాపు రోజూ వస్తాయి (<a href="/learn/geography/g2/9/notes#equatorial">పాఠం 9: భూమధ్యరేఖా శీతోష్ణస్థితి</a>). ఉదయం నుంచి నేల వేడెక్కుతూ గాలి పైకి లేవడానికి, చల్లబడి మేఘంగా పెరగడానికి కొన్ని గంటలు పడుతుంది; అందుకే ఈ వానలు సాధారణంగా మధ్యాహ్నం తర్వాత ఉరుములతో వస్తాయి. మధ్యాహ్నం వర్షం సాధారణ నమూనా మాత్రమే; ప్రతిరోజూ సరిగ్గా ఒకే సమయానికి వర్షం పడుతుందనే నియమం లేదు.</p>
+<p><strong>Orographic rainfall.</strong> తేమ గాలికి అడ్డంగా పర్వతం ఉంటే గాలి వాలు ఎక్కాల్సి వస్తుంది. ఎక్కుతూ వ్యాకోచించి Adiabatic గా చల్లబడి, మేఘాలు ఏర్పడి, గాలి వీచే వైపు వాలు (Windward side) మీద భారీ వర్షం కురుస్తుంది. పర్వతం దాటిన గాలి అవతలి వాలు (Leeward side) మీద కిందికి దిగుతుంది. దిగుతూ కుంచించుకుపోయి వేడెక్కుతుంది, RH పడిపోతుంది, మిగిలిన మేఘాలు కూడా ఆవిరైపోతాయి. ఈ పొడి ప్రాంతాన్నే Rain shadow area (వర్షచ్ఛాయా ప్రాంతం) అంటారు. వర్షచ్ఛాయ పొడిగా ఉండటానికి గాలి తేమను Windward వైపే కోల్పోవడం ఒక కారణం; ముఖ్య కారణం మాత్రం దిగే గాలి వేడెక్కి RH తగ్గడం. Leeward వైపు ఇలా గాలి వేడెక్కడమే Foehn, Chinook లాంటి వేడి పొడి గాలులకు కారణం (<a href="#local-winds">స్థానిక పవనాలు</a>). మన ఉదాహరణ: నైరుతి రుతుపవనాలు పశ్చిమ కనుమల పశ్చిమ వాలు మీద భారీ వర్షం కురిపిస్తాయి; కనుమలు దాటి దక్కన్ మీదకు దిగిన గాలి పొడిగా ఉంటుంది, కాబట్టి కనుమలకు తూర్పున ఉన్న ప్రాంతాలు వర్షచ్ఛాయా ప్రాంతాలు. రాయలసీమ వర్షచ్ఛాయ గురించి <a href="/learn/geography/g2/9/notes#koppen-india">పాఠం 9: భారత శీతోష్ణ మండలాలు</a> లో.</p>
+<p><strong>Cyclonic rainfall.</strong> అల్పపీడన కేంద్రం వైపు అన్ని దిక్కుల నుంచి గాలి చేరుతుంది (Convergence). చేరిన గాలి పైకి లేచి, చల్లబడి, Condensation జరిగి వర్షం కురుస్తుంది. ఈ వర్షం ఇచ్చే వ్యవస్థలు రెండు రకాలు: ఉష్ణమండల చక్రవాతాలు (<a href="#tropical-cyclones">వివరంగా</a>), సమశీతోష్ణ (Extratropical) చక్రవాతాలు (<a href="#temperate-cyclones">వివరంగా</a>). వెచ్చని గాలి చల్లని గాలి మీదకు ఎక్కే Fronts వెంట పడే వర్షాన్ని Frontal rainfall అంటారు (<a href="#fronts">Fronts</a>).</p>
+<p>ఈ మూడు రకాలు ఒకదాన్నొకటి మినహాయించవు. మధ్య అక్షాంశాల ఖండాల లోపల (ఉదా: US మైదానాలు) Convection, Fronts, చక్రవాతాలు, కొండలు గాలిని ఎత్తడం అన్నీ వేర్వేరు రోజుల్లో పనిచేస్తాయి.</p>
+<h2 id="air-masses">వాయురాశులు (Air masses) అంటే ఏమిటి? cP, mT కోడ్ ఎలా చదవాలి?</h2>
+<p>డిసెంబర్‌లో ఉత్తర భారతంలో వీచే చలిగాలులు Delhi లో పుట్టలేదు. దూరంగా చల్లని ప్రాంతం మీద రోజుల తరబడి నిలిచిన పెద్ద గాలి గుంపు అక్కడి చలిని నింపుకుని కదిలి వచ్చింది. వేల km విస్తీర్ణం ఉండి, అడ్డంగా (Horizontal గా) ఎక్కడ చూసినా ఉష్ణోగ్రత, తేమ దాదాపు ఒకేలా ఉండే అలాంటి పెద్ద గాలి భాగాన్నే Air mass (వాయురాశి) అంటారు. పుస్తకం దీన్ని "సజాతీయం" (Homogeneous) అంటుంది; అంటే ప్రతి చోటా సరిగ్గా ఒకే విలువ అని కాదు, విశాల ప్రాంతంలో లక్షణాలు దాదాపు ఒకేలా ఉంటాయని అర్థం.</p>
+<h3>Source region (ఉద్గమ ప్రాంతం)</h3>
+<p>Air mass పుట్టే ప్రాంతమే Source region. గాలి అక్కడ ఎక్కువ కాలం నిలిచి కింది ఉపరితలం లక్షణాలను పొందుతుంది. మంచి Source region కు మూడు లక్షణాలు: ఉపరితలం విశాలంగా, ఒకే రకంగా ఉండాలి (పెద్ద మంచు మైదానం, ఎడారి, సముద్రం); గాలులు బలహీనంగా, అలజడి తక్కువగా ఉండాలి (సాధారణంగా అధిక పీడన ప్రాంతాలు); గాలి అక్కడ ఎక్కువ రోజులు నిలవాలి. గాలి ఎంత ఎక్కువ కాలం నిలిస్తే అంత ఎక్కువగా ఉపరితలం ఉష్ణోగ్రత, తేమ లక్షణాలు వస్తాయి. ఉదా: Siberia, ఉత్తర Canada, Sahara, ఉష్ణమండల సముద్రాలు.</p>
+<h3>పేర్లు: c, m, P, T, A</h3>
+<p>Air mass కు పేరు పెట్టే అక్షరాల పద్ధతిని Swedish శాస్త్రవేత్త Tor Bergeron 1928 లో ఇచ్చాడు. మొదటి చిన్న అక్షరం ఉపరితలం స్వభావం చెబుతుంది: నేల మీద పుడితే c (continental, ఖండాంతర), సాధారణంగా పొడి; సముద్రం మీద పుడితే m (maritime, సముద్ర), సాధారణంగా తేమ. రెండో పెద్ద అక్షరం ఉష్ణ మూలం, అంటే ఏ అక్షాంశంలో పుట్టిందో చెబుతుంది: P (Polar, ధ్రువ) అధిక అక్షాంశాల చల్లని గాలి; T (Tropical, అయనరేఖా) అల్ప అక్షాంశాల వెచ్చని గాలి; A (Arctic, Antarctic కు AA) ఇంకా ధ్రువానికి దగ్గరగా పుట్టేది, P కంటే ఇంకా చల్లనిది, పొడిది (cA, cP కంటే చల్లగా, పొడిగా ఉంటుంది). కొన్ని పద్ధతుల్లో E (Equatorial, భూమధ్యరేఖా) కూడా వాడతారు; NOAA పరిచయ వర్గీకరణ A, P, T మూడింటినే ప్రధానంగా చూపుతుంది.</p>
+<p>ఈ అక్షరాలు కలిసి Air masses ను నాలుగు ప్రధాన రకాలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కోడ్</th>
+<th>పూర్తి పేరు (పుస్తకం పదం)</th>
+<th>మొదటి లక్షణం</th>
+<th>Source regions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>cP</strong></td>
+<td>Continental Polar (ధ్రువ ఖండాంతర వాయురాశి)</td>
+<td>చల్లని, పొడి</td>
+<td>Canada అంతర్భాగం, Siberia</td>
+</tr>
+<tr>
+<td><strong>mP</strong></td>
+<td>Maritime Polar (ధ్రువ సముద్ర వాయురాశి)</td>
+<td>చల్లని లేదా చల్లబడిన, తేమ</td>
+<td>ఉత్తర Pacific, ఉత్తర Atlantic, దక్షిణ మహాసముద్రం (Southern Ocean)</td>
+</tr>
+<tr>
+<td><strong>cT</strong></td>
+<td>Continental Tropical (అయనరేఖా ఖండాంతర వాయురాశి)</td>
+<td>వేడి, పొడి</td>
+<td>వేడి ఎడారులు: Sahara, నైరుతి USA–ఉత్తర Mexico, Australia ఎడారి, Thar</td>
+</tr>
+<tr>
+<td><strong>mT</strong></td>
+<td>Maritime Tropical (అయనరేఖా సముద్ర వాయురాశి)</td>
+<td>వెచ్చని, తేమ</td>
+<td>ఉష్ణమండల Atlantic, Pacific, హిందూ మహాసముద్రం</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Air mass కదిలితే ఏమవుతుంది? Modification</h3>
+<p>Air mass వెళ్లే దారిని Trajectory (ట్రాజెక్టరీ) అంటారు. దారిలో కింది ఉపరితలంతో వేడి, తేమ మార్చుకుంటూ Air mass లక్షణాలు మారతాయి; ఈ మార్పునే Modification అంటారు. మార్పు మూడు దారుల్లో వస్తుంది: Sensible heat (ఉపరితలం కింది నుంచి వేడెక్కించడం లేదా చల్లబరచడం), Evaporation (సముద్రం మీద తేమ చేరడం), Latent heat విడుదల (మేఘాలు ఏర్పడినప్పుడు). ఉపరితల ఘర్షణ (Friction) ఈ మూడింటిలో లేదు; Friction గాలి వేగాన్ని, అల్లకల్లోల కలయికను (Turbulent mixing) మార్చుతుంది, ఉష్ణోగ్రత, తేమ మార్పుకు ప్రధాన కారణం కాదు.</p>
+<p>కొన్ని ఉదాహరణలు: cP గాలి దక్షిణానికి వెచ్చని నేల మీదకు వస్తే కింది పొరలు వేడెక్కుతాయి కానీ గాలి పొడిగానే ఉంటుంది. చల్లని cP లేదా mP గాలి వెచ్చని సముద్రం మీదకు వస్తే వేడి, తేమ రెండూ పొంది అస్థిరంగా మారుతుంది. cT గాలి సముద్రం దాటితే కొంత తేమ పొందుతుంది. mT లో ఎంత తేమ ఉన్నా గాలి పైకి లేచి చల్లబడితేనే వర్షం; mP నుంచి కూడా వర్షం దాని దారి, కాలం, గాలి పైకి లేవడం మీద ఆధారపడుతుంది. అందుకే ఒక Air mass ఈ రోజు ఇచ్చే వాతావరణం తెలియాలంటే అది ఎక్కడ పుట్టిందో మాత్రమే కాకుండా దాని Trajectory, ప్రయాణ కాలం, ఇప్పుడు కింద ఉన్న ఉపరితలం కూడా చూడాలి.</p>
+<h3>Stability, k–w అక్షరాలు</h3>
+<p>ఒక గాలి ముద్దను కొంచెం పైకి నెట్టామనుకోండి. ఆ ముద్ద చుట్టూ ఉన్న గాలి కంటే చల్లగా, బరువుగా అయితే మళ్లీ కిందికి దిగుతుంది; అలాంటి గాలి Stable (స్థిర). వెచ్చగా, తేలికగా ఉంటే పైకి లేస్తూనే ఉంటుంది; అలాంటి గాలి Unstable (అస్థిర). కింది నుంచి వేడెక్కిన గాలి అస్థిరం, కింది నుంచి చల్లబడిన గాలి స్థిరం; పొయ్యి మీద పాత్రలో కింది నీళ్లు వేడెక్కి పైకి లేచినట్టే. స్థిరత్వాన్ని ప్రధానంగా గాలికి, ఉపరితలానికి మధ్య ఉష్ణోగ్రత తేడా నిర్ణయిస్తుంది; Friction కలయికను మాత్రమే పెంచుతుంది.</p>
+<p>అందుకే Air mass కింది ఉపరితలం కంటే చల్లగా ఉందా, వెచ్చగా ఉందా అనేది మూడో అక్షరం చెబుతుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అక్షరం</th>
+<th>అర్థం</th>
+<th>ఏమవుతుంది</th>
+<th>వాతావరణం</th>
+<th>ఉదాహరణ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>k</strong> (జర్మన్ kalt = చల్లని)</td>
+<td>Air mass కింది ఉపరితలం కంటే చల్లనిది</td>
+<td>ఉపరితలం కింది నుంచి వేడెక్కిస్తుంది → అస్థిరం</td>
+<td>Cumulus, జల్లులు, ఈదురు గాలులు, కల్లోలం</td>
+<td>cPk; వెచ్చని సముద్రం మీది చల్లని mP</td>
+</tr>
+<tr>
+<td><strong>w</strong> (warm)</td>
+<td>Air mass కింది ఉపరితలం కంటే వెచ్చనిది</td>
+<td>ఉపరితలం కింది నుంచి చల్లబరుస్తుంది → నిలువు కలయిక (Vertical mixing) ఆగుతుంది → స్థిరం</td>
+<td>Stratus, Fog, చినుకులు</td>
+<td>cTw, mPw</td>
+</tr>
+</tbody>
+</table></div>
+<p>k అంటే వెచ్చని గాలి కాదు; k గాలి తను చల్లగా ఉండి, కింది వెచ్చని ఉపరితలం వల్ల అస్థిరమవుతుంది. w పరిస్థితిలో చల్లబడిన గాలి కిందే ఉండిపోతుంది; కొన్నిసార్లు Temperature inversion కూడా ఏర్పడుతుంది (<a href="#temperature-distribution">Inversion</a>).</p>
+<p>కోడ్ చదివే క్రమం: ఉపరితలం (c/m) → ఉష్ణ మూలం (P/T/A) → ఉపరితలంతో పోలిక (k/w) → కొన్ని పద్ధతుల్లో చివర స్థిరత్వం u (unstable, అస్థిరం) లేదా s (stable, స్థిరం). ఉదా: cPku = ఉపరితలం కంటే చల్లని, అస్థిరమైన cP. c, m, k, w చిన్న అక్షరాలు, P, T, A పెద్ద అక్షరాలు; కొన్ని పుస్తకాల పటాల్లో K, W పెద్దగా ఉన్నా అర్థం అదే. కోడ్ పొడవుగా ఉన్నంత మాత్రాన ఎక్కువ కచ్చితమైనది కాదు; ప్రతి అక్షరం ఒక విషయమే చెబుతుంది, దాన్ని పరిశీలనలతో కలిపి చదవాలి.</p>
+<p>రెండు వేర్వేరు Air masses కలిసే సరిహద్దునే Front (వాతాగ్రం) అంటారు (<a href="#fronts">Fronts</a>); Front దాటి వెళ్లినప్పుడు ఉష్ణోగ్రత, గాలి దిశ, పీడనం, వర్షం ఒక్కసారిగా మారతాయి. Air masses ఎటు కదలాలో పై గాలి ప్రవాహం, ముఖ్యంగా Jet streams, దారి చూపుతాయి (<a href="#jet-streams">Jet streams</a>).</p>
+<h2 id="fronts">రెండు వాయురాశులు కలిసే చోట ఏమవుతుంది? Fronts</h2>
+<p>నూనె, నీళ్లు ఒక గ్లాసులో వెంటనే కలవవు. గాలిలోనూ చల్లని గాలి బరువైనది (Density ఎక్కువ), వెచ్చని గాలి తేలికైనది. ఉష్ణోగ్రత, తేమ, సాంద్రత వేర్వేరుగా ఉండే రెండు Air masses ఎదురైనప్పుడు సాంద్రత, ఉష్ణోగ్రత తేడాల వల్ల అవి వెంటనే పూర్తిగా కలవవు; వాటి మధ్య ఒక సరిహద్దు పొర ఏర్పడుతుంది.</p>
+<p>రెండు వేర్వేరు Air masses మధ్య ఉండే ఆ మార్పు మండలాన్ని (Transition zone) Front (వాతాగ్రం) అంటారు. పటం మీద Front గీతలా కనిపించినా, నిజానికి Front పొడవు, వెడల్పు, ఎత్తు ఉన్న త్రిమితీయ (3-D) పొర. Front నిలువుగా నిలబడదు; వాలుగా ఉంటుంది. బరువైన చల్లని గాలి కింద చీలిక (Wedge) లాగా దూరుతుంది; తేలికైన వెచ్చని గాలి దాని మీదకు ఎక్కుతుంది. Front కు ఒకే స్థిర వెడల్పు ఉండదు; వాతావరణ వ్యవస్థ రకం, భూభాగం, ఎత్తు, ఏ అంశాన్ని (ఉష్ణోగ్రత, తేమ, గాలి) కొలుస్తున్నాం అనేవాటిని బట్టి కొన్ని km నుంచి వందల km వరకు మారుతుంది.</p>
+<h3>Polar front, ITCZ</h3>
+<p>భూమి మీద అత్యంత ముఖ్యమైన Front Polar front; ధ్రువ ప్రాంతపు చల్లని గాలికి, అయనరేఖా ప్రాంతపు వెచ్చని గాలికి మధ్య సరిహద్దు ఇది. Polar front మీదే సమశీతోష్ణ చక్రవాతాలు పుడతాయి (<a href="#temperate-cyclones">వివరంగా</a>), Polar front పైన Polar jet వీస్తుంది. భూమధ్యరేఖ దగ్గర రెండు అర్ధగోళాల Trade winds కలిసే మండలం ITCZ (Inter-Tropical Convergence Zone) (<a href="#pressure-belts">ITCZ</a>). ITCZ లో కలిసే రెండు గాలులూ వెచ్చని తేమ గాలులే, ఉష్ణోగ్రత తేడా తక్కువ; అందుకే ITCZ ను గాలులు కలిసే మండలం (Convergence belt) అంటాం, రెండు వేర్వేరు Air masses మధ్య సరిహద్దు అయిన సాధారణ Front అనం.</p>
+<h3>నాలుగు రకాల Fronts</h3>
+<p>ఏ గాలి ముందుకు కదులుతోంది అనేదాన్ని బట్టి Fronts ను నాలుగు రకాలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Front</th>
+<th>ఏ గాలి ముందుకు</th>
+<th>వాలు, గాలి పైకి లేవడం</th>
+<th>మేఘాలు, వాతావరణం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cold front (శీతల వాతాగ్రం)</strong></td>
+<td>చల్లని గాలి వెచ్చని గాలిని తోసేస్తుంది</td>
+<td>నిటారు (Steep), వేగంగా</td>
+<td>Cumulonimbus; ఇరుకైన పట్టీలో కొద్దిసేపు భారీ జల్లులు, ఉరుములు; దాటాక ఉష్ణోగ్రత పడిపోతుంది</td>
+</tr>
+<tr>
+<td><strong>Warm front (కవోష్ణ వాతాగ్రం)</strong></td>
+<td>వెచ్చని గాలి వెనక్కి తగ్గే చల్లని గాలి మీదకు ఎక్కుతుంది</td>
+<td>మెల్లని (Gentle), నెమ్మదిగా</td>
+<td>Cirrus → Cirrostratus → Altostratus → Nimbostratus; విశాలంగా గంటల తరబడి స్థిర వర్షం; దాటాక ఉష్ణోగ్రత పెరుగుతుంది</td>
+</tr>
+<tr>
+<td><strong>Stationary front (స్థిర వాతాగ్రం)</strong></td>
+<td>ఏదీ రెండోదాన్ని స్పష్టంగా ఆక్రమించదు</td>
+<td>సరిహద్దు నిలిచి ఉంటుంది లేదా చాలా నెమ్మదిగా కదులుతుంది</td>
+<td>రోజుల తరబడి మేఘాలు, వర్షం</td>
+</tr>
+<tr>
+<td><strong>Occluded front (అధివిష్ట వాతాగ్రం)</strong></td>
+<td>వేగమైన Cold front Warm front ను అందుకుంటుంది</td>
+<td>మధ్యలోని వెచ్చని గాలి (Warm sector) పూర్తిగా నేల నుంచి పైకి</td>
+<td>రెండింటి కలయిక; చక్రవాతం చివరి దశ</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cold front వద్ద బరువైన చల్లని గాలి వెచ్చని గాలి కిందకు చొచ్చుకుపోయి (Undercut) దాన్ని నిటారుగా, వేగంగా పైకి నెడుతుంది. వేగంగా లేచిన గాలిలో Cumulonimbus పెరుగుతుంది, కాబట్టి వర్షం భారీగా, కొద్దిసేపు, ఇరుకైన పట్టీలో పడుతుంది. Warm front వద్ద వెచ్చని గాలి మెల్లని వాలు మీద వందల km దూరం నెమ్మదిగా ఎక్కుతుంది, కాబట్టి పొరలుగా ఉండే మేఘాలు విశాలంగా పరుచుకుని ఎక్కువసేపు స్థిర వర్షం ఇస్తాయి. వర్షం రకాన్ని గాలి ఉష్ణోగ్రత కాదు, గాలి ఎంత వేగంగా పైకి లేస్తుంది (Front వాలు) నిర్ణయిస్తుంది. Warm front ముందుగా ఎత్తైన Cirrus, Cirrostratus Halo కనిపించడానికి కారణం కూడా ఆ మెల్లని వాలే: వెచ్చని గాలి నేల మీది Front కంటే చాలా ముందే పైకి చేరి ఉంటుంది.</p>
+<p>Stationary front వద్ద గాలులు Front కు సమాంతరంగా వీస్తాయి; ఏ Air mass రెండోదాన్ని నెట్టదు కాబట్టి ఒకే ప్రాంతం మీద మేఘాలు, వర్షం రోజుల తరబడి నిలుస్తాయి. Occluded front వద్ద వెచ్చని గాలి నేలను పూర్తిగా వదిలి పైకి వెళ్తుంది; నేల మీద చల్లని గాలులే మిగులుతాయి, ఉష్ణోగ్రత తేడా శక్తి తగ్గిపోయి చక్రవాతం బలహీనపడుతుంది.</p>
+<h2 id="tropical-cyclones">ఉష్ణమండల చక్రవాతం ఎలా పుడుతుంది? మన తీరాన్ని ఎందుకు తాకుతుంది?</h2>
+<p>1977 దివిసీమ, 2014 Hudhud (విశాఖపట్నం), 2023 Michaung (బాపట్ల), 2025 Montha (కాకినాడ దగ్గర) తుఫానులు బంగాళాఖాతంలో పుట్టి ఆంధ్ర తీరాన్ని తాకాయి. తుఫానులు ఎలా పుడతాయి, శక్తి ఎక్కడి నుంచి వస్తుంది, ఎందుకు కొన్ని నెలల్లోనే వస్తాయి?</p>
+<h3>Cyclone (చక్రవాతం) అంటే?</h3>
+<p>Cyclone అనే పదం గ్రీకు kyklos (పాము చుట్ట) నుంచి వచ్చింది; 1848 లో కోల్‌కతాలో పనిచేసిన బ్రిటిష్ అధికారి Henry Piddington ఈ పదం వాడాడు. Cyclone మధ్యలో అల్పపీడనం, చుట్టూ ఎక్కువ పీడనం ఉంటుంది. గాలి కేంద్రం వైపు చేరుతుంది కానీ నేరుగా రాదు: భూమి భ్రమణం వల్ల వచ్చే Coriolis effect గాలిని ఉత్తరార్ధగోళంలో కుడికి, దక్షిణార్ధగోళంలో ఎడమకు తిప్పుతుంది (<a href="/learn/geography/g2/2/notes#motion-coriolis">పాఠం 2: Coriolis</a>). దాంతో గాలి సుడులు తిరుగుతూ లోపలికి చుట్టుకుంటుంది: ఉత్తరార్ధగోళంలో Anticlockwise (అపసవ్య), దక్షిణార్ధగోళంలో Clockwise (సవ్య) దిశలో. కేంద్ర పీడనం తక్కువైతే Pressure gradient పెరిగి గాలులు బలపడవచ్చు; కానీ తీవ్రతను నిర్ణయించేది కేంద్ర పీడనం ఒక్కటే కాదు, అందుకే IMD తీవ్రతను గరిష్ఠ గాలి వేగంతో కొలుస్తుంది.</p>
+<p>Tropical cyclone (ఉష్ణమండల చక్రవాతం) వెచ్చని ఉష్ణమండల సముద్రాల మీద, భూమధ్యరేఖకు కొంత దూరంలో (ఉష్ణమండల, ఉపఅయనరేఖా సముద్రాల మీద) పుట్టే, బాగా వ్యవస్థీకృతమైన, సుడి తిరిగే అల్పపీడన వ్యవస్థ. Tropical cyclone కేంద్రం చుట్టూ ఉన్న గాలి కంటే వెచ్చగా ఉంటుంది (Warm core). పరిపక్వ Tropical cyclone లో Warm front, Cold front ఉండవు (Non-frontal), ఎందుకంటే చుట్టూ ఉన్నది ఒకే రకమైన వెచ్చని తేమ గాలి; రెండు వేర్వేరు Air masses లేకపోతే Front ఏర్పడదు.</p>
+<h3>శక్తి ఎక్కడి నుంచి?</h3>
+<p>వెచ్చని సముద్రం నుంచి లేచిన ఆవిరి మేఘాల్లో నీరుగా మారినప్పుడు Latent heat విడుదలవుతుంది (<a href="#humidity">Latent heat</a>). ఆ వేడి కేంద్రంలోని గాలిని తేలిక చేస్తుంది; గాలి వేగంగా పైకి లేస్తుంది, కేంద్ర పీడనం పడిపోతుంది, ఇంకా తేమ గాలి లోపలికి వస్తుంది, ఇంకా Latent heat విడుదలవుతుంది. ఈ చక్రానికి ఇంధనం సముద్రపు ఆవిరే; Tropical cyclone ప్రధాన శక్తి వనరు ఈ Latent heat.</p>
+<p>నేల మీదకు రాగానే లేదా చల్లని సముద్రం మీదకు వెళ్లగానే ఆవిరి సరఫరా ఆగిపోతుంది; నేల ఘర్షణ కూడా గాలులను తగ్గిస్తుంది. అందుకే ఆంధ్ర తీరం దాటిన తుఫాను ఒకటి రెండు రోజుల్లో బలహీనపడి అల్పపీడనంగా మారుతుంది.</p>
+<h3>నిర్మాణం: Eye, Eyewall</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>భాగం</th>
+<th>ఏమిటి</th>
+<th>వాతావరణం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Eye (కన్ను)</strong></td>
+<td>మధ్యలో సాధారణంగా 20–50 km వెడల్పు గల సాపేక్షంగా ప్రశాంత ప్రాంతం</td>
+<td>గాలి కిందికి దిగుతూ వేడెక్కుతుంది; మేఘాలు, గాలి తక్కువ</td>
+</tr>
+<tr>
+<td><strong>Eyewall (కన్నుగోడ)</strong></td>
+<td>Eye చుట్టూ తీవ్రమైన Convection ఉండే Cumulonimbus మేఘాల వలయం</td>
+<td>అత్యంత బలమైన గాలులు, భారీ వర్షం</td>
+</tr>
+<tr>
+<td><strong>Rainbands</strong></td>
+<td>Eyewall బయట సుడిగా చుట్టుకున్న మేఘ పట్టీలు</td>
+<td>విడతలుగా జల్లులు, ఈదురుగాలులు</td>
+</tr>
+</tbody>
+</table></div>
+<p>Eyewall మేఘాలు Tropopause దగ్గర సుమారు 12–15 km ఎత్తు వరకు పెరుగుతాయి. అత్యంత బలమైన గాలులు కేంద్రానికి దగ్గరగా, Eyewall లో ఉంటాయి. తుఫాను పరిమాణం ఒకేలా ఉండదు; మొత్తం వెడల్పు కొన్ని వందల km నుంచి 1,000 km దాటవచ్చు, Eye అందులో చిన్న భాగం మాత్రమే. పరిపక్వ తుఫాను Isobars (సమభార రేఖలు) దాదాపు వృత్తాకారంగా, మూసిన వలయాలుగా ఉంటాయి.</p>
+<h3>పుట్టడానికి ఏం కావాలి?</h3>
+<p>Tropical cyclone పుట్టడానికి ఐదు పరిస్థితులు కావాలి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పరిస్థితి</th>
+<th>ఎందుకు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. వెచ్చని సముద్రం</strong>: SST సుమారు 26.5 °C లేదా ఎక్కువ, సుమారు 50 m లోతు వరకు</td>
+<td>ఆవిరి, Latent heat సరఫరా; పై పొర మాత్రమే వెచ్చగా ఉంటే గాలులు కింది చల్లని నీటిని పైకి కలిపేస్తాయి</td>
+</tr>
+<tr>
+<td><strong>2. తగినంత Coriolis effect</strong></td>
+<td>సుడి తిప్పడానికి; భూమధ్యరేఖ మీద Coriolis సున్నా, కాబట్టి సుమారు 5° లోపల తుఫానులు దాదాపు పుట్టవు</td>
+</tr>
+<tr>
+<td><strong>3. తక్కువ Vertical wind shear</strong></td>
+<td>ఎత్తుకు వెళ్లే కొద్దీ గాలి వేగం లేదా దిశ మారడమే Wind shear; ఎక్కువైతే మేఘ స్తంభం చీలి నిలువు నిర్మాణం దెబ్బతింటుంది</td>
+</tr>
+<tr>
+<td><strong>4. మధ్య Troposphere లో తేమ</strong></td>
+<td>పొడి గాలి లోపలికి చొరబడితే మేఘాలు బలహీనపడతాయి</td>
+</tr>
+<tr>
+<td><strong>5. ముందుగా ఒక అల్పపీడనం (Pre-existing disturbance)</strong></td>
+<td>సుడి మొదలవడానికి ఒక విత్తనం</td>
+</tr>
+</tbody>
+</table></div>
+<p>SST హద్దుకు NCERT 27 °C ఇస్తుంది; IMD, NOAA సాధారణంగా 26.5 °C వాడతాయి. ఈ ఐదు పరిస్థితులు అవసరమైనవి (Necessary) మాత్రమే, సరిపోయేవి (Sufficient) కావు; అన్నీ ఉన్నా కొన్ని అల్పపీడనాలే తుఫానులుగా పెరుగుతాయి.</p>
+<h3>ఎప్పుడు, ఎటువైపు?</h3>
+<p>సముద్రం అత్యంత వెచ్చగా ఉండే వేసవి చివర, శరదృతువులో తుఫానులు ఎక్కువ; కచ్చితమైన నెలలు ఒక్కో సముద్రానికి ఒక్కోలా ఉంటాయి. ఉత్తర హిందూ మహాసముద్రంలో రెండు కాలాలు: రుతుపవనాలకు ముందు మార్చి–మే, రుతుపవనాల తర్వాత అక్టోబర్–డిసెంబర్. రుతుపవనాల మధ్యలో (జూలై–ఆగస్టు) Vertical wind shear ఎక్కువ కాబట్టి పెద్ద తుఫానులు తక్కువ. అరేబియా సముద్రం కంటే బంగాళాఖాతంలో తుఫానులు ఎక్కువ. పాత పుస్తకాలు ఉత్తరార్ధగోళం మొత్తానికి "మే నుంచి డిసెంబర్" అని ఇస్తాయి; ఉత్తర హిందూ మహాసముద్రానికి సరైన కాలాలు పై రెండే.</p>
+<p>తుఫానులు ఉష్ణమండల తూర్పు గాలుల (Trade winds) వెంట పడమరకు కదిలి, తర్వాత ధ్రువం వైపు, తూర్పుకు మళ్లవచ్చు (Recurvature). అందుకే బంగాళాఖాతం తుఫానులు ఆంధ్ర, ఒడిశా, తమిళనాడు తీరాల వైపు కదులుతాయి.</p>
+<h3>ఒకే వ్యవస్థకు సముద్రాన్ని బట్టి వేర్వేరు పేర్లు</h3>
+<p>Hurricane, Typhoon, Cyclone వేర్వేరు వ్యవస్థలు కావు; ఒకే Tropical cyclone కు సముద్రాన్ని బట్టి పెట్టిన ప్రాంతీయ పేర్లు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>సముద్రం</th>
+<th>పేరు</th>
+<th>ఏ దేశాలను తాకుతుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ఉత్తర Atlantic, Caribbean, ఈశాన్య Pacific</td>
+<td><strong>Hurricane (హరికేన్)</strong></td>
+<td>West Indies, Florida, USA, Mexico</td>
+</tr>
+<tr>
+<td>వాయవ్య Pacific</td>
+<td><strong>Typhoon (టైఫూన్)</strong></td>
+<td>China, Japan, Philippines, Taiwan</td>
+</tr>
+<tr>
+<td>హిందూ మహాసముద్రం (ఉత్తర, దక్షిణ), దక్షిణ Pacific</td>
+<td><strong>Cyclone / Cyclonic storm (తుఫాను)</strong></td>
+<td>భారత్, బంగ్లాదేశ్, మయన్మార్, Australia, Madagascar</td>
+</tr>
+</tbody>
+</table></div>
+<p>Philippines లో "Bagyo" అంటే తుఫానుకు సాధారణ స్థానిక పదం; Baguio అక్కడి ఒక నగరం. Australia లో "Willy-willy" అనే పాత పదం ఒకప్పుడు తుఫానులకూ వాడేవారు; ఇప్పుడు ప్రధానంగా దుమ్ము సుడిగాలి (Dust devil) కి వాడతారు.</p>
+<p>Tornado (టోర్నడో) Tropical cyclone కు ఇంకో పేరు కాదు. Tornado ఒక బలమైన ఉరుముల మేఘం (Cumulonimbus) నుంచి నేల వరకు దిగే చిన్న, అతి వేగంగా తిరిగే గాలి స్తంభం; వెడల్పు వందల మీటర్లు, జీవితం నిమిషాలు, గాలి వేగం గంటకు 300 km దాటవచ్చు. Tornadoes ఎక్కువగా USA మధ్య మైదానాల్లో ("Tornado alley") నేల మీద వస్తాయి. Tropical cyclone సముద్రం మీద వందల km వెడల్పుతో రోజుల తరబడి ఉంటుంది.</p>
+<h3>IMD తీవ్రత దశలు, పేర్లు</h3>
+<p>ఉత్తర హిందూ మహాసముద్రంలో IMD 3 నిమిషాల సగటు గరిష్ఠ గాలి వేగం (Maximum sustained wind) ఆధారంగా అల్పపీడన వ్యవస్థలను ఏడు దశలుగా విభజిస్తుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>దశ</th>
+<th>గాలి వేగం (km/h)</th>
+<th>Knots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Depression (వాయుగుండం)</strong></td>
+<td>31–49</td>
+<td>17–27</td>
+</tr>
+<tr>
+<td><strong>Deep Depression (తీవ్ర వాయుగుండం)</strong></td>
+<td>50–61</td>
+<td>28–33</td>
+</tr>
+<tr>
+<td><strong>Cyclonic Storm (తుఫాను)</strong></td>
+<td>62–88</td>
+<td>34–47</td>
+</tr>
+<tr>
+<td><strong>Severe Cyclonic Storm</strong></td>
+<td>89–117</td>
+<td>48–63</td>
+</tr>
+<tr>
+<td><strong>Very Severe Cyclonic Storm</strong></td>
+<td>118–166</td>
+<td>64–89</td>
+</tr>
+<tr>
+<td><strong>Extremely Severe Cyclonic Storm</strong></td>
+<td>167–221</td>
+<td>90–119</td>
+</tr>
+<tr>
+<td><strong>Super Cyclonic Storm</strong></td>
+<td>222 లేదా ఎక్కువ</td>
+<td>120 లేదా ఎక్కువ</td>
+</tr>
+</tbody>
+</table></div>
+<p>వ్యవస్థ Cyclonic Storm దశ (గంటకు 62 km) చేరినప్పుడే దానికి పేరు పెడతారు. ఉత్తర హిందూ మహాసముద్రం (బంగాళాఖాతం, అరేబియా సముద్రం) తుఫానులకు పేర్లను WMO/ESCAP Panel on Tropical Cyclones లోని 13 దేశాలు సూచిస్తాయి: బంగ్లాదేశ్, భారత్, ఇరాన్, మాల్దీవులు, మయన్మార్, ఒమన్, పాకిస్థాన్, ఖతార్, సౌదీ అరేబియా, శ్రీలంక, థాయ్‌లాండ్, UAE, యెమెన్. 2020 లో 169 పేర్లతో (ప్రతి దేశం 13 పేర్లు) కొత్త జాబితా విడుదలైంది. ఆ జాబితా నుంచి వరుసగా పేరు పెట్టేది ప్రాంతీయ కేంద్రం RSMC New Delhi (IMD); వాడిన పేరు మళ్లీ వాడరు. ఉదా: Montha (2025) పేరును Thailand సూచించింది.</p>
+<h3>ఆంధ్ర తీరానికి ప్రమాదం</h3>
+<p>AP తీరం 1,053.07 km, దేశంలో 3వ పొడవైన తీరం (MoES కొత్త కొలత, డిసెంబర్ 2025; పాత కొలతలో 974 km, 2వ స్థానం) (<a href="/learn/geography/g2/12/notes#coastline">పాఠం 12: తీరరేఖ</a>). ఈ తీరానికి తుఫాను ప్రమాదం ఎక్కువగా అక్టోబర్–డిసెంబర్ (రుతుపవనాల తర్వాత) కాలంలో. ఉదా: Severe Cyclonic Storm Montha 28 అక్టోబర్ 2025 రాత్రి కాకినాడ దగ్గర తీరం దాటింది. తుఫాను గాలులు సముద్రపు నీటిని తీరం వైపు నెట్టి సముద్ర మట్టాన్ని అసాధారణంగా పెంచుతాయి; దాన్నే Storm surge (ఉప్పెన) అంటారు (<a href="/learn/geography/g2/3/notes#tides-storm-surge">పాఠం 3: Storm surge</a>). చదునైన కృష్ణా, గోదావరి డెల్టాలు Storm surge కు ఎక్కువగా గురవుతాయి. సముద్ర హెచ్చరికల్లో హైదరాబాద్‌లోని INCOIS కూడా సహాయపడుతుంది (<a href="/learn/geography/g2/5/notes#tsunami">పాఠం 5: INCOIS</a>).</p>
+<h2 id="temperate-cyclones">సమశీతోష్ణ చక్రవాతం వేరేనా? ప్రతిచక్రవాతం అంటే?</h2>
+<p>London వాతావరణ వార్తల్లో వారానికోసారి వినే "Low pressure system" మధ్య అక్షాంశాల్లో పుట్టే వేరే రకం చక్రవాతం. వీటిని Temperate cyclone (సమశీతోష్ణ చక్రవాతం) లేదా Extratropical cyclone అంటారు.</p>
+<h3>ఎక్కడ, ఎలా పుడతాయి?</h3>
+<p>మధ్య, అధిక అక్షాంశాల్లో (సుమారు 35°–65°) Polar front వెంట చల్లని, వెచ్చని గాలులు ఎదురెదురుగా ఉంటాయి. ఇలా అడ్డంగా పెద్ద ఉష్ణోగ్రత తేడా ఉండే మండలాన్ని Baroclinic zone అంటారు. ఈ Air mass సరిహద్దు మీద ఒక చిన్న అల (Wave) లాంటి వంపు ఏర్పడుతుంది: వెచ్చని గాలి ధ్రువం వైపు, చల్లని గాలి భూమధ్యరేఖ వైపు చొచ్చుకుపోతాయి. వంపు దగ్గర పీడనం పడిపోయి అల్పపీడనం ఏర్పడి, గాలి సుడి తిరగడం మొదలవుతుంది: ఉత్తరార్ధగోళంలో Anticlockwise, దక్షిణార్ధగోళంలో Clockwise. అలగా మొదలై Fronts తో పెరుగుతుంది కాబట్టి వీటిని Wave cyclone లేదా Frontal cyclone అనీ అంటారు. Norway కు చెందిన Jacob Bjerknes, ఆయన సహచరులు 1919–1922 మధ్య ఈ నమూనాను (Norwegian cyclone model) తయారు చేశారు. Temperate cyclones నేల మీద, సముద్రం మీద రెండు చోట్లా పుడతాయి.</p>
+<p>Temperate cyclone శక్తి వనరు వెచ్చని, చల్లని Air masses మధ్య అడ్డంగా ఉండే ఉష్ణోగ్రత తేడా; వెచ్చని గాలి పైకి లేచి, చల్లని గాలి కిందికి దిగినప్పుడు ఆ తేడాలోని శక్తి గాలుల శక్తిగా మారుతుంది.</p>
+<h3>నిర్మాణం, కదలిక</h3>
+<p>పరిపక్వ Temperate cyclone లో ముందు Warm front, వెనుక Cold front, వాటి మధ్య వెచ్చని గాలి ఉండే Warm sector ఉంటాయి. చివరి దశలో Cold front Warm front ను అందుకుని Occluded front ఏర్పడుతుంది, చక్రవాతం బలహీనపడుతుంది (<a href="#fronts">Fronts</a>). Temperate cyclone కేంద్రం చుట్టూ గాలి కంటే చల్లగా ఉంటుంది (Cold core); నిర్మాణం ఎత్తుతో ఒక వైపుకు ఒరిగి (Tilted) అసమానంగా ఉంటుంది. వెడల్పు తరచుగా సుమారు 2,000 km (1,000–3,000 km). బలమైన గాలులు, వర్షం కేంద్రానికి దూరంగా Fronts వెంట కూడా విస్తరిస్తాయి; అందుకే Temperate cyclone విశాల ప్రాంతాన్ని ప్రభావితం చేస్తుంది. Isobars సాగిన, అసమాన ఆకారంలో ఉంటాయి; పాత పటాల్లో కనిపించే "V ఆకారం" Fronts దగ్గర Isobars వంగడం వల్ల కొన్నిసార్లు వస్తుంది, నిర్వచనం కాదు.</p>
+<p>Temperate cyclones మధ్య అక్షాంశాల Westerlies, వాటి పైన Jet stream వెంట సాధారణంగా పడమర నుంచి తూర్పుకు కదులుతాయి (<a href="#planetary-winds">Westerlies</a>, <a href="#jet-streams">Jet streams</a>). ఏడాది పొడవునా రావచ్చు; ధ్రువ–భూమధ్యరేఖ ఉష్ణోగ్రత తేడా పెద్దగా ఉండే చలికాలంలో బలంగా ఉంటాయి. కదిలే వేగంలో Tropical, Temperate cyclones కు స్థిరమైన ర్యాంకు లేదు; రెండూ నెమ్మదిగానూ వేగంగానూ కదలవచ్చు.</p>
+<p>మన దేశానికి చలికాలంలో వచ్చే Western Disturbances (పశ్చిమ అలజడులు) Westerlies వెంట వచ్చే ఈ రకం అల్పపీడనాలే; అవి వాయవ్య భారతానికి చలికాలపు వర్షం, హిమాలయాలకు మంచు తెస్తాయి (<a href="#local-winds">స్థానిక గాలులు, వానలు</a>). మధ్యధరా ప్రాంతానికి శీతాకాలపు వర్షం కూడా ఇలాంటి చక్రవాతాల నుంచే (<a href="/learn/geography/g2/9/notes#mediterranean">పాఠం 9: మధ్యధరా శీతోష్ణస్థితి</a>).</p>
+<h3>రెండు చక్రవాతాల పోలిక</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అంశం</th>
+<th>Tropical cyclone</th>
+<th>Temperate cyclone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఎక్కడ పుడుతుంది</strong></td>
+<td>ఉష్ణమండల సముద్రాల మీద, భూమధ్యరేఖకు కొంత దూరంలో</td>
+<td>మధ్య, అధిక అక్షాంశాల్లో Polar front మీద; నేల, సముద్రం రెండింటి మీద</td>
+</tr>
+<tr>
+<td><strong>శక్తి</strong></td>
+<td>Condensation Latent heat</td>
+<td>Air masses ఉష్ణోగ్రత తేడా</td>
+</tr>
+<tr>
+<td><strong>Fronts, కేంద్రం</strong></td>
+<td>Fronts ఉండవు; Warm core, దాదాపు సౌష్ఠవం</td>
+<td>Warm, Cold, Occluded fronts; Cold core, అసమానం</td>
+</tr>
+<tr>
+<td><strong>పరిమాణం, Isobars</strong></td>
+<td>వందల km; దాదాపు వృత్తాకార Isobars</td>
+<td>సుమారు 2,000 km; సాగిన, అసమాన Isobars</td>
+</tr>
+<tr>
+<td><strong>బలమైన గాలి, వర్షం</strong></td>
+<td>Eyewall లో, కేంద్రం దగ్గర</td>
+<td>కేంద్రానికి దూరంగా Fronts వెంట</td>
+</tr>
+<tr>
+<td><strong>కాలం</strong></td>
+<td>వెచ్చని కాలం; సముద్రాన్ని బట్టి నెలలు మారతాయి</td>
+<td>ఏడాది పొడవునా; శీతాకాలంలో బలం</td>
+</tr>
+<tr>
+<td><strong>కదిలే దిశ</strong></td>
+<td>Trade winds వెంట పడమరకు, తర్వాత ధ్రువం వైపు, తూర్పుకు మళ్లవచ్చు</td>
+<td>Westerlies వెంట పడమర నుంచి తూర్పుకు</td>
+</tr>
+<tr>
+<td><strong>ప్రశాంత Eye</strong></td>
+<td>ఉంటుంది</td>
+<td>ఉండదు</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఒక్క లక్షణం చూసి రకం తేల్చలేం; కేంద్రం (Warm/Cold core), Fronts, నిర్మాణం, పరిశీలనలు అన్నీ కలిపి చూడాలి. ఒక Tropical cyclone ధ్రువం వైపు చల్లని సముద్రం మీదకు, Westerlies లోకి వెళ్తే దాని స్వభావమే మారుతుంది: ఆవిరి శక్తి తగ్గుతుంది, Fronts ఏర్పడతాయి, Warm core పోయి ఉష్ణోగ్రత తేడా శక్తితో నడిచే Temperate cyclone అవుతుంది. ఈ మార్పును Extratropical transition అంటారు.</p>
+<h3>Anticyclone (ప్రతిచక్రవాతం)</h3>
+<p>Anticyclone చక్రవాతానికి వ్యతిరేకం: మధ్యలో అధిక పీడనం, చుట్టూ తక్కువ పీడనం. గాలి కేంద్రం నుంచి బయటికి సుడులు తిరుగుతూ వెళ్తుంది: ఉత్తరార్ధగోళంలో Clockwise (సవ్య), దక్షిణార్ధగోళంలో Anticlockwise (అపసవ్య). బయటికి వెళ్లిన గాలి స్థానాన్ని పై నుంచి కిందికి దిగే గాలి (Subsidence) భర్తీ చేస్తుంది. దిగే గాలి Adiabatic గా వేడెక్కి పొడిబారుతుంది (<a href="#precipitation">Adiabatic warming</a>); అందుకే Anticyclone లో మేఘాలు ఏర్పడవు, ఆకాశం నిర్మలంగా, వాతావరణం పొడిగా ఉంటుంది. మేఘాలు లేకపోవడంతో పగలు ఎండ బాగా వేడెక్కిస్తుంది, రాత్రి నేల వేడి త్వరగా పోతుంది; కాబట్టి Anticyclone లో రోజువారీ ఉష్ణోగ్రత తేడా ఎక్కువ.</p>
+<h2 id="pairs">ముఖ్య జతలు</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఎవరు / ఏది</th>
+<th>ఏమిటి</th>
+<th>ఎప్పుడు / ఎక్కడ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMD / WMO / IITM</td>
+<td>భారత వాతావరణ శాఖ / UN వాతావరణ సంస్థ / ఉష్ణమండల వాతావరణ పరిశోధన</td>
+<td>1875 (ఇప్పుడు New Delhi) / 1950, Geneva / 1962 (1971 నుంచి స్వతంత్రం), Pune</td>
+</tr>
+<tr>
+<td>Torricelli / Buys Ballot</td>
+<td>Mercury barometer / గాలి–అల్పపీడనం నియమం</td>
+<td>1643 / 1857</td>
+</tr>
+<tr>
+<td>Hadley / Ferrel / Coriolis</td>
+<td>Hadley cell / Ferrel cell / విచలన బలం గణితం</td>
+<td>1735 / 1856 / 1835</td>
+</tr>
+<tr>
+<td>Beaufort / Luke Howard</td>
+<td>పవన బల స్కేలు / మేఘాల లాటిన్ పేర్లు</td>
+<td>1805 / 1803</td>
+</tr>
+<tr>
+<td>Marconi / Kennelly, Heaviside / Appleton</td>
+<td>Atlantic దాటిన Radio / E layer / F layer, Nobel</td>
+<td>1901 / 1902 / 1947</td>
+</tr>
+<tr>
+<td>Ōishi / Seilkopf</td>
+<td>Jet గాలుల నమోదు / "Jet stream" పదం</td>
+<td>1920లు, Japan / 1939</td>
+</tr>
+<tr>
+<td>Bergeron / Bjerknes</td>
+<td>Air mass అక్షరాలు / Norwegian cyclone model</td>
+<td>1928 / 1919–1922</td>
+</tr>
+<tr>
+<td>Piddington / WMO–ESCAP Panel</td>
+<td>"Cyclone" పదం / 13 దేశాలు, 169 తుఫాను పేర్లు</td>
+<td>1848 / 2020; RSMC New Delhi</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>తరచు కలిపేసే జత</th>
+<th>మొదటిది</th>
+<th>రెండోది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Convection / Advection</td>
+<td>నిలువుగా వేడి రవాణా</td>
+<td>అడ్డంగా వేడి రవాణా</td>
+</tr>
+<tr>
+<td>Subtropical high / ITCZ</td>
+<td>దిగే గాలి, పొడి</td>
+<td>కలిసి లేచే గాలి, వర్షం</td>
+</tr>
+<tr>
+<td>Fog / Mist</td>
+<td>Visibility 1 km కంటే తక్కువ</td>
+<td>1 km లేదా ఎక్కువ</td>
+</tr>
+<tr>
+<td>Hoar frost / Glaze</td>
+<td>ఆవిరి నుంచి నేరుగా Ice స్ఫటికాలు</td>
+<td>Supercooled చుక్కలు గడ్డకట్టిన పారదర్శక పూత</td>
+</tr>
+<tr>
+<td>Nimbostratus / Cumulonimbus</td>
+<td>ఎడతెరిపి లేని స్థిర వర్షం</td>
+<td>ఉరుములు, కొద్దిసేపు భారీ జల్లులు, వడగళ్లు</td>
+</tr>
+<tr>
+<td>Nacreous / Noctilucent</td>
+<td>Stratosphere (15–25 km), ధ్రువ శీతాకాలం</td>
+<td>Mesosphere (76–85 km), వేసవి సంధ్య</td>
+</tr>
+<tr>
+<td>cPk / mPw</td>
+<td>ఉపరితలం కంటే చల్లని → అస్థిరం</td>
+<td>ఉపరితలం కంటే వెచ్చని → స్థిరం</td>
+</tr>
+<tr>
+<td>Cold front / Warm front</td>
+<td>నిటారు వాలు; కొద్దిసేపు భారీ జల్లులు</td>
+<td>మెల్లని వాలు; ఎక్కువసేపు స్థిర వర్షం</td>
+</tr>
+<tr>
+<td>Tropical / Temperate cyclone</td>
+<td>Warm core, Fronts లేవు, Latent heat</td>
+<td>Cold core, Fronts, ఉష్ణోగ్రత తేడా</td>
+</tr>
+<tr>
+<td>Cyclone / Anticyclone (ఉత్తరార్ధగోళం)</td>
+<td>అల్పపీడనం, Anticlockwise, లోపలికి</td>
+<td>అధిక పీడనం, Clockwise, బయటికి</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="selfcheck">స్వయం పరీక్ష</h2>
+<ol>
+<li>Stratosphere లో ఎత్తుకు వెళ్లే కొద్దీ ఉష్ణోగ్రత ఎందుకు పెరుగుతుంది? — అక్కడి Ozone సూర్యుడి Ultraviolet కిరణాలను పీల్చుకుని ఆ పొరను వేడెక్కిస్తుంది.</li>
+<li>రాత్రిపూట Short wave Radio లో దూర దేశాల స్టేషన్లు ఎందుకు బాగా వినిపిస్తాయి? — Radio తరంగాలను పీల్చుకునే D region సూర్యకాంతి లేక రాత్రి మాయమవుతుంది; పై F region తరంగాలను దూరానికి తిప్పి పంపుతుంది.</li>
+<li>ఒకే అక్షాంశంలో ఉన్నా తీరం కంటే ఖండం లోపల ఉష్ణోగ్రత తేడా ఎందుకు ఎక్కువ? — నేల త్వరగా వేడెక్కి త్వరగా చల్లబడుతుంది; సముద్రం నెమ్మదిగా మారి తీరాన్ని మితంగా ఉంచుతుంది.</li>
+<li>పర్వతం దిగే Chinook గాలి ఎందుకు వేడెక్కుతుంది? — దిగే గాలి పెరిగే పీడనంలో కుంచించుకుపోయి Adiabatic గా వేడెక్కుతుంది.</li>
+<li>స్పష్టమైన, గాలి లేని పొడవైన రాత్రి Dew, Radiation fog ఎక్కువగా ఎందుకు? — మేఘాలు లేక నేల వేడి నేరుగా పోతుంది, గాలి కదలక చల్లని పొర నేల దగ్గరే నిలిచి Dew point కంటే చల్లబడుతుంది.</li>
+<li>గంటల తరబడి స్థిర వర్షం Nimbostratus నుంచి, ఉరుముల జల్లు Cumulonimbus నుంచి ఎందుకు? — Nimbostratus విశాలంగా నెమ్మదిగా లేచే గాలిలో, Cumulonimbus ఇరుకైన వేగమైన Updraft లో ఏర్పడతాయి.</li>
+<li>Cumulonimbus పైభాగం దాగలి (Anvil) ఆకారం ఎందుకు తీసుకుంటుంది? — స్థిరమైన Tropopause పైకి లేవనివ్వదు; అక్కడి బలమైన గాలులు పైభాగాన్ని పక్కలకు లాగుతాయి.</li>
+<li>పశ్చిమ కనుమల తూర్పు వైపు వర్షచ్ఛాయ ఎందుకు? — కనుమలు దాటి దిగే గాలి Adiabatic గా వేడెక్కి RH పడిపోతుంది, మేఘాలు ఆవిరైపోతాయి.</li>
+<li>cPk గాలి ఎందుకు అస్థిరం? — cPk కింది ఉపరితలం కంటే చల్లనిది; ఉపరితలం కింది నుంచి వేడెక్కించడం వల్ల గాలి పైకి లేస్తుంది.</li>
+<li>Cold front వద్ద కొద్దిసేపు భారీ జల్లులు, Warm front వద్ద ఎక్కువసేపు స్థిర వర్షం ఎందుకు? — Cold front నిటారు వాలు వెచ్చని గాలిని వేగంగా ఎత్తుతుంది; Warm front మెల్లని వాలు మీద గాలి నెమ్మదిగా విశాలంగా లేస్తుంది.</li>
+<li>Tropical cyclone భూమధ్యరేఖకు 5° లోపల ఎందుకు దాదాపు పుట్టదు, తీరం దాటాక ఎందుకు బలహీనపడుతుంది? — అక్కడ Coriolis effect సుడి తిప్పలేనంత బలహీనం; నేల మీద వెచ్చని సముద్రపు ఆవిరి, దాని Latent heat ఆగిపోతాయి.</li>
+<li>Anticyclone లో ఆకాశం నిర్మలంగా, రోజువారీ ఉష్ణోగ్రత తేడా ఎక్కువగా ఎందుకు? — పై నుంచి దిగే గాలి వేడెక్కి పొడిబారి మేఘాలు ఏర్పడవు; మేఘాలు లేక పగలు బాగా వేడి, రాత్రి బాగా చలి.</li>
+</ol>
+<h2 id="sources">ఆధారాలు</h2>
+<ul>
+<li>NCERT, Fundamentals of Physical Geography (Class XI): అధ్యాయాలు 8 (వాతావరణ నిర్మాణం), 9 (సూర్య వికిరణం, ఉష్ణ సమతుల్యం, ఉష్ణోగ్రత), 10 (వాతావరణ ప్రసరణ, వాతావరణ వ్యవస్థలు), 11 (వాతావరణంలో నీరు).</li>
+<li>విద్యార్థి పాఠ్యపుస్తకం (World Geography, Sadguna Rao Sir Publications): పుటలు 57–78, 92.</li>
+<li>WMO International Cloud Atlas — https://cloudatlas.wmo.int</li>
+<li>WMO, North Indian Ocean కొత్త తుఫాను పేర్ల జాబితా (2020) — https://wmo.int/node/12752</li>
+<li>IMD / RSMC New Delhi, తుఫాను పదకోశం, తీవ్రత దశలు — https://rsmcnewdelhi.imd.gov.in/images/pdf/terminology.pdf</li>
+<li>IMD / RSMC New Delhi, Frequently Asked Questions on Tropical Cyclones; Cyclone Montha (అక్టోబర్ 2025) నివేదికలు — https://rsmcnewdelhi.imd.gov.in</li>
+<li>MoES / PIB (డిసెంబర్ 2025), భారత తీరరేఖ కొత్త కొలత — https://pib.gov.in</li>
+<li>WMO Archive of Weather and Climate Extremes (Northern Hemisphere lowest temperature, Temp_014) — https://wmo.int/asu-map?map=Temp_014</li>
+<li>WMO Greenhouse Gas Bulletin No. 22 (27 Oct 2026, 2025 సగటులు) — https://wmo.int/node/39152</li>
+<li>NOAA / National Weather Service, JetStream (Air masses, Fronts, Tropical cyclones, Mid-latitude cyclones) — https://www.weather.gov/jetstream/</li>
+<li>NOAA National Hurricane Center, Tropical cyclone climatology — https://www.nhc.noaa.gov/climo/</li>
+<li>NASA Earth Observatory, Earth's Energy Budget — https://earthobservatory.nasa.gov/features/EnergyBalance</li>
+<li>Met Office (UK), Willy willy; Fog and mist; Great Smog of 1952 — https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/willy-willy</li>
+<li>Kopp, G. and Lean, J. (2011), A new, lower value of total solar irradiance, Geophysical Research Letters 38.</li>
+</ul></article><footer class="endnote"><a class="back" href="#top">↑ పాఠం మొదటికి</a><p>పాఠంలోని తేదీతో కూడిన గణాంకాలు ఆ తేదీకి మాత్రమే వర్తిస్తాయి.</p></footer></main></body></html>

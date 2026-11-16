@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+
+<html lang="te">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<title>పాఠం 2: అక్షాంశాలు, రేఖాంశాలు, కాలం</title>
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root{color-scheme:light;--ink:#20302d;--muted:#526760;--green:#125b4c;--deep:#083d36;--mint:#e5f4ed;--paper:#fffefa;--sand:#f6efe1;--line:#dbe5dc;--accent:#d99a3d;font-family:system-ui,'Noto Sans Telugu','Nirmala UI','Gautami',sans-serif;font-size:16px;line-height:1.8}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eaf0eb;color:var(--ink)}a{color:#086959;text-decoration-thickness:1px;text-underline-offset:3px}a:hover,a:focus-visible{color:#064b3f;text-decoration-thickness:2px}a:focus-visible{outline:3px solid #e8a449;outline-offset:3px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page{max-width:1080px;min-height:100vh;margin:auto;background:var(--paper);box-shadow:0 16px 70px #143a2820}.hero{background:radial-gradient(circle at 85% 5%,#307c68 0,transparent 31%),linear-gradient(128deg,#083d36,#176b57);color:white;padding:clamp(27px,5vw,56px) clamp(20px,6vw,74px) clamp(30px,5vw,60px);position:relative;overflow:hidden}.hero:after{content:'';position:absolute;width:220px;height:220px;right:-80px;bottom:-125px;border:2px solid #d8f7df57;border-radius:50%;box-shadow:0 0 0 35px #d8f7df16,0 0 0 70px #d8f7df0c;pointer-events:none}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:#c8f4d9}.eyebrow:before{content:'';width:9px;height:9px;background:#e9b657;border-radius:50%}.hero h1{font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.36;letter-spacing:-.025em;max-width:820px;margin:17px 0}.hero p{max-width:730px;margin:0;color:#e1f2e9}.hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:21px}.hero .tags span{border:1px solid #d8f6e363;background:#ffffff15;padding:4px 12px;border-radius:100px;font-size:.77rem;font-weight:650}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.body{padding:clamp(20px,5vw,58px) clamp(20px,6vw,74px) 68px}.body>*{max-width:79ch}.body>h2,.body>h3,.body>.table-wrap{max-width:none}.body>p{margin:0 0 1.15em}.body>p:first-child{font-size:1.07rem;color:#3d5850}.body h2{font-size:clamp(1.4rem,2.5vw,1.85rem);line-height:1.42;color:var(--deep);margin:2.1em 0 .68em;padding-top:.3em;border-top:1px solid var(--line)}.body h2:first-child{border:0;margin-top:0}.body h3{font-size:1.16rem;line-height:1.48;color:var(--green);margin:1.9em 0 .55em}.body h2+h3{margin-top:.8em}.body strong{color:#0d5549}.body ul,.body ol{padding-left:1.5em;margin:0 0 1.3em}.body li{padding-left:.25em;margin:.4em 0}.body li::marker{color:var(--green)}.body blockquote{margin:1.5em 0;padding:15px 22px;border-left:5px solid var(--accent);border-radius:0 16px 16px 0;background:#fff5e5;color:#51422d}.body blockquote p:last-child{margin-bottom:0}.body hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.table-wrap{overflow-x:auto;margin:1.4em 0 1.8em;border:1px solid var(--line);border-radius:16px;background:white;box-shadow:0 7px 24px #163e2a0b}.body table{border-collapse:collapse;width:100%;min-width:560px;font-size:.94rem;line-height:1.65}.body th{background:#e4f2e9;color:#103f35;text-align:left;font-weight:750}.body td,.body th{padding:12px 15px;border-bottom:1px solid var(--line);vertical-align:top}.body tr:last-child td{border-bottom:0}.body tbody tr:nth-child(even){background:#f8fbf8}.body code{background:#eef4ef;padding:.12em .3em;border-radius:5px;overflow-wrap:anywhere}.body img{display:block;max-width:100%;height:auto;margin:1.5em auto;border-radius:15px}.endnote{border-top:1px solid var(--line);padding:22px clamp(20px,6vw,74px) 35px;color:var(--muted);font-size:.82rem;background:#f6faf6}.endnote p{margin:0}.back{display:inline-flex;align-items:center;gap:5px;margin-bottom:18px;color:var(--green);font-size:.9rem;font-weight:700;text-decoration:none}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.data-figure{max-width:none!important;margin:1.8em 0;padding:clamp(16px,3vw,28px);background:linear-gradient(145deg,#eef7f0,#f8f4e8);border:1px solid #cde0d3;border-radius:20px;box-shadow:0 10px 28px #22462a12}.data-figure figcaption{font-size:1.08rem;line-height:1.5;color:var(--deep);margin-bottom:17px}.data-figure .bars{display:grid;gap:11px}.bar-row{display:grid;grid-template-columns:minmax(125px,180px) minmax(80px,1fr) 32px;gap:12px;align-items:center;font-weight:700;font-size:.9rem;line-height:1.3}.bar-row small{display:block;font-weight:500;color:var(--muted);font-size:.76rem}.bar-track{height:21px;background:#dce7db;border-radius:99px;overflow:hidden}.bar-track i{display:block;height:100%;background:linear-gradient(90deg,#167963,#43ad86);border-radius:99px}.bar-row.control .bar-track i{background:linear-gradient(90deg,#a97533,#dfac5a)}.bar-row b{font-variant-numeric:tabular-nums;color:var(--deep)}.data-figure p{font-size:.81rem;line-height:1.55;color:var(--muted);margin:17px 0 0}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:620px){:root{font-size:15.5px}.hero{padding-top:28px}.body{padding-bottom:42px}.body h2{margin-top:1.65em}.body table{min-width:500px}.table-wrap{margin-left:-4px;margin-right:-4px}.body td,.body th{padding:10px 12px}.bar-row{grid-template-columns:95px minmax(50px,1fr) 25px;gap:7px;font-size:.79rem}.bar-row small{font-size:.69rem}.data-figure{margin-left:-4px;margin-right:-4px}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media print{@page{size:A4;margin:15mm}body{background:white}.page{box-shadow:none;max-width:none}.hero{padding:18px 23px 22px;print-color-adjust:exact;-webkit-print-color-adjust:exact}.hero h1{font-size:23pt}.body{padding:12px 23px 20px}.body h2{break-after:avoid}.body h3{break-after:avoid}.body p,.body li{orphans:3;widows:3}.table-wrap{overflow:visible;box-shadow:none;break-inside:avoid}.body table{min-width:0}.endnote{padding:13px 23px}.back{display:none}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<style>.concept-box{padding:18px 22px;background:#eff7f1;border-left:5px solid #2d8165;border-radius:9px;margin:20px 0}.body p{line-height:1.95}.body section{margin:26px 0}.body details{padding:16px;border:1px solid #c7dbce;border-radius:12px;margin:22px 0}.body summary{cursor:pointer;font-weight:700}.body [id]{scroll-margin-top:135px}.chapter-visual{padding:18px;background:#f6faf7;border:1px solid #c8dbcf;border-radius:14px;margin:24px 0}.chapter-visual img{width:100%;height:auto}.chapter-visual figcaption{line-height:1.8;font-size:15px}.table-wrap{overflow-x:auto}</style><style>.teaching-prose{max-width:850px;margin:1.5rem 0}.teaching-prose p{line-height:1.95;margin:1rem 0}.reference-reading{margin-top:2rem;border-top:1px solid #d4ded9;padding-top:1rem}.definition-prose{margin:1.2rem 0}.definition-prose h4{font-size:1.05rem;margin-bottom:.4rem}.reading-revision{margin-top:3rem}.reading-revision>p{max-width:850px}</style><style id="rebuilt-lesson-blocks">
+.body>.box,.body>.toc{max-width:79ch}
+.box{margin:1.3em 0;padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:white}
+.box>p:last-child,.box>ul:last-child,.box>ol:last-child{margin-bottom:0}.box>p{margin:.3em 0 .6em}
+.box:before{display:block;font-size:.74rem;font-weight:750;letter-spacing:.06em;margin-bottom:4px}
+.box.fact{background:var(--mint);border-color:#bfe0cf;border-left:5px solid var(--green)}.box.fact:before{content:'ముఖ్య వాస్తవం · Fact';color:var(--green)}
+.box.exam{background:#eef3fb;border-color:#cbd8ec;border-left:5px solid #2f5f9a}.box.exam:before{content:'పరీక్షలో · Exam';color:#2f5f9a}
+.box.trap{background:#fff3ec;border-color:#f0cdb8;border-left:5px solid #b4532a}.box.trap:before{content:'పొరపాటు జాగ్రత్త · Trap';color:#9a4320}
+.box.analogy{background:var(--sand);border-color:#eadcbf;border-left:5px solid var(--accent)}.box.analogy:before{content:'పోలిక · Analogy';color:#8a5a14}
+.box.intro{background:#f3f8f4;border-left:5px solid var(--deep);font-size:1.03rem}.box.intro:before{content:'ఈ పాఠం ఎలా చదవాలి';color:var(--deep)}
+.box.terms{background:#fbfaf4}.box.terms:before{content:'ముఖ్య పదాలు · Key terms';color:var(--green)}
+.box.changing{background:#f7f3fb;border-left:5px solid #6b4c9a}.box.changing:before{content:'మారే విలువ';color:#6b4c9a}
+.toc{margin:1.6em 0;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:#f8fbf8}
+.toc>strong{display:block;margin-bottom:6px;color:var(--deep)}.toc details{border-top:1px solid var(--line);padding:6px 0}
+.toc summary{cursor:pointer;font-weight:700;color:var(--green)}.toc ol{margin:.4em 0 .5em;font-size:.94rem}.toc li{margin:.2em 0}
+.body h2[id],.body h3[id]{scroll-margin-top:20px}.body p,.body li,.body td{overflow-wrap:anywhere}
+@media(max-width:620px){.box{padding:12px 13px;margin-left:-4px;margin-right:-4px}.toc{padding:12px}}
+@media print{.toc details{display:block}.box{break-inside:avoid}}
+</style>
+</head>
+<body><main class="page"><header class="hero"><p class="eyebrow">పాఠం 2</p><h1>అధ్యాయం 2: అక్షాంశాలు, రేఖాంశాలు, భూమి భ్రమణం, పరిభ్రమణం, కాలం (Latitude, Longitude, Rotation, Revolution and Time)</h1></header><nav class="toc"><ol><li><a href="#latlong-why">భూమి మీద ఊహా గీతలు ఎందుకు గీశారు?</a></li><li><a href="#latlong-latitude">Latitude అంటే ఏమిటి? ఎలా కొలుస్తారు?</a></li><li><a href="#latlong-longitude">Longitude అంటే ఏమిటి? 0° Longitude Greenwichలోనే ఎందుకు?</a></li><li><a href="#latlong-difference">Latitude, Longitude మధ్య తేడా ఏమిటి? రెండూ కలిస్తే ఏం వస్తుంది?</a></li><li><a href="#latlong-distance">1° Latitudeకు 111 km అయితే, 1° Longitude ఎందుకు ధ్రువాల వైపు తగ్గిపోతుంది?</a></li><li><a href="#latlong-special">ప్రత్యేక అక్షాంశాలు ఏవి? వాటి విలువలు ఎందుకు అవే?</a></li><li><a href="#latlong-india">భారతదేశం, Andhra Pradesh ఏ Latitudes, Longitudes మధ్య ఉన్నాయి?</a></li><li><a href="#latlong-heatzones">Latitudeకు, వేడికి సంబంధం ఏమిటి? Heat zones ఏవి?</a></li><li><a href="#time-why-differ">ఒకే సమయంలో Indiaలో ఉదయం, Americaలో రాత్రి ఎందుకు?</a></li><li><a href="#time-4min">ఒక డిగ్రీ రేఖాంశానికి 4 నిమిషాలు ఎలా వచ్చింది?</a></li><li><a href="#time-lmt-calc">Local mean time లెక్కలు ఎలా చేయాలి?</a></li><li><a href="#time-ist">భారతదేశానికి ఒకే సమయం, IST ఎలా వచ్చింది?</a></li><li><a href="#time-two-zones">Indiaకు రెండు Time zones ఉండాలా?</a></li><li><a href="#time-zones">Standard time, Time zones అంటే ఏమిటి? ప్రపంచంలో ఎన్ని?</a></li><li><a href="#time-dateline">International Date Line ఏమిటి? దాటితే తేదీ ఎందుకు మారుతుంది?</a></li><li><a href="#time-problems">సమయం, తేదీ లెక్కలు అడుగు అడుగుగా ఎలా చేయాలి?</a></li><li><a href="#motion-apparent-sun">సూర్యుడు తిరుగుతున్నాడా, భూమి తిరుగుతోందా?</a></li><li><a href="#motion-rotation-speed">Equator దగ్గర, మన ఆంధ్రప్రదేశ్ లో, ధ్రువం దగ్గర భూమి ఒకే వేగంతో తిరుగుతుందా?</a></li><li><a href="#motion-sidereal-solar-day">భూమి ఒకసారి తిరగడానికి 24 గంటలా, 23 గంటల 56 నిమిషాలా?</a></li><li><a href="#motion-coriolis">భూమి తిరగడం వల్ల గాలుల దిశ ఎందుకు వంగుతుంది? Foucault లోలకం ఏం చూపించింది?</a></li><li><a href="#motion-revolution">భూమి సూర్యుడి చుట్టూ ఎలాంటి దారిలో, ఎంత వేగంగా, ఎంత కాలంలో తిరుగుతుంది?</a></li><li><a href="#motion-tilt">భూమి Axis 23.44° వంగి ఉంది అంటారు. ఏ గీత నుంచి కొలిచారు?</a></li><li><a href="#motion-leap-year">Leap year ఎందుకు వస్తుంది? 1900 ఎందుకు Leap year కాదు, 2000 ఎందుకు?</a></li><li><a href="#seasons-why">ఋతువులు ఎందుకు మారుతాయి?</a></li><li><a href="#seasons-solstice-equinox">అయనాంతాలు, విషువత్తులు అంటే ఏమిటి?</a></li><li><a href="#seasons-overhead-sun">మధ్యాహ్న సూర్యుడు ఎప్పుడూ తల మీదే ఉంటాడా?</a></li><li><a href="#seasons-twilight">సూర్యాస్తమయం తరువాత కూడా వెలుగు ఎందుకు ఉంటుంది?</a></li><li><a href="#seasons-polar">ధ్రువాల దగ్గర ఆరు నెలల పగలు ఎలా వస్తుంది?</a></li><li><a href="#seasons-aurora">ధ్రువాల దగ్గర ఆకాశంలో రంగుల వెలుగులు ఏమిటి?</a></li><li><a href="#pairs">ముఖ్య జతలు</a></li><li><a href="#selfcheck">స్వయం పరీక్ష</a></li><li><a href="#sources">ఆధారాలు</a></li></ol></nav><article aria-label="పాఠం" class="body"><p>భూమి మీద ఏ చోటునైనా రెండు సంఖ్యలతో ఎలా చెప్పవచ్చో ఈ పాఠం మొదలుపెడుతుంది: Latitude (అక్షాంశం), Longitude (రేఖాంశం). తరువాత Longitude నుంచి సమయం ఎలా వస్తుందో చూస్తాం: 1° కి 4 నిమిషాలు, IST, Time zones, Date Line, గడియారం లెక్కలు. మూడో భాగంలో భూమి రెండు కదలికలు Rotation (భ్రమణం), Revolution (పరిభ్రమణం), వాటి ఫలితాలు, Axis వంపు, Leap year చదువుతాం. చివరి భాగంలో ఋతువులు, అయనాంతాలు, విషువత్తులు, Zero Shadow Day, Twilight, ధ్రువాల ఆరు నెలల పగలు, Aurora వస్తాయి.</p>
+<p>ముఖ్య పదాలు:</p>
+<ul>
+<li>Latitude (అక్షాంశం) — Equator నుంచి ఉత్తరానికి లేదా దక్షిణానికి ఒక చోటు ఉన్న కోణ దూరం, 0° నుంచి 90° వరకు.</li>
+<li>Longitude (రేఖాంశం) — Prime Meridian నుంచి తూర్పుకు లేదా పడమరకు ఒక చోటు ఉన్న కోణ దూరం, 0° నుంచి 180° వరకు.</li>
+<li>Parallel (అక్షాంశ వృత్తం) — ఒకే Latitude ఉన్న చోట్లను కలిపే వృత్తం.</li>
+<li>Meridian (రేఖాంశ రేఖ) — ఉత్తర ధ్రువం నుంచి దక్షిణ ధ్రువం వరకు గీసిన, ఒకే Longitude ఉన్న అర్ధవృత్తం.</li>
+<li>Prime Meridian (ప్రధాన రేఖాంశం) — Greenwich గుండా వెళ్లే 0° Longitude.</li>
+<li>Axis (భూ అక్షం) — భూమి కేంద్రం గుండా రెండు ధ్రువాలను కలిపే ఊహా రేఖ; భూమి ఈ రేఖ చుట్టూ తిరుగుతుంది.</li>
+<li>Rotation (భ్రమణం) — భూమి తన Axis చుట్టూ తాను తిరగడం; ఒక రోజు.</li>
+<li>Revolution (పరిభ్రమణం) — భూమి సూర్యుడి చుట్టూ తిరగడం; ఒక సంవత్సరం.</li>
+<li>Axial tilt (అక్ష వంపు) — Orbit తలానికి నిటారుగా ఉండే గీత నుంచి Axis వాలిన కోణం, సుమారు 23.44° (23½°).</li>
+<li>Local mean time (స్థానిక సగటు కాలం) — ఒక చోటి Longitude నుంచి లెక్కించే స్థానిక సమయం.</li>
+<li>Standard time, Time zone — ఒక దేశం లేదా ప్రాంతం అంతా పాటించే ఒకే గడియార సమయం; ఆ సమయం పాటించే ప్రాంతం Time zone.</li>
+<li>International Date Line (అంతర్జాతీయ దినరేఖ) — సుమారు 180° Longitude దగ్గర, దాటితే తేదీ ఒక రోజు మారే గీత.</li>
+<li>Sidereal day (నక్షత్ర దినం) — దూరపు నక్షత్రాలతో పోల్చి కొలిచే ఒక Rotation, సుమారు 23 గంటల 56 నిమిషాలు.</li>
+<li>Perihelion (ఉపసౌర స్థానం), Aphelion (అపసౌర స్థానం) — భూమి సూర్యుడికి అత్యంత దగ్గరగా, అత్యంత దూరంగా ఉండే స్థానాలు.</li>
+<li>Equinox (విషువత్తు), Solstice (అయనాంతం) — సూర్యుడు Equator మీద తల మీద ఉండే రోజు; ఒక Tropic మీద తల మీద ఉండే రోజు.</li>
+<li>Declination — సూర్యుడు ఆకాశంలో Celestial equator కు ఎన్ని డిగ్రీలు ఉత్తరంగా లేదా దక్షిణంగా ఉన్నాడో చెప్పే కోణం.</li>
+<li>Zero Shadow Day (నీడ లేని రోజు) — మధ్యాహ్న సూర్యుడు సరిగ్గా తల మీదకు వచ్చి నిటారు కర్రకు నీడ కనిపించని రోజు.</li>
+<li>Twilight (సంధ్య వెలుగు) — సూర్యుడు Horizon కింద ఉన్నా ఆకాశంలో కనిపించే వెలుగు.</li>
+</ul>
+<h2 id="latlong-why">భూమి మీద ఊహా గీతలు ఎందుకు గీశారు?</h2>
+<p>ఒకరు మీతో "నా స్నేహితుడు భూమి మీద ఒక చోట ఉన్నాడు, వెతికి చూపించు" అన్నారు అనుకోండి. "Indiaలో ఉన్నాడు" అంటే సరిపోదు. "విజయవాడలో ఉన్నాడు" అన్నా ఆ నగరంలో ఎక్కడో తెలియదు. మన ఇంటికి door number, వీధి, ఊరు ఉన్నట్టే భూమి మీద ప్రతి చోటుకూ ఒక address కావాలి.</p>
+<p>పూర్వం సముద్రం మీద ప్రయాణించే వాళ్లకు ఈ సమస్య చాలా పెద్దది. ఓడ చుట్టూ నీళ్లు తప్ప ఏమీ కనిపించవు; దారి తప్పితే ఏ దేశం దగ్గర ఉన్నారో తెలియదు. అందుకే పటాలు గీసే వాళ్లు భూమిని అడ్డ గీతలు, నిలువు గీతలతో ఒక పెద్ద వల (grid) లాగా ఊహించారు. ఒక చోటు ఏ అడ్డ గీత మీద, ఏ నిలువు గీత మీద ఉందో చెబితే ఆ చోటి స్థానం కచ్చితంగా తెలుస్తుంది.</p>
+<p>ఈ గీతలు నేల మీద నిజంగా లేవు. Satellite నుంచి చూసినా Equator కనిపించదు. పటం (Map) మీద, Globe మీద మాత్రమే వీటిని గీస్తాం. Globe అంటే భూమి ఆకారాన్ని చిన్నగా చూపించే గుండ్రని నమూనా. ఇలా ఊహలో గీసిన గీతలనే Imaginary lines (ఊహారేఖలు) అంటాం.</p>
+<p>ఈ grid అంతా ఒక గీత మీద ఆధారపడుతుంది. భూమి బొంగరం లాగా తన చుట్టూ తాను తిరుగుతుంది. ఏ ఊహా రేఖ చుట్టూ తిరుగుతుందో ఆ రేఖనే Axis (భూ అక్షం) అంటాం. Axis భూమి మధ్య నుంచి వెళ్తుంది; అది భూమి ఉపరితలం మీద బయటకు వచ్చే రెండు చోట్లే North Pole (ఉత్తర ధ్రువం), South Pole (దక్షిణ ధ్రువం). Axis కూడా నిజమైన కడ్డీ కాదు; ఊహా రేఖ.</p>
+<p>ఒక చోటుకు ఒక సంఖ్య సరిపోదా? సరిపోదు. "Equatorకు ఇంత ఉత్తరంగా ఉంది" అని మాత్రమే చెబితే, అదే వరుసలో తూర్పు నుంచి పడమర వరకు వేలాది ఊళ్లు ఉంటాయి. అందుకే రెండు సంఖ్యలు కావాలి. ఉత్తరం–దక్షిణం స్థానం చెప్పేది Latitude (అక్షాంశం); తూర్పు–పడమర స్థానం చెప్పేది Longitude (రేఖాంశం). ఈ రెండు సంఖ్యల జతను Coordinates అంటాం; ఈ గీతలన్నీ కలిసిన వలను Coordinate grid అంటాం.</p>
+<p>Classroomలో benchలను వరుసలు, columnsగా ఊహించండి. "మూడో వరుస, రెండో bench" అంటే ఏ bench అనేది వెంటనే తెలుస్తుంది; "మూడో వరుస" అని మాత్రమే అంటే తెలియదు. Latitude వరుస లాంటిది, Longitude column లాంటిది.</p>
+<h3>ఈ పద్ధతి ఎలా వచ్చింది?</h3>
+<p>Latitude, Longitude పద్ధతి ఒక్క రోజులో, ఒక్క మనిషి వల్ల రాలేదు; 1884 కంటే రెండు వేల ఏళ్ల ముందే మొదలైంది. 1884లో జరిగింది 0° Longitude ఏ గీత అని ప్రపంచం కలిసి ఎంచుకోవడం మాత్రమే (<a href="#latlong-longitude">Greenwich కథ</a>).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కాలం</th>
+<th>ఎవరు</th>
+<th>ఏం చేశారు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>క్రీ.పూ. 3వ శతాబ్దం</td>
+<td><strong>Eratosthenes</strong> (Greece)</td>
+<td>తన ప్రపంచ పటం మీద అడ్డ గీతలు, నిలువు గీతలు గీశాడు</td>
+</tr>
+<tr>
+<td>క్రీ.పూ. 2వ శతాబ్దం</td>
+<td><strong>Hipparchus</strong> (Greece)</td>
+<td>ప్రతి చోటి స్థానాన్ని నక్షత్రాలను చూసి కొలవాలని చెప్పాడు</td>
+</tr>
+<tr>
+<td>క్రీ.శ. 2వ శతాబ్దం</td>
+<td><strong>Ptolemy</strong> (Alexandria, Egypt)</td>
+<td>Geography పుస్తకంలో సుమారు 8,000 ప్రదేశాలకు Latitude, Longitude విలువలు పట్టికలుగా ఇచ్చాడు</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఈ పద్ధతి చరిత్రలో Ptolemy పేరు ఎక్కువగా వినిపించేది ఆ పట్టికల వల్లే. ఆ తరువాత Arab, European శాస్త్రవేత్తలు, పటాలు గీసేవాళ్లు వందల ఏళ్లు నక్షత్రాలను, సూర్యుడిని చూస్తూ ఈ విలువలను సరిచేస్తూ వచ్చారు. (సూర్యుడిని కేంద్రంలో పెట్టిన Copernicus (1543) కథ <a href="#motion-apparent-sun">సూర్యుడు తిరుగుతున్నాడా</a> విభాగంలో వస్తుంది.)</p>
+<h3>ఈ రోజు ఈ address ఎక్కడ పనికొస్తోంది?</h3>
+<ul>
+<li>Phone లో Google Maps: phone మీరు ఉన్న చోటి Latitude, Longitude తెలుసుకొని ఆ బిందువును పటం మీద చూపిస్తుంది.</li>
+<li>GPS (Global Positioning System): భూమి చుట్టూ తిరిగే Satellites (ఉపగ్రహాలు) నుంచి వచ్చే signals తో phone గానీ, ఓడ గానీ తన Latitude, Longitude లెక్కిస్తుంది.</li>
+<li>ఓడలు, విమానాలు: బయలుదేరే చోటు, చేరాల్సిన చోటు రెండింటి Coordinates తెలిస్తే మధ్య దారిని లెక్కించి వెళ్తాయి.</li>
+<li>Cyclone bulletin: IMD (భారత వాతావరణ శాఖ) "Cyclone 15°N, 85°E దగ్గర ఉంది" అని చెబితే, తుఫాను తీరానికి ఎంత దూరంలో ఉందో వెంటనే తెలుస్తుంది.</li>
+<li>సరిహద్దు పటాలు: దేశాల, రాష్ట్రాల సరిహద్దులను Coordinates తో రాస్తే గీత ఎక్కడో అందరికీ ఒకేలా తెలుస్తుంది.</li>
+<li>Time zones: ఒకే గడియార సమయం పాటించే ప్రాంతాలను Longitude ను బట్టి విభజిస్తారు (<a href="#time-zones">Time zones</a>).</li>
+</ul>
+<h2 id="latlong-latitude">Latitude అంటే ఏమిటి? ఎలా కొలుస్తారు?</h2>
+<p>భూమిని ఒక పెద్ద బంతిలా ఊహించండి. రెండు ధ్రువాలకు సరిగ్గా మధ్యలో, బంతి నడుము చుట్టూ ఒక గీత గీయండి. ఈ గీత ఉత్తర ధ్రువం నుంచి, దక్షిణ ధ్రువం నుంచి సమాన దూరంలో ఉంటుంది. ఈ గీతనే Equator (భూమధ్యరేఖ) అంటాం. Equator భూమిని రెండు సగాలుగా విడగొడుతుంది: పైన సగం Northern Hemisphere (ఉత్తర అర్ధగోళం), కింద సగం Southern Hemisphere (దక్షిణ అర్ధగోళం). Hemisphere అంటే భూమిలో సగం.</p>
+<p>Equatorను మనిషి ఇష్టం వచ్చిన చోట పెట్టలేదు. భూమి తిరిగే Axis, ధ్రువాలు Equator చోటును నిర్ణయిస్తాయి; ధ్రువాలకు సరిగ్గా మధ్యలో ఉండే గీత ఒక్కటే ఉంటుంది. అందుకే Equatorను లెక్కకు మొదలు, అంటే 0°గా తీసుకున్నారు.</p>
+<h3>Latitudeను డిగ్రీల్లో ఎందుకు కొలుస్తారు?</h3>
+<p>km లో కొలవాలంటే ఏ దారిలో, ఏ పటం మీద కొలిచామో చెప్పాలి. భూమి పూర్తి బంతి కూడా కాదు, కాబట్టి km లెక్క చోటు చోటుకూ కొంచెం మారుతుంది. కోణం అలా మారదు: బంతి చిన్నదైనా, పెద్దదైనా, పావు చుట్టు ఎప్పుడూ 90°. అందుకే స్థానం చెప్పడానికి కోణమే సరైన కొలత.</p>
+<p>ఆ కోణం ఎలా వస్తుంది? భూమి మధ్య బిందువు (Centre) నుంచి Equator మీద ఒక చోటుకు ఒక గీత, మీ ఊరికి ఇంకో గీత గీయండి. ఈ రెండు గీతల మధ్య కోణమే (Angle) మీ ఊరి Latitude. ఉదాహరణకు ఆ కోణం 40° అయి, ఊరు Equatorకు ఉత్తరంగా ఉంటే Latitude 40°N; అంటే Equatorకు 40° ఉత్తరం. Latitude లెక్క Equator నుంచి మొదలవుతుంది, ధ్రువం నుంచి కాదు; అందుకే 40°N చోటు ఉత్తర ధ్రువానికి 90° − 40° = 50° దూరంలో ఉంటుంది.</p>
+<p>Equator మీదే ఉంటే కోణం ఉండదు; అందుకే Equator Latitude 0°. Centre నుంచి Equator వైపు ఒక గీత, ఉత్తర ధ్రువం వైపు ఇంకో గీత గీస్తే, ఆ రెండు గీతల మధ్య కోణం పూర్తి చుట్టు (360°) లో పావు వంతు, అంటే 90°. అందుకే North Pole 90°N, South Pole 90°S. ఈ రెండూ వృత్తాలు కావు, బిందువులు. Latitude విలువ 0° నుంచి 90° వరకు మాత్రమే; ఉత్తరం అయితే N, దక్షిణం అయితే S రాస్తాం.</p>
+<p>ఒక డిగ్రీ కంటే చిన్న కొలత కావాలంటే Minute (′), Second (″) వాడతాం: 1° = 60′, 1′ = 60″. Minute, Second కోణం ముక్కలు; గడియారంలోని నిమిషాలు, సెకన్లు కావు. అంటే 30′ = 0.5°.</p>
+<h3>Parallels అంటే ఏమిటి?</h3>
+<p>ఒకే Latitude ఉన్న ఊళ్లన్నింటినీ కలిపితే భూమి చుట్టూ తిరిగే ఒక వృత్తం (Circle) వస్తుంది. ఈ వృత్తాలన్నీ Equatorకు సమాంతరంగా (Parallel) ఉంటాయి, ఒకదాన్ని ఒకటి ఎప్పుడూ తాకవు. అందుకే వీటిని Parallels (అక్షాంశ వృత్తాలు) అంటాం. Latitude ఒక కోణం విలువ; Parallel అదే విలువ ఉన్న చోట్లను కలిపే గీత.</p>
+<p>Parallels తూర్పు–పడమరగా సాగినా, అవి చెప్పేది ఉత్తరం–దక్షిణం స్థానం. ఒక Parallel మీద ఎంత తూర్పుకు నడిచినా Latitude మారదు; ఉత్తరానికో దక్షిణానికో కదిలితేనే మారుతుంది.</p>
+<p>ఉల్లిపాయను అడ్డంగా ముక్కలు కోస్తే ప్రతి ముక్క ఒక గుండ్రని ఉంగరం లాగా వస్తుంది; మధ్య ముక్క పెద్దది, రెండు చివరల ముక్కలు చిన్నవి. Parallels కూడా అలాగే: Equator అన్నింటికంటే పెద్ద వృత్తం; ధ్రువాల వైపు వెళ్లేకొద్దీ వృత్తాలు చిన్నవవుతాయి; ధ్రువం దగ్గర వృత్తం ఒక బిందువుగా మారిపోతుంది.</p>
+<h3>Great circle, Small circle</h3>
+<p>బంతి (Sphere) మీద బంతి Centre గుండా వెళ్లే తలంతో కోస్తే వచ్చే వృత్తాన్ని Great circle (మహావృత్తం) అంటాం. ఆ బంతి మీద గీయగలిగే అతి పెద్ద వృత్తం Great circle. Centre గుండా వెళ్లని తలంతో కోస్తే వచ్చే చిన్న వృత్తాలు Small circles.</p>
+<p>Great circle ఎందుకు ముఖ్యం? బంతి మీద రెండు చోట్ల మధ్య అతి తక్కువ దూరం దారి ఎప్పుడూ ఒక Great circle మీదే ఉంటుంది. అందుకే విమానాలు, ఓడలు దూర ప్రయాణాల్లో Great circle దారినే వాడతాయి. Hyderabad నుంచి America వెళ్లే విమానం పటం మీద ఉత్తరానికి వంగి వెళ్లినట్టు కనిపించడానికి కారణం ఈ దారే. Parallelsలో Great circle ఒక్క Equator మాత్రమే; మిగిలిన Parallels అన్నీ Small circles.</p>
+<h3>ఎన్ని Parallels?</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఎలా లెక్కిస్తాం</th>
+<th>సంఖ్య</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>పూర్తి డిగ్రీల Latitude స్థానాలు</strong></td>
+<td>181 (ఉత్తరంలో 90 + Equator 1 + దక్షిణంలో 90)</td>
+</tr>
+<tr>
+<td><strong>వాటిలో పూర్తి వృత్తాలు</strong></td>
+<td>179 (రెండు ధ్రువాలు బిందువులు)</td>
+</tr>
+<tr>
+<td><strong>డిగ్రీ భాగాలు (16.5° లాంటివి) కూడా వాడితే</strong></td>
+<td>లెక్కలేనన్ని (అనంతం)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Equatorను లెక్కలో మర్చిపోతే 180 వస్తుంది; అది తప్పు లెక్క.</p>
+<p>భూమి ధ్రువాల దగ్గర కొంచెం చదునుగా ఉంటుంది (ఈ ఆకారాన్ని Ellipsoid అంటారు). అందుకే GPS, Survey పటాలు ఈ ఆకారానికి సరిపోయేలా కొంచెం సవరించిన Latitude (Geodetic latitude) వాడతాయి. రెండింటి మధ్య తేడా 0.2° కంటే తక్కువ; పైన నేర్చుకున్న definition నే GPS ఇంకొంచెం సూక్ష్మంగా లెక్కిస్తుంది.</p>
+<h2 id="latlong-longitude">Longitude అంటే ఏమిటి? 0° Longitude Greenwichలోనే ఎందుకు?</h2>
+<p>Latitudeతో ఒక ఊరు Equatorకు ఎంత ఉత్తరంగా ఉందో తెలిసింది. కానీ అదే Parallel మీద తూర్పు నుంచి పడమర వరకు చాలా ఊళ్లు ఉంటాయి. ఏ ఊరు అని చెప్పాలంటే తూర్పు–పడమర కొలత కావాలి; ఆ పనే Longitude చేస్తుంది.</p>
+<h3>Meridian అంటే ఏమిటి?</h3>
+<p>Globe మీద ఉత్తర ధ్రువం నుంచి దక్షిణ ధ్రువం వరకు నిలువుగా ఒక గీత గీయండి. ఆ గీత సగం వృత్తం (Semicircle) అవుతుంది. ఇలాంటి గీతనే Meridian (రేఖాంశ రేఖ) అంటాం. ఒక Meridian మీద ఉన్న చోట్లన్నింటికీ Longitude ఒకటే.</p>
+<ul>
+<li>అన్ని Meridians రెండు ధ్రువాల దగ్గర కలుస్తాయి; Equator దగ్గర ఒకదానికొకటి అత్యంత దూరంగా ఉంటాయి.</li>
+<li>ప్రతి Meridian పొడవూ సమానమే.</li>
+<li>ఒక Meridian, దానికి సరిగ్గా ఎదురుగా ఉన్న Meridian కలిస్తే ఒక పూర్తి Great circle అవుతుంది.</li>
+<li>ప్రతి Meridian Equatorను 90° కోణంలో దాటుతుంది. భూమి Axis కూడా Equator తలానికి (Equatorial plane) నిటారుగా, అంటే 90° లో ఉంటుంది.</li>
+</ul>
+<p>పుచ్చకాయను పై నుంచి కింది వరకు ముక్కలుగా కోస్తే ప్రతి ముక్క అంచు పై చివర నుంచి కింది చివర వరకు వెళ్తుంది; అన్ని అంచులూ రెండు చివరల దగ్గర కలుస్తాయి, మధ్యలో దూరంగా ఉంటాయి. Meridians కూడా అలాగే.</p>
+<p>Meridians ఉత్తరం–దక్షిణంగా సాగినా, అవి చెప్పేది తూర్పు–పడమర స్థానం. ఒక Meridian మీద ఉత్తరానికి ఎంత నడిచినా Longitude మారదు.</p>
+<h3>Longitude ఎలా కొలుస్తారు?</h3>
+<p>Latitudeకు ప్రకృతే Equatorను ఇచ్చింది. కానీ Meridians అన్నీ ఒకేలా ఉంటాయి; ఏదీ ప్రత్యేకం కాదు. అందుకే మనుషులే ఒక Meridianను ఎంచుకొని దాన్ని 0° అని ఒప్పుకోవాలి. ఆ ఎంచుకున్న Meridianనే Prime Meridian (ప్రధాన రేఖాంశం) అంటాం. Prime Meridian నుంచి మీ ఊరి Meridian ఎన్ని డిగ్రీల కోణంలో ఉందో ఆ కోణమే మీ ఊరి Longitude; తూర్పు వైపు ఉంటే E, పడమర వైపు ఉంటే W. ఉదాహరణకు 30°W అంటే Prime Meridianకు 30° పడమర.</p>
+<p>ఈ కోణం ఎక్కడ కొలుస్తారు? భూమిని Equator దగ్గర రెండు సగాలుగా కోశాం అనుకోండి. కోసిన ముఖం ఒక పెద్ద గుండ్రటి పళ్లెం లాంటిది; ఆ చదునైన ముఖాన్నే Equatorial plane అంటారు. ఆ పళ్లెం మధ్యలో, భూమి Centre దగ్గర, ఒక గీత Prime Meridian వైపు, ఇంకో గీత మీ ఊరి Meridian వైపు గీస్తే, ఆ రెండు గీతల మధ్య కోణమే Longitude.</p>
+<p>Longitude 180° వరకే ఎందుకు? పూర్తి చుట్టు 360° నిజమే. కానీ లెక్క Prime Meridian నుంచి రెండు వైపులకు వెళ్తుంది: తూర్పుకు సగం చుట్టు 180°, పడమరకు సగం చుట్టు 180°. అందుకే విలువ 0° నుంచి 180°E వరకు, 0° నుంచి 180°W వరకు.</p>
+<h3>ఎన్ని Meridians? రెండు అర్ధగోళాలు</h3>
+<p>Prime Meridian, దానికి ఎదురుగా ఉన్న 180° Meridian కలిసి ఒక పూర్తి వృత్తం అవుతాయి. ఈ వృత్తం భూమిని Eastern Hemisphere (తూర్పు అర్ధగోళం), Western Hemisphere (పడమర అర్ధగోళం)గా విడగొడుతుంది.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఎలా లెక్కిస్తాం</th>
+<th>సంఖ్య</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>పూర్తి డిగ్రీల Meridians</strong></td>
+<td>360 (0° ఒకటి + 1°–179° రెండు వైపులా 179 చొప్పున + 180° ఒకటి)</td>
+</tr>
+<tr>
+<td><strong>డిగ్రీ భాగాలు కూడా వాడితే</strong></td>
+<td>లెక్కలేనన్ని (అనంతం)</td>
+</tr>
+</tbody>
+</table></div>
+<p>180°E, 180°W రెండూ ఒకే Meridian; దాన్ని రెండుసార్లు లెక్కిస్తే 361 అనే తప్పు సంఖ్య వస్తుంది.</p>
+<p>180° Meridian ను దాదాపుగా అనుసరిస్తూ International Date Line (అంతర్జాతీయ దినరేఖ) ఉంటుంది. ఆ గీత దాటితే తేదీ ఒక రోజు మారుతుంది. Date Line దీవుల దగ్గర వంకరగా వెళ్తుంది, కాబట్టి 180° Meridian తో పూర్తిగా ఒకటి కాదు (<a href="#time-dateline">Date Line</a>).</p>
+<h3>Greenwich ఎలా ఎంపికైంది?</h3>
+<p>1800ల వరకు ప్రతి దేశం తన రాజధాని గుండా వెళ్లే Meridianను 0° అని వాడేది. దాంతో ఒకే ఊరికి ఒక పటంలో ఒక Longitude, ఇంకో పటంలో వేరే Longitude వచ్చేవి. ఓడలు, రైళ్లు, telegraph పెరిగే కొద్దీ ఈ గందరగోళం ఇబ్బంది అయింది.</p>
+<p>ఇంకో సమస్య: సముద్రం మధ్యలో ఓడ Longitude ఎలా తెలుసుకోవాలి? Latitude సులభం; ధ్రువ నక్షత్రం ఎంత ఎత్తులో ఉందో చూస్తే తెలుస్తుంది. Longitude కి సమయం కావాలి, ఎందుకంటే భూమి గంటకు 15° తిరుగుతుంది (<a href="#time-4min">4 నిమిషాల లెక్క</a>). ఓడ మీద మధ్యాహ్నం (సూర్యుడు అత్యంత ఎత్తులో ఉన్నప్పుడు) అయిన క్షణంలో ఇంటి రేవు (home port) సమయం ఎంతో తెలిస్తే చాలు. ఉదాహరణకు అప్పుడు ఇంటి రేవులో మధ్యాహ్నం 2 గంటలు అయితే, ఓడ రేవుకు 2 × 15° = 30° పడమరగా ఉంది. కానీ పాత లోలకం (pendulum) గడియారాలు ఊగే ఓడ మీద సరిగ్గా నడవవు.</p>
+<p>ఈ సమస్యను తీర్చినవాడు England కు చెందిన వడ్రంగి, గడియారాల తయారీదారు John Harrison. 1700లలో సముద్రంలో కూడా సరిగ్గా నడిచే గడియారం, Marine chronometer, తయారు చేశాడు. Harrison తయారు చేసిన H4 chronometer ను 1761లో సముద్ర ప్రయాణంలో పరీక్షించారు; అప్పటి నుంచి ఓడల మీద Longitude సులభంగా తెలిసింది.</p>
+<p>London దగ్గర Greenwich లో Royal Observatory (ఖగోళ పరిశీలనా కేంద్రం) ఉంది. అప్పటి Astronomer Royal (England ప్రభుత్వ ప్రధాన ఖగోళ శాస్త్రవేత్త) George Biddell Airy అక్కడ Airy Transit Circle అనే telescope పెట్టించాడు. ఆ telescope ఉత్తరం–దక్షిణం దిశలో మాత్రమే పైకీ కిందకూ తిరుగుతుంది, కాబట్టి ఒక నక్షత్రం Greenwich ఉత్తరం–దక్షిణం గీతను దాటే క్షణాన్ని చూపిస్తుంది. ఆ telescope ఉన్న గీతే Greenwich Meridian; 1851 నుంచి ఈ గీతను అలా ఖచ్చితంగా గుర్తించారు. అప్పటికే ప్రపంచంలో సుమారు మూడింట రెండు వంతుల ఓడలు Greenwich ఆధారంగా గీసిన సముద్ర పటాలే వాడుతున్నాయి. Greenwich నే 0° అని ఒప్పుకుంటే ఎక్కువ మందికి ఏ మార్పూ అవసరం లేదు; Greenwich ఎంపికకు ముఖ్య కారణం ఇదే.</p>
+<p>1884 అక్టోబర్ 1న అమెరికాలోని Washington, D.C.లో International Meridian Conference మొదలైంది. ఆ సమావేశం ఫలితం ఇది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>విషయం</th>
+<th>వివరం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>పాల్గొన్న దేశాలు</strong></td>
+<td>25</td>
+</tr>
+<tr>
+<td><strong>Greenwich కు అనుకూలం</strong></td>
+<td>22</td>
+</tr>
+<tr>
+<td><strong>వ్యతిరేకం</strong></td>
+<td>San Domingo (నేటి Dominican Republic) ఒక్కటే</td>
+</tr>
+<tr>
+<td><strong>ఓటు వేయనివి (abstain)</strong></td>
+<td>France, Brazil</td>
+</tr>
+</tbody>
+</table></div>
+<p>France ఎందుకు ఒప్పుకోలేదు? France అప్పటికి తన సొంత Paris Meridian ను 0° గా వాడుతోంది; 1911 వరకు తన గడియార సమయాన్ని Paris Meridian ఆధారంగానే పెట్టుకుంది.</p>
+<p>ఈ రోజు GPS లో వాడే 0° గీతను IERS (International Earth Rotation and Reference Systems Service) అనే అంతర్జాతీయ సంస్థ నిర్ణయిస్తుంది; ఆ గీత పేరు IERS Reference Meridian. ఈ గీత Greenwich లో పర్యాటకుల కోసం నేల మీద గీసిన పాత గీతకు సుమారు 102.5 m తూర్పుగా ఉంటుంది. అందుకే అక్కడ phone GPS 0° ను కొంచెం పక్కన చూపిస్తుంది. రెండూ Greenwich Royal Observatory దగ్గరి గీతలే.</p>
+<h3>Prime Meridian ఏ దేశాల గుండా వెళ్తుంది?</h3>
+<p>Prime Meridian 8 దేశాల భూభాగం గుండా వెళ్తుంది (Royal Museums Greenwich జాబితా; కొన్ని పుస్తకాలు Togo ను వదిలి 7 అంటాయి):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఖండం</th>
+<th>దేశాలు (ఉత్తరం → దక్షిణం)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Europe (3)</strong></td>
+<td>United Kingdom, France, Spain</td>
+</tr>
+<tr>
+<td><strong>Africa (5)</strong></td>
+<td>Algeria, Mali, Burkina Faso, Togo, Ghana</td>
+</tr>
+</tbody>
+</table></div>
+<p>దక్షిణంగా ఆ గీత Antarctica ను దాటుతుంది; Antarctica ఒక దేశం కాదు, ఖండం.</p>
+<h2 id="latlong-difference">Latitude, Longitude మధ్య తేడా ఏమిటి? రెండూ కలిస్తే ఏం వస్తుంది?</h2>
+<p>రెండూ కోణాలే, రెండూ డిగ్రీల్లోనే. తేడా ఎక్కడ మొదలుపెడతాం, ఏ దిశ కొలుస్తాం అనే దాంట్లో ఉంది.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పోలిక</th>
+<th>Latitude (అక్షాంశం)</th>
+<th>Longitude (రేఖాంశం)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఏ దిశ స్థానం</strong></td>
+<td>ఉత్తరం / దక్షిణం</td>
+<td>తూర్పు / పడమర</td>
+</tr>
+<tr>
+<td><strong>మొదలు (0°)</strong></td>
+<td>Equator (ప్రకృతి నిర్ణయించింది)</td>
+<td>Prime Meridian (మనుషులు ఎంచుకున్నది)</td>
+</tr>
+<tr>
+<td><strong>విలువ</strong></td>
+<td>0° నుంచి 90°N / 90°S</td>
+<td>0° నుంచి 180°E / 180°W</td>
+</tr>
+<tr>
+<td><strong>గీతల పేరు</strong></td>
+<td>Parallels</td>
+<td>Meridians</td>
+</tr>
+<tr>
+<td><strong>గీతలు సాగే దిశ</strong></td>
+<td>తూర్పు–పడమర</td>
+<td>ఉత్తరం–దక్షిణం</td>
+</tr>
+<tr>
+<td><strong>గీతల ఆకారం</strong></td>
+<td>పూర్తి వృత్తాలు; Equator పెద్దది; ధ్రువాలు బిందువులు</td>
+<td>ధ్రువాలను కలిపే అర్ధవృత్తాలు; అన్నీ సమాన పొడవు</td>
+</tr>
+<tr>
+<td><strong>పూర్తి డిగ్రీల లెక్క</strong></td>
+<td>181</td>
+<td>360</td>
+</tr>
+<tr>
+<td><strong>1° దూరం</strong></td>
+<td>సుమారు 111 km, అంతటా దాదాపు ఒకటే</td>
+<td>Equator దగ్గర 111 km, ధ్రువాల వైపు తగ్గి 0</td>
+</tr>
+<tr>
+<td><strong>బాగా ఉపయోగపడేది</strong></td>
+<td>Climate, వేడి అర్థం చేసుకోవడానికి</td>
+<td>Time అర్థం చేసుకోవడానికి</td>
+</tr>
+</tbody>
+</table></div>
+<p>చివరి వరుస అర్థం కావాలంటే రెండు మాటలు తెలుసుకోండి. Weather (వాతావరణం) అంటే ఈ రోజు, ఈ వారం ఉన్న వేడి, వాన, గాలి. Climate (శీతోష్ణస్థితి) అంటే ఒక చోట చాలా ఏళ్ల (సాధారణంగా 30 ఏళ్ల) సగటు Weather. "ఈ రోజు విజయవాడలో వాన పడింది" అనేది Weather; "విజయవాడ వేసవి చాలా వేడిగా ఉంటుంది" అనేది Climate. Latitude ను బట్టి సూర్యకిరణాలు ఎంత నిటారుగా పడతాయో మారుతుంది, అందుకే Latitude Climate కు పనికొస్తుంది (<a href="#latlong-heatzones">Heat zones</a>). Longitude ను బట్టి సూర్యుడు ఎప్పుడు అత్యంత ఎత్తుకు వస్తాడో మారుతుంది, అందుకే Longitude Time కి పనికొస్తుంది (<a href="#time-4min">4 నిమిషాల లెక్క</a>).</p>
+<h3>Coordinates ఎలా చదవాలి?</h3>
+<p>"సుమారు 16.5°N, 80.6°E" అంటే Equatorకు 16.5° ఉత్తరంగా, Prime Meridianకు 80.6° తూర్పుగా ఉన్న చోటు; ఆ రెండు గీతలు కలిసే బిందువు దాదాపు విజయవాడ. మొదట Latitude, తరువాత Longitude రాయడం పద్ధతి; GPS కూడా ఇదే వరుస వాడుతుంది.</p>
+<p>Coordinates నుంచే అర్ధగోళాలు తెలుస్తాయి. 40°N, 30°W లో N అంటే Northern Hemisphere, W అంటే Western Hemisphere; కాబట్టి ఆ చోటు ఉత్తర, పడమర అర్ధగోళాల్లో ఉంది. అదే Parallel (40°N) మీద ఉన్న ఇంకో చోటు, ఉదాహరణకు 40°N, 60°E; Latitude 0°, Longitude 30°W ఉన్న చోటు Equator మీద ఉంటుంది.</p>
+<p>Latitude ఒక్కటే ఇస్తే సరిపోదు. 16.5°N Parallel మీద విజయవాడతో పాటు ఆఫ్రికాలో, అమెరికాలో కూడా చోట్లు ఉన్నాయి. అలాగే Equator మీద ఉన్న ప్రతి చోటికీ Latitude 0° మాత్రమే; Longitude చోటు చోటుకూ మారుతుంది (Kenya లో సుమారు 37°E, Ecuador లో సుమారు 78°W). "0°, 0°" అనేది Equator, Prime Meridian కలిసే ఒకే ఒక బిందువు; ఆ బిందువు Africa పక్కన Atlantic సముద్రంలోని Gulf of Guinea లో ఉంది.</p>
+<h2 id="latlong-distance">1° Latitudeకు 111 km అయితే, 1° Longitude ఎందుకు ధ్రువాల వైపు తగ్గిపోతుంది?</h2>
+<h3>1° Latitude = సుమారు 111 km</h3>
+<p>Equator నుంచి ఉత్తర ధ్రువం వరకు ఒక Meridian వెంట నడిచాం అనుకోండి. Centre దగ్గర కోణం 0° నుంచి 90° కి పెరుగుతుంది; నడిచిన దూరం సుమారు 10,000 km. 10,000 ను 90 తో భాగిస్తే సుమారు 111. అంటే 1° Latitudeకు సుమారు 111 km, అంటే సుమారు 69 సాధారణ miles.</p>
+<p>Meridian ఒక పెద్ద వృత్తంలో సగం భాగం; వృత్తం మీద సమాన కోణాలకు సమాన పొడవు అంచు వస్తుంది. కాబట్టి Equator దగ్గరైనా, ధ్రువం దగ్గరైనా ఒక డిగ్రీ Latitude కు వచ్చే దూరం దాదాపు ఒకటే. "దాదాపు" ఎందుకంటే భూమి Ellipsoid ఆకారం వల్ల ఈ దూరం Equator దగ్గర 110.6 km నుంచి ధ్రువాల దగ్గర 111.7 km వరకు కొంచెం మారుతుంది.</p>
+<h3>1° Longitude ఎందుకు తగ్గుతుంది?</h3>
+<p>Meridians Equator దగ్గర ఎక్కువ దూరంగా ఉండి, ధ్రువాల దగ్గర ఒకే బిందువులో కలుస్తాయి. కాబట్టి రెండు Meridians మధ్య దూరం మీరు ఏ Latitude మీద ఉన్నారో దాన్ని బట్టి మారుతుంది.</p>
+<p>ఇంకో రకంగా చూడండి. Equator చుట్టు సుమారు 40,000 km; దాన్ని 360 ముక్కలు చేస్తే ఒక్కో ముక్క సుమారు 111 km. 60°N దగ్గర నేల Axis కు దగ్గరగా వచ్చేస్తుంది; అక్కడ Axis నుంచి నేలకు ఉన్న దూరం (ఆ Parallel వృత్తపు వ్యాసార్ధం, Radius) భూమి Radius లో సరిగ్గా సగం. Radius సగమైతే వృత్తం చుట్టు కూడా సగమే, కాబట్టి 60°N Parallel చుట్టు Equator చుట్టులో సగం. ఆ చుట్టును 360 ముక్కలు చేస్తే ఒక్కో ముక్క సుమారు 55.5 km, అంటే Equator విలువకు 0.5 రెట్లు. 60° Parallel మీద 2° Longitude దూరం 2 × 55.5 = 111 km. ధ్రువం దగ్గర వృత్తమే లేదు కాబట్టి దూరం 0. 1° Longitude దూరం అన్ని Latitudes కంటే Equator మీదే ఎక్కువ.</p>
+<p>సూత్రం: 1° Longitude దూరం ≈ 111 × cos(Latitude) km. ఇక్కడ cos (Trigonometry విలువ) అర్థం ఒక్కటే: "ఆ Parallel వృత్తం Equator లో ఎంత భాగం".</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Latitude</th>
+<th>cos విలువ (సుమారు)</th>
+<th>1° Longitude దూరం (సుమారు)</th>
+<th>ఉదాహరణ చోటు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0°</strong></td>
+<td>1</td>
+<td>111 km</td>
+<td>Equator</td>
+</tr>
+<tr>
+<td><strong>16.5°N</strong></td>
+<td>0.96</td>
+<td>106 km</td>
+<td>విజయవాడ</td>
+</tr>
+<tr>
+<td><strong>30°</strong></td>
+<td>0.87</td>
+<td>96 km</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>45°</strong></td>
+<td>0.71</td>
+<td>79 km</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>60°</strong></td>
+<td>0.5</td>
+<td>55.5 km</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>90°</strong></td>
+<td>0</td>
+<td>0 km</td>
+<td>ధ్రువం</td>
+</tr>
+</tbody>
+</table></div>
+<p>గొడుగు తెరిచి పై నుంచి చూడండి. ఊచలన్నీ మధ్య కర్ర దగ్గర కలుస్తాయి, అంచు దగ్గర దూరంగా ఉంటాయి. ఊచలు Meridians, మధ్య కర్ర ధ్రువం, అంచు Equator.</p>
+<p>Meridians దగ్గరయ్యే ఈ కారణంతోనే India ఉత్తరం–దక్షిణం పొడవు తూర్పు–పడమర వెడల్పు కంటే ఎక్కువ (<a href="#latlong-india">India</a>).</p>
+<h3>Nautical mile, Knot</h3>
+<p>ఓడలు, విమానాలు దూరాన్ని Nautical mile (నాటికల్ మైలు) లో కొలుస్తాయి, ఎందుకంటే ఈ కొలత Latitude తో నేరుగా కలుస్తుంది. మొదట 1′ (ఒక Minute) Latitude దూరాన్నే ఒక Nautical mile అన్నారు; ఇప్పుడు దాన్ని సరిగ్గా 1,852 m గా స్థిరం చేశారు. అందుకే 1° Latitude = 60′ ≈ 60 Nautical miles ≈ 111 km.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కొలత</th>
+<th>ఏమిటి</th>
+<th>విలువ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nautical mile</strong></td>
+<td>దూరం</td>
+<td>సరిగ్గా 1,852 m (1.852 km)</td>
+</tr>
+<tr>
+<td><strong>Knot (నాట్)</strong></td>
+<td>వేగం</td>
+<td>గంటకు 1 Nautical mile (గంటకు 1.852 km)</td>
+</tr>
+<tr>
+<td><strong>సాధారణ mile (Statute mile)</strong></td>
+<td>రోడ్డు దూరం</td>
+<td>సుమారు 1.609 km</td>
+</tr>
+</tbody>
+</table></div>
+<p>Knot లెక్కలో "గంటకు" అనే సమయం భాగం ఉంది; అందుకే Knot దూరం కాదు, వేగం.</p>
+<h2 id="latlong-special">ప్రత్యేక అక్షాంశాలు ఏవి? వాటి విలువలు ఎందుకు అవే?</h2>
+<p>ప్రత్యేక పేర్లు ఉన్న Parallels ఐదు; వీటితో పాటు రెండు ధ్రువాలు బిందువులు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పేరు</th>
+<th>తెలుగు పేరు</th>
+<th>పాఠశాల విలువ</th>
+<th>నేటి కచ్చిత విలువ (సుమారు)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Equator</strong></td>
+<td>భూమధ్యరేఖ</td>
+<td>0°</td>
+<td>0°</td>
+</tr>
+<tr>
+<td><strong>Tropic of Cancer</strong></td>
+<td>కర్కట రేఖ</td>
+<td>23½°N</td>
+<td>23.44°N</td>
+</tr>
+<tr>
+<td><strong>Tropic of Capricorn</strong></td>
+<td>మకర రేఖ</td>
+<td>23½°S</td>
+<td>23.44°S</td>
+</tr>
+<tr>
+<td><strong>Arctic Circle</strong></td>
+<td>ఆర్కిటిక్ వృత్తం (ఉత్తర ధ్రువ వృత్తం)</td>
+<td>66½°N</td>
+<td>66.56°N</td>
+</tr>
+<tr>
+<td><strong>Antarctic Circle</strong></td>
+<td>అంటార్కిటిక్ వృత్తం (దక్షిణ ధ్రువ వృత్తం)</td>
+<td>66½°S</td>
+<td>66.56°S</td>
+</tr>
+<tr>
+<td>North Pole / South Pole</td>
+<td>ఉత్తర / దక్షిణ ధ్రువం</td>
+<td>90°N / 90°S</td>
+<td>బిందువులు</td>
+</tr>
+</tbody>
+</table></div>
+<p>NCERT, AP పాఠశాల పుస్తకాలు 23½°, 66½° అనే సరళ విలువలు ఇస్తాయి. Axial tilt వేల సంవత్సరాల్లో కొంచెం మారుతుంది, కాబట్టి ఈ గీతలు కూడా నెమ్మదిగా జరుగుతాయి; నేటి విలువ సుమారు 23.44° (ఒక దశాంశానికి 23.4°), ధ్రువ వృత్తాలకు 66.56° (66.6°). 23½°, 23.44° ఒకే గీతను సూచిస్తాయి.</p>
+<h3>ఈ సంఖ్యలు ఎక్కడి నుంచి వచ్చాయి?</h3>
+<p>అన్నీ ఒకే సంఖ్య నుంచి వచ్చాయి: భూమి Axis ఒరిగిన కోణం. భూమి సూర్యుడి చుట్టూ ఒక పెద్ద చదునైన పళ్లెం మీద తిరుగుతోంది అనుకుందాం; ఆ పళ్లెమే Orbital plane. ఆ పళ్లెం మీద ఒక కర్రను నిటారుగా నిలబెడితే అది నేరుగా పైకి చూపిస్తుంది. భూమి Axis ఆ కర్ర నుంచి సుమారు 23.44° పక్కకు ఒరిగి ఉంది; ఈ కోణమే Axial tilt (అక్ష వంపు). అదే వంపును Orbital plane నుంచి కొలిస్తే 90° − 23½° = 66½° వస్తుంది (<a href="#motion-tilt">Axis వంపు</a>).</p>
+<p>Axis ఏడాది పొడవునా దాదాపు ఒకే దిశలో ఒరిగి ఉంటుంది. జూన్లో భూమి ఉత్తర భాగం సూర్యుడి వైపు వంగి ఉంటుంది; ఆరు నెలల తరువాత, డిసెంబర్లో, భూమి సూర్యుడికి అవతలి వైపు ఉన్నప్పుడు దక్షిణ భాగం సూర్యుడి వైపు వంగి ఉంటుంది. అందుకే మధ్యాహ్న సూర్యుడు నెత్తి మీద నిటారుగా (Overhead) పడే చోటు సంవత్సరంలో ఉత్తరానికి, దక్షిణానికి జరుగుతూ ఉంటుంది. వంపు 23.44° కాబట్టి ఆ చోటు Equator నుంచి 23.44° ఉత్తరం, 23.44° దక్షిణం దాటి వెళ్లదు. ఆ రెండు హద్దులే Tropics; అంటే Tropic Latitude = Axial tilt.</p>
+<ul>
+<li>Tropic of Cancer: సుమారు జూన్ 21 (June Solstice) న మధ్యాహ్న సూర్యుడు ఇక్కడ నెత్తి మీద ఉంటాడు. ఈ గీతకు ఉత్తరంగా ఎక్కడా సూర్యుడు నెత్తి మీదకు రాడు.</li>
+<li>Tropic of Capricorn: సుమారు డిసెంబర్ 22 (December Solstice) న మధ్యాహ్న సూర్యుడు ఇక్కడ నెత్తి మీద ఉంటాడు. ఈ గీతకు దక్షిణంగా ఎక్కడా రాడు.</li>
+<li>Equator: సుమారు మార్చి 21, సెప్టెంబర్ 23 (Equinoxలు) న సూర్యుడు ఇక్కడ నెత్తి మీద ఉంటాడు.</li>
+</ul>
+<p>Solstice (అయనాంతం) అంటే సూర్యుడు సంవత్సరంలో అత్యంత ఉత్తరానికి లేదా అత్యంత దక్షిణానికి చేరే రోజు; Equinox (విషువత్తు) అంటే సూర్యుడు Equator మీద ఉండే రోజు, ఆ రోజు పగలు, రాత్రి దాదాపు సమానం. ఈ తేదీలు ఏటా ఒకటి రెండు రోజులు మారవచ్చు (<a href="#seasons-solstice-equinox">అయనాంతాలు, విషువత్తులు</a>).</p>
+<p>ధ్రువ వృత్తాలు ఎలా వచ్చాయి? జూన్లో ఉత్తర ధ్రువం సూర్యుడి వైపు 23.44° ఒరిగి ఉంటుంది. అప్పుడు సూర్యకాంతి ధ్రువాన్ని దాటి అవతలి వైపు 23.44° వరకు చేరుతుంది; భూమి ఎంత తిరిగినా ఆ ప్రాంతం వెలుగులోనే ఉంటుంది. ఆ ప్రాంతం హద్దు 90° − 23.44° = 66.56°; అదే Arctic Circle. అంటే Arctic Circle నుంచి ధ్రువం వరకు జూన్లో కనీసం ఒక రోజు సూర్యుడు 24 గంటలూ అస్తమించడు; డిసెంబర్లో కనీసం ఒక రోజు సూర్యుడు అసలు ఉదయించడు. Antarctic Circleకు దక్షిణంగా కూడా ఇదే జరుగుతుంది, కానీ నెలలు తారుమారు: డిసెంబర్లో పగలే, జూన్లో రాత్రే (<a href="#seasons-polar">ధ్రువాల పగలు</a>). Tilt మారితే ఈ గీతలు కూడా మారతాయి: tilt 30° అయితే Tropic of Cancer 30°N, Arctic Circle 60°N అవుతాయి.</p>
+<p>ఒక టేబుల్ మీద Globeను పెట్టి, దాని కర్రను నిటారు నుంచి 23½° పక్కకు ఒరగించండి. చీకటి గదిలో ఒక torchను టేబుల్ ఎత్తులో పెట్టి, Globeను torch చుట్టూ (కర్ర ఎప్పుడూ ఒకే దిశలో ఒరిగి ఉండేలా) తిప్పండి. torch వెలుగు నేరుగా పడే చోటు ఒకసారి Equatorకు పైకి, ఇంకోసారి కిందకు జరుగుతుంది; కర్ర ఒరిగిన కోణం కంటే ఎక్కువ దూరం వెళ్లదు.</p>
+<p>Tropic అనే పేరు Greek మాట "tropos" (తిరగడం) నుంచి వచ్చింది: సూర్యుడు ఈ గీత వరకు వచ్చి వెనక్కి తిరుగుతాడు. సుమారు 2,000 ఏళ్ల క్రితం June Solstice నాడు సూర్యుడు Cancer (కర్కాటక రాశి) నక్షత్ర మండలంలో, December Solstice నాడు Capricorn (మకర రాశి) లో కనిపించేవాడు; అందుకే ఆ పేర్లు. భూమి Axis చాలా నెమ్మదిగా బొంగరం లాగా దిశ మారుస్తుంది (Precession), దాంతో నేడు ఆ రోజుల్లో సూర్యుడు Taurus/Gemini, Sagittarius ల దగ్గర కనిపిస్తాడు; పేర్లు మాత్రం పాతవే.</p>
+<h3>ఈ గీతలు ఏ ఖండాలను, ఏ దేశాలను దాటుతాయి?</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>గీత</th>
+<th>ఖండాలు</th>
+<th>దేశాలు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tropic of Cancer</strong></td>
+<td>North America, Africa, Asia</td>
+<td>Mexico, Bahamas, Western Sahara, Mauritania, Mali, Algeria, Niger, Libya, Egypt, Saudi Arabia, UAE, Oman, India, Bangladesh, Myanmar, China, Taiwan (Western Sahara ను దేశంగా లెక్కిస్తే 17, లేకపోతే 16)</td>
+</tr>
+<tr>
+<td><strong>Tropic of Capricorn</strong></td>
+<td>South America, Africa, Australia</td>
+<td>10: Chile, Argentina, Paraguay, Brazil, Namibia, Botswana, South Africa, Mozambique, Madagascar, Australia</td>
+</tr>
+<tr>
+<td><strong>Equator</strong></td>
+<td>South America, Africa, Asia</td>
+<td>నేల మీదుగా 11 (కింద చూడండి)</td>
+</tr>
+<tr>
+<td><strong>Arctic Circle</strong></td>
+<td>Europe, Asia, North America</td>
+<td>8: Norway, Sweden, Finland, Russia, USA (Alaska), Canada, Denmark (Greenland), Iceland (Grímsey దీవి)</td>
+</tr>
+<tr>
+<td><strong>Antarctic Circle</strong></td>
+<td>Antarctica మాత్రమే</td>
+<td>ఏ దేశమూ లేదు</td>
+</tr>
+</tbody>
+</table></div>
+<p>Tropic of Capricorn ను Asia తాకదు; Asia అంత దక్షిణానికి రాదు.</p>
+<p>Equator నేల మీదుగా 11 దేశాల గుండా వెళ్తుంది. దీవుల నేలను కూడా నేలగానే లెక్కిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఖండం</th>
+<th>దేశాలు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>South America (3)</strong></td>
+<td>Ecuador, Colombia, Brazil</td>
+</tr>
+<tr>
+<td><strong>Africa (7)</strong></td>
+<td>São Tomé and Príncipe (Rolas దీవి), Gabon, Republic of Congo, DR Congo, Uganda, Kenya, Somalia</td>
+</tr>
+<tr>
+<td><strong>Asia (1)</strong></td>
+<td>Indonesia (Equator ఆ దేశపు చాలా దీవుల నేల మీదుగా వెళ్తుంది)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sadguna Rao పుస్తకం, చాలా పోటీ పరీక్షల మెటీరియల్ "13 దేశాలు" అంటాయి; అవి Maldives, Kiribati ని కూడా కలుపుతాయి. ఈ రెండు దేశాల్లో Equator దీవుల నేల మీద కాకుండా దీవుల మధ్య ఉన్న ఆ దేశాల సముద్ర భాగం గుండా వెళ్తుంది. అందుకే నేల దాటే లెక్క 11, సముద్ర పరిధి కలిపిన లెక్క 13. Ecuador దేశం పేరే Equator అనే మాట నుంచి వచ్చింది.</p>
+<h2 id="latlong-india">భారతదేశం, Andhra Pradesh ఏ Latitudes, Longitudes మధ్య ఉన్నాయి?</h2>
+<p>India మొత్తం Equatorకు ఉత్తరంగా, Prime Meridianకు తూర్పుగా ఉంది. అందుకే India Northern Hemisphere లో, Eastern Hemisphere లో ఉంది.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>విషయం</th>
+<th>India (NCERT)</th>
+<th>Andhra Pradesh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Latitudes</strong></td>
+<td>8°4′N – 37°6′N (ప్రధాన భూభాగం)</td>
+<td>సుమారు 12°41′N – 19°07′N</td>
+</tr>
+<tr>
+<td><strong>Longitudes</strong></td>
+<td>68°7′E – 97°25′E</td>
+<td>సుమారు 77°E – 84°40′E</td>
+</tr>
+<tr>
+<td><strong>పొడవు / వెడల్పు</strong></td>
+<td>ఉత్తరం–దక్షిణం సుమారు 3,214 km; తూర్పు–పడమర సుమారు 2,933 km</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p>Mainland దక్షిణ చివర Kanyakumari (8°4′N). India మొత్తానికి దక్షిణ చివర Andaman and Nicobar దీవుల్లోని Indira Point (సుమారు 6°45′N). India తూర్పు చివర Longitude 97°25′E (Arunachal Pradesh); పడమర చివర 68°7′E (Gujarat).</p>
+<p>India Latitude పరిధి సుమారు 29°, Longitude పరిధి కూడా సుమారు 29°. అయినా వెడల్పు (2,933 km) పొడవు (3,214 km) కంటే తక్కువ. కారణం: India Equatorకు ఉత్తరంగా ఉంది, అక్కడ Meridians దగ్గరవుతాయి కాబట్టి ఒక్కో Longitude డిగ్రీ 111 km కంటే తక్కువ (<a href="#latlong-distance">దూరం</a>).</p>
+<p>AP పడమర హద్దు 77°E అనేది round చేసిన విలువ; Anantapur జిల్లా కొన్ని చోట్ల ఆ గీతకు కొంచెం పడమరకు వెళ్తుంది. విజయవాడ సుమారు 16.5°N, 80.6°E దగ్గర ఉంది.</p>
+<h3>Tropic of Cancer India లో</h3>
+<p>Tropic of Cancer India మధ్యగా వెళ్తుంది; ఆ గీత Indiaను దాదాపు రెండు సమాన భాగాలుగా విడగొడుతుంది. "దాదాపు" అంటే సుమారుగా మాత్రమే, సరిగ్గా సగం కాదు. ఆ గీత 8 రాష్ట్రాల గుండా వెళ్తుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పడమర → తూర్పు</th>
+<th>రాష్ట్రాలు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1–4</strong></td>
+<td>Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh</td>
+</tr>
+<tr>
+<td><strong>5–8</strong></td>
+<td>Jharkhand, West Bengal, Tripura, Mizoram</td>
+</tr>
+</tbody>
+</table></div>
+<p>తూర్పు నుంచి చూస్తే మొదటి రాష్ట్రం Mizoram, చివరిది Gujarat. Odisha ఈ జాబితాలో లేదు: Odisha ఉత్తర చివర సుమారు 22.5°N దగ్గరే ఆగుతుంది, Tropic సుమారు 23.4°N వద్ద Jharkhand గుండా వెళ్తుంది. AP మొత్తం Tropic of Cancer కు చాలా దక్షిణంగా ఉంది.</p>
+<h3>Standard Meridian 82°30′E</h3>
+<p>India అంతటా ఒకే గడియార సమయం కోసం ఎంచుకున్న Meridian 82°30′E (Mirzapur దగ్గర). ఈ Standard Meridian India తూర్పు చివర (97°25′E) కాదు, దేశానికి దాదాపు మధ్యలో ఉంటుంది. ఆ గీత 5 రాష్ట్రాల గుండా వెళ్తుంది: Uttar Pradesh, Madhya Pradesh, Chhattisgarh, Odisha, Andhra Pradesh. Jharkhand ఈ జాబితాలో లేదు. ఈ గీత ఆధారంగా వచ్చే IST ఎలా, ఎందుకు అనేది <a href="#time-ist">IST</a> విభాగంలో ఉంది.</p>
+<h2 id="latlong-heatzones">Latitudeకు, వేడికి సంబంధం ఏమిటి? Heat zones ఏవి?</h2>
+<p>ప్రత్యేక అక్షాంశాలను హద్దులుగా తీసుకొని భూమిని 3 రకాల Heat zones (ఉష్ణ మండలాలు)గా విభజిస్తారు; మొత్తం 5 పట్టీలు అవుతాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Heat zone</th>
+<th>ఎక్కడ</th>
+<th>సూర్యుడు</th>
+<th>వేడి</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Torrid Zone (ఉష్ణ మండలం / Tropical Zone)</strong> — 1 పట్టీ</td>
+<td>23½°N నుంచి 23½°S వరకు: Tropic of Cancer నుంచి Tropic of Capricorn వరకు</td>
+<td>సంవత్సరంలో కనీసం ఒకసారి మధ్యాహ్నం నెత్తి మీదకు వస్తాడు</td>
+<td>అత్యధిక వేడి</td>
+</tr>
+<tr>
+<td><strong>Temperate Zones (సమశీతోష్ణ మండలాలు)</strong> — 2 పట్టీలు (North, South)</td>
+<td>రెండు అర్ధగోళాల్లో 23½° నుంచి 66½° వరకు: ప్రతి Tropic నుంచి ఆ వైపు ధ్రువ వృత్తం వరకు</td>
+<td>ఎప్పుడూ నెత్తి మీదకు రాడు</td>
+<td>మితమైన వేడి; ఋతువులు స్పష్టం</td>
+</tr>
+<tr>
+<td><strong>Frigid Zones (శీతల మండలాలు)</strong> — 2 పట్టీలు</td>
+<td>66½° నుంచి 90° వరకు: Arctic Circle నుంచి North Pole వరకు, Antarctic Circle నుంచి South Pole వరకు</td>
+<td>ఆకాశంలో ఎక్కువ ఎత్తుకు రాడు; కిరణాలు ఎప్పుడూ బాగా వాలుగా</td>
+<td>చాలా చల్లగా</td>
+</tr>
+</tbody>
+</table></div>
+<p>Frigid Zones మొదలయ్యేది ధ్రువ వృత్తాల (66½°) దగ్గర, 60° దగ్గర కాదు.</p>
+<h3>కిరణాల కోణమే ఎందుకు ముఖ్యం?</h3>
+<p>మధ్యాహ్నం ఎండలో నిలబడితే వేడి ఎక్కువ, ఉదయం 7 గంటలకు తక్కువ; రెండు సార్లూ అదే సూర్యుడు. తేడా కిరణాలు పడే కోణంలో ఉంది. కిరణాలు నిటారుగా పడితే అదే వెలుగు చిన్న నేల ముక్క మీద పడుతుంది, ఆ ముక్క బాగా వేడెక్కుతుంది. వాలుగా పడితే అదే వెలుగు పెద్ద నేల మీద పరుచుకుంటుంది, ఒక్కో ముక్కకు వచ్చే వేడి తక్కువ.</p>
+<p>ఒక torchను గోడకు నిటారుగా పట్టుకుంటే చిన్న గుండ్రని, బాగా ప్రకాశవంతమైన మచ్చ పడుతుంది. torchను వాల్చితే మచ్చ సాగి పెద్దదవుతుంది, కాంతి మసకబారుతుంది. torch ఇచ్చే వెలుగు మారలేదు; పరుచుకున్న విస్తీర్ణం మారింది.</p>
+<p>భూమి గుండ్రంగా ఉంది కాబట్టి Equator దగ్గర సూర్యకిరణాలు దాదాపు నిటారుగా, ధ్రువాల వైపు వెళ్లేకొద్దీ వాలుగా పడతాయి. Heat zones హద్దులు ఈ కోణం మారే చోట్లే: సూర్యుడు నెత్తి మీదకు రాగలిగే చివరి గీతలు Tropics, 24 గంటల పగలు, రాత్రి మొదలయ్యే గీతలు ధ్రువ వృత్తాలు.</p>
+<h3>India, AP ఏ zone లో?</h3>
+<p>India లో Tropic of Cancer కు దక్షిణంగా ఉన్న భాగం Torrid Zone లో, ఉత్తరంగా ఉన్న భాగం North Temperate Zone లో ఉంది. AP మొత్తం Tropic of Cancer కు దక్షిణంగా (12°41′N–19°07′N) ఉంది, కాబట్టి AP మొత్తం Torrid Zone లో ఉంది. Tropics మధ్య ఉన్న విజయవాడ (16.5°N) లాంటి ఊళ్లకు సూర్యుడు ఏడాదికి రెండుసార్లు (సుమారు మే 6–7, ఆగస్టు 6–8) నెత్తి మీదకు వస్తాడు (<a href="#seasons-overhead-sun">Zero Shadow Day</a>).</p>
+<p>Heat zones ఒక సరళ విభజన మాత్రమే. ఒక చోటి Climate Latitude తో పాటు ఇంకా మూడు విషయాల మీద ఆధారపడుతుంది. మొదటిది సముద్ర మట్టం నుంచి ఎత్తు: పైకి వెళ్లే కొద్దీ చల్లదనం పెరుగుతుంది; అందుకే Torrid Zone లోనే ఉన్నా Araku (సుమారు 900 m ఎత్తు), Ooty చల్లగా ఉంటాయి. రెండోది సముద్రానికి దూరం: తీరం దగ్గర వేడి, చలి రెండూ మితంగా ఉంటాయి. మూడోది ఆ చోటికి వచ్చే గాలులు, ఉదాహరణకు మన దేశంలో వాన తెచ్చే Monsoon (ఋతుపవన) గాలులు.</p>
+<h2 id="time-why-differ">ఒకే సమయంలో Indiaలో ఉదయం, Americaలో రాత్రి ఎందుకు?</h2>
+<p>ఉదయం 7 గంటలకు మీరు పిల్లలను schoolకు పంపుతున్నారు. అదే క్షణంలో America లోని New York లో ఉన్న మీ బంధువు ఫోన్ చేస్తే, వాళ్లు రాత్రి భోజనం ముగించి పడుకోబోతుంటారు. ఒకే క్షణం; ఒక చోట ఉదయం, ఇంకో చోట రాత్రి. ఇది ఎలా?</p>
+<p>కారణం రెండు విషయాలు. మొదటిది, భూమి గుండ్రంగా ఉంది; సూర్యుడి వెలుగు ఒకేసారి సగం భూమి మీదే పడుతుంది. ఆ సగంలో పగలు, మిగతా సగంలో రాత్రి. రెండోది, భూమి తన చుట్టూ తాను తిరుగుతోంది (Rotation, భ్రమణం). సూర్యుడి లెక్కలో ఒక Rotation కు సుమారు 24 గంటలు పడుతుంది (నక్షత్రాల లెక్కలో కొంచెం తక్కువ; <a href="#motion-sidereal-solar-day">Sidereal day</a>). తిరిగే కొద్దీ ఒక్కో ప్రదేశం వెలుగులోకి వస్తుంది, తరువాత చీకటిలోకి వెళ్తుంది.</p>
+<p>భూమి పడమర నుంచి తూర్పుకు (West to East) తిరుగుతుంది; ఉత్తర ధ్రువం పై నుంచి చూస్తే గడియారం ముల్లుకు వ్యతిరేక దిశలో (Anticlockwise). అందుకే సూర్యుడు తూర్పున ఉదయించినట్టు కనిపిస్తాడు. నిజానికి సూర్యుడు కదలడం లేదు; మనమే తూర్పు వైపు తిరుగుతూ సూర్యుడి వైపు వస్తున్నాం (<a href="#motion-apparent-sun">సూర్యుడు తిరుగుతున్నాడా</a>).</p>
+<p>Rotation ఫలితం: తూర్పున ఉన్న ప్రదేశం సూర్యుడిని ముందుగా చూస్తుంది, పడమరన ఉన్న ప్రదేశం తరువాత. సూర్యోదయం, Solar noon, సూర్యాస్తమయం అన్నీ తూర్పు ప్రదేశాలకు ముందే వస్తాయి. అందుకే Visakhapatnam లో సూర్యోదయం Hyderabad కంటే ముందు; Arunachal Pradesh లో సూర్యోదయం, Solar noon Gujarat కంటే సుమారు రెండు గంటల ముందు. India Eastern Hemisphere లో, America Western Hemisphere లో ఉన్నాయి; New York India కు దాదాపు ఎదురెదురుగా (సుమారు 150° దూరం) ఉంటుంది. మనం సూర్యుడి వైపు తిరిగి వచ్చినప్పుడు America సూర్యుడికి దూరంగా, చీకటి వైపు ఉంటుంది.</p>
+<p>చీకటి గదిలో ఒక బల్బు వెలిగించి, దాని ముందు ఒక బంతిని పట్టుకోండి. బంతి మీద ఒక వైపు India, అవతలి వైపు America అని రెండు చుక్కలు పెట్టండి. India చుక్క బల్బు వైపు ఉన్నప్పుడు America చుక్క చీకటిలో ఉంటుంది; బంతిని సగం తిప్పితే తారుమారు అవుతుంది.</p>
+<h3>Solar noon అంటే ఏమిటి?</h3>
+<p>మీ ఊరి Meridian ను ఆకాశం వరకు పైకి పొడిగించినట్టు ఊహించండి. ఆ గీత మీ తల పైనుంచి ఉత్తరం నుంచి దక్షిణానికి ఆకాశంలో ఒక గీత అవుతుంది; ఆ గీతనే Local meridian అంటారు. రోజులో సూర్యుడు Local meridian ను దాటే క్షణాన్ని Solar noon (సౌర మధ్యాహ్నం) అంటారు. సరిగ్గా అదే క్షణంలో సూర్యుడు ఆ రోజుకు అత్యంత ఎత్తులో ఉంటాడు.</p>
+<p>Solar noon ప్రతిరోజూ, ప్రతిచోటా వస్తుంది; కానీ ఆ క్షణంలో సూర్యుడు నడినెత్తి మీద ఉండాల్సిన అవసరం లేదు. సూర్యుడు నడినెత్తి మీదకు రావడం Tropics మధ్య పట్టీలో మాత్రమే, అది కూడా ఏడాదికి రెండు రోజులే (Tropic మీద ఒక్క రోజే) జరుగుతుంది (<a href="#seasons-overhead-sun">నెత్తి మీద సూర్యుడు</a>).</p>
+<h2 id="time-4min">ఒక డిగ్రీ రేఖాంశానికి 4 నిమిషాలు ఎలా వచ్చింది?</h2>
+<p>భూమి ఒక పూర్తి చుట్టు (360°) తిరగడానికి సూర్యుడి లెక్కలో 24 గంటలు పడుతుంది. ఈ ఒక్క విషయం నుంచి Longitude, సమయం మధ్య మొత్తం పట్టిక వస్తుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Longitude తేడా</th>
+<th>సమయ తేడా</th>
+<th>ఎలా</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>360°</strong></td>
+<td>24 గంటలు</td>
+<td>ఒక పూర్తి Rotation</td>
+</tr>
+<tr>
+<td><strong>15°</strong></td>
+<td>1 గంట</td>
+<td>360 ÷ 24 = 15</td>
+</tr>
+<tr>
+<td><strong>1°</strong></td>
+<td>4 నిమిషాలు</td>
+<td>60 ÷ 15 = 4 (లేదా 1,440 నిమిషాలు ÷ 360)</td>
+</tr>
+<tr>
+<td><strong>1′ (ఒక కోణ నిమిషం)</strong></td>
+<td>4 సెకన్లు</td>
+<td>4 నిమిషాలు ÷ 60</td>
+</tr>
+</tbody>
+</table></div>
+<p>కాబట్టి 15° Longitude ఎడం ఉన్న రెండు ప్రదేశాల మధ్య ఒక గంట తేడా ఉంటుంది. ఈ 4 నిమిషాల లెక్క Rotation కాలం మీద ఆధారపడింది: భూమి 18 గంటల్లోనే తిరిగితే 1,080 ÷ 360 = 3 నిమిషాలు వచ్చేవి.</p>
+<p>′ గుర్తు అంటే Arcminute (కోణ నిమిషం); 1° = 60′. Arcminute కోణం కొలత, గడియారపు నిమిషం కాదు. 1° కి 4 కాల నిమిషాలు అయితే 60′ కి 4 నిమిషాలు, అంటే 1′ కి 4 సెకన్లు.</p>
+<h3>Local mean time అంటే ఏమిటి?</h3>
+<p>ఇలా Longitude నుంచి లెక్కించే సమయమే Local mean time (స్థానిక సగటు కాలం). "Mean" అంటే సగటు. సగటు ఎందుకు? సూర్యుడిని చూసి కొలిచే అసలు సమయాన్ని Apparent solar time అంటారు. కానీ సూర్యుడు రోజూ ఒకే గడియార సమయానికి Meridian మీదకు రాడు; కొన్ని రోజులు ముందు, కొన్ని రోజులు వెనకాల వస్తాడు. కారణం రెండు: భూమి Orbit పూర్తి గుండ్రం కాదు, కొంచెం సాగిన వృత్తం (Ellipse), కాబట్టి భూమి కొన్ని నెలలు వేగంగా, కొన్ని నెలలు నెమ్మదిగా కదులుతుంది (<a href="#motion-revolution">Revolution</a>); భూమి అక్షం వంగి ఉంది.</p>
+<p>Apparent solar time కు, Mean solar time కు మధ్య ఉన్న ఈ తేడాకు పేరు Equation of time (కాల సమీకరణం). ఏడాదిలో ఈ తేడా సుమారు 16 నిమిషాలు ముందు (నవంబర్ లో, సూర్యుడు ముందు) నుంచి సుమారు 14 నిమిషాలు వెనుక (ఫిబ్రవరి లో, సూర్యుడు వెనక) వరకు మారుతుంది. ఈ తేడాలను సగటు చేసి, ప్రతిరోజూ సరిగ్గా 24 గంటలు ఉండేలా తీసుకున్న రోజునే Mean solar day అంటాం; 1° = 4 నిమిషాలు లెక్క ఈ సగటు రోజుపైనే ఆధారపడింది. దూరపు నక్షత్రాలతో కొలిస్తే ఒక Rotation సుమారు 23 గంటల 56 నిమిషాలు (Sidereal day) అయినా, గడియారాలు, Longitude లెక్కలు సూర్యుడి రోజు (24 గంటలు) తోనే నడుస్తాయి (<a href="#motion-sidereal-solar-day">Sidereal day</a>).</p>
+<p>Local mean time ఒక ఊరి Meridian ను సగటు సూర్యుడు దాటే క్షణానికి 12:00 చూపేలా సెట్ చేసిన గడియారం లాంటిది. ఈ లెక్కతో ఆ ఊరి సూర్యోదయ సమయం మాత్రం తెలియదు; సూర్యోదయం Latitude, ఋతువు, ఆ ఊరి Horizon మీద కూడా ఆధారపడుతుంది. Horizon అంటే నేల లేదా సముద్రం ఆకాశాన్ని కలిసినట్టు కనిపించే గీత.</p>
+<h2 id="time-lmt-calc">Local mean time లెక్కలు ఎలా చేయాలి?</h2>
+<p>ఒక ప్రదేశంలో సమయం తెలుసు; అదే క్షణంలో ఇంకో ప్రదేశంలో Local mean time ఎంత? దీనికి మూడు అడుగులు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అడుగు</th>
+<th>ఏం చేయాలి</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Longitude తేడా</strong></td>
+<td>రెండూ E లేదా రెండూ W అయితే పెద్ద దాని నుంచి చిన్నది తీసివేయండి. ఒకటి E, ఇంకొకటి W అయితే రెండూ కలపండి.</td>
+</tr>
+<tr>
+<td><strong>2. నిమిషాలుగా మార్చండి</strong></td>
+<td>తేడా × 4 = నిమిషాలు; 60 తో భాగించి గంటలు, నిమిషాలుగా రాయండి.</td>
+</tr>
+<tr>
+<td><strong>3. కలపాలా, తీసివేయాలా</strong></td>
+<td>కావాల్సిన ప్రదేశం తూర్పున ఉంటే కలపండి; పడమరన ఉంటే తీసివేయండి. 24:00 దాటితే మరుసటి రోజు; 00:00 కంటే వెనక్కి వెళ్తే ముందు రోజు.</td>
+</tr>
+</tbody>
+</table></div>
+<p>E, W అయితే ఎందుకు కలపాలి? 0° కి ఒక ప్రదేశం తూర్పున, ఇంకొకటి పడమరన ఉంది; రెండింటి మధ్య దూరం = 0° నుంచి ఒక దానికి + 0° నుంచి ఇంకో దానికి. గుర్తుంచుకునే మాట: తూర్పు — కలపాలి; పడమర — తీసివేయాలి.</p>
+<p>ఊరి జాతర ఊరేగింపు తూర్పు వీధి నుంచి మొదలై పడమర వైపు వెళ్తుందనుకోండి. తూర్పు వీధి వాళ్లు దేవుడిని ముందు చూస్తారు, పడమర వీధి వాళ్లు తరువాత. సూర్యుడు కూడా అంతే; అందుకే తూర్పు ప్రదేశానికి సమయం "ముందు".</p>
+<p>నిమిషాలను గంటలుగా రాసేటప్పుడు ఒక జాగ్రత్త: గంటలో 60 నిమిషాలు, 100 కావు. 192 నిమిషాలు = 3 గంటల 12 నిమిషాలు (3:12); దశాంశంలో రాస్తే 3.2 గంటలు, 3.12 కాదు. అలాగే 260 నిమిషాలు = 4 గంటల 20 నిమిషాలు, 4.40 కాదు.</p>
+<h3>ఉదాహరణలు</h3>
+<p><strong>ఉదాహరణ 1.</strong> 0° వద్ద మధ్యాహ్నం 12:00. 80°E వద్ద ఎంత?
+- తేడా 80°; 80 × 4 = 320 నిమిషాలు = 5 గంటల 20 నిమిషాలు
+- 80°E తూర్పున ఉంది, కలపాలి: 12:00 + 5:20 = 17:20 (సాయంత్రం 5:20)</p>
+<p>అదే క్షణంలో 82.5°E వద్ద: 82.5 × 4 = 330 నిమిషాలు, కాబట్టి 17:30. Amaravati (సుమారు 80.5°E) Local mean time 17:20 కి దగ్గరగా ఉన్నా, Amaravati లోని గడియారం మాత్రం దేశమంతటి ఉమ్మడి సమయం 17:30 IST చూపుతుంది. Local mean time Longitude నుంచి వచ్చే సమయం; గడియార సమయం ప్రభుత్వం చట్టపరంగా స్వీకరించిన సమయం (<a href="#time-ist">IST</a>).</p>
+<p><strong>ఉదాహరణ 2.</strong> 30°E వద్ద 14:00. 78°E వద్ద ఎంత?
+- రెండూ E: 78 − 30 = 48°; 48 × 4 = 192 నిమిషాలు = 3 గంటల 12 నిమిషాలు
+- 78°E ఇంకా తూర్పున ఉంది, కలపాలి: 14:00 + 3:12 = 17:12
+- తిరగేసి: 78°E వద్ద 17:12 అయితే 30°E వద్ద 17:12 − 3:12 = 14:00</p>
+<p><strong>ఉదాహరణ 3.</strong> 10°W వద్ద ఆదివారం 11:20. 75°W వద్ద ఎంత?
+- రెండూ W: 75 − 10 = 65°; 65 × 4 = 260 నిమిషాలు = 4 గంటల 20 నిమిషాలు
+- 75°W ఇంకా పడమరన ఉంది, తీసివేయాలి: 11:20 − 4:20 = ఆదివారం 07:00</p>
+<p><strong>ఉదాహరణ 4.</strong> 10°W వద్ద సోమవారం 23:00. 20°E వద్ద ఎంత?
+- ఒకటి W, ఒకటి E: 10 + 20 = 30°; 30 × 4 = 120 నిమిషాలు = 2 గంటలు
+- 20°E తూర్పున ఉంది, కలపాలి: 23:00 + 2:00 = 25:00. 24 దాటింది, కాబట్టి 24 తీసివేసి తేదీ ఒక రోజు ముందుకు: మంగళవారం 01:00</p>
+<p><strong>ఉదాహరణ 5 (తిరగేసిన ప్రశ్న).</strong> 0° వద్ద 07:00; అదే క్షణంలో ఒక ప్రదేశంలో అదే తేదీ 11:00. ఆ ప్రదేశం Longitude ఎంత?
+- సమయ తేడా 4 గంటలు; ఒక గంటకు 15°, కాబట్టి 4 × 15 = 60°
+- సమయం ముందుంది, అంటే ప్రదేశం తూర్పున ఉంది: 60°E</p>
+<p><strong>ఉదాహరణ 6 (నిమిషాలతో ఉన్న Longitude).</strong> 0° వద్ద 12:00. 73°30′E వద్ద ఎంత?
+- 73°30′ = 73.5°; 73.5 × 4 = 294 నిమిషాలు = 4 గంటల 54 నిమిషాలు
+- ఇంకో విధంగా: 73 × 4 = 292 నిమిషాలు; 30′ × 4 సెకన్లు = 120 సెకన్లు = 2 నిమిషాలు; మొత్తం 294 నిమిషాలు
+- తూర్పున ఉంది, కలపాలి: 12:00 + 4:54 = 16:54</p>
+<p><strong>ఉదాహరణ 7 (E + W కలిపితే 180° దాటితే).</strong> 100°E వద్ద బుధవారం 10:00. 120°W వద్ద ఎంత?
+- ఒకటి E, ఒకటి W: 100 + 120 = 220°; 220 × 4 = 880 నిమిషాలు = 14 గంటల 40 నిమిషాలు
+- 120°W పడమరన ఉంది, తీసివేయాలి: 10:00 − 14:40 చేస్తే 00:00 కంటే వెనక్కి వెళ్తుంది; 24 కలిపి 34:00 − 14:40 = 19:20, ముందు రోజు: మంగళవారం 19:20
+- సరిచూసుకోండి: 100°E నుంచి 0° కి 400 నిమిషాలు (6:40) తీసివేస్తే బుధవారం 03:20; అక్కడి నుంచి 120°W కి 480 నిమిషాలు (8:00) తీసివేస్తే మంగళవారం 19:20. అదే జవాబు.
+- 0° గుండా లెక్క వేస్తే తేదీ దానికదే సరిగ్గా వస్తుంది; Date Line సవరణ విడిగా వేయకూడదు.</p>
+<p><strong>ఉదాహరణ 8 (తేదీ మారే లెక్క).</strong> Greenwich లో 20 మార్చి 23:30. అదే క్షణంలో 82°30′E, 75°W వద్ద ఎంత?
+- 82.5 × 4 = 330 నిమిషాలు (5:30) కలిపితే 29:00, అంటే 21 మార్చి 05:00
+- 75 × 4 = 300 నిమిషాలు (5:00) తీసివేస్తే 20 మార్చి 18:30</p>
+<p>ఇంకా కొన్ని లెక్కలు, అదే పద్ధతిలో:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఇచ్చింది</th>
+<th>అడిగింది</th>
+<th>లెక్క</th>
+<th>జవాబు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>75°E వద్ద Solar noon (12:00)</td>
+<td>90°E</td>
+<td>15° తూర్పు = 60 నిమిషాలు కలపాలి</td>
+<td>13:00</td>
+</tr>
+<tr>
+<td>Greenwich 12:00</td>
+<td>78°30′E</td>
+<td>78.5 × 4 = 314 నిమిషాలు (5:14) కలపాలి</td>
+<td>17:14</td>
+</tr>
+<tr>
+<td>Greenwich 10:00</td>
+<td>45°30′W</td>
+<td>45.5 × 4 = 182 నిమిషాలు (3:02) తీసివేయాలి</td>
+<td>06:58</td>
+</tr>
+<tr>
+<td>30°E వద్ద 15:00</td>
+<td>60°W</td>
+<td>30 + 60 = 90°; 360 నిమిషాలు (6:00) తీసివేయాలి</td>
+<td>09:00</td>
+</tr>
+<tr>
+<td>82°30′E వద్ద 09:00</td>
+<td>80°15′E</td>
+<td>2°15′ = 2.25° పడమర; 9 నిమిషాలు తీసివేయాలి</td>
+<td>08:51</td>
+</tr>
+<tr>
+<td>Greenwich 12:00, ఓడ వద్ద 08:42</td>
+<td>ఓడ Longitude</td>
+<td>3 గంటల 18 నిమిషాలు = 198 నిమిషాలు; 198 ÷ 4 = 49.5°; సమయం వెనక</td>
+<td>49°30′W</td>
+</tr>
+<tr>
+<td>రెండు ప్రదేశాల తేడా 22°30′</td>
+<td>సమయ తేడా</td>
+<td>22.5 × 4</td>
+<td>90 నిమిషాలు</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="time-ist">భారతదేశానికి ఒకే సమయం, IST ఎలా వచ్చింది?</h2>
+<p>India చాలా వెడల్పైన దేశం: పడమర చివర Gujarat (68°7′E) నుంచి తూర్పు చివర Arunachal Pradesh (97°25′E) వరకు. తేడా 29°18′, అంటే దాదాపు 30°. కచ్చితంగా లెక్కిస్తే 29.3 × 4 = సుమారు 117 నిమిషాలు; అంటే రెండు చివరల Local mean time మధ్య సుమారు 1 గంట 57 నిమిషాలు, దాదాపు రెండు గంటల తేడా.</p>
+<p>ప్రతి ఊరు తన సొంత సూర్యుడి సమయం పెట్టుకుంటే ఏమవుతుంది? Hyderabad (సుమారు 78.5°E) సూర్యుడి సమయం 12:00 అయితే, అదే క్షణంలో Visakhapatnam (సుమారు 83.3°E) లో 12:19, Kolkata (సుమారు 88.4°E) లో 12:40. Hyderabad నుంచి Vizag వెళ్లే train కు ప్రతి station లో గడియారం వేరుగా ఉంటుంది; offices, బ్యాంకులు, పరీక్షలు, TV కార్యక్రమాలు, విమానాలు అన్నీ గందరగోళం. అందుకే దేశమంతటికీ ఒకే గడియార సమయం పెట్టారు; ఆ సమయమే Indian Standard Time (IST, భారత ప్రామాణిక కాలం).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>విషయం</th>
+<th>వివరం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Standard Meridian</strong></td>
+<td>82°30′E (82½°E), Uttar Pradesh లోని Mirzapur దగ్గర</td>
+</tr>
+<tr>
+<td><strong>IST</strong></td>
+<td>UTC + 5:30 (పాత పుస్తకాల్లో GMT + 5:30)</td>
+</tr>
+<tr>
+<td><strong>లెక్క</strong></td>
+<td>82.5 × 4 = 330 నిమిషాలు = 5 గంటల 30 నిమిషాలు</td>
+</tr>
+<tr>
+<td><strong>నిర్వహించేది</strong></td>
+<td>CSIR–National Physical Laboratory (CSIR-NPL), New Delhi</td>
+</tr>
+<tr>
+<td><strong>అమలు</strong></td>
+<td>1906 జనవరి 1; 1947 లో స్వతంత్ర భారత అధికారిక సమయం</td>
+</tr>
+</tbody>
+</table></div>
+<h3>82°30′E నే ఎందుకు?</h3>
+<p>82°30′E Meridian ను Standard Meridian of India (భారత ప్రామాణిక రేఖాంశం) అంటారు. ఆ గీత దేశానికి దాదాపు మధ్యలో వెళ్తుంది (68°7′, 97°25′ ల మధ్యస్థం సుమారు 82°46′), ఐదు రాష్ట్రాలు దాటి (<a href="#latlong-india">జాబితా</a>) Andhra Pradesh తీరం దగ్గర Bay of Bengal లోకి చేరుతుంది. మధ్య గీత వల్ల IST కి పడమర చివర, తూర్పు చివర రెండింటికీ సుమారు ఒక గంట తేడానే ఉంటుంది; ఏ చివరికీ రెండు గంటల తేడా రాదు.</p>
+<p>అసలు నిర్ణయించే కారణం ఇది: 7.5° = అరగంట, 82.5° అనేది 7.5° కి సరిగ్గా 11 రెట్లు. కాబట్టి IST, UTC కి సరిగ్గా అరగంటల లెక్కలో (5:30) ముందుంటుంది; 82°46′ లాంటి విలువ తీసుకుంటే ఆ తేడా గజిబిజి నిమిషాలు అయ్యేది. ఉదాహరణకు London లో GMT ఉదయం 6:00 అయితే India లో IST 11:30.</p>
+<p>కొన్ని వార్తా కథనాల్లో, coaching notes లో 82°33′E అని ఉంటుంది; అది Mirzapur దగ్గర ఉన్న ఒక reference point (గుర్తు స్థలం) Longitude, Standard Meridian గీత మాత్రం 82°30′E. పాత పుస్తకాలు ఈ గీతకు దగ్గర ఉన్న పెద్ద నగరం Allahabad (నేటి Prayagraj) ను గుర్తుగా వాడాయి; NCERT Mirzapur అని ఇస్తుంది.</p>
+<h3>UTC, GMT, Atomic clock</h3>
+<p>ఈ రోజుల్లో ప్రపంచం పోలిక కోసం వాడే ఉమ్మడి సమయం UTC (Coordinated Universal Time). GMT అంటే Greenwich Mean Time, అంటే Greenwich లోని Local mean time; GMT సూర్యుడి ఆధారంగా లెక్కించే సమయం, UTC Atomic clocks ఆధారంగా లెక్కించే సమయం. రెండింటి మధ్య తేడా ఒక సెకను కంటే తక్కువ, అందుకే IST = UTC + 5:30 = GMT + 5:30.</p>
+<p>Caesium అనే మూలకం అణువులు ఒక నిర్దిష్ట వేగంతో కంపిస్తాయి (సెకనుకు సుమారు 919 కోట్ల సార్లు). ఆ కంపనాలను లెక్కపెట్టి సెకను కొలిచే గడియారమే Atomic clock. భూమి Rotation కొంచెం కొంచెం మారుతూ ఉంటుంది; Caesium కంపనాలు మారవు. అందుకే నేడు సమయాన్ని Atomic clocks తో కచ్చితంగా కొలుస్తారు. New Delhi లోని CSIR-NPL Caesium atomic clocks దేశపు అధికారిక సమయం IST ని నిర్ణయిస్తాయి.</p>
+<h3>IST చరిత్ర</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>సంవత్సరం</th>
+<th>ఏం జరిగింది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1802</strong></td>
+<td>John Goldingham Madras లో Madras time పెట్టారు (GMT + 5 గంటల 21 నిమిషాల 14 సెకన్లు)</td>
+</tr>
+<tr>
+<td><strong>సుమారు 1870</strong></td>
+<td>railways, telegraph Madras time నే "Railway time" గా వాడాయి; Bombay (GMT + సుమారు 4:51), Calcutta (GMT + సుమారు 5:53) తమ సొంత సమయాలు పాటించాయి</td>
+</tr>
+<tr>
+<td><strong>1906 జనవరి 1</strong></td>
+<td>82°30′E ఆధారంగా ఒకే సమయం (IST) అమలులోకి వచ్చింది</td>
+</tr>
+<tr>
+<td><strong>1947</strong></td>
+<td>స్వాతంత్ర్యం తరువాత కేంద్ర ప్రభుత్వం IST ని దేశ అధికారిక సమయంగా ప్రకటించింది</td>
+</tr>
+<tr>
+<td><strong>1948</strong></td>
+<td>Calcutta time ముగిసింది</td>
+</tr>
+<tr>
+<td><strong>1955</strong></td>
+<td>Bombay time ముగిసింది</td>
+</tr>
+</tbody>
+</table></div>
+<p>Bombay, Calcutta వెంటనే ఎందుకు ఒప్పుకోలేదు? అక్కడి వ్యాపారులు, ఓడరేవులు, కార్యాలయాలు దశాబ్దాలుగా తమ ఊరి సమయానికే అలవాటు పడ్డాయి. కొత్త సమయం వస్తే Bombay గడియారాలను సుమారు 39 నిమిషాలు ముందుకు జరపాలి (5:30 − 4:51 = 0:39); జనం దీన్ని వ్యతిరేకించారు.</p>
+<h3>AP లో ఇది ఎలా కనిపిస్తుంది?</h3>
+<p>విజయవాడ సుమారు 80.6°E వద్ద, 82.5°E కి సుమారు 1.9° పడమరన ఉంది; 1.9 × 4 = సుమారు 8 నిమిషాలు. కాబట్టి విజయవాడ లో సగటు Solar noon సుమారు 12:08 IST కి వస్తుంది. Visakhapatnam (సుమారు 83.3°E) 82.5° కి తూర్పున ఉంది; అక్కడ సగటు Solar noon సుమారు 11:57 IST. రెండు ఊళ్లలో గడియారం ఒకే IST చూపుతుంది; వాటి Local mean time, Solar noon మాత్రం వేరు, ఎందుకంటే Solar noon ఊరి Longitude మీద ఆధారపడుతుంది.</p>
+<h2 id="time-two-zones">Indiaకు రెండు Time zones ఉండాలా?</h2>
+<p>Arunachal Pradesh లోని Dong గ్రామం India తూర్పు చివర, సుమారు 97°E దగ్గర ఉంది. Gujarat (Kutch) పడమర చివరి Guhar Moti కంటే Dong లో సూర్యోదయం, సూర్యాస్తమయం రెండూ దాదాపు రెండు గంటలు ముందే జరుగుతాయి (CSIR-NPL, 2018). కానీ offices, schools అన్నీ దేశమంతటా ఒకే IST గడియారం ప్రకారం తెరుస్తారు. Northeast Standard Meridian కు చాలా తూర్పున ఉండటంతో అక్కడ వేసవిలో సూర్యుడు IST ప్రకారం తెల్లవారుజామున సుమారు 4:30 కే ఉదయిస్తాడు. దాంతో ఉదయపు వెలుగు గంటలు పని మొదలయ్యే లోపే వృథా అవుతాయి; సాయంత్రం త్వరగా చీకటి పడటంతో లైట్ల కోసం కరెంటు ఎక్కువ ఖర్చవుతుంది. రెండో Time zone కోసం వచ్చే ప్రధాన భౌగోళిక వాదన ఇదే.</p>
+<p>ఈ సమస్య మొదట కనిపించింది Assam తేయాకు తోటల్లో. తోట పని వెలుగు ఉన్నప్పుడే చేయాలి, కాబట్టి తోటల గడియారాలను బ్రిటిష్ కాలం నుంచే IST కంటే ఒక గంట ముందుకు జరిపి పాటిస్తున్నారు. ఈ సమయాన్ని "Chaibagan time" (తేయాకు తోట సమయం; Tea Garden Time, Bagan time) అంటారు. Chaibagan time తోటల పని వేళల కోసం పెట్టుకున్న స్థానిక అలవాటు మాత్రమే, అధికారిక Time zone కాదు.</p>
+<h3>CSIR-NPL ప్రతిపాదన (2018)</h3>
+<p>2018 లో CSIR-NPL శాస్త్రవేత్తలు Current Science journal లో ఒక అధ్యయనం ప్రచురించి రెండు Time zones సూచించారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>సమయం</th>
+<th>ప్రాంతం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IST-I</strong></td>
+<td>UTC + 5:30</td>
+<td>దేశంలో ఎక్కువ భాగం (68°7′E నుంచి 89°52′E వరకు)</td>
+</tr>
+<tr>
+<td><strong>IST-II</strong></td>
+<td>UTC + 6:30</td>
+<td>Northeast రాష్ట్రాలు, Andaman–Nicobar దీవులు (89°52′E నుంచి 97°25′E వరకు)</td>
+</tr>
+</tbody>
+</table></div>
+<p>రెండింటి సరిహద్దు 89°52′E; ఆ గీత West Bengal–Assam సరిహద్దు దగ్గర వెళ్తుంది.</p>
+<h3>ప్రభుత్వ నిర్ణయం</h3>
+<p>2018 డిసెంబర్ 19 న Science and Technology మంత్రి Harsh Vardhan Lok Sabha లో రాతపూర్వక జవాబు ఇచ్చారు. ఈ ప్రతిపాదనను పరిశీలించిన High Level Committee "వ్యూహాత్మక కారణాల (Strategic reasons) వల్ల India కు రెండు Time zones వద్దు" అని సిఫారసు చేసిందని మంత్రి చెప్పారు. వ్యతిరేకించే వాళ్లు చెప్పే ప్రధాన భయం railways: రెండు zones సరిహద్దు దాటే ప్రతి train timing మార్చాలి, పొరపాటు జరిగితే ప్రమాదాలు. దేశం రెండుగా విడిపోయిన భావన వస్తుందన్న వాదన కూడా ఉంది.</p>
+<p>కాబట్టి 2026 నాటికి India అధికారికంగా ఒకే Time zone, IST (UTC + 5:30), మాత్రమే వాడుతోంది.</p>
+<h2 id="time-zones">Standard time, Time zones అంటే ఏమిటి? ప్రపంచంలో ఎన్ని?</h2>
+<p>India ఒకే సమయం పెట్టుకున్నట్టే (<a href="#time-ist">IST</a>), ప్రతి దేశం తన గడియారాలకు ఒక సమయం నిర్ణయించుకుంటుంది. ప్రభుత్వం ప్రజల వాడకానికి నిర్ణయించే ఈ గడియార సమయాన్ని Standard time (ప్రామాణిక కాలం) లేదా Civil time అంటారు. ఒకే Standard time పాటించే ప్రాంతాన్ని Time zone (కాలమండలం) అంటారు. ప్రతి దేశం తన సమయాన్ని UTC తో పోల్చి చెబుతుంది; UTC కంటే ఎంత ముందో, ఎంత వెనుకో చెప్పే తేడాను UTC offset అంటారు. India offset UTC + 5:30.</p>
+<h3>ఆదర్శ నమూనా: 24 zones</h3>
+<p>భూమి 24 గంటల్లో 360° తిరుగుతుంది కాబట్టి ఒక్కో గంటకు 360 ÷ 24 = 15°. అందుకే పాఠ్యపుస్తకాల ఆదర్శ నమూనాలో భూమిని 15° వెడల్పు ఉన్న 24 నిలువు పట్టీలుగా, అంటే 24 Time zones గా, విభజిస్తారు. పక్క పక్క పట్టీల మధ్య సరిగ్గా ఒక గంట తేడా; offsets UTC − 12 నుంచి UTC + 12 వరకు.</p>
+<h3>నిజమైన zones ఆదర్శ నమూనా నుంచి ఎలా తేడాగా ఉంటాయి?</h3>
+<p>నిజమైన Time zones ఆదర్శ నమూనా నుంచి ఐదు విధాలుగా తేడాగా ఉంటాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>తేడా</th>
+<th>ఏం జరుగుతుంది</th>
+<th>ఉదాహరణ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. వంకర సరిహద్దులు</strong></td>
+<td>zone సరిహద్దు నిటారు Meridian కాకుండా దేశ, రాష్ట్ర సరిహద్దుల వెంట వెళ్తుంది</td>
+<td>దాదాపు అన్ని దేశాలు</td>
+</tr>
+<tr>
+<td><strong>2. అరగంట, ముప్పావు గంట offsets</strong></td>
+<td>మధ్య Meridian 15 గుణిజం కాకపోతే offset పూర్తి గంటలో రాదు</td>
+<td>India, Sri Lanka + 5:30; Nepal + 5:45</td>
+</tr>
+<tr>
+<td><strong>3. వెడల్పైన దేశం, ఒకే zone</strong></td>
+<td>15° కంటే చాలా వెడల్పు ఉన్నా ఒకే సమయం</td>
+<td>China (సుమారు 60°), India (సుమారు 30°)</td>
+</tr>
+<tr>
+<td><strong>4. ఒకే దేశం, చాలా zones</strong></td>
+<td>పెద్ద దేశాలు, దూర దీవులు ఉన్న దేశాలు</td>
+<td>Russia, USA, Australia, France</td>
+</tr>
+<tr>
+<td><strong>5. ±12 దాటిన offsets, వేసవి సవరణ</strong></td>
+<td>UTC + 14 వరకు offsets; కొన్ని దేశాలు వేసవిలో గడియారం ఒక గంట ముందుకు</td>
+<td>Kiribati Line Islands; London BST</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>వంకర సరిహద్దులు.</strong> ఒక ఊరి మధ్యలో గడియారం మారిపోతే జనానికి గందరగోళం. అందుకే zone సరిహద్దులు జనం ఉండే ప్రాంతాల్లో దేశాల, రాష్ట్రాల సరిహద్దుల వెంట వంగుతాయి.</p>
+<p><strong>అరగంట, ముప్పావు గంట offsets.</strong> చాలా దేశాలు తమ మధ్య భాగంలోని ఒక Meridian ను బట్టి సమయం పెట్టుకుంటాయి. ఆ Meridian 15°, 30°, 45° లాంటి 15 గుణిజం (15 తో సరిగ్గా భాగించబడే సంఖ్య) కాకపోతే offset అరగంటలో గానీ ముప్పావు గంటలో గానీ వస్తుంది. Nepal తన దేశంలోని 86°15′E Meridian (Gauri Shankar శిఖరం దగ్గర) ను తీసుకుంది: 86.25 × 4 = 345 నిమిషాలు = 5 గంటల 45 నిమిషాలు. కాబట్టి Nepal India కంటే 15 నిమిషాలు ముందు; India లో 12:00 అయితే Nepal లో 12:15. ఇలాంటి offsets వాడే ఇతర చోట్లు: Iran UTC + 3:30, Afghanistan UTC + 4:30, Myanmar UTC + 6:30, Australia మధ్య భాగం UTC + 9:30, New Zealand లోని Chatham Islands UTC + 12:45.</p>
+<p>మన పొరుగు దేశాల offsets ఒకే పట్టికలో:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>దేశం</th>
+<th>UTC offset (2026 నాటికి)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pakistan</strong></td>
+<td>+ 5:00</td>
+</tr>
+<tr>
+<td><strong>India</strong></td>
+<td>+ 5:30</td>
+</tr>
+<tr>
+<td><strong>Sri Lanka</strong></td>
+<td>+ 5:30</td>
+</tr>
+<tr>
+<td><strong>Nepal</strong></td>
+<td>+ 5:45</td>
+</tr>
+<tr>
+<td><strong>Bangladesh</strong></td>
+<td>+ 6:00</td>
+</tr>
+<tr>
+<td><strong>Myanmar</strong></td>
+<td>+ 6:30</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>వెడల్పైన దేశం, ఒకే zone.</strong> China తూర్పు–పడమరలుగా సుమారు 60° వెడల్పు ఉన్నా 1949 తరువాత దేశ ఐక్యత కోసం ఒకే సమయం (UTC + 8, Beijing time) పాటిస్తోంది. దాంతో పడమర చివర Xinjiang లో సూర్యోదయం ఉదయం 9–10 గంటలకు కూడా జరుగుతుంది; అందుకే అక్కడి చాలా మంది అనధికారికంగా Xinjiang time (UTC + 6) కూడా వాడతారు. India కూడా సుమారు 30° వెడల్పు ఉన్నా ఒకే zone వాడుతుంది (<a href="#time-two-zones">రెండు zones చర్చ</a>).</p>
+<p><strong>ఒకే దేశం, చాలా zones.</strong> ఒక దేశానికి ఎన్ని zones అనే లెక్క ఏ భూభాగాలను కలుపుతున్నామో దాని మీద ఆధారపడుతుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>దేశం</th>
+<th>Time zones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Russia</strong></td>
+<td>11 (UTC + 2 నుంచి UTC + 12 వరకు, 26 October 2014 నుంచి)</td>
+</tr>
+<tr>
+<td><strong>USA</strong></td>
+<td>ప్రక్క ప్రక్కన ఉన్న 48 రాష్ట్రాలకు 4; Alaska, Hawaii తో కలిపి 50 రాష్ట్రాలకు 6; Puerto Rico, Guam వంటి territories తో 9 (US BTS, 2021)</td>
+</tr>
+<tr>
+<td><strong>Australia</strong></td>
+<td>ప్రధాన భూభాగానికి 3: Western + 8:00, Central + 9:30, Eastern + 10:00</td>
+</tr>
+<tr>
+<td><strong>France</strong></td>
+<td>దూర దీవులు (Overseas territories) తో కలిపి సుమారు 12; Europe లోని France కు ఒక్కటే</td>
+</tr>
+</tbody>
+</table></div>
+<p>Russia లో 11 zones అంటే రెండు చివరల మధ్య 10 గంటల తేడా (UTC + 2 నుంచి UTC + 12). Russia 2010 లో zones ను 11 నుంచి 9 కి తగ్గించి, 2014 లో మళ్లీ 11 చేసింది. USA కు Sadguna Rao పుస్తకం 5 / 7 / 11 అని ఇస్తుంది; US BTS (2021) లెక్క 4 / 6 / 9. France కు ఎక్కువ zones రావడానికి కారణం Pacific, Indian, Atlantic సముద్రాల్లో దాని దీవులు. దూర దీవులు లేకుండా లెక్కిస్తే ఎక్కువ zones ఉన్న దేశం Russia (11).</p>
+<p>Zone నియమాలు ఇలా మారుతుంటాయి కాబట్టి ఒక పాత Time zone పటం నేటి అధికారిక సమయంతో సరిపోకపోవచ్చు; ఆ పటం ఏ సంవత్సరానిదో, ఆ దేశం ఇప్పుడు ఏ నియమం పాటిస్తోందో చూడాలి.</p>
+<p><strong>±12 దాటిన offsets.</strong> ఆదర్శ నమూనాలో offsets −12 నుంచి +12 వరకే. కానీ Kiribati లోని Line Islands UTC + 14 వాడతాయి; ఈ దీవుల offset ప్రపంచంలో అత్యంత ముందున్నది. కాబట్టి నిజమైన offsets −12 నుంచి +14 వరకు ఉన్నాయి. Line Islands ఇంత ముందు ఎందుకు ఉన్నాయో <a href="#time-dateline">Date Line</a> విభాగంలో చూస్తాం.</p>
+<p><strong>Daylight Saving Time (DST, వేసవి గడియార సవరణ).</strong> వేసవిలో తెల్లవారుజామునే వెలుగు వస్తుంది; అప్పుడు చాలా మంది నిద్రపోతుంటారు. గడియారాన్ని ఒక గంట ముందుకు జరిపితే ఆ వెలుగు సాయంత్రం పనికి వస్తుంది. ఉదాహరణకు London చలికాలంలో GMT, వేసవిలో British Summer Time (BST = GMT + 1, అంటే GMT కంటే ఒక గంట ముందు) వాడుతుంది. DST వాడేవి ఎక్కువగా USA, Canada, Europe దేశాలు, Australia లోని కొన్ని రాష్ట్రాలు, New Zealand; ఇవన్నీ Equator కు దూరంగా ఉన్నాయి, అక్కడ వేసవి, చలికాలం మధ్య పగటి పొడవు చాలా మారుతుంది. Equator దగ్గర పగలు ఏడాదంతా దాదాపు 12 గంటలే, కాబట్టి DST వల్ల లాభం ఉండదు. India ఇప్పుడు DST వాడదు. DST గడియారం చూపే సమయాన్ని మాత్రమే మారుస్తుంది; ఒక రోజులో వెలుగు ఉండే గంటలు పెరగవు.</p>
+<h2 id="time-dateline">International Date Line ఏమిటి? దాటితే తేదీ ఎందుకు మారుతుంది?</h2>
+<p>ఒక చిన్న లెక్కతో మొదలుపెడదాం. Greenwich (0°) వద్ద సోమవారం మధ్యాహ్నం 12:00 అనుకోండి. తూర్పుకు వెళ్తున్న కొద్దీ ప్రతి 15° కి ఒక గంట కలుపుతాం; 180°E చేరేసరికి 12 గంటలు కలిపి సోమవారం అర్ధరాత్రి 24:00 వస్తుంది. పడమరకు వెళ్తున్న కొద్దీ ప్రతి 15° కి ఒక గంట తీసివేస్తాం; 180°W చేరేసరికి సోమవారం 00:00, అంటే ఆదివారం అర్ధరాత్రి వస్తుంది. కానీ 180°E, 180°W ఒకే గీత! ఒకే గీత దగ్గర ఒక వైపు లెక్క సోమవారం ముగింపు, ఇంకో వైపు లెక్క సోమవారం మొదలు; 24 గంటల తేడా. అంటే ఎక్కడో ఒక చోట తేదీ మారాలి. తేదీ మారే ఆ సరిహద్దునే International Date Line (IDL, అంతర్జాతీయ తేదీ రేఖ) అంటారు. Date Line వల్లే ఆదర్శ zones లో UTC + 12 వద్ద మంగళవారం 08:00 అయిన క్షణంలోనే UTC − 12 వద్ద సోమవారం 08:00; గడియారం ఒకటే, తేదీ ఒక రోజు తేడా.</p>
+<p>ఒక సరళమైన చిత్రం: వృత్తాకారపు బస్సు రూట్‌లో ప్రతి stop కు కండక్టర్ టికెట్ నంబర్ ఒకటి పెంచుతూ పోతే, చుట్టూ తిరిగి వచ్చేసరికి నంబర్ చాలా పెరిగిపోతుంది; ఎక్కడో ఒక stop లో నంబర్‌ను మళ్లీ సెట్ చేయాలి. తేదీకి ఆ "సెట్ చేసే stop" Date Line.</p>
+<h3>గీత ఎక్కడ ఉంది, ఎవరు నిర్ణయించారు?</h3>
+<p>Date Line ఎక్కువ భాగం 180° Meridian దగ్గర, Pacific Ocean మీదుగా వెళ్తుంది. అక్కడ జనం దాదాపు ఉండరు; జనం ఉన్న ఖండాల మధ్యలో తేదీ మారితే ఒకే ఊరిలో రెండు తేదీలు వస్తాయి. 1884 International Meridian Conference (Washington) Greenwich ను 0° Prime Meridian గా ఎంచుకుంది, కానీ తేదీ రేఖను నిర్ణయించలేదు. Greenwich కు అవతలి వైపు 180° దగ్గర తేదీ మార్చడం నావికుల వాడుకగా మొదలైంది; తరువాత ఒక్కో దేశం తాను గీతకు ఏ వైపు ఉండాలో తన చట్టంతో తానే నిర్ణయించుకుంది. అందుకే Date Line కు ప్రత్యేక అంతర్జాతీయ ఒప్పందం గానీ చట్టబద్ధత గానీ లేదు.</p>
+<h3>గీత ఎందుకు వంకరగా ఉంటుంది?</h3>
+<p>ఒకే దేశం, ఒకే దీవుల గుంపు రెండు తేదీల్లో పడకుండా Date Line నాలుగు చోట్ల ప్రధానంగా వంగుతుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>చోటు</th>
+<th>గీత ఎటు వంగుతుంది</th>
+<th>ఎందుకు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Russia తూర్పు చివర</strong> (Chukotka, Wrangel దీవి)</td>
+<td>తూర్పుకు</td>
+<td>Siberia మొత్తం Asia తేదీలో ఉండేందుకు</td>
+</tr>
+<tr>
+<td><strong>2. Aleutian దీవులు</strong> (Alaska)</td>
+<td>పడమరకు</td>
+<td>ఆ దీవులు America తేదీలో ఉండేందుకు</td>
+</tr>
+<tr>
+<td><strong>3. Kiribati</strong></td>
+<td>తూర్పుకు, సుమారు 150°W వరకు</td>
+<td>1995 లో దేశమంతా ఒకే తేదీలో ఉండేందుకు</td>
+</tr>
+<tr>
+<td><strong>4. Fiji, Tonga, New Zealand</strong> (Chatham Islands తో)</td>
+<td>తూర్పుకు</td>
+<td>Asia–Australia తేదీలో ఉండేందుకు</td>
+</tr>
+</tbody>
+</table></div>
+<p>అంటే Date Line సరిగ్గా 180° Meridian కాదు; దేశాల అవసరాలను బట్టి వంగే తేదీ సరిహద్దు. Kiribati దీవులు 180° కి రెండు వైపులా ఉన్నాయి; 1995 లో గీతను తూర్పుకు జరిపిన తరువాతే Kiribati లోని Line Islands offset UTC + 14 అయింది.</p>
+<p>Samoa 2011 లో గీతకు తూర్పు వైపు నుంచి పడమర వైపుకు మారింది. దాని ప్రధాన వ్యాపార భాగస్వాములు Australia, New Zealand; అప్పట్లో Samoa వాళ్ల కంటే ఒక రోజు వెనుక ఉండటంతో వారానికి రెండు పని దినాలు కలిసేవి కావు. ఈ మార్పు కోసం Samoa 30 December 2011 (శుక్రవారం) తేదీనే వదిలేసింది; గురువారం 29 తరువాత నేరుగా శనివారం 31 వచ్చింది. పక్కనే ఉన్న American Samoa మాత్రం గీతకు తూర్పు వైపే ఉండిపోయింది.</p>
+<h3>కొత్త సంవత్సరం మొదట ఎక్కడ, చివర ఎక్కడ?</h3>
+<p>గీతకు పడమర వైపు, దానికి దగ్గరగా ఉన్న ప్రదేశాలకు రోజు మొదట వస్తుంది. అందుకే Kiribati లోని Line Islands (UTC + 14, ఉదాహరణకు Kiritimati దీవి) లో కొత్త సంవత్సరం ప్రపంచంలో అందరికంటే ముందు వస్తుంది; 2011 తరువాత Samoa, Tonga కూడా దాదాపు అదే సమయానికి జరుపుకుంటాయి. చివరగా వచ్చేది గీతకు తూర్పు వైపు ఉన్న Baker, Howland దీవుల్లో (UTC − 12); అక్కడ జనం ఉండరు. జనం ఉన్న చోట్లలో చివర American Samoa (UTC − 11). Line Islands, Baker దీవి మధ్య 14 − (−12) = 26 గంటల తేడా; Line Islands లో 1 January 00:00 అయిన క్షణంలో Baker దీవిలో 30 December 22:00.</p>
+<h3>దాటితే తేదీ ఎలా మార్చాలి?</h3>
+<p>గీతకు పడమర వైపు (Asia, Australia వైపు) తేదీ ఒక రోజు ముందు ఉంటుంది; తూర్పు వైపు (America వైపు) ఒక రోజు వెనుక. అందుకే Date Line దాటేటప్పుడు రెండు సవరణలు ఉంటాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ప్రయాణ దిశ</th>
+<th>తేదీ సవరణ</th>
+<th>ఉదాహరణ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>పడమర వైపు దాటితే</strong> (America → Asia)</td>
+<td>ఒక రోజు కలపాలి</td>
+<td>సోమవారం → మంగళవారం; 31 December → 1 January</td>
+</tr>
+<tr>
+<td><strong>తూర్పు వైపు దాటితే</strong> (Asia → America)</td>
+<td>ఒక రోజు తీసివేయాలి</td>
+<td>మంగళవారం → సోమవారం; 10 July → 9 July</td>
+</tr>
+</tbody>
+</table></div>
+<p>"తూర్పు ముందు" అనే మాట ఒకే తేదీలో గంటల లెక్కకు మాత్రమే; Date Line దగ్గర గీతకు తూర్పు వైపు తేదీ వెనుక ఉంటుంది కాబట్టి తూర్పుకు దాటితే తేదీ తగ్గుతుంది.</p>
+<p>Date Line సవరణకు చరిత్రలో ఒక ఉదాహరణ ఉంది. 1519 లో Magellan నాయకత్వంలో ఒక నౌకాదళం Spain నుంచి పడమర వైపు బయలుదేరింది. Magellan 1521 లో Philippines లో చనిపోయాడు; మిగిలిన వాళ్లు Elcano నాయకత్వంలో ప్రయాణం కొనసాగించి 1522 లో Spain కు తిరిగి వచ్చారు. ఈ ప్రయాణమే మొదటి ప్రపంచ ప్రదక్షిణ. తిరిగి వచ్చేసరికి Pigafetta రాసిన డైరీలోని తేదీ ఊరిలోని తేదీ కంటే ఒక రోజు వెనుక ఉంది. పడమరకు భూమిని చుట్టి వచ్చినవాళ్లు దారిలో ఒక రోజు కలపాలి; అప్పటికి ఆ నియమం వాళ్లకు తెలియదు.</p>
+<h2 id="time-problems">సమయం, తేదీ లెక్కలు అడుగు అడుగుగా ఎలా చేయాలి?</h2>
+<p>సమయం లెక్కలు రెండు రకాలు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రకం</th>
+<th>దేని నుంచి</th>
+<th>పద్ధతి</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Local mean time లెక్కలు</strong></td>
+<td>Longitudes</td>
+<td>1° కి 4 నిమిషాలు; తూర్పు ముందు, పడమర వెనుక (<a href="#time-lmt-calc">Local mean time లెక్కలు</a>)</td>
+</tr>
+<tr>
+<td><strong>2. గడియార సమయం లెక్కలు</strong></td>
+<td>UTC offsets</td>
+<td>ముందు UTC లోకి, తరువాత కావాల్సిన offset కు</td>
+</tr>
+</tbody>
+</table></div>
+<p>Offsets తో లెక్క వేసే ముందు offset ను నిమిషాల్లోకి మార్చుకోవాలి. Offset లో colon తరువాత ఉన్నది నిమిషాలు, గంటలో దశాంశ భాగం కాదు; 60 నిమిషాలు ఒక గంట. కాబట్టి + 5:30 = 5 గంటల 30 నిమిషాలు = 330 నిమిషాలు = 5.5 గంటలు. అదే విధంగా + 5:45 = 345, + 6:30 = 390, + 9:30 = 570 నిమిషాలు.</p>
+<p>గడియార సమయం లెక్కకు నాలుగు అడుగులు:</p>
+<ol>
+<li>ఇచ్చిన సమయాన్ని UTC లోకి మార్చండి: offset తీసివేయండి. Offset మైనస్ అయితే (ఉదాహరణకు New York UTC − 5) మైనస్‌ను తీసివేయడం అంటే కలపడం: UTC = స్థానిక సమయం + 5.</li>
+<li>UTC నుంచి కావాల్సిన దేశం సమయానికి మార్చండి: ఆ దేశం offset కలపండి (మైనస్ అయితే తీసివేయండి).</li>
+<li>ప్రయాణం ఉంటే ప్రయాణ సమయం కలపండి.</li>
+<li>24:00 దాటితే తేదీ ఒక రోజు పెంచండి; 00:00 కంటే వెనక్కి వెళ్తే 24 కలిపి తేదీ ఒక రోజు తగ్గించండి.</li>
+</ol>
+<p>రెండు దేశాల offsets ఇచ్చినప్పుడు UTC ద్వారా లెక్కిస్తే తేదీ మార్పు దానికదే వస్తుంది; <a href="#time-dateline">Date Line</a> సవరణ విడిగా వేయకూడదు. Offsets గానీ Longitudes గానీ ఇవ్వకుండా "గీత దాటింది, తేదీ ఎంత?" అని మాత్రమే ఉంటే అప్పుడే ఒక రోజు కలపడం / తీసివేయడం వాడాలి.</p>
+<p><strong>లెక్క 1.</strong> UTC సోమవారం 22:00 అయితే IST ఎంత? 22:00 + 5:30 = 27:30. 24 దాటింది కాబట్టి 27:30 − 24:00 = 03:30, తేదీ ఒక రోజు ముందుకు. జవాబు: మంగళవారం 03:30 IST.</p>
+<p><strong>లెక్క 2.</strong> India లో మధ్యాహ్నం 12:00 IST అయితే Nepal (UTC + 5:45) లో ఎంత? రెండు offsets తేడా 5:45 − 5:30 = 0:15; Nepal ముందుంది కాబట్టి 12:15.</p>
+<p><strong>లెక్క 3.</strong> Hyderabad లో రాత్రి 21:00 IST అయితే Australia తూర్పు భాగం (UTC + 10) లో ఎంత? UTC = 21:00 − 5:30 = 15:30. Australia = 15:30 + 10:00 = 25:30, అంటే మరుసటి రోజు 01:30. (అక్కడి వేసవిలో, October–April మధ్య, DST తో offset UTC + 11 అవుతుంది; అప్పుడు 02:30.)</p>
+<p><strong>లెక్క 4 (ప్రయాణం).</strong> ఒక విమానం Delhi నుంచి సోమవారం 23:00 IST కి బయలుదేరి 9 గంటల తరువాత London చేరుతుంది. London చలికాలంలో GMT (UTC + 0). బయలుదేరే సమయం UTC లో 23:00 − 5:30 = సోమవారం 17:30. 9 గంటలు కలిపితే 26:30, అంటే మంగళవారం 02:30 UTC. London = UTC + 0 కాబట్టి మంగళవారం 02:30.</p>
+<p><strong>లెక్క 5 (మైనస్ offset).</strong> India లో ఉదయం 07:00 అయితే New York (చలికాలం UTC − 5) లో ఎంత? UTC = 07:00 − 5:30 = 01:30. New York = 01:30 − 5:00 = −3:30; 00:00 కంటే వెనక్కి వెళ్లింది కాబట్టి 24 కలిపితే 20:30, ముందు రోజు. జవాబు: ముందు రోజు రాత్రి 20:30. వేసవిలో New York DST తో UTC − 4 వాడుతుంది; అప్పుడు ముందు రోజు రాత్రి 21:30. వెనక్కి కూడా ఇదే పద్ధతి: New York లో ఆదివారం 20:00 అయితే UTC = 20:00 + 5:00 = 25:00, అంటే సోమవారం 01:00; IST = 01:00 + 5:30 = సోమవారం 06:30.</p>
+<p><strong>లెక్క 6 (Date Line సవరణ మాత్రమే).</strong> ఒక ఓడ 10 July ఉదయం Date Line ను తూర్పు వైపు దాటింది. తూర్పు వైపు కాబట్టి ఒక రోజు తీసివేయాలి: 9 July. పడమర వైపు దాటి ఉంటే 11 July; 31 December న పడమరకు దాటితే తరువాతి సంవత్సరం 1 January.</p>
+<p><strong>లెక్క 7 (Longitude, Date Line రెండూ).</strong> 0° వద్ద సోమవారం 15:00 అయితే 165°E, 165°W వద్ద Local mean time ఎంత? 165 × 4 = 660 నిమిషాలు = 11 గంటలు. 165°E వద్ద 11 గంటలు కలపాలి: 15:00 + 11:00 = 26:00, అంటే మంగళవారం 02:00. 165°W వద్ద 11 గంటలు తీసివేయాలి: సోమవారం 04:00. ఈ రెండు ప్రదేశాల మధ్య 30° దూరమే ఉన్నా తేదీ వేరు, ఎందుకంటే వాటి మధ్య Date Line ఉంది. అదే విధంగా 170°E వద్ద మంగళవారం 23:20 అయితే: 170 × 4 = 680 నిమిషాలు = 11:20, కాబట్టి 0° వద్ద మంగళవారం 12:00; 170°W వద్ద 12:00 − 11:20 = మంగళవారం 00:40. ఇంకో ఉదాహరణ: 135°E వద్ద సోమవారం 02:00 అయితే 0° వద్ద 02:00 − 9:00 = ఆదివారం 17:00; 90°W వద్ద 17:00 − 6:00 = ఆదివారం 11:00.</p>
+<p><strong>లెక్క 8 (Date Line కు రెండు వైపులా offsets).</strong> Kiribati Line Islands (UTC + 14) లో సోమవారం 10:00 అయితే Hawaii (UTC − 10) లో ఎంత? UTC = 10:00 − 14:00 = −4:00; 24 కలిపితే ఆదివారం 20:00 UTC. Hawaii = 20:00 − 10:00 = ఆదివారం 10:00. రెండు చోట్లా గడియారం 10:00 చూపుతుంది, కానీ తేదీ ఒక రోజు తేడా. రెండూ దాదాపు ఒకే Longitude (సుమారు 157°W) దగ్గర ఉన్నా Line Islands Date Line కు పడమర వైపు ఉన్నాయి. ఇక్కడ Date Line సవరణ విడిగా వేయలేదు; అది offsets లోనే ఉంది.</p>
+<h2 id="motion-apparent-sun">సూర్యుడు తిరుగుతున్నాడా, భూమి తిరుగుతోందా?</h2>
+<p>ప్రతి ఉదయం సూర్యుడు తూర్పున Horizon (దిగ్మండలం) మీద కనిపిస్తాడు; Horizon అంటే దూరంలో ఆకాశం, భూమి (లేదా సముద్రం) కలిసినట్టు కనిపించే గీత. మధ్యాహ్నం సూర్యుడు ఆకాశంలో అత్యంత ఎత్తుకు వస్తాడు, సాయంత్రం పడమర Horizon కింద మాయమవుతాడు. చూస్తే సూర్యుడే మన చుట్టూ తిరుగుతున్నట్టు అనిపిస్తుంది. నిజానికి కదులుతున్నది భూమి. సూర్యుడు ఇలా కదులుతున్నట్టు కనిపించడాన్ని సూర్యుడి Apparent motion (దృశ్య చలనం) అంటారు.</p>
+<p>ఒక సరళమైన చిత్రం: రైలు కిటికీ పక్కన కూర్చుంటే, రైలు ముందుకు వెళ్తున్నప్పుడు బయటి చెట్లు వెనక్కి పరిగెడుతున్నట్టు కనిపిస్తాయి. భూమి అనే రైలు తూర్పు వైపు వెళ్తోంది; అందుకే సూర్యుడు పడమర వైపు వెళ్తున్నట్టు కనిపిస్తాడు.</p>
+<h3>Rotation అంటే ఏమిటి?</h3>
+<p>భూమి మధ్యలో నుంచి ఉత్తర ధ్రువం (North Pole), దక్షిణ ధ్రువం (South Pole) లను కలుపుతూ ఒక ఊహా గీత ఊహించండి. ఆ గీతను Axis (అక్షం) అంటారు; Globe లో కనిపించే ఇనుప కర్ర ఈ Axis ను చూపిస్తుంది. భూమి తన Axis చుట్టూ తాను తిరగడాన్ని Rotation (భ్రమణం) అంటారు. భూమి పడమర నుంచి తూర్పుకు (West to East) తిరుగుతుంది. ఉత్తర ధ్రువం పై నుంచి చూస్తే ఆ తిరగడం Anticlockwise (గడియారం ముల్లుకు వ్యతిరేకం); దక్షిణ ధ్రువం పై నుంచి చూస్తే అదే తిరగడం Clockwise గా కనిపిస్తుంది. భూమి మారలేదు; చూసే వైపు మారింది. మనతో పాటు ఇళ్లు, చెట్లు, గాలి అన్నీ తిరుగుతున్నాయి కాబట్టి మనకు ఆ తిరగడం తెలియదు. సూర్యుడి చుట్టూ భూమి ప్రయాణం వేరే కదలిక; దాన్ని <a href="#motion-revolution">Revolution</a> అంటారు.</p>
+<h3>భూమే తిరుగుతోందని ఎవరు చెప్పారు?</h3>
+<p>సూర్యుడు, భూమిలో ఏది తిరుగుతోంది అనే ఆలోచన నాలుగు దశల్లో మారింది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఎవరు</th>
+<th>ఎప్పుడు</th>
+<th>ఏం చెప్పారు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ptolemy</strong> (Greek)</td>
+<td>సుమారు క్రీ.శ. 150</td>
+<td>భూమి మధ్యలో కదలకుండా ఉంటుంది; సూర్యుడు, గ్రహాలు దాని చుట్టూ తిరుగుతాయి — Geocentric model (భూకేంద్ర సిద్ధాంతం)</td>
+</tr>
+<tr>
+<td><strong>Aryabhata</strong> (ఆర్యభట్ట)</td>
+<td>క్రీ.శ. 499, Aryabhatiya</td>
+<td>నక్షత్రాలు కదలడం లేదు; భూమే తన Axis చుట్టూ తిరుగుతోంది</td>
+</tr>
+<tr>
+<td><strong>Copernicus</strong> (Poland)</td>
+<td>1543</td>
+<td>సూర్యుడు మధ్యలో; భూమి సహా గ్రహాలన్నీ దాని చుట్టూ తిరుగుతాయి — Heliocentric model (సూర్యకేంద్ర సిద్ధాంతం)</td>
+</tr>
+<tr>
+<td><strong>Galileo</strong> (Italy)</td>
+<td>1610</td>
+<td>Telescope తో Jupiter చుట్టూ తిరిగే నాలుగు చంద్రులను (Io, Europa, Ganymede, Callisto) చూశాడు; ప్రతిదీ భూమి చుట్టూనే తిరగదు అనడానికి బలమైన ఆధారం</td>
+</tr>
+</tbody>
+</table></div>
+<p>గ్రహాల Orbit ఆకారం గురించి Kepler 1609 లో చెప్పిన నియమం <a href="#motion-revolution">Revolution</a> విభాగంలో ఉంది; ఈ చరిత్ర మొత్తం <a href="/learn/geography/g2/3/notes#history-geocentric">పాఠం 3: Geocentric నమూనా</a> లో విపులంగా ఉంది.</p>
+<h3>Rotation ఫలితాలు ఏవి?</h3>
+<p>భూమి Rotation వల్ల నాలుగు ముఖ్య ఫలితాలు వస్తాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఫలితం</th>
+<th>ఎలా</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. పగలు, రాత్రి</strong></td>
+<td>సూర్యుడి వైపు ఉన్న సగం వెలుగులో, మిగతా సగం చీకట్లో; తిరుగుతుంటే మారుతాయి</td>
+</tr>
+<tr>
+<td><strong>2. Longitude ను బట్టి Local time తేడా</strong></td>
+<td>గంటకు 15°, 1° కి 4 నిమిషాలు</td>
+</tr>
+<tr>
+<td><strong>3. Coriolis effect</strong></td>
+<td>కదిలే గాలులు, సముద్ర ప్రవాహాలు పక్కకు వంగడం</td>
+</tr>
+<tr>
+<td><strong>4. Oblate spheroid ఆకారం</strong></td>
+<td>Equator దగ్గర ఉబ్బు, ధ్రువాల దగ్గర చదును</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>పగలు, రాత్రి.</strong> సూర్యుడి వెలుగు ఒక వైపు నుంచే పడుతుంది కాబట్టి ఏ క్షణంలోనైనా భూమిలో సగానికే వెలుగు ఉంటుంది. భూమి తిరుగుతూ మన ఊరిని వెలుగు వైపుకు తెస్తే పగలు, చీకటి వైపుకు తీసుకెళ్తే రాత్రి. పగలు, రాత్రి మారడానికి ప్రధాన కారణం Rotation; ఋతువులు మారడానికి కారణం Rotation కాదు, <a href="#motion-tilt">Axis వంపు, Revolution</a>.</p>
+<p><strong>Local time తేడా.</strong> సూర్యుడు మళ్లీ మన Meridian మీదకు రావడానికి సగటున 24 గంటలు పడుతుంది; కాబట్టి భూమి గంటకు 360 ÷ 24 = 15° తిరుగుతుంది. 15° Longitude తేడా ఉన్న రెండు ఊళ్ల మధ్య సూర్యోదయం ఒక గంట తేడాతో వస్తుంది, అంటే 1° కి 4 నిమిషాలు (<a href="#time-4min">4 నిమిషాల లెక్క</a>). (నక్షత్రాలతో పోల్చి కొలిస్తే ఒక పూర్తి చుట్టుకు 4 నిమిషాలు తక్కువ పడుతుంది; ఆ తేడా <a href="#motion-sidereal-solar-day">Sidereal day</a> విభాగంలో.)</p>
+<p><strong>Coriolis effect.</strong> తిరిగే భూమి మీద కదిలే గాలి, నీరు పక్కకు వంగుతాయి; వివరం <a href="#motion-coriolis">Coriolis</a> విభాగంలో.</p>
+<p><strong>Oblate spheroid ఆకారం.</strong> Equator దగ్గర నేల వేగంగా తిరుగుతుంది (<a href="#motion-rotation-speed">Rotation వేగం</a>). గిర్రున తిప్పిన పిండి ముద్ద అంచులు బయటికి సాగినట్టే Equator భాగం బయటికి ఉబ్బింది. అందుకే భూమి వ్యాసార్థం (Radius) Equator దగ్గర సుమారు 6,378 km, ధ్రువాల దగ్గర సుమారు 6,357 km. ఇలా ధ్రువాల దగ్గర కొంచెం చదునుగా ఉన్న బంతి ఆకారాన్ని Oblate spheroid అంటారు.</p>
+<p>చాలా తీరాల్లో రోజుకు రెండుసార్లు పోటు, రెండుసార్లు పాటు (Tides) వస్తాయి. Tides కు అసలు కారణం చంద్రుడు, సూర్యుడి Gravity భూమి మీద అన్ని చోట్లా ఒకేలా లాగకపోవడం (Differential gravity); అది Rotation ఫలితం కాదు. Rotation చేసేది ఒక్కటే: మన తీరాన్ని ఆ నీటి ఉబ్బుల కిందకు రోజుకు రెండుసార్లు తీసుకురావడం (<a href="/learn/geography/g2/3/notes#tides-two-a-day">పాఠం 3: రోజుకు రెండు Tides</a>).</p>
+<h2 id="motion-rotation-speed">Equator దగ్గర, మన ఆంధ్రప్రదేశ్ లో, ధ్రువం దగ్గర భూమి ఒకే వేగంతో తిరుగుతుందా?</h2>
+<p>భూమి మొత్తం ఒక్క ముక్క; భూమి ఒకసారి తిరిగితే దాని మీద ప్రతి చోటూ ఒకేసారి 360° తిరుగుతుంది. కాబట్టి "గంటకు ఎన్ని డిగ్రీలు" అనే వేగం, అంటే Angular speed (కోణ వేగం), Equator దగ్గర, విజయవాడ దగ్గర, ధ్రువం దగ్గర అన్ని చోట్లా ఒకటే: గంటకు సుమారు 15°. కానీ "గంటకు ఎన్ని km" అనే వేగం, అంటే Linear speed (రేఖీయ వేగం), చోటును బట్టి మారుతుంది; ఒక్కో చోటు 24 గంటల్లో ఒక్కో సైజు వలయం చుడుతుంది కాబట్టి.</p>
+<p>Equator Axis కు అన్నిటికంటే దూరంగా ఉంటుంది; దాని చుట్టుకొలత సుమారు 40,075 km (సులభంగా 40,000 km). Equator మీది ఒక చోటు 24 గంటల్లో ఈ దూరం మొత్తం చుట్టి రావాలి: 40,075 ÷ 24 ≈ 1,670. అందుకే Equator దగ్గర Rotation వేగం గంటకు సుమారు 1,670 km (Sadguna Rao పుస్తకం Equator కు 1,610 / 1,700 km/h, 60° కు 850 km/h అని ఇస్తుంది).</p>
+<p>Equator నుంచి ఉత్తరానికి గానీ దక్షిణానికి గానీ వెళ్తున్న కొద్దీ ఆ చోటు Axis కు దగ్గరవుతుంది; అది చుట్టే Latitude వలయం చిన్నదవుతుంది (<a href="#latlong-latitude">Latitude అంటే</a>). సమయం మాత్రం అదే 24 గంటలు, కాబట్టి km/h తగ్గుతుంది. ఏ Latitude లో అయినా లెక్క ఒకటే: అక్కడి వలయం Equator వలయంలో ఎంత భాగమో, వేగం కూడా 1,670 లో అంత భాగం. 60° Latitude దగ్గర వలయం Equator వలయంలో సరిగ్గా సగం, కాబట్టి వేగం కూడా సగం, సుమారు 835 km/h. ధ్రువం సరిగ్గా Axis మీదే ఉంది; అక్కడ వలయమే లేదు, కాబట్టి Linear speed సున్నా. ధ్రువం దగ్గర భూమి తిరగడం ఆగలేదు; అక్కడ నిలబడిన మనిషి అదే చోట 24 గంటలకు ఒకసారి తన చుట్టూ తాను తిరుగుతాడు, Angular speed అక్కడ కూడా గంటకు 15°. (Trigonometry తెలిసినవాళ్లకు: వేగం = 1,670 × cos Latitude.)</p>
+<p>ఒక సరళమైన చిత్రం: పార్కులో తిరిగే రంగులరాట్నం (merry-go-round) మీద అంచున కూర్చున్న పిల్లవాడు, మధ్య కర్ర దగ్గర కూర్చున్న పిల్లవాడు ఇద్దరూ ఒకే సమయంలో ఒక చుట్టు పూర్తి చేస్తారు; అంచున ఉన్నవాడు పెద్ద వలయం చుడతాడు కాబట్టి వేగంగా కదులుతాడు. అంచు Equator, మధ్య కర్ర ధ్రువం.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>చోటు</th>
+<th>Latitude</th>
+<th>Rotation వల్ల Linear speed (సుమారు)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Equator</strong></td>
+<td>0°</td>
+<td>1,670 km/h</td>
+</tr>
+<tr>
+<td><strong>తిరుపతి</strong></td>
+<td>13.6° N</td>
+<td>1,620 km/h</td>
+</tr>
+<tr>
+<td><strong>విజయవాడ</strong></td>
+<td>16.5° N</td>
+<td>1,600 km/h</td>
+</tr>
+<tr>
+<td><strong>హైదరాబాద్ / విశాఖపట్నం</strong></td>
+<td>17.4° N / 17.7° N</td>
+<td>1,590 km/h</td>
+</tr>
+<tr>
+<td><strong>కర్కట రేఖ</strong> (Tropic of Cancer)</td>
+<td>23.44° N</td>
+<td>1,530 km/h</td>
+</tr>
+<tr>
+<td><strong>60° Latitude</strong></td>
+<td>60° N / S</td>
+<td>835 km/h</td>
+</tr>
+<tr>
+<td><strong>ధ్రువాలు</strong></td>
+<td>90° N / S</td>
+<td>0 km/h</td>
+</tr>
+</tbody>
+</table></div>
+<p>విజయవాడ వలయం Equator వలయంలో సుమారు 96% కాబట్టి అక్కడ వేగం సుమారు 1,600 km/h; Equator మీది చోటు కంటే విజయవాడ గంటకు తక్కువ దూరం కదులుతుంది. ఒక విమానం గంటకు సుమారు 900 km వెళ్తుంది; అంటే మనం కూర్చున్న చోటే విమానం కంటే సుమారు రెండు రెట్లు వేగంగా తూర్పు వైపు కదులుతోంది.</p>
+<p>ఇంత వేగం మనకు ఎందుకు తెలియదు? భూమి వేగం ఎప్పుడూ ఒకేలా ఉంటుంది, కుదుపు, బ్రేక్ ఉండవు; మనతో పాటు చుట్టూ ఉన్నవన్నీ అదే వేగంతో కదులుతున్నాయి కాబట్టి పోల్చి చూడటానికి ఆగి ఉన్నది ఏదీ లేదు; భూమి Gravity మనల్ని గట్టిగా కిందకు పట్టుకుంటుంది.</p>
+<h2 id="motion-sidereal-solar-day">భూమి ఒకసారి తిరగడానికి 24 గంటలా, 23 గంటల 56 నిమిషాలా?</h2>
+<p>రెండూ సరైనవే; దేనితో పోల్చి కొలిచామో దాన్ని బట్టి జవాబు మారుతుంది. రోజును మూడు విధాలుగా కొలుస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రోజు</th>
+<th>దేనితో పోల్చి</th>
+<th>పొడవు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Sidereal day</strong> (నక్షత్ర దినం)</td>
+<td>దూర నక్షత్రం మళ్లీ అదే Meridian మీదకు రావడం</td>
+<td>సుమారు 23 గంటల 56 నిమిషాల 4 సెకన్లు (86,164 సెకన్లు)</td>
+</tr>
+<tr>
+<td><strong>2. Apparent solar day</strong></td>
+<td>ఆకాశంలోని నిజమైన సూర్యుడు మళ్లీ అత్యంత ఎత్తుకు రావడం</td>
+<td>ఏడాదంతా కొన్ని సెకన్లు మారుతుంది</td>
+</tr>
+<tr>
+<td><strong>3. Mean solar day</strong> (సగటు సౌర దినం)</td>
+<td>Mean Sun (సగటు సూర్యుడు) మళ్లీ అదే Meridian దాటడం</td>
+<td>24 గంటలు; మన గడియారాలు దీన్నే వాడతాయి</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Sidereal day.</strong> ఈ రాత్రి ఒక నక్షత్రం సరిగ్గా మన తల మీద ఉంది అనుకోండి. రేపు రాత్రి అదే నక్షత్రం మళ్లీ తల మీదకు రావడానికి సుమారు 23 గంటల 56 నిమిషాల 4 సెకన్లు పడుతుంది. "Sidereal" అంటే నక్షత్రాలతో పోల్చి కొలిచేది. దూర నక్షత్రాలతో పోల్చి భూమి ఒక పూర్తి చుట్టు (360°) తిరిగే కాలం ఇదే. సెకన్లలో: 23 × 3,600 + 56 × 60 + 4 = 86,164 సెకన్లు.</p>
+<p><strong>Solar day.</strong> ఈ రోజు మధ్యాహ్నం సూర్యుడు మన Meridian మీద అత్యంత ఎత్తుకు వచ్చాడు; రేపు మళ్లీ అలా రావడానికి సగటున 24 గంటలు. ఆకాశంలోని నిజమైన సూర్యుడితో కొలిచిన Apparent solar day పొడవు ఏడాదంతా ఒకేలా ఉండదు; అర నిమిషం లోపు అటూ ఇటూ మారుతుంది. భూమి Orbit పూర్తి వృత్తం కాకపోవడం వల్ల భూమి కొన్ని నెలలు కొంచెం వేగంగా, కొన్ని నెలలు నెమ్మదిగా కదులుతుంది (<a href="#motion-revolution">Revolution</a>); Axis వంపు కూడా ఈ తేడాను పెంచుతుంది. గడియారం ఇలా మారే రోజుతో నడవదు. అందుకే ఏడాదంతా ఒకే వేగంతో కదిలే ఒక ఊహా సూర్యుణ్ణి తీసుకుంటారు; దాన్ని Mean Sun (సగటు సూర్యుడు) అంటారు. Mean Sun ఒక Meridian ను దాటి మళ్లీ అదే Meridian ను దాటే కాలం సరిగ్గా 24 గంటలు; అదే Mean solar day.</p>
+<h3>4 నిమిషాల తేడా ఎక్కడి నుంచి?</h3>
+<p>భూమి తన చుట్టూ తిరుగుతూనే సూర్యుడి చుట్టూ కూడా ముందుకు కదులుతోంది. ఒక సంవత్సరంలో (సుమారు 365 రోజులు) Orbit లో 360° కదులుతుంది కాబట్టి ఒక్క రోజులో సుమారు 1° ముందుకు జరుగుతుంది. నక్షత్రాలు చాలా దూరం; భూమి 1° జరిగినా నక్షత్రం అదే దిశలో కనిపిస్తుంది, కాబట్టి 360° తిరగగానే నక్షత్రం మళ్లీ తల మీదకు వస్తుంది. సూర్యుడు దగ్గర; భూమి Orbit లో 1° ముందుకు జరగడంతో భూమి నుంచి సూర్యుణ్ణి చూసే దిశ కూడా సుమారు 1° మారింది. కాబట్టి 360° తిరిగినా సూర్యుడు ఇంకా అత్యంత ఎత్తుకు రాడు; భూమి ఇంకో సుమారు 1° తిరగాలి. 1° తిరగడానికి సుమారు 4 నిమిషాలు (24 × 60 ÷ 360) పడతాయి. అందుకే Solar day Sidereal day కంటే సుమారు 4 నిమిషాలు ఎక్కువ; ఖచ్చితంగా 24 గం − 23 గం 56 ని 4 సె = 3 నిమిషాల 56 సెకన్లు. 24 గంటల్లో భూమి నిజానికి సుమారు 361° తిరుగుతుంది.</p>
+<p>ఒక సరళమైన చిత్రం: మీరు గుడి చుట్టూ ప్రదక్షిణ చేస్తూనే మీ చుట్టూ మీరు మెల్లగా తిరుగుతున్నారు అనుకోండి. చాలా దూరంలోని కొండ (దూర నక్షత్రం) ఒక చుట్టు తిరగగానే మళ్లీ ఎదురుగా వస్తుంది; దగ్గరి గుడి (సూర్యుడు) మాత్రం మీరు ముందుకు నడవడంతో కొంచెం పక్కకు జరిగింది, అది ఎదురుగా రావాలంటే ఇంకొంచెం తిరగాలి.</p>
+<h2 id="motion-coriolis">భూమి తిరగడం వల్ల గాలుల దిశ ఎందుకు వంగుతుంది? Foucault లోలకం ఏం చూపించింది?</h2>
+<p>Equator దగ్గర నేల గంటకు సుమారు 1,670 km వేగంతో తూర్పుకు కదులుతోంది (<a href="#motion-rotation-speed">Rotation వేగం</a>); అక్కడి గాలి కూడా నేలతో పాటు అంతే వేగంతో తూర్పుకు కదులుతోంది. ఇప్పుడు ఆ గాలి ఉత్తరం వైపు బయలుదేరింది అనుకోండి. ఉత్తరానికి వెళ్లే కొద్దీ నేల వేగం తగ్గుతుంది, కానీ గాలి తన పాత తూర్పు వేగాన్ని వదలదు. దాంతో గాలి కింది నేల కంటే వేగంగా తూర్పుకు వెళ్తుంది; నేల మీద నిలబడిన మనకు ఆ గాలి కుడి వైపు (తూర్పు వైపు) వంగినట్టు కనిపిస్తుంది. తిరిగే భూమి మీద నిలబడి చూసేవాళ్లకు కదిలే గాలి, నీటి ప్రవాహాల దారి ఇలా పక్కకు వంగినట్టు కనిపించడాన్ని Coriolis effect (కోరియాలిస్ ప్రభావం) అంటారు. ఈ వంపు తిరిగే భూమి మీద నుంచి చూసినప్పుడు కనిపించే వంపు (Apparent deflection); అంతరిక్షం నుంచి చూస్తే గాలి నేరుగానే వెళ్తుంది, దాని కింద నేల తిరిగింది.</p>
+<p>ఒక సరళమైన చిత్రం: గుండ్రంగా తిరిగే పెద్ద బల్ల మీద ఒక గోలీని నేరుగా దొర్లిస్తే, బయట నిలబడిన మీకు గోలీ నేరుగానే వెళ్తుంది; బల్లపై కూర్చున్న పిల్లవాడికి మాత్రం అది పక్కకు వంగినట్టు కనిపిస్తుంది, ఎందుకంటే అతని కింద బల్ల తిరిగింది.</p>
+<h3>ఏ వైపు వంగుతుంది?</h3>
+<p>గాలి వెళ్తున్న దిశ వైపు ముఖం పెట్టి నిలబడితే Coriolis వంపు మూడు రకాలు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఎక్కడ</th>
+<th>వంపు</th>
+<th>ఫలితం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఉత్తర అర్ధగోళం</strong> (Northern Hemisphere)</td>
+<td>వెళ్లే దిశకు కుడి వైపు</td>
+<td>Cyclones Anticlockwise</td>
+</tr>
+<tr>
+<td><strong>దక్షిణ అర్ధగోళం</strong> (Southern Hemisphere)</td>
+<td>వెళ్లే దిశకు ఎడమ వైపు</td>
+<td>Cyclones Clockwise</td>
+</tr>
+<tr>
+<td><strong>Equator మీద</strong></td>
+<td>అడ్డంగా (Horizontal) వంచే ప్రభావం సున్నా; ధ్రువాల వైపు వెళ్లే కొద్దీ పెరిగి ధ్రువాల దగ్గర అత్యధికం</td>
+<td>సుమారు 5° లోపల Tropical cyclones దాదాపు ఏర్పడవు</td>
+</tr>
+</tbody>
+</table></div>
+<p>గాలి ఏ దిశలో వెళ్లినా ఇదే నియమం. ఉత్తర అర్ధగోళంలో ఉత్తరంగా వెళ్లే గాలి తూర్పుకు, దక్షిణంగా వెళ్లే గాలి పడమరకు, తూర్పుగా వెళ్లే గాలి దక్షిణానికి, పడమరగా వెళ్లే గాలి ఉత్తరానికి వంగుతుంది; అన్నీ వెళ్లే దిశకు కుడి వైపే. దక్షిణ అర్ధగోళంలో అన్నీ ఎడమకు. Trade winds దీనికి మంచి ఉదాహరణ: ఉత్తర అర్ధగోళంలో ఇవి Equator వైపు, అంటే దక్షిణానికి, బయలుదేరి కుడికి వంగి పడమర వైపు తిరుగుతాయి; అందుకే ఈశాన్యం నుంచి నైరుతికి వీస్తాయి, వీటిని ఈశాన్య (North-East) Trade winds అంటారు (<a href="/learn/geography/g2/8/notes#planetary-winds">పాఠం 8: గ్రహ పవనాలు</a>). సముద్ర ప్రవాహాలు (Ocean currents) కూడా ఇలాగే వంగుతాయి (<a href="/learn/geography/g2/10/notes#current-causes">పాఠం 10: ప్రవాహాల కారణాలు</a>).</p>
+<p>గాలిని కదిలించేది Coriolis కాదు. ఎక్కువ Pressure (వాయు పీడనం) ఉన్న చోటు నుంచి తక్కువ Pressure ఉన్న చోటుకు గాలిని నెట్టే తోపును Pressure gradient force అంటారు; Coriolis ఆ గాలి దిశను మాత్రమే పక్కకు తిప్పుతుంది (<a href="/learn/geography/g2/8/notes#wind-forces">పాఠం 8: గాలిని నడిపే బలాలు</a>).</p>
+<p>Cyclone మధ్యలో Pressure చాలా తక్కువ కాబట్టి నాలుగు వైపుల నుంచీ గాలి మధ్య వైపుకు పరిగెడుతుంది. ఉత్తర అర్ధగోళంలో ప్రతి గాలి ప్రవాహమూ తన దారికి కుడి వైపుకు వంగడంతో ఏ గాలీ నేరుగా మధ్యకు చేరదు; అన్నీ మధ్య చుట్టూ జారుతూ సుడిలా తిరుగుతాయి, పై నుంచి చూస్తే ఆ సుడి Anticlockwise. దక్షిణ అర్ధగోళంలో గాలి ఎడమకు వంగుతుంది కాబట్టి అక్కడ Cyclone Clockwise. Equator కు సుమారు 5° లోపల Coriolis దాదాపు సున్నా కాబట్టి గాలికి సుడి తిరిగే శక్తి రాదు; అందుకే అక్కడ Tropical cyclones దాదాపు ఏర్పడవు (<a href="/learn/geography/g2/8/notes#tropical-cyclones">పాఠం 8: ఉష్ణమండల చక్రవాతాలు</a>).</p>
+<h3>పేరు, నియమం ఎవరివి?</h3>
+<p>ఈ ప్రభావానికి French ఇంజనీర్ Gaspard-Gustave de Coriolis పేరు పెట్టారు. ఆయన గాలుల గురించి కాదు, నీటి చక్రాల (water wheels) లాంటి తిరిగే యంత్రాల్లో కదిలే భాగాల గురించి చదివి, తిరిగే వస్తువు మీద కదిలేవి పక్కకు వంగినట్టు ఎందుకు కనిపిస్తాయో 1835 లో గణితంతో రాశాడు. భూమి మీది గాలులు, సముద్ర ప్రవాహాలు ఇలాగే వంగుతాయని 1856 లో లెక్కలతో చూపించింది American శాస్త్రవేత్త William Ferrel; అందుకే "ఉత్తర అర్ధగోళంలో కుడికి, దక్షిణంలో ఎడమకు" అనే నియమాన్ని Ferrel's law అంటారు.</p>
+<h3>Foucault లోలకం</h3>
+<p>భూమి తిరుగుతోందని ప్రయోగంతో చూపించింది French శాస్త్రవేత్త Léon Foucault, 1851 లో Paris లో. మొదట తన ఇంటి నేలమాళిగలో, తరువాత Paris Observatory లో ప్రయత్నించి, అదే ఏడాది మార్చిలో Paris లోని Panthéon భవనంలో అందరూ చూసేలా చేశాడు: 67 m పొడవైన ఉక్కు తీగకు 28 kg ఇనుప గుండును వేలాడదీసి ఊగించాడు. దీన్ని Foucault pendulum (ఫౌకో లోలకం) అంటారు.</p>
+<p>ఊగే లోలకం తన ఊపు దిశను తాను మార్చుకోదు. దిశ మారాలంటే ఏదో ఒకటి దాన్ని పక్కకు నెట్టాలి; పై నుంచి వేలాడే తీగ గుండును కిందకు, మధ్యకు మాత్రమే లాగుతుంది. నెట్టేది ఏదీ లేకపోతే కదిలే వస్తువు అదే దారిలో కదులుతూనే ఉంటుంది; దీన్ని Inertia (జడత్వం) అంటారు. కానీ కొన్ని గంటల తరువాత చూస్తే నేల మీది గీతలతో పోలిస్తే ఊపు దిశ మెల్లగా తిరిగిపోయింది. లోలకం దిశ మారలేదు; దాని కింద భూమి తిరిగింది.</p>
+<p>ఊపు దిశ ఎంత వేగంగా తిరుగుతుందో Latitude ను బట్టి మారుతుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>చోటు</th>
+<th>ఊపు దిశ తిరిగే వేగం</th>
+<th>ఒక పూర్తి చుట్టుకు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ధ్రువం</strong></td>
+<td>గంటకు 15°</td>
+<td>సుమారు 24 గంటలు (ఒక Sidereal day)</td>
+</tr>
+<tr>
+<td><strong>Paris</strong> (సుమారు 49° N)</td>
+<td>గంటకు 11° కంటే కొంచెం ఎక్కువ</td>
+<td>సుమారు 32 గంటలు</td>
+</tr>
+<tr>
+<td><strong>హైదరాబాద్</strong> (17.4° N)</td>
+<td>గంటకు సుమారు 4.5°</td>
+<td>సుమారు 80 గంటలు</td>
+</tr>
+<tr>
+<td><strong>Equator</strong></td>
+<td>సున్నా</td>
+<td>అసలు తిరగదు</td>
+</tr>
+</tbody>
+</table></div>
+<p>Equator దగ్గర కూడా భూమి తిరుగుతూనే ఉంది; అక్కడ నేలతో పోలిస్తే ఊపు దిశ మాత్రమే తిరగదు. ఉత్తర అర్ధగోళంలో పై నుంచి చూస్తే ఊపు దిశ Clockwise గా తిరుగుతుంది; దక్షిణ అర్ధగోళంలో Anticlockwise.</p>
+<h2 id="motion-revolution">భూమి సూర్యుడి చుట్టూ ఎలాంటి దారిలో, ఎంత వేగంగా, ఎంత కాలంలో తిరుగుతుంది?</h2>
+<p>భూమి తన చుట్టూ తాను తిరుగుతూనే (<a href="#motion-apparent-sun">Rotation</a>) సూర్యుడి చుట్టూ కూడా తిరుగుతోంది. సూర్యుడి చుట్టూ భూమి వెళ్లే దారిని Orbit (కక్ష్య) అంటారు; ఆ Orbit లో సూర్యుడి చుట్టూ తిరగడాన్ని Revolution (పరిభ్రమణం) అంటారు. "పరి" అంటే చుట్టూ. Revolution కూడా Rotation లాగే పడమర నుంచి తూర్పుకు; ఉత్తర ధ్రువం పై నుంచి చూస్తే Anticlockwise.</p>
+<p>భూమి Revolution ముఖ్య విలువలు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>విషయం</th>
+<th>విలువ (సుమారు)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Orbit ఆకారం</strong></td>
+<td>దాదాపు వృత్తమైన Ellipse; సూర్యుడు ఒక Focus దగ్గర; Eccentricity 0.0167</td>
+</tr>
+<tr>
+<td><strong>సగటు దూరం</strong></td>
+<td>14.96 కోట్ల km (149.6 million km) = 1 AU</td>
+</tr>
+<tr>
+<td><strong>Perihelion</strong> (ఉపసౌర స్థానం)</td>
+<td>జనవరి తొలి వారం (సుమారు 3–4); 14.71 కోట్ల km (147.1 million km)</td>
+</tr>
+<tr>
+<td><strong>Aphelion</strong> (అపసౌర స్థానం)</td>
+<td>జూలై తొలి వారం (సుమారు 4–6); 15.21 కోట్ల km (152.1 million km)</td>
+</tr>
+<tr>
+<td><strong>సగటు Orbital speed</strong></td>
+<td>సెకనుకు 29.8 km = గంటకు 1,07,280 km</td>
+</tr>
+<tr>
+<td><strong>ఒక చుట్టులో దూరం</strong></td>
+<td>94 కోట్ల km (940 million km)</td>
+</tr>
+<tr>
+<td><strong>Tropical year</strong> (ఋతు సంవత్సరం)</td>
+<td>365.2422 రోజులు = 365 రోజుల 5 గంటల 48 నిమిషాల 46 సెకన్లు</td>
+</tr>
+<tr>
+<td><strong>Sidereal year</strong> (నక్షత్ర సంవత్సరం)</td>
+<td>365.2564 రోజులు = 365 రోజుల 6 గంటల 9 నిమిషాల 10 సెకన్లు</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Orbit ఆకారం: Ellipse</h3>
+<p>భూమి Orbit పూర్తి గుండ్రం కాదు; కొంచెం సాగిన గుండ్రం. ఈ ఆకారాన్ని Ellipse (దీర్ఘవృత్తం) అంటారు. ఒక కాగితం మీద రెండు గుండు సూదులు కొంచెం దూరంగా గుచ్చి, ముడి వేసిన దారాన్ని రెండు సూదుల చుట్టూ వేసి, పెన్సిల్‌తో దారాన్ని బిగుతుగా లాగుతూ చుట్టూ తిప్పితే వచ్చే ఆకారమే Ellipse. ఆ రెండు సూదుల బిందువులను Foci అంటారు (ఒక్కటైతే Focus). సూదులు దగ్గరగా ఉంటే Ellipse దాదాపు వృత్తం; దూరంగా ఉంటే బాగా సాగుతుంది.</p>
+<p>సూర్యుడు Ellipse మధ్యలో కాదు, ఒక Focus దగ్గర ఉంటాడు; రెండో Focus దగ్గర ఏమీ లేదు. "ప్రతి గ్రహం Orbit ఒక Ellipse; సూర్యుడు దాని ఒక Focus దగ్గర ఉంటాడు" అని 1609 లో చెప్పింది German శాస్త్రవేత్త Johannes Kepler; దీన్ని Kepler మొదటి నియమం (Kepler's first law) అంటారు (<a href="/learn/geography/g2/3/notes#motion-kepler-laws">పాఠం 3: Kepler నియమాలు</a>). Ellipse ఎంత సాగిందో చెప్పే సంఖ్యను Eccentricity అంటారు; వృత్తానికి ఇది 0, భూమి Orbit కు సుమారు 0.0167. అంటే భూమి Orbit దాదాపు వృత్తమే; పుస్తకాల బొమ్మల్లో స్పష్టత కోసం దాన్ని బాగా సాగదీసి గీస్తారు.</p>
+<h3>దగ్గరి బిందువు, దూరపు బిందువు</h3>
+<p>సూర్యుడు ఒక పక్కకు ఉన్నాడు కాబట్టి ఏడాదిలో ఒకసారి భూమి సూర్యుడికి అత్యంత దగ్గరగా, ఒకసారి అత్యంత దూరంగా ఉంటుంది. అత్యంత దగ్గరి బిందువు Perihelion (ఉపసౌర స్థానం), జనవరి తొలి వారంలో; అత్యంత దూరపు బిందువు Aphelion (అపసౌర స్థానం), జూలై తొలి వారంలో. ఈ తేదీలు ఏటా ఒకటి రెండు రోజులు అటూ ఇటూ మారతాయి. సూర్యుడికి దగ్గరగా వచ్చినప్పుడు సూర్యుడి Gravity బలంగా లాగడంతో భూమి వేగం పెరుగుతుంది; అందుకే భూమి Perihelion (జనవరి) దగ్గర అత్యంత వేగంగా, Aphelion (జూలై) దగ్గర అత్యంత నెమ్మదిగా కదులుతుంది.</p>
+<p>రెండు దూరాల తేడా సుమారు 50 లక్షల km; మొత్తం దూరంలో సుమారు 3% మాత్రమే. ఈ దూరం ఋతువులకు కారణం కాదు (<a href="#seasons-why">ఋతువులు</a>).</p>
+<h3>దూరం, వేగం</h3>
+<p>సూర్యుడి నుంచి భూమి సగటు దూరం సుమారు 14.96 కోట్ల km (149.6 million km). ఈ దూరాన్నే ఒక కొలమానంగా తీసుకుని 1 AU (Astronomical Unit, ఖగోళ ప్రమాణం) అంటారు; గ్రహాల దూరాలను AU లో చెబుతారు (<a href="/learn/geography/g2/3/notes#distances-au">పాఠం 3: AU</a>). సూర్యుడి వెలుగు సెకనుకు సుమారు 3 లక్షల km వేగంతో వచ్చినా ఈ దూరం దాటడానికి సుమారు 8 నిమిషాల 20 సెకన్లు పడుతుంది; మనం చూసే సూర్యుడు 8 నిమిషాల క్రితం నాటి సూర్యుడు.</p>
+<p>భూమి Orbit దాదాపు వృత్తం కాబట్టి సగటు దూరాన్ని Radius (వ్యాసార్థం) గా తీసుకుంటే ఒక చుట్టులో దూరం = 2 × π × Radius = 2 × 3.1416 × 149.6 ≈ 940 million km, అంటే సుమారు 94 కోట్ల km. భూమి సూర్యుడి చుట్టూ సగటున సెకనుకు సుమారు 29.8 km వేగంతో కదులుతుంది: 29.8 × 3,600 = గంటకు 1,07,280 km. ఈ వేగం Equator దగ్గర Rotation వేగం (1,670 km/h) కంటే సుమారు 64 రెట్లు ఎక్కువ.</p>
+<h3>ఒక సంవత్సరం ఎంత కాలం?</h3>
+<p>ఏడాదిలో రెండు రోజులు భూమి మీద దాదాపు అన్ని చోట్లా పగలు, రాత్రి సమానంగా (సుమారు 12 గంటలు చొప్పున) ఉంటాయి; ఆ రోజును Equinox (విషువత్తు) అంటారు: మార్చి 21 చుట్టూ March Equinox (వసంత విషువత్తు), సెప్టెంబర్ 23 చుట్టూ September Equinox (శరద్ విషువత్తు). వీటి కారణం <a href="#seasons-solstice-equinox">అయనాంతాలు, విషువత్తులు</a> విభాగంలో ఉంది.</p>
+<p>ఒక చుట్టు పూర్తయింది అని దేనితో పోల్చి చెబుతామో దాన్ని బట్టి రెండు రకాల సంవత్సరాలు ఉన్నాయి. Tropical year (ఋతు సంవత్సరం / ఉష్ణమండల సంవత్సరం) అంటే ఒక March Equinox నుంచి తరువాతి March Equinox వరకు, అంటే ఋతువులు మళ్లీ అదే స్థితికి రావడానికి పట్టే కాలం: సుమారు 365.2422 రోజులు. మన Calendar ఈ Tropical year నే అనుసరిస్తుంది. Sidereal year (నక్షత్ర సంవత్సరం) అంటే దూర నక్షత్రాలతో పోల్చి ఒక పూర్తి చుట్టు: సుమారు 365.2564 రోజులు. రెండింటి తేడా సుమారు 20 నిమిషాలు. భూమి Axis దిశ చాలా మెల్లగా తిరుగుతుండటం (<a href="#motion-tilt">Precession</a>) వల్ల ఋతువులు నక్షత్రాలతో పోలిస్తే ఏటా కొంచెం ముందుగా వస్తాయి; అదే ఈ తేడాకు కారణం.</p>
+<p>పుస్తకాలు సులభంగా గుర్తుంచుకోవడానికి సంవత్సరాన్ని "365 రోజుల 6 గంటలు" లేదా "365¼ రోజులు" అంటాయి. ఈ విలువ దగ్గరిది మాత్రమే; Tropical year 6 గంటల కంటే సుమారు 11 నిమిషాలు తక్కువ. ఈ 11 నిమిషాలే <a href="#motion-leap-year">Leap year</a> నియమాన్ని క్లిష్టం చేశాయి.</p>
+<h2 id="motion-tilt">భూమి Axis 23.44° వంగి ఉంది అంటారు. ఏ గీత నుంచి కొలిచారు?</h2>
+<p>ఒక డైనింగ్ టేబుల్ ఊహించండి. భూమి సూర్యుడి చుట్టూ ఈ టేబుల్ ఉపరితలం మీదే తిరుగుతోంది అనుకోండి; ఈ చదునైన ఉపరితలాన్ని Orbital plane (కక్ష్యా తలం) అంటారు. టేబుల్ మీద ఒక పెన్సిల్‌ను నిటారుగా నిలబెడితే, టేబుల్‌కు లంబంగా (90° లో) నిలబడిన ఆ గీతను Orbital normal (కక్ష్యా తల లంబం) అంటారు; "Normal" అంటే లంబంగా ఉన్న గీత.</p>
+<p>భూమి Axis ఈ నిటారు పెన్సిల్ లాగా లేదు; Orbital normal నుంచి సుమారు 23.44° పక్కకు వాలి ఉంది. దీన్నే Axial tilt (అక్ష వంపు) అంటారు; పాఠశాల పుస్తకాలు దీన్ని 23½° గా చెబుతాయి. అదే Axis ను టేబుల్ ఉపరితలంతో, అంటే Orbital plane తో, పోల్చి కొలిస్తే కోణం 90° − 23.44° = 66.56° (పుస్తకాల్లో 66½°). లంబం నుంచి వంపు, తలంతో కోణం రెండూ కలిపితే 90°. అంటే ఒకే వంపును రెండు సంఖ్యలతో చెప్పవచ్చు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>దేనితో పోల్చి</th>
+<th>కోణం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Orbital normal</strong> (కక్ష్యా తల లంబం) నుంచి</td>
+<td>23.44° (23½°)</td>
+</tr>
+<tr>
+<td><strong>Orbital plane</strong> (కక్ష్యా తలం) తో</td>
+<td>66.56° (66½°)</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఏ గీతతో కొలిచామో చెప్పకపోతే వంపు సంఖ్యకు అర్థం లేదు. తూర్పు, పడమర భూమి మీది దిక్కులు; భూమి తిరుగుతుంటే అవి అంతరిక్షంలో స్థిరంగా ఉండవు, కాబట్టి వంపును Orbital normal తో పోల్చే చెప్పాలి (Sadguna Rao పుస్తకం "తూర్పు వైపు 23½°" అని రాస్తుంది).</p>
+<h3>వంపు, ఋతువులు</h3>
+<p>సూర్యుడి చుట్టూ తిరుగుతున్నప్పుడు Axis వంగిన దిశ ఏడాది పొడవునా దాదాపు మారదు; అంతరిక్షంలో ఒకే దిశ వైపు చూపిస్తూ ఉంటుంది. ఇప్పుడు ఆ దిశలో ధ్రువ నక్షత్రం (Polaris) ఉంది (<a href="/learn/geography/g2/3/notes#sky-polaris">పాఠం 3: Polaris</a>). దాంతో Orbit లో ఒక వైపు ఉన్నప్పుడు ఉత్తర అర్ధగోళం సూర్యుడి వైపు వంగి ఉంటుంది, అక్కడ వేసవి. ఆరు నెలల తరువాత Orbit అవతలి వైపు దక్షిణ అర్ధగోళం సూర్యుడి వైపు వంగి ఉంటుంది; అప్పుడు అక్కడ వేసవి, మనకు చలికాలం. సూర్యుడి వైపు వంగిన అర్ధగోళంలో ఎండ నిటారుగా పడుతుంది, పగలు ఎక్కువ సేపు ఉంటుంది; అందుకే వేసవి (<a href="#seasons-why">ఋతువులు</a>). వంపు లేకపోతే ఏడాదంతా ఎండ ఒకేలా పడుతుంది; Revolution లేకపోతే వంగిన వైపు మారదు. కాబట్టి Axis వంపు, Revolution రెండూ కలిసే ఋతువులు వస్తాయి.</p>
+<p>ఈ వంపు వల్లే మధ్యాహ్నం సూర్యుడు సరిగ్గా తల మీద ఉండే చోటు ఏడాదంతా ఉత్తరం, దక్షిణం మధ్య కదులుతుంది; కానీ 23.44° N దాటి ఉత్తరానికి, 23.44° S దాటి దక్షిణానికి ఎప్పుడూ వెళ్లదు. ఆ రెండు హద్దు గీతలే కర్కట రేఖ (Tropic of Cancer), మకర రేఖ (Tropic of Capricorn); Arctic, Antarctic Circles 90° − 23.44° = 66.56° దగ్గర ఉంటాయి (<a href="#latlong-special">ప్రత్యేక అక్షాంశాలు</a>). సూర్యుడు Equator మీద తల మీద ఉండే రెండు రోజులు (Equinox), Tropics మీద ఉండే రెండు రోజులు (Solstice) <a href="#seasons-solstice-equinox">అయనాంతాలు, విషువత్తులు</a> విభాగంలో ఉన్నాయి.</p>
+<h3>వంపు ఎప్పటికీ ఇంతేనా? భూమి నెమ్మది కదలికలు</h3>
+<p>భూమి కదలికలను ఐదుగా చూస్తారు: రోజువారీ, ఏడాదివారీ కదలికలు రెండు, వేల ఏళ్లలో జరిగే నెమ్మది మార్పులు మూడు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కదలిక</th>
+<th>ఏం మారుతుంది</th>
+<th>ఎంత కాలం (సుమారు)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Rotation</strong> (భ్రమణం)</td>
+<td>Axis చుట్టూ తిరగడం</td>
+<td>1 రోజు</td>
+</tr>
+<tr>
+<td><strong>2. Revolution</strong> (పరిభ్రమణం)</td>
+<td>సూర్యుడి చుట్టూ తిరగడం</td>
+<td>1 సంవత్సరం</td>
+</tr>
+<tr>
+<td><strong>3. Precession</strong></td>
+<td>Axis దిశ ఒక వలయం చుట్టడం</td>
+<td>26,000 సంవత్సరాలు</td>
+</tr>
+<tr>
+<td><strong>4. వంపు మార్పు</strong> (Obliquity)</td>
+<td>వంపు కోణం 22.1° – 24.5° మధ్య</td>
+<td>41,000 సంవత్సరాలు</td>
+</tr>
+<tr>
+<td><strong>5. Eccentricity మార్పు</strong></td>
+<td>Orbit ఎంత సాగుతుందో</td>
+<td>1,00,000 సంవత్సరాలు</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Precession.</strong> తిరిగే బొంగరం పై భాగం మెల్లగా ఒక చిన్న వలయం చుట్టినట్టే భూమి Axis కూడా వలయం చుడుతుంది; దీన్ని Precession అంటారు. ఒక పూర్తి వలయానికి సుమారు 26,000 సంవత్సరాలు (ఖచ్చితంగా సుమారు 25,800). ఒక సంవత్సరంలో ఈ మార్పు కనిపించనంత చిన్నది, కానీ వేల ఏళ్లలో Axis వేరే నక్షత్రం వైపు తిరుగుతుంది. ఇప్పుడు ధ్రువ నక్షత్రం Polaris; సుమారు 12,000 ఏళ్ల తరువాత Vega (అభిజిత్) ధ్రువ నక్షత్రానికి దగ్గరగా ఉంటుంది.</p>
+<p><strong>వంపు మార్పు.</strong> వంపు కోణం కూడా శాశ్వతం కాదు; సుమారు 41,000 సంవత్సరాల చక్రంలో 22.1° నుంచి 24.5° మధ్య మారుతుంది. ఇప్పుడు 23.44°, మెల్లగా తగ్గుతోంది; వందేళ్లలో సుమారు 0.013° మాత్రమే. 1900 ప్రాంతంలో విలువ సుమారు 23.45° కాబట్టి పాత పుస్తకాల్లో 23.45° కనిపిస్తుంది; 23.5°, 23½° గుర్తుంచుకోవడానికి గుండ్రం చేసిన విలువలు.</p>
+<p><strong>Eccentricity మార్పు.</strong> Orbit ఎంత సాగుతుందో కూడా సుమారు 1,00,000 సంవత్సరాల చక్రంలో మారుతుంది. ఈ చివరి మూడింటినీ కలిపి Milankovitch cycles అంటారు; Serbia శాస్త్రవేత్త Milutin Milankovitch వీటిని భూమి మీది మంచు యుగాలకు (Ice ages) ముడిపెట్టి లెక్కలు వేశాడు.</p>
+<h2 id="motion-leap-year">Leap year ఎందుకు వస్తుంది? 1900 ఎందుకు Leap year కాదు, 2000 ఎందుకు?</h2>
+<p>ఋతువులు మళ్లీ అదే స్థితికి రావడానికి సుమారు 365 రోజుల 5 గంటల 48 నిమిషాలు పడుతుంది (<a href="#motion-revolution">Tropical year</a>), కానీ Calendar లో 365 రోజులే ఉంటాయి. అంటే ఏటా దాదాపు 6 గంటలు మిగిలిపోతున్నాయి. వాటిని వదిలేస్తే Calendar ఏటా పావు రోజు ముందుకు పరిగెడుతుంది: నాలుగేళ్లకు ఒక రోజు, 120 ఏళ్లకు ఒక నెల, సుమారు 700 ఏళ్లకు ఆరు నెలలు. అప్పుడు మే నెల ఎండాకాలం నవంబర్‌కు, డిసెంబర్ చలి జూన్‌కు జారిపోతాయి. దీన్ని ఆపడానికి కొన్ని సంవత్సరాల్లో ఒక రోజు అదనంగా కలుపుతారు; ఆ సంవత్సరాన్ని Leap year (లీపు సంవత్సరం / అధిక సంవత్సరం) అంటారు. Leap year లో ఫిబ్రవరికి 29 రోజులు, సంవత్సరానికి 366 రోజులు.</p>
+<p>అదనపు రోజు ఫిబ్రవరికే ఎందుకు? పాత Roman calendar లో సంవత్సరం మార్చి లో మొదలయ్యేది; ఫిబ్రవరి ఏడాదిలో చివరి నెల, అదనపు రోజులు చివరి నెలకు కలపడం వాళ్ల అలవాటు. తరువాత కొత్త సంవత్సరం జనవరికి మారినా ఆ అలవాటు మారలేదు. (July నెల పేరు Julius Caesar నుంచి వచ్చింది; కానీ అదనపు రోజు ఫిబ్రవరిలో ఉండటానికి ఆ పేరుకు సంబంధం లేదు.)</p>
+<h3>Calendar ఎలా సరిదిద్దుకుంది?</h3>
+<p>ఈ రోజు వాడే Leap year నియమం ఒకేసారి రాలేదు; Calendar నాలుగు దశల్లో మారింది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Calendar</th>
+<th>ఎవరు, ఎప్పుడు</th>
+<th>సగటు సంవత్సరం</th>
+<th>ముఖ్య విషయం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. పాత Roman calendar</strong></td>
+<td>Rome</td>
+<td>355 రోజులు</td>
+<td>అదనపు నెల అధికారుల ఇష్టం మీద</td>
+</tr>
+<tr>
+<td><strong>2. Julian calendar</strong></td>
+<td>Julius Caesar, 46 BCE (అమలు 1 January 45 BCE); సలహా Sosigenes</td>
+<td>365.25 రోజులు</td>
+<td>ప్రతి నాలుగో సంవత్సరం Leap year</td>
+</tr>
+<tr>
+<td><strong>3. Gregorian calendar</strong></td>
+<td>Pope Gregory XIII, 1582</td>
+<td>365.2425 రోజులు</td>
+<td>10 రోజులు తీసేశారు; శతాబ్ద సంవత్సరాలకు 400 నియమం</td>
+</tr>
+<tr>
+<td><strong>4. Indian National Calendar</strong></td>
+<td>India, 22 March 1957 నుంచి</td>
+<td>Gregorian తో సరిపోతుంది</td>
+<td>Saka era ఆధారం; మొదటి నెల చైత్రం</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>పాత Roman calendar.</strong> Romulus కాలపు మొదటి Roman calendar లో 10 నెలలు, 304 రోజులే ఉండేవి; తరువాత అది 12 నెలల, 355 రోజుల సంవత్సరం అయింది. ఋతువులతో సరిపోవడానికి అప్పుడప్పుడూ ఒక అదనపు నెల కలిపేవారు, కానీ ఎప్పుడు కలపాలో అధికారులు తమ ఇష్టం వచ్చినట్టు నిర్ణయించేవారు. దాంతో Calendar ఋతువుల నుంచి నెలల కొద్దీ తప్పిపోయింది.</p>
+<p><strong>Julian calendar.</strong> ఈ గందరగోళాన్ని ఆపడానికి Rome పాలకుడు Julius Caesar, Alexandria ఖగోళ శాస్త్రవేత్త Sosigenes సలహాతో, క్రీ.పూ. 46 (46 BCE) లో కొత్త Calendar ను ఆదేశించాడు. పేరుకుపోయిన తేడాను సరిచేయడానికి 46 BCE సంవత్సరానికే 445 రోజులు పెట్టారు; కొత్త Calendar 1 January 45 BCE నుంచి అమలైంది. ఏటా పావు రోజు మిగులుతోంది కాబట్టి ప్రతి నాలుగో సంవత్సరం ఒక రోజు కలపాలి; దాంతో సగటు సంవత్సరం 365.25 రోజులు. Julius Caesar గౌరవార్థం ఒక నెలకు July అని, తరువాతి పాలకుడు Augustus పేరు మీద August అని పేర్లు వచ్చాయి.</p>
+<p>Julian calendar లో లోపం ఉంది. అసలు Tropical year 365.2422 రోజులు, 365.25 కంటే సుమారు 11 నిమిషాలు తక్కువ. అంటే Julian calendar సగటు సంవత్సరం ఋతు సంవత్సరం కంటే ఏటా 11 నిమిషాలు ఎక్కువ; ఈ తేడా సుమారు 128 సంవత్సరాలకు ఒక రోజు అవుతుంది.</p>
+<p>ఈ జారుడు Church కు సమస్య అయింది. Christians కు ముఖ్యమైన Easter పండుగ (యేసు క్రీస్తు మళ్లీ లేచిన రోజు) తేదీని March Equinox నుంచి లెక్కిస్తారు: March Equinox తరువాత వచ్చే మొదటి పౌర్ణమి, ఆ పౌర్ణమి తరువాత వచ్చే మొదటి ఆదివారం. 4వ శతాబ్దం నుంచి Church ఈ లెక్కకు March Equinox ను March 21 గా స్థిరంగా తీసుకుంది. కానీ 16వ శతాబ్దం వచ్చేసరికి ఆకాశంలో Equinox వచ్చిన రోజు Calendar లో March 11 గా పడింది; Calendar 10 రోజులు ముందుకు పరిగెట్టింది. దాంతో Easter సరైన రోజు నుంచి జారిపోతోంది.</p>
+<p><strong>Gregorian calendar.</strong> ఆ కాలంలో Catholic Church అధిపతి Pope పండుగ తేదీలు నిర్ణయించేవాడు. 1582 లో Pope Gregory XIII, గణిత శాస్త్రవేత్త Christopher Clavius నాయకత్వంలోని బృందం వేసిన లెక్కలతో, ఈ లోపాన్ని సరిచేశాడు; ఆయన పేరు మీదనే Gregorian calendar అంటారు. ఆయన రెండు పనులు చేశాడు. మొదట, పేరుకుపోయిన 10 రోజులు తీసేశాడు: 1582 అక్టోబర్ 4 గురువారం తరువాతి రోజు అక్టోబర్ 15 శుక్రవారం అయింది, Equinox తేదీ మళ్లీ March 21 కి వచ్చింది. రెండు, మళ్లీ తేడా రాకుండా Leap year నియమాన్ని మార్చాడు. Julian లో ప్రతి 400 ఏళ్లకు 100 Leap years వస్తాయి; ఇవి ఎక్కువ. శతాబ్ద సంవత్సరాలు (1700, 1800, 1900 లాంటి 100 తో భాగించే సంవత్సరాలు) 400 తో కూడా భాగిస్తేనే Leap year అన్నాడు. దాంతో 400 ఏళ్లలో 3 Leap years తగ్గి 97 మిగిలాయి, సగటు సంవత్సరం 365.2425 రోజులు అయింది. అసలు విలువ 365.2422 కి ఇది అర నిమిషం లోపే తేడా; ఈ తేడా ఒక రోజు కావడానికి సుమారు 3,300 సంవత్సరాలు పడుతుంది.</p>
+<p>అన్ని దేశాలూ 1582 లోనే మారలేదు. Britain, దాని కాలనీలు 1752 లో మారాయి; అప్పటికి తేడా 11 రోజులు అయింది, 1752 సెప్టెంబర్ 2 తరువాతి రోజు సెప్టెంబర్ 14 అయింది. అప్పట్లో భారతదేశంలో East India Company చేతిలో కొన్ని రేవు పట్టణాలే ఉన్నాయి; మన రాజులు, ప్రజలు పంచాంగాలనే వాడారు. British పాలన విస్తరించిన కొద్దీ పరిపాలనలో Gregorian calendar వాడకం పెరిగింది.</p>
+<p><strong>Indian National Calendar.</strong> స్వాతంత్ర్యం తరువాత India Saka era (శక శకం) మీద ఆధారపడిన ఒక అధికారిక జాతీయ Calendar ను తీసుకుంది; దాన్ని Indian National Calendar అంటారు. 22 March 1957 నుంచి Gregorian calendar తో పాటు అధికారికంగా వాడుతున్నారు. ఇందులో మొదటి నెల చైత్రం; సాధారణ సంవత్సరంలో చైత్రం 1 మార్చి 22 న, Gregorian Leap year లో మార్చి 21 న వస్తుంది. Gazette of India, ఆకాశవాణి వార్తలు, ప్రభుత్వ Calendars లో ఈ తేదీ కూడా ఇస్తారు. ఈ Calendars కాకుండా మన ఇళ్లలో పండుగలకు వాడే పంచాంగం చంద్రుడు, సూర్యుడు రెండింటి కదలికతో లెక్కిస్తుంది; దాని లెక్క వేరు.</p>
+<h3>Gregorian నియమం: ఏ సంవత్సరం Leap year?</h3>
+<p>నియమం ఒక్క వాక్యంలో: 4 తో పూర్తిగా భాగించే సంవత్సరం Leap year; కానీ శతాబ్ద సంవత్సరం 400 తో కూడా భాగిస్తేనే Leap year. ("పూర్తిగా భాగిస్తుంది" అంటే శేషం సున్నా.) ఈ వరుసలో చూస్తే తప్పు రాదు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>దశ</th>
+<th>ప్రశ్న</th>
+<th>అవును అయితే</th>
+<th>కాకపోతే</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>400 తో పూర్తిగా భాగిస్తుందా?</td>
+<td>Leap year</td>
+<td>దశ 2 కు</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>100 తో పూర్తిగా భాగిస్తుందా?</td>
+<td>Leap year కాదు</td>
+<td>దశ 3 కు</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>4 తో పూర్తిగా భాగిస్తుందా?</td>
+<td>Leap year</td>
+<td>Leap year కాదు</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>2000: 2000 ÷ 400 = 5, శేషం 0. దశ 1 లోనే Leap year. 1600, 2400 కూడా ఇలాగే.</li>
+<li>1900: 400 తో భాగించదు (శేషం 300); 100 తో భాగిస్తుంది. శతాబ్ద సంవత్సరం, 400 తో భాగించదు కాబట్టి Leap year కాదు. 1700, 1800, 2100 కూడా ఇలాగే Leap years కావు. Julian నియమంలో అయితే 1900 Leap year అయ్యేది.</li>
+<li>2024: 400 తో, 100 తో భాగించదు; 2024 ÷ 4 = 506, శేషం 0. శతాబ్ద సంవత్సరం కాదు, 4 తో భాగిస్తుంది కాబట్టి Leap year.</li>
+<li>2026: 2026 ÷ 4 = 506, శేషం 2. Leap year కాదు; తరువాతి Leap year 2028.</li>
+</ul>
+<p>ఏ 100 వరుస సంవత్సరాల్లోనైనా Leap years 24 లేదా 25. ఉదాహరణకు 1901 నుంచి 2000 వరకు 4 తో భాగించేవి 25; అందులో శతాబ్ద సంవత్సరం 2000 ఒక్కటే, అది 400 తో భాగిస్తుంది కాబట్టి 25 Leap years. 1801 నుంచి 1900 వరకు 4 తో భాగించేవి 25, కానీ 1900 Leap year కాదు కాబట్టి 24.</p>
+<p>ఒక సరళమైన చిత్రం: గోడ గడియారం రోజుకు ఒక నిమిషం వెనకబడుతోంది అనుకుని వారానికి ఒకసారి 7 నిమిషాలు ముందుకు తిప్పుతుంటారు; తరువాత అది 55 సెకన్లే వెనకబడుతోందని తెలిస్తే, కొన్ని వారాలకు ఒకసారి తిప్పడం మానేయాలి. Julian నియమం "ప్రతి వారం తిప్పడం"; Gregorian నియమం "అప్పుడప్పుడూ ఒకసారి మానేయడం".</p>
+<h2 id="seasons-why">ఋతువులు ఎందుకు మారుతాయి?</h2>
+<p>మే నెల మధ్యాహ్నం బయట నిలబడితే ఎండ నెత్తి మీద గుచ్చుతుంది. డిసెంబర్ మధ్యాహ్నం అదే చోట ఎండ హాయిగా ఉంటుంది. సూర్యుడు అదే సూర్యుడు. మరి తేడా ఎక్కడి నుంచి వస్తుంది? చాలా మంది "వేసవిలో భూమి సూర్యుడికి దగ్గరగా వస్తుంది" అనుకుంటారు. అది నిజం కాదు. ఋతువులకు అసలు కారణం భూమి Axis (అక్షం) వంపు, దానితో పాటు సూర్యుడి చుట్టూ Revolution (పరిభ్రమణం).</p>
+<h3>Axis వంపు, ఒకే దిశ</h3>
+<p>భూమి Orbit (కక్ష్య) అంతా ఒక చదునైన పళ్లెం మీద ఉన్నట్లు ఊహించండి. ఆ పళ్లేన్ని Orbital plane లేదా Plane of the Ecliptic (క్రాంతివృత్త తలం) అంటారు. భూమి నుంచి చూస్తే సూర్యుడు ఏడాదిలో నక్షత్రాల మధ్య ఒక దారిలో జరుగుతున్నట్లు కనిపిస్తాడు; ఆ దారే Ecliptic (క్రాంతివృత్తం). Ecliptic అంటే Orbital plane ఆకాశాన్ని తాకే గీత.</p>
+<p>ఈ పళ్లేనికి నిటారుగా ఉండే గీత (Normal) నుంచి భూమి Axis సుమారు 23.44° (23½°) ఒరిగి ఉంటుంది; పళ్లెం నుంచి కొలిస్తే అదే వంపు 66.56° (66½°). ఈ కొలత <a href="#motion-tilt">Axis వంపు విభాగం</a> లో చూశాం.</p>
+<p>భూమి సూర్యుడి చుట్టూ ఎక్కడ ఉన్నా, ఒరిగిన Axis అంతరిక్షంలో ఏడాది పొడవునా దాదాపు ఒకే దిశ వైపు చూపిస్తుంది; ఆ దిశలో ఇప్పుడు ధ్రువ నక్షత్రం (Polaris) ఉంది. జూన్‌లో ఉత్తర అర్ధగోళం సూర్యుడి వైపు ఒరిగి ఉంటుంది. ఆరు నెలల తరువాత, డిసెంబర్‌లో, భూమి Orbit లో సూర్యుడికి అవతలి వైపు చేరుతుంది. Axis దిశ మారలేదు కాబట్టి ఇప్పుడు దక్షిణ అర్ధగోళం సూర్యుడి వైపు, ఉత్తర అర్ధగోళం సూర్యుడికి దూరంగా ఒరిగి ఉంటాయి.</p>
+<h3>సూర్యుడి వైపు ఒరిగిన అర్ధగోళంలో ఏం జరుగుతుంది?</h3>
+<p>రెండు మార్పులు జరుగుతాయి.</p>
+<ul>
+<li>కిరణాలు నిటారుగా పడతాయి. నిటారు కిరణం తెచ్చిన వేడి అంతా చిన్న నేల మీద పడుతుంది; వాలు కిరణం అదే వేడిని పెద్ద నేల మీద పరుస్తుంది. అందుకే నిటారు కిరణాలు పడే నేల ఎక్కువ వేడెక్కుతుంది.</li>
+<li>పగలు ఎక్కువసేపు ఉంటుంది. భూమిలో సగం ఎప్పుడూ వెలుగులో, సగం చీకటిలో ఉంటుంది. భూమి తిరిగినప్పుడు మన ఊరు 24 గంటల్లో ఒక వృత్తంలో తిరుగుతుంది. ఉత్తర అర్ధగోళం సూర్యుడి వైపు ఒరిగి ఉంటే, ఆ వృత్తంలో ఎక్కువ భాగం వెలుగు వైపే ఉంటుంది. వేడి అందే గంటలు ఎక్కువ, రాత్రి చల్లబడే గంటలు తక్కువ.</li>
+</ul>
+<p>ఒక సరళమైన చిత్రం: చీకటి గదిలో టార్చ్‌ను నేల మీదకు నిలువుగా పట్టుకుంటే చిన్న, ప్రకాశవంతమైన వెలుగు వృత్తం పడుతుంది. వాలుగా పట్టుకుంటే అదే వెలుగు పెద్ద చోటులో మసకగా పరుచుకుంటుంది. సూర్యకిరణాల వేడి కూడా ఇలాగే పరుచుకుంటుంది.</p>
+<p>ఈ రెండు కారణాల వల్ల సూర్యుడి వైపు ఒరిగిన అర్ధగోళంలో వేసవి (Summer) వస్తుంది. అదే సమయంలో అవతలి అర్ధగోళంలో కిరణాలు వాలుగా పడతాయి, పగలు చిన్నదవుతుంది; అక్కడ శీతాకాలం (Winter). అందుకే రెండు అర్ధగోళాల్లో ఎప్పుడూ వ్యతిరేక ఋతువులు ఉంటాయి: జూన్‌లో భారతదేశంలో వేసవి అయితే Australia లో చలికాలం; డిసెంబర్‌లో దక్షిణ అర్ధగోళంలో వేసవి, ఉత్తరాన చలికాలం.</p>
+<h3>దూరం ఎందుకు కారణం కాదు?</h3>
+<p>భూమి Orbit పూర్తి గుండ్రం కాదు, కొంచెం సాగిన Ellipse (దీర్ఘవృత్తం) (<a href="#motion-revolution">Revolution విభాగం</a>). అందుకే సూర్యుడి నుంచి దూరం ఏడాదిలో కొంచెం మారుతుంది: జనవరి తొలి వారంలో Perihelion (సుమారు 14.7 కోట్ల km), జూలై తొలి వారంలో Aphelion (సుమారు 15.2 కోట్ల km).</p>
+<p>భూమి సూర్యుడికి అత్యంత దగ్గరగా ఉండే జనవరిలో మనకు చలికాలం; అత్యంత దూరంగా ఉండే జూలైలో ఉత్తర అర్ధగోళంలో వేసవి. దూరమే కారణమైతే ఇది తిరగబడాలి. పైగా ఒకే సమయంలో రెండు అర్ధగోళాలూ సూర్యుడి నుంచి దాదాపు ఒకే దూరంలో ఉంటాయి; దూరమే కారణమైతే రెండింట్లో ఒకే ఋతువు ఉండాలి. కానీ ఎప్పుడూ వ్యతిరేక ఋతువులు ఉంటాయి. ఈ ఒక్క పరిశీలనే దూరం కారణం కాదని నేరుగా చూపిస్తుంది. దూరం మారేది సుమారు 3% మాత్రమే.</p>
+<h3>ఋతువుల చిత్రాన్ని ఎలా చదవాలి?</h3>
+<p>పాఠ్యపుస్తకంలోని ఋతువుల చిత్రం (Seasonal diagram) లో సూర్యుడు మధ్యలో, చుట్టూ నాలుగు చోట్ల (మార్చి, జూన్, సెప్టెంబర్, డిసెంబర్) భూమి ఉంటుంది. నాలుగు భూముల Axisలు సమాంతరంగా గీసి ఉంటాయి; అంటే Axis ఏడాదంతా దాదాపు ఒకే దిశ చూపిస్తుంది, ప్రతి చోటా సూర్యుడి వైపు కొత్తగా ఒరగదు. Orbit బాగా సాగిన గుడ్డు ఆకారంలో కనిపించేది పక్క నుంచి చూసినట్లు గీయడం వల్ల; నిజమైన Orbit దాదాపు గుండ్రమే. అలాంటి చిత్రం "not to scale" — భూమి సైజు, దూరాలు నిజ నిష్పత్తిలో ఉండవు; అది ఒక సూచన చిత్రం (Schematic) మాత్రమే. ప్రతి భూమి పక్కన ఉండే నిటారు చుక్కల గీత Normal; చిత్రంలోని 23.5° ఆ గీత నుంచి Axis వంపు.</p>
+<h3>భారతదేశ ఋతువులు: IMD, సంప్రదాయం</h3>
+<p>ఖగోళ లెక్కలో (Axis వంపు ఆధారంగా) ఋతువులు నాలుగు: Spring (వసంతం), Summer (వేసవి), Autumn (శరదృతువు), Winter (శీతాకాలం). భారతదేశంలో మాత్రం వర్షమే ఋతువును నిర్ణయిస్తుంది. IMD (India Meteorological Department, భారత వాతావరణ శాఖ) మన దేశ సంవత్సరాన్ని నాలుగు ఋతువులుగా విభజిస్తుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఋతువు (IMD)</th>
+<th>నెలలు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>శీతాకాలం (Winter)</strong></td>
+<td>జనవరి–ఫిబ్రవరి</td>
+</tr>
+<tr>
+<td><strong>వేసవి (Pre-monsoon / Summer)</strong></td>
+<td>మార్చి–మే</td>
+</tr>
+<tr>
+<td><strong>నైరుతి రుతుపవన కాలం (South-West Monsoon)</strong></td>
+<td>జూన్–సెప్టెంబర్</td>
+</tr>
+<tr>
+<td><strong>రుతుపవనాల తరువాతి కాలం (Post-monsoon)</strong></td>
+<td>అక్టోబర్–డిసెంబర్</td>
+</tr>
+</tbody>
+</table></div>
+<p>Monsoon (రుతుపవనం) అంటే ఋతువును బట్టి దిశ మార్చుకునే గాలి. వేసవిలో నేల సముద్రం కంటే త్వరగా వేడెక్కుతుంది, నేల మీద గాలి పీడనం (Pressure) తగ్గుతుంది; సముద్రం మీది తేమ గాలి నైరుతి (South-West) నుంచి నేల వైపు వచ్చి జూన్ నుంచి వర్షం తెస్తుంది. చలికాలంలో ఇది తిరగబడి గాలి ఈశాన్యం (North-East) నుంచి వీస్తుంది. ఈ యంత్రాంగం వివరంగా <a href="/learn/geography/g2/8/notes#monsoon-winds">పాఠం 8: Monsoon winds</a>, <a href="/learn/geography/g2/15/notes#seasons-overview">పాఠం 15: ఋతువులు</a> లో చూస్తాం.</p>
+<p>అక్టోబర్–డిసెంబర్ Post-monsoon కాలంలో నైరుతి రుతుపవనం వెనక్కి వెళ్తుంది; అందుకే ఈ కాలాన్ని Retreating monsoon (తిరోగమన రుతుపవన కాలం) లేదా ఈశాన్య రుతుపవన (North-East Monsoon) కాలం అంటారు (<a href="/learn/geography/g2/15/notes#retreating-monsoon">పాఠం 15: Retreating monsoon</a>). ఈశాన్య గాలి Bay of Bengal (బంగాళాఖాతం) మీదుగా వస్తూ తేమ తెచ్చుకుంటుంది. అందుకే Tamil Nadu కు ఏడాది వర్షంలో ఎక్కువ భాగం ఈ కాలంలోనే వస్తుంది; దక్షిణ కోస్తా ఆంధ్ర (SPS Nellore, Prakasam), రాయలసీమ దక్షిణ జిల్లాలకు కూడా ఈ కాలంలో మంచి వర్షం వస్తుంది. Bay of Bengal లో తుఫానులు (Cyclones) ఎక్కువగా వచ్చేది కూడా ఈ కాలంలోనే, ముఖ్యంగా అక్టోబర్–నవంబర్‌లో.</p>
+<p>AP లో అత్యంత వేడి నెల మే; అతి పొడవైన పగలు ఉండే June solstice (సుమారు జూన్ 21) కాదు. జూన్ నాటికి Monsoon మేఘాలు ఎండను అడ్డుకుంటాయి, వర్షం నేలను చల్లబరుస్తుంది.</p>
+<p>మన సంప్రదాయం సంవత్సరాన్ని ఆరు ఋతువులుగా విభజిస్తుంది; ఒక్కో ఋతువుకు రెండు తెలుగు నెలలు. తెలుగు నెలలు చంద్రుడిని బట్టి లెక్కిస్తారు కాబట్టి English నెలలు సుమారుగా మాత్రమే సరిపోతాయి.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఋతువు</th>
+<th>తెలుగు నెలలు</th>
+<th>సుమారు English నెలలు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>వసంత ఋతువు (Spring)</strong></td>
+<td>చైత్రం, వైశాఖం</td>
+<td>మార్చి–మే</td>
+</tr>
+<tr>
+<td><strong>గ్రీష్మ ఋతువు (Summer)</strong></td>
+<td>జ్యేష్ఠం, ఆషాఢం</td>
+<td>మే–జూలై</td>
+</tr>
+<tr>
+<td><strong>వర్ష ఋతువు (Rainy)</strong></td>
+<td>శ్రావణం, భాద్రపదం</td>
+<td>జూలై–సెప్టెంబర్</td>
+</tr>
+<tr>
+<td><strong>శరదృతువు (Autumn)</strong></td>
+<td>ఆశ్వయుజం, కార్తికం</td>
+<td>సెప్టెంబర్–నవంబర్</td>
+</tr>
+<tr>
+<td><strong>హేమంత ఋతువు (Pre-winter)</strong></td>
+<td>మార్గశిరం, పుష్యం</td>
+<td>నవంబర్–జనవరి</td>
+</tr>
+<tr>
+<td><strong>శిశిర ఋతువు (Winter)</strong></td>
+<td>మాఘం, ఫాల్గుణం</td>
+<td>జనవరి–మార్చి</td>
+</tr>
+</tbody>
+</table></div>
+<p>తెలుగు సంవత్సరం చైత్ర మాసంతో మొదలవుతుంది. అందుకే ఉగాది (చైత్ర శుద్ధ పాడ్యమి) వసంత ఋతువు మొదటి రోజు. సంక్రాంతి పుష్య మాసంలో, అంటే హేమంత ఋతువులో వస్తుంది.</p>
+<h2 id="seasons-solstice-equinox">అయనాంతాలు, విషువత్తులు అంటే ఏమిటి?</h2>
+<p>రోజూ ఒకే చోట మధ్యాహ్న సూర్యుడిని గమనిస్తే, అతను ఏడాదంతా ఒకే ఎత్తులో ఉండడు; కొన్ని నెలలు ఉత్తరం వైపు, కొన్ని నెలలు దక్షిణం వైపు జరుగుతాడు. కదిలేది సూర్యుడు కాదు, భూమి. ఒరిగిన Axis తో భూమి Orbit లో ముందుకు వెళ్తుంటే సూర్యుడి వైపు ఉండే భాగం మారుతుంది; మనకు సూర్యుడు ఉత్తరానికి, దక్షిణానికి జరుగుతున్నట్లు కనిపిస్తాడు. దీన్ని Apparent annual motion (కనిపించే వార్షిక కదలిక) అంటారు.</p>
+<h3>Declination: సూర్యుడి "Latitude"</h3>
+<p>ఎంత ఉత్తరం, ఎంత దక్షిణం అని కొలవడానికి ఒక ఆధార గీత కావాలి. భూమి Equator (భూమధ్యరేఖ) గుండా భూమిని అడ్డంగా కోసిన పళ్లేన్ని Equatorial plane అంటారు. Axis 23.44° ఒరిగి ఉంది కాబట్టి ఈ పళ్లెం Orbital plane కు 23.44° వంగి ఉంటుంది. Equatorial plane ను ఆకాశం దాకా పొడిగిస్తే ఆకాశంలో అది గీసే ఊహా వృత్తమే Celestial equator (ఖగోళ భూమధ్యరేఖ).</p>
+<p>సూర్యుడి కేంద్రం Celestial equator కు ఎన్ని డిగ్రీలు ఉత్తరంగానో, దక్షిణంగానో ఉందో చెప్పే కోణమే Solar declination (సూర్యుడి క్రాంతి). భూమి మీద ఒక ఊరి స్థానం Latitude చెబితే, ఆకాశంలో సూర్యుడి స్థానం Declination చెబుతుంది. ఉత్తరానికి + గుర్తు, దక్షిణానికి − గుర్తు. Declination ఎంత ఉంటే ఆ రోజు మధ్యాహ్నం ఆ Latitude మీద ఉన్న ఊళ్లలో సూర్యుడు సరిగ్గా తల మీద ఉంటాడు; ఈ సంబంధం <a href="#seasons-overhead-sun">తర్వాతి విభాగం</a> లో వాడతాం.</p>
+<p>Declination Axis వంపు ఎంతో అంత దాకా మాత్రమే వెళ్తుంది: 23.44°N నుంచి 23.44°S వరకు. ఈ రెండు హద్దులే Tropic of Cancer (కర్కట రేఖ, 23½°N), Tropic of Capricorn (మకర రేఖ, 23½°S) (<a href="#latlong-special">ప్రత్యేక అక్షాంశాలు</a>). సూర్యుడు ఆ హద్దు చేరి వెనక్కి తిరుగుతాడు. Tropic of Cancer భారతదేశంలో 8 రాష్ట్రాల గుండా వెళ్తుంది (<a href="#latlong-india">భారతదేశం, AP స్థానం</a>); Andhra Pradesh, Telangana పూర్తిగా ఈ రేఖకు దక్షిణంగా ఉన్నాయి.</p>
+<h3>నాలుగు ముఖ్యమైన రోజులు</h3>
+<p>సూర్యుడి ఏడాది ప్రయాణంలో నాలుగు ముఖ్యమైన రోజులు ఉన్నాయి. వాటిని రెండు రకాలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రకం</th>
+<th>అర్థం</th>
+<th>Declination</th>
+<th>ఏడాదికి</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>అయనాంతం (Solstice)</strong></td>
+<td>"అయనం" = ప్రయాణం, "అంతం" = ముగింపు; సూర్యుడి ఉత్తర (లేదా దక్షిణ) ప్రయాణం ముగిసి వెనక్కి తిరిగే రోజు</td>
+<td>గరిష్ఠం (23.44°N లేదా 23.44°S)</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>విషువత్తు (Equinox)</strong></td>
+<td>"విషు" = సమానం; సూర్యుడి కేంద్రం Celestial equator ను దాటే క్షణం</td>
+<td>0°</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రోజు</th>
+<th>ఏటా సుమారు తేదీ (పాఠ్యపుస్తక తేదీ)</th>
+<th>Declination</th>
+<th>మధ్యాహ్న సూర్యుడు తల మీద</th>
+<th>ఉత్తర అర్ధగోళంలో</th>
+<th>దక్షిణ అర్ధగోళంలో</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>March equinox</strong></td>
+<td>మార్చి 20–21 (21)</td>
+<td>0°</td>
+<td>Equator</td>
+<td>Vernal / Spring Equinox (వసంత విషువత్తు); వసంతం మొదలు</td>
+<td>శరదృతువు మొదలు</td>
+</tr>
+<tr>
+<td><strong>June solstice</strong></td>
+<td>జూన్ 20–21 (21)</td>
+<td>23.44°N (గరిష్ఠ ఉత్తరం)</td>
+<td>Tropic of Cancer</td>
+<td>Summer Solstice; అతి పొడవైన పగలు</td>
+<td>Winter Solstice; అతి చిన్న పగలు</td>
+</tr>
+<tr>
+<td><strong>September equinox</strong></td>
+<td>సెప్టెంబర్ 22–23 (23)</td>
+<td>0°</td>
+<td>Equator</td>
+<td>Autumnal Equinox (శరద్ విషువత్తు); శరదృతువు మొదలు</td>
+<td>వసంతం మొదలు</td>
+</tr>
+<tr>
+<td><strong>December solstice</strong></td>
+<td>డిసెంబర్ 21–22 (22)</td>
+<td>23.44°S (గరిష్ఠ దక్షిణం)</td>
+<td>Tropic of Capricorn</td>
+<td>Winter Solstice; అతి చిన్న పగలు</td>
+<td>Summer Solstice; అతి పొడవైన పగలు</td>
+</tr>
+</tbody>
+</table></div>
+<p>తేదీ ఏటా ఒక రోజు అటూ ఇటూ మారడానికి రెండు కారణాలు. Calendar సంవత్సరానికి, భూమి పరిభ్రమణానికి ఏటా సుమారు 6 గంటల తేడా ఉంటుంది; దాన్ని Leap year సర్దుతుంది (<a href="#motion-leap-year">Leap year</a>). పైగా Solstice, Equinox ఒక క్షణంలో జరిగే సంఘటనలు; ఆ క్షణం India లో ఒక తేదీ అయితే America లో ముందు రోజు కావచ్చు.</p>
+<p>"Summer Solstice", "Vernal Equinox" అనే పేర్లు ఉత్తర అర్ధగోళాన్ని బట్టి పెట్టినవి. మార్చిలో ప్రపంచమంతా వసంతం కాదు; దక్షిణ అర్ధగోళంలో అప్పుడు శరదృతువు. ఈ తేదీలు ఖగోళ ఋతువులు (Astronomical seasons) మొదలయ్యే రోజులు మాత్రమే; ఏ ఊరిలోనైనా వేడి, వర్షం ఆ తేదీకే మారిపోవు. Solstice ను Perihelion, Aphelion తో కలపకూడదు: Solstice Axis వంపు వల్ల, Perihelion–Aphelion Orbit ఆకారం వల్ల వస్తాయి.</p>
+<h3>పగలు పొడవు Latitude ను బట్టి</h3>
+<p>భూమి మీద వెలుగు, చీకటిని వేరు చేసే గీత (Day–night boundary) ఎప్పుడూ Equator ను సరిగ్గా సగానికి కోస్తుంది. అందుకే Equator మీద ఊరు ఏ రోజైనా తన 24 గంటల వృత్తంలో సగం వెలుగులో, సగం చీకటిలో తిరుగుతుంది; అక్కడ ఏడాదంతా పగలు దాదాపు 12 గంటలు. Equator నుంచి ధ్రువాల వైపు వెళ్లే కొద్దీ వేసవి పగలు, చలికాలం పగలు మధ్య తేడా పెరుగుతుంది. ఉత్తర అర్ధగోళంలో మధ్య అక్షాంశాల ఊళ్లకు ఏడాదిలో అతి పొడవైన పగలు June solstice దగ్గర, అతి చిన్న పగలు December solstice దగ్గర; దక్షిణ అర్ధగోళంలో ఇది తిరగబడుతుంది. విజయవాడలో అతి పొడవైన పగలు సుమారు 13 గంటలు, అతి చిన్న పగలు సుమారు 11 గంటలు. ధ్రువ వృత్తం దగ్గర అది 24 గంటల దాకా వెళ్తుంది (<a href="#seasons-polar">ధ్రువాలు</a>).</p>
+<p>Equinox రోజు పగలు, రాత్రి "సమానం" అని పుస్తకాలు చెబుతాయి; నిజానికి దాదాపు సమానం మాత్రమే, పగలు 12 గంటల కంటే కొన్ని నిమిషాలు ఎక్కువ (విజయవాడలో సుమారు 12 గంటల 7 నిమిషాలు). రెండు కారణాలు. ఒకటి, గాలి వెలుగును కొంచెం కిందకు వంచుతుంది (Atmospheric refraction, వక్రీభవనం); దాంతో సూర్యుడు ఇంకా Horizon (క్షితిజం) కింద ఉన్నా కొంచెం పైకి లేచి కనిపిస్తాడు. రెండు, సూర్యోదయాన్ని సూర్యబింబం పై అంచు కనిపించిన క్షణంగా లెక్కిస్తారు, కేంద్రం ఆధారంగా కాదు. ఈ రెండూ కలిసి ఉదయం, సాయంత్రం కొన్ని నిమిషాలు పగలు పెంచుతాయి.</p>
+<h3>ఉత్తరాయణం, దక్షిణాయనం, సంక్రాంతి</h3>
+<p>December solstice నుంచి June solstice వరకు సూర్యుడు ఉత్తరానికి జరిగే ఆరు నెలలు ఉత్తరాయణం; June solstice నుంచి December solstice వరకు దక్షిణానికి జరిగే ఆరు నెలలు దక్షిణాయనం. మనం జనవరి 14–15న మకర సంక్రాంతిని ఉత్తరాయణ ప్రారంభంగా జరుపుకుంటాం; కానీ ఖగోళ పరంగా సూర్యుడు ఉత్తరానికి తిరిగేది December solstice (డిసెంబర్ 21–22) రోజే. మకర సంక్రాంతి Solstice రోజు కాదు.</p>
+<p>ఈ తేడా ఎందుకు? Ecliptic దారిని 12 సమాన భాగాలుగా చేసి ఒక్కో భాగానికి ఒక రాశి (Zodiac sign) పేరు పెట్టారు: మేషం, వృషభం, మిథునం, కర్కాటకం, సింహం, కన్య, తుల, వృశ్చికం, ధనుస్సు, మకరం, కుంభం, మీనం. సూర్యుడు నెలకు సుమారు ఒక రాశి చొప్పున జరిగినట్లు కనిపిస్తాడు. సూర్యుడు ఒక రాశి నుంచి తరువాతి రాశిలోకి ప్రవేశించే రోజే సంక్రాంతి; ఏడాదికి 12 సంక్రాంతులు. మకర రాశిలోకి ప్రవేశించే రోజు మకర సంక్రాంతి.</p>
+<p>మన పంచాంగం రాశులను నక్షత్రాలకు కట్టి లెక్కిస్తుంది. Solstice మాత్రం భూమి Axis దిశను బట్టి వస్తుంది. Axis దిశ సుమారు 26,000 ఏళ్లకు ఒక చుట్టు నెమ్మదిగా తిరుగుతుంది; దీన్ని Precession (అయన చలనం) అంటారు (<a href="#motion-tilt">Axis వంపు</a>). Axis దిశ మారే కొద్దీ Solstice వచ్చే స్థానం నక్షత్రాల మధ్య కొంచెం కొంచెం వెనక్కి జరుగుతుంది; నక్షత్రాలకు కట్టిన మకర సంక్రాంతి జరగదు. అలా రెండింటి మధ్య తేడా సుమారు 71 ఏళ్లకు ఒక రోజు చొప్పున పెరుగుతుంది. సుమారు 1,700 ఏళ్ల క్రితం మకర సంక్రాంతి, December solstice దాదాపు ఒకే రోజు వచ్చేవి; ఇప్పుడు తేడా సుమారు 24 రోజులు.</p>
+<h3>అంతర్జాతీయ యోగా దినోత్సవం</h3>
+<p>June solstice కు ముడిపడిన ఒక తేదీ కూడా ఉంది. 2014 సెప్టెంబర్ 27న ప్రధానమంత్రి నరేంద్ర మోదీ UN General Assembly (ఐక్యరాజ్యసమితి సర్వసభ్య సమావేశం) ప్రసంగంలో ఏటా ఒక రోజు యోగాకు కేటాయించాలని ప్రతిపాదించారు. 2014 డిసెంబర్ 11న UN General Assembly ఆ తీర్మానాన్ని ఆమోదించి జూన్ 21ని International Day of Yoga (అంతర్జాతీయ యోగా దినోత్సవం) గా ప్రకటించింది. ఈ తీర్మానానికి 175 దేశాలు సహ ప్రతిపాదకులు (Co-sponsors); ఇలాంటి తీర్మానానికి అప్పటివరకు అదే అత్యధికం. మొదటి యోగా దినోత్సవం 2015 జూన్ 21న జరిగింది. ఉత్తర అర్ధగోళంలో అతి పొడవైన పగలు ఉండే June solstice కు దగ్గరి రోజు కాబట్టి జూన్ 21 ఎంచుకున్నారు; యోగా దినం calendar లో స్థిరంగా జూన్ 21, Solstice క్షణం మాత్రం ఏటా జూన్ 20 లేదా 21న పడుతుంది.</p>
+<h2 id="seasons-overhead-sun">మధ్యాహ్న సూర్యుడు ఎప్పుడూ తల మీదే ఉంటాడా?</h2>
+<p>"మధ్యాహ్నం, సూర్యుడు నెత్తి మీద ఉన్నాడు" అని అంటుంటాం. కానీ డిసెంబర్ మధ్యాహ్నం మన నీడ ఉత్తరం వైపు పొడవుగా పడుతుంది. సూర్యుడు నిజంగా తల మీద ఉంటే నీడ కాళ్ల కిందే ఉండాలి. అంటే మధ్యాహ్న సూర్యుడు ఎప్పుడూ తల మీద ఉండడు.</p>
+<h3>మూడు కొలత పదాలు</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పదం</th>
+<th>అర్థం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Zenith (శిరోబిందువు)</strong></td>
+<td>మన తలకు నిటారుగా పైన ఉన్న ఆకాశ బిందువు; Horizon నుంచి 90°</td>
+</tr>
+<tr>
+<td><strong>Solar altitude (సూర్యుడి ఉన్నతి)</strong></td>
+<td>సూర్యుడు Horizon నుంచి ఎన్ని డిగ్రీలు పైకి ఉన్నాడో చెప్పే కోణం (మీటర్లలో కాదు, డిగ్రీలలో); ఉదయం Horizon దగ్గర 0°</td>
+</tr>
+<tr>
+<td><strong>Local solar noon (స్థానిక సౌర మధ్యాహ్నం)</strong></td>
+<td>రోజులో సూర్యుడు అత్యంత ఎత్తుకు చేరే క్షణం; గడియారంలో 12:00 కానక్కర్లేదు (విజయవాడలో ఏడాదిలో సుమారు 11:51 నుంచి 12:22 మధ్య)</td>
+</tr>
+</tbody>
+</table></div>
+<p>రోజులో అత్యంత ఎత్తు అంటే 90° అని కాదు. Altitude 90° అయితేనే సూర్యుడు Zenith లో, అంటే సరిగ్గా తల మీద ఉంటాడు.</p>
+<h3>మధ్యాహ్న Altitude సూత్రం</h3>
+<p>Refraction ను, కొండలు, భవనాలను పట్టించుకోకుండా, సూర్యుడి కేంద్రానికి జామెట్రీ ప్రకారం వచ్చే మధ్యాహ్న ఎత్తు (Geometric altitude):</p>
+<p><strong>మధ్యాహ్న Solar altitude = 90° − |Latitude − Declination|</strong></p>
+<p>ఉత్తర కోణాలకు +, దక్షిణ కోణాలకు − గుర్తు వేయాలి. నిలువు గీతలు | | అంటే లోపలి జవాబు మైనస్ వచ్చినా గుర్తు తీసేసి ధన సంఖ్యగా తీసుకోవాలి (|−7°| = 7°). జవాబు మైనస్ వస్తే ఆ మధ్యాహ్నం సూర్యుడి కేంద్రం Horizon కిందే ఉందని అర్థం.</p>
+<p>సూత్రం ఎందుకు పనిచేస్తుంది? ఆ రోజు Latitude = Declination అయిన ఊరిలో సూర్యుడు సరిగ్గా తల మీద, Altitude 90°. ఆ ఊరి నుంచి ఉత్తరానికి నడిస్తే, గుండ్రని భూమి మీద మన "పైకి" దిశ (Zenith) కూడా వంగుతుంది: 1° Latitude నడిస్తే Zenith 1° వంగుతుంది. సూర్యుడు చాలా దూరంలో ఉన్నాడు కాబట్టి అతను ఉన్న చోటే ఉంటాడు; అందుకే మన Zenith నుంచి సూర్యుడు 1° పక్కకు జరిగినట్లు కనిపిస్తాడు. Latitude, Declination మధ్య ఎంత తేడా ఉంటే, సూర్యుడు Zenith నుంచి అన్ని డిగ్రీలు కిందకు ఉంటాడు.</p>
+<p>ఉదాహరణలు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఊరు, రోజు</th>
+<th>Latitude</th>
+<th>Declination</th>
+<th>లెక్క</th>
+<th>మధ్యాహ్న Altitude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20°N, Equinox</td>
+<td>20°N</td>
+<td>0°</td>
+<td>90° − 20°</td>
+<td><strong>70°</strong></td>
+</tr>
+<tr>
+<td>20°N, Declination 10°S</td>
+<td>20°N</td>
+<td>10°S</td>
+<td>90° − |20° − (−10°)|</td>
+<td><strong>60°</strong></td>
+</tr>
+<tr>
+<td>20°N, Declination 20°S</td>
+<td>20°N</td>
+<td>20°S</td>
+<td>90° − 40°</td>
+<td><strong>50°</strong></td>
+</tr>
+<tr>
+<td>20°N, June solstice</td>
+<td>20°N</td>
+<td>23.44°N</td>
+<td>90° − 3.44°</td>
+<td><strong>86.56°</strong></td>
+</tr>
+<tr>
+<td>20°S, June solstice</td>
+<td>20°S</td>
+<td>23.44°N</td>
+<td>90° − 43.44°</td>
+<td><strong>46.56°</strong></td>
+</tr>
+<tr>
+<td>విజయవాడ, Equinox</td>
+<td>16.5°N</td>
+<td>0°</td>
+<td>90° − 16.5°</td>
+<td><strong>73.5°</strong> (సూర్యుడు దక్షిణం వైపు)</td>
+</tr>
+<tr>
+<td>విజయవాడ, June solstice</td>
+<td>16.5°N</td>
+<td>23.44°N</td>
+<td>90° − 6.94°</td>
+<td><strong>సుమారు 83°</strong> (సూర్యుడు ఉత్తరం వైపు)</td>
+</tr>
+<tr>
+<td>విజయవాడ, December solstice</td>
+<td>16.5°N</td>
+<td>23.44°S</td>
+<td>90° − 39.94°</td>
+<td><strong>సుమారు 50°</strong> (సూర్యుడు దక్షిణం వైపు)</td>
+</tr>
+</tbody>
+</table></div>
+<p>జూన్ 21న సూర్యుడు విజయవాడకు ఉత్తరంగా ఉన్న Tropic of Cancer మీద తల మీద ఉంటాడు, విజయవాడలో కాదు. అందుకే ఆ రోజు మధ్యాహ్నం విజయవాడలో నీడ కొంచెం దక్షిణం వైపు పడుతుంది; డిసెంబర్‌లో నీడ ఉత్తరం వైపు పొడవుగా పడుతుంది.</p>
+<h3>సూర్యుడు తల మీదకు ఎక్కడ, ఎన్నిసార్లు వస్తాడు?</h3>
+<p>Altitude 90° కావాలంటే Latitude = Declination కావాలి. Declination 23.44°N నుంచి 23.44°S మధ్యే ఉంటుంది కాబట్టి సూర్యుడు తల మీదకు వచ్చేది రెండు Tropics మధ్య ఉన్న Torrid Zone (ఉష్ణ మండలం) లో మాత్రమే (<a href="#latlong-heatzones">Heat zones</a>). ఏడాదిలో ఎన్నిసార్లు అనేది Latitude ను బట్టి మారుతుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Latitude</th>
+<th>మధ్యాహ్న సూర్యుడు తల మీదకు</th>
+<th>ఎప్పుడు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Equator (0°)</strong></td>
+<td>ఏడాదికి 2 సార్లు</td>
+<td>March, September equinox</td>
+</tr>
+<tr>
+<td><strong>రెండు Tropics మధ్య (ఉదా. AP)</strong></td>
+<td>ఏడాదికి 2 సార్లు</td>
+<td>Declination ఆ Latitude కు సమానమైన రెండు రోజులు</td>
+</tr>
+<tr>
+<td><strong>Tropic of Cancer / Capricorn మీద</strong></td>
+<td>ఏడాదికి 1 సారి</td>
+<td>జూన్ 21 / డిసెంబర్ 22</td>
+</tr>
+<tr>
+<td><strong>Tropics కు బయట (ఉదా. 40°N, Delhi, Srinagar)</strong></td>
+<td>ఎప్పుడూ రాడు</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p>సూర్యుడి Declination ఉత్తరం వైపు పెరిగేది December solstice నుంచి June solstice వరకు; దక్షిణం వైపు తగ్గేది June solstice నుంచి December solstice వరకు. రెండు Tropics మధ్య ఉన్న ఊరి Latitude ను సూర్యుడు ఉత్తరానికి వెళ్తూ ఒకసారి, జూన్ 21న వెనక్కి తిరిగి దక్షిణానికి వస్తూ మళ్లీ ఒకసారి దాటుతాడు. ఆ రెండు రోజుల మధ్యాహ్నం నిటారుగా నిలబెట్టిన కర్రకు నీడ కనిపించదు; అందుకే వీటిని Zero Shadow Days (నీడ లేని రోజులు) అంటారు.</p>
+<h3>AP లో Zero Shadow Days</h3>
+<p>Andhra Pradesh మొత్తం Equator కు, Tropic of Cancer కు మధ్య (సుమారు 12.7°N–19.1°N) ఉంది. కాబట్టి AP లోని ప్రతి ఊరిలో ఏడాదికి రెండు Zero Shadow Days వస్తాయి: ఒకటి ఏప్రిల్ చివర–మే మధ్యలో, ఇంకొకటి జూలై చివర–ఆగస్టు మధ్యలో; జూన్ 21న కాదు. దక్షిణాన ఉన్న ఊరికి మొదటి రోజు ముందుగా వస్తుంది, ఉత్తరాన ఉన్న ఊరికి ఆలస్యంగా.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఊరు</th>
+<th>Latitude (సుమారు)</th>
+<th>మొదటి Zero Shadow Day (సుమారు)</th>
+<th>రెండో Zero Shadow Day (సుమారు)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>తిరుపతి</td>
+<td>13.6°N</td>
+<td>ఏప్రిల్ 26–28</td>
+<td>ఆగస్టు 16–18</td>
+</tr>
+<tr>
+<td>Nellore</td>
+<td>14.4°N</td>
+<td>ఏప్రిల్ 29–30</td>
+<td>ఆగస్టు 13–14</td>
+</tr>
+<tr>
+<td>Kurnool</td>
+<td>15.8°N</td>
+<td>మే 3–4</td>
+<td>ఆగస్టు 9–10</td>
+</tr>
+<tr>
+<td>Guntur</td>
+<td>16.3°N</td>
+<td>మే 5–6</td>
+<td>ఆగస్టు 7–8</td>
+</tr>
+<tr>
+<td>విజయవాడ</td>
+<td>16.5°N</td>
+<td>మే 6–7</td>
+<td>ఆగస్టు 6–8</td>
+</tr>
+<tr>
+<td>Rajahmundry</td>
+<td>17.0°N</td>
+<td>మే 7–8</td>
+<td>ఆగస్టు 5–6</td>
+</tr>
+<tr>
+<td>Hyderabad (Telangana)</td>
+<td>17.4°N</td>
+<td>మే 9–10</td>
+<td>ఆగస్టు 3–4</td>
+</tr>
+<tr>
+<td>విశాఖపట్నం</td>
+<td>17.7°N</td>
+<td>మే 10–11</td>
+<td>ఆగస్టు 2–3</td>
+</tr>
+<tr>
+<td>శ్రీకాకుళం</td>
+<td>18.3°N</td>
+<td>మే 12–14</td>
+<td>జూలై 31–ఆగస్టు 1</td>
+</tr>
+</tbody>
+</table></div>
+<p>మీ ఊరు పట్టికలో లేకపోతే, ఊరి Latitude (Google Maps లో ఊరి మీద నొక్కితే కనిపిస్తుంది) కు సమానమైన Declination వచ్చే రోజు చూడండి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>మొదటి సారి</th>
+<th>Declination (సుమారు)</th>
+<th>రెండో సారి</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ఏప్రిల్ 16</td>
+<td>10°N</td>
+<td>ఆగస్టు 28</td>
+</tr>
+<tr>
+<td>ఏప్రిల్ 25</td>
+<td>13°N</td>
+<td>ఆగస్టు 18</td>
+</tr>
+<tr>
+<td>మే 2</td>
+<td>15°N</td>
+<td>ఆగస్టు 12</td>
+</tr>
+<tr>
+<td>మే 8</td>
+<td>17°N</td>
+<td>ఆగస్టు 5</td>
+</tr>
+<tr>
+<td>మే 16</td>
+<td>19°N</td>
+<td>జూలై 29</td>
+</tr>
+</tbody>
+</table></div>
+<p>మే నెలలో Declination రోజుకు సుమారు 0.25°–0.3° పెరుగుతుంది; రెండు వరుసల మధ్యలో ఉన్న Latitude కు తేదీని అలా అంచనా వేయవచ్చు. ఈ అంచనా రెండు మూడు రోజుల తేడాతో వస్తుంది, తేదీ ఏటా ఒక రోజు అటూ ఇటూ మారవచ్చు. నీడ మాయమయ్యేది గడియారంలో 12:00కు కాదు, ఆ ఊరి Local solar noon కు (విజయవాడలో ఆ రోజుల్లో సుమారు 12:05–12:13).</p>
+<p>ఇంట్లో చూడవచ్చు: ఎండ పడే మేడ మీద ఒక పెన్సిల్‌ను మట్టి ముద్దలో నిటారుగా గుచ్చి, మే మొదటి వారం నుంచి రోజూ మధ్యాహ్నం దాని నీడ చూడండి. నీడ రోజు రోజుకూ చిన్నదై, మీ ఊరి Zero Shadow Day మధ్యాహ్నం దాదాపు కనిపించదు; తరువాతి రోజుల్లో నీడ మళ్లీ కనిపిస్తుంది, ఈసారి దక్షిణం వైపు.</p>
+<h2 id="seasons-twilight">సూర్యాస్తమయం తరువాత కూడా వెలుగు ఎందుకు ఉంటుంది?</h2>
+<p>సూర్యుడు అస్తమించిన వెంటనే చీకటి పడదు; ఇంకా సుమారు 20–25 నిమిషాలు దీపం లేకుండా బయట పని చేసుకోగలం. ఉదయం కూడా సూర్యుడు కనిపించకముందే ఆకాశం తెల్లబడుతుంది.</p>
+<p>కారణం భూమి గుండ్రంగా ఉండడం. కింద నేల మీద సూర్యుడు Horizon అవతలికి వెళ్లిపోయినా, మన తలపైన చాలా ఎత్తులో ఉన్న గాలికి ఇంకా ఎండ తగులుతూనే ఉంటుంది; సాయంత్రం కింద చీకటి పడినా ఎగిరే విమానం మీద ఇంకా ఎండ మెరుస్తుంది కదా. ఆ ఎత్తైన గాలిలోని కణాలు వెలుగును అన్ని దిక్కులకు చెదరగొడతాయి (Scattering); అందులో కొంత మన దాకా కిందకు వస్తుంది. సూర్యుడు Horizon కింద ఉన్నా ఆకాశం నుంచి వచ్చే ఈ మసక వెలుగే Twilight (సంధ్యాకాంతి). సూర్యోదయానికి ముందు వచ్చేది Dawn (ఉషస్సు); సూర్యాస్తమయం తరువాత వచ్చేది Dusk (సాయం సంధ్య).</p>
+<h3>Twilight మూడు దశలు</h3>
+<p>సూర్యుడి కేంద్రం Horizon కింద ఎన్ని డిగ్రీలు ఉందో దాన్ని బట్టి Twilight ను మూడు దశలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>దశ</th>
+<th>సూర్యుడి కేంద్రం Horizon కింద</th>
+<th>అప్పుడు ఏం కనిపిస్తుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Civil twilight (పౌర సంధ్య)</strong></td>
+<td>0° నుంచి 6° వరకు</td>
+<td>దీపం లేకుండా బయట పని చేసుకోవచ్చు</td>
+</tr>
+<tr>
+<td><strong>Nautical twilight (నావిక సంధ్య)</strong></td>
+<td>6° నుంచి 12° వరకు</td>
+<td>సముద్రంలో Horizon గీత ఇంకా కనిపిస్తుంది; నావికులు నక్షత్రాలతో దారి కొలుస్తారు</td>
+</tr>
+<tr>
+<td><strong>Astronomical twilight (ఖగోళ సంధ్య)</strong></td>
+<td>12° నుంచి 18° వరకు</td>
+<td>కంటికి దాదాపు చీకటి; మసక నక్షత్రాలు చూడడానికి ఇంకా కొంచెం వెలుగు అడ్డు</td>
+</tr>
+</tbody>
+</table></div>
+<p>సాయంత్రం సూర్యుడు 18° దాటి కిందకు వెళ్లాక పూర్తి రాత్రి. ఉదయం ఇదే వరుస తిరగబడుతుంది: ముందు Astronomical, తరువాత Nautical, చివర Civil twilight.</p>
+<p>Twilight కోణాలు సూర్యుడి కేంద్రాన్ని బట్టి కొలుస్తారు; సూర్యోదయం, సూర్యాస్తమయం మాత్రం సూర్యబింబం పై అంచు Horizon ను తాకే క్షణాలు. మేఘాలు, దుమ్ము ఉంటే కనిపించే వెలుగు ఈ లెక్క కంటే తక్కువగా ఉండవచ్చు.</p>
+<h3>Twilight ఎంత సేపు?</h3>
+<p>Twilight పొడవు సూర్యుడు Horizon కిందకు ఎంత వేగంగా దిగుతాడో దాన్ని బట్టి ఉంటుంది. Equator దగ్గర సూర్యుడు Horizon కు దాదాపు నిటారుగా దిగుతాడు, 18° కిందకు త్వరగా చేరుతాడు: Civil twilight సుమారు 20–25 నిమిషాలు, మొత్తం Twilight సుమారు 70–75 నిమిషాలు. AP కూడా Equator కు దగ్గరగా ఉంది కాబట్టి మన దగ్గరా దాదాపు ఇంతే. ధ్రువాల దగ్గర సూర్యుడు Horizon కు దాదాపు సమాంతరంగా, వాలుగా జారుతూ కదులుతాడు; 18° కిందకు చేరడానికి గంటలు, కొన్నిసార్లు వారాలు పడుతుంది. అందుకే Twilight Equator దగ్గర అతి తక్కువ సేపు, ధ్రువాల దగ్గర అతి ఎక్కువ సేపు.</p>
+<p>ఒక సరళమైన చిత్రం: బావిలోకి రాయి నిటారుగా వేస్తే వెంటనే అడుగుకు చేరుతుంది; అదే రాయి వాలుగా ఉన్న జారుడుబల్ల మీద జారితే కిందకు చేరడానికి చాలా సేపు పడుతుంది.</p>
+<h2 id="seasons-polar">ధ్రువాల దగ్గర ఆరు నెలల పగలు ఎలా వస్తుంది?</h2>
+<p>మనకు ప్రతి 24 గంటల్లో ఒక పగలు, ఒక రాత్రి వస్తాయి, ఎందుకంటే భూమి తిరిగే కొద్దీ మన ఊరు వెలుగు వైపు నుంచి చీకటి వైపుకు వెళ్లి మళ్లీ వెనక్కి వస్తుంది. ధ్రువం దగ్గర ఉన్న ఊరు మాత్రం ధ్రువం చుట్టూ ఒక చిన్న వృత్తంలో తిరుగుతుంది.</p>
+<h3>Polar day, Polar night</h3>
+<p>ధ్రువ ప్రాంతాల్లో రెండు ప్రత్యేక పరిస్థితులు వస్తాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పరిస్థితి</th>
+<th>అర్థం</th>
+<th>ఉత్తర ధ్రువం (90°N) మీద</th>
+<th>దక్షిణ ధ్రువం (90°S) మీద</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Polar day (ధ్రువ పగలు) / Midnight sun (అర్ధరాత్రి సూర్యుడు)</strong></td>
+<td>కనీసం 24 గంటలు సూర్యుడు Horizon పైనే; ధ్రువ వేసవిలో అర్ధరాత్రి కూడా కనిపిస్తాడు</td>
+<td>సుమారు మార్చి 21 నుంచి సెప్టెంబర్ 23 వరకు</td>
+<td>సుమారు సెప్టెంబర్ 23 నుంచి మార్చి 21 వరకు</td>
+</tr>
+<tr>
+<td><strong>Polar night (ధ్రువ రాత్రి)</strong></td>
+<td>కనీసం 24 గంటలు సూర్యుడు Horizon కిందనే</td>
+<td>సుమారు సెప్టెంబర్ 23 నుంచి మార్చి 21 వరకు</td>
+<td>సుమారు మార్చి 21 నుంచి సెప్టెంబర్ 23 వరకు</td>
+</tr>
+</tbody>
+</table></div>
+<p>జూన్‌లో ఉత్తర ధ్రువం సూర్యుడి వైపు 23.44° ఒరిగి ఉంటుంది. అప్పుడు ధ్రువం నుంచి 23.44° దాకా, అంటే 90° − 23.44° = 66.56°N వరకు ఉన్న భాగం అంతా వెలుగు వైపే ఉంటుంది. ఆ భాగంలోని ఊరు తిరిగే చిన్న వృత్తం పూర్తిగా వెలుగులోనే తిరుగుతుంది; 24 గంటలూ సూర్యుడు Horizon పైనే. ఆ హద్దే Arctic Circle (ఉత్తర ధ్రువ వృత్తం, 66.56°N); దక్షిణాన Antarctic Circle (దక్షిణ ధ్రువ వృత్తం, 66.56°S) (<a href="#latlong-special">ప్రత్యేక అక్షాంశాలు</a>). అదే సమయంలో దక్షిణ ధ్రువం సూర్యుడికి దూరంగా ఒరిగి ఉంటుంది; అక్కడి చిన్న వృత్తం పూర్తిగా చీకటిలో తిరుగుతుంది. డిసెంబర్‌లో ఇది తిరగబడుతుంది.</p>
+<p>ధ్రువం మీద ఆరు నెలల పగలు ఎందుకు? ధ్రువం మీద నిలబడితే Celestial equator సరిగ్గా Horizon మీదే ఉంటుంది. మార్చి equinox నుంచి సెప్టెంబర్ equinox వరకు సూర్యుడు Celestial equator కు ఉత్తరంగా (Declination +) ఉంటాడు; కాబట్టి ఉత్తర ధ్రువం నుంచి చూస్తే ఆ ఆరు నెలలూ Horizon పైనే తిరుగుతాడు. సెప్టెంబర్ నుంచి మార్చి వరకు Declination − కాబట్టి ఉత్తర ధ్రువంలో సూర్యుడు Horizon కిందనే ఉంటాడు, దక్షిణ ధ్రువంలో పైన. అందుకే Antarctica దక్షిణ ధ్రువం మీద సూర్యోదయం సుమారు సెప్టెంబర్ 23న, సూర్యాస్తమయం సుమారు మార్చి 21న. Refraction వల్ల సూర్యుడు equinox కు కొన్ని రోజులు ముందే కనిపించి తరువాత కొన్ని రోజులు ఉంటాడు; అందుకే ధ్రువ పగలు ఆరు నెలల కంటే కొంచెం ఎక్కువ, ధ్రువ రాత్రి కొంచెం తక్కువ.</p>
+<h3>Polar day ఎంత కాలం? Latitude ను బట్టి</h3>
+<p>ఆరు నెలల పగలు ధ్రువం మీద మాత్రమే; Arctic Circle లోపల ఉన్న ప్రతి ఊరికి కాదు. ధ్రువానికి దగ్గరయ్యే కొద్దీ ఊరు తిరిగే వృత్తం చిన్నదై, ఎక్కువ రోజులు పూర్తిగా వెలుగులో ఉంటుంది.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ప్రదేశం</th>
+<th>Latitude (సుమారు)</th>
+<th>Midnight sun కాలం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Arctic Circle మీద</strong></td>
+<td>66.56°N</td>
+<td>జూన్ 21 చుట్టూ లెక్క ప్రకారం ఒక్క రోజు (Refraction వల్ల నిజంగా కొన్ని రోజులు)</td>
+</tr>
+<tr>
+<td><strong>Tromsø (Norway)</strong></td>
+<td>69.6°N</td>
+<td>మే 20 నుంచి జూలై 22, సుమారు రెండు నెలలు</td>
+</tr>
+<tr>
+<td><strong>Svalbard దీవులు</strong></td>
+<td>78°N</td>
+<td>ఏప్రిల్ 20 నుంచి ఆగస్టు 22, సుమారు నాలుగు నెలలు</td>
+</tr>
+<tr>
+<td><strong>ఉత్తర ధ్రువం</strong></td>
+<td>90°N</td>
+<td>సుమారు ఆరు నెలలు</td>
+</tr>
+</tbody>
+</table></div>
+<p>Norway ఉత్తర భాగం Arctic Circle దాటి ఉంది కాబట్టి Norway ను "Land of the Midnight Sun" (అర్ధరాత్రి సూర్యుడి దేశం) అంటారు. Norway అంతటా Midnight sun రాదు; దేశ ఉత్తర భాగంలో మాత్రమే, ఎంత కాలం అనేది Latitude ను బట్టి.</p>
+<h3>Polar night అంటే కటిక చీకటా?</h3>
+<p>కాదు. సూర్యుడు Horizon కింద 18° లోపల ఉన్నంత వరకు Twilight వెలుగు ఉంటుంది (<a href="#seasons-twilight">Twilight</a>). Polar night కు సూర్యుడు Horizon కిందే ఉంటే చాలు; పూర్తి చీకటి అవసరం లేదు. ఉత్తర ధ్రువంలో సూర్యుడు సెప్టెంబర్ చివర అస్తమించాక రోజుకు కొంచెం కొంచెం మాత్రమే కిందకు దిగుతాడు: Civil twilight (6°) సుమారు అక్టోబర్ రెండో వారం దాకా, Nautical twilight (12°) సుమారు అక్టోబర్ చివరి దాకా, Astronomical twilight (18°) సుమారు నవంబర్ మధ్య దాకా ఉంటాయి. అంటే ధ్రువం మీద పూర్తి చీకటి సుమారు నవంబర్ మధ్య నుంచి జనవరి చివర దాకా, సుమారు రెండున్నర నెలలు మాత్రమే. Arctic Circle కు కొంచెం ఉత్తరాన ఉన్న ఊళ్లలో Polar night సమయంలో కూడా మధ్యాహ్నం కొన్ని గంటలు నీలి రంగు Twilight వెలుగు ఉంటుంది.</p>
+<p>ఒక సరళమైన చిత్రం: చీకటి గదిలో బల్బు ముందు, పెన్సిల్ గుచ్చిన బంతిని పెన్సిల్ పై చివర బల్బు వైపు కొంచెం వంచి పట్టుకుని, ఆ వంపు మార్చకుండా పెన్సిల్ చుట్టూ తిప్పండి. పై చివర దగ్గర పెట్టిన చుక్క ఎప్పుడూ వెలుగులో, కింది చివర దగ్గర చుక్క ఎప్పుడూ నీడలో, మధ్యలో చుక్క వెలుగులోకి, నీడలోకి మారుతూ ఉంటాయి.</p>
+<h2 id="seasons-aurora">ధ్రువాల దగ్గర ఆకాశంలో రంగుల వెలుగులు ఏమిటి?</h2>
+<p>ధ్రువాల దగ్గర చీకటి రాత్రి ఆకాశంలో పచ్చని, ఎర్రని తెరలు కదులుతున్నట్లు వెలుగులు కనిపిస్తాయి. ఆ వెలుగులు సూర్యుడు కాదు, మేఘాలు కాదు; పై Atmosphere లోని వాయు కణాలు వదిలే వెలుగు. ఈ వెలుగే Aurora (ధ్రువ కాంతి). Aurora ను Midnight sun తో కలపకూడదు: Midnight sun అంటే Axis వంపు వల్ల 24 గంటలూ Horizon పైన కనిపించే సూర్యుడు; Aurora అంటే సూర్యుడి Charged particles వల్ల వాయువు వెలగడం, చీకటిలోనే బాగా కనిపిస్తుంది.</p>
+<p>Aurora ను అర్ధగోళాన్ని బట్టి రెండుగా పిలుస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పేరు</th>
+<th>మరో పేరు</th>
+<th>ఎక్కడ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aurora Borealis</strong></td>
+<td>Northern Lights</td>
+<td>ఉత్తర ధ్రువ ప్రాంతం</td>
+</tr>
+<tr>
+<td><strong>Aurora Australis</strong></td>
+<td>Southern Lights</td>
+<td>దక్షిణ ధ్రువ ప్రాంతం</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Aurora ఎలా వస్తుంది?</h3>
+<p>సూర్యుడి నుంచి Charged particles (విద్యుత్ ఆవేశం ఉన్న అతి చిన్న కణాలు, ముఖ్యంగా Electrons, Protons) నిరంతరం బయటకు ప్రవహిస్తాయి; ఈ ప్రవాహమే Solar wind (సౌర పవనం). సూర్యుడి మీద ఒక్కసారిగా వచ్చే తీవ్రమైన వెలుగు, శక్తి పేలుడు Solar flare (సౌర జ్వాల). కొన్నిసార్లు సూర్యుడు తన పై పొర (Corona) నుంచి కోట్ల టన్నుల Charged particles ను పెద్ద మేఘంలా అంతరిక్షంలోకి విసిరేస్తాడు; దాన్ని Coronal Mass Ejection (CME) అంటారు. CME భూమిని తాకినప్పుడు Geomagnetic storm (భూ అయస్కాంత తుఫాను) వస్తుంది; అప్పుడే పెద్ద, ప్రకాశవంతమైన Auroras కనిపిస్తాయి (<a href="/learn/geography/g2/3/notes#sun-storms-aurora">పాఠం 3: సౌర తుఫానులు, Aurora</a>).</p>
+<p>భూమి ఒక పెద్ద అయస్కాంతం లాంటిది. దాని Magnetic field (అయస్కాంత క్షేత్రం) భూమి చుట్టూ అంతరిక్షంలో ఒక కవచం లాగా విస్తరించి ఉంటుంది; ఆ కవచమే Magnetosphere (అయస్కాంత ఆవరణం). Solar wind లోని చాలా కణాలను ఈ కవచం పక్కకు మళ్లిస్తుంది.</p>
+<h3>ధ్రువాల దగ్గరే ఎందుకు?</h3>
+<p>అయస్కాంతం చుట్టూ ఇనుప రజను పోస్తే గీతలు రెండు చివర్లలో కలిసి లోపలికి దిగుతాయి. భూమి Magnetic field గీతలు కూడా అంతే: Equator పైన భూమికి సమాంతరంగా ఉంటాయి, ధ్రువాల దగ్గర భూమిలోకి దిగుతాయి. Charged particles ఈ గీతల వెంటే కదలగలవు, గీతను అడ్డంగా దాటలేవు. అందుకే Equator దగ్గర అవి కిందకు రాలేవు; Aurora Equator దగ్గర దాదాపు కనిపించదు. ధ్రువాల దగ్గర కణాలు గీతల వెంట జారుతూ పై Atmosphere లోకి దిగి, సుమారు 80 నుంచి 500 km ఎత్తులో Oxygen, Nitrogen కణాలను ఢీకొంటాయి. ఢీకొన్నప్పుడు ఆ వాయు కణాలకు అందిన అదనపు శక్తిని అవి వెలుగుగా బయటకు వదులుతాయి.</p>
+<p>ఏ వాయువు, ఏ ఎత్తులో వెలుగుతుందో దాన్ని బట్టి రంగు మారుతుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>రంగు</th>
+<th>వాయువు</th>
+<th>సుమారు ఎత్తు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>పచ్చ (Green)</strong> — ఎక్కువగా కనిపించేది</td>
+<td>Oxygen</td>
+<td>100–250 km</td>
+</tr>
+<tr>
+<td><strong>ఎరుపు (Red)</strong></td>
+<td>Oxygen</td>
+<td>250 km పైన</td>
+</tr>
+<tr>
+<td><strong>నీలం, ఊదా (Blue, Purple)</strong></td>
+<td>Nitrogen</td>
+<td>సుమారు 100 km, కింది అంచు దగ్గర</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Auroral oval: Magnetic poles చుట్టూ</h3>
+<p>ఇప్పటి దాకా "ధ్రువం" అన్నది భూమి Axis చివర్లు, అంటే Geographic poles (భౌగోళిక ధ్రువాలు). దిక్సూచి (Compass) సూది చూపించే Magnetic poles (అయస్కాంత ధ్రువాలు) వేరే చోట ఉన్నాయి. ఉత్తర Magnetic pole Canada ఆర్కిటిక్ దీవుల నుంచి Siberia వైపు జరుగుతూ వస్తోంది; Geographic North Pole నుంచి కొన్ని వందల km దూరంలో ఉంది. Aurora Geographic poles చుట్టూ కాదు, Magnetic poles చుట్టూ వస్తుంది: Magnetic pole చుట్టూ ఉంగరం లాంటి పట్టీలో, Magnetic latitude సుమారు 60° నుంచి 75° మధ్య ఎక్కువగా కనిపిస్తుంది. ఈ పట్టీని Auroral oval (ధ్రువ కాంతి వలయం) అంటారు; ఉత్తరాన ఒకటి, దక్షిణాన ఒకటి. బలమైన సౌర తుఫాన్ల సమయంలో ఈ పట్టీలు విస్తరించి Equator వైపు ఇంకా దిగువ అక్షాంశాల్లో కూడా కనిపిస్తాయి.</p>
+<h2 id="pairs">ముఖ్య జతలు</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అంశం</th>
+<th>విలువ / జవాబు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Equator / Prime Meridian</strong></td>
+<td>0° Latitude / 0° Longitude, Greenwich (1884, Washington D.C.)</td>
+</tr>
+<tr>
+<td><strong>Tropic of Cancer / Capricorn</strong></td>
+<td>23½°N / 23½°S (నేటి విలువ 23.44°)</td>
+</tr>
+<tr>
+<td><strong>Arctic / Antarctic Circle</strong></td>
+<td>66½°N / 66½°S (90° − 23.44° = 66.56°)</td>
+</tr>
+<tr>
+<td><strong>1° Latitude / 1° Longitude దూరం</strong></td>
+<td>సుమారు 111 km / 111 × cos(Latitude) km</td>
+</tr>
+<tr>
+<td><strong>Tropic of Cancer రాష్ట్రాలు</strong></td>
+<td>8: Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, West Bengal, Tripura, Mizoram</td>
+</tr>
+<tr>
+<td><strong>Heat zones</strong></td>
+<td>Torrid 0°–23½°; Temperate 23½°–66½°; Frigid 66½°–90°</td>
+</tr>
+<tr>
+<td><strong>1° Longitude / 15° Longitude</strong></td>
+<td>4 నిమిషాలు / 1 గంట</td>
+</tr>
+<tr>
+<td><strong>IST, Standard Meridian</strong></td>
+<td>UTC + 5:30; 82°30′E, Mirzapur (UP)</td>
+</tr>
+<tr>
+<td><strong>Date Line దాటితే</strong></td>
+<td>పడమరకు + 1 రోజు / తూర్పుకు − 1 రోజు</td>
+</tr>
+<tr>
+<td><strong>Rotation దిశ, Equator వేగం</strong></td>
+<td>పడమర నుంచి తూర్పు; సుమారు 1,670 km/h</td>
+</tr>
+<tr>
+<td><strong>Sidereal day / Mean solar day</strong></td>
+<td>23 గం 56 ని 4 సె / 24 గం</td>
+</tr>
+<tr>
+<td><strong>Ferrel's law (Coriolis)</strong></td>
+<td>ఉత్తర అర్ధగోళంలో కుడి వైపు, దక్షిణంలో ఎడమ వైపు</td>
+</tr>
+<tr>
+<td><strong>Perihelion / Aphelion</strong></td>
+<td>జనవరి తొలి వారం, 14.7 కోట్ల km / జూలై తొలి వారం, 15.2 కోట్ల km</td>
+</tr>
+<tr>
+<td><strong>Axial tilt</strong></td>
+<td>Normal నుంచి 23.44°; Orbital plane తో 66.56°</td>
+</tr>
+<tr>
+<td><strong>Gregorian calendar</strong></td>
+<td>Pope Gregory XIII, 1582; 400 ఏళ్లకు 97 Leap years</td>
+</tr>
+<tr>
+<td><strong>ఋతువులకు కారణం</strong></td>
+<td>Axis వంపు + Revolution (దూరం కాదు)</td>
+</tr>
+<tr>
+<td><strong>IMD ఋతువులు</strong></td>
+<td>4: శీతాకాలం, వేసవి, నైరుతి Monsoon, Post-monsoon</td>
+</tr>
+<tr>
+<td><strong>North-East / Retreating monsoon</strong></td>
+<td>అక్టోబర్–డిసెంబర్; Tamil Nadu ప్రధాన వర్షం</td>
+</tr>
+<tr>
+<td><strong>వసంత ఋతువు, ఉగాది</strong></td>
+<td>చైత్రం, వైశాఖం; ఉగాది = చైత్ర శుద్ధ పాడ్యమి</td>
+</tr>
+<tr>
+<td><strong>March / September Equinox</strong></td>
+<td>మార్చి 21 / సెప్టెంబర్ 23; Declination 0°, సూర్యుడు Equator మీద</td>
+</tr>
+<tr>
+<td><strong>June / December Solstice</strong></td>
+<td>జూన్ 21 / డిసెంబర్ 22; Tropic of Cancer / Capricorn మీద</td>
+</tr>
+<tr>
+<td><strong>ఉత్తరాయణం / దక్షిణాయనం (ఖగోళ)</strong></td>
+<td>December → June solstice / June → December solstice</td>
+</tr>
+<tr>
+<td><strong>మకర సంక్రాంతి</strong></td>
+<td>జనవరి 14–15; Solstice కంటే సుమారు 24 రోజులు ఆలస్యం (Precession)</td>
+</tr>
+<tr>
+<td><strong>International Day of Yoga</strong></td>
+<td>జూన్ 21; ప్రతిపాదన 27 సెప్టెంబర్ 2014, UN ఆమోదం 11 డిసెంబర్ 2014 (175 Co-sponsors)</td>
+</tr>
+<tr>
+<td><strong>మధ్యాహ్న Solar altitude</strong></td>
+<td>90° − |Latitude − Declination|; 20°N Equinox = 70°</td>
+</tr>
+<tr>
+<td><strong>విజయవాడ Zero Shadow Days</strong></td>
+<td>మే 6–7, ఆగస్టు 6–8</td>
+</tr>
+<tr>
+<td><strong>Civil / Nautical / Astronomical twilight</strong></td>
+<td>Horizon కింద 6° / 12° / 18°</td>
+</tr>
+<tr>
+<td><strong>Dawn / Dusk</strong></td>
+<td>సూర్యోదయానికి ముందు / సూర్యాస్తమయం తరువాత వెలుగు</td>
+</tr>
+<tr>
+<td><strong>ఉత్తర ధ్రువం Polar day</strong></td>
+<td>సుమారు మార్చి 21 – సెప్టెంబర్ 23</td>
+</tr>
+<tr>
+<td><strong>Land of the Midnight Sun</strong></td>
+<td>Norway</td>
+</tr>
+<tr>
+<td><strong>Aurora Borealis / Australis</strong></td>
+<td>Northern / Southern Lights; Auroral oval, Magnetic poles చుట్టూ</td>
+</tr>
+<tr>
+<td><strong>Aurora రంగులు</strong></td>
+<td>పచ్చ, ఎరుపు = Oxygen; నీలం, ఊదా = Nitrogen</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="selfcheck">స్వయం పరీక్ష</h2>
+<p>ముందు సొంతంగా జవాబు చెప్పండి; తరువాత ఇచ్చిన ఒక్క వాక్య జవాబుతో, లింక్ చేసిన విభాగంతో సరిచూసుకోండి.</p>
+<ol>
+<li><strong>Equator చోటును ప్రకృతి నిర్ణయించింది, Prime Meridian ను మనుషులు ఎంచుకున్నారు. ఎందుకు?</strong> — Equator భూమి Rotation Axis కు లంబంగా, రెండు ధ్రువాలకు సమదూరంలో ఉండే ఒకే Great circle; Longitude లకు అలాంటి సహజ ఆరంభం లేదు, అందుకే 1884 సమావేశంలో Greenwich ను ఎంచుకున్నారు. (<a href="#latlong-longitude">చూడండి</a>)</li>
+<li><strong>1° Longitude దూరం ధ్రువాల వైపు ఎందుకు తగ్గుతుంది?</strong> — Meridians అన్నీ ధ్రువాల దగ్గర కలుస్తాయి కాబట్టి వాటి మధ్య దూరం 111 × cos(Latitude) km గా తగ్గి ధ్రువం వద్ద సున్నా అవుతుంది. (<a href="#latlong-distance">చూడండి</a>)</li>
+<li><strong>Tropic of Cancer, Arctic Circle విలువలు Axial tilt తో ఎలా ముడిపడి ఉన్నాయి?</strong> — Tropic = Axial tilt (23.44°), ధ్రువ వృత్తం = 90° − Axial tilt (66.56°). (<a href="#latlong-special">చూడండి</a>)</li>
+<li><strong>1° Longitude కు 4 నిమిషాలు ఎలా వస్తాయి?</strong> — భూమి 24 గంటల్లో (1,440 నిమిషాలు) 360° తిరుగుతుంది; 1,440 ÷ 360 = 4 నిమిషాలు. (<a href="#time-4min">చూడండి</a>)</li>
+<li><strong>Date Line ను తూర్పుకు దాటితే తేదీ ఎందుకు ఒక రోజు తగ్గుతుంది?</strong> — తూర్పుకు ప్రయాణించే వాళ్లు ప్రతి 15° కి గడియారం ఒక గంట ముందుకు జరుపుతారు; భూమిని పూర్తిగా చుట్టేసరికి 24 గంటలు, అంటే ఒక రోజు, అదనంగా లెక్కిస్తారు. Date Line దాటేటప్పుడు తేదీ ఒక రోజు తగ్గిస్తే ఆ అదనపు రోజు సరిపోతుంది. (<a href="#time-dateline">చూడండి</a>)</li>
+<li><strong>అన్ని చోట్లా గంటకు 15° తిరుగుతున్నా ధ్రువం దగ్గర Linear speed ఎందుకు సున్నా?</strong> — ఊరు తిరిగే వృత్తం Latitude పెరిగే కొద్దీ చిన్నదై ధ్రువం వద్ద ఒక బిందువు అవుతుంది; దూరం ప్రయాణించక పోవడంతో Linear speed సున్నా. (<a href="#motion-rotation-speed">చూడండి</a>)</li>
+<li><strong>Solar day, Sidereal day కంటే సుమారు 4 నిమిషాలు ఎందుకు ఎక్కువ?</strong> — ఒక రోజులో భూమి Orbit లో సుమారు 1° ముందుకు జరుగుతుంది; సూర్యుడిని మళ్లీ అదే స్థానంలో చూడాలంటే భూమి ఆ 1° అదనంగా తిరగాలి, దానికి సుమారు 4 నిమిషాలు. (<a href="#motion-sidereal-solar-day">చూడండి</a>)</li>
+<li><strong>1900 Leap year ఎందుకు కాదు, 2000 ఎందుకు?</strong> — 100 తో భాగించబడే సంవత్సరం 400 తో కూడా భాగించబడితేనే Leap year; 2000 అవుతుంది, 1900 కాదు. (<a href="#motion-leap-year">చూడండి</a>)</li>
+<li><strong>జనవరిలో భూమి సూర్యుడికి అత్యంత దగ్గరగా ఉన్నా India లో చలికాలం ఎందుకు?</strong> — ఋతువులు దూరం వల్ల కాదు, Axis వంపు వల్ల; జనవరిలో ఉత్తర అర్ధగోళం సూర్యుడికి దూరంగా ఒరిగి కిరణాలు వాలుగా, పగలు చిన్నదిగా ఉంటాయి. (<a href="#seasons-why">చూడండి</a>)</li>
+<li><strong>మకర సంక్రాంతి December solstice రోజు ఎందుకు రాదు?</strong> — సంక్రాంతి నక్షత్రాలకు కట్టిన రాశి లెక్క, Solstice Axis దిశ లెక్క; Precession వల్ల రెండింటి మధ్య ఇప్పుడు సుమారు 24 రోజుల తేడా. (<a href="#seasons-solstice-equinox">చూడండి</a>)</li>
+<li><strong>విజయవాడలో జూన్ 21న మధ్యాహ్న నీడ దక్షిణం వైపు ఎందుకు పడుతుంది?</strong> — ఆ రోజు సూర్యుడు విజయవాడకు ఉత్తరంగా ఉన్న Tropic of Cancer (23.44°N) మీద తల మీద ఉంటాడు. (<a href="#seasons-overhead-sun">చూడండి</a>)</li>
+<li><strong>Arctic Circle మీద ఒక్క రోజు, ధ్రువం మీద ఆరు నెలలు Polar day ఎందుకు?</strong> — ధ్రువం మీద Celestial equator Horizon మీదే ఉంటుంది కాబట్టి Declination + అయిన ఆరు నెలలూ సూర్యుడు పైనే; Arctic Circle మీద Declination గరిష్ఠమైన June solstice రోజు మాత్రమే సూర్యుడు అస్తమించడు. (<a href="#seasons-polar">చూడండి</a>)</li>
+</ol>
+<h2 id="sources">ఆధారాలు</h2>
+<ul>
+<li>Sadguna Rao Sir Publications, World Geography (Telugu) — భూ పరిభ్రమణ ఫలితాలు, విషువత్తులు, అయనాంతాలు, ధ్రువాల పగలు–రాత్రి, Aurora, Dawn/Dusk: పేజీలు 20–21</li>
+<li>NCERT Class 6, The Earth: Our Habitat, Ch. 2, Globe: Latitudes and Longitudes (IIT Kanpur SATHEE mirror): https://sathee.iitk.ac.in/ncert-books/class-06/social-science/the-earth-our-habitat/chapter-02-globe-latitudes-and-longitudes/</li>
+<li>NCERT Class 6, The Earth: Our Habitat, Ch. 3, Motions of the Earth (IIT Kanpur SATHEE mirror): https://sathee.iitk.ac.in/ncert-books/class-06/social-science/the-earth-our-habitat/chapter-03-motions-of-the-earth</li>
+<li>NCERT Class 9, Contemporary India I, Ch. 1, India: Size and Location: https://ncert.nic.in/textbook/pdf/iess101.pdf</li>
+<li>NCERT Class 9, India: Size and Location (IIT Kanpur SATHEE mirror): https://sathee.iitk.ac.in/ncert-books/class-09/social-science/contemporary-india-01/chapter-01-india-size-and-location</li>
+<li>AP SCERT Class 9 Geography textbook: https://cse.ap.gov.in/downloadBooks/Social%20Books/9_Social_Geography_Textbook_Urdu.pdf</li>
+<li>NASA NSSDC, Earth Fact Sheet: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html</li>
+<li>NASA Science, Seasons: https://science.nasa.gov/earth/seasons/</li>
+<li>NASA Space Place, What causes the seasons: https://spaceplace.nasa.gov/seasons/en/</li>
+<li>NASA/JPL, Geodetic latitude: https://ssd.jpl.nasa.gov/glossary/geodetic.html</li>
+<li>NOAA Ocean Service, Latitude: https://oceanservice.noaa.gov/facts/latitude.html</li>
+<li>NOAA Ocean Service, Nautical mile and knot: https://oceanservice.noaa.gov/facts/nautical-mile-knot.html</li>
+<li>NOAA Ocean Service, International Date Line: https://oceanservice.noaa.gov/facts/international-date-line.html</li>
+<li>NOAA SWPC, Aurora: https://www.spaceweather.gov/phenomena/aurora</li>
+<li>NOAA PMEL, Daylight and darkness at the North Pole: https://pmel.noaa.gov/arctic-zone/gallery_np_seasons.html</li>
+<li>NOAA NWS, Seasons: https://www.weather.gov/fsd/season</li>
+<li>US Naval Observatory, International Date Line: https://aa.usno.navy.mil/faq/international_date</li>
+<li>US Naval Observatory, Equation of time: https://aa.usno.navy.mil/faq/eqtime</li>
+<li>US Naval Observatory, Leap years: https://aa.usno.navy.mil/faq/leap_years</li>
+<li>US Naval Observatory, Rise, set and twilight definitions: https://aa.usno.navy.mil/faq/RST_defs</li>
+<li>US Naval Observatory, Equinoxes and solstices: https://aa.usno.navy.mil/faq/equinoxes</li>
+<li>US Naval Observatory, Seasons and orbit: https://aa.usno.navy.mil/faq/seasons_orbit</li>
+<li>CSIR-NPL, IST clock: https://www.nplindia.res.in/clockcode/html/</li>
+<li>CSIR-NPL, Indian Standard Time: https://www.nplindia.in/index.php/indian-standard-time/</li>
+<li>Know India (Govt of India), National Calendar: https://knowindia.india.gov.in/national-identity-elements/national-calendar.php</li>
+<li>UN Digital Library, A/RES/69/131 International Day of Yoga: https://digitallibrary.un.org/record/786178</li>
+<li>UN PGA statement, launch of International Day of Yoga (11 Dec 2014): https://www.un.org/pga/69/111214_statement-launch-international-day-yoga</li>
+<li>UN Partnerships, International Day of Yoga: https://unpartnerships.un.org/events/international-day-yoga</li>
+<li>Consulate General of India, New York, Yoga Day origin: https://indiainnewyork.gov.in/yogaday/about.html</li>
+<li>US Bureau of Transportation Statistics, US time zones (2021): https://www.bts.gov/data-spotlight/daylight-saving-time-approaches-good-opportunity-look-us-time-zones</li>
+<li>Russian Federation law on time calculation, 2014 (consultant.ru): https://www.consultant.ru/document/cons_doc_LAW_165841/</li>
+<li>Nepal Tourism Board, Time and business hours: https://trade.ntb.gov.np/travel-essentials/time-and-business-hours/</li>
+<li>Tourism Australia, Time zones: https://www.australia.com/en/facts-and-planning/about-australia/time-zones.html</li>
+<li>Visit Norway, Midnight sun: https://www.visitnorway.com/things-to-do/nature-attractions/midnight-sun/</li>
+<li>Royal Museums Greenwich, What is the Prime Meridian and why is it in Greenwich: https://www.rmg.co.uk/stories/time/what-prime-meridian-why-it-greenwich</li>
+<li>Royal Museums Greenwich, Harrison's clocks and the longitude problem: https://www.rmg.co.uk/stories/topics/harrisons-clocks-longitude-problem</li>
+<li>Library of Congress, Ptolemy's Geography: https://www.loc.gov/item/2021668470/</li>
+<li>UC San Diego archive, International Meridian Conference 1884: https://1884.ucsd.edu/archives/MeridianConf.html</li>
+<li>International Meridian Conference 1884 and the date line: https://webspace.science.uu.nl/~gent0113/idl/idl_imc_1884.htm</li>
+<li>Current Science (2018), Necessity of two time zones: IST-I and IST-II (India Environment Portal): https://indiaenvironmentportal.org.in/articles/necessity-of-two-time-zones-ist-i-utc-5-30-h-and-ist-ii-utc-6-30-h-in-india-and-its-implementation</li>
+<li>Down To Earth, NPL two-time-zone study (2018): https://www.downtoearth.org.in/news/science-technology/india-s-timekeeper-says-country-needs-two-time-zones-61846</li>
+<li>ThePrint, Lok Sabha reply on separate time zone (19 Dec 2018): https://theprint.in/governance/no-separate-time-zone-for-northeastern-states-for-strategic-reasons-says-centre/166258</li>
+<li>Rice University Galileo Project, Gregorian calendar: https://galileo.library.rice.edu/chron/gregorian.html</li>
+<li>Encyclopaedia Britannica, Foucault pendulum: https://www.britannica.com/science/Foucault-pendulum</li>
+<li>Encyclopaedia Britannica, Ten days that vanished: https://www.britannica.com/story/ten-days-that-vanished-the-switch-to-the-gregorian-calendar</li>
+<li>LiveHistoryIndia, History of Indian Standard Time: https://livehistoryindia.com/story/eras/indian-standard-time</li>
+<li>IANA tz mailing list, Indian railway time from 1870: https://mm.icann.org/pipermail/tz/2017-April/050023.html</li>
+<li>EarthSky, Samoa skipped 30 December 2011: https://earthsky.org/human-world/friday-december-30-2011-struck-from-samoan-calendar/</li>
+<li>timeanddate, Country with the most time zones: https://www.timeanddate.com/time/country-with-the-most-time-zones.html</li>
+<li>timeanddate, Assam tea garden time (Chaibagan / Bagan time): https://www.timeanddate.com/news/time/india-assam-time-zone.html</li>
+<li>Wikipedia, Time in Pakistan (PKT UTC+5): https://en.wikipedia.org/wiki/Time_in_Pakistan</li>
+</ul></article><footer class="endnote"><a class="back" href="#top">↑ పాఠం మొదటికి</a><p>పాఠంలోని తేదీతో కూడిన గణాంకాలు ఆ తేదీకి మాత్రమే వర్తిస్తాయి.</p></footer></main></body></html>
