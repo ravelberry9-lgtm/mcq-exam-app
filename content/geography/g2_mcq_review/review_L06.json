@@ -1,0 +1,916 @@
+{
+ "lesson": 6,
+ "reviewed": "2026-11-16",
+ "keep": [
+  "GEO-AUDIT-07-GAP-001",
+  "GEO-AUDIT-07-GAP-003",
+  "GEO-AUDIT-07-GAP-004",
+  "GEO-AUDIT-07-GAP-005",
+  "GEO-AUDIT-07-GAP-007",
+  "GEO-AUDIT-07-GAP-009",
+  "GEO-BOOK-P044-F006",
+  "GEO-BOOK-P044-F007",
+  "GEO-BOOK-P044-F008",
+  "GEO-BOOK-P044-F016",
+  "GEO-BOOK-P045-F009",
+  "GEO-BOOK-P045-F011",
+  "GEO-BOOK-P045-F012",
+  "GEO-BOOK-P045-F019",
+  "GEO-BOOK-P045-M003",
+  "GEO-BOOK-P045-M004",
+  "GEO-BOOK-P046-F004",
+  "GEO-BOOK-P046-F006",
+  "GEO-BOOK-P046-F008",
+  "GEO-BOOK-P046-F017",
+  "GEO-BOOK-P046-F018",
+  "GEO-BOOK-P046-F019",
+  "GEO-BOOK-P046-F020",
+  "GEO-BOOK-P046-F021",
+  "GEO-BOOK-P046-M005",
+  "GEO-BOOK-P047-F001",
+  "GEO-BOOK-P047-F002",
+  "GEO-BOOK-P047-F003",
+  "GEO-BOOK-P047-F004",
+  "GEO-BOOK-P047-F007",
+  "GEO-BOOK-P047-F008",
+  "GEO-BOOK-P047-F010",
+  "GEO-BOOK-P047-F011",
+  "GEO-BOOK-P047-F012",
+  "GEO-BOOK-P047-F013",
+  "GEO-BOOK-P047-F014",
+  "GEO-BOOK-P047-F015",
+  "GEO-BOOK-P047-F016",
+  "GEO-BOOK-P047-F017",
+  "GEO-BOOK-P047-M001",
+  "GEO-BOOK-P047-M002",
+  "GEO-BOOK-P047-M003",
+  "GEO-BOOK-P047-M004",
+  "GEO-BOOK-P049-F006",
+  "GEO-BOOK-P049-F008",
+  "GEO-BOOK-P049-F009",
+  "GEO-BOOK-P049-F010",
+  "GEO-BOOK-P049-F011",
+  "GEO-BOOK-P049-F012",
+  "GEO-BOOK-P049-F013",
+  "GEO-BOOK-P049-F014",
+  "GEO-BOOK-P049-F015",
+  "GEO-BOOK-P049-F016",
+  "GEO-BOOK-P049-F044",
+  "GEO-BOOK-P049-M002",
+  "GEO-BOOK-P049-M003",
+  "GEO-BOOK-P050-F015",
+  "GEO-BOOK-P052-F014",
+  "GEO-BOOK-P052-F016",
+  "GEO-NEW-06-001",
+  "GEO-NEW-06-002",
+  "GEO-NEW-06-003",
+  "GEO-NEW-06-004",
+  "GEO-NEW-06-005",
+  "GEO-NEW-06-007",
+  "GEO-NEW-06-008",
+  "GEO-NEW-06-009",
+  "GEO-NEW-06-010",
+  "GEO-NEW-06-011",
+  "GEO-NEW-06-012",
+  "GEO-NEW-06-013",
+  "GEO-NEW-06-014",
+  "GEO-NEW-06-015",
+  "GEO-NEW-06-016",
+  "GEO-NEW-06-017",
+  "GEO-NEW-06-018",
+  "GEO-NEW-06-019",
+  "GEO-NEW-06-020",
+  "GEO-NEW-06-021",
+  "GEO-NEW-06-022",
+  "GEO-NEW-06-023",
+  "GEO-NEW-06-024",
+  "GEO-NEW-06-025",
+  "GEO-NEW-06-026",
+  "GEO-NEW-06-027",
+  "GEO-NEW-06-028",
+  "GEO-NEW-06-029",
+  "GEO-NEW-06-030",
+  "GEO-NEW-06-031",
+  "GEO-NEW-06-033",
+  "GEO-NEW-06-034",
+  "GEO-NEW-06-035",
+  "GEO-NEW-06-036",
+  "GEO-NEW-06-037",
+  "GEO-NEW-06-039",
+  "GEO-NEW-06-040",
+  "GEO-NEW-06-041",
+  "GEO-NEW-06-042",
+  "GEO-NEW-06-043",
+  "GEO-NEW-06-044",
+  "GEO-NEW-06-045",
+  "GEO-NEW-06-046",
+  "GEO-NEW-06-047",
+  "GEO-NEW-06-048",
+  "GEO-NEW-06-049",
+  "GEO-NEW-06-050",
+  "GEO-NEW-06-051",
+  "GEO-ORIG-07-001",
+  "GEO-ORIG-07-002",
+  "GEO-ORIG-07-003",
+  "GEO-ORIG-07-004",
+  "GEO-ORIG-07-009",
+  "GEO-ORIG-07-010",
+  "GEO-ORIG-07-011",
+  "GEO-ORIG-07-012",
+  "GEO-ORIG-07-013",
+  "GEO-ORIG-07-015",
+  "GEO-ORIG-07-016",
+  "GEO-ORIG-07-017",
+  "GEO-ORIG-07-020",
+  "GEO-ORIG-07-021",
+  "GEO-ORIG-07-023",
+  "WG05-P45-003",
+  "WG05-P45-011",
+  "WG05-P46-017",
+  "WG05-P47-001",
+  "WG05-P47-010",
+  "WG05-P47-013",
+  "WG05-P47-014",
+  "WG05-P47-016",
+  "WG05-P49-011",
+  "WG05-P49-015",
+  "WG05-P49-024",
+  "WG05-P49-025"
+ ],
+ "fix": {
+  "GEO-ORIG-07-022": {
+   "reason": "Duplicate of GEO-ORIG-07-002 (plateau definition) with an absurd distractor; rewritten to first/second-order landforms.",
+   "question_en": "Mountains, plateaus and plains, which stand on the continents, belong to which order of landforms?",
+   "question_te": "ఖండాల మీద కనిపించే పర్వతాలు, పీఠభూములు, మైదానాలు ఏ శ్రేణి భూస్వరూపాలు (Order of landforms)?",
+   "options_en": [
+    "Second-order landforms",
+    "First-order landforms",
+    "Third-order landforms",
+    "Submarine landforms only"
+   ],
+   "options_te": [
+    "రెండో శ్రేణి భూస్వరూపాలు (Second order)",
+    "మొదటి శ్రేణి భూస్వరూపాలు (First order)",
+    "మూడో శ్రేణి భూస్వరూపాలు (Third order)",
+    "సముద్రాంతర భూస్వరూపాలు మాత్రమే"
+   ],
+   "explanation_en": "They are second-order landforms, because they stand on the first-order forms, the continents and ocean basins. Endogenic forces raise them and exogenic agents such as water, wind and ice wear them down. Smaller features carved on them, such as valleys or dunes, are third-order forms.",
+   "explanation_te": "ఇవి రెండో శ్రేణి భూస్వరూపాలు; ఎందుకంటే ఇవి మొదటి శ్రేణి రూపాలైన ఖండాలు, సముద్రాల మీద ఉంటాయి. భూమి లోపలి (Endogenic) శక్తులు వీటిని పైకి లేపుతాయి; నీరు, గాలి, మంచు వంటి బయటి (Exogenic) శక్తులు అరగదీస్తాయి. వీటి మీద చెక్కిన లోయలు, దిబ్బలు వంటి చిన్న రూపాలు మూడో శ్రేణి.",
+   "option_explanations_en": [
+    "Correct. They rest on the continents, which are first-order forms.",
+    "Wrong. First-order landforms are the continents and ocean basins themselves.",
+    "Wrong. Third-order forms are smaller features such as valleys, cliffs and dunes carved on them.",
+    "Wrong. These forms stand on land; they are not confined to the sea floor."
+   ],
+   "option_explanations_te": [
+    "సరైనది. ఇవి మొదటి శ్రేణి రూపాలైన ఖండాల మీద ఉంటాయి.",
+    "తప్పు. మొదటి శ్రేణి అంటే ఖండాలు, సముద్ర బేసిన్లు.",
+    "తప్పు. మూడో శ్రేణి అంటే లోయలు, కొండచరియ అంచులు, దిబ్బలు వంటి చిన్న రూపాలు.",
+    "తప్పు. ఇవి భూమి మీది రూపాలు; సముద్ర అడుగుకే పరిమితం కావు."
+   ]
+  },
+  "GEO-ORIG-07-024": {
+   "reason": "Keyed option was the only long, multi-factor option (giveaway); distractors made parallel single-factor approaches.",
+   "options_en": [
+    "Judge the route by slope angle alone",
+    "Judge the route by regional average elevation alone",
+    "Slope, drainage, rock stability, landslide risk and ecology",
+    "Judge the route by the shortest map distance alone"
+   ],
+   "options_te": [
+    "వాలు కోణం ఒక్కదాన్నే చూసి మార్గాన్ని ఖరారు చేయడం",
+    "ప్రాంతపు సగటు ఎత్తు ఒక్కదాన్నే చూసి మార్గాన్ని ఖరారు చేయడం",
+    "వాలు, నీటి ప్రవాహం, శిలల స్థిరత్వం, కొండచరియల ప్రమాదం, పర్యావరణం",
+    "పటంలో అతి తక్కువ దూరం ఒక్కదాన్నే చూసి మార్గాన్ని ఖరారు చేయడం"
+   ],
+   "explanation_en": "All the factors together, slope, drainage, rock stability, landslide risk and ecology, decide a safe hill road. A gentle slope on weak, water-soaked rock can still fail, so no single measure is enough. Relief and slope from the landform study are only the starting point.",
+   "explanation_te": "వాలు, నీటి ప్రవాహం, శిలల స్థిరత్వం, కొండచరియల ప్రమాదం, పర్యావరణం అన్నీ కలిపి చూస్తేనే కొండ రోడ్డు సురక్షితం. బలహీనమైన, నీరు ఇంకిన రాయి మీద మెల్లని వాలు కూడా జారిపోవచ్చు; కాబట్టి ఒక్క కొలత చాలదు. భూస్వరూప అధ్యయనంలోని Relief, వాలు మొదటి మెట్టు మాత్రమే.",
+   "option_explanations_en": [
+    "Wrong. A gentle slope on weak or wet rock can still slide; slope alone is not enough.",
+    "Wrong. Average elevation says nothing about local slopes, drainage or rock strength.",
+    "Correct. A route is chosen by weighing all these factors together.",
+    "Wrong. The shortest line may cross unstable slopes or streams; distance alone is unsafe."
+   ],
+   "option_explanations_te": [
+    "తప్పు. బలహీనమైన, తడి రాయి మీద మెల్లని వాలు కూడా జారవచ్చు; వాలు ఒక్కటే చాలదు.",
+    "తప్పు. సగటు ఎత్తు స్థానిక వాలు, నీటి ప్రవాహం, రాతి బలం గురించి ఏమీ చెప్పదు.",
+    "సరైనది. ఈ అంశాలన్నీ కలిపి తూకం వేసి మార్గం ఎంచుకుంటారు.",
+    "తప్పు. అతి తక్కువ దూరం గీత అస్థిర వాలులు, వాగుల మీదుగా వెళ్లవచ్చు; దూరం ఒక్కటే సురక్షితం కాదు."
+   ]
+  },
+  "GEO-BOOK-P044-M002": {
+   "reason": "Meta stem ('using the descriptions in this lesson'); asks the fact directly.",
+   "question_en": "Match List I with List II.",
+   "question_te": "జాబితా–Iను జాబితా–IIతో సరిపోల్చండి."
+  },
+  "GEO-BOOK-P045-F010": {
+   "reason": "Distractors were absurd (West Asia, Caucasus, North America lists); replaced with near-miss South Asian lists.",
+   "question_en": "Which group of countries does the main Himalayan range pass through?",
+   "question_te": "ప్రధాన హిమాలయ శ్రేణి (Main Himalayan range) ఏ దేశాల సమూహం గుండా విస్తరించింది?",
+   "options_en": [
+    "India, Nepal, Bhutan, China and Afghanistan",
+    "India, Nepal, Bangladesh, China and Myanmar",
+    "India, Nepal, Bhutan, China and Pakistan",
+    "India, Nepal, Bhutan, Tajikistan and Pakistan"
+   ],
+   "options_te": [
+    "భారతదేశం, నేపాల్, భూటాన్, చైనా, అఫ్గానిస్తాన్",
+    "భారతదేశం, నేపాల్, బంగ్లాదేశ్, చైనా, మయన్మార్",
+    "భారతదేశం, నేపాల్, భూటాన్, చైనా, పాకిస్తాన్",
+    "భారతదేశం, నేపాల్, భూటాన్, తజికిస్తాన్, పాకిస్తాన్"
+   ],
+   "explanation_en": "The main Himalayan range lies in India, Nepal, Bhutan, China (Tibet) and Pakistan. It arcs from the Nanga Parbat area in the west to the Namcha Barwa bend in the east. Afghanistan belongs to the Hindu Kush, and Tajikistan to the Pamirs, which are neighbouring ranges rather than the Himalaya proper.",
+   "explanation_te": "ప్రధాన హిమాలయ శ్రేణి భారతదేశం, నేపాల్, భూటాన్, చైనా (టిబెట్), పాకిస్తాన్‌లలో ఉంది. ఇది పడమర Nanga Parbat నుంచి తూర్పున Namcha Barwa మలుపు వరకు వంపుగా సాగుతుంది. అఫ్గానిస్తాన్ Hindu Kush కు, తజికిస్తాన్ Pamir కు చెందుతాయి; అవి పొరుగు శ్రేణులు, హిమాలయాలు కావు.",
+   "option_explanations_en": [
+    "Wrong. Afghanistan has the Hindu Kush, not the main Himalayan range.",
+    "Wrong. Bangladesh and Myanmar lie outside the main Himalayan range; Bhutan and Pakistan are missing.",
+    "Correct. These five countries share the main Himalayan range.",
+    "Wrong. Tajikistan has the Pamirs, not the Himalaya; China is missing."
+   ],
+   "option_explanations_te": [
+    "తప్పు. అఫ్గానిస్తాన్‌లో ఉన్నది Hindu Kush; ప్రధాన హిమాలయ శ్రేణి కాదు.",
+    "తప్పు. బంగ్లాదేశ్, మయన్మార్ ప్రధాన హిమాలయ శ్రేణి బయట ఉన్నాయి; భూటాన్, పాకిస్తాన్ లేవు.",
+    "సరైనది. ఈ ఐదు దేశాల్లోనే ప్రధాన హిమాలయ శ్రేణి ఉంది.",
+    "తప్పు. తజికిస్తాన్‌లో ఉన్నది Pamir; హిమాలయాలు కాదు; చైనా లేదు."
+   ]
+  },
+  "GEO-BOOK-P045-F013": {
+   "reason": "Distractors from other continents were absurd; replaced with near-miss North African lists.",
+   "options_en": [
+    "Libya, Egypt and Sudan",
+    "Morocco, Mauritania and Mali",
+    "Algeria, Libya and Chad",
+    "Morocco, Algeria and Tunisia"
+   ],
+   "options_te": [
+    "లిబియా, ఈజిప్ట్, సూడాన్",
+    "మొరాకో, మౌరిటేనియా, మాలి",
+    "అల్జీరియా, లిబియా, చాద్",
+    "మొరాకో, అల్జీరియా, ట్యునీషియా"
+   ],
+   "explanation_en": "The Atlas Mountains lie in Morocco, Algeria and Tunisia in north-west Africa. They separate the Mediterranean and Atlantic coasts from the Sahara. Their highest peak, Toubkal, is in Morocco.",
+   "explanation_te": "అట్లాస్ పర్వతాలు వాయవ్య ఆఫ్రికాలోని మొరాకో, అల్జీరియా, ట్యునీషియాల్లో ఉన్నాయి. ఇవి మధ్యధరా, అట్లాంటిక్ తీరాలను Sahara నుంచి వేరు చేస్తాయి. వీటి ఎత్తైన శిఖరం Toubkal మొరాకోలో ఉంది.",
+   "option_explanations_en": [
+    "Wrong. Libya, Egypt and Sudan lie east of the Atlas, in north-east Africa.",
+    "Wrong. Mauritania and Mali lie south, in the Sahara–Sahel, outside the Atlas.",
+    "Wrong. Libya and Chad do not contain the Atlas; Morocco and Tunisia are missing.",
+    "Correct. The Atlas runs through Morocco, Algeria and Tunisia."
+   ],
+   "option_explanations_te": [
+    "తప్పు. లిబియా, ఈజిప్ట్, సూడాన్ అట్లాస్‌కు తూర్పున, ఈశాన్య ఆఫ్రికాలో ఉన్నాయి.",
+    "తప్పు. మౌరిటేనియా, మాలి దక్షిణాన Sahara–Sahel లో ఉన్నాయి; అట్లాస్ బయట.",
+    "తప్పు. లిబియా, చాద్‌లలో అట్లాస్ లేదు; మొరాకో, ట్యునీషియా లేవు.",
+    "సరైనది. అట్లాస్ మొరాకో, అల్జీరియా, ట్యునీషియాల గుండా సాగుతుంది."
+   ]
+  },
+  "GEO-BOOK-P045-F014": {
+   "reason": "Distractor lists from other continents were absurd; replaced with near-miss South American lists.",
+   "options_en": [
+    "Brazil, Colombia, Ecuador, Peru, Bolivia, Chile and Argentina",
+    "Venezuela, Colombia, Ecuador, Peru, Paraguay, Chile and Argentina",
+    "Venezuela, Guyana, Colombia, Peru, Bolivia, Chile and Argentina",
+    "Venezuela, Colombia, Ecuador, Peru, Bolivia, Chile and Argentina"
+   ],
+   "options_te": [
+    "బ్రెజిల్, కొలంబియా, ఈక్వెడార్, పెరూ, బొలీవియా, చిలీ, అర్జెంటీనా",
+    "వెనెజువెలా, కొలంబియా, ఈక్వెడార్, పెరూ, పరాగ్వే, చిలీ, అర్జెంటీనా",
+    "వెనెజువెలా, గయానా, కొలంబియా, పెరూ, బొలీవియా, చిలీ, అర్జెంటీనా",
+    "వెనెజువెలా, కొలంబియా, ఈక్వెడార్, పెరూ, బొలీవియా, చిలీ, అర్జెంటీనా"
+   ],
+   "explanation_en": "The Andes cross seven countries: Venezuela, Colombia, Ecuador, Peru, Bolivia, Chile and Argentina. They run along the whole western edge of South America, where the Nazca Plate subducts beneath the continent. Brazil, Paraguay and Guyana lie east of the range.",
+   "explanation_te": "ఆండీస్ ఏడు దేశాల గుండా సాగుతుంది: వెనెజువెలా, కొలంబియా, ఈక్వెడార్, పెరూ, బొలీవియా, చిలీ, అర్జెంటీనా. Nazca ఫలకం ఖండం కిందికి దిగే దక్షిణ అమెరికా పశ్చిమ అంచు పొడవునా ఇది విస్తరించింది. బ్రెజిల్, పరాగ్వే, గయానా ఈ శ్రేణికి తూర్పున ఉన్నాయి.",
+   "option_explanations_en": [
+    "Wrong. Brazil lies east of the Andes; Venezuela is missing.",
+    "Wrong. Paraguay lies east of the Andes; Bolivia is missing.",
+    "Wrong. Guyana lies outside the Andes; Ecuador is missing.",
+    "Correct. These are the seven Andean countries."
+   ],
+   "option_explanations_te": [
+    "తప్పు. బ్రెజిల్ ఆండీస్‌కు తూర్పున ఉంది; వెనెజువెలా లేదు.",
+    "తప్పు. పరాగ్వే ఆండీస్‌కు తూర్పున ఉంది; బొలీవియా లేదు.",
+    "తప్పు. గయానాలో ఆండీస్ లేదు; ఈక్వెడార్ లేదు.",
+    "సరైనది. ఇవే ఏడు ఆండీస్ దేశాలు."
+   ]
+  },
+  "GEO-BOOK-P045-F016": {
+   "reason": "Distractor lists were absurd (Caucasus/Scandinavia/America); replaced with near-miss Alpine lists.",
+   "options_en": [
+    "Croatia, France, Switzerland, Italy, Liechtenstein, Germany, Austria and Slovenia",
+    "Monaco, France, Switzerland, Italy, Liechtenstein, Germany, Austria and Slovenia",
+    "Monaco, France, Switzerland, Italy, Czechia, Germany, Austria and Slovenia",
+    "Monaco, Andorra, Switzerland, Italy, Liechtenstein, Germany, Austria and Slovenia"
+   ],
+   "options_te": [
+    "క్రొయేషియా, ఫ్రాన్స్, స్విట్జర్లాండ్, ఇటలీ, లిక్టెన్‌స్టైన్, జర్మనీ, ఆస్ట్రియా, స్లోవేనియా",
+    "మొనాకో, ఫ్రాన్స్, స్విట్జర్లాండ్, ఇటలీ, లిక్టెన్‌స్టైన్, జర్మనీ, ఆస్ట్రియా, స్లోవేనియా",
+    "మొనాకో, ఫ్రాన్స్, స్విట్జర్లాండ్, ఇటలీ, చెక్ రిపబ్లిక్, జర్మనీ, ఆస్ట్రియా, స్లోవేనియా",
+    "మొనాకో, అండోరా, స్విట్జర్లాండ్, ఇటలీ, లిక్టెన్‌స్టైన్, జర్మనీ, ఆస్ట్రియా, స్లోవేనియా"
+   ],
+   "explanation_en": "The eight Alpine Convention (1991) countries are Austria, France, Germany, Italy, Liechtenstein, Monaco, Slovenia and Switzerland. The Alps arc about 1,200 km across these countries as young fold mountains. The European Union is also a party, but it is not a country.",
+   "explanation_te": "Alpine Convention (1991) లోని ఎనిమిది దేశాలు: ఆస్ట్రియా, ఫ్రాన్స్, జర్మనీ, ఇటలీ, లిక్టెన్‌స్టైన్, మొనాకో, స్లోవేనియా, స్విట్జర్లాండ్. ఈ దేశాల మీదుగా Alps సుమారు 1,200 km అర్ధచంద్రాకారంలో యువ ముడత పర్వతాలుగా సాగుతాయి. European Union కూడా భాగస్వామి, కానీ అది దేశం కాదు.",
+   "option_explanations_en": [
+    "Wrong. Croatia is not an Alpine Convention country; Monaco is missing.",
+    "Correct. These are the eight Alpine Convention countries.",
+    "Wrong. Czechia is not an Alpine country; Liechtenstein is missing.",
+    "Wrong. Andorra lies in the Pyrenees, not the Alps; France is missing."
+   ],
+   "option_explanations_te": [
+    "తప్పు. క్రొయేషియా Alpine Convention దేశం కాదు; మొనాకో లేదు.",
+    "సరైనది. ఇవే ఎనిమిది Alpine Convention దేశాలు.",
+    "తప్పు. చెక్ రిపబ్లిక్ Alpine దేశం కాదు; లిక్టెన్‌స్టైన్ లేదు.",
+    "తప్పు. అండోరా Pyrenees లో ఉంది, Alps లో కాదు; ఫ్రాన్స్ లేదు."
+   ]
+  },
+  "GEO-BOOK-P045-F017": {
+   "reason": "Distractors from other continents were absurd; replaced with near-miss Eurasian lists; stem made direct.",
+   "question_en": "In which group of countries does the Caucasus range lie?",
+   "question_te": "కాకసస్ శ్రేణి ఏ దేశాల సమూహంలో ఉంది?",
+   "options_en": [
+    "Russia, Ukraine, Georgia and Moldova",
+    "Russia, Georgia, Azerbaijan and Armenia",
+    "Kazakhstan, Uzbekistan, Georgia and Armenia",
+    "Russia, Kazakhstan, Mongolia and Georgia"
+   ],
+   "options_te": [
+    "రష్యా, ఉక్రెయిన్, జార్జియా, మాల్డోవా",
+    "రష్యా, జార్జియా, అజర్‌బైజాన్, ఆర్మేనియా",
+    "కజకిస్తాన్, ఉజ్బెకిస్తాన్, జార్జియా, ఆర్మేనియా",
+    "రష్యా, కజకిస్తాన్, మంగోలియా, జార్జియా"
+   ],
+   "explanation_en": "The Caucasus lies in Russia, Georgia, Azerbaijan and Armenia, on the land bridge between the Black Sea and the Caspian Sea. It runs west to east and is often treated as part of the Europe–Asia boundary. Its peak Elbrus is usually counted as Europe's highest.",
+   "explanation_te": "కాకసస్ రష్యా, జార్జియా, అజర్‌బైజాన్, ఆర్మేనియాల్లో, నల్ల సముద్రం–కాస్పియన్ సముద్రం మధ్య భూభాగంలో ఉంది. ఇది పడమర నుంచి తూర్పుకు సాగుతుంది; యూరప్–ఆసియా సరిహద్దులో భాగంగా తరచూ పరిగణిస్తారు. దీని శిఖరం Elbrus ను సాధారణంగా యూరప్‌లో ఎత్తైనదిగా లెక్కిస్తారు.",
+   "option_explanations_en": [
+    "Wrong. Ukraine and Moldova lie north-west of the Black Sea, outside the Caucasus.",
+    "Correct. These four countries contain the Caucasus.",
+    "Wrong. Kazakhstan and Uzbekistan lie east of the Caspian Sea, away from the Caucasus.",
+    "Wrong. Kazakhstan and Mongolia relate to the Altai, not the Caucasus."
+   ],
+   "option_explanations_te": [
+    "తప్పు. ఉక్రెయిన్, మాల్డోవా నల్ల సముద్రానికి వాయవ్యంగా ఉన్నాయి; కాకసస్ బయట.",
+    "సరైనది. ఈ నాలుగు దేశాల్లో కాకసస్ ఉంది.",
+    "తప్పు. కజకిస్తాన్, ఉజ్బెకిస్తాన్ కాస్పియన్‌కు తూర్పున ఉన్నాయి; కాకసస్‌కు దూరం.",
+    "తప్పు. కజకిస్తాన్, మంగోలియా Altai కి సంబంధించినవి; కాకసస్‌కు కాదు."
+   ]
+  },
+  "GEO-BOOK-P046-F016": {
+   "reason": "Duplicate of GEO-ORIG-07-002 (plateau definition); rewritten to why plateaus are less populated than plains.",
+   "question_en": "Why do plateaus generally have a lower population than plains?",
+   "question_te": "మైదానాలతో పోలిస్తే పీఠభూముల్లో జనాభా సాధారణంగా ఎందుకు తక్కువ?",
+   "options_en": [
+    "Plateaus have no minerals to support industry",
+    "Plateaus receive no rainfall in any season",
+    "Plateaus are always colder than the poles",
+    "Steep edges hinder transport; thin soils hinder farming"
+   ],
+   "options_te": [
+    "పీఠభూముల్లో పరిశ్రమలకు అవసరమైన ఖనిజాలు ఉండవు",
+    "పీఠభూములపై ఏ కాలంలోనూ వర్షం పడదు",
+    "పీఠభూములు ధ్రువాల కంటే ఎప్పుడూ చల్లగా ఉంటాయి",
+    "నిటారు అంచులు రవాణాకు, పల్చని నేల సాగుకు అడ్డు"
+   ],
+   "explanation_en": "Plateaus are less populated because their steep edges make roads and railways hard and costly, and their thin soils and deep water tables make farming difficult. Where mines and industries develop, as on the Chota Nagpur Plateau, population does grow. Lava plateaus with black soil are an exception for farming.",
+   "explanation_te": "పీఠభూముల నిటారు అంచుల వల్ల రోడ్లు, రైలు మార్గాలు వేయడం కష్టం, ఖర్చు ఎక్కువ; పల్చని నేల, లోతైన భూగర్భ జలం వల్ల సాగు కష్టం; అందుకే జనాభా తక్కువ. Chota Nagpur లాగా గనులు, పరిశ్రమలు వచ్చిన చోట జనాభా పెరుగుతుంది. నల్ల నేల గల లావా పీఠభూములు సాగుకు మినహాయింపు.",
+   "option_explanations_en": [
+    "Wrong. Plateaus are in fact rich in minerals; that is why many are mining regions.",
+    "Wrong. Plateaus do receive rain; the Chota Nagpur and Deccan get monsoon rainfall.",
+    "Wrong. Height makes high plateaus cooler, but not colder than the poles.",
+    "Correct. Difficult access and poor soils keep plateau populations lower."
+   ],
+   "option_explanations_te": [
+    "తప్పు. నిజానికి పీఠభూముల్లో ఖనిజాలు ఎక్కువ; అందుకే చాలా గనుల ప్రాంతాలు.",
+    "తప్పు. పీఠభూములపై వర్షం పడుతుంది; Chota Nagpur, Deccan కు రుతుపవన వర్షం వస్తుంది.",
+    "తప్పు. ఎత్తు వల్ల ఎత్తైన పీఠభూములు చల్లగా ఉంటాయి; కానీ ధ్రువాల కంటే కాదు.",
+    "సరైనది. కష్టమైన రవాణా, పేద నేల వల్ల పీఠభూముల్లో జనాభా తక్కువ."
+   ]
+  },
+  "GEO-BOOK-P047-F005": {
+   "reason": "Distractors used giveaway 'every' wording; replaced with plausible plateau-type near-misses.",
+   "options_en": [
+    "An elevated region produced by broad dome-shaped uplift",
+    "A plateau enclosed on all sides by mountain ranges",
+    "A plateau built of layer upon layer of basalt lava",
+    "A plateau left standing after the land around it was eroded"
+   ],
+   "options_te": [
+    "భూభాగం కలశం (గుమ్మటం) ఆకారంలో విస్తారంగా పైకి లేవడం వల్ల ఏర్పడిన ఎత్తైన ప్రాంతం",
+    "అన్ని వైపులా పర్వత శ్రేణులు చుట్టుముట్టిన పీఠభూమి",
+    "పొరల మీద పొరలుగా బసాల్ట్ లావా పేరుకుని ఏర్పడిన పీఠభూమి",
+    "చుట్టూ ఉన్న నేల అరిగిపోయాక ఎత్తుగా మిగిలిన పీఠభూమి"
+   ],
+   "explanation_en": "A domal plateau forms when internal forces bow a broad area upward like a dome. The Ozark Plateau of the USA and the Chota Nagpur Plateau of India are standard examples. The other options describe intermontane, lava and residual plateaus.",
+   "explanation_te": "భూమి లోపలి శక్తులు విశాల భూభాగాన్ని గుమ్మటం (Dome) లా పైకి ఉబ్బించినప్పుడు కలశ పీఠభూమి (Domal plateau) ఏర్పడుతుంది. అమెరికాలోని Ozark, భారతదేశంలోని Chota Nagpur ప్రామాణిక ఉదాహరణలు. మిగతా ఎంపికలు పర్వతాంతర, లావా, అవశిష్ట పీఠభూముల వర్ణనలు.",
+   "option_explanations_en": [
+    "Correct. Broad dome-shaped uplift defines a domal plateau.",
+    "Wrong. This describes an intermontane plateau, such as Tibet.",
+    "Wrong. This describes a lava plateau, such as the Deccan Traps.",
+    "Wrong. This describes a residual plateau left by differential erosion."
+   ],
+   "option_explanations_te": [
+    "సరైనది. విశాలమైన గుమ్మటం ఆకార ఉద్ధరణే కలశ పీఠభూమి లక్షణం.",
+    "తప్పు. ఇది టిబెట్ వంటి పర్వతాంతర పీఠభూమి వర్ణన.",
+    "తప్పు. ఇది Deccan Traps వంటి లావా పీఠభూమి వర్ణన.",
+    "తప్పు. ఇది అసమాన క్రమక్షయంతో మిగిలిన అవశిష్ట పీఠభూమి వర్ణన."
+   ]
+  },
+  "GEO-BOOK-P047-F006": {
+   "reason": "Duplicate of GEO-ORIG-07-011 (dissected plateau); rewritten to origin of the name 'Deccan Traps'.",
+   "question_en": "Why is the lava region of the Deccan called the 'Traps'?",
+   "question_te": "దక్కన్‌లోని లావా ప్రాంతాన్ని 'Traps' అని ఎందుకు అంటారు?",
+   "options_en": [
+    "The name comes from a Sanskrit word for black soil",
+    "Lava flows trapped river water into many lakes",
+    "Rift valleys cut the plateau like the jaws of a trap",
+    "From Swedish 'trappa' (steps): eroded lava layers look stepped"
+   ],
+   "options_te": [
+    "నల్ల నేలకు సంస్కృత పదం నుంచి ఆ పేరు వచ్చింది",
+    "లావా ప్రవాహాలు నదీ జలాన్ని అనేక సరస్సులుగా బంధించాయి",
+    "చీలిక లోయలు పీఠభూమిని ఉచ్చు దవడల్లా కోశాయి",
+    "Swedish పదం 'trappa' (మెట్లు): అరిగిన లావా పొరలు మెట్లలా కనిపిస్తాయి"
+   ],
+   "explanation_en": "'Trap' comes from the Swedish word 'trappa', meaning steps. Each basalt lava flow forms a layer; when the layers erode, the hillsides show a step-like profile. The Deccan Traps are mostly in Maharashtra, in the north-western part of the Deccan Plateau.",
+   "explanation_te": "'Trap' అనే పేరు Swedish పదం 'trappa' (మెట్లు) నుంచి వచ్చింది. ప్రతి బసాల్ట్ లావా ప్రవాహం ఒక పొర అవుతుంది; ఆ పొరలు అరిగినప్పుడు కొండ పక్కలు మెట్లు మెట్లుగా కనిపిస్తాయి. Deccan Traps ఎక్కువగా దక్కన్ పీఠభూమి వాయవ్య భాగమైన Maharashtra లో ఉన్నాయి.",
+   "option_explanations_en": [
+    "Wrong. The name is Swedish, not Sanskrit; black soil is a product of the basalt, not the source of the name.",
+    "Wrong. The name does not refer to trapped water or lakes.",
+    "Wrong. The Deccan Traps are not named after rift valleys.",
+    "Correct. The stepped look of eroded lava layers gives the name."
+   ],
+   "option_explanations_te": [
+    "తప్పు. పేరు Swedish మూలం, సంస్కృతం కాదు; నల్ల నేల బసాల్ట్ ఫలితం, పేరుకు మూలం కాదు.",
+    "తప్పు. ఈ పేరు బంధించిన నీరు, సరస్సులను సూచించదు.",
+    "తప్పు. Deccan Traps కు చీలిక లోయల పేరు రాలేదు.",
+    "సరైనది. అరిగిన లావా పొరల మెట్ల రూపమే ఈ పేరుకు కారణం."
+   ]
+  },
+  "GEO-BOOK-P047-F009": {
+   "reason": "Duplicate of GEO-ORIG-07-003 (plain definition); rewritten to which plains result mainly from endogenic forces.",
+   "question_en": "Which type of plain is formed mainly by endogenic (internal) forces?",
+   "question_te": "ప్రధానంగా భూమి లోపలి (Endogenic) బలాల వల్ల ఏర్పడే మైదానం ఏ రకం?",
+   "options_en": [
+    "Erosional plains",
+    "Structural plains",
+    "Depositional plains",
+    "Loess plains"
+   ],
+   "options_te": [
+    "క్రమక్షయ మైదానాలు (Erosional plains)",
+    "విరూపకారక మైదానాలు (Structural plains)",
+    "నిక్షేపిత మైదానాలు (Depositional plains)",
+    "లోయిస్ మైదానాలు (Loess plains)"
+   ],
+   "explanation_en": "Structural plains are formed mainly by endogenic forces that raise nearly horizontal rock layers or a shallow sea floor without folding them. The Russian plain and India's east coastal plain are examples. Erosional and depositional plains, including loess plains, are the work of exogenic agents.",
+   "explanation_te": "అడ్డంగా ఉన్న రాతి పొరలను లేదా లోతు తక్కువ సముద్ర అడుగును ముడతలు పడకుండా పైకి లేపే Endogenic బలాల వల్ల విరూపకారక మైదానాలు ఏర్పడతాయి. Russian plain, భారతదేశ తూర్పు తీర మైదానం ఉదాహరణలు. క్రమక్షయ, నిక్షేపిత మైదానాలు (లోయిస్ మైదానాలతో సహా) Exogenic శక్తుల పని.",
+   "option_explanations_en": [
+    "Wrong. Erosional plains are made by exogenic agents wearing land down.",
+    "Correct. Structural plains result from uplift by internal forces.",
+    "Wrong. Depositional plains are built by rivers, wind or ice laying down material.",
+    "Wrong. Loess plains are depositional plains built by wind."
+   ],
+   "option_explanations_te": [
+    "తప్పు. క్రమక్షయ మైదానాలు నేలను అరగదీసే బాహ్య శక్తుల పని.",
+    "సరైనది. లోపలి బలాల ఉద్ధరణతో విరూపకారక మైదానాలు ఏర్పడతాయి.",
+    "తప్పు. నిక్షేపిత మైదానాలను నదులు, గాలి, మంచు పదార్థాన్ని పేర్చి కడతాయి.",
+    "తప్పు. లోయిస్ మైదానాలు గాలి కట్టిన నిక్షేపిత మైదానాలు."
+   ]
+  },
+  "GEO-BOOK-P047-F018": {
+   "reason": "Weak/trivial stem on depression size with absurd 'all' distractors; rewritten to the typical region of karst plains with terra rossa.",
+   "question_en": "In which type of region are karst plains covered with terra rossa soil typically found?",
+   "question_te": "Terra rossa నేలతో కప్పబడిన కార్స్ట్ మైదానాలు (Karst plains) సాధారణంగా ఏ రకమైన ప్రాంతాల్లో కనిపిస్తాయి?",
+   "options_en": [
+    "Rocky hamada deserts of the Sahara",
+    "Limestone regions around the Mediterranean",
+    "Basalt areas of the Deccan Traps",
+    "Alluvial lowlands of the Ganga plain"
+   ],
+   "options_te": [
+    "Sahara లోని రాతి హమదా ఎడారులు",
+    "మధ్యధరా చుట్టూ ఉన్న సున్నపురాయి ప్రాంతాలు",
+    "Deccan Traps లోని బసాల్ట్ ప్రాంతాలు",
+    "గంగా మైదానంలోని ఒండ్రు లోతట్టు ప్రాంతాలు"
+   ],
+   "explanation_en": "Karst plains with terra rossa are typical of the limestone regions around the Mediterranean. Slightly acidic rain dissolves limestone and lowers the land; the insoluble iron-rich clay left behind is red terra rossa. Basalt, alluvium and desert rock do not dissolve this way.",
+   "explanation_te": "Terra rossa గల కార్స్ట్ మైదానాలు మధ్యధరా చుట్టూ ఉన్న సున్నపురాయి ప్రాంతాలకు ప్రత్యేకం. కొంచెం ఆమ్ల గుణం గల వాన నీరు సున్నపురాయిని కరిగించి నేలను దించుతుంది; కరగకుండా మిగిలే ఇనుము ఎక్కువ గల ఎర్రని బంకమట్టే Terra rossa. బసాల్ట్, ఒండ్రు, ఎడారి రాయి ఇలా కరగవు.",
+   "option_explanations_en": [
+    "Wrong. Hamada is bare desert rock shaped by wind, not dissolved limestone.",
+    "Correct. Dissolved Mediterranean limestone leaves karst plains with terra rossa.",
+    "Wrong. Basalt does not dissolve like limestone; it weathers to black soil.",
+    "Wrong. The Ganga plain is a depositional alluvial plain."
+   ],
+   "option_explanations_te": [
+    "తప్పు. హమదా గాలి మలచిన బయటపడిన ఎడారి రాయి; కరిగిన సున్నపురాయి కాదు.",
+    "సరైనది. కరిగిన మధ్యధరా సున్నపురాయి Terra rossa గల కార్స్ట్ మైదానాలను మిగులుస్తుంది.",
+    "తప్పు. బసాల్ట్ సున్నపురాయిలా కరగదు; అది అరిగి నల్ల నేల అవుతుంది.",
+    "తప్పు. గంగా మైదానం నిక్షేపిత ఒండ్రు మైదానం."
+   ]
+  },
+  "WG05-P44-003": {
+   "reason": "Duplicate of GEO-BOOK-P044-F006 (no universal mountain height); rewritten to why mountains are called water towers.",
+   "question_en": "Why are mountains called the 'water towers' of the world?",
+   "question_te": "పర్వతాలను ప్రపంచపు 'నీటి గోపురాలు' (Water towers) అని ఎందుకు అంటారు?",
+   "options_en": [
+    "They hold the largest freshwater lakes on Earth",
+    "They store groundwater in deep aquifers below the plains",
+    "Their steep slopes stop all rain from flowing away",
+    "They store water as snow and glaciers that feed rivers"
+   ],
+   "options_te": [
+    "భూమిపై అతి పెద్ద మంచినీటి సరస్సులు వాటిలోనే ఉంటాయి",
+    "మైదానాల కింది లోతైన జలాశయాల్లో భూగర్భ జలాన్ని దాచుకుంటాయి",
+    "వాటి నిటారు వాలులు వర్షపు నీరు పారిపోకుండా ఆపుతాయి",
+    "మంచు, హిమానీనదాల రూపంలో నీటిని దాచి నదులకు అందిస్తాయి"
+   ],
+   "explanation_en": "Mountains are called water towers because they store water as snow and glaciers and release it slowly to rivers. The Ganga, Indus and Brahmaputra all rise in the Himalaya and are fed by this meltwater. Steep slopes actually speed run-off; the storage is in snow and ice.",
+   "explanation_te": "పర్వతాలు మంచు, హిమానీనదాల రూపంలో నీటిని దాచి మెల్లగా నదులకు విడుదల చేస్తాయి; అందుకే వాటిని నీటి గోపురాలు అంటారు. గంగ, సింధు, బ్రహ్మపుత్ర హిమాలయాల్లో పుట్టి ఈ కరిగే నీటితో నిండుతాయి. నిటారు వాలులు నిజానికి నీటిని వేగంగా పారిస్తాయి; నిల్వ మంచు రూపంలోనే.",
+   "option_explanations_en": [
+    "Wrong. The largest lakes are not the reason; the name refers to stored snow and ice.",
+    "Wrong. The storage meant is snow and glaciers on the mountains, not aquifers under plains.",
+    "Wrong. Steep slopes make rain run off faster, not stop it.",
+    "Correct. Snow and glaciers stored on mountains feed rivers."
+   ],
+   "option_explanations_te": [
+    "తప్పు. పెద్ద సరస్సులు కారణం కాదు; ఈ పేరు దాచిన మంచును సూచిస్తుంది.",
+    "తప్పు. ఇక్కడ నిల్వ అంటే పర్వతాలపై మంచు, హిమానీనదాలు; మైదానాల కింది జలాశయాలు కాదు.",
+    "తప్పు. నిటారు వాలులు వర్షపు నీటిని వేగంగా పారిస్తాయి; ఆపవు.",
+    "సరైనది. పర్వతాలపై నిల్వ ఉన్న మంచు, హిమానీనదాలు నదులకు నీరిస్తాయి."
+   ]
+  },
+  "WG05-P46-002": {
+   "reason": "Distractors were absurd (a lake, a coastal plain); replaced with plausible structural near-misses.",
+   "options_en": [
+    "A single ridge of old, worn-down block mountains",
+    "A chain of fault-block ranges along a rift valley",
+    "An ancient eroded range like the Appalachians",
+    "A system of ranges with plateaus and valleys between them"
+   ],
+   "options_te": [
+    "అరిగిపోయిన పాత ఖండ పర్వతాల ఒకే ఒక గట్టు",
+    "చీలిక లోయ వెంట ఉన్న భ్రంశ ఖండ శ్రేణుల గొలుసు",
+    "అపలేచియన్స్ వంటి అరిగిపోయిన ప్రాచీన శ్రేణి",
+    "శ్రేణులు, వాటి మధ్య పీఠభూములు, లోయలతో కూడిన విస్తార వ్యవస్థ"
+   ],
+   "explanation_en": "The Andes are a system of parallel ranges with high plateaus and valleys between them, such as the Altiplano. They are young fold mountains raised where the Nazca Plate subducts beneath South America. They are the world's longest continental mountain range.",
+   "explanation_te": "ఆండీస్ సమాంతర శ్రేణులు, వాటి మధ్య ఆల్టిప్లానో వంటి ఎత్తైన పీఠభూములు, లోయలతో కూడిన వ్యవస్థ. Nazca ఫలకం దక్షిణ అమెరికా కిందికి దిగే చోట లేచిన యువ ముడత పర్వతాలు ఇవి. ఖండ భూభాగంపై ప్రపంచంలో అతి పొడవైన పర్వత శ్రేణి ఇదే.",
+   "option_explanations_en": [
+    "Wrong. The Andes are not one ridge, and they are young, not old worn-down mountains.",
+    "Wrong. The Andes are a subduction-zone fold system, not rift-valley fault blocks.",
+    "Wrong. The Appalachians are old and worn; the Andes are young and high.",
+    "Correct. Ranges with plateaus and valleys between them describe the Andes."
+   ],
+   "option_explanations_te": [
+    "తప్పు. ఆండీస్ ఒకే గట్టు కాదు; అవి యువ పర్వతాలు, అరిగిన పాతవి కాదు.",
+    "తప్పు. ఆండీస్ ఫలకం దిగే మండలపు ముడత వ్యవస్థ; చీలిక లోయ భ్రంశ ఖండాలు కాదు.",
+    "తప్పు. అపలేచియన్స్ పాతవి, అరిగినవి; ఆండీస్ యువ, ఎత్తైనవి.",
+    "సరైనది. మధ్యలో పీఠభూములు, లోయలు గల శ్రేణుల వ్యవస్థే ఆండీస్."
+   ]
+  },
+  "WG05-P46-018": {
+   "reason": "Duplicate of GEO-BOOK-P052-F016 (mesa broader than butte); rewritten to the rivers that dissected the Deccan.",
+   "question_en": "Which rivers, by cutting valleys over a very long time, have made the Deccan a dissected plateau?",
+   "question_te": "చాలా కాలం లోయలు కోసి దక్కన్‌ను విచ్ఛిన్న పీఠభూమి (Dissected plateau) గా మార్చిన నదులు ఏవి?",
+   "options_en": [
+    "Godavari, Krishna and their tributaries",
+    "Ganga, Yamuna and their tributaries",
+    "Indus, Sutlej and their tributaries",
+    "Brahmaputra, Teesta and their tributaries"
+   ],
+   "options_te": [
+    "గోదావరి, కృష్ణా, వాటి ఉపనదులు",
+    "గంగ, యమున, వాటి ఉపనదులు",
+    "సింధు, సట్లెజ్, వాటి ఉపనదులు",
+    "బ్రహ్మపుత్ర, తీస్తా, వాటి ఉపనదులు"
+   ],
+   "explanation_en": "The Godavari, Krishna and their tributaries have cut the Deccan into flat-topped hills separated by broad valleys. Because the plateau slopes east, these rivers flow east to the Bay of Bengal across it. The other rivers drain the Himalaya and the northern plains, not the Deccan.",
+   "explanation_te": "గోదావరి, కృష్ణా, వాటి ఉపనదులు కోట్ల సంవత్సరాలుగా కోసి దక్కన్‌ను విశాల లోయలతో వేరైన చదునైన పైభాగపు కొండలుగా మార్చాయి. పీఠభూమి తూర్పుకు వాలుతుంది కాబట్టి ఈ నదులు దాని మీదుగా తూర్పుకు బంగాళాఖాతం వైపు పారతాయి. మిగతా నదులు హిమాలయాలు, ఉత్తర మైదానాల నదులు; దక్కన్‌వి కావు.",
+   "option_explanations_en": [
+    "Correct. These peninsular rivers dissected the Deccan.",
+    "Wrong. The Ganga and Yamuna drain the northern plains.",
+    "Wrong. The Indus and Sutlej drain the north-west Himalaya and Punjab.",
+    "Wrong. The Brahmaputra and Teesta drain north-east India."
+   ],
+   "option_explanations_te": [
+    "సరైనది. ఈ ద్వీపకల్ప నదులే దక్కన్‌ను కోశాయి.",
+    "తప్పు. గంగ, యమున ఉత్తర మైదానాల నదులు.",
+    "తప్పు. సింధు, సట్లెజ్ వాయవ్య హిమాలయాలు, పంజాబ్ నదులు.",
+    "తప్పు. బ్రహ్మపుత్ర, తీస్తా ఈశాన్య భారత నదులు."
+   ]
+  },
+  "WG05-P47-002": {
+   "reason": "Distractors were absurd (height rank, volcanic island); replaced with plausible piedmont near-misses.",
+   "options_en": [
+    "It must lie entirely between two mountain ranges",
+    "It must be built only of basalt lava flows",
+    "It must rise above 4,500 m above sea level",
+    "Its position at a mountain foot defines it, not a height rank"
+   ],
+   "options_te": [
+    "అది తప్పనిసరిగా రెండు పర్వత శ్రేణుల మధ్యే ఉండాలి",
+    "అది బసాల్ట్ లావా ప్రవాహాలతోనే ఏర్పడి ఉండాలి",
+    "దాని ఎత్తు సముద్రమట్టం నుంచి 4,500 m కంటే ఎక్కువ ఉండాలి",
+    "గిరిపద పీఠభూమికి పర్వతాల పాదం వద్ద ఉండటమే లక్షణం; ఎత్తు ర్యాంకు కాదు"
+   ],
+   "explanation_en": "A piedmont plateau is defined by its position at the foot of mountains, not by height or rock type. Patagonia, at the foot of the Andes, and Malwa, at the foot of the Vindhyas, are examples. A plateau between ranges is intermontane; one built of lava is a lava plateau.",
+   "explanation_te": "గిరిపద పీఠభూమిని దాని స్థానం, అంటే పర్వతాల పాదం, నిర్ణయిస్తుంది; ఎత్తు లేదా శిలా రకం కాదు. ఆండీస్ పాదంలోని Patagonia, వింధ్య పాదంలోని Malwa ఉదాహరణలు. శ్రేణుల మధ్య ఉన్నది పర్వతాంతర; లావాతో ఏర్పడినది లావా పీఠభూమి.",
+   "option_explanations_en": [
+    "Wrong. Lying between ranges defines an intermontane plateau.",
+    "Wrong. Lava origin defines a lava plateau; a piedmont plateau can be of any rock.",
+    "Wrong. No height limit defines a piedmont plateau.",
+    "Correct. Position at the mountain foot is the defining feature."
+   ],
+   "option_explanations_te": [
+    "తప్పు. శ్రేణుల మధ్య ఉండటం పర్వతాంతర పీఠభూమి లక్షణం.",
+    "తప్పు. లావా మూలం లావా పీఠభూమి లక్షణం; గిరిపద పీఠభూమి ఏ శిలదైనా కావచ్చు.",
+    "తప్పు. గిరిపద పీఠభూమికి ఎత్తు పరిమితి ఏమీ లేదు.",
+    "సరైనది. పర్వత పాదం వద్ద ఉండటమే నిర్వచించే లక్షణం."
+   ]
+  },
+  "WG05-P47-006": {
+   "reason": "Distractors were absurd (trench, atoll, cone); replaced with plateau near-misses.",
+   "options_en": [
+    "A broadly uplifted, little-deformed tableland with warps",
+    "A plateau built of thick flood-basalt lava flows",
+    "A plateau enclosed between the Himalaya and the Kunlun",
+    "A plateau lying at the foot of the Andes in Argentina"
+   ],
+   "options_te": [
+    "విస్తృతంగా పైకి లేచి, తక్కువ వికృతికి గురై, వంపులు గల బల్లపరుపు భూమి",
+    "మందమైన ఫ్లడ్ బసాల్ట్ లావా ప్రవాహాలతో ఏర్పడిన పీఠభూమి",
+    "హిమాలయాలు, కున్‌లున్ మధ్య చుట్టుముట్టబడిన పీఠభూమి",
+    "అర్జెంటీనాలో ఆండీస్ పాదం వద్ద ఉన్న పీఠభూమి"
+   ],
+   "explanation_en": "The Colorado Plateau is a broadly uplifted tableland whose rock layers stayed nearly flat, with only gentle warps. It lies in the south-western USA, where the Colorado River cut the Grand Canyon into it. The other options describe the Columbia, Tibetan and Patagonian plateaus.",
+   "explanation_te": "Colorado పీఠభూమి విస్తృతంగా పైకి లేచినా దాని శిలా పొరలు దాదాపు సమతలంగానే, స్వల్ప వంపులతో మిగిలిన బల్లపరుపు భూమి. ఇది అమెరికా నైరుతిలో ఉంది; Colorado నది దీనిలో Grand Canyon ను కోసింది. మిగతా ఎంపికలు Columbia, Tibet, Patagonia పీఠభూముల వర్ణనలు.",
+   "option_explanations_en": [
+    "Correct. Broad uplift with little deformation describes the Colorado Plateau.",
+    "Wrong. This describes the Columbia lava plateau.",
+    "Wrong. This describes the Tibetan Plateau.",
+    "Wrong. This describes the Patagonian Plateau."
+   ],
+   "option_explanations_te": [
+    "సరైనది. తక్కువ వికృతితో విస్తృత ఉద్ధరణ Colorado పీఠభూమి లక్షణం.",
+    "తప్పు. ఇది Columbia లావా పీఠభూమి వర్ణన.",
+    "తప్పు. ఇది టిబెట్ పీఠభూమి వర్ణన.",
+    "తప్పు. ఇది Patagonia పీఠభూమి వర్ణన."
+   ]
+  },
+  "WG05-P47-007": {
+   "reason": "Distractors were absurd (ice sheets, sea-floor spreading, coral); replaced with plateau-forming near-misses.",
+   "options_en": [
+    "Broad dome-shaped uplift by internal forces",
+    "Repeated outpouring of basalt lava from fissures",
+    "Uplift of land between rising mountain ranges",
+    "A resistant mass remaining after differential erosion"
+   ],
+   "options_te": [
+    "లోపలి శక్తుల వల్ల గుమ్మటం ఆకారంలో విస్తృత ఉద్ధరణ",
+    "పగుళ్ల నుంచి బసాల్ట్ లావా పలుమార్లు బయటికి రావడం",
+    "లేచే పర్వత శ్రేణుల మధ్య భూభాగం కూడా పైకి లేవడం",
+    "అసమాన క్రమక్షయం తరువాత గట్టి భూభాగం ఎత్తుగా మిగలడం"
+   ],
+   "explanation_en": "A residual plateau is a resistant mass left standing after the weaker land around it is eroded away (differential erosion). It is an erosional form, not a product of uplift or lava. The other options describe domal, lava and intermontane plateaus.",
+   "explanation_te": "చుట్టూ ఉన్న బలహీనమైన నేల అరిగిపోగా గట్టి భాగం ఎత్తుగా మిగిలితే అది అవశిష్ట పీఠభూమి (అసమాన క్రమక్షయం). ఇది క్రమక్షయ రూపం; ఉద్ధరణ లేదా లావా ఫలితం కాదు. మిగతా ఎంపికలు కలశ, లావా, పర్వతాంతర పీఠభూముల ఏర్పాటు.",
+   "option_explanations_en": [
+    "Wrong. Dome-shaped uplift forms a domal plateau.",
+    "Wrong. Fissure lava forms a lava plateau.",
+    "Wrong. Uplift between ranges forms an intermontane plateau.",
+    "Correct. Differential erosion leaves the resistant mass as a residual plateau."
+   ],
+   "option_explanations_te": [
+    "తప్పు. గుమ్మటం ఉద్ధరణ కలశ పీఠభూమిని ఏర్పరుస్తుంది.",
+    "తప్పు. పగుళ్ల లావా లావా పీఠభూమిని ఏర్పరుస్తుంది.",
+    "తప్పు. శ్రేణుల మధ్య ఉద్ధరణ పర్వతాంతర పీఠభూమిని ఏర్పరుస్తుంది.",
+    "సరైనది. అసమాన క్రమక్షయం గట్టి భాగాన్ని అవశిష్ట పీఠభూమిగా మిగులుస్తుంది."
+   ]
+  },
+  "WG05-P47-008": {
+   "reason": "Distractors were absurd (coral, single hill, coastal deposits); replaced with near-miss misconceptions about Deccan vs Traps.",
+   "options_en": [
+    "The whole Deccan Plateau is made of basalt lava",
+    "The Deccan Traps cover the eastern Deccan, mainly Andhra Pradesh",
+    "The two names mean exactly the same region",
+    "The Deccan is a varied plateau; the Traps are its basalt lava province"
+   ],
+   "options_te": [
+    "దక్కన్ పీఠభూమి మొత్తం బసాల్ట్ లావాతోనే ఏర్పడింది",
+    "Deccan Traps దక్కన్ తూర్పు భాగంలో, ముఖ్యంగా ఆంధ్రప్రదేశ్‌లో ఉన్నాయి",
+    "రెండు పేర్లూ సరిగ్గా ఒకే ప్రాంతాన్ని సూచిస్తాయి",
+    "దక్కన్ భిన్న శిలల పీఠభూమి; ట్రాప్స్ దానిలోని బసాల్ట్ లావా ప్రాంతం"
+   ],
+   "explanation_en": "The Deccan Plateau is the whole triangular plateau of varied rocks, while the Deccan Traps are only its basalt lava province in the north-west, mainly Maharashtra. The rest of the plateau has older granite, gneiss and Cuddapah rocks. Think of the plateau as the house and the Traps as one room.",
+   "explanation_te": "దక్కన్ పీఠభూమి భిన్న శిలలతో కూడిన మొత్తం త్రిభుజాకార పీఠభూమి; Deccan Traps దాని వాయవ్య భాగంలో, ముఖ్యంగా Maharashtra లో ఉన్న బసాల్ట్ లావా ప్రాంతం మాత్రమే. మిగతా భాగంలో పాత Granite, Gneiss, Cuddapah రాళ్లు ఉన్నాయి. పీఠభూమి ఇల్లు అయితే, ట్రాప్స్ అందులో ఒక గది.",
+   "option_explanations_en": [
+    "Wrong. Only the north-western part is lava; the rest is older granite, gneiss and Cuddapah rock.",
+    "Wrong. The Traps lie in the north-west, mainly Maharashtra, not the east.",
+    "Wrong. One is the whole plateau, the other a part of it.",
+    "Correct. The Traps are the basalt part of the larger Deccan Plateau."
+   ],
+   "option_explanations_te": [
+    "తప్పు. వాయవ్య భాగం మాత్రమే లావా; మిగతాది పాత Granite, Gneiss, Cuddapah శిల.",
+    "తప్పు. ట్రాప్స్ వాయవ్యంలో, ముఖ్యంగా Maharashtra లో ఉన్నాయి; తూర్పులో కాదు.",
+    "తప్పు. ఒకటి మొత్తం పీఠభూమి, మరొకటి దానిలో భాగం.",
+    "సరైనది. ట్రాప్స్ పెద్ద దక్కన్ పీఠభూమిలోని బసాల్ట్ భాగం."
+   ]
+  },
+  "WG05-P47-015": {
+   "reason": "Duplicate of GEO-BOOK-P047-F011 (coastal plain definition); rewritten to the emergent coast concept.",
+   "question_en": "A coast formed where a shallow sea floor has risen above sea level, or the sea level has fallen, is called what?",
+   "question_te": "లోతు తక్కువ సముద్ర అడుగు భాగం పైకి లేచినప్పుడు లేదా సముద్ర మట్టం దిగినప్పుడు ఏర్పడే తీరాన్ని ఏమంటారు?",
+   "options_en": [
+    "Submergent coast",
+    "Ria coast",
+    "Fjord coast",
+    "Emergent coast"
+   ],
+   "options_te": [
+    "మునిగిన తీరం (Submergent coast)",
+    "రియా తీరం (Ria coast)",
+    "ఫియోర్డ్ తీరం (Fjord coast)",
+    "ఉద్గత తీరం (Emergent coast)"
+   ],
+   "explanation_en": "It is an emergent coast, formed when the sea floor rises or the sea level falls. Such coasts are usually straight and smooth, with shallow water close inshore, which is why India's east coast has few natural harbours. Rias and fjords are drowned valleys of submergent coasts.",
+   "explanation_te": "సముద్ర అడుగు పైకి లేచినా, సముద్ర మట్టం దిగినా ఏర్పడేది ఉద్గత తీరం (Emergent coast). ఇలాంటి తీరాలు సాధారణంగా తిన్నగా, నునుపుగా ఉంటాయి, దగ్గరలో సముద్రం లోతు తక్కువ; అందుకే భారత తూర్పు తీరంలో సహజ ఓడరేవులు తక్కువ. Ria, Fjord లు మునిగిన తీరాల్లో నీట మునిగిన లోయలు.",
+   "option_explanations_en": [
+    "Wrong. A submergent coast forms when land sinks or the sea rises, the opposite case.",
+    "Wrong. A ria is a drowned river valley on a submergent coast.",
+    "Wrong. A fjord is a drowned glacial valley on a submergent coast.",
+    "Correct. Uplifted sea floor or a falling sea gives an emergent coast."
+   ],
+   "option_explanations_te": [
+    "తప్పు. భూమి దిగినప్పుడు లేదా సముద్రం పెరిగినప్పుడు మునిగిన తీరం ఏర్పడుతుంది; ఇది వ్యతిరేక సందర్భం.",
+    "తప్పు. Ria మునిగిన తీరంలో నీట మునిగిన నదీ లోయ.",
+    "తప్పు. Fjord మునిగిన తీరంలో నీట మునిగిన హిమానీనద లోయ.",
+    "సరైనది. పైకి లేచిన సముద్ర అడుగు లేదా దిగిన సముద్ర మట్టం ఉద్గత తీరాన్ని ఇస్తుంది."
+   ]
+  },
+  "GEO-AUDIT-07-GAP-002": {
+   "reason": "Distractors were absurd (undersea valley, volcano); replaced with Iberian/European near-misses.",
+   "options_en": [
+    "It is a young fold range along the France–Spain border",
+    "It is an old block mountain in central Germany",
+    "It is a broad plateau in central Spain",
+    "It is a volcanic upland in south-central France"
+   ],
+   "options_te": [
+    "అది ఫ్రాన్స్–స్పెయిన్ సరిహద్దు వెంట ఉన్న యువ ముడత శ్రేణి",
+    "అది మధ్య జర్మనీలోని పాత ఖండ పర్వతం",
+    "అది మధ్య స్పెయిన్‌లోని విస్తార పీఠభూమి",
+    "అది దక్షిణ–మధ్య ఫ్రాన్స్‌లోని అగ్నిపర్వత ఎత్తైన భూభాగం"
+   ],
+   "explanation_en": "The Meseta is a broad, high plateau in central Spain, not a mountain range. In Spanish 'meseta' means a small table. Its base is old Hercynian rock, so some books list it among Hercynian blocks.",
+   "explanation_te": "Meseta పర్వత శ్రేణి కాదు; మధ్య స్పెయిన్‌లోని విశాలమైన, ఎత్తైన పీఠభూమి. స్పానిష్ భాషలో 'meseta' అంటే చిన్న బల్ల. దీని పునాది పాత Hercynian రాయి కాబట్టి కొన్ని పుస్తకాలు దీన్ని Hercynian ఖండాల జాబితాలో పెడతాయి.",
+   "option_explanations_en": [
+    "Wrong. That describes the Pyrenees.",
+    "Wrong. That describes the Harz Mountains.",
+    "Correct. The Meseta is the central Spanish plateau.",
+    "Wrong. That describes the Massif Central."
+   ],
+   "option_explanations_te": [
+    "తప్పు. అది Pyrenees వర్ణన.",
+    "తప్పు. అది Harz పర్వతాల వర్ణన.",
+    "సరైనది. Meseta మధ్య స్పెయిన్ పీఠభూమి.",
+    "తప్పు. అది Massif Central వర్ణన."
+   ]
+  },
+  "GEO-AUDIT-07-GAP-006": {
+   "reason": "Distractors were absurd (Mongolia coral island, Germany dune plain); replaced with European range near-misses.",
+   "options_en": [
+    "Spain—old Hercynian plateau block",
+    "Germany—old block mountains",
+    "Italy—fold-and-thrust belt",
+    "France–Switzerland—folded limestone range"
+   ],
+   "options_te": [
+    "స్పెయిన్—పాత Hercynian పీఠభూమి ఖండం",
+    "జర్మనీ—పాత ఖండ పర్వతాలు",
+    "ఇటలీ—ముడతలు, నెట్టివేతలతో కూడిన పర్వత బెల్ట్ (Fold-and-thrust belt)",
+    "ఫ్రాన్స్–స్విట్జర్లాండ్—ముడుతపడిన సున్నపురాయి శ్రేణి"
+   ],
+   "explanation_en": "The Apennines run down the Italian peninsula as a fold-and-thrust belt. Their rock layers were folded and pushed over one another (thrust) as they rose. The other pairs fit the Meseta, the Harz and the Jura.",
+   "explanation_te": "Apennines ఇటలీ ద్వీపకల్పం పొడవునా Fold-and-thrust belt గా సాగుతాయి. పైకి లేచేటప్పుడు వీటి రాతి పొరలు ముడుచుకొని ఒకదాని మీదకు ఒకటి నెట్టబడ్డాయి (Thrust). మిగతా జతలు Meseta, Harz, Jura లకు సరిపోతాయి.",
+   "option_explanations_en": [
+    "Wrong. This fits the Meseta of Spain.",
+    "Wrong. This fits the Harz of Germany.",
+    "Correct. The Apennines are Italy's fold-and-thrust belt.",
+    "Wrong. This fits the Jura on the France–Switzerland border."
+   ],
+   "option_explanations_te": [
+    "తప్పు. ఇది స్పెయిన్ Meseta కు సరిపోతుంది.",
+    "తప్పు. ఇది జర్మనీ Harz కు సరిపోతుంది.",
+    "సరైనది. Apennines ఇటలీ Fold-and-thrust belt.",
+    "తప్పు. ఇది ఫ్రాన్స్–స్విట్జర్లాండ్ సరిహద్దు Jura కు సరిపోతుంది."
+   ]
+  },
+  "GEO-BOOK-P048-F017": {
+   "reason": "Duplicate of GEO-NEW-06-050 (loess colour from iron oxide); rewritten to why the Huang He is called the Yellow River.",
+   "question_en": "Why is the Huang He called the 'Yellow River'?",
+   "question_te": "Huang He ను 'పసుపు నది' (Yellow River) అని ఎందుకు అంటారు?",
+   "options_en": [
+    "It flows over beds of yellow sandstone",
+    "Yellow algae grow in its slow-moving water",
+    "It carries large loads of yellow loess silt",
+    "Its delta is built of yellow coral sand"
+   ],
+   "options_te": [
+    "అది పసుపు ఇసుకరాయి పొరల మీదుగా ప్రవహిస్తుంది",
+    "దాని మెల్లని నీటిలో పసుపు నాచు పెరుగుతుంది",
+    "అది పెద్ద మొత్తంలో పసుపు లోయిస్ ఒండ్రును మోసుకుపోతుంది",
+    "దాని డెల్టా పసుపు పగడపు ఇసుకతో ఏర్పడింది"
+   ],
+   "explanation_en": "The Huang He is called the Yellow River because it carries huge loads of yellow loess silt eroded from the Loess Plateau of China. Wind brought this fine dust from the deserts; iron oxide coatings on the grains make it yellow. The same silt builds the loess and alluvial plains of its basin.",
+   "explanation_te": "చైనా Loess పీఠభూమి నుంచి కోసుకొచ్చిన పసుపు లోయిస్ ఒండ్రును పెద్ద మొత్తంలో మోసుకుపోవడం వల్ల Huang He ను పసుపు నది అంటారు. ఈ సన్నని ధూళిని గాలి ఎడారుల నుంచి తెచ్చింది; రేణువులపై ఇనుప ఆక్సైడ్ పూతలు దానికి పసుపు రంగు ఇస్తాయి. ఇదే ఒండ్రు దాని పరివాహకంలో మైదానాలను కడుతుంది.",
+   "option_explanations_en": [
+    "Wrong. The colour comes from the silt the river carries, not the rock of its bed.",
+    "Wrong. Algae are not the cause; the river is muddy with silt.",
+    "Correct. Yellow loess silt colours the river.",
+    "Wrong. There is no coral sand; the delta is built of loess-derived silt."
+   ],
+   "option_explanations_te": [
+    "తప్పు. రంగు నది మోసే ఒండ్రు వల్ల; అడుగు రాయి వల్ల కాదు.",
+    "తప్పు. నాచు కారణం కాదు; నది ఒండ్రుతో బురదగా ఉంటుంది.",
+    "సరైనది. పసుపు లోయిస్ ఒండ్రు నదికి రంగు ఇస్తుంది.",
+    "తప్పు. పగడపు ఇసుక లేదు; డెల్టా లోయిస్ ఒండ్రుతో ఏర్పడింది."
+   ]
+  },
+  "WG05-P49-014": {
+   "reason": "Changing fact undated; stem now carries the 2020 announcement.",
+   "question_en": "What is the height of Mount Everest jointly announced by Nepal and China in 2020?",
+   "question_te": "2020 లో నేపాల్, చైనా సంయుక్తంగా ప్రకటించిన మౌంట్ ఎవరెస్ట్ ఎత్తు ఎంత?"
+  },
+  "GEO-BOOK-P049-G02": {
+   "reason": "Meta wording ('taught in this lesson') removed.",
+   "question_en": "Consider these eleven peaks: Everest, Aconcagua, Mont Blanc, Belukha, Elbert, Toubkal, Thabana Ntlenyana, Galdhøpiggen, Kosciuszko, Mitchell and Narodnaya. Consider these statements.\nI. Aconcagua (Andes) is the highest of these peaks that lie outside Asia.\nII. Mount Toubkal (Atlas) is higher than Mont Blanc (Alps).\nIII. Belukha Mountain (Altai) is higher than Mount Elbert (Rockies).\nIV. Mount Narodnaya (Urals) is the lowest of the eleven peaks.\nWhich statements are correct?",
+   "question_te": "ఈ పదకొండు శిఖరాలను తీసుకోండి: ఎవరెస్ట్, అకాంకాగ్వా, మాంట్ బ్లాంక్, బెలుఖా, ఎల్బర్ట్, టౌబ్‌కల్, థబానా న్ట్లెన్యానా, గాల్‌డ్‌హోపిగెన్, కోస్కియుజ్కో, మిచెల్, నరోద్నయ. ఈ వాక్యాలను పరిశీలించండి.\nI. ఈ శిఖరాల్లో ఆసియా వెలుపల ఉన్నవాటిలో అత్యంత ఎత్తైనది అకాంకాగ్వా (ఆండీస్).\nII. మౌంట్ టౌబ్‌కల్ (అట్లాస్) మాంట్ బ్లాంక్ (ఆల్ప్స్) కంటే ఎత్తైనది.\nIII. బెలుఖా పర్వతం (ఆల్టై) మౌంట్ ఎల్బర్ట్ (రాకీస్) కంటే ఎత్తైనది.\nIV. ఈ పదకొండు శిఖరాల్లో అత్యల్పమైనది మౌంట్ నరోద్నయ (యూరల్స్).\nఏ వాక్యాలు సరైనవి?"
+  },
+  "GEO-BOOK-P049-G03": {
+   "reason": "Meta wording ('using the heights given in this lesson') removed.",
+   "question_en": "Which option lists these peaks from lowest to highest?",
+   "question_te": "ఈ శిఖరాలను అత్యల్పం నుంచి అత్యధికం వరకు సరైన క్రమంలో ఇచ్చిన ఎంపిక ఏది?"
+  },
+  "GEO-NEW-06-006": {
+   "reason": "Duplicate of GEO-BOOK-P045-F016 (eight Alpine Convention countries); rewritten to the structural type of the Alps.",
+   "question_en": "Which type of mountains are the Alps, which arc about 1,200 km across central Europe?",
+   "question_te": "మధ్య యూరప్‌లో సుమారు 1,200 km అర్ధచంద్రాకారంలో సాగే Alps ఏ రకం పర్వతాలు?",
+   "options_en": [
+    "Old, worn-down block mountains",
+    "Residual mountains left by erosion",
+    "Young fold mountains",
+    "Volcanic mountains built by eruptions"
+   ],
+   "options_te": [
+    "అరిగిపోయిన పాత ఖండ పర్వతాలు (Block mountains)",
+    "క్రమక్షయం మిగిల్చిన అవశిష్ట పర్వతాలు (Residual mountains)",
+    "యువ ముడత పర్వతాలు (Young fold mountains)",
+    "విస్ఫోటనాలతో ఏర్పడిన అగ్నిపర్వత పర్వతాలు"
+   ],
+   "explanation_en": "The Alps are young fold mountains, raised in the Alpine orogeny as the African plate pushed against Europe. Like the Himalaya, they are high, steep and still rising slightly. Old blocks such as the Harz or the Massif Central are different, much older forms.",
+   "explanation_te": "Alps యువ ముడత పర్వతాలు; ఆఫ్రికా ఫలకం యూరప్ వైపు నెట్టడంతో Alpine పర్వత నిర్మాణంలో లేచాయి. హిమాలయాల లాగే ఇవి ఎత్తైనవి, నిటారైనవి, ఇంకా కొంచెం పైకి లేస్తున్నాయి. Harz, Massif Central వంటి పాత ఖండాలు వేరు, చాలా పాతవి.",
+   "option_explanations_en": [
+    "Wrong. Old worn-down blocks describe the Harz or the Massif Central, not the Alps.",
+    "Wrong. Residual mountains are erosional remnants; the Alps were raised by folding.",
+    "Correct. The Alps are young fold mountains.",
+    "Wrong. The Alps were not built by volcanic eruptions."
+   ],
+   "option_explanations_te": [
+    "తప్పు. అరిగిన పాత ఖండాలు Harz, Massif Central వర్ణన; Alps కాదు.",
+    "తప్పు. అవశిష్ట పర్వతాలు క్రమక్షయ శేషాలు; Alps ముడతలతో లేచాయి.",
+    "సరైనది. Alps యువ ముడత పర్వతాలు.",
+    "తప్పు. Alps అగ్నిపర్వత విస్ఫోటనాలతో ఏర్పడలేదు."
+   ]
+  },
+  "GEO-NEW-06-032": {
+   "reason": "Distractor 'a misprint in books' was meta/absurd; replaced with a plausible near-miss.",
+   "options_en": [
+    "By position piedmont, by its rock lava",
+    "Its north is piedmont and its south is lava",
+    "Its lava came from volcanoes in the Aravallis",
+    "Lava from Vindhya volcanoes piled up at their foot"
+   ],
+   "options_te": [
+    "స్థానం బట్టి గిరిపద, తయారైన రాయి బట్టి లావా",
+    "ఉత్తర భాగం గిరిపద, దక్షిణ భాగం లావా",
+    "దాని లావా ఆరావళి అగ్నిపర్వతాల నుంచి వచ్చింది",
+    "వింధ్య అగ్నిపర్వతాల లావా వాటి పాదం దగ్గర పేరుకుంది"
+   ],
+   "explanation_en": "Malwa is piedmont by position and lava by rock: it lies at the foot of the Vindhyas, and much of it is built of Deccan basalt flows later shaped by rivers. The two names describe different properties of the same plateau. The lava came from fissure eruptions of the Deccan event, not from volcanoes in the Vindhyas or Aravallis.",
+   "explanation_te": "Malwa స్థానం బట్టి గిరిపద, రాయి బట్టి లావా పీఠభూమి: ఇది వింధ్యాల పాదం వద్ద ఉంది; దానిలో చాలా భాగం Deccan బసాల్ట్ ప్రవాహాలతో ఏర్పడి, తరువాత నదులు మలిచాయి. రెండు పేర్లు ఒకే పీఠభూమి వేర్వేరు లక్షణాలను చెబుతాయి. లావా Deccan పగుళ్ల విస్ఫోటనాల నుంచి వచ్చింది; వింధ్య లేదా ఆరావళి అగ్నిపర్వతాల నుంచి కాదు.",
+   "option_explanations_en": [
+    "Correct. Position gives 'piedmont'; basalt rock gives 'lava'.",
+    "Wrong. Both terms apply to the plateau as a whole, not to separate halves.",
+    "Wrong. The Aravallis are old worn mountains, not the source of Deccan lava.",
+    "Wrong. The Vindhyas are not volcanoes; the lava came from Deccan fissures."
+   ],
+   "option_explanations_te": [
+    "సరైనది. స్థానం 'గిరిపద', బసాల్ట్ రాయి 'లావా' పేరును ఇస్తాయి.",
+    "తప్పు. రెండు పదాలూ మొత్తం పీఠభూమికి వర్తిస్తాయి; వేర్వేరు భాగాలకు కాదు.",
+    "తప్పు. ఆరావళి అరిగిన పాత పర్వతాలు; Deccan లావాకు మూలం కాదు.",
+    "తప్పు. వింధ్యాలు అగ్నిపర్వతాలు కావు; లావా Deccan పగుళ్ల నుంచి వచ్చింది."
+   ]
+  },
+  "GEO-NEW-06-038": {
+   "reason": "'According to NCERT' stem; asks the fact directly.",
+   "question_en": "Plains are generally not more than about how many metres above mean sea level?",
+   "question_te": "మైదానాలు (Plains) సాధారణంగా సగటు సముద్రమట్టం నుంచి సుమారు ఎన్ని మీటర్లకు మించవు?"
+  }
+ }
+}
