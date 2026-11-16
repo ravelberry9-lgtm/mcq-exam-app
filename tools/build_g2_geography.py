@@ -210,6 +210,19 @@ def main():
                     assert k!="answer",f"{qid}: answer index may not change"
                     if k.startswith("options_"): assert len(v)==len(q[k]),f"{qid} {k} option count changed"
                     q[k]=v
+        # Official APPSC previous-year questions (read from APPSC final keys), mapped to this lesson.
+        pf=ROOT/"g2_pyq"/f"L{NN}.json"
+        if pf.exists():
+            have={q["id"] for q in qs}
+            for r in J(pf).get("records",[]):
+                if r["pid"] in have: continue
+                s=r.get("source") or {}
+                lab=" ".join(str(x) for x in (s.get("exam"),s.get("year")) if x)+(f" · Q{s['qno']}" if s.get("qno") else "")
+                qs.append({"id":r["pid"],"kind":"pyq","section":r.get("section"),"question_en":r["question_en"],"question_te":r["question_te"],
+                    "options_en":r["options_en"],"options_te":r["options_te"],"answer":int(r["answer"]),
+                    "explanation_en":r["explanation_en"],"explanation_te":r["explanation_te"],
+                    "option_explanations_en":r["option_explanations_en"],"option_explanations_te":r["option_explanations_te"],
+                    "pyq_source":lab,"key_status":r.get("key_status","official")})
         for q in qs:
             sync_lists(q); canon_match(q)
             if _re.search(r"Assertion",q.get("question_en","")):
