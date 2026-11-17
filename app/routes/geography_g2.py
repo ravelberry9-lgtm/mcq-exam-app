@@ -115,7 +115,8 @@ def g2_question(number,qid):
     except Exception:db.session.rollback();state=None
     return render_template('ds/g2_question.html',number=number,ch=ch,q=_view(q),lang=lang,choice=choice,feedback=feedback,
         position=pos+1,total=len(rows),previous=rows[pos-1]['id'] if pos else None,following=rows[pos+1]['id'] if pos+1<len(rows) else None,
-        notes_url=notes_url,section_url=notes_url+'#'+q['section'],section_title=title,state=state,run=_run(number))
+        notes_url=notes_url,section_url=notes_url+'#'+q['section'],section_title=title,state=state,run=_run(number),
+        images=g2.question_images(number,qid) if feedback else [])
 
 @bp.post('/g2/<int:number>/practice/<qid>/answer')
 def g2_answer(number,qid):

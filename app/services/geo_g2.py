@@ -28,3 +28,14 @@ def question(n,qid):
     return next((q for q in questions(n) if q["id"]==qid),None)
 def notes_path(n):
     return BASE/str(int(n))/"Notes.html"
+@lru_cache(maxsize=40)
+def images(n):
+    """Infographics for a lesson (Images.json): image metadata plus question -> image stems."""
+    p=BASE/str(int(n))/"Images.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.is_file() else {"images":{},"questions":{}}
+def question_images(n,qid):
+    d=images(n);out=[]
+    for stem in d.get("questions",{}).get(qid,[]):
+        m=d.get("images",{}).get(stem)
+        if m:out.append(m)
+    return out
