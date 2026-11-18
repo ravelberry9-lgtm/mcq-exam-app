@@ -1,9 +1,10 @@
 {% extends 'ds/base.html' %}
 {% set nav_active='practice' %}
-{% block title %}Result · పాఠం {{ number }}{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc4') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261112p') }}">{% endblock %}
-{% block content %}<nav><a href="{{ url_for('geography.g2_practice',number=number) }}">‹ Practice</a></nav>
-<section class="card"><h2>పాఠం {{ number }} · {{ ch.title }}</h2><p class="pr-score-big">Score <b>{{ run.ok }}</b> / {{ run.n }}{% if run.n %} · {{ (100*run.ok/run.n)|round|int }}%{% endif %}</p>
-<p><a class="btn" href="{{ url_for('geography.g2_result',number=number,reset='1') }}">Start again / మళ్ళీ మొదలు</a></p></section>
-{% if wrong %}<section class="card"><h3>తప్పు సమాధానాలు · Wrong answers ({{ wrong|length }})</h3><ol>{% for w in wrong %}<li><a href="{{ url_for('geography.g2_question',number=number,qid=w.id,qlang=lang) }}">{{ (w.question_te if lang!='en' else w.question_en)[:140] }}</a></li>{% endfor %}</ol></section>{% endif %}
-{% endblock %}
+{% block title %}Result · Group 2 Geography{% endblock %}
+{% block head_extra %}{% include 'ds/_g2_head.html' %}{% endblock %}
+{% block topbar %}<div class="geo-qheader">{% if number %}<a href="{{ url_for('geography.g2_practice',number=number) }}">‹ Practice</a>{% else %}<a href="{{ url_for('geography.g2_practice_setup') }}">‹ Practice setup</a>{% endif %}<strong>Result</strong></div>{% endblock %}
+{% block content %}<div class="u6 g2">
+<section class="card"><h2>{% if number %}పాఠం {{ number }} · {{ ch.title }}{% else %}Practice run / సాధన{% endif %}</h2><p class="pr-score-big">Score <b>{{ run.ok }}</b> / {{ run.n }}{% if run.n %} · {{ (100*run.ok/run.n)|round|int }}%{% endif %}</p>
+<p class="u6-actions"><a class="btn" href="{{ url_for('geography.g2_result',number=number,reset='1') if number else url_for('geography.g2_run_result',reset='1',**va) }}">Start again / మళ్ళీ మొదలు</a><a class="btn" href="{{ url_for('geography.g2_mistakes') }}">All mistakes / అన్ని తప్పులు</a><a class="btn" href="{{ url_for('geography.g2_index') }}">Geography home</a></p></section>
+{% if wrong %}<section class="card"><h3>తప్పు సమాధానాలు · Wrong answers ({{ wrong|length }})</h3><ol>{% for w in wrong %}<li><a href="{{ url_for('geography.g2_question',number=w._lesson or number,qid=w.id,qlang=lang) }}">{{ (w.question_te if lang!='en' else w.question_en)[:140] }}</a></li>{% endfor %}</ol></section>{% endif %}
+</div>{% endblock %}

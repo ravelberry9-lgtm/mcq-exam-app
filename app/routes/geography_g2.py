@@ -12,15 +12,6 @@ from ..services.device import device_id
 
 LANGS=('te','en','both')
 
-@bp.get('/g2')
-def g2_index():
-    return render_template('ds/g2_geography.html',data=g2.index())
-
-@bp.get('/g2/<int:number>')
-def g2_chapter(number):
-    ch=g2.chapter(number) or abort(404)
-    return render_template('ds/g2_chapter.html',ch=ch)
-
 @bp.get('/g2/<int:number>/notes')
 def g2_notes(number):
     g2.chapter(number) or abort(404);path=g2.notes_path(number)
@@ -87,9 +78,10 @@ def _run(number):
 def _run_record(number,qid,correct):
     r=_run(number)
     if qid in r['seen']:return
-    r['seen']=(r['seen']+[qid])[-400:];r['n']+=1
+    cap=(120,80) if number=='run' else (400,300)   # the filtered-run score lives in the cookie session too
+    r['seen']=(r['seen']+[qid])[-cap[0]:];r['n']+=1
     if correct:r['ok']+=1
-    else:r['wrong']=(r['wrong']+[qid])[-300:]
+    else:r['wrong']=(r['wrong']+[qid])[-cap[1]:]
     allr=dict(session.get('g2run') or {});allr[str(number)]=r;session['g2run']=allr
 
 def _lang():
@@ -97,15 +89,41 @@ def _lang():
     if lang not in LANGS:abort(400)
     return lang
 
+def _runctx(number,q):
+    """Practice-run context: with filter args (from the practice setup / library / bookmarks / mistakes)
+    Previous/Next follow the filtered set across lessons; without them, the lesson order as before."""
+    from . import geography_g2_plus as gp
+    v=gp.filters();act=gp.active(v)
+    if not act:
+        rows=g2.lesson_records(number);pos=next(i for i,x in enumerate(rows) if x['id']==q['id'])
+        return dict(v=v,act={},prev=rows[pos-1] if pos else None,next=rows[pos+1] if pos+1<len(rows) else None,
+                    position=pos+1,total=len(rows),runkey=number,result=url_for('geography.g2_result',number=number),
+                    back=url_for('geography.g2_practice',number=number),back_label='‹ Practice')
+    qs=gp.selection(v);ids=[x['id'] for x in qs]
+    if q['id'] in ids:pos=ids.index(q['id'])
+    else:
+        # left the filtered view (answered an unseen one, fixed a mistake, removed a bookmark): keep its place
+        base=gp.selection(v,ignore_view=True);order={x['id']:i for i,x in enumerate(base)};k=order.get(q['id'],-1)
+        before=[x for x in qs if order.get(x['id'],-1)<k];after=[x for x in qs if order.get(x['id'],-1)>k]
+        qs=before+[q]+after;pos=len(before)
+    return dict(v=v,act=act,prev=qs[pos-1] if pos else None,next=qs[pos+1] if pos+1<len(qs) else None,
+                position=pos+1,total=len(qs),runkey='run',result=url_for('geography.g2_run_result',**act),
+                back=url_for('geography.g2_practice_setup',**act),back_label='‹ Practice setup')
+
 @bp.get('/g2/<int:number>/practice/<qid>')
 def g2_question(number,qid):
-    ch=g2.chapter(number) or abort(404);rows=g2.questions(number)
-    q=g2.question(number,qid) or abort(404);pos=next(i for i,x in enumerate(rows) if x['id']==qid)
+    ch=g2.chapter(number) or abort(404)
+    q=g2.by_id().get(qid)
+    if not q or q['_lesson']!=number:abort(404)
     lang=_lang();choice=feedback=None
     if request.args.get('review')=='1':
         raw=request.args.get('choice','')
         if raw not in ('1','2','3','4'):abort(400)
         choice=int(raw);feedback='correct' if choice==q['answer'] else 'incorrect'
+    rc=_runctx(number,q)
+    if request.args.get('fresh')=='1':
+        allr=dict(session.get('g2run') or {});allr.pop(str(rc['runkey']),None);session['g2run']=allr
+        return redirect(url_for('geography.g2_question',number=number,qid=qid,qlang=lang,**rc['act']))
     na={'question':qid,'qlang':lang}
     if feedback:na.update({'review':'1','choice':choice})
     notes_url=url_for('geography.g2_notes',number=number,**na)
@@ -113,27 +131,31 @@ def g2_question(number,qid):
     from ..polity_models import PolityUnit6State
     try:state=db.session.get(PolityUnit6State,(device_id(),qid))
     except Exception:db.session.rollback();state=None
+    def go(x):return url_for('geography.g2_question',number=x['_lesson'],qid=x['id'],qlang=lang,**rc['act']) if x else None
     return render_template('ds/g2_question.html',number=number,ch=ch,q=_view(q),lang=lang,choice=choice,feedback=feedback,
-        position=pos+1,total=len(rows),previous=rows[pos-1]['id'] if pos else None,following=rows[pos+1]['id'] if pos+1<len(rows) else None,
-        notes_url=notes_url,section_url=notes_url+'#'+q['section'],section_title=title,state=state,run=_run(number),
+        position=rc['position'],total=rc['total'],prev_url=go(rc['prev']),next_url=go(rc['next']),result_url=rc['result']+('&' if '?' in rc['result'] else '?')+'qlang='+lang,
+        back_url=rc['back'],back_label=rc['back_label'],fargs=rc["act"],pyq_lab=g2.pyq_label(q),
+        notes_url=notes_url,section_url=notes_url+'#'+q['section'],section_title=title,state=state,run=_run(rc['runkey']),
         images=g2.question_images(number,qid) if feedback else [])
 
 @bp.post('/g2/<int:number>/practice/<qid>/answer')
 def g2_answer(number,qid):
     g2.chapter(number) or abort(404);q=g2.question(number,qid) or abort(404);lang=_lang()
+    from . import geography_g2_plus as gp
+    act=gp.active(gp.filters())
     state=_state(qid)
     if request.form.get('action')=='bookmark':
         state.saved=not state.saved;db.session.commit()
-        args={'qlang':lang}
+        args={'qlang':lang,**act}
         if request.args.get('review')=='1' and request.args.get('choice') in ('1','2','3','4'):args.update(review='1',choice=request.args['choice'])
         return redirect(url_for('geography.g2_question',number=number,qid=qid,**args))
     raw=request.form.get('answer') or request.form.get('choice') or ''
     if raw not in ('1','2','3','4'):abort(400)
     choice=int(raw);correct=choice==q['answer']
     state.seen_count+=1;state.last_seen_at=datetime.utcnow();state.wrong_count=0 if correct else state.wrong_count+1
-    db.session.commit();_run_record(number,qid,correct)
+    db.session.commit();_run_record('run' if act else number,qid,correct)
     # Post/Redirect/Get, as in Polity: refresh or Back never resubmits.
-    return redirect(url_for('geography.g2_question',number=number,qid=qid,qlang=lang,review='1',choice=choice)+'#answer-result')
+    return redirect(url_for('geography.g2_question',number=number,qid=qid,qlang=lang,review='1',choice=choice,**act)+'#answer-result')
 
 @bp.get('/g2/<int:number>/result')
 def g2_result(number):
@@ -143,3 +165,5 @@ def g2_result(number):
         allr=dict(session.get('g2run') or {});allr.pop(str(number),None);session['g2run']=allr
         return redirect(url_for('geography.g2_practice',number=number))
     return render_template('ds/g2_result.html',number=number,ch=ch,run=r,wrong=wrong,lang=lang)
+
+from . import geography_g2_plus  # noqa: E402,F401  hub, setup, library, revise, tests

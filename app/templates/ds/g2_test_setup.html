@@ -1,0 +1,11 @@
+{% extends 'ds/base.html' %}
+{% set nav_active='practice' %}
+{% block title %}Timed test · Group 2 Geography{% endblock %}
+{% block head_extra %}{% include 'ds/_g2_head.html' %}{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('geography.g2_index') }}">‹ Geography</a><strong>Timed test</strong></div>{% endblock %}
+{% block content %}<div class="u6 g2"><section class="card"><h1>Timed test / సమయ పరీక్ష</h1><p>Questions are picked at random from the lessons you tick (none ticked = all lessons). / మీరు ఎంచుకున్న పాఠాల నుంచి యాదృచ్ఛికంగా.</p>
+<form class="geo-filters" method="post" action="{{ url_for('geography.g2_start_test',qlang=lang) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<details class="g2-multi" open><summary>Lessons / పాఠాలు</summary><div class="g2-checks">{% for c in lessons %}<label><input type="checkbox" name="ls" value="{{ c.display_chapter }}"> {{ c.display_chapter }}. {{ c.title }} <small>({{ counts[c.display_chapter] }})</small></label>{% endfor %}</div></details>
+<div class="geo-field"><label for="t-kind">Type / రకం</label><select id="t-kind" name="kind"><option value="">PYQs + MCQs</option><option value="pyq">PYQs only</option><option value="bank">MCQs only</option></select></div>
+<div class="geo-field"><label for="test-count">Questions / ప్రశ్నలు</label><input id="test-count" type="number" name="count" min="1" max="100" value="25"></div><div class="geo-field"><label for="test-minutes">Minutes / నిమిషాలు</label><input id="test-minutes" type="number" name="minutes" min="1" max="180" value="30"></div>
+<button class="btn primary">Start timed test / పరీక్ష ప్రారంభించండి</button></form></section></div>{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'ds/base.html' %}
+{% set nav_active='practice' %}
+{% block title %}Practice · Group 2 Geography{% endblock %}
+{% block head_extra %}{% include 'ds/_g2_head.html' %}{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('geography.g2_index') }}">‹ Geography</a><strong>Practice</strong></div>{% endblock %}
+{% block content %}<i hidden data-no-tools></i><div class="u6 ph g2">
+<form class="ph-form" method="get" action="{{ url_for('geography.g2_practice_setup') }}" id="ph-form">
+<section class="card ph-top"><h1 class="ph-h">Practice / సాధన</h1>
+  <div class="ph-seg" role="radiogroup" aria-label="Question type">
+    <label class="{{ 'on' if v.kind=='pyq' }}"><input type="radio" name="kind" value="pyq" {{ 'checked' if v.kind=='pyq' }}><b>PYQs</b><small>{{ totals.pyq }}</small></label>
+    <label class="{{ 'on' if v.kind=='bank' }}"><input type="radio" name="kind" value="bank" {{ 'checked' if v.kind=='bank' }}><b>MCQs</b><small>{{ totals.bank }}</small></label>
+    <label class="{{ 'on' if v.kind=='' }}"><input type="radio" name="kind" value="" {{ 'checked' if v.kind=='' }}><b>Both / రెండూ</b><small>{{ totals.pyq+totals.bank }}</small></label>
+  </div><p class="ph-note">Filters are optional. Leave them empty to practise everything. / ఫిల్టర్లు ఐచ్ఛికం.</p></section>
+<section class="card ph-sec"><h2><label for="ph-ls">Lesson / పాఠం</label></h2>
+  <select id="ph-ls" name="ls" class="ph-sel"><option value="">All lessons / అన్ని పాఠాలు</option>
+  {% if ls|length>1 %}<option value="{{ v.ls }}" selected>Lessons {{ v.ls }}</option>{% endif %}
+  <optgroup label="World · ప్రపంచం (1–11)">{% for c,n in lessons %}{% if c.display_chapter==12 %}</optgroup><optgroup label="India & AP · భారత్, ఏపీ (12–34)">{% endif %}<option value="{{ c.display_chapter }}" {{ 'selected' if ls==[c.display_chapter] }}>{{ c.display_chapter }}. {{ c.title }} ({{ n }})</option>{% endfor %}</optgroup></select>
+  <p class="ph-note">Several lessons: tick them below. / ఒకటి కంటే ఎక్కువ పాఠాలు:</p>
+  <details class="g2-multi"><summary>Choose several lessons</summary><div class="g2-checks">{% for c,n in lessons %}<label><input type="checkbox" class="g2-lsbox" value="{{ c.display_chapter }}" {{ 'checked' if c.display_chapter in ls }}> {{ c.display_chapter }}. {{ c.title }} <small>({{ n }})</small></label>{% endfor %}</div></details>
+</section>
+{% if secs %}<section class="card ph-sec"><h2><label for="ph-sec">Topic / అంశం <small>optional</small></label></h2><select id="ph-sec" name="sec" class="ph-sel"><option value="">All topics / అన్ని అంశాలు</option>{% for sid,title,n in secs %}<option value="{{ sid }}" {{ 'selected' if v.sec==sid }}>{{ title }} ({{ sec_counts.get(sid,0) }})</option>{% endfor %}</select></section>{% endif %}
+{% if v.kind!='bank' %}<section class="card ph-sec"><h2>Exam / పరీక్ష <small>PYQs</small></h2>
+  <div class="ph-chips" role="radiogroup" aria-label="Exam"><label class="{{ 'on' if not v.exam }}"><input type="radio" name="exam" value="" {{ 'checked' if not v.exam }}>Any exam</label>{% for g,name in groups %}{% if exam_counts[g] %}<label class="{{ 'on' if v.exam==g }}"><input type="radio" name="exam" value="{{ g }}" {{ 'checked' if v.exam==g }}>{{ name }} <small>{{ exam_counts[g] }}</small></label>{% endif %}{% endfor %}</div>
+  <div class="ph-grid"><label class="ph-f"><span>From year</span><select name="y1" class="ph-sel"><option value="">Any</option>{% for y in years %}<option {{ 'selected' if v.y1==y|string }}>{{ y }}</option>{% endfor %}</select></label><label class="ph-f"><span>To year</span><select name="y2" class="ph-sel"><option value="">Any</option>{% for y in years %}<option {{ 'selected' if v.y2==y|string }}>{{ y }}</option>{% endfor %}</select></label></div></section>{% endif %}
+<section class="card ph-sec"><h2>Only / మాత్రమే <small>optional</small></h2><div class="ph-chips" role="radiogroup" aria-label="Only"><label class="{{ 'on' if not v.view }}"><input type="radio" name="view" value="" {{ 'checked' if not v.view }}>All / అన్నీ</label>{% for k,lab in views.items() %}<label class="{{ 'on' if v.view==k }}"><input type="radio" name="view" value="{{ k }}" {{ 'checked' if v.view==k }}>{{ lab }}</label>{% endfor %}</div></section>
+<section class="card ph-sec"><h2>Language / భాష</h2><div class="ph-chips" role="radiogroup" aria-label="Language">{% for code,lab in [('te','తెలుగు'),('en','English'),('both','తెలుగు + English')] %}<label class="{{ 'on' if lang==code }}"><input type="radio" name="qlang" value="{{ code }}" {{ 'checked' if lang==code }}>{{ lab }}</label>{% endfor %}</div></section>
+<noscript><button class="ph-apply" type="submit">Apply filters</button></noscript>
+<div class="ph-bar"><div class="ph-count"><b>{{ count }}</b> question{{ '' if count==1 else 's' }} · <a href="{{ list_url }}">List / జాబితా</a>{% if v.ls or v.exam or v.y1 or v.y2 or v.view or v.sec %} · <a href="{{ url_for('geography.g2_practice_setup',kind=v.kind) }}">Clear</a>{% endif %}</div>
+{% if start %}<a class="ph-go" href="{{ start }}">Start / ప్రారంభించండి</a>{% else %}<span class="ph-go off" aria-disabled="true">No questions</span>{% endif %}</div>
+</form></div>{% endblock %}
+{% block scripts %}<script>(function(){var f=document.getElementById('ph-form');if(!f)return;
+function go(){var p=new URLSearchParams(),d=new FormData(f);d.forEach(function(x,k){if(x!==''||k==='kind')p.append(k,x)});location.href=f.action+'?'+p.toString();}
+f.addEventListener('change',function(e){var t=e.target;
+ if(t.classList.contains('g2-lsbox')){var ids=[].slice.call(f.querySelectorAll('.g2-lsbox:checked')).map(function(b){return b.value});var s=f.elements.ls;var o=[].slice.call(s.options).find(function(x){return x.value===ids.join(',')});if(!o){o=new Option('',ids.join(','));s.add(o);}s.value=ids.join(',');}
+ if(t.name==='ls'&&f.elements.sec)f.elements.sec.value='';
+ go();});})();</script>{% endblock %}

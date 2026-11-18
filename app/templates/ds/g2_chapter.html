@@ -1,9 +1,13 @@
 {% extends "ds/base.html" %}
 {% set nav_active = 'learn' %}
-{% block title %}Lesson {{ ch.display_chapter }} · Group 2 Geography{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
-{% block topbar %}<h1>{{ ch.display_chapter }}. {{ ch.title }}</h1>{% endblock %}
-{% block content %}
-<nav><a href="{{ url_for('geography.g2_index') }}">‹ Group 2 Geography</a></nav>
-<section class="card"><p>{{ ch.question_count }} MCQs · Telugu and English</p><p><a class="btn primary" href="{{ url_for('geography.g2_notes',number=ch.display_chapter) }}">పాఠం చదవండి · Read lesson</a> <a class="btn" href="{{ url_for('geography.g2_practice',number=ch.display_chapter) }}">MCQs అభ్యాసం · Practice</a></p></section>
-{% endblock %}
+{% block title %}Lesson {{ number }} · Group 2 Geography{% endblock %}
+{% block head_extra %}{% include 'ds/_g2_head.html' %}{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('geography.g2_index') }}">‹ Geography</a><strong>పాఠం {{ number }}</strong><span id="mk-star-p" class="mk-host"></span></div>{% endblock %}
+{% block content %}<div class="u6 g2" data-mk-key="g2:lesson:{{ number }}" data-mk-star="#mk-star-p" data-mk-title="Geography lesson {{ number }} · {{ ch.title }}">
+<section class="card geo-intro"><h1>{{ number }} · {{ ch.title }}</h1><p class="chips"><i class="mc">{{ mcq }} MCQs</i><i class="pq">{{ pyq }} PYQs</i>{% if images %}<i class="ig">{{ images }} infographics</i>{% endif %}{% if done %}<i class="ok">✓ Done</i>{% endif %}</p>
+<p class="small">{{ seen }} / {{ total }} seen · చూసినవి</p>{% if total %}<span class="g2-bar"><span style="width:{{ (100*seen/total)|round(1) }}%"></span></span>{% endif %}</section>
+<section class="card u6-actions">{% if has_notes %}<a class="btn primary" href="{{ url_for('geography.g2_notes',number=number) }}">Read notes / నోట్స్ చదవండి</a>{% endif %}{% if pyq %}<a class="btn primary" href="{{ url_for('geography.g2_library',ls=number,kind='pyq') }}">PYQs / గత ప్రశ్నలు ({{ pyq }})</a>{% endif %}{% if mcq %}<a class="btn" href="{{ url_for('geography.g2_library',ls=number,kind='bank') }}">Practice MCQs / సాధన ({{ mcq }})</a>{% endif %}<a class="btn" href="{{ url_for('geography.g2_library',ls=number) }}">All questions / అన్ని ప్రశ్నలు ({{ total }})</a>{% if images %}<a class="btn" href="{{ url_for('geography.g2_infographics',number=number) }}">Infographics / చిత్రాలు ({{ images }})</a>{% endif %}<a class="btn" href="{{ url_for('geography.g2_revise',lesson=number) }}">Quick revision / పునశ్చరణ</a><a class="btn" href="{{ url_for('geography.g2_practice',number=number) }}">Continue in order / వరుసగా ›</a><a class="btn" href="{{ url_for('geography.g2_practice_setup',ls=number) }}">Practice with filters / ఫిల్టర్లతో</a></section>
+{% if sections %}<section class="card"><details><summary><b>Topics in this lesson / అంశాలు ({{ sections|length }})</b></summary><ol class="g2-secs">{% for sid,title,n in sections %}<li><a href="{{ url_for('geography.g2_practice_setup',ls=number,sec=sid) }}">{{ title }}</a> <small>{{ n }} Q</small></li>{% endfor %}</ol></details></section>{% endif %}
+<section class="card"><form method="post" action="{{ url_for('geography.g2_progress',number=number) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="completed" value="{{ '0' if done else '1' }}"><button class="btn">{{ 'Completed ✓ · Mark unfinished / పూర్తి కాలేదు' if done else 'Mark lesson completed / పాఠం పూర్తయింది' }}</button></form></section>
+<nav class="u6-actions g2-pn">{% if prev_ch %}<a class="btn" href="{{ url_for('geography.g2_chapter',number=number-1) }}">‹ {{ number-1 }}. {{ prev_ch.title }}</a>{% endif %}{% if next_ch %}<a class="btn" href="{{ url_for('geography.g2_chapter',number=number+1) }}">{{ number+1 }}. {{ next_ch.title }} ›</a>{% endif %}</nav>
+</div>{% endblock %}
