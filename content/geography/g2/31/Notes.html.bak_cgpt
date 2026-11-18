@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+
+<html lang="te">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<title>పాఠం 31: Human development and indicators</title>
+<style>
+:root{color-scheme:light;--ink:#20302d;--muted:#526760;--green:#125b4c;--deep:#083d36;--mint:#e5f4ed;--paper:#fffefa;--sand:#f6efe1;--line:#dbe5dc;--accent:#d99a3d;font-family:system-ui,'Noto Sans Telugu','Nirmala UI','Gautami',sans-serif;font-size:16px;line-height:1.8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eaf0eb;color:var(--ink)}a{color:#086959;text-decoration-thickness:1px;text-underline-offset:3px}a:hover,a:focus-visible{color:#064b3f;text-decoration-thickness:2px}a:focus-visible{outline:3px solid #e8a449;outline-offset:3px}
+.page{max-width:1080px;min-height:100vh;margin:auto;background:var(--paper);box-shadow:0 16px 70px #143a2820}.hero{background:radial-gradient(circle at 85% 5%,#307c68 0,transparent 31%),linear-gradient(128deg,#083d36,#176b57);color:white;padding:clamp(27px,5vw,56px) clamp(20px,6vw,74px) clamp(30px,5vw,60px);position:relative;overflow:hidden}.hero:after{content:'';position:absolute;width:220px;height:220px;right:-80px;bottom:-125px;border:2px solid #d8f7df57;border-radius:50%;box-shadow:0 0 0 35px #d8f7df16,0 0 0 70px #d8f7df0c;pointer-events:none}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:#c8f4d9}.eyebrow:before{content:'';width:9px;height:9px;background:#e9b657;border-radius:50%}.hero h1{font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.36;letter-spacing:-.025em;max-width:820px;margin:17px 0}.hero p{max-width:730px;margin:0;color:#e1f2e9}.hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:21px}.hero .tags span{border:1px solid #d8f6e363;background:#ffffff15;padding:4px 12px;border-radius:100px;font-size:.77rem;font-weight:650}
+.body{padding:clamp(20px,5vw,58px) clamp(20px,6vw,74px) 68px}.body>*{max-width:79ch}.body>h2,.body>h3,.body>.table-wrap{max-width:none}.body>p{margin:0 0 1.15em}.body>p:first-child{font-size:1.07rem;color:#3d5850}.body h2{font-size:clamp(1.4rem,2.5vw,1.85rem);line-height:1.42;color:var(--deep);margin:2.1em 0 .68em;padding-top:.3em;border-top:1px solid var(--line)}.body h2:first-child{border:0;margin-top:0}.body h3{font-size:1.16rem;line-height:1.48;color:var(--green);margin:1.9em 0 .55em}.body h2+h3{margin-top:.8em}.body strong{color:#0d5549}.body ul,.body ol{padding-left:1.5em;margin:0 0 1.3em}.body li{padding-left:.25em;margin:.4em 0}.body li::marker{color:var(--green)}.body blockquote{margin:1.5em 0;padding:15px 22px;border-left:5px solid var(--accent);border-radius:0 16px 16px 0;background:#fff5e5;color:#51422d}.body blockquote p:last-child{margin-bottom:0}.body hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.table-wrap{overflow-x:auto;margin:1.4em 0 1.8em;border:1px solid var(--line);border-radius:16px;background:white;box-shadow:0 7px 24px #163e2a0b}.body table{border-collapse:collapse;width:100%;min-width:560px;font-size:.94rem;line-height:1.65}.body th{background:#e4f2e9;color:#103f35;text-align:left;font-weight:750}.body td,.body th{padding:12px 15px;border-bottom:1px solid var(--line);vertical-align:top}.body tr:last-child td{border-bottom:0}.body tbody tr:nth-child(even){background:#f8fbf8}.body code{background:#eef4ef;padding:.12em .3em;border-radius:5px;overflow-wrap:anywhere}.body img{display:block;max-width:100%;height:auto;margin:1.5em auto;border-radius:15px}.endnote{border-top:1px solid var(--line);padding:22px clamp(20px,6vw,74px) 35px;color:var(--muted);font-size:.82rem;background:#f6faf6}.endnote p{margin:0}.back{display:inline-flex;align-items:center;gap:5px;margin-bottom:18px;color:var(--green);font-size:.9rem;font-weight:700;text-decoration:none}
+.data-figure{max-width:none!important;margin:1.8em 0;padding:clamp(16px,3vw,28px);background:linear-gradient(145deg,#eef7f0,#f8f4e8);border:1px solid #cde0d3;border-radius:20px;box-shadow:0 10px 28px #22462a12}.data-figure figcaption{font-size:1.08rem;line-height:1.5;color:var(--deep);margin-bottom:17px}.data-figure .bars{display:grid;gap:11px}.bar-row{display:grid;grid-template-columns:minmax(125px,180px) minmax(80px,1fr) 32px;gap:12px;align-items:center;font-weight:700;font-size:.9rem;line-height:1.3}.bar-row small{display:block;font-weight:500;color:var(--muted);font-size:.76rem}.bar-track{height:21px;background:#dce7db;border-radius:99px;overflow:hidden}.bar-track i{display:block;height:100%;background:linear-gradient(90deg,#167963,#43ad86);border-radius:99px}.bar-row.control .bar-track i{background:linear-gradient(90deg,#a97533,#dfac5a)}.bar-row b{font-variant-numeric:tabular-nums;color:var(--deep)}.data-figure p{font-size:.81rem;line-height:1.55;color:var(--muted);margin:17px 0 0}
+@media(max-width:620px){:root{font-size:15.5px}.hero{padding-top:28px}.body{padding-bottom:42px}.body h2{margin-top:1.65em}.body table{min-width:500px}.table-wrap{margin-left:-4px;margin-right:-4px}.body td,.body th{padding:10px 12px}.bar-row{grid-template-columns:95px minmax(50px,1fr) 25px;gap:7px;font-size:.79rem}.bar-row small{font-size:.69rem}.data-figure{margin-left:-4px;margin-right:-4px}}
+@media print{@page{size:A4;margin:15mm}body{background:white}.page{box-shadow:none;max-width:none}.hero{padding:18px 23px 22px;print-color-adjust:exact;-webkit-print-color-adjust:exact}.hero h1{font-size:23pt}.body{padding:12px 23px 20px}.body h2{break-after:avoid}.body h3{break-after:avoid}.body p,.body li{orphans:3;widows:3}.table-wrap{overflow:visible;box-shadow:none;break-inside:avoid}.body table{min-width:0}.endnote{padding:13px 23px}.back{display:none}}
+</style>
+<style id="rebuilt-lesson-blocks">
+.body>.box,.body>.toc{max-width:79ch}
+.box{margin:1.3em 0;padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:white}
+.box>p:last-child,.box>ul:last-child,.box>ol:last-child{margin-bottom:0}.box>p{margin:.3em 0 .6em}
+.box:before{display:block;font-size:.74rem;font-weight:750;letter-spacing:.06em;margin-bottom:4px}
+.box.fact{background:var(--mint);border-color:#bfe0cf;border-left:5px solid var(--green)}.box.fact:before{content:'ముఖ్య వాస్తవం · Fact';color:var(--green)}
+.box.exam{background:#eef3fb;border-color:#cbd8ec;border-left:5px solid #2f5f9a}.box.exam:before{content:'పరీక్షలో · Exam';color:#2f5f9a}
+.box.trap{background:#fff3ec;border-color:#f0cdb8;border-left:5px solid #b4532a}.box.trap:before{content:'పొరపాటు జాగ్రత్త · Trap';color:#9a4320}
+.box.analogy{background:var(--sand);border-color:#eadcbf;border-left:5px solid var(--accent)}.box.analogy:before{content:'పోలిక · Analogy';color:#8a5a14}
+.box.intro{background:#f3f8f4;border-left:5px solid var(--deep);font-size:1.03rem}.box.intro:before{content:'ఈ పాఠం ఎలా చదవాలి';color:var(--deep)}
+.box.terms{background:#fbfaf4}.box.terms:before{content:'ముఖ్య పదాలు · Key terms';color:var(--green)}
+.box.changing{background:#f7f3fb;border-left:5px solid #6b4c9a}.box.changing:before{content:'మారే విలువ';color:#6b4c9a}
+.toc{margin:1.6em 0;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:#f8fbf8}
+.toc>strong{display:block;margin-bottom:6px;color:var(--deep)}.toc details{border-top:1px solid var(--line);padding:6px 0}
+.toc summary{cursor:pointer;font-weight:700;color:var(--green)}.toc ol{margin:.4em 0 .5em;font-size:.94rem}.toc li{margin:.2em 0}
+.body h2[id],.body h3[id]{scroll-margin-top:20px}.body p,.body li,.body td{overflow-wrap:anywhere}
+@media(max-width:620px){.box{padding:12px 13px;margin-left:-4px;margin-right:-4px}.toc{padding:12px}}
+@media print{.toc details{display:block}.box{break-inside:avoid}}
+</style>
+</head>
+<body><main class="page"><header class="hero"><p class="eyebrow">పాఠం 31</p><h1>అధ్యాయం 31: మానవాభివృద్ధి, సూచికలు — భావన, స్తంభాలు, HDI పాత–కొత్త పద్ధతులు, IHDI–GDI–GII–MPI, ఇతర సూచికలు, భారత–ఆంధ్రప్రదేశ్ నివేదికలు</h1></header><nav class="toc"><ol><li><a href="#hd-meaning">మానవాభివృద్ధి అంటే ఏమిటి? ఆర్థిక వృద్ధికి, జనాభా పెరుగుదలకు తేడా ఏమిటి?</a></li><li><a href="#hd-pillars-approaches">మానవాభివృద్ధికి నాలుగు స్తంభాలు, నాలుగు విధానాలు ఏవి?</a></li><li><a href="#hdr-history">UNDP, మానవాభివృద్ధి నివేదిక, సూచికల కుటుంబం ఎలా ఏర్పడ్డాయి?</a></li><li><a href="#reading-indices">సూచిక విలువ, ర్యాంకు, సూచన సంవత్సరం, ప్రచురణ సంవత్సరం — ఎలా చదవాలి?</a></li><li><a href="#hdi-old-method">2010 కి ముందు HDI ఎలా లెక్కించేవారు? DSLI, LEI, EAI, పాత ఉదాహరణ</a></li><li><a href="#hdi-new-method">2010 నుంచి HDI ఎలా లెక్కిస్తున్నారు? నాలుగు సూచికలు, గోల్‌పోస్టులు, గుణ మధ్యమం</a></li><li><a href="#hdr-2025-india">HDR 2025 ప్రకారం ప్రపంచంలో, భారతదేశంలో మానవాభివృద్ధి ఎలా ఉంది?</a></li><li><a href="#ihdi-gdi">IHDI, GDI ఏం చూపుతాయి? అసమానతను, లింగ అంతరాన్ని ఎలా లెక్కిస్తారు?</a></li><li><a href="#gii-mpi">GII, MPI ఏం కొలుస్తాయి? లింగ అసమానత, బహుముఖ పేదరికం</a></li><li><a href="#other-indices">ఇతర సూచికలు: PQLI, GNH, World Happiness Report, Global Gender Gap Index, PHDI</a></li><li><a href="#hd-india-ap">భారతదేశ, ఆంధ్రప్రదేశ్ మానవాభివృద్ధి నివేదికలు ఏం చెప్పాయి?</a></li><li><a href="#pairs">తరచూ కలిసిపోయే జతలు</a></li><li><a href="#selfcheck">మీకు మీరే పరీక్ష</a></li><li><a href="#sources">ఆధారాలు</a></li></ol></nav><article aria-label="పాఠం" class="body"><p>గత పాఠాల్లో పంటలు, పరిశ్రమలు, రవాణా, వాణిజ్యం చూశాం; అవన్నీ దేశంలో ఉత్పత్తి, ఆదాయం ఎంత పెరిగాయో చెబుతాయి. కానీ అసలు ప్రశ్న వేరు: ఆదాయం పెరిగాక ప్రజలు ఎక్కువ కాలం ఆరోగ్యంగా బతుకుతున్నారా, పిల్లలు చదువుకుంటున్నారా, తమ జీవితం గురించి తామే నిర్ణయించుకోగలుగుతున్నారా? ఈ ప్రశ్నకు జవాబే మానవాభివృద్ధి. ఈ పాఠంలో ముందు భావన, స్తంభాలు, విధానాలు, నివేదికల చరిత్ర, సూచికను చదివే పద్ధతి నేర్చుకుని, తర్వాత HDI లెక్క, భారత్ స్థానం, ఇతర సూచికలు, భారత–ఏపీ నివేదికలు చూస్తాం.</p>
+<p>ముఖ్య పదాలు:</p>
+<ul>
+<li>ఆర్థిక వృద్ధి (Economic growth) — ఉత్పత్తి, ఆదాయం సంఖ్యాపరంగా పెరగడం.</li>
+<li>మానవాభివృద్ధి (Human development) — ప్రజల ఎంపికలు, సామర్థ్యాలు విస్తరించడం.</li>
+<li>Capability (సామర్థ్యం) — ఒక వ్యక్తి నిజంగా చేయగలిగేది, కాగలిగేది.</li>
+<li>UNDP; HDR — ఐక్యరాజ్యసమితి అభివృద్ధి కార్యక్రమం; అది ప్రచురించే మానవాభివృద్ధి నివేదిక.</li>
+<li>మానవాభివృద్ధి సూచీ (HDI) — ఆరోగ్యం, జ్ఞానం, జీవన ప్రమాణం అనే మూడు కోణాల్లో దేశపు సగటు సాధనను 0–1 మధ్య చూపే సంఖ్య.</li>
+<li>సూచన సంవత్సరం (Reference year); ప్రచురణ సంవత్సరం (Publication year) — గణాంకాలు ఏ సంవత్సరానివో; నివేదిక ఏ సంవత్సరం విడుదలైందో.</li>
+<li>Normalisation; Goalposts — వేర్వేరు కొలతలను 0–1 స్కేలుకు మార్చడం; దానికి వాడే కనిష్ఠ, గరిష్ఠ హద్దులు.</li>
+<li>PPP (Purchasing Power Parity) — రెండు దేశాల ధరల తేడాను సర్దుబాటు చేసి పోల్చే కొనుగోలు శక్తి లెక్క.</li>
+<li>అంక మధ్యమం (Arithmetic mean); గుణ మధ్యమం (Geometric mean) — కూడి భాగించడం (2009 వరకు HDI); గుణించి మూలం తీయడం (2010 నుంచి HDI).</li>
+<li>IHDI, GDI, GII, MPI — అసమానత సర్దుబాటు చేసిన HDI; స్త్రీ–పురుష అభివృద్ధి నిష్పత్తి; లింగ అసమానత; బహుముఖ పేదరికం.</li>
+</ul>
+<h2 id="hd-meaning">మానవాభివృద్ధి అంటే ఏమిటి? ఆర్థిక వృద్ధికి, జనాభా పెరుగుదలకు తేడా ఏమిటి?</h2>
+<p>ఒకేలా వినిపించే నాలుగు మాటలను ఇలా వేరు చేస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>భావన</th>
+<th>ఏం మారుతుంది</th>
+<th>మార్పు స్వభావం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఆర్థిక వృద్ధి (Economic growth)</strong></td>
+<td>దేశ ఉత్పత్తి, ఆదాయం (GDP, తలసరి ఆదాయం)</td>
+<td>పరిమాణాత్మకం</td>
+</tr>
+<tr>
+<td><strong>ఆర్థికాభివృద్ధి (Economic development)</strong></td>
+<td>ఆదాయంతో పాటు ఉత్పత్తి పద్ధతులు, ఉద్యోగాలు, వసతులు</td>
+<td>వృద్ధి కంటే విశాలం</td>
+</tr>
+<tr>
+<td><strong>మానవాభివృద్ధి (Human development)</strong></td>
+<td>ప్రజల ఎంపికలు (choices), సామర్థ్యాలు: ఆరోగ్యంగా ఎక్కువ కాలం బతకడం, చదువు, గౌరవమైన జీవనానికి వనరులు, సొంత నిర్ణయం</td>
+<td>గుణాత్మకం</td>
+</tr>
+<tr>
+<td><strong>జనాభా పెరుగుదల (Population growth)</strong></td>
+<td>మనుషుల సంఖ్య</td>
+<td>పరిమాణాత్మకం; ధనాత్మకం (positive) లేదా రుణాత్మకం (negative)</td>
+</tr>
+</tbody>
+</table></div>
+<p>జనాభా పెరిగినా, స్థిరంగా ఉన్నా, తగ్గినా మానవాభివృద్ధి జరగవచ్చు, జరగకపోవచ్చు; రెండింటికీ నేరుగా సంబంధం లేదు. ఒక నగర జనాభా 5 లక్షల నుంచి 10 లక్షలకు పెరిగిందనుకోండి. నగరం పెద్దదైంది, కానీ ఇళ్లు, తాగునీరు, విద్యుత్తు, రవాణా, మురుగునీటి పారుదల కూడా జనాభాకు తగ్గట్టు పెరిగితేనే అక్కడ మానవాభివృద్ధి జరిగినట్టు; లేకపోతే అది జనాభా పెరుగుదల మాత్రమే. దేశ ఆదాయం విషయంలోనూ ఇంతే: ఆదాయం పెరిగినా ఆ లాభం కొద్దిమందికే దక్కి, మిగిలినవారికి సమాన అవకాశాలు, స్వేచ్ఛ రాకపోతే అది ఆర్థిక వృద్ధి మాత్రమే.</p>
+<p>ఒక చిత్రం చూడండి. A, B అనే రెండు దేశాల్లో తలసరి ఆదాయం ఒకటే. A లో ప్రజలు సగటున 75 ఏళ్లు బతుకుతారు, దాదాపు అందరు పిల్లలు బడి పూర్తి చేస్తారు. B లో సగటు ఆయుర్దాయం 60 ఏళ్లు, సగం మంది పిల్లలు మధ్యలోనే బడి మానేస్తారు. ఆదాయం మాత్రమే చూస్తే రెండు దేశాలు సమానం; ప్రజల జీవితం చూస్తే A చాలా ముందుంది. ఈ తేడాను పట్టుకోవడానికే మానవాభివృద్ధి భావన, దాన్ని కొలిచే సూచికలు పుట్టాయి.</p>
+<h3>Capability (సామర్థ్యం) అంటే ఏమిటి?</h3>
+<p>Capability అంటే ఒక వ్యక్తి నిజంగా చేయగలిగేది, కాగలిగేది — ఆరోగ్యం, చదువు, వనరులను వాడుకుని తాను విలువనిచ్చే జీవితం గడపగలగడం. వసతి ఉండడం వేరు, దాన్ని వాడుకోగలగడం వేరు. ఊళ్లో బడి భవనం ఉంది; కానీ బడి ఐదు km దూరంలో ఉండి బస్సు లేకపోతే, ఫీజు భరించలేకపోతే, పాఠాలు పిల్లవాడికి రాని భాషలో ఉంటే, వైకల్యం ఉన్న పిల్లకు ర్యాంపు లేకపోతే — భవనం ఉన్నా ఆ పిల్లలకు చదువుకునే సామర్థ్యం లేనట్టే. ఆసుపత్రి విషయంలోనూ అంతే: భవనం కాదు, డాక్టర్ ఉండి, మందులు దొరికి, ప్రజలు భరించగలిగే ఖర్చుతో వైద్యం అందితేనే ఆరోగ్య సామర్థ్యం.</p>
+<h3>మహబూబ్ ఉల్ హక్, అమర్త్య సేన్</h3>
+<p>1990 కి ముందు ప్రపంచం "అభివృద్ధి" అంటే ఆర్థిక వృద్ధే అనుకుంది; ధనిక దేశాలు మరింత ధనికమైనా పేద దేశాల ప్రజల జీవితాలు మెరుగుపడలేదు. ఈ లోటును చూపించి "అభివృద్ధికి కేంద్రం మనిషి" అని చెప్పినవారు ఇద్దరు దక్షిణాసియా ఆర్థికవేత్తలు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>వ్యక్తి</th>
+<th>ఎవరు</th>
+<th>ఏం చేశారు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>మహబూబ్ ఉల్ హక్ (Mahbub ul Haq)</strong></td>
+<td>పాకిస్తాన్ ఆర్థికవేత్త, పాకిస్తాన్ మాజీ ఆర్థిక మంత్రి</td>
+<td>UNDP కోసం 1990 లో మొదటి మానవాభివృద్ధి నివేదిక (HDR), HDI రూపొందించారు</td>
+</tr>
+<tr>
+<td><strong>అమర్త్య సేన్ (Amartya Sen)</strong></td>
+<td>భారత ఆర్థికవేత్త; 3 నవంబర్ 1933 న పశ్చిమ బెంగాల్‌లోని శాంతినికేతన్‌లో జన్మించారు</td>
+<td>Capability approach రూపకర్త; Development as Freedom (1999); హక్‌తో కలిసి పనిచేశారు</td>
+</tr>
+</tbody>
+</table></div>
+<p>హక్ ప్రకారం అభివృద్ధి అంటే ప్రజల ఎంపికలను విస్తరించడం: ప్రజలు ఆరోగ్యంగా, గౌరవంగా బతకడానికి విస్తృతమైన అవకాశాలు ఉండాలి, ఆ అవకాశాలు ఈ తరంతో ఆగిపోకుండా రాబోయే తరాలకూ కొనసాగాలి. సేన్ ప్రకారం సామాజిక, రాజకీయ సంస్థల్లో ప్రజల భాగస్వామ్యం పెరిగితే వారి స్వేచ్ఛ పెరుగుతుంది; ఆ స్వేచ్ఛ పెరగడమే అభివృద్ధి. HDI ని ముందుకు తెచ్చింది హక్ అయితే, ఆ సూచికకు ఆలోచనా పునాది సేన్ సామర్థ్య భావన.</p>
+<p>సేన్‌కు అర్థశాస్త్రంలో నోబెల్ బహుమతి 1998 లో సంక్షేమ అర్థశాస్త్రంలో కృషికి వచ్చింది; భారతరత్న 1999 లో వచ్చింది. అమెరికా National Humanities Medal ను ఆయన ఫిబ్రవరి 2012 లో అధ్యక్షుడు ఒబామా చేతుల మీదుగా అందుకున్నారు; ఆ పతకం 2011 సంవత్సరానిది.</p>
+<h3>మానవాభివృద్ధి ఎందుకు ముఖ్యం?</h3>
+<p>ప్రజలు ఎలా బతుకుతున్నారు, వారికి ఏ అవకాశాలు ఉన్నాయి అని తెలుసుకోవడానికి మానవాభివృద్ధిని కొలుస్తాం. దాని లాభాలు ఒకదానికొకటి ముడిపడి ఉంటాయి. ఆరోగ్యం, చదువు, నైపుణ్యం ఉన్న శ్రామిక శక్తి దేశానికి ఉత్పాదక ఆస్తి, ఎందుకంటే అలాంటి కార్మికుడు అదే సమయంలో ఎక్కువ ఉత్పత్తి చేయగలడు. చదువు, ఆరోగ్యం పెరిగిన చోట జనాభా పెరుగుదల నెమ్మదిస్తుంది, పర్యావరణంపై ఒత్తిడి తగ్గుతుంది (అడవుల పెంపకం పెరిగి, నేల కోత తగ్గుతుంది). పేదరికం తగ్గి పిల్లలు చదువుకుంటే ప్రజలు ఓటు వేయడంలో, గ్రామసభల్లో ఎక్కువగా పాల్గొంటారు, ప్రజాస్వామ్యం బలపడుతుంది; బతుకుదెరువు ఉన్నవారి మధ్య గొడవలు తగ్గి రాజకీయ స్థిరత్వం వస్తుంది. ఈ సామాజిక, రాజకీయ లాభాలు తప్పక వస్తాయని కాదు; పరిస్థితులను బట్టి వాటి అవకాశం పెరుగుతుంది.</p>
+<p>అందుకే పాఠ్యపుస్తకాలు మానవాభివృద్ధి లక్షణాలుగా ఆరు అంశాలు ఇస్తాయి: ఆరోగ్యం, సృజనాత్మకత, జనాభా నియంత్రణ, భౌతిక పర్యావరణం, ఆరోగ్యకరమైన సామాజిక వ్యవస్థ, రాజకీయ స్థిరత్వం. ఈ జాబితా వివరణ కోసం; HDI కొలిచేది మూడు కోణాలే — ఆరోగ్యం, జ్ఞానం, జీవన ప్రమాణం (<a href="#hdi-new-method">HDI కొత్త పద్ధతి</a>).</p>
+<h2 id="hd-pillars-approaches">మానవాభివృద్ధికి నాలుగు స్తంభాలు, నాలుగు విధానాలు ఏవి?</h2>
+<h3>నాలుగు స్తంభాలు</h3>
+<p>మహబూబ్ ఉల్ హక్ తన Reflections on Human Development (1995) పుస్తకంలో మానవాభివృద్ధి నమూనాను నాలుగు స్తంభాలుగా విభజించారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>స్తంభం</th>
+<th>అర్థం</th>
+<th>ఉదాహరణ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>సమన్యాయం (Equity)</strong></td>
+<td>అవకాశాలు కొద్దిమందికే పరిమితం కాకూడదు; కులం, లింగం, ఆదాయం, ప్రాంతం తేడా లేకుండా అందరికీ అందాలి</td>
+<td>ఆడపిల్లలకు, మారుమూల గ్రామాల పిల్లలకు కూడా ఒకే నాణ్యత గల బడి</td>
+</tr>
+<tr>
+<td><strong>స్థిరత్వం (Sustainability)</strong></td>
+<td>ఈనాటి అవకాశాలు రేపటి తరాల అవకాశాలను దెబ్బతీయకూడదు</td>
+<td>భూగర్భ జలాన్ని పూర్తిగా తోడేయకుండా పొదుపుగా వాడడం</td>
+</tr>
+<tr>
+<td><strong>ఉత్పాదకత (Productivity)</strong></td>
+<td>ఆరోగ్యం, చదువు, నైపుణ్యాల్లో పెట్టుబడి ప్రజల పనిచేసే సామర్థ్యాన్ని పెంచాలి</td>
+<td>నైపుణ్య శిక్షణతో యువత మంచి ఉద్యోగం సంపాదించడం</td>
+</tr>
+<tr>
+<td><strong>సాధికారత (Empowerment)</strong></td>
+<td>ప్రజలు తమ జీవితాన్ని ప్రభావితం చేసే నిర్ణయాల్లో తామే పాల్గొనాలి; వారికి గొంతు ఉండాలి</td>
+<td>గ్రామసభలో, స్వయం సహాయక సంఘంలో మహిళలు నిర్ణయాలు తీసుకోవడం</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఇల్లు నాలుగు స్తంభాల మీద నిలబడినట్టే మానవాభివృద్ధి ఈ నాలుగు ఆలోచనల మీద నిలబడుతుంది; ఒక్కటి లేకపోయినా నిర్మాణం ఒరిగిపోతుంది. Equity అంటే అవకాశాలు అందరికీ సమానంగా అందుబాటులో ఉండడం (equal access); అందరి ఫలితాలూ ఒకేలా ఉండాలని కాదు. కొన్ని నోట్సుల్లో ఈ స్తంభాలు "Equality", "Labour productivity" అనే పేర్లతో కనిపిస్తాయి; అర్థం అదే.</p>
+<h3>నాలుగు విధానాలు</h3>
+<p>మానవాభివృద్ధిని ఎలా సాధించాలి అనే దానిపై నాలుగు దృక్పథాలు (approaches) ఉన్నాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>విధానం</th>
+<th>ఎవరు / ఎప్పుడు</th>
+<th>ఏం చూస్తుంది</th>
+<th>పరిమితి</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఆదాయ విధానం (Income approach)</strong></td>
+<td>అన్నిటికంటే పాతది</td>
+<td>ఆదాయం పెరిగితే ఎంపికలు పెరుగుతాయి</td>
+<td>ఆదాయం ఎవరికి చేరిందో, ఆరోగ్యం–చదువు మెరుగుపడ్డాయో చూడదు</td>
+</tr>
+<tr>
+<td><strong>సంక్షేమ విధానం (Welfare approach)</strong></td>
+<td>ప్రభుత్వాలు</td>
+<td>విద్య, వైద్యం, సామాజిక భద్రతపై ప్రభుత్వ ఖర్చు, సహాయం</td>
+<td>ప్రజలను లబ్ధిదారులుగానే చూస్తుంది, భాగస్వాములుగా కాదు</td>
+</tr>
+<tr>
+<td><strong>మౌలిక అవసరాల విధానం (Basic needs approach)</strong></td>
+<td>International Labour Organization (ILO), 1976 World Employment Conference</td>
+<td>ఆరు కనీస అవసరాలు: చదువు, ఆరోగ్యం, ఆహారం, నీటి సరఫరా, పారిశుద్ధ్యం, ఇల్లు</td>
+<td>కనీస స్థాయి దాటాక ఏం కావాలో, ప్రజల స్వేచ్ఛ గురించి చెప్పదు</td>
+</tr>
+<tr>
+<td><strong>సామర్థ్య విధానం (Capability approach)</strong></td>
+<td>అమర్త్య సేన్</td>
+<td>ప్రజలు నిజంగా ఏం చేయగలరు, ఏ అవకాశాలు వాడుకోగలరు</td>
+<td>కొలవడం కష్టం; అందుకే HDI కొన్ని సామర్థ్యాలనే కొలుస్తుంది</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఒకే గ్రామాన్ని నాలుగు విధానాలు నాలుగు ప్రశ్నలతో చూస్తాయి. ఆదాయ విధానం "గ్రామస్థుల సగటు ఆదాయం పెరిగిందా?" అని అడుగుతుంది. సంక్షేమ విధానం "ప్రభుత్వం బడి, ఆసుపత్రి, పింఛన్లపై ఎంత ఖర్చు చేసింది?" అని అడుగుతుంది; ఇక్కడ ప్రభుత్వం ఇస్తుంది, ప్రజలు తీసుకుంటారు. మౌలిక అవసరాల విధానం "ప్రతి ఇంటికీ తాగునీరు, మరుగుదొడ్డి, పక్కా ఇల్లు, తిండి అందాయా?" అని అడుగుతుంది. సంక్షేమ విధానం, మౌలిక అవసరాల విధానం ఒకటి కావు: మొదటిది ఎంత ఖర్చు పెట్టారో చూస్తుంది, రెండోది ఏం అందిందో చూస్తుంది; ఖర్చు ఎక్కువ పెట్టినా తాగునీరు, ఇల్లు అందకపోవచ్చు. సామర్థ్య విధానం ఇంకో అడుగు ముందుకు వేసి "ఆ గ్రామంలో ఆడపిల్ల కాలేజీ వరకు చదివి, తనకు నచ్చిన పని ఎంచుకోగలుగుతోందా?" అని అడుగుతుంది. HDR, HDI పుట్టింది ఈ నాలుగో విధానం నుంచే.</p>
+<h2 id="hdr-history">UNDP, మానవాభివృద్ధి నివేదిక, సూచికల కుటుంబం ఎలా ఏర్పడ్డాయి?</h2>
+<h3>HDI కి ముందు అభివృద్ధిని ఎలా కొలిచారు?</h3>
+<p>HDI కి ముందు అభివృద్ధిని ఎక్కువగా ఆదాయ సంఖ్యలతో కొలిచారు: స్థూల దేశీయోత్పత్తి (GDP — దేశంలో ఏడాదిలో ఉత్పత్తి అయిన వస్తుసేవల విలువ; ద్రవ్యోల్బణం తీసేస్తే నిజ GDP), తలసరి ఆదాయం (Per capita income — జాతీయ ఆదాయాన్ని జనాభాతో భాగించగా వచ్చే సగటు). ఆదాయం లేకుండా ఆరోగ్యం, చదువు చూసిన భౌతిక జీవన ప్రమాణ సూచి (PQLI) కూడా HDI కంటే ముందే వచ్చింది (<a href="#other-indices">ఇతర సూచికలు</a>). PQLI, HDI వేర్వేరు సూచికలు, వేర్వేరు సూత్రాలతో లెక్కిస్తారు.</p>
+<p>ఒకే ఆదాయ సంఖ్య అభివృద్ధిని పూర్తిగా చెప్పలేదు. GDP లో ఆయుధాల తయారీ, కాలుష్యం శుభ్రం చేసే ఖర్చు కూడా కలుస్తాయి; ఆదాయం ఎవరి చేతికి వెళ్లిందో, ప్రజలు ఎంతకాలం బతుకుతున్నారో GDP చెప్పదు. ప్రజల జీవితాలు మెరుగుపడ్డాయో లేదో చూపడానికే UNDP 1990 లో తలసరి GDP మీద ఆధారపడకుండా మానవాభివృద్ధి నివేదిక మొదలుపెట్టింది; విశాలమైన అభివృద్ధిని కొలవడానికి ఒక్క సూచిక కాదు, ఎన్నో సూచికలు అవసరమయ్యాయి.</p>
+<h3>UNDP, HDR</h3>
+<p>United Nations Development Programme (UNDP) ని 1965 లో ఐక్యరాజ్యసమితి సాధారణ సభ (General Assembly) ఏర్పాటు చేసింది. అప్పటికే ఉన్న Expanded Programme of Technical Assistance (EPTA), UN Special Fund అనే రెండు కార్యక్రమాలను కలిపి UNDP ను రూపొందించారు; ప్రధాన కార్యాలయం న్యూయార్క్. పాతికేళ్లు సాంకేతిక సహాయ సంస్థగా పనిచేశాక, హక్ ఆలోచనతో UNDP 1990 లో మొదటి Human Development Report (HDR) ప్రచురించింది; ఆ మొదటి నివేదికలోనే HDI వచ్చింది. అంటే UNDP 1965, మొదటి HDR, HDI 1990. అప్పటి నుంచి ప్రపంచ HDR దాదాపు ప్రతి సంవత్సరం వస్తోంది. HDI తో సహా ఈ సూచికలను లెక్కించేది UNDP లోని Human Development Report Office (HDRO).</p>
+<p>మానవాభివృద్ధి నివేదికలు నాలుగు స్థాయిల్లో వస్తాయి: ప్రపంచ (UNDP), ప్రాంతీయ (ఉదా. దక్షిణాసియా), జాతీయ (ఉదా. భారత NHDR), రాష్ట్ర / ఉప-జాతీయ (ఉదా. APHDR). భారత, ఏపీ నివేదికలు <a href="#hd-india-ap">భారత–ఏపీ నివేదికలు</a> లో.</p>
+<p>తాజా ప్రపంచ నివేదిక Human Development Report 2025 — "A matter of choice: People and possibilities in the age of AI" (UNDP, 6 మే 2025 న విడుదల; 2023 గణాంకాలు; 193 దేశాలు). 2026 నవంబర్ నాటికి తాజా HDR ఇదే (<a href="#hdr-2025-india">HDR 2025 లో భారత్</a>).</p>
+<h3>సూచికల కుటుంబం — ఏది ఎప్పుడు వచ్చింది?</h3>
+<p>HDR ఒక్క HDI తోనే ఆగలేదు; స్త్రీ–పురుష తేడా, పేదరికం, సాంకేతికత, అసమానత, పర్యావరణం కోసం కొత్త సూచికలు వచ్చాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఏడాది (HDR)</th>
+<th>సూచిక</th>
+<th>ఏం కొలుస్తుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1990</td>
+<td><strong>మానవాభివృద్ధి సూచీ (HDI)</strong></td>
+<td>ఆరోగ్యం, జ్ఞానం, జీవన ప్రమాణం — దేశపు సగటు సాధన</td>
+</tr>
+<tr>
+<td>1995</td>
+<td><strong>లింగ సంబంధ అభివృద్ధి సూచి (GDI)</strong></td>
+<td>స్త్రీ–పురుషుల మధ్య మానవాభివృద్ధి తేడా</td>
+</tr>
+<tr>
+<td>1995</td>
+<td><strong>మహిళా సాధికారతా కొలమానం (GEM)</strong></td>
+<td>పార్లమెంటు సీట్లు, ఉన్నత ఉద్యోగాలు, ఆదాయంలో మహిళల వాటా</td>
+</tr>
+<tr>
+<td>1997</td>
+<td><strong>మానవ పేదరిక సూచి HPI-1</strong></td>
+<td>అభివృద్ధి చెందుతున్న దేశాల్లో పేదరికం</td>
+</tr>
+<tr>
+<td>1998</td>
+<td><strong>మానవ పేదరిక సూచి HPI-2</strong></td>
+<td>ఎంపిక చేసిన అధిక ఆదాయ OECD దేశాల్లో పేదరికం</td>
+</tr>
+<tr>
+<td>2001</td>
+<td><strong>Technology Achievement Index (TAI)</strong></td>
+<td>సాంకేతికతను సృష్టించడం, వ్యాప్తి చేయడం, వాడడంలో దేశం సాధన</td>
+</tr>
+<tr>
+<td>2010</td>
+<td><strong>కొత్త పద్ధతిలో HDI; IHDI; లింగ అసమానతల సూచి (GII); బహుముఖ పేదరిక సూచి (MPI)</strong></td>
+<td>20వ వార్షికోత్సవ నివేదిక: GII → GDI, GEM రెండింటి స్థానంలో; MPI → HPI స్థానంలో</td>
+</tr>
+<tr>
+<td>2014</td>
+<td><strong>GDI (కొత్త పద్ధతిలో మళ్లీ)</strong></td>
+<td>స్త్రీల HDI ÷ పురుషుల HDI</td>
+</tr>
+<tr>
+<td>2020</td>
+<td><strong>Planetary pressures-adjusted HDI (PHDI)</strong></td>
+<td>భూమిపై ఒత్తిడిని సర్దుబాటు చేసిన HDI (ప్రయోగాత్మకం)</td>
+</tr>
+</tbody>
+</table></div>
+<p>TAI స్త్రీ–పురుష తేడాను కాదు, దేశం మొత్తపు సాంకేతిక సాధనను కొలుస్తుంది. 2010 లో GII వచ్చినప్పుడు GDI కూడా ఆగిపోయింది, అందుకే 2014 లో GDI కొత్త రూపంలో మళ్లీ వచ్చింది. OECD గురించి <a href="/learn/geography/g2/30/notes#trade-policy-tools">పాఠం 30: OECD</a> లో చూశాం. ఇప్పుడు HDRO క్రమం తప్పకుండా ప్రచురించే సమ్మిళిత సూచికలు (composite indices) ఐదు — HDI, IHDI, GDI, GII, MPI; వాటికి తోడు PHDI ప్రయోగాత్మక సూచిక. ఒక్కో సూచిక లెక్క దాని సొంత విభాగంలో: <a href="#hdi-new-method">HDI కొత్త పద్ధతి</a>, <a href="#ihdi-gdi">IHDI, GDI</a>, <a href="#gii-mpi">GII, MPI</a>, <a href="#other-indices">PHDI</a>.</p>
+<h2 id="reading-indices">సూచిక విలువ, ర్యాంకు, సూచన సంవత్సరం, ప్రచురణ సంవత్సరం — ఎలా చదవాలి?</h2>
+<p>"HDR 2025 ప్రకారం భారత్ HDI 0.685, 193 దేశాల్లో ర్యాంకు 130 (2023 గణాంకాలు)" — ఈ ఒక్క వాక్యంలో నాలుగు వేర్వేరు విషయాలు ఉన్నాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>పదం</th>
+<th>అర్థం</th>
+<th>ఉదాహరణ (HDR 2025)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>సూచిక విలువ (Index score)</strong></td>
+<td>ఒక నిర్దిష్ట పద్ధతిలో లెక్కించిన సాధన సంఖ్య</td>
+<td>భారత్ HDI = 0.685</td>
+</tr>
+<tr>
+<td><strong>ర్యాంకు (Index rank)</strong></td>
+<td>పోల్చిన దేశాల గుంపులో వరుస స్థానం</td>
+<td>193 దేశాల్లో 130</td>
+</tr>
+<tr>
+<td><strong>సూచన సంవత్సరం (Reference / data year)</strong></td>
+<td>గణాంకాలు నిజంగా ఏ కాలానికి చెందినవో</td>
+<td>2023</td>
+</tr>
+<tr>
+<td><strong>ప్రచురణ సంవత్సరం (Publication year)</strong></td>
+<td>నివేదిక విడుదలైన సంవత్సరం</td>
+<td>2025</td>
+</tr>
+</tbody>
+</table></div>
+<h3>విలువ వేరు, ర్యాంకు వేరు</h3>
+<p>విలువ దేశం సొంత సాధన; ర్యాంకు ఇతర దేశాలతో పోలిక. అందుకే ఒక దేశం విలువ మారకపోయినా, మిగతా దేశాలు ఆ దేశం కంటే వేగంగా మెరుగుపడితే లేదా పోలికలోకి కొత్త దేశాలు చేరితే ర్యాంకు పడిపోవచ్చు. అదే విధంగా విలువ పెరిగినా ర్యాంకు పడిపోవచ్చు, విలువ కొద్దిగా తగ్గినా ర్యాంకు పెరగవచ్చు. క్లాసులో ఒక చిత్రం: గత పరీక్షలో మీకు 60 మార్కులు, ఈసారి 70 — మీరు మెరుగుపడ్డారు; కానీ మీ ముందున్నవాళ్లతో పాటు ఇంకొకరు 75 తెచ్చుకుంటే మీ ర్యాంకు 9 నుంచి 10 కి పడిపోతుంది. మార్కులు విలువ, ర్యాంకు పోలిక. అందుకే ర్యాంకు మారితే ముందు విలువ ఏమైందో, పోల్చిన దేశాల సంఖ్య ఎంతో చూడాలి; ప్రతి ర్యాంకుతో "ఎన్ని దేశాల్లో" (of N) అని చెప్పాలి — "130" కాదు, "193 దేశాల్లో 130".</p>
+<h3>ప్రచురణ సంవత్సరం వేరు, సూచన సంవత్సరం వేరు</h3>
+<p>దేశాల గణాంకాలు సేకరించి, సరిచూసి, పోల్చదగ్గవిగా చేయడానికి సుమారు రెండేళ్లు పడుతుంది. అందుకే HDR 2025 లోని విలువలు 2023 సంవత్సరానివి; ప్రచురణ సంవత్సరం, సూచన సంవత్సరం సాధారణంగా ఒకటి కావు. "2025 లో భారత్ HDI 0.685" అనడం తప్పు అర్థం ఇస్తుంది; "HDR 2025 ప్రకారం (2023 గణాంకాలు) భారత్ HDI 0.685" అనడం సరైనది.</p>
+<p>ప్రతి కొత్త నివేదిక గత సంవత్సరాల విలువలను కూడా కొత్త గణాంకాలతో, కొన్నిసార్లు కొత్త పద్ధతితో మళ్లీ లెక్కించి ఇస్తుంది; దీన్ని back-series అంటారు. కాబట్టి కొత్త HDR ఒక పాత సంవత్సరానికి వేరే విలువ ఇస్తే, పాత నివేదిక తప్పని కాదు; సవరించిన గణాంకాలు, పద్ధతి వల్ల విలువ మారింది. అందుకే రెండు వేర్వేరు నివేదికల్లోని విలువలను నేరుగా పోల్చి "ఇంత పెరిగింది" అనకూడదు; ఒకే నివేదికలోని శ్రేణిలోనే పోల్చాలి. భారత్ విషయంలో ఇది ఎలా కనిపిస్తుందో <a href="#hdr-2025-india">HDR 2025 లో భారత్</a> లో చూస్తాం.</p>
+<h2 id="hdi-old-method">2010 కి ముందు HDI ఎలా లెక్కించేవారు? DSLI, LEI, EAI, పాత ఉదాహరణ</h2>
+<p>HDI ఒక్క సంఖ్యే అయినా దాని లోపల మూడు ఉప సూచికలు ఉంటాయి. 1990 నుంచి 2009 వరకు UNDP ఈ మూడింటిని ఒక పద్ధతిలో కలిపింది; దాన్నే "పాత పద్ధతి" అంటాం. 2010 లో పద్ధతి మారింది (<a href="#hdi-new-method">కొత్త పద్ధతి</a>). పుస్తకాల్లోని అభ్యాస లెక్కలు చాలావరకు పాత పద్ధతివే.</p>
+<h3>మూడు ఉప సూచికలు</h3>
+<p>పాత HDI ని మూడు ఉప సూచికలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఉప సూచిక</th>
+<th>ఏ కోణం</th>
+<th>ఏం కొలుస్తుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LEI — Life Expectancy Index</strong></td>
+<td>ఆరోగ్యం, దీర్ఘాయుష్షు</td>
+<td>పుట్టినప్పుడు ఆయుర్దాయం (సంవత్సరాల్లో)</td>
+</tr>
+<tr>
+<td><strong>EAI — Education Attainment Index</strong></td>
+<td>జ్ఞానం</td>
+<td>వయోజన అక్షరాస్యత (బరువు 2/3) + స్థూల నమోదు నిష్పత్తి (బరువు 1/3)</td>
+</tr>
+<tr>
+<td><strong>DSLI — Decent Standard of Living Index</strong></td>
+<td>జీవన ప్రమాణం</td>
+<td>తలసరి GDP, PPP అమెరికన్ డాలర్లలో</td>
+</tr>
+</tbody>
+</table></div>
+<p>EAI లో రెండు కొలతలు ఉంటాయి. మొదటిది వయోజన అక్షరాస్యత (Adult literacy) — 15 ఏళ్లు, ఆపై వయసు ఉన్నవారిలో అక్షరాస్యుల శాతం. రెండోది Combined gross enrolment ratio (GER) — ప్రాథమిక, మాధ్యమిక, ఉన్నత (తృతీయ) స్థాయిల్లో కలిపి బడిలో, కళాశాలలో పేరు నమోదైనవారి నిష్పత్తి. అక్షరాస్యతకు 2/3, నమోదుకు 1/3 బరువు, అంటే అక్షరాస్యతకు రెట్టింపు ప్రాధాన్యం. నమోదు 90%, అక్షరాస్యత 60% ఉన్న దేశంలో నమోదు భాగం (1/3) × 90 = 30, అక్షరాస్యత భాగం (2/3) × 60 = 40, కాబట్టి EAI = 30 + 40 = 70%.</p>
+<h3>PPP అంటే ఏమిటి? భారత్ ఆదాయం PPP లో ఎందుకు ఎక్కువ?</h3>
+<p>ఒకే 100 రూపాయలతో హైదరాబాద్‌లో కొనగలిగేది, అదే మొత్తాన్ని డాలర్లలోకి మార్చి న్యూయార్క్‌లో కొనగలిగేది సమానం కాదు. Purchasing Power Parity (PPP, ద్రవ్య కొనుగోలు శక్తి సమానత) అంటే రెండు దేశాల్లో ఒకే బుట్ట వస్తువులు కొనడానికి ఎంత డబ్బు కావాలో పోల్చి కట్టే మారక రేటు. ఈ సిద్ధాంతాన్ని స్వీడన్ ఆర్థికవేత్త Gustav Cassel 1916–18 మధ్య ప్రతిపాదించాడు.</p>
+<p>భారతదేశంలో ధరలు అమెరికా వంటి దేశాల కంటే తక్కువ, కాబట్టి ఇక్కడ రూపాయికి కొనుగోలు శక్తి ఎక్కువ. సాధారణ మారక రేటుతో మార్చితే భారత్ తలసరి ఆదాయం తక్కువగా కనిపిస్తుంది; PPP తో మార్చితే ఇక్కడి తక్కువ ధరలు లెక్కలోకి వచ్చి తలసరి ఆదాయం ఎక్కువగా వస్తుంది. HDI దేశాల జీవన ప్రమాణాన్ని పోల్చాలి కాబట్టి ఆదాయాన్ని PPP డాలర్లలో తీసుకుంటారు.</p>
+<h3>Normalisation — వేర్వేరు కొలతలను 0–1 లోకి తేవడం</h3>
+<p>ఆయుర్దాయం సంవత్సరాల్లో, అక్షరాస్యత శాతంలో, ఆదాయం డాలర్లలో ఉంటాయి; 65 ఏళ్లు, 64%, 4,000 డాలర్లు కూడితే అర్థం లేని సంఖ్య వస్తుంది. అందుకే ప్రతి కొలతను 0 నుంచి 1 మధ్య ఒక సూచికగా మారుస్తారు (Normalisation). Normalisation కోసం ప్రతి కొలతకు ఒక కనిష్ఠ, ఒక గరిష్ఠ విలువ నిర్ణయిస్తారు; వీటిని Goalposts అంటారు.</p>
+<p>సూత్రం: <strong>సూచిక = (అసలు విలువ − కనిష్ఠం) ÷ (గరిష్ఠం − కనిష్ఠం)</strong></p>
+<p>అసలు విలువ కనిష్ఠంతో సమానమైతే సూచిక 0, గరిష్ఠంతో సమానమైతే 1; మధ్యలో ఉంటే కనిష్ఠం నుంచి గరిష్ఠం దూరంలో ఎంత భాగం దాటిందో సూచిక చెబుతుంది. పాత పద్ధతి goalposts:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కొలత</th>
+<th>కనిష్ఠం</th>
+<th>గరిష్ఠం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఆయుర్దాయం</strong></td>
+<td>25 సంవత్సరాలు</td>
+<td>85 సంవత్సరాలు</td>
+</tr>
+<tr>
+<td><strong>వయోజన అక్షరాస్యత, నమోదు</strong></td>
+<td>0%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td><strong>తలసరి GDP (PPP US$)</strong></td>
+<td>100 డాలర్లు</td>
+<td>40,000 డాలర్లు</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఉదాహరణకు ఆయుర్దాయం 61 ఏళ్లు అయితే LEI = (61 − 25) ÷ (85 − 25) = 36 ÷ 60 = 0.600.</p>
+<h3>మూడు సూచికలను కలపడం — అంక మధ్యమం</h3>
+<p>పాత పద్ధతిలో మూడు ఉప సూచికలను కూడి 3 తో భాగించేవారు — అంక మధ్యమం (Arithmetic mean, సాధారణ సగటు). LEI 0.9, EAI 0.6, DSLI 0.6 ఉన్న దేశానికి పాత HDI = (0.9 + 0.6 + 0.6) ÷ 3 = 0.700. ఈ సాధారణ సగటులో ఒక కోణంలోని లోటును మరో కోణం పూర్తిగా పూడ్చగలదు; 2010 లో గుణ మధ్యమానికి మారడానికి అదే కారణం (<a href="#hdi-new-method">కొత్త పద్ధతి</a>).</p>
+<h3>పుస్తకం ఉదాహరణ: HDI ≈ 0.468</h3>
+<p>పాఠ్యపుస్తకంలో ఒక ఊహా దేశంతో పూర్తి లెక్క ఉంది: తలసరి GDP 4,000 డాలర్లు (PPP), ఆయుర్దాయం 65 ఏళ్లు, EAI 64%.</p>
+<ul>
+<li>DSLI = (4,000 − 100) ÷ (40,000 − 100) = 3,900 ÷ 39,900 = 0.098</li>
+<li>LEI = (65 − 25) ÷ (85 − 25) = 40 ÷ 60 = 0.667</li>
+<li>EAI సూచిక = (64 − 0) ÷ (100 − 0) = 0.640</li>
+<li>పాత HDI = (0.098 + 0.667 + 0.640) ÷ 3 = 1.405 ÷ 3 = 0.468</li>
+</ul>
+<p>పుస్తకంలో ముద్రించిన ఫలితం 0.467; DSLI ని గుండ్రంగా తీసుకోవడం వల్ల వచ్చిన చిన్న తేడా ఇది — అదే అంక మధ్యమ అభ్యాస లెక్క. ఈ లెక్కలో ఆదాయ సూచికను సరళంగా (linear) కట్టారు. UNDP అసలు పాత పద్ధతిలో ఆదాయానికి log (సంవర్గమానం) వాడేది — ఆదాయం ఎక్కువైన కొద్దీ అదనపు డాలరు జీవితాన్ని తక్కువగా మారుస్తుంది అనే భావనతో; ఆ లెక్కలో ఆదాయ సూచిక = ln(4,000/100) ÷ ln(40,000/100) ≈ 0.616, HDI ≈ 0.641 వస్తుంది. 0.468 ఒక ఊహా దేశపు అభ్యాస లెక్క మాత్రమే, భారత్ HDI కాదు; HDR 2025 ప్రకారం భారత్ HDI 0.685, అది కొత్త పద్ధతి విలువ (<a href="#hdr-2025-india">HDR 2025 లో భారత్</a>).</p>
+<h3>పాత పద్ధతిలో దేశాల వర్గాలు</h3>
+<p>2009 కి ముందు నివేదికల్లో దేశాలను మూడు వర్గాలుగా విభజించారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>వర్గం</th>
+<th>HDI విలువ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>అధిక (High)</strong></td>
+<td>0.800 మరియు ఆపై</td>
+</tr>
+<tr>
+<td><strong>మధ్యస్థ (Medium)</strong></td>
+<td>0.500–0.799</td>
+</tr>
+<tr>
+<td><strong>అల్ప (Low)</strong></td>
+<td>0.500 కంటే తక్కువ</td>
+</tr>
+</tbody>
+</table></div>
+<p>"అత్యధిక" (Very high) అనే నాలుగో వర్గం HDR 2009 లో చేరింది. HDR 2010–2013 లో వర్గాలను స్థిర హద్దులతో కాకుండా దేశాల వరుసను నాలుగు సమాన భాగాలుగా (quartiles) విడదీసి నిర్ణయించారు. ఇప్పటి నాలుగు వర్గాలు, వాటి హద్దులు <a href="#hdi-new-method">కొత్త పద్ధతి</a> లో.</p>
+<h2 id="hdi-new-method">2010 నుంచి HDI ఎలా లెక్కిస్తున్నారు? నాలుగు సూచికలు, గోల్‌పోస్టులు, గుణ మధ్యమం</h2>
+<p>ఇప్పటి HDI ని మూడు కోణాలుగా (dimensions), నాలుగు సూచికలుగా (indicators) విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కోణం</th>
+<th>సూచిక</th>
+<th>అర్థం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>దీర్ఘ, ఆరోగ్యకర జీవితం</strong></td>
+<td><strong>Life expectancy at birth</strong> (జననకాల ఆయుర్దాయం)</td>
+<td>ఇప్పుడు ప్రతి వయసులో ఉన్న మరణాల రేట్లే జీవితాంతం కొనసాగితే, ఇప్పుడు పుట్టిన శిశువు సగటున బతికే సంవత్సరాలు</td>
+</tr>
+<tr>
+<td><strong>జ్ఞానం</strong></td>
+<td><strong>Mean years of schooling</strong> (MYS, సగటు చదువు సంవత్సరాలు)</td>
+<td>25 ఏళ్లు, ఆపై వయసున్న పెద్దలు ఇప్పటికే పూర్తి చేసిన బడి చదువు సంవత్సరాల సగటు</td>
+</tr>
+<tr>
+<td><strong>జ్ఞానం</strong></td>
+<td><strong>Expected years of schooling</strong> (EYS, ఆశించిన చదువు సంవత్సరాలు)</td>
+<td>ఇప్పటి నమోదు రేట్లే కొనసాగితే, బడిలో చేరే వయసు పిల్లవాడు చదువుతాడని అంచనా వేసే సంవత్సరాలు</td>
+</tr>
+<tr>
+<td><strong>మంచి జీవన ప్రమాణం</strong></td>
+<td><strong>GNI per capita</strong> (తలసరి స్థూల జాతీయ ఆదాయం), 2021 PPP డాలర్లు</td>
+<td>దేశ నివాసులు దేశంలో, విదేశాల్లో సంపాదించిన మొత్తం ఆదాయాన్ని జనాభాతో భాగించిన విలువ</td>
+</tr>
+</tbody>
+</table></div>
+<p>ప్రతి సూచికను 0–1 స్కేలుకు మార్చడానికి వాడే గోల్‌పోస్టులు (HDR 2025 సాంకేతిక గమనికలు):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>సూచిక</th>
+<th>కనిష్ఠం</th>
+<th>గరిష్ఠం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>జననకాల ఆయుర్దాయం</td>
+<td>20 సంవత్సరాలు</td>
+<td>85 సంవత్సరాలు</td>
+</tr>
+<tr>
+<td>Mean years of schooling</td>
+<td>0</td>
+<td>15 సంవత్సరాలు</td>
+</tr>
+<tr>
+<td>Expected years of schooling</td>
+<td>0</td>
+<td>18 సంవత్సరాలు</td>
+</tr>
+<tr>
+<td>తలసరి GNI (2021 PPP $)</td>
+<td>100 డాలర్లు</td>
+<td>75,000 డాలర్లు</td>
+</tr>
+</tbody>
+</table></div>
+<p>పాత పద్ధతి (<a href="#hdi-old-method">2010 కి ముందు HDI</a>) తో పోలిస్తే ఏం మారిందో ఒకే పట్టికలో:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అంశం</th>
+<th>2009 వరకు</th>
+<th>2010 నుంచి</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఆరోగ్యం</strong></td>
+<td>ఆయుర్దాయం (25–85)</td>
+<td>జననకాల ఆయుర్దాయం (20–85)</td>
+</tr>
+<tr>
+<td><strong>విద్య</strong></td>
+<td>వయోజన అక్షరాస్యత (2/3) + స్థూల నమోదు (1/3)</td>
+<td>MYS (0–15) + EYS (0–18), సమాన బరువు</td>
+</tr>
+<tr>
+<td><strong>ఆదాయం</strong></td>
+<td>తలసరి GDP, PPP (100–40,000)</td>
+<td>తలసరి GNI, 2021 PPP (100–75,000)</td>
+</tr>
+<tr>
+<td><strong>కలిపే విధానం</strong></td>
+<td>అంక మధ్యమం</td>
+<td>గుణ మధ్యమం</td>
+</tr>
+</tbody>
+</table></div>
+<p>HDR 2010 (మొదటి నివేదిక వచ్చి 20 ఏళ్లు) తో HDI పద్ధతి మారింది. మూడు కోణాలు అవే ఉన్నాయి; వాటిని కొలిచే సూచికలు, కలిపే విధానం మాత్రమే మారాయి. HDI ఒక దేశం ఈ మూడు కోణాల్లో సాధించిన సగటు సాధన (average achievement) ను చూపుతుంది. రాజకీయ స్వేచ్ఛ, ప్రజల మధ్య అసమానత, కుటుంబాల పేదరికం HDI లో కనిపించవు; వాటికి <a href="#ihdi-gdi">IHDI</a>, <a href="#gii-mpi">MPI</a> వంటి వేరే సూచికలు ఉన్నాయి.</p>
+<h3>ఆయుర్దాయం, MYS, EYS — గతమా, భవిష్యత్తా?</h3>
+<p>MYS, EYS తేడా ఒక కుటుంబంతో సులభంగా అర్థమవుతుంది. తాతయ్య 5వ తరగతి, నాన్న 10వ తరగతి, అమ్మ ఇంటర్ పూర్తి చేశారు. వీరి సగటు లాంటిదే MYS — పెద్దలు గతంలో పూర్తి చేసిన చదువు. ఇప్పుడు బడిలో చేరిన చిన్నారి ఎన్నేళ్లు చదువుతుందో ఊహించేది EYS — భవిష్యత్ అంచనా. EYS ఒక హామీ కాదు; ఇప్పటి నమోదు రేట్లు మారితే ఆ చిన్నారి అసలు చదువు కూడా మారుతుంది. జననకాల ఆయుర్దాయం కూడా ఇలాంటి అంచనాయే: ఇప్పుడు పుట్టిన శిశువు సరిగ్గా అన్నేళ్లు బతుకుతుందని కాదు, ఇప్పటి మరణాల రేట్లు మారకపోతే బతికే సగటు సంవత్సరాలు అని అర్థం.</p>
+<p>అక్షరాస్యత బదులు బడి సంవత్సరాలు ఎందుకు వచ్చాయి? చాలా దేశాల్లో అక్షరాస్యత దాదాపు 100% కు చేరింది; దానితో దేశాల మధ్య తేడా కనిపించదు. "ఎన్నేళ్లు చదివారు" అనే కొలత చదువు లోతును చూపుతుంది.</p>
+<h3>ఆదాయానికి GNI, PPP, సంవర్గమానం ఎందుకు?</h3>
+<p>GDP దేశ సరిహద్దుల లోపల జరిగిన ఉత్పత్తి. GNI లో దేశ నివాసులు, దేశంలో నివసించే సంస్థలు విదేశాల్లో సంపాదించిన ఆదాయం (జీతాలు, లాభాలు, వడ్డీ) కలుపుతారు; విదేశీయులు, విదేశీ కంపెనీలు ఇక్కడ సంపాదించి తీసుకెళ్లేది తీసేస్తారు. విదేశాల్లో స్థిరపడినవారు ఇంటికి పంపే డబ్బు (remittances) బదిలీలు మాత్రమే, GNI లో భాగం కాదు. అందుకే ప్రజల చేతికి వచ్చే ఆదాయానికి GDP కంటే GNI దగ్గరగా ఉంటుంది.</p>
+<p>ఒకే డాలరుతో భారత్‌లో కొనగలిగేది, అమెరికాలో కొనగలిగేది వేరు. ఈ ధరల తేడాను సరిచేసి జీవన ప్రమాణాన్ని దేశాల మధ్య పోల్చడానికి ఆదాయాన్ని PPP (Purchasing Power Parity, కొనుగోలు శక్తి సమానత) డాలర్లలో తీసుకుంటారు. ఆయుర్దాయం సంవత్సరాల్లో, చదువు సంవత్సరాల్లో, ఆదాయం డాలర్లలో ఉంటాయి; ఈ వేర్వేరు కొలతలను కలపడానికి ప్రతిదాన్నీ గోల్‌పోస్టుల సాయంతో 0–1 స్కేలుకు మారుస్తారు (Normalisation): సూచిక = (అసలు విలువ − కనిష్ఠం) ÷ (గరిష్ఠం − కనిష్ఠం).</p>
+<p>ఆదాయ సూచికలో అసలు ఆదాయం, కనిష్ఠం, గరిష్ఠం — మూడింటికీ సహజ సంవర్గమానం (natural log, ln) తీసుకుంటారు. కారణం: పేద దేశంలో అదనపు డాలరు జీవితాన్ని ఎంతో మారుస్తుంది, ధనిక దేశంలో అంతగా మార్చదు. విద్య సూచిక = (MYS సూచిక + EYS సూచిక) ÷ 2, అంటే రెండింటి అంక మధ్యమం.</p>
+<p>ఉదాహరణకు ఆయుర్దాయం 59 ఏళ్లు అయితే ఆరోగ్య సూచిక = (59 − 20) ÷ (85 − 20) = 39 ÷ 65 = 0.600. MYS 6, EYS 15.3 అయితే MYS సూచిక = 6 ÷ 15 = 0.400, EYS సూచిక = 15.3 ÷ 18 = 0.850, విద్య సూచిక = (0.400 + 0.850) ÷ 2 = 0.625.</p>
+<h3>గుణ మధ్యమం — ఎందుకు, ఎలా?</h3>
+<p>పాత పద్ధతి మూడు సూచికలను కూడి 3 తో భాగించేది (Arithmetic mean, అంక మధ్యమం). కొత్త పద్ధతి వాటిని గుణించి, ఫలితానికి ఘనమూలం (cube root) తీసుకుంటుంది. దీన్నే Geometric mean (గుణ మధ్యమం) అంటారు:</p>
+<p>HDI = (ఆరోగ్య సూచిక × విద్య సూచిక × ఆదాయ సూచిక)^(1/3)</p>
+<p>అంక మధ్యమంలో ఒక కోణంలోని లోటును ఇంకో కోణంలోని ఎక్కువ పూడ్చేస్తుంది. చమురు ఆదాయం బాగా ఉండి బడులు, ఆసుపత్రులు లేని దేశం అంక మధ్యమంలో మెరుగ్గా కనిపిస్తుంది. గుణ మధ్యమంలో ఒక కోణం తక్కువైతే మొత్తం విలువ గట్టిగా పడిపోతుంది. ఆరోగ్యాన్ని డబ్బుతో, చదువును ఆయుర్దాయంతో పూర్తిగా భర్తీ చేయలేం — ఈ భావనను imperfect substitutability (పూర్తిగా భర్తీ కాకపోవడం) అంటారు. అందుకే మూడు కోణాల్లోనూ సమతుల్యంగా అభివృద్ధి చెందిన దేశానికే ఎక్కువ HDI వస్తుంది. అదే కారణంగా రెండు ప్రాంతాల తలసరి GNI సమానమైనా, ఆయుర్దాయం, చదువు వేరైతే వాటి HDI కూడా వేరవుతుంది.</p>
+<p>మూడు కాళ్ల పీటను ఊహించండి. ఒక కాలు పొట్టిగా ఉంటే, మిగతా రెండు కాళ్లు ఎంత పొడవున్నా పీట ఊగుతుంది. గుణ మధ్యమం కూడా మూడు కాళ్లూ సమంగా ఉండాలని అడుగుతుంది.</p>
+<p>మూడు లెక్కలతో తేడా చూద్దాం:</p>
+<ul>
+<li>సూచికలు 0.5, 0.5, 0.5: గుణ మధ్యమం = (0.125)^(1/3) = 0.5; అంక మధ్యమం కూడా 0.5. మూడూ సమానంగా ఉంటే రెండు మధ్యమాలూ ఒకటే.</li>
+<li>సూచికలు 1, 0.5, 0.5: అంక మధ్యమం = 2 ÷ 3 = 0.667; గుణ మధ్యమం = (0.25)^(1/3) = 0.630. ఒక్క కోణంలో పూర్తి సాధన ఉన్నా మిగతా రెండింటి లోటును గుణ మధ్యమం దాచదు.</li>
+<li>సూచికలు 0.8, 0.5, 0.4: గుణ మధ్యమం = (0.16)^(1/3) = 0.543; అంక మధ్యమం 0.567.</li>
+</ul>
+<p>గుణ మధ్యమం ఎప్పుడూ అంక మధ్యమానికి సమానం లేదా తక్కువ; సూచికల మధ్య తేడా పెరిగే కొద్దీ ఈ అంతరం కూడా పెరుగుతుంది.</p>
+<p>భారత్ లెక్క (HDR 2025, 2023 సమాచారం):</p>
+<ul>
+<li>ఆరోగ్య సూచిక = (72.0 − 20) ÷ (85 − 20) = 52 ÷ 65 = 0.800</li>
+<li>MYS సూచిక = 6.88 ÷ 15 = 0.459; EYS సూచిక = 12.95 ÷ 18 = 0.719; విద్య సూచిక = (0.459 + 0.719) ÷ 2 = 0.589</li>
+<li>ఆదాయ సూచిక = (ln 9,047 − ln 100) ÷ (ln 75,000 − ln 100) = 4.505 ÷ 6.620 = 0.681</li>
+<li>HDI = (0.800 × 0.589 × 0.681)^(1/3) = (0.321)^(1/3) = సుమారు 0.685</li>
+</ul>
+<p>భారత్ మూడు సూచికల్లో విద్య సూచిక అత్యల్పం; మొత్తం HDI ని కిందికి లాగుతున్నది విద్య సూచికే (<a href="#hdr-2025-india">భారత్ స్థానం</a>).</p>
+<h3>HDI నాలుగు వర్గాలు</h3>
+<p>HDI విలువను బట్టి దేశాలను నాలుగు వర్గాలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>వర్గం</th>
+<th>HDI విలువ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>అత్యధిక మానవాభివృద్ధి (Very high)</strong></td>
+<td>0.800 మరియు ఆపై</td>
+</tr>
+<tr>
+<td><strong>అధిక మానవాభివృద్ధి (High)</strong></td>
+<td>0.700–0.799</td>
+</tr>
+<tr>
+<td><strong>మధ్యస్థ మానవాభివృద్ధి (Medium)</strong></td>
+<td>0.550–0.699</td>
+</tr>
+<tr>
+<td><strong>అల్ప మానవాభివృద్ధి (Low)</strong></td>
+<td>0.550 కంటే తక్కువ</td>
+</tr>
+</tbody>
+</table></div>
+<p>HDR 2014 నుంచి ఈ హద్దులు స్థిరంగా ఉన్నాయి. దేశం ఏ వర్గంలో ఉందో దాని HDI విలువే నిర్ణయిస్తుంది, ర్యాంకు కాదు. హద్దు మీదే ఉన్న విలువ పై వర్గానికి చెందుతుంది: 0.550 ఉన్న దేశం మధ్యస్థ వర్గంలో, 0.800 ఉన్న దేశం అత్యధిక వర్గంలో ఉంటాయి.</p>
+<h3>HDI కి పరిమితులు</h3>
+<p>HDI మూడు కోణాల సగటు మాత్రమే. దేశంలోని ధనిక–పేద తేడా, స్త్రీ–పురుష తేడా, పర్యావరణ నష్టం, ప్రజాస్వామ్యం, భద్రత HDI లో కనిపించవు. విద్యలో "ఎన్నేళ్లు చదివారు" అని లెక్కిస్తుంది కానీ "ఏం నేర్చుకున్నారు" అనే నాణ్యతను కొలవదు. ఈ లోటు తీర్చడానికే UNDP పక్కన మరికొన్ని సూచికలు ఇస్తుంది: అసమానతకు IHDI, లింగ అంతరానికి GDI (<a href="#ihdi-gdi">IHDI, GDI</a>), GII, పేదరికానికి MPI (<a href="#gii-mpi">GII, MPI</a>), పర్యావరణ ఒత్తిడికి PHDI (<a href="#other-indices">ఇతర సూచికలు</a>).</p>
+<h2 id="hdr-2025-india">HDR 2025 ప్రకారం ప్రపంచంలో, భారతదేశంలో మానవాభివృద్ధి ఎలా ఉంది?</h2>
+<p>UNDP తాజా మానవాభివృద్ధి నివేదిక HDR 2025. దాని పేరు "A matter of choice: People and possibilities in the age of AI"; కృత్రిమ మేధ (AI) మనుషుల ఎంపికలను ఎలా పెంచగలదో ఈ నివేదిక చర్చిస్తుంది. HDR 2025 6 మే 2025 న విడుదలై, 2023 సమాచారం ఆధారంగా 193 దేశాలకు ర్యాంకులు ఇచ్చింది. ప్రపంచ దేశాల ఆయుర్దాయం, చదువు, ఆదాయ గణాంకాలు సేకరించి సరిచూడటానికి సుమారు రెండేళ్లు పడుతుంది; అందుకే "HDR 2025 లో ర్యాంకు" అంటే 2023 నాటి పరిస్థితి (<a href="#reading-indices">సూచికను ఎలా చదవాలి</a>). 2026 నవంబర్ నాటికి UNDP కొత్త HDR విడుదల చేయలేదు; కాబట్టి HDR 2025 విలువలే తాజావి.</p>
+<h3>ప్రపంచంలో మొదటి, చివరి దేశాలు</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>స్థానం</th>
+<th>దేశం</th>
+<th>HDI (2023 సమాచారం)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>ఐస్‌లాండ్ (Iceland)</td>
+<td>0.972</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>నార్వే (Norway), స్విట్జర్లాండ్ (Switzerland) — సమానం</td>
+<td>0.970</td>
+</tr>
+<tr>
+<td><strong>191</strong></td>
+<td>సెంట్రల్ ఆఫ్రికన్ రిపబ్లిక్</td>
+<td>0.414</td>
+</tr>
+<tr>
+<td><strong>192</strong></td>
+<td>సోమాలియా (Somalia)</td>
+<td>0.404</td>
+</tr>
+<tr>
+<td><strong>193</strong></td>
+<td>దక్షిణ సూడాన్ (South Sudan)</td>
+<td>0.388</td>
+</tr>
+</tbody>
+</table></div>
+<p>మొదటి స్థానం నివేదికతో మారుతుంది: HDR 2023/24 (2022 సమాచారం) లో స్విట్జర్లాండ్ మొదటిది; HDR 2025 లో ఐస్‌లాండ్. అంతకుముందు చాలా నివేదికల్లో నార్వే మొదటి స్థానంలో ఉంది.</p>
+<h3>భారత్ విలువలు</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అంశం</th>
+<th>HDR 2025 (2023 సమాచారం)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HDI విలువ</strong></td>
+<td>0.685</td>
+</tr>
+<tr>
+<td><strong>ర్యాంకు</strong></td>
+<td>193 దేశాల్లో 130</td>
+</tr>
+<tr>
+<td><strong>వర్గం</strong></td>
+<td>మధ్యస్థ మానవాభివృద్ధి</td>
+</tr>
+<tr>
+<td><strong>జననకాల ఆయుర్దాయం</strong></td>
+<td>72.0 సంవత్సరాలు</td>
+</tr>
+<tr>
+<td><strong>Expected years of schooling</strong></td>
+<td>సుమారు 13.0 సంవత్సరాలు</td>
+</tr>
+<tr>
+<td><strong>Mean years of schooling</strong></td>
+<td>సుమారు 6.9 సంవత్సరాలు</td>
+</tr>
+<tr>
+<td><strong>తలసరి GNI (2021 PPP $)</strong></td>
+<td>సుమారు 9,047 డాలర్లు</td>
+</tr>
+</tbody>
+</table></div>
+<p>భారత్ ఆయుర్దాయం 72.0 ఏళ్లు; HDI నివేదికల చరిత్రలో భారత్‌కు ఇదే అత్యధికం. 0.685 అనే విలువ 0.700 కి దగ్గరగా ఉంది; అంటే భారత్ "అధిక" వర్గం హద్దుకు దగ్గరలో ఉంది.</p>
+<p>ప్రతి కొత్త నివేదిక గత సంవత్సరాల విలువలను కూడా కొత్త గణాంకాలతో మళ్లీ లెక్కిస్తుంది (back-series). అందుకే వేర్వేరు నివేదికల్లో ఒకే సంవత్సరానికి వేర్వేరు అంకెలు కనిపిస్తాయి. HDR 2023/24 భారత్ 2022 విలువను 0.644 (ర్యాంకు 134) గా ప్రకటించింది; HDR 2025 అదే 2022 విలువను 0.676 (ర్యాంకు 133) గా మళ్లీ లెక్కించింది. HDR 2025 లోని 2022, 2023 విలువలను పోలిస్తే ఒక సంవత్సరంలో భారత్ మూడు స్థానాలు పైకి వచ్చింది.</p>
+<p>HDR 2025 పట్టిక ప్రకారం 1990 లో భారత్ HDI 0.446; 2023 నాటికి 0.685 కు చేరింది. పెరుగుదల = (0.685 − 0.446) ÷ 0.446 × 100 = సుమారు 53.6% — UNDP మాటల్లో "53 శాతానికి పైగా". ఇదే కాలంలో ఆయుర్దాయం 58.6 నుంచి 72.0 ఏళ్లకు పెరిగింది.</p>
+<h3>పొరుగు దేశాలతో పోలిక</h3>
+<p>దక్షిణాసియా, పొరుగు దేశాల HDI ర్యాంకులు (HDR 2025, 193 దేశాల్లో):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>దేశం</th>
+<th>ర్యాంకు</th>
+<th>భారత్‌తో పోలిస్తే</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>చైనా</strong></td>
+<td>78</td>
+<td>పైన</td>
+</tr>
+<tr>
+<td><strong>శ్రీలంక</strong></td>
+<td>89</td>
+<td>పైన — దక్షిణాసియాలో మొదటిది</td>
+</tr>
+<tr>
+<td><strong>మాల్దీవులు</strong></td>
+<td>93</td>
+<td>పైన</td>
+</tr>
+<tr>
+<td><strong>భూటాన్</strong></td>
+<td>125</td>
+<td>పైన</td>
+</tr>
+<tr>
+<td><strong>బంగ్లాదేశ్</strong></td>
+<td>130</td>
+<td>భారత్‌తో సమానం</td>
+</tr>
+<tr>
+<td><strong>నేపాల్</strong></td>
+<td>145</td>
+<td>కింద</td>
+</tr>
+<tr>
+<td><strong>మయన్మార్</strong></td>
+<td>150</td>
+<td>కింద</td>
+</tr>
+<tr>
+<td><strong>పాకిస్తాన్</strong></td>
+<td>168</td>
+<td>కింద</td>
+</tr>
+</tbody>
+</table></div>
+<p>శ్రీలంక, భారత్ అంకెలు పక్కపక్కన (HDR 2025, 2023 సమాచారం):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అంశం</th>
+<th>శ్రీలంక</th>
+<th>భారత్</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఆయుర్దాయం</strong></td>
+<td>77.5 ఏళ్లు</td>
+<td>72.0 ఏళ్లు</td>
+</tr>
+<tr>
+<td><strong>Mean years of schooling</strong></td>
+<td>10.8</td>
+<td>6.9</td>
+</tr>
+<tr>
+<td><strong>Expected years of schooling</strong></td>
+<td>13.1</td>
+<td>13.0</td>
+</tr>
+<tr>
+<td><strong>తలసరి GNI (2021 PPP $)</strong></td>
+<td>12,616</td>
+<td>9,047</td>
+</tr>
+</tbody>
+</table></div>
+<p>శ్రీలంక ఆదాయం భారత్ కంటే సుమారు 1.4 రెట్లు మాత్రమే. కానీ పెద్దల సగటు చదువులో శ్రీలంక చాలా ముందుంది (10.8 vs 6.9), ఆయుర్దాయంలోనూ 5 ఏళ్లు ముందుంది. అందుకే శ్రీలంక HDI 0.776 తో "అధిక" వర్గంలో ఉంది. మాల్దీవుల తలసరి ఆదాయం (19,317) శ్రీలంక కంటే ఎక్కువ అయినా, మాల్దీవుల పెద్దల చదువు తక్కువ (MYS 7.4) కాబట్టి మాల్దీవుల ర్యాంకు 93, శ్రీలంక కంటే కింద. ఆదాయం ఒక్కటే HDI ని నిర్ణయించదనడానికి ఈ రెండు దేశాలు మంచి ఉదాహరణ (<a href="#hdi-new-method">గుణ మధ్యమం</a>).</p>
+<h3>భారత్‌ను వెనక్కి లాగుతున్నది ఏది?</h3>
+<p>భారత్ లెక్కలో విద్య సూచిక (0.589) మూడింటిలో అత్యల్పం; పెద్దల సగటు చదువు ఇంకా 7 ఏళ్ల లోపే ఉంది. అసమానత కూడా భారత్ HDI విలువను దాదాపు మూడో వంతు తగ్గిస్తుంది (<a href="#ihdi-gdi">IHDI</a>). మహిళల శ్రామిక భాగస్వామ్యం, చట్టసభల్లో ప్రాతినిధ్యం వెనుకబడి ఉన్నాయని నివేదిక చెబుతుంది. లోక్‌సభ, శాసనసభల్లో మహిళలకు మూడో వంతు సీట్లు కేటాయించే 106వ రాజ్యాంగ సవరణ (నారీ శక్తి వందన్ అధినియమ్, 2023) ను నివేదిక సానుకూల చర్యగా పేర్కొంది; ఆ సవరణ వివరాలు polity పాఠాల్లో, అక్షరాస్యత, శిశు మరణాల వంటి జనాభా గణాంకాలు తర్వాతి పాఠాల్లో చూస్తాం.</p>
+<h2 id="ihdi-gdi">IHDI, GDI ఏం చూపుతాయి? అసమానతను, లింగ అంతరాన్ని ఎలా లెక్కిస్తారు?</h2>
+<p>HDI దేశ సగటును చూపుతుంది; కానీ సగటు చాలా తేడాలను దాచేస్తుంది. ఆ దాగిన తేడాలను బయటపెట్టడానికి UNDP రెండు సూచికలు వాడుతుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>సూచిక</th>
+<th>ఏ తేడాను చూపుతుంది</th>
+<th>ఎలా లెక్కిస్తారు</th>
+<th>విలువ ఎలా చదవాలి</th>
+<th>భారత్ (HDR 2025, 2023 సమాచారం)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IHDI</strong> (Inequality-adjusted HDI)</td>
+<td>ప్రజలందరి మధ్య అసమానత</td>
+<td>ప్రతి కోణం సూచికను ఆ కోణంలోని అసమానతకు తగ్గట్టు తగ్గించి, గుణ మధ్యమం</td>
+<td>అసమానత లేకపోతే IHDI = HDI; లేకపోతే HDI కంటే తక్కువ</td>
+<td>0.475; నష్టం సుమారు 30.7%</td>
+</tr>
+<tr>
+<td><strong>GDI</strong> (Gender Development Index)</td>
+<td>స్త్రీ–పురుషుల సాధనలో తేడా</td>
+<td>స్త్రీల HDI ÷ పురుషుల HDI</td>
+<td>1 = సమానత; 1 కంటే తక్కువ = స్త్రీలు వెనుకబడ్డారు</td>
+<td>0.874; గ్రూపు 5</td>
+</tr>
+</tbody>
+</table></div>
+<h3>IHDI — అసమానతను లెక్కలోకి తీసుకున్న HDI</h3>
+<p>Inequality-adjusted HDI (IHDI, అసమానతలను సర్దుబాటు చేసిన HDI) 2010 లో వచ్చింది. IHDI ఆరోగ్యం, విద్య, ఆదాయం — ప్రతి కోణంలో సాధన ప్రజల మధ్య ఎలా పంపిణీ అయిందో చూస్తుంది. కాబట్టి IHDI, HDI కి మరో పేరు కాదు; రెండూ వేర్వేరు సూచికలు.</p>
+<p>రెండు తరగతుల్లో సగటు మార్కులు 60 అనుకోండి. మొదటి తరగతిలో అందరికీ 55–65 మధ్య వచ్చాయి. రెండో తరగతిలో సగం మందికి 95, సగం మందికి 25. సగటు ఒకటే అయినా రెండో తరగతిలో సగం మంది వెనుకబడ్డారు. HDI సగటు మార్కుల వంటిది; IHDI మార్కుల పంపిణీని కూడా చూసి రెండో తరగతికి తక్కువ విలువ ఇస్తుంది.</p>
+<p>దేశంలో అసమానత అసలు లేకపోతే IHDI, HDI సమానం. అసమానత పెరిగే కొద్దీ IHDI, HDI కంటే తక్కువవుతుంది; IHDI ఎప్పుడూ HDI ని మించదు. HDI ని "సాధ్యమైన" మానవాభివృద్ధిగా, IHDI ని "ప్రజలకు నిజంగా అందుతున్న" మానవాభివృద్ధిగా అర్థం చేసుకోవచ్చు. రెండింటి మధ్య తేడాను శాతంగా చెబితే దాన్ని నష్టం (Loss) అంటారు:</p>
+<p>నష్టం = (HDI − IHDI) ÷ HDI × 100</p>
+<p>ఉదాహరణకు HDI 0.800, IHDI 0.600 అయితే నష్టం = 0.200 ÷ 0.800 × 100 = 25%. భారత్‌కు నష్టం = (0.685 − 0.475) ÷ 0.685 × 100 = సుమారు 30.7%. అంటే అసమానత వల్ల భారత్ HDI విలువ దాదాపు మూడో వంతు తగ్గిపోతోంది. 30.7% అనేది సూచిక విలువలో నష్టం, ప్రజల శాతం కాదు. ఈ నష్టానికి ఆదాయ, లింగ అసమానతలు పెద్ద కారణాలని UNDP పేర్కొంది.</p>
+<h3>GDI — స్త్రీ, పురుషుల HDI నిష్పత్తి</h3>
+<p>Gender Development Index (లింగ సంబంధ అభివృద్ధి సూచి, GDI) 1995 లో వచ్చింది. పాత GDI దేశ HDI ని స్త్రీ–పురుష అసమానతకు తగ్గట్టు తగ్గించి ఒకే విలువ ఇచ్చేది. 2010 లో GDI, GEM రెండింటి స్థానంలో GII వచ్చింది (<a href="#gii-mpi">GII</a>). 2014 లో UNDP GDI ని కొత్త పద్ధతిలో మళ్లీ తెచ్చింది. ఇప్పటి GDI అర్థం సరళం: స్త్రీలకు విడిగా ఒక HDI, పురుషులకు విడిగా ఒక HDI కడతారు — అవే మూడు కోణాలు, అవే సూచికలు (ఆయుర్దాయం, MYS, EYS, అంచనా వేసిన ఆదాయం). ఆ రెండింటి నిష్పత్తే GDI:</p>
+<p>GDI = స్త్రీల HDI ÷ పురుషుల HDI</p>
+<p>GDI = 1 అంటే పూర్తి సమానత. GDI 1 కంటే తక్కువ అంటే స్త్రీలు వెనుకబడ్డారు; 1 కంటే ఎక్కువ అంటే పురుషులు వెనుకబడ్డారు. GDI ఆధారంగా దేశాలకు ర్యాంకులు కాకుండా, సమానత (1) నుంచి ఏ వైపు ఎంత దూరం ఉందో బట్టి ఐదు గ్రూపులు ఇస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>గ్రూపు</th>
+<th>సమానత నుంచి దూరం</th>
+<th>అర్థం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>2.5% లేదా తక్కువ</td>
+<td>అధిక సమానత</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>2.5–5%</td>
+<td>మధ్యస్థ–అధిక సమానత</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>5–7.5%</td>
+<td>మధ్యస్థ సమానత</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>7.5–10%</td>
+<td>మధ్యస్థ–అల్ప సమానత</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>10% కంటే ఎక్కువ</td>
+<td>అల్ప సమానత</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఉదాహరణకు స్త్రీల HDI 0.680, పురుషుల HDI 0.740 అయితే GDI = 0.919; దూరం = 8.1%, కాబట్టి ఆ దేశం గ్రూపు 4.</p>
+<p>భారత్ (HDR 2025): స్త్రీల HDI 0.631, పురుషుల HDI 0.722. GDI = 0.631 ÷ 0.722 = 0.874. సమానత నుంచి దూరం = (1 − 0.874) × 100 = 12.6%. అంటే భారత్‌లో స్త్రీల HDI పురుషుల HDI కంటే 10% కి పైగా తక్కువ; అందుకే భారత్ గ్రూపు 5 లో ఉంది. "5" అనేది గ్రూపు సంఖ్య, ర్యాంకు కాదు; ప్రతి నివేదికతో గ్రూపు మారవచ్చు కాబట్టి నివేదిక సంవత్సరంతో కలిపి చెప్పాలి. భారత్ వెనుకబాటుకు ప్రధాన కారణం స్త్రీల ఆదాయం, శ్రామిక భాగస్వామ్యం చాలా తక్కువగా ఉండటం.</p>
+<p>GDI స్త్రీల సాధనను పురుషులతో పోలుస్తుంది. స్త్రీలకు జరిగే నష్టాన్ని — ప్రసూతి మరణాలు, చట్టసభల్లో సీట్లు, ఉద్యోగాలు — కొలిచేది వేరే సూచిక, GII (<a href="#gii-mpi">తర్వాతి విభాగం</a>).</p>
+<h2 id="gii-mpi">GII, MPI ఏం కొలుస్తాయి? లింగ అసమానత, బహుముఖ పేదరికం</h2>
+<p>HDI రెండు ప్రశ్నలకు జవాబు ఇవ్వదు: ఒక దేశంలో స్త్రీలు పురుషులతో పోలిస్తే ఎక్కడ నష్టపోతున్నారు? ఎన్ని కుటుంబాలు ఒకేసారి చాలా లోటుల్లో బతుకుతున్నాయి? ఈ రెండు ప్రశ్నలకు HDR 2010 లో వచ్చిన రెండు సూచికలు జవాబిస్తాయి:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>సూచిక</th>
+<th>ఏం కొలుస్తుంది</th>
+<th>దేని స్థానంలో వచ్చింది</th>
+<th>ఎవరు ప్రచురిస్తారు</th>
+<th>విలువ ఎలా చదవాలి</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GII</strong> (Gender Inequality Index, లింగ అసమానతల సూచి)</td>
+<td>ప్రత్యుత్పత్తి ఆరోగ్యం, సాధికారత, శ్రామిక మార్కెట్‌లో స్త్రీలకు జరిగే నష్టం</td>
+<td>GDI, GEM</td>
+<td>UNDP (HDR)</td>
+<td>0 = పూర్తి సమానత్వం; తక్కువ విలువే మంచిది</td>
+</tr>
+<tr>
+<td><strong>Global MPI</strong> (Multidimensional Poverty Index, బహుముఖ పేదరిక సూచి)</td>
+<td>ఒకే కుటుంబంపై ఒకేసారి పడే ఎన్నో లేములు</td>
+<td>HPI</td>
+<td>UNDP + OPHI</td>
+<td>ఎక్కువ విలువ = ఎక్కువ పేదరికం</td>
+</tr>
+</tbody>
+</table></div>
+<p>సూచికల కుటుంబం ఎలా మారిందో <a href="#hdr-history">UNDP, నివేదికల చరిత్ర</a> లో చూశాం. GII అనే పొడి అక్షరాలు ఇంకో సూచికకూ ఉన్నాయి: <a href="/learn/geography/g2/30/notes#wto-agreements">పాఠం 30: WTO, WIPO</a> లో చూసిన Global Innovation Index (WIPO; GII 2026 లో భారత్ 139 ఆర్థిక వ్యవస్థల్లో 38) ఆవిష్కరణలను కొలుస్తుంది, స్త్రీ–పురుష అసమానతను కాదు.</p>
+<h3>GII — స్త్రీలకు ఎక్కడ నష్టం జరుగుతోంది?</h3>
+<p>GII ని మూడు కోణాలుగా, ఐదు సూచికలుగా విభజిస్తారు:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కోణం</th>
+<th>సూచిక</th>
+<th>ఏం చూపుతుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ప్రత్యుత్పత్తి ఆరోగ్యం (Reproductive health)</strong></td>
+<td>Maternal mortality ratio (MMR, ప్రసూతి మరణాల నిష్పత్తి)</td>
+<td>ప్రతి లక్ష సజీవ జననాలకు ప్రసవ సంబంధ కారణాలతో చనిపోయే తల్లులు</td>
+</tr>
+<tr>
+<td><strong>ప్రత్యుత్పత్తి ఆరోగ్యం</strong></td>
+<td>Adolescent birth rate</td>
+<td>15–19 ఏళ్ల ప్రతి 1,000 మంది అమ్మాయిలకు జననాలు</td>
+</tr>
+<tr>
+<td><strong>సాధికారత (Empowerment)</strong></td>
+<td>పార్లమెంటు స్థానాల్లో స్త్రీల వాటా</td>
+<td>నిర్ణయాల్లో స్త్రీల గొంతు</td>
+</tr>
+<tr>
+<td><strong>సాధికారత</strong></td>
+<td>25 ఏళ్లు పైబడినవారిలో కనీసం కొంత సెకండరీ చదువు (స్త్రీలు, పురుషులు వేర్వేరుగా)</td>
+<td>చదువులో అంతరం</td>
+</tr>
+<tr>
+<td><strong>శ్రామిక మార్కెట్ (Labour market)</strong></td>
+<td>Labour-force participation rate (LFPR; స్త్రీలు, పురుషులు వేర్వేరుగా)</td>
+<td>15 ఏళ్లు పైబడి పని చేస్తున్న లేదా పని వెతుకుతున్నవారి శాతం</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఒక ఊరిలో అమ్మాయిలు బడికి వెళ్తున్నారనుకోండి. అంతమాత్రాన సమానత్వం వచ్చిందని చెప్పలేం. చిన్న వయసులోనే పెళ్లి, ప్రసవం జరిగితే ఆరోగ్యం దెబ్బతింటుంది. చదువుకున్నా ఉద్యోగంలోకి రాకపోతే ఆదాయం ఉండదు. చట్టసభల్లో వాళ్ల గొంతు వినిపించకపోతే నిర్ణయాల్లో భాగం ఉండదు. GII సరిగ్గా ఈ మూడు చోట్ల స్త్రీలకు జరిగే నష్టాన్ని కొలుస్తుంది. MMR, శిశు మరణాల వంటి జనాభా గణాంకాల వివరాలు తర్వాతి పాఠాల్లో చూస్తాం; ఇక్కడ అవి సూచిక భాగాలు మాత్రమే.</p>
+<p>GII విలువ 0 నుంచి 1 మధ్య ఉంటుంది. 0 అంటే స్త్రీ–పురుషుల మధ్య పూర్తి సమానత్వం; విలువ పెరిగే కొద్దీ అసమానత ఎక్కువ. అంటే GII లో తక్కువ విలువే మంచిది, HDI లో, GDI లో మాత్రం దిశ వేరు. మూడు "gender" సూచికల తేడా ఒకచోట: GDI స్త్రీల HDI ని పురుషుల HDI తో భాగిస్తుంది (1 కి దగ్గర మంచిది); GII స్త్రీలకు జరిగే నష్టాన్ని కొలుస్తుంది (0 కి దగ్గర మంచిది); WEF ప్రచురించే Global Gender Gap Index నాలుగు రంగాల్లో అంతరం ఎంత మూసుకుపోయిందో చూపుతుంది (1 = అంతరం పూర్తిగా మూసుకుపోయింది; <a href="#other-indices">ఇతర సూచికలు</a>).</p>
+<p>HDR 2025 (2023 గణాంకాలు) GII లో Denmark (0.003) మొదటి స్థానంలో, Norway, Sweden తర్వాతి స్థానాల్లో ఉన్నాయి. చివరి స్థానాల్లో Yemen (172వ, 0.838), Nigeria (171), Somalia (170) ఉన్నాయి. భారత్ GII విలువ 0.403, ర్యాంకు 172 దేశాల్లో 102.</p>
+<p>భారత్‌లో అతిపెద్ద అంతరం పని దగ్గరే ఉంది. HDR 2025 పట్టికలో 15 ఏళ్లు పైబడిన స్త్రీల LFPR 35.1%, పురుషులది 76.4%. ఈ HDR విలువలు ILO అంచనాలు (modelled estimates); అన్ని దేశాలకూ ఒకే పద్ధతిలో కట్టినవి. భారత ప్రభుత్వ సొంత సర్వే Periodic Labour Force Survey (PLFS, MoSPI) అంకె వేరు: PLFS Annual Report 2025 (జనవరి–డిసెంబర్ 2025; విడుదల 27 మార్చి 2026) ప్రకారం usual status (ps+ss) లో 15 ఏళ్లు పైబడిన స్త్రీల LFPR 40.0%, పురుషులది 79.1%; 2017–18 లో స్త్రీల LFPR 23.3% మాత్రమే. పద్ధతి, సంవత్సరం వేరు కాబట్టి ILO, PLFS అంకెలు రెండూ సరైనవే.</p>
+<h3>Global MPI — ఒకే కుటుంబంపై ఎన్ని లోటులు?</h3>
+<p>Global MPI ని మూడు కోణాలుగా, పది సూచికలుగా విభజిస్తారు; ప్రతి కోణానికి సమాన బరువు (1/3):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>కోణం (బరువు)</th>
+<th>సూచికలు</th>
+<th>ఒక్కో సూచిక బరువు</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఆరోగ్యం (1/3)</strong></td>
+<td>పోషణ (Nutrition), బాలల మరణం (Child mortality — 18 ఏళ్లలోపు పిల్లల మరణం)</td>
+<td>1/6</td>
+</tr>
+<tr>
+<td><strong>విద్య (1/3)</strong></td>
+<td>చదువుకున్న సంవత్సరాలు (Years of schooling), బడి హాజరు (School attendance)</td>
+<td>1/6</td>
+</tr>
+<tr>
+<td><strong>జీవన ప్రమాణం (1/3)</strong></td>
+<td>వంట ఇంధనం, పారిశుద్ధ్యం, తాగునీరు, విద్యుత్, ఇల్లు, ఆస్తులు</td>
+<td>1/18</td>
+</tr>
+</tbody>
+</table></div>
+<p>అంటే పది సూచికల్లో ఆరోగ్యానికి 2, విద్యకు 2, జీవన ప్రమాణానికి 6. Global MPI ని United Nations Development Programme (UNDP), Oxford Poverty and Human Development Initiative (OPHI, Oxford University) కలిసి 2010 నుంచి ప్రచురిస్తున్నాయి.</p>
+<p>పేదరికాన్ని సాధారణంగా ఆదాయంతో కొలుస్తారు: రోజుకు ఇంత డబ్బు కంటే తక్కువ ఉంటే పేదవారు. కానీ ఒక కుటుంబానికి కొంత ఆదాయం ఉన్నా ఇంట్లో కరెంటు లేకపోవచ్చు, పిల్లలు బడి మానేసి ఉండొచ్చు, వంట కట్టెల పొయ్యిపై జరుగుతూ ఉండొచ్చు. ఇవన్నీ ఒకేసారి ఒకే ఇంట్లో ఉంటే ఆ కుటుంబం నిజంగా పేదదే. ఇలా ఒకదానిపై ఒకటి పడే లోటులను (overlapping deprivations) కుటుంబం స్థాయిలో లెక్కించేదే Global MPI.</p>
+<p>ఒక కుటుంబం లోటుల బరువు మొత్తం 1/3 (33.3%) లేదా అంతకంటే ఎక్కువ అయితే ఆ కుటుంబంలోని అందరినీ MPI పేదలుగా లెక్కిస్తారు (cut-off 1/3). ఒక ఇంట్లో ఒక బిడ్డ పోషకాహార లోపంతో ఉంది (1/6), ఆ ఇంట్లో గత ఐదేళ్లలో ఒక బిడ్డ చనిపోయింది (1/6) అనుకోండి: మొత్తం 1/6 + 1/6 = 1/3, కాబట్టి ఈ కుటుంబం పేదదే. ఇంకో ఇంట్లో వంట ఇంధనం, పారిశుద్ధ్యం, తాగునీరు, విద్యుత్ — నాలుగు లేకపోయినా మొత్తం 4/18 = 2/9 మాత్రమే, 1/3 కంటే తక్కువ; ఆ కుటుంబం MPI పేద కాదు.</p>
+<p>MPI విలువ రెండు సంఖ్యల గుణకారం:</p>
+<ul>
+<li>H (Headcount ratio) = జనాభాలో ఎంత శాతం MPI పేదలు — ఎంత మంది పేదలు?</li>
+<li>A (Intensity) = పేదలు సగటున ఎంత బరువున్న లోటుల్లో ఉన్నారు — పేదరికం ఎంత లోతు?</li>
+<li>MPI = H × A</li>
+</ul>
+<p>పేదల సంఖ్య (H) మాత్రమే చూస్తే, అదే పేదలు ఇంకా లోతైన లోటుల్లోకి జారినా సంఖ్యలో మార్పు కనిపించదు. H × A రెండింటినీ పట్టుకుంటుంది; పేదల సంఖ్య తగ్గినా, లోతు తగ్గినా MPI తగ్గుతుంది. H, MPI తెలిస్తే A = MPI ÷ H; ఉదాహరణకు H = 30%, MPI = 0.135 అయితే A = 0.135 ÷ 0.30 = 0.45, అంటే 45%.</p>
+<p>భారత్ లెక్కకు ఆధారం National Family Health Survey (NFHS, జాతీయ కుటుంబ ఆరోగ్య సర్వే) — కుటుంబాల ఆరోగ్యం, పోషణ, వసతులపై కేంద్ర ఆరోగ్య మంత్రిత్వ శాఖ చేయించే ఇంటింటి సర్వే. NFHS-4 2015–16 లో, NFHS-5 2019–21 లో జరిగాయి. Global MPI 2026 (UNDP–OPHI, 12 అక్టోబర్ 2026) ప్రకారం భారత్‌లో NFHS-5 (2019–21) గణాంకాలతో H = 16.4%, MPI = 0.069. కాబట్టి A = 0.069 ÷ 0.164 = సుమారు 42%; అంటే భారత్‌లో పేదలుగా లెక్కించినవారు సగటున 42% బరువున్న లోటుల్లో ఉన్నారు. Global MPI 2025 లోనూ భారత్‌కు ఇవే విలువలు ఉన్నాయి; కొత్త NFHS వచ్చేవరకు ఈ విలువలు మారవు.</p>
+<p>ప్రపంచ స్థాయిలో Global MPI 2026 108 దేశాల్లోని 630 కోట్ల మందిని పరిశీలించింది; వారిలో సుమారు 120 కోట్ల మంది తీవ్ర బహుముఖ పేదరికంలో ఉన్నారు. ఎక్కువ మంది పేదలు sub-Saharan Africa, South Asia లో ఉన్నారు; Chad (0.517), Niger (0.470) వంటి sub-Saharan దేశాల్లో MPI విలువ చాలా ఎక్కువ. 2026 నివేదిక చెప్పిన ముఖ్య వార్త: 2010 తర్వాత మొదటిసారి ప్రపంచంలో బహుముఖ పేదల సంఖ్య పెరిగింది.</p>
+<h3>National MPI — NITI Aayog లెక్క</h3>
+<p>భారత్ తన రాష్ట్రాలు, జిల్లాల కోసం NITI Aayog (National Institution for Transforming India) ద్వారా సొంత National Multidimensional Poverty Index తయారు చేసింది. NITI Aayog 2015 లో Planning Commission (ప్రణాళికా సంఘం) స్థానంలో వచ్చిన కేంద్ర ప్రభుత్వ విధాన సంస్థ.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>అంశం</th>
+<th>Global MPI</th>
+<th>National MPI (NITI Aayog)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఎవరు</strong></td>
+<td>UNDP + OPHI</td>
+<td>NITI Aayog (UNDP, OPHI సాంకేతిక సహకారం)</td>
+</tr>
+<tr>
+<td><strong>సూచికలు</strong></td>
+<td>10</td>
+<td>12 (+ మాతృ ఆరోగ్యం, బ్యాంకు ఖాతా)</td>
+</tr>
+<tr>
+<td><strong>పరిధి</strong></td>
+<td>100 కి పైగా దేశాల పోలిక</td>
+<td>భారత రాష్ట్రాలు, జిల్లాలు</td>
+</tr>
+<tr>
+<td><strong>భారత్ పేదల శాతం (2015–16)</strong></td>
+<td>27.7%</td>
+<td>24.85%</td>
+</tr>
+<tr>
+<td><strong>భారత్ పేదల శాతం (2019–21)</strong></td>
+<td>16.4%</td>
+<td>14.96%</td>
+</tr>
+</tbody>
+</table></div>
+<p>National MPI పద్ధతి Global MPI దే (H × A, 1/3 cut-off); తేడా సూచికల్లో ఉంది. Global MPI లోని పది సూచికలకు తోడు మాతృ ఆరోగ్యం (Maternal health), బ్యాంకు ఖాతా (Bank account) అనే రెండు సూచికలు చేర్చారు; మొత్తం 12. National MPI ని తయారు చేసేది NITI Aayog; UNDP, OPHI సాంకేతిక సహకారం మాత్రమే ఇస్తాయి. మొదటి నివేదిక (Baseline Report, 2021) NFHS-4 (2015–16) పై, రెండో నివేదిక (Progress Review 2023) NFHS-5 (2019–21) పై ఆధారపడ్డాయి. Global MPI, National MPI సూచికలు వేరు కాబట్టి ఒకే సంవత్సరానికి వాటి శాతాలు వేరుగా ఉంటాయి.</p>
+<p>National MPI 2023 ప్రకారం ఆంధ్రప్రదేశ్‌లో బహుముఖ పేదలు 2015–16 లో 11.77% ఉండగా, 2019–21 కి 6.06% కి తగ్గారు. ఈ రెండు విలువలు విభజిత ఆంధ్రప్రదేశ్ 13 జిల్లాల కాలం నాటి విలువలు (2026 నాటికి ఏపీలో 28 జిల్లాలు). ఏపీ మానవాభివృద్ధి నివేదికలు <a href="#hd-india-ap">భారత, ఏపీ నివేదికలు</a> లో చూస్తాం.</p>
+<p>రాష్ట్ర సర్వే NITI Aayog National MPI 2023 లెక్కలను ఇలా ఇస్తుంది: ఏపీ MPI స్కోరు 2015–16 లో 0.053 నుంచి 2019–21 కి 0.025 కి, అంటే సుమారు 50% తగ్గింది. 2019–21 లో ఏపీ పేదల శాతం (Headcount ratio, H) 6.06% (భారత్ 14.96%), తీవ్రత (Intensity, A) 41.12% (భారత్ 44.39%), MPI 0.025 (భారత్ 0.066) (ఏపీ సామాజిక-ఆర్థిక సర్వే 2025-26). ఇక్కడ 0.025 అనేది స్కోరు (H × A), 6.06% అనేది శాతం — రెండూ వేర్వేరు.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>National MPI 2023 (2019–21)</th>
+<th>ఏపీ పేదల శాతం (H)</th>
+<th>తీవ్రత (A)</th>
+<th>MPI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>మొత్తం</strong></td>
+<td>6.06% (భారత్ 14.96%)</td>
+<td>41.12% (44.39%)</td>
+<td>0.025 (0.066)</td>
+</tr>
+<tr>
+<td><strong>గ్రామీణ</strong></td>
+<td>7.71% (భారత్ 19.28%)</td>
+<td>41.41% (44.55%)</td>
+<td>0.032 (0.086)</td>
+</tr>
+<tr>
+<td><strong>పట్టణ</strong></td>
+<td>2.20% (భారత్ 5.27%)</td>
+<td>38.77% (43.10%)</td>
+<td>0.009 (0.023)</td>
+</tr>
+</tbody>
+</table></div>
+<p>పై పట్టిక: ఏపీ సామాజిక-ఆర్థిక సర్వే 2025-26 (బ్రాకెట్లలో భారత్ విలువలు). గ్రామీణ ఏపీలో పేదరికం పట్టణం కంటే సుమారు మూడున్నర రెట్లు.</p>
+<p>MPI స్కోరు ప్రకారం (తక్కువైతే మంచిది) 28 రాష్ట్రాల్లో ఏపీ 9వ స్థానం (0.025). కేరళ 1వ (0.002), గోవా 2వ (0.003), తమిళనాడు 3వ (0.009), సిక్కిం 4వ (0.011), తెలంగాణ 8వ (0.024 — మిజోరాం కూడా 0.024 తో ఏపీ కంటే పైన); బిహార్ చివరి స్థానం (0.16) (ఏపీ సామాజిక-ఆర్థిక సర్వే 2025-26).</p>
+<p>12 సూచికలు 3 సమాన బరువు గల అంశాల (equally weighted dimensions) కింద ఉంటాయి: ఆరోగ్యం 3, విద్య 2, జీవన ప్రమాణం 7. ఏపీ బలంగా ఉన్నవి: గృహవసతి (housing — 3వ స్థానం; లోటు 14.67%, భారత్ 41.37%), వంట ఇంధనం (cooking fuel — 4వ; 16.09%, భారత్ 43.90%), మాతృ ఆరోగ్యం, పాఠశాల హాజరు, విద్యుత్, ఆస్తులు. ఏపీ బలహీనంగా ఉన్నవి: చదువుకున్న సంవత్సరాలు (years of schooling — లోటు 15.81%, భారత్ 11.40%; 25వ స్థానం), తాగునీరు (9.14%, భారత్ 7.32%; 18వ), పారిశుధ్యం (22.84%; 12వ), బ్యాంకు ఖాతాలు (13వ), పిల్లలు–కౌమారుల మరణాలు (11వ), పోషణ (nutrition — 22.94%, భారత్ 31.52%; 10వ) (ఏపీ సామాజిక-ఆర్థిక సర్వే 2025-26). గుర్తుంచుకోవలసిన విరుద్ధం: మొత్తం MPI లో ఏపీ దేశం కంటే మెరుగైనా, చదువుకున్న సంవత్సరాలు, తాగునీటిలో ఏపీ లోటు దేశ సగటు కంటే ఎక్కువ.</p>
+<p>MPI ఆదాయ పేదరికం కాదు. పాత ఆదాయ లెక్క (Planning Commission, Tendulkar పద్ధతి, 2011–12) ప్రకారం ఏపీలో పేదరికం మొత్తం 9.20% (గ్రామీణ 10.96%, పట్టణ 5.81%); దేశంలో 21.92% (ఏపీ సామాజిక-ఆర్థిక సర్వే 2025-26).</p>
+<p>NITI Aayog చర్చా పత్రం (Discussion Paper, జనవరి 2024) ప్రకారం భారత్‌లో బహుముఖ పేదలు 2013–14 లో 29.17% నుంచి 2022–23 కి 11.28% కి తగ్గారు; ఈ తొమ్మిదేళ్లలో సుమారు 24.82 కోట్ల మంది MPI పేదరికం నుంచి బయటపడ్డారు. 2022–23 విలువ సర్వే ఫలితం కాదు, అంచనా (projection).</p>
+<h2 id="other-indices">ఇతర సూచికలు: PQLI, GNH, World Happiness Report, Global Gender Gap Index, PHDI</h2>
+<p>HDI కుటుంబం బయట కూడా జీవన నాణ్యతను కొలిచే సూచికలు ఉన్నాయి. ఈ పాఠంలో వాటిలో ఐదింటిని చూస్తాం:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>సూచిక</th>
+<th>ఎవరు</th>
+<th>ఎప్పుడు</th>
+<th>ఏం కొలుస్తుంది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PQLI</strong> (Physical Quality of Life Index)</td>
+<td>Morris David Morris (Overseas Development Council)</td>
+<td>1979</td>
+<td>అక్షరాస్యత, శిశు మరణాలు, ఒక ఏడాది వయసులో ఆయుర్దాయం; ఆదాయం లేదు</td>
+</tr>
+<tr>
+<td><strong>GNH</strong> (Gross National Happiness)</td>
+<td>భూటాన్ నాలుగో రాజు Jigme Singye Wangchuck</td>
+<td>ఆలోచన 1970లు</td>
+<td>4 స్తంభాలు, 9 రంగాల్లో శ్రేయస్సు</td>
+</tr>
+<tr>
+<td><strong>World Happiness Report</strong></td>
+<td>UN SDSN</td>
+<td>2012</td>
+<td>ప్రజలు తమ జీవితానికి ఇచ్చే మార్కు (0–10)</td>
+</tr>
+<tr>
+<td><strong>Global Gender Gap Index</strong></td>
+<td>World Economic Forum (WEF)</td>
+<td>2006</td>
+<td>4 రంగాల్లో స్త్రీ–పురుష అంతరం ఎంత మూసుకుపోయింది</td>
+</tr>
+<tr>
+<td><strong>PHDI</strong> (Planetary pressures-adjusted HDI)</td>
+<td>UNDP</td>
+<td>HDR 2020</td>
+<td>CO₂, Material footprint తో సర్దుబాటు చేసిన HDI</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PQLI — ఆదాయం లేని పాత సూచిక</h3>
+<p>1970లలో చాలామంది ఆర్థికవేత్తలు ఒక విషయం గమనించారు: తలసరి ఆదాయం పెరిగినా ప్రజల ఆరోగ్యం, చదువు అంతగా మెరుగుపడటం లేదు. అందుకే అమెరికా ఆర్థికవేత్త Morris David Morris ఆదాయాన్ని పక్కన పెట్టి జీవితాన్నే నేరుగా కొలవాలనుకున్నారు. Overseas Development Council (Washington) కోసం ఆయన 1979 లో Physical Quality of Life Index (భౌతిక జీవన ప్రమాణ సూచి, PQLI) ప్రతిపాదించారు.</p>
+<p>PQLI లో మూడు సూచికలు ఉన్నాయి: అక్షరాస్యత (literacy), శిశు మరణాల రేటు (infant mortality), ఒక సంవత్సరం వయసులో ఆయుర్దాయం (life expectancy at age one). ఒక్కో సూచికను 0–100 స్కేలుకు మార్చి, మూడింటి సాధారణ సగటు (అంక మధ్యమం) తీసుకుంటారు. HDI లో ఆదాయం ఒక కోణం; PQLI లో ఆదాయం అసలే లేదు. రెండు సూచికల మధ్య అసలు తేడా అదే.</p>
+<h3>GNH — భూటాన్ ఆలోచన</h3>
+<p>"Gross National Happiness is more important than Gross National Product" — ఈ మాట భూటాన్ నాలుగో రాజు Jigme Singye Wangchuck 1970లలో చెప్పారు. దేశ ప్రగతిని ఉత్పత్తితో కాకుండా ప్రజల సంతోషం, సమతుల్యతతో చూడాలన్నది ఆయన ఆలోచన. ఈ ఆలోచననే స్థూల జాతీయ సంతోషం (Gross National Happiness, GNH) అంటారు. 2008 భూటాన్ రాజ్యాంగం GNH ను ప్రభుత్వ లక్ష్యంగా చెప్పింది.</p>
+<p>GNH కు నాలుగు స్తంభాలు: సుస్థిర, సమాన ఆర్థిక అభివృద్ధి; పర్యావరణ పరిరక్షణ; సంస్కృతి పరిరక్షణ; సుపరిపాలన. ఈ ఆలోచనను కొలవడానికి భూటాన్ తయారు చేసిన GNH Index లో 9 రంగాలు (domains) ఉన్నాయి: మానసిక శ్రేయస్సు (Psychological wellbeing), ఆరోగ్యం (Health), విద్య (Education), సమయ వినియోగం (Time use), సాంస్కృతిక వైవిధ్యం (Cultural diversity and resilience), సుపరిపాలన (Good governance), సామాజిక చైతన్యం (Community vitality), పర్యావరణ వైవిధ్యం (Ecological diversity and resilience), జీవన ప్రమాణం (Living standards). అంటే GNH ఆదాయం, ఆరోగ్యం, చదువుతో ఆగకుండా సంస్కృతి, పర్యావరణం, పాలనను కూడా చూసే విస్తృత విధానం.</p>
+<h3>World Happiness Report — ప్రజలు తమ జీవితాన్ని ఎలా చూస్తున్నారు?</h3>
+<p>GNH ఒక దేశం సొంత విధానం; World Happiness Report (WHR) ప్రపంచ దేశాల పోలిక. పేర్లు దగ్గరగా ఉన్నా రెండూ వేర్వేరు: WHR ను భూటాన్ కాదు, UNDP కూడా కాదు, UN Sustainable Development Solutions Network (SDSN) 2012 లో మొదలుపెట్టింది. ఇప్పుడు Oxford Wellbeing Research Centre, Gallup, SDSN కలిసి ప్రచురిస్తున్నాయి.</p>
+<p>WHR స్కోరు ఒకే ప్రశ్న నుంచి వస్తుంది. Gallup World Poll లో ప్రతి దేశంలో ప్రజలను అడుగుతారు: "0 నుంచి 10 మెట్ల నిచ్చెనలో మీ జీవితం ఏ మెట్టు మీద ఉంది?" మూడేళ్ల సగటు జవాబే ఆ దేశ స్కోరు; ఆ స్కోరు ప్రకారమే ర్యాంకు. దేశాల స్కోర్లలో తేడాలు ఎందుకు వచ్చాయో ఆరు అంశాలు వివరిస్తాయి: తలసరి GDP, సామాజిక మద్దతు (social support), ఆరోగ్యకర ఆయుర్దాయం, జీవిత నిర్ణయాల్లో స్వేచ్ఛ, ఉదారత (generosity), అవినీతి గురించి ప్రజల భావన. ఈ ఆరు అంశాలను కూడితే ర్యాంకు రాదు; అవి తేడాకు కారణాలను మాత్రమే చూపిస్తాయి.</p>
+<p>ఏటా 20 మార్చి అంతర్జాతీయ సంతోష దినోత్సవం (International Day of Happiness); ఆ రోజే WHR విడుదలవుతుంది. World Happiness Report 2026 (20 మార్చి 2026; 147 దేశాలు) లో Finland వరుసగా 9వ సారి మొదటి స్థానంలో నిలిచింది; Iceland 2, Denmark 3; Afghanistan చివరి (147వ) స్థానం. భారత్ 116వ స్థానంలో ఉంది. అంతకుముందు భారత్ 2024 లో 143 దేశాల్లో 126, 2025 లో 147 దేశాల్లో 118 — అంటే ర్యాంకు క్రమంగా మెరుగుపడుతోంది.</p>
+<p>సంతోషాన్ని ప్రభుత్వ పనిగా చేసుకున్న రాష్ట్రాలు కూడా ఉన్నాయి. జూలై 2016 లో Madhya Pradesh దేశంలోనే మొదటి సంతోష శాఖ (Anand Vibhag) ను, దాని కింద Rajya Anand Sansthan ను ఏర్పాటు చేసింది. రెండో రాష్ట్రం మన ఆంధ్రప్రదేశ్: 3 ఏప్రిల్ 2017 న అప్పటి ముఖ్యమంత్రి N. చంద్రబాబు నాయుడు Happiness Index విభాగాన్ని ప్రకటించి, ఆ విభాగాన్ని తానే చూస్తానన్నారు. రెండు రాష్ట్రాలకూ భూటాన్ GNH ఆలోచనే స్ఫూర్తి.</p>
+<h3>Global Gender Gap Index — WEF కొలిచే అంతరం</h3>
+<p>World Economic Forum (WEF, Geneva) 2006 నుంచి Global Gender Gap Report ప్రచురిస్తోంది. ఆ నివేదికలోని Global Gender Gap Index స్త్రీ–పురుషుల మధ్య అంతరం ఎంత మూసుకుపోయిందో నాలుగు ఉప సూచికల (sub-indices) ద్వారా కొలుస్తుంది:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ఉప సూచిక</th>
+<th>భారత్ (2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఆర్థిక భాగస్వామ్యం, అవకాశాలు</strong> (Economic participation and opportunity)</td>
+<td>41.2%</td>
+</tr>
+<tr>
+<td><strong>విద్యా సాధన</strong> (Educational attainment)</td>
+<td>96.6%</td>
+</tr>
+<tr>
+<td><strong>ఆరోగ్యం, మనుగడ</strong> (Health and survival)</td>
+<td>95.6%</td>
+</tr>
+<tr>
+<td><strong>రాజకీయ సాధికారత</strong> (Political empowerment)</td>
+<td>24.5%</td>
+</tr>
+</tbody>
+</table></div>
+<p>స్కోరు 0 నుంచి 1 మధ్య ఉంటుంది; 1 అంటే పూర్తి సమానత్వం. ఉదాహరణకు 0.645 అంటే అంతరంలో 64.5% మూసుకుపోయింది. UNDP Gender Inequality Index (<a href="#gii-mpi">GII</a>) లో దిశ Global Gender Gap Index కు తిరగబడి ఉంటుంది: GII లో 0 మంచిది. భారత్‌లో విద్య, ఆరోగ్యం లో అంతరం దాదాపు మూసుకుపోయింది; వెనుకబాటు అంతా ఆర్థిక భాగస్వామ్యం, రాజకీయ సాధికారత లోనే.</p>
+<p>Global Gender Gap Report 2026 (WEF, సెప్టెంబర్ 2026; 20వ సంచిక; 145 దేశాలు) లో Iceland వరుసగా 17వ ఏడాది మొదటి స్థానంలో ఉంది; Finland 2, Norway 3; Chad చివరి స్థానం. భారత్ 131వ స్థానం, స్కోరు 64.5%. భారత్ 2024 లో 146 దేశాల్లో 129, 2025 లో 148 దేశాల్లో 131; అంటే 2025, 2026 లో ర్యాంకు ఒకటే అయినా దేశాల సంఖ్య వేరు.</p>
+<h3>PHDI — భూమిపై భారాన్ని కూడా లెక్కిస్తే?</h3>
+<p>ఒక దేశం HDI చాలా ఎక్కువ ఉండొచ్చు. కానీ ఆ అభివృద్ధి కోసం ఆ దేశం ఎక్కువ బొగ్గు, చమురు కాల్చి, ఎక్కువ వనరులు తవ్వి ఉండొచ్చు; ఆ భారం భవిష్యత్తు తరాలపై పడుతుంది. ఈ ఆలోచనతో HDR 2020 Planetary pressures-adjusted HDI (PHDI) తీసుకొచ్చింది. PHDI రెండు అంశాలతో HDI ని సర్దుబాటు చేస్తుంది: తలసరి CO₂ ఉద్గారాలు (carbon dioxide emissions per capita), తలసరి Material footprint (ఒక వ్యక్తి వినియోగం కోసం తవ్వి వాడిన మొత్తం ముడి పదార్థాలు). భూమిపై భారం లేకపోతే PHDI = HDI; భారం పెరిగే కొద్దీ PHDI తగ్గుతుంది. PHDI ఒక ప్రయోగాత్మక సూచిక (experimental index) మాత్రమే; HDI కి అదనపు కోణం ఇస్తుంది, HDI స్థానాన్ని తీసుకోదు. ఇదే ఆలోచన 2015 లో UN ఆమోదించిన 17 Sustainable Development Goals (SDGs) లోనూ ఉంది.</p>
+<h2 id="hd-india-ap">భారతదేశ, ఆంధ్రప్రదేశ్ మానవాభివృద్ధి నివేదికలు ఏం చెప్పాయి?</h2>
+<p>UNDP ప్రపంచ నివేదిక దేశాలను పోలుస్తుంది. కానీ భారత్ వంటి పెద్ద దేశంలో కేరళ (Keralam), Bihar మధ్య తేడా చాలా దేశాల మధ్య తేడా కంటే ఎక్కువ. అందుకే రాష్ట్రాలను, జిల్లాలను పోల్చడానికి దేశ స్థాయి, రాష్ట్ర స్థాయి నివేదికలు వచ్చాయి. ముఖ్యమైన నివేదికలు కాలక్రమంలో:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>నివేదిక</th>
+<th>ఏడాది</th>
+<th>సంస్థ</th>
+<th>ముఖ్యాంశం</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Madhya Pradesh HDR</strong></td>
+<td>1995</td>
+<td>MP ప్రభుత్వం</td>
+<td>దేశంలో మొదటి State HDR</td>
+</tr>
+<tr>
+<td><strong>Human Development in South Asia</strong></td>
+<td>1997</td>
+<td>Human Development Centre, Islamabad (Mahbub ul Haq)</td>
+<td>దక్షిణాసియాపై మొదటి ప్రాంతీయ నివేదిక</td>
+</tr>
+<tr>
+<td><strong>India: Towards Population and Development Goals</strong></td>
+<td>1997</td>
+<td>UNFPA కోసం</td>
+<td>భారత రాష్ట్రాల మానవాభివృద్ధి పోలిక</td>
+</tr>
+<tr>
+<td><strong>Karnataka HDR</strong></td>
+<td>1999</td>
+<td>Karnataka ప్రభుత్వం</td>
+<td>రెండో State HDR</td>
+</tr>
+<tr>
+<td><strong>NHDR 2001</strong></td>
+<td>2001 (విడుదల ఏప్రిల్ 2002)</td>
+<td>Planning Commission</td>
+<td>మొదటి జాతీయ నివేదిక; HDI, GEI, HPI</td>
+</tr>
+<tr>
+<td><strong>AP HDR 2007</strong></td>
+<td>2007</td>
+<td>CESS, Hyderabad</td>
+<td>ఉమ్మడి ఏపీ జిల్లాల HDI, GDI, GEM</td>
+</tr>
+<tr>
+<td><strong>India HDR 2011</strong></td>
+<td>2011</td>
+<td>IAMR (Planning Commission)</td>
+<td>సామాజిక వర్గాల మధ్య అంతరాలు</td>
+</tr>
+<tr>
+<td><strong>CESS ప్రాంతీయ అసమానతల అధ్యయనం</strong></td>
+<td>2016</td>
+<td>CESS, Hyderabad</td>
+<td>2011–12 గణాంకాలతో ఉమ్మడి ఏపీ జిల్లాల అసమానతలు</td>
+</tr>
+</tbody>
+</table></div>
+<h3>మొదటి అడుగులు</h3>
+<p>రాష్ట్ర స్థాయిలో మొదటి మానవాభివృద్ధి నివేదిక (State HDR) Madhya Pradesh 1995 లో ప్రచురించింది. తర్వాత Karnataka నివేదిక వచ్చింది; UNDP HDR catalogue దాని సంవత్సరాన్ని 1999 గా ఇస్తుంది, కొన్ని నోట్సులు 1998 అంటాయి. ఆ తర్వాత చాలా రాష్ట్రాలు సొంత నివేదికలు ప్రచురించాయి.</p>
+<p>1997 లో రెండు ముఖ్యమైన అధ్యయనాలు వచ్చాయి. మొదటిది Mahbub ul Haq స్థాపించిన Human Development Centre (Islamabad) ప్రచురించిన Human Development in South Asia 1997; దక్షిణాసియాపై వచ్చిన మొదటి ప్రాంతీయ నివేదిక అదే. రెండోది UNFPA కోసం తయారైన India: Towards Population and Development Goals; ఈ అధ్యయనం భారత రాష్ట్రాల మానవాభివృద్ధిని పోల్చింది.</p>
+<h3>జాతీయ మానవాభివృద్ధి నివేదిక 2001</h3>
+<p>భారత ప్రభుత్వం స్వయంగా తయారు చేసిన మొదటి జాతీయ మానవాభివృద్ధి నివేదిక (National Human Development Report, NHDR) 2001 ది. ఈ నివేదికను Planning Commission (ప్రణాళికా సంఘం; 2015 లో దాని స్థానంలో NITI Aayog వచ్చింది) తయారు చేసింది. ఏప్రిల్ 2002 లో ప్రధాని A.B. Vajpayee విడుదల చేశారు (చాలా పుస్తకాలు 23 ఏప్రిల్ 2002 అని ఇస్తాయి). పేరులో "2001", విడుదల 2002 — రెండూ ఒకే నివేదిక.</p>
+<p>NHDR మూడు సూచికలు లెక్కించింది: HDI, Gender Equality Index (GEI), Human Poverty Index (HPI). కోణాలు UNDP వే (ఆరోగ్యం, విద్య, ఆర్థిక స్థితి), కానీ ప్రతి కోణం సూచికను భారత పరిస్థితికి తగ్గట్టు మార్చారు:</p>
+<ul>
+<li>ఆర్థిక స్థితికి తలసరి ఆదాయం కాదు, తలసరి వినియోగ వ్యయం (consumption expenditure) — ధరల పెరుగుదల, అసమానతలకు సర్దుబాటు చేసి.</li>
+<li>ఆరోగ్యానికి ఆయుర్దాయంతో పాటు శిశు మరణాల రేటు (IMR).</li>
+<li>విద్యకు అక్షరాస్యతతో పాటు అధికారిక చదువు ఎన్ని తరగతుల వరకు సాగిందో (intensity of formal education).</li>
+</ul>
+<p>NHDR 2001 లో 15 ప్రధాన రాష్ట్రాల్లో కేరళ (0.638) మొదటి స్థానంలో, Bihar (0.367) చివరి స్థానంలో ఉన్నాయి. 25 ఆగస్టు 2026 నుంచి కేరళ అధికారిక పేరు Keralam; పాత నివేదికల్లోని Kerala, ఇప్పటి Keralam ఒకే రాష్ట్రం. అప్పటి ఉమ్మడి ఆంధ్రప్రదేశ్ (Telangana తో కలిపి) HDI 1991 లో 0.377 నుంచి 2001 కి 0.416 కి పెరిగింది, కానీ ర్యాంకు 9 నుంచి 10 కి దిగింది. విలువ పెరిగినా ర్యాంకు తగ్గడానికి కారణం ఇతర రాష్ట్రాలు ఇంకా వేగంగా ముందుకెళ్లడం (<a href="#reading-indices">సూచికను చదవడం</a>).</p>
+<p>తర్వాత Planning Commission కింద Institute of Applied Manpower Research (IAMR) India Human Development Report 2011: Towards Social Inclusion తయారు చేసింది; ఈ నివేదిక సామాజిక వర్గాల మధ్య అంతరాలపై దృష్టి పెట్టింది.</p>
+<h3>ఆంధ్రప్రదేశ్ మానవాభివృద్ధి నివేదికలు</h3>
+<p>ఉమ్మడి ఆంధ్రప్రదేశ్ మొదటి నివేదిక Andhra Pradesh Human Development Report 2007. ఈ నివేదికను Centre for Economic and Social Studies (CESS), Hyderabad రాష్ట్ర ప్రభుత్వం కోసం తయారు చేసింది; జిల్లాల వారీగా HDI, GDI, GEM లెక్కించింది.</p>
+<p>రెండో అధ్యయనం CESS నుంచే 2016 లో వచ్చింది: Mapping Regional Disparities in Human Development — The Case of Erstwhile Andhra Pradesh. 2011–12 సర్వే వివరాలతో ఈ అధ్యయనం ఉమ్మడి రాష్ట్రంలోని జిల్లాలు, ప్రాంతాల మధ్య అసమానతలను చూపింది. రెండు నివేదికలూ పాత జిల్లాల ఆధారంగా ఉన్నాయి (ఉమ్మడి రాష్ట్రంలో 23, విభజన తర్వాత ఏపీలో 13). ఇప్పుడు ఏపీలో 28 జిల్లాలు (31 డిసెంబర్ 2025 నుంచి). కాబట్టి పాత జిల్లా ర్యాంకులను నేటి జిల్లాలకు నేరుగా అన్వయించలేం. అదే విధంగా NHDR 2001 లో ఆంధ్రప్రదేశ్ 10వ స్థానం ఉమ్మడి రాష్ట్రానిది, నేటి ఆంధ్రప్రదేశ్‌ది కాదు.</p>
+<h3>రాష్ట్రాల HDI ని దేశాల పట్టికతో ఎందుకు పోల్చలేం?</h3>
+<p>ఇప్పుడు రాష్ట్రాల HDI ని సాధారణంగా Global Data Lab (Radboud University, Netherlands) లెక్కించే Subnational HDI నుంచి చూస్తారు; ఈ లెక్కలు UNDP నివేదిక కాదు. ఆ లెక్కల్లో (GDL v10.1, 2023 గణాంకాలు) Bihar అట్టడుగున (సుమారు 0.65) ఉంటుంది; కేరళ, Goa, Delhi, Chandigarh వంటివి పై వరుసలో ఉంటాయి.</p>
+<p>ఈ రాష్ట్రాల విలువలను HDR దేశాల పట్టిక పక్కన పెట్టి "కేరళ ప్రపంచంలో ఇన్నో స్థానం" అని చెప్పకూడదు. మూడు కారణాలు: సూచికల నిర్వచనాలు వేరు (NHDR వినియోగ వ్యయం, HDR తలసరి GNI); గణాంకాల సంవత్సరాలు వేరు; భౌగోళిక సరిహద్దులు వేరు (ఉమ్మడి ఏపీ, 13 జిల్లాల ఏపీ, 28 జిల్లాల ఏపీ). ఒకే పద్ధతి, ఒకే సంవత్సరం ఉన్న పట్టికలోని విలువలనే పోల్చాలి. ఒక సరళమైన చిత్రం: ఒక క్లాసులో మార్కులను 100 కి, ఇంకో క్లాసులో 50 కి వేస్తే, రెండు జాబితాలను కలిపి ర్యాంకులు ఇవ్వలేం.</p>
+<h2 id="pairs">తరచూ కలిసిపోయే జతలు</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>జత</th>
+<th>మొదటిది</th>
+<th>రెండోది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ఆర్థిక వృద్ధి – మానవాభివృద్ధి</strong></td>
+<td>ఉత్పత్తి, ఆదాయం పెరుగుదల (పరిమాణాత్మకం)</td>
+<td>ప్రజల ఎంపికలు, సామర్థ్యాలు పెరగడం (గుణాత్మకం)</td>
+</tr>
+<tr>
+<td><strong>సంక్షేమ విధానం – మౌలిక అవసరాల విధానం</strong></td>
+<td>ప్రభుత్వ ఖర్చుతో సేవలు; ప్రజలు లబ్ధిదారులు</td>
+<td>ILO; ఆరు కనీస అవసరాలు</td>
+</tr>
+<tr>
+<td><strong>ప్రచురణ సంవత్సరం – గణాంకాల సంవత్సరం</strong></td>
+<td>నివేదిక విడుదల (HDR 2025)</td>
+<td>లెక్కల ఏడాది (2023)</td>
+</tr>
+<tr>
+<td><strong>అంక మధ్యమం – గుణ మధ్యమం</strong></td>
+<td>2010 కి ముందు HDI; లోటును ఇంకో కోణం పూడ్చగలదు</td>
+<td>2010 నుంచి HDI; ఒక కోణంలో లోటు పూర్తిగా పూడదు</td>
+</tr>
+<tr>
+<td><strong>HDI – IHDI</strong></td>
+<td>సగటు సాధన</td>
+<td>అసమానతకు సర్దుబాటు; HDI కి సమానం లేదా తక్కువ</td>
+</tr>
+<tr>
+<td><strong>GDI – GII (UNDP)</strong></td>
+<td>స్త్రీ HDI ÷ పురుష HDI; 1 కి దగ్గర మంచిది</td>
+<td>స్త్రీలకు జరిగే నష్టం; 0 మంచిది</td>
+</tr>
+<tr>
+<td><strong>GII (UNDP) – Global Gender Gap Index (WEF)</strong></td>
+<td>0 మంచిది; 2010</td>
+<td>1 మంచిది (అంతరం మూసుకుపోయింది); 2006</td>
+</tr>
+<tr>
+<td><strong>GII (UNDP) – GII (WIPO)</strong></td>
+<td>Gender Inequality Index; భారత్ 172 లో 102 (HDR 2025)</td>
+<td>Global Innovation Index; భారత్ 139 లో 38 (GII 2026) — <a href="/learn/geography/g2/30/notes#wto-agreements">పాఠం 30: WTO ఒప్పందాలు</a></td>
+</tr>
+<tr>
+<td><strong>MPI headcount (H) – MPI విలువ</strong></td>
+<td>పేదల శాతం (భారత్ 16.4%)</td>
+<td>H × A (భారత్ 0.069)</td>
+</tr>
+<tr>
+<td><strong>Global MPI – National MPI</strong></td>
+<td>UNDP + OPHI (2010); 10 సూచికలు</td>
+<td>NITI Aayog (2021); 12 సూచికలు</td>
+</tr>
+<tr>
+<td><strong>GNH – World Happiness Report</strong></td>
+<td>భూటాన్ సొంత విధానం (1970లు)</td>
+<td>UN SDSN దేశాల ర్యాంకులు (2012)</td>
+</tr>
+<tr>
+<td><strong>PQLI – HDI</strong></td>
+<td>Morris (1979); ఆదాయం లేదు, అంక మధ్యమం</td>
+<td>UNDP (1990); ఆదాయం ఒక కోణం</td>
+</tr>
+<tr>
+<td><strong>NHDR HDI – UNDP HDI</strong></td>
+<td>తలసరి వినియోగ వ్యయం, IMR</td>
+<td>తలసరి GNI, ఆయుర్దాయం</td>
+</tr>
+<tr>
+<td><strong>Subnational HDI – HDR</strong></td>
+<td>Global Data Lab (Radboud University)</td>
+<td>UNDP (HDRO)</td>
+</tr>
+<tr>
+<td><strong>సంతోష శాఖ: మొదటి – రెండో రాష్ట్రం</strong></td>
+<td>Madhya Pradesh (జూలై 2016)</td>
+<td>ఆంధ్రప్రదేశ్ (ఏప్రిల్ 2017)</td>
+</tr>
+<tr>
+<td><strong>State HDR: మొదటి – రెండో</strong></td>
+<td>Madhya Pradesh (1995)</td>
+<td>Karnataka (1999)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>భారత్ — తాజా విలువలు ఒకేచోట (2026 నవంబర్ నాటికి)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>సూచిక</th>
+<th>భారత్</th>
+<th>నివేదిక (గణాంకాల సంవత్సరం)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HDI</strong></td>
+<td>0.685; 193 లో 130</td>
+<td>HDR 2025 (2023)</td>
+</tr>
+<tr>
+<td><strong>IHDI</strong></td>
+<td>0.475 (నష్టం 30.7%)</td>
+<td>HDR 2025 (2023)</td>
+</tr>
+<tr>
+<td><strong>GDI</strong></td>
+<td>0.874; గ్రూపు 5</td>
+<td>HDR 2025 (2023)</td>
+</tr>
+<tr>
+<td><strong>GII</strong></td>
+<td>0.403; 172 లో 102</td>
+<td>HDR 2025 (2023)</td>
+</tr>
+<tr>
+<td><strong>Global MPI</strong></td>
+<td>headcount 16.4%; విలువ 0.069</td>
+<td>Global MPI 2026 (2019–21)</td>
+</tr>
+<tr>
+<td><strong>National MPI</strong></td>
+<td>14.96% (2019–21); 11.28% (2022–23 అంచనా)</td>
+<td>NITI Aayog 2023, 2024</td>
+</tr>
+<tr>
+<td><strong>World Happiness Report</strong></td>
+<td>147 లో 116</td>
+<td>WHR 2026</td>
+</tr>
+<tr>
+<td><strong>Global Gender Gap Index</strong></td>
+<td>145 లో 131 (64.5%)</td>
+<td>GGGR 2026</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="selfcheck">మీకు మీరే పరీక్ష</h2>
+<ol>
+<li>నగర జనాభా 5 లక్షల నుంచి 10 లక్షలకు పెరగడం మానవాభివృద్ధి ఎందుకు కాదు? — అది పరిమాణాత్మక మార్పు మాత్రమే; ఇళ్లు, నీరు, రవాణా పెరిగి ప్రజల ఎంపికలు పెరిగితేనే మానవాభివృద్ధి.</li>
+<li>ఒక దేశం HDI విలువ పెరిగినా ర్యాంకు ఎందుకు పడిపోవచ్చు? — ఇతర దేశాలు ఇంకా వేగంగా మెరుగుపడితే, లేదా జాబితాలో కొత్త దేశాలు చేరితే.</li>
+<li>2010 నుంచి HDI లో గుణ మధ్యమం ఎందుకు వాడుతున్నారు? — ఒక కోణంలో బలహీనతను ఇంకో కోణంలోని బలం పూర్తిగా పూడ్చకూడదని.</li>
+<li>IHDI ఎప్పుడూ HDI కి సమానంగా లేదా తక్కువగానే ఎందుకు ఉంటుంది? — ఆరోగ్యం, విద్య, ఆదాయం ప్రజల మధ్య అసమానంగా పంచిన మేరకు HDI నుంచి తగ్గిస్తుంది; అసమానత లేకపోతేనే రెండూ సమానం.</li>
+<li>MPI లో H ను A తో ఎందుకు గుణిస్తారు? — పేదల సంఖ్యతో పాటు వారి పేదరికం లోతు కూడా విలువలో కనిపించాలని.</li>
+<li>Morris తన PQLI లో తలసరి ఆదాయాన్ని ఎందుకు వదిలేశారు? — ఆదాయం పెరిగినా ఆరోగ్యం, అక్షరాస్యత మెరుగుపడటం లేదని గమనించి, జీవితాన్నే నేరుగా కొలవాలని.</li>
+<li>World Happiness Report లో దేశ ర్యాంకు ఎలా వస్తుంది? — Gallup సర్వేలో ప్రజలు తమ జీవితానికి 0–10 మెట్లలో ఇచ్చిన మార్కుల మూడేళ్ల సగటుతో; ఆరు అంశాలు ఆ తేడాలను వివరిస్తాయి, ర్యాంకును లెక్కించవు.</li>
+<li>Global Gender Gap Index లో భారత్ ఎక్కడ వెనకబడుతోంది? — ఆర్థిక భాగస్వామ్యం (41.2%), రాజకీయ సాధికారత (24.5%) లో; విద్య, ఆరోగ్యం లో అంతరం దాదాపు మూసుకుపోయింది.</li>
+<li>PHDI ఎప్పుడూ HDI కంటే ఎక్కువ ఎందుకు కాదు? — తలసరి CO₂, Material footprint భారం మేరకు HDI నుంచి తగ్గిస్తుంది; భారం లేకపోతేనే PHDI = HDI.</li>
+<li>NHDR 2001 ఆర్థిక కోణానికి ఆదాయానికి బదులు వినియోగ వ్యయం ఎందుకు వాడింది? — భారత పరిస్థితికి తగ్గట్టు, ధరలు, అసమానతలకు సర్దుబాటు చేసిన వినియోగమే జీవన ప్రమాణాన్ని బాగా చూపుతుందని.</li>
+<li>NHDR 2001 లో ఆంధ్రప్రదేశ్ ర్యాంకును నేటి ఆంధ్రప్రదేశ్‌కు ఎందుకు అన్వయించలేం? — ఆ విలువ Telangana తో కలిసిన ఉమ్మడి రాష్ట్రానిది; సరిహద్దులు 2014 లో, జిల్లాలు తర్వాత మారాయి.</li>
+<li>రాష్ట్రాల HDI విలువలను HDR దేశాల పట్టికతో నేరుగా ఎందుకు పోల్చలేం? — సూచికల నిర్వచనాలు, గణాంకాల సంవత్సరాలు, సరిహద్దులు వేరు.</li>
+</ol>
+<h2 id="sources">ఆధారాలు</h2>
+<ul>
+<li>UNDP, Human Development Report 2025: A matter of choice — People and possibilities in the age of AI; Statistical Annex (HDI, IHDI, GDI, GII, PHDI tables); Technical Notes (hdr.undp.org).</li>
+<li>UNDP HDR catalogue: Madhya Pradesh HDR 1995; Human Development in Karnataka 1999.</li>
+<li>UNDP, Gender Inequality Index — Frequently Asked Questions.</li>
+<li>UNDP–OPHI, Global Multidimensional Poverty Index 2025 and 2026 (country briefings: India, Chad, Niger).</li>
+<li>NITI Aayog: National Multidimensional Poverty Index — Baseline Report (2021); Progress Review 2023; Discussion Paper Multidimensional Poverty in India since 2005-06 (January 2024).</li>
+<li>Planning Commission, National Human Development Report 2001; IAMR, India Human Development Report 2011.</li>
+<li>CESS Hyderabad: Andhra Pradesh Human Development Report 2007; Mapping Regional Disparities in Human Development — The Case of Erstwhile Andhra Pradesh (2016).</li>
+<li>Government of Andhra Pradesh, Planning Department: Socio-Economic Survey 2025–26.</li>
+<li>MoSPI, Periodic Labour Force Survey Annual Report 2025 (press note, 27 March 2026); PLFS Annual Report 2023–24.</li>
+<li>World Economic Forum, Global Gender Gap Report 2025 and 2026.</li>
+<li>UN SDSN, Oxford Wellbeing Research Centre, Gallup: World Happiness Report 2025 and 2026.</li>
+<li>Centre for Bhutan Studies and GNH Research / GNH Centre Bhutan: GNH Index.</li>
+<li>Morris David Morris, Measuring the Condition of the World's Poor: The Physical Quality of Life Index (Overseas Development Council, 1979).</li>
+<li>Global Data Lab, Radboud University: Subnational Human Development Index.</li>
+<li>Government of Madhya Pradesh: Anand Vibhag / Rajya Anand Sansthan.</li>
+<li>Government of Andhra Pradesh: Happiness Index department announcement, April 2017 (reported by The News Minute, 4 April 2017).</li>
+<li>WIPO, Global Innovation Index 2026.</li>
+<li>The Nobel Prize: Amartya Sen, Prize in Economic Sciences 1998.</li>
+<li>Sadguna Rao Sir Publications, India &amp; Andhra Pradesh Geography, pages 519–528.</li>
+</ul>
+<p>పాఠంలోని తేదీతో కూడిన గణాంకాలు ఆ తేదీకి మాత్రమే వర్తిస్తాయి.</p></article><footer class="endnote"><a class="back" href="#top">↑ పాఠం మొదటికి</a><p>పాఠంలోని తేదీతో కూడిన గణాంకాలు ఆ తేదీకి మాత్రమే వర్తిస్తాయి.</p></footer></main></body></html>
