@@ -63,7 +63,7 @@
   <div class="row between"><h2>{{ c.bi('Science & Technology', 'సైన్స్ & టెక్నాలజీ') }}</h2>{{ c.tag('ok', t('common.available')) }}</div>
   <span class="small muted">{{ c.bi('Bilingual textbooks and mapped MCQs', 'Bilingual textbooks మరియు అనుసంధానించిన MCQs') }}</span>
 </a>{% endif %}
-<a class="card" href="{{ url_for('geography.index') }}" data-geography-subject="geography">
+<a class="card" href="{{ url_for('geography.g2_index') }}" data-geography-subject="geography">
   <div class="row between"><h2>{{ c.bi('Geography — World, India & Andhra Pradesh', 'భూగోళశాస్త్రం — ప్రపంచం, భారతదేశం & ఆంధ్రప్రదేశ్') }}</h2>{{ c.tag('ok', t('common.available')) }}</div>
   {% set gs=g2_stats() %}{% if gs %}<span class="small muted">{{ c.bi('Group 2 · ' ~ gs.lessons ~ ' lessons · ' ~ gs.mcq ~ ' MCQs · ' ~ gs.pyq ~ ' PYQs', 'గ్రూప్ 2 · ' ~ gs.lessons ~ ' పాఠాలు · ' ~ gs.mcq ~ ' MCQs · ' ~ gs.pyq ~ ' PYQs') }}</span>{% endif %}
 </a>

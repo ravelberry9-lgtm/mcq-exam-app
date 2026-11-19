@@ -88,7 +88,9 @@ def g2_index():
                 images=sum(r['images'] for r in rows.values()),done=sum(r['done'] for r in rows.values()),
                 saved=sum(1 for s in st.values() if s.saved and s.item_id in g2.by_id()),
                 wrong=sum(1 for s in st.values() if s.wrong_count and s.item_id in g2.by_id()))
-    return render_template('ds/g2_geography.html',data=g2.index(),rows=rows,groups=g2.GROUPS,totals=totals)
+    only=request.args.get('only','')
+    if only not in ('','done'):abort(404)
+    return render_template('ds/g2_geography.html',data=g2.index(),rows=rows,groups=g2.GROUPS,totals=totals,only=only)
 
 # ---- 2. lesson ----
 @bp.get('/g2/<int:number>')
@@ -110,11 +112,24 @@ def g2_progress(number):
     p.completed=request.form.get('completed')=='1';p.updated_at=datetime.utcnow();db.session.commit()
     return redirect(url_for('geography.g2_chapter',number=number))
 
+@bp.get('/g2/infographics')
+def g2_infographics_pick():
+    counts={c['display_chapter']:(c,len(g2.images(c['display_chapter']).get('images',{}))) for c in g2.index()['chapters']}
+    return render_template('ds/g2_infographics_pick.html',counts=counts,groups=g2.GROUPS,total=sum(v[1] for v in counts.values()))
+
+def _img_neighbour(number,step):
+    n=number+step
+    while g2.chapter(n):
+        if g2.images(n).get('images'):return n
+        n+=step
+    return None
+
 @bp.get('/g2/<int:number>/infographics')
 def g2_infographics(number):
     ch=g2.chapter(number) or abort(404);il=request.args.get('ilang','te')
     if il not in ('te','en'):abort(400)
-    return render_template('ds/g2_infographics.html',ch=ch,number=number,images=g2.lesson_images(number),il=il)
+    return render_template('ds/g2_infographics.html',ch=ch,number=number,images=g2.lesson_images(number),il=il,
+        prev_n=_img_neighbour(number,-1),next_n=_img_neighbour(number,1))
 
 # ---- 3. practice setup ----
 @bp.get('/g2/practice')

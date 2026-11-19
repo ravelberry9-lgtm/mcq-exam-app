@@ -1,0 +1,12 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'learn' %}
+{% block title %}చిత్రాలు · Infographics{% endblock %}
+{% block head_extra %}{% include 'ds/_g2_head.html' %}{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('geography.g2_index') }}">‹ భూగోళశాస్త్రం</a><strong>చిత్రాలు</strong></div>{% endblock %}
+{% block content %}<div class="u6 g2" data-g2-pick>
+<section class="card geo-intro"><h1>ఏ పాఠం చిత్రాలు? · Which lesson?</h1><p>{{ total }} చిత్రాలు · infographics — పాఠం ఎంచుకోండి, చిత్రాలు పూర్తి పేజీలో వస్తాయి.</p></section>
+{% for gid,te,en,sub,parts in groups %}<details class="card g2-group" open><summary><span class="g2-gt"><b lang="te">{{ te }}</b><span>{{ en }} · {{ sub }}</span></span></summary>
+{% for pid,pte,pen,lo,hi in parts %}{% if pid %}<h3 class="g2-sub">{{ pte }} · {{ pen }}</h3>{% endif %}
+{% for n in range(lo,hi+1) if n in counts %}{% set c,k=counts[n] %}<a class="g2-pick{{ ' none' if not k }}" style="--acc:{{ '#0f766e' if gid=='world' else '#1d4ed8' if pid=='physical' else '#b45309' if pid=='economic' else '#7c3aed' }}" href="{{ url_for('geography.g2_infographics',number=n) }}"{% if not k %} aria-disabled="true" tabindex="-1"{% endif %}><span class="num">{{ n }}</span><span class="t">{{ c.title }}</span><span class="c">{{ k }} 🖼</span></a>{% endfor %}{% endfor %}
+</details>{% endfor %}
+</div>{% endblock %}

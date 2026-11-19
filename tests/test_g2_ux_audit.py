@@ -25,7 +25,7 @@ def test_question_page_viewer_and_dedup(client):
 
 
 def test_counts_on_entry_points(client):
+    # /learn/geography/ now redirects straight to the G2 hub (HUB_SIMPLIFY.md)
     for url in ('/learn/', '/learn/geography/', '/learn/geography/g2'):
-        t = client.get(url).get_data(as_text=True)
+        t = client.get(url, follow_redirects=True).get_data(as_text=True)
         assert 'MCQs' in t and 'PYQs' in t, url
-    assert 'data-g2-counts' in client.get('/learn/geography/').get_data(as_text=True)

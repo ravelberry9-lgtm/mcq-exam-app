@@ -122,8 +122,9 @@ def _pyq_filters(catalogue):
 
 @bp.get("/")
 def index():
-    # The hub now only links to Group 2 (counts come from g2_stats); the old world/india PYQ summaries were unused here.
-    return render_template("ds/geography_hub.html")
+    # Geography has one live section (Group 2, lessons 1-34 = World + India & AP), so the subject page was a one-card
+    # dead end. Go straight to the G2 hub.
+    return redirect(url_for('geography.g2_index'))
 
 
 @bp.get("/india-ap")
