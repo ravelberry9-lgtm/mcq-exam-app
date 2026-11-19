@@ -4,5 +4,5 @@
 {% block topbar %}<h1>భూగోళశాస్త్రం · Geography</h1>{% endblock %}
 {% block content %}
 <nav><a href="{{ url_for('learn.hub') }}">‹ అధ్యయనం · Learn</a></nav>
-<a class="card" data-geography-umbrella="g2" href="{{ url_for('geography.g2_index') }}"><h2>గ్రూప్ 2 భూగోళశాస్త్రం · Group 2 Geography (34 lessons)</h2><span>Rebuilt Telugu-first lessons · MCQs with shuffled options</span></a>
+<a class="card" data-geography-umbrella="g2" href="{{ url_for('geography.g2_index') }}">{% set gs=g2_stats() %}<h2>గ్రూప్ 2 భూగోళశాస్త్రం · Group 2 Geography</h2>{% if gs %}<p class="small" data-g2-counts><b>{{ gs.lessons }}</b> పాఠాలు · lessons · <b>{{ gs.mcq }}</b> MCQs · <b>{{ gs.pyq }}</b> PYQs · <b>{{ gs.images }}</b> చిత్రాలు · infographics</p>{% endif %}<span>Rebuilt Telugu-first lessons · MCQs with shuffled options</span></a>
 {% endblock %}

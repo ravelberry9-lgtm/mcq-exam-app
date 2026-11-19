@@ -118,10 +118,10 @@ TE_TITLES.update({'7.1.1':'ప్రభుత్వ అంగాలు','7.2.1':
 @bp.app_template_filter('chapter_te')
 def _chapter_te(cid):return TE_TITLES.get(cid,'')
 from markupsafe import Markup,escape
-_ITEM=_re.compile(r'^\s*(\(?)([1-9]|[A-Ea-e]|i{1,3}|iv|v)([.)])\s+(.*\S)\s*$')
+_ITEM=_re.compile(r'^\s*(\(?)([1-9]|I{1,3}|IV|[A-Ea-e]|i{1,3}|iv|v)([.)])\s+(.*\S)\s*$')
 def _kind(m):
     t=m.group(2)
-    return 'num' if t.isdigit() else 'roman' if t in('i','ii','iii','iv','v') else 'upper' if t.isupper() else 'lower'
+    return 'num' if t.isdigit() else 'roman' if t in('i','ii','iii','iv','v') else 'ROMAN' if t in('II','III','IV') or t=='I' else 'upper' if t.isupper() else 'lower'
 _LHDR=_re.compile(r'^\s*((?:List|LIST)[- ]?(?:I{1,2}|1|2|A|B)\b[^:：]*|జాబితా[- ]?(?:I{1,2}|1|2|A|B)\b[^:：]*|Categories|వర్గాలు|Codes?|కోడ్‌?లు?)\s*[:：]?\s*(.*)$')
 _SEQS=[['I','II','III','IV','V','VI'],[c for c in 'ABCDEFG'],[c for c in 'abcdefg'],[str(i) for i in range(1,10)],['i','ii','iii','iv','v','vi']]
 def _split_seq(line):

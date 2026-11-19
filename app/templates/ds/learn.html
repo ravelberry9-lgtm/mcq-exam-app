@@ -65,7 +65,7 @@
 </a>{% endif %}
 <a class="card" href="{{ url_for('geography.index') }}" data-geography-subject="geography">
   <div class="row between"><h2>{{ c.bi('Geography — World, India & Andhra Pradesh', 'భూగోళశాస్త్రం — ప్రపంచం, భారతదేశం & ఆంధ్రప్రదేశ్') }}</h2>{{ c.tag('ok', t('common.available')) }}</div>
-  <span class="small muted">{{ c.bi('16 units · 83 chapters · 976 PYQs', '16 యూనిట్లు · 83 పాఠాలు · 976 PYQs') }}</span>
+  {% set gs=g2_stats() %}{% if gs %}<span class="small muted">{{ c.bi('Group 2 · ' ~ gs.lessons ~ ' lessons · ' ~ gs.mcq ~ ' MCQs · ' ~ gs.pyq ~ ' PYQs', 'గ్రూప్ 2 · ' ~ gs.lessons ~ ' పాఠాలు · ' ~ gs.mcq ~ ' MCQs · ' ~ gs.pyq ~ ' PYQs') }}</span>{% endif %}
 </a>
 {% if unit6_enabled %}{% set st=unit6_stats() %}<a class="card" href="{{ url_for('polity_unit6.home') }}" data-subject="indian_constitution">
   <div class="row between"><h2>{{ c.bi('Indian Polity — Unit 6', 'భారత రాజ్యాంగం — యూనిట్ 6') }}</h2>{{ c.tag('ok', t('common.available')) }}</div>

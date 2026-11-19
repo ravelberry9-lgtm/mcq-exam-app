@@ -240,3 +240,51 @@ def g2_run_result():
         return redirect(url_for('geography.g2_practice_setup',**active(v),qlang=l))
     wrong=[recs[i] for i in r['wrong'] if i in recs]
     return render_template('ds/g2_result.html',number=None,ch=None,run=r,wrong=wrong,lang=l,v=v,va=active(v),qurl=qurl)
+
+
+# --- stem layout (G2 only): put inline statements / match lists on their own lines, then reuse Polity's formatter ---
+import re as _re
+_G2_TAIL=r'(?:Which|Choose|Select|How many|Identify|Find|Of the|In the context|సరైన|పై వాటిలో|పైవాటిలో|కింది వాటిలో|కింది వానిలో|వీటిలో|ఎన్ని|ఏవి|సరైనవి|సరియైన)'
+_CODES_TAIL=_re.compile(r'\s*(?:(?:Codes?|కోడ్‌?లు?|సంకేతాలు)\s*(?:\(\s*A\s+B\s+C\s+D\s*\))?\s*[:：]?\s*)?(?:\b[aA]\s+[bB]\s+[cC]\s+[dD]\s*[:：]?)?\s*$')
+_CODE_OPT=_re.compile(r'^\(?\d\)?\s+(?=\S+\s+\S+\s+\S+\s+\S+\s*$)|^(?=\S+\s+\S+\s+\S+\s+\S+\s*$)')
+_CODE_TOK=_re.compile(r'^(?:I{1,3}|IV|V|[1-6]|[a-e]|[A-E])$')
+def g2_code_option(opt,options):
+    """'(2) II I IV III' (answer codes for List I a-d) -> 'A–II · B–I · C–IV · D–III', only when every option is such a code."""
+    def toks(o):
+        m=_CODE_OPT.match(o.strip());
+        if not m:return None
+        t=o.strip()[m.end():].split()
+        return t if len(t)==4 and all(_CODE_TOK.match(x) for x in t) else None
+    if not options or not all(toks(o or '') for o in options):return None
+    return ' · '.join(f'{L}–{v}' for L,v in zip('ABCD',toks(opt)))
+@bp.app_template_filter('g2_opt')
+def _g2_opt(opt,options):return g2_code_option(opt,options) or opt
+def g2_stem_text(t):
+    """Wording untouched: only newlines are inserted so List I/II, statements and the closing question each get a line."""
+    if t:t=_CODES_TAIL.sub('',str(t))
+    if not t or '\n' in t and not _re.search(r'[.?:]\s+\(?(?:I|1|A)[.)]\s.*\s\(?(?:II|2|B)[.)]\s',t):return t
+    s=str(t)
+    s=_re.sub(r'\s+/\s+(?=\(?(?:I{1,3}|IV|[1-9]|[A-D])[.)]\s|'+_G2_TAIL+')','\n',s)
+    # 'List I—(A) ...; List II—(1) ...'  ->  header lines
+    s=_re.sub(r'\s*;?\s*\b(List[- ]?I{1,2}|LIST[- ]?I{1,2}|జాబితా[- ]?I{1,2})\s*[—–]\s*',lambda m:'\n'+m.group(1)+':\n',s)
+    # inline match lists '(A) x (B) y; (1) p (2) q'
+    s=_re.sub(r'\s*;\s*(?=\(1\)\s)','\n',s)
+    # first statement label after a sentence end: 'Consider ... . I. x II. y'
+    m=_re.search(r'(?:(?<=[.?:：])|^)\s*(?=\(?(I|1|A|a|i)[.)]\s)',s)
+    if m:
+        lab=m.group(1);nxt={'I':'II','1':'2','A':'B','a':'b','i':'ii'}[lab]
+        if _re.search(r'\s\(?'+_re.escape(nxt)+r'[.)]\s',s[m.end():]):
+            s=s[:m.start()].rstrip()+'\n'+s[m.end():]
+            # closing question after the last statement
+            s=_re.sub(r'(?<=[.)])\s+(?='+_G2_TAIL+r')',lambda mm:'\n',s)
+    return s.strip()
+@bp.app_template_filter('g2_stem')
+def _g2_stem(t):
+    from .polity_unit6 import format_stem
+    return format_stem(g2_stem_text(t))
+@bp.app_context_processor
+def _g2_ctx():
+    def g2_stats():
+        try:return g2.content_stats()
+        except Exception:return None
+    return {'g2_stats':g2_stats}

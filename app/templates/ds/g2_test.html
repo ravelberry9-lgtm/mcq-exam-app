@@ -3,7 +3,7 @@
 {% from 'ds/polity_explain.html' import explain_panel with context %}
 {% block title %}Timed test · Group 2 Geography{% endblock %}
 {% block head_extra %}{% include 'ds/_g2_head.html' %}{% endblock %}
-{% macro stem(q) %}{% if lang in ('te','both') and q.question_te %}<div class="u6-text" lang="te">{{ q.question_te|fmt_stem }}</div>{% endif %}{% if lang in ('en','both') or not q.question_te %}<div class="u6-text" lang="en">{{ q.question_en|fmt_stem }}</div>{% endif %}{% endmacro %}
+{% macro stem(q) %}{% if lang in ('te','both') and q.question_te %}<div class="u6-text" lang="te">{{ q.question_te|g2_stem }}</div>{% endif %}{% if lang in ('en','both') or not q.question_te %}<div class="u6-text" lang="en">{{ q.question_en|g2_stem }}</div>{% endif %}{% endmacro %}
 {% macro opt(q,i) %}{% set ote=q.options_te[i-1] %}{% if lang in ('te','both') and ote %}<span lang="te">{{ ote }}</span>{% endif %}{% if lang=='both' and ote %}<br>{% endif %}{% if lang in ('en','both') or not ote %}<span lang="en">{{ q.options_en[i-1] }}</span>{% endif %}{% endmacro %}
 {% block topbar %}<div class="geo-qheader"><a href="{{ url_for('geography.g2_test_setup') }}">‹ Tests</a><strong>{{ 'Result' if exam.submitted_at else 'Timed test' }}</strong>{% if not exam.submitted_at %}<span id="u6-timer" class="g2-timer" aria-live="off"></span>{% endif %}</div>{% endblock %}
 {% block content %}<i hidden data-no-tools></i><div class="u6 g2">

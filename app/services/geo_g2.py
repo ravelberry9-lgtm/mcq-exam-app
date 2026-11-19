@@ -98,3 +98,9 @@ def lesson_sections(n):
     return [(s,titles.get(s) or s or "Other",cnt[s]) for s in keys]
 def lesson_images(n):
     d=images(n);return [{"stem":k,**v} for k,v in d.get("images",{}).items()]
+@lru_cache(maxsize=1)
+def content_stats():
+    """Counts shown on every Geography entry point (Learn card, Geography hub, G2 home)."""
+    recs=records();chs=index()["chapters"]
+    return {"lessons":len(chs),"mcq":sum(q["_kind"]=="bank" for q in recs),"pyq":sum(q["_kind"]=="pyq" for q in recs),
+            "images":sum(len(images(c["display_chapter"]).get("images",{})) for c in chs)}

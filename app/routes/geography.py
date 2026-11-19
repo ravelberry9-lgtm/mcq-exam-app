@@ -122,11 +122,8 @@ def _pyq_filters(catalogue):
 
 @bp.get("/")
 def index():
-    world_rows = _scope_pyqs(pyqs.records(), "world")
-    india_rows = _scope_pyqs(pyqs.records(), "india-ap")
-    return render_template("ds/geography_hub.html", world=world.index(),
-                           world_pyqs=pyqs.summary(world_rows), india_pyqs=pyqs.summary(india_rows),
-                           india_chapters=len(india_ap.index()["chapters"]))
+    # The hub now only links to Group 2 (counts come from g2_stats); the old world/india PYQ summaries were unused here.
+    return render_template("ds/geography_hub.html")
 
 
 @bp.get("/india-ap")

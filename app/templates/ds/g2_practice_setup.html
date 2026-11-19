@@ -9,7 +9,7 @@
   <div class="ph-seg" role="radiogroup" aria-label="Question type">
     <label class="{{ 'on' if v.kind=='pyq' }}"><input type="radio" name="kind" value="pyq" {{ 'checked' if v.kind=='pyq' }}><b>PYQs</b><small>{{ totals.pyq }}</small></label>
     <label class="{{ 'on' if v.kind=='bank' }}"><input type="radio" name="kind" value="bank" {{ 'checked' if v.kind=='bank' }}><b>MCQs</b><small>{{ totals.bank }}</small></label>
-    <label class="{{ 'on' if v.kind=='' }}"><input type="radio" name="kind" value="" {{ 'checked' if v.kind=='' }}><b>Both / రెండూ</b><small>{{ totals.pyq+totals.bank }}</small></label>
+    <label class="{{ 'on' if v.kind=='' }}"><input type="radio" name="kind" value="" {{ 'checked' if v.kind=='' }}><b>Both</b><small>రెండూ · {{ totals.pyq+totals.bank }}</small></label>
   </div><p class="ph-note">Filters are optional. Leave them empty to practise everything. / ఫిల్టర్లు ఐచ్ఛికం.</p></section>
 <section class="card ph-sec"><h2><label for="ph-ls">Lesson / పాఠం</label></h2>
   <select id="ph-ls" name="ls" class="ph-sel"><option value="">All lessons / అన్ని పాఠాలు</option>
