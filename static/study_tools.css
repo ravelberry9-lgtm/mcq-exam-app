@@ -57,3 +57,13 @@ body.mk-pen-on .mk-pen-root ::selection{background:#fbcfe8}
 .mk-chip{position:absolute;z-index:10001;background:#111827;color:#fff;border:0;border-radius:999px;padding:8px 14px;font:600 13px system-ui;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}
 .mk-chip[hidden]{display:none}
 span.mk{cursor:pointer}
+
+/* Phones/tablets: tools fold behind one small toggle in the bottom-right corner, just above the bottom nav */
+.mk-dock-toggle{display:none}
+@media (max-width:820px){
+  .mk-dock{right:8px;bottom:calc(var(--nav-h,60px) + 12px + env(safe-area-inset-bottom));gap:6px;flex-direction:column}
+  .mk-dock-toggle{display:flex;order:99;margin-left:2px;width:36px;height:36px;min-width:36px;border-radius:50%;align-items:center;justify-content:center;padding:0;
+    background:rgba(255,255,255,.92);border:1px solid #cbd5e1;box-shadow:0 1px 6px rgba(0,0,0,.16);color:#334155;font-size:17px;line-height:1;cursor:pointer}
+  .mk-dock:not(.mk-open)>*:not(.mk-dock-toggle){display:none!important}
+  .mk-dock.mk-open>*:not(.mk-dock-toggle){width:40px!important;height:40px!important;min-width:40px!important;font-size:19px!important}
+}

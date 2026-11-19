@@ -79,6 +79,7 @@
   document.addEventListener("selectionchange", function () {
     var p = readSelection(); if (p) pending = p;
     if (penBtn) penBtn.classList.toggle("ready", !!p);
+    if (p && dockEl) setDockOpen(true, false);   // text selected: show the pen even when the tools are folded
   });
   function wordSnap(txt, s, e) {
     while (s > 0 && /\S/.test(txt[s - 1])) s--;
@@ -210,7 +211,23 @@
     var a = document.createElement("a");
     a.className = "mk-dock-saved"; a.href = window.MK_SAVED || "/learn/my-saved/"; a.setAttribute("aria-label", "My saved pages and account"); a.textContent = "📑";
     dock.appendChild(a);
+    // phones: the four round buttons covered the content column, so they fold behind one small toggle
+    var tog = document.createElement("button");
+    tog.type = "button"; tog.className = "mk-dock-toggle"; tog.textContent = "✎";
+    tog.setAttribute("aria-label", "Study tools: bookmark, highlight, saved pages");
+    tog.addEventListener("click", function () { setDockOpen(!dock.classList.contains("mk-open"), true); });
+    dock.insertBefore(tog, dock.firstChild);
+    dockEl = dock; dockTog = tog;
+    var keep = null; try { keep = localStorage.getItem("mk-dock-open"); } catch (e) {}
+    setDockOpen(keep === "1", false);
     document.body.appendChild(dock);
+  }
+  var dockEl = null, dockTog = null;
+  function setDockOpen(open, remember) {
+    if (!dockEl) return;
+    dockEl.classList.toggle("mk-open", open);
+    if (dockTog) { dockTog.setAttribute("aria-expanded", open ? "true" : "false"); dockTog.textContent = open ? "×" : "✎"; }
+    if (remember) { try { localStorage.setItem("mk-dock-open", open ? "1" : "0"); } catch (e) {} }
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", scan); else scan();
 })();

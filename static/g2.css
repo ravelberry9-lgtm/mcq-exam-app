@@ -77,3 +77,11 @@ html.g2-page .mk-dock{right:6px;bottom:calc(84px + env(safe-area-inset-bottom))}
 @media (prefers-color-scheme:dark){.g2-pick{border-color:#334155}.g2-pick .c{color:#7dd3fc}}
 html.g2-page:not(.g2-q) .mk-dock{display:none!important}
 @media(min-width:720px){.g2 .g2-quick{grid-template-columns:repeat(3,1fr)}}
+/* practice setup: wrong answers + bookmarks shortcuts (as on Polity's setup) */
+.g2-quick{display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:640px){.g2-quick{grid-template-columns:1fr 1fr;gap:10px}}
+.g2-savedcard{border-color:#fde68a;background:#fffbeb}.g2-savedcard .ph-wx{background:#fef3c7;color:#b45309}.g2-savedcard>i{color:#b45309}
+.rs-what{margin:0;font-weight:650;color:#334155}
+/* keep count + Start on one row down to 360px (it wrapped under "· List") */
+.g2 .ph-bar{flex-wrap:nowrap}.g2 .ph-count{line-height:1.25}
+@media (max-width:400px){.g2 .ph-go{padding:0 14px}.g2 .ph-count{font-size:.84rem}.g2 .ph-count b{font-size:1.05rem}}

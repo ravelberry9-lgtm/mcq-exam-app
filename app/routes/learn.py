@@ -4,7 +4,7 @@ New blueprint under /learn. The old routes (/subjects, /subject/<slug>, /practic
 /notes/..., /exam/...) are untouched and keep working until the new journey replaces them.
 """
 import re
-from flask import Blueprint, abort, jsonify, redirect, render_template, request, send_file, url_for
+from flask import Blueprint, current_app, abort, jsonify, redirect, render_template, request, send_file, session, url_for
 
 from ..db import db
 from ..models import Chapter, ChapterProgress, ExamSection, Note, Subject
@@ -57,7 +57,59 @@ def hub():
 def practice_tab():
     """Bottom-bar Practice tab: pick a subject to practise."""
     science_available = any(science_content.load_book(item["slug"]) for item in science_content.CHAPTERS)
-    return render_template("ds/practice_tab.html", science_available=science_available)
+    return render_template("ds/practice_tab.html", science_available=science_available,
+                           polity=_polity_card(), geo=_geo_card())
+
+
+def _polity_card():
+    """Counts for the Indian Polity card on the Practice tab (None when Unit 6 is off or fails)."""
+    try:
+        from . import polity_unit6 as pu
+        if not pu.enabled():
+            return None
+        from ..polity_models import PolityUnit6State
+        allq = [q for q in pu.records().values() if pu.visible(q)]
+        ids = {q["id"] for q in allq}
+        st = [s for s in PolityUnit6State.query.filter_by(device_id=_device_id()).all() if s.item_id in ids]
+        lang = pu.language()
+        cont = None
+        last = session.get("u6last") or {}
+        if last:
+            sig, item = list(last.items())[-1]
+            if item in ids:
+                args = dict(kv.split("=", 1) for kv in sig.split("&") if "=" in kv)
+                cont = url_for("polity_unit6.practice", item_id=item, qlang=lang, **args)
+        wrong_ids = {s.item_id for s in st if s.wrong_count > 0}
+        wrong_qs = [q for q in allq if q["id"] in wrong_ids]
+        # same link as Polity's "Wrong answers only" (polity_unit6._wrong_entry)
+        wrong_url = url_for("polity_unit6.practice", item_id=wrong_qs[0]["id"], view="mistakes", chapter="",
+                            qlang=lang, fresh="1") if wrong_qs else None
+        return dict(pyq=sum(q["_kind"] != "bank" for q in allq), mcq=sum(q["_kind"] == "bank" for q in allq),
+                    wrong=len(wrong_qs), wrong_url=wrong_url,
+                    saved=sum(1 for s in st if s.saved),
+                    saved_url=url_for("polity_unit6.library", view="saved", chapter="", qlang=lang),
+                    cont=cont)
+    except Exception:
+        current_app.logger.exception("practice tab card")
+        db.session.rollback()
+        return None
+
+
+def _geo_card():
+    """Counts for the Geography (Group 2) card on the Practice tab."""
+    try:
+        from ..services import geo_g2 as g2
+        from .geography_g2_plus import states
+        recs = g2.records()
+        byid = g2.by_id()
+        st = [s for s in states().values() if s.item_id in byid]
+        return dict(pyq=sum(q["_kind"] == "pyq" for q in recs), mcq=sum(q["_kind"] == "bank" for q in recs),
+                    lessons=len(g2.index()["chapters"]),
+                    wrong=sum(1 for s in st if s.wrong_count), saved=sum(1 for s in st if s.saved))
+    except Exception:
+        current_app.logger.exception("practice tab card")
+        db.session.rollback()
+        return None
 
 
 @bp.route("/section/<int:section_id>")

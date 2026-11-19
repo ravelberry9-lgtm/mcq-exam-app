@@ -4,6 +4,7 @@
 {% block head_extra %}{% include 'ds/_g2_head.html' %}{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="{{ url_for('geography.g2_index') }}">‹ Geography</a><strong>Practice</strong></div>{% endblock %}
 {% block content %}<i hidden data-no-tools></i><div class="u6 ph g2">
+{% if wrong_n or saved_n %}<div class="g2-quick">{% if wrong_n %}<a class="card ph-wrongcard" href="{{ url_for('geography.g2_mistakes',qlang=lang) }}"><span class="ph-wx" aria-hidden="true">✗</span><span><b>My wrong answers / నా తప్పులు</b><small>{{ wrong_n }} question{{ '' if wrong_n==1 else 's' }} to practise again</small></span><i aria-hidden="true">›</i></a>{% endif %}{% if saved_n %}<a class="card ph-wrongcard g2-savedcard" href="{{ url_for('geography.g2_bookmarks',qlang=lang) }}"><span class="ph-wx" aria-hidden="true">★</span><span><b>Bookmarked / గుర్తుపెట్టినవి</b><small>{{ saved_n }} question{{ '' if saved_n==1 else 's' }}</small></span><i aria-hidden="true">›</i></a>{% endif %}</div>{% endif %}
 <form class="ph-form" method="get" action="{{ url_for('geography.g2_practice_setup') }}" id="ph-form">
 <section class="card ph-top"><h1 class="ph-h">Practice / సాధన</h1>
   <div class="ph-seg" role="radiogroup" aria-label="Question type">
@@ -25,8 +26,8 @@
 <section class="card ph-sec"><h2>Only / మాత్రమే <small>optional</small></h2><div class="ph-chips" role="radiogroup" aria-label="Only"><label class="{{ 'on' if not v.view }}"><input type="radio" name="view" value="" {{ 'checked' if not v.view }}>All / అన్నీ</label>{% for k,lab in views.items() %}<label class="{{ 'on' if v.view==k }}"><input type="radio" name="view" value="{{ k }}" {{ 'checked' if v.view==k }}>{{ lab }}</label>{% endfor %}</div></section>
 <section class="card ph-sec"><h2>Language / భాష</h2><div class="ph-chips" role="radiogroup" aria-label="Language">{% for code,lab in [('te','తెలుగు'),('en','English'),('both','తెలుగు + English')] %}<label class="{{ 'on' if lang==code }}"><input type="radio" name="qlang" value="{{ code }}" {{ 'checked' if lang==code }}>{{ lab }}</label>{% endfor %}</div></section>
 <noscript><button class="ph-apply" type="submit">Apply filters</button></noscript>
-<div class="ph-bar"><div class="ph-count"><b>{{ count }}</b> question{{ '' if count==1 else 's' }} · <a href="{{ list_url }}">List / జాబితా</a>{% if v.ls or v.exam or v.y1 or v.y2 or v.view or v.sec %} · <a href="{{ url_for('geography.g2_practice_setup',kind=v.kind) }}">Clear</a>{% endif %}</div>
-{% if start %}<a class="ph-go" href="{{ start }}">Start / ప్రారంభించండి</a>{% else %}<span class="ph-go off" aria-disabled="true">No questions</span>{% endif %}</div>
+<div class="ph-bar"><div class="ph-count"><b>{{ count }}</b> question{{ '' if count==1 else 's' }} · <a href="{{ list_url }}">List</a>{% if v.ls or v.exam or v.y1 or v.y2 or v.view or v.sec %} · <a href="{{ url_for('geography.g2_practice_setup',kind=v.kind) }}">Clear</a>{% endif %}</div>
+{% if start %}<a class="ph-go" href="{{ start }}">Start practice</a>{% else %}<span class="ph-go off" aria-disabled="true">No questions</span>{% endif %}</div>
 </form></div>{% endblock %}
 {% block scripts %}<script>(function(){var f=document.getElementById('ph-form');if(!f)return;
 function go(){var p=new URLSearchParams(),d=new FormData(f);d.forEach(function(x,k){if(x!==''||k==='kind')p.append(k,x)});location.href=f.action+'?'+p.toString();}

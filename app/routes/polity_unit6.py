@@ -788,7 +788,10 @@ def practice_hub():
     ex={g:sum(1 for q in allq if q['_kind']!='bank' and q_tags(q)['exam']==g) for g,_ in EXAM_GROUPS}
     chs=[(c,sum(1 for q in base if q['_chapter']==c['id'])) for c in chapters()]
     lang=language()
-    start=url_for('.practice',item_id=qs[0]['id'],qlang=lang,**{k:x for k,x in v.items() if x}) if qs else None
+    # chapter='' keeps 'Any chapter' on the question page (without it the page falls back to the question's own chapter,
+    # so 'All 9328' used to walk only the first chapter: 1/640)
+    sel={'chapter':'',**{k:x for k,x in v.items() if x}}
+    start=url_for('.practice',item_id=qs[0]['id'],qlang=lang,**sel) if qs else None
     return render_template('ds/polity_practice_hub.html',v=v,count=len(qs),start=start,groups=EXAM_GROUPS,exam_counts=ex,
         chapters=[c for c in chs if c[1]],facets=facet_options(fbase),
         totals={'bank':sum(q['_kind']=='bank' for q in allq),'pyq':sum(q['_kind']!='bank' for q in allq)},ca_counts={p:sum(1 for q in allq if q.get('_ca') and (p=='all' and q.get('ca_period') in ('recent','earlier') or q.get('ca_period')==p)) for p in ('all','recent','earlier','apra')},
@@ -953,7 +956,7 @@ def _resume_for(v,qs,lang):
     item=(session.get('u6last') or {}).get(_sel_sig(v))
     pos=next((i for i,q in enumerate(qs) if q['id']==item),None)
     if pos is None or pos==0:return None
-    return {'pos':pos+1,'url':url_for('.practice',item_id=item,qlang=lang,**{k:x for k,x in v.items() if x})}
+    return {'pos':pos+1,'url':url_for('.practice',item_id=item,qlang=lang,**{'chapter':'',**{k:x for k,x in v.items() if x}})}
 
 # ---- Current affairs (Indian & AP polity, Nov 2025 – Nov 2026): notes + MCQs ----
 CA_SECTIONS=[('P','Parliament & Constitution amendments','పార్లమెంట్ & రాజ్యాంగ సవరణలు'),('J','Judiciary','న్యాయవ్యవస్థ'),('E','Elections','ఎన్నికలు'),('X','Executive & constitutional bodies','కార్యనిర్వాహక వర్గం & రాజ్యాంగ సంస్థలు'),('F','Federalism & rights','సమాఖ్య విధానం & హక్కులు'),('L','Local government & governance','స్థానిక ప్రభుత్వాలు & పాలన'),('A','Andhra Pradesh polity','ఆంధ్రప్రదేశ్ రాజకీయ వ్యవస్థ'),('R','Reports, indices & days','నివేదికలు, సూచీలు & దినోత్సవాలు'),('Z','AP Reorganisation Act, 2014','ఏపీ పునర్వ్యవస్థీకరణ చట్టం, 2014')]

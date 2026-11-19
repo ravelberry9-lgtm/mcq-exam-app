@@ -75,7 +75,7 @@ def test_filtered_run_crosses_lessons_and_scores(client):
     r = client.post(f'{B}/1/practice/{last1["id"]}/answer?kind=pyq&ls=1,2&qlang=te', data={'answer': str(last1['answer'])})
     assert 'kind=pyq' in r.headers['Location'] and 'ls=1' in r.headers['Location']
     h = client.get(B + '/run/result?kind=pyq&ls=1,2').get_data(as_text=True)
-    assert 'Score <b>1</b> / 1' in h
+    assert '<p class="rs-big"><b>1</b> / 1</p>' in h  # Polity-style result (PRACTICE_AUDIT)
 
 
 def test_bookmarks_and_mistakes(client):

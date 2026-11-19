@@ -12,7 +12,7 @@ from ..services.device import device_id
 
 EXAM_GROUPS=[('upsc','UPSC'),('g2','APPSC Group 2'),('g1','APPSC Group 1'),('tspsc','TSPSC / TGPSC'),('appsc','APPSC other'),('other','Other')]
 VIEWS={'unseen':'చూడనివి మాత్రమే · Only unseen','mistakes':'తప్పులు మాత్రమే · Only mistakes','saved':'గుర్తుపెట్టినవి మాత్రమే · Only bookmarked'}
-FILTER_KEYS=('kind','ls','sec','exam','y1','y2','view','q')
+FILTER_KEYS=('kind','ls','sec','exam','y1','y2','view','q','run')  # run=1: a practice run over the whole selection, even with no filter
 LANGS=('te','en','both')
 
 def _models():
@@ -45,6 +45,7 @@ def filters(args=None):
     if v['kind'] not in ('','pyq','bank'):abort(404)
     if v['exam'] and v['exam'] not in dict(EXAM_GROUPS):abort(404)
     if v['view'] and v['view'] not in VIEWS:abort(404)
+    if v['run'] not in ('','1'):abort(404)
     for y in ('y1','y2'):
         if v[y] and not (v[y].isdigit() and len(v[y])==4):abort(404)
     _lessons_arg(v['ls'])
@@ -145,7 +146,9 @@ def g2_practice_setup():
     sec_counts={}
     if secs:
         for q in selection({**v,'sec':''},st):sec_counts[q.get('section') or '']=sec_counts.get(q.get('section') or '',0)+1
-    return render_template('ds/g2_practice_setup.html',v=v,lang=l,count=len(qs),start=qurl(qs[0],v,qlang=l,fresh='1') if qs else None,
+    known={i for i in g2.by_id()}
+    wrong_n=sum(1 for s in st.values() if s.wrong_count and s.item_id in known);saved_n=sum(1 for s in st.values() if s.saved and s.item_id in known)
+    return render_template('ds/g2_practice_setup.html',v=v,lang=l,count=len(qs),start=qurl(qs[0],{**v,'run':'1'},qlang=l,fresh='1') if qs else None,wrong_n=wrong_n,saved_n=saved_n,
         groups=EXAM_GROUPS,exam_counts={g:sum(1 for q in pyqs if q['_exam']==g) for g,_ in EXAM_GROUPS},years=years,
         lessons=[(c,lesson_counts[c['display_chapter']]) for c in g2.index()['chapters']],ls=ls,secs=secs,sec_counts=sec_counts,
         views=VIEWS,totals={'pyq':len(pyqs),'bank':len(allq)-len(pyqs)},list_url=url_for('geography.g2_library',**active(v),qlang=l))
@@ -157,7 +160,7 @@ def _library(view_title=None,force_view=None):
     l=lang();qs=selection(v);page=max(1,request.args.get('page',1,type=int));total=len(qs)
     rows=qs[(page-1)*40:page*40]
     return render_template('ds/g2_library.html',v=v,lang=l,questions=rows,total=total,page=page,pages=(total+39)//40,
-        start=qurl(qs[0],v,qlang=l,fresh='1') if qs else None,qurl=qurl,view_title=view_title,force_view=force_view,
+        start=qurl(qs[0],{**v,'run':'1'},qlang=l,fresh='1') if qs else None,qurl=qurl,view_title=view_title,force_view=force_view,
         lessons=g2.index()['chapters'],endpoint=request.endpoint,
         fa={k:x for k,x in active(v).items() if not (force_view and k=='view')},setup_args=active(v))
 @bp.get('/g2/library')
@@ -254,7 +257,7 @@ def g2_run_result():
         allr=dict(session.get('g2run') or {});allr.pop('run',None);session['g2run']=allr
         return redirect(url_for('geography.g2_practice_setup',**active(v),qlang=l))
     wrong=[recs[i] for i in r['wrong'] if i in recs]
-    return render_template('ds/g2_result.html',number=None,ch=None,run=r,wrong=wrong,lang=l,v=v,va=active(v),qurl=qurl)
+    return render_template('ds/g2_result.html',number=None,ch=None,run=r,wrong=wrong,lang=l,v=v,va=active(v),qurl=qurl,**wrong_retry(l))
 
 
 # --- stem layout (G2 only): put inline statements / match lists on their own lines, then reuse Polity's formatter ---
@@ -303,3 +306,9 @@ def _g2_ctx():
         try:return g2.content_stats()
         except Exception:return None
     return {'g2_stats':g2_stats}
+
+
+def wrong_retry(l):
+    """'Practise my wrong answers' on the result pages: every pending mistake in G2 Geography, as a run."""
+    st=states();qs=[q for q in g2.records() if q['id'] in st and st[q['id']].wrong_count]
+    return {'total_wrong':len(qs),'retry':qurl(qs[0],{'view':'mistakes','run':'1'},qlang=l,fresh='1') if qs else None}

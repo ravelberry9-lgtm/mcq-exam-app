@@ -108,7 +108,7 @@ def _runctx(number,q):
         qs=before+[q]+after;pos=len(before)
     return dict(v=v,act=act,prev=qs[pos-1] if pos else None,next=qs[pos+1] if pos+1<len(qs) else None,
                 position=pos+1,total=len(qs),runkey='run',result=url_for('geography.g2_run_result',**act),
-                back=url_for('geography.g2_practice_setup',**act),back_label='‹ Practice setup')
+                back=url_for('geography.g2_practice_setup',**act),back_label='‹ Practice')
 
 @bp.get('/g2/<int:number>/practice/<qid>')
 def g2_question(number,qid):
@@ -164,6 +164,7 @@ def g2_result(number):
     if request.args.get('reset')=='1':
         allr=dict(session.get('g2run') or {});allr.pop(str(number),None);session['g2run']=allr
         return redirect(url_for('geography.g2_practice',number=number))
-    return render_template('ds/g2_result.html',number=number,ch=ch,run=r,wrong=wrong,lang=lang)
+    from .geography_g2_plus import wrong_retry
+    return render_template('ds/g2_result.html',number=number,ch=ch,run=r,wrong=wrong,lang=lang,va={},**wrong_retry(lang))
 
 from . import geography_g2_plus  # noqa: E402,F401  hub, setup, library, revise, tests

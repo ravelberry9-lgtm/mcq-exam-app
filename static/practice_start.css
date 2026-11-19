@@ -9,3 +9,16 @@
 .ps-wrong .ps-ico{background:#fee2e2;color:#b91c1c}.ps-wrong b em{font-style:normal;background:#b91c1c;color:#fff;border-radius:999px;padding:1px 9px;font-size:.82rem;margin-left:6px}
 .ps-wrong.off{opacity:.65}
 .ps .ps-card,.ps .ps-big{flex-direction:row!important;text-align:left!important;justify-content:flex-start}
+/* Practice tab subject cards: one tappable main row + optional chips (continue / wrong / saved) */
+.ps-te{font-size:.95rem;color:#64748b;font-weight:600;margin-left:6px}
+.ps-subj{padding:0;gap:0}
+.ps-subj>.ps-card{padding:14px;border-radius:inherit}
+.ps-subj b{font-size:1.06rem;line-height:1.3}
+.ps-tename{color:#334155;font-size:.9rem;line-height:1.35}
+.ps-counts{color:#0f766e!important;font-weight:600}
+.ps-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 14px 74px}
+.ps-chip{display:inline-flex;align-items:center;gap:5px;min-height:34px;padding:5px 11px;border-radius:999px;border:1px solid #cbd5e1;background:#f8fafc;color:#0f172a;text-decoration:none;font-size:.84rem;font-weight:600}
+.ps-chip em{font-style:normal;background:#e2e8f0;border-radius:999px;padding:0 7px;font-size:.78rem}
+.ps-chip.no{border-color:#fecaca;background:#fef2f2;color:#991b1b}.ps-chip.no em{background:#b91c1c;color:#fff}
+.ps-chip.go{border-color:#99d5cc;background:#e6f4f1;color:#0f766e}
+@media (max-width:400px){.ps-chips{padding-left:14px}}

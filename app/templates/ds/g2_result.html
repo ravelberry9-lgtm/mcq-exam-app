@@ -1,10 +1,17 @@
 {% extends 'ds/base.html' %}
 {% set nav_active='practice' %}
 {% block title %}Result · Group 2 Geography{% endblock %}
-{% block head_extra %}{% include 'ds/_g2_head.html' %}{% endblock %}
-{% block topbar %}<div class="geo-qheader">{% if number %}<a href="{{ url_for('geography.g2_practice',number=number) }}">‹ Practice</a>{% else %}<a href="{{ url_for('geography.g2_practice_setup') }}">‹ Practice setup</a>{% endif %}<strong>Result</strong></div>{% endblock %}
-{% block content %}<div class="u6 g2">
-<section class="card"><h2>{% if number %}పాఠం {{ number }} · {{ ch.title }}{% else %}Practice run / సాధన{% endif %}</h2><p class="pr-score-big">Score <b>{{ run.ok }}</b> / {{ run.n }}{% if run.n %} · {{ (100*run.ok/run.n)|round|int }}%{% endif %}</p>
-<p class="u6-actions"><a class="btn" href="{{ url_for('geography.g2_result',number=number,reset='1') if number else url_for('geography.g2_run_result',reset='1',**va) }}">Start again / మళ్ళీ మొదలు</a><a class="btn" href="{{ url_for('geography.g2_mistakes') }}">All mistakes / అన్ని తప్పులు</a><a class="btn" href="{{ url_for('geography.g2_index') }}">Geography home</a></p></section>
-{% if wrong %}<section class="card"><h3>తప్పు సమాధానాలు · Wrong answers ({{ wrong|length }})</h3><ol>{% for w in wrong %}<li><a href="{{ url_for('geography.g2_question',number=w._lesson or number,qid=w.id,qlang=lang) }}">{{ (w.question_te if lang!='en' else w.question_en)[:140] }}</a></li>{% endfor %}</ol></section>{% endif %}
+{% block head_extra %}{% include 'ds/_g2_head.html' %}<link rel="stylesheet" href="{{ url_for('static',filename='polity_result.css',v='r1') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader">{% if number %}<a href="{{ url_for('geography.g2_practice',number=number) }}">‹ Practice</a>{% else %}<a href="{{ url_for('geography.g2_practice_setup',qlang=lang) }}">‹ Practice</a>{% endif %}<strong>Your result / ఫలితం</strong></div>{% endblock %}
+{% block content %}{% set pct=((run.ok*100/run.n)|round|int) if run.n else 0 %}<div class="rs u6 g2">
+<section class="card rs-top">
+<p class="rs-what">{% if number %}పాఠం {{ number }} · {{ ch.title }}{% else %}Practice run / సాధన{% endif %}</p>
+{% if run.n %}<p class="rs-big"><b>{{ run.ok }}</b> / {{ run.n }}</p><p class="rs-pct">{{ pct }}% correct</p>
+<div class="rs-bar" aria-hidden="true"><i style="width:{{ pct }}%"></i></div>
+<ul class="rs-sum"><li class="ok">✓ {{ run.ok }} correct</li><li class="no">✗ {{ run.n-run.ok }} wrong</li></ul>
+{% else %}<p class="rs-pct">You haven't answered any questions in this practice yet. / ఇంకా ఏ ప్రశ్నకూ జవాబు ఇవ్వలేదు.</p>{% endif %}
+<div class="rs-act">{% if retry %}<a class="rs-btn primary" href="{{ retry }}">Practise my wrong answers ({{ total_wrong }})</a>{% endif %}<a class="rs-btn" href="{{ url_for('geography.g2_result',number=number,reset='1') if number else url_for('geography.g2_run_result',reset='1',**va) }}">Start again / మళ్ళీ మొదలు</a><a class="rs-btn" href="{{ url_for('geography.g2_practice_setup',qlang=lang) }}">New practice</a></div>
+<p class="rs-note">Wrong answers stay in "my wrong answers" until you answer them correctly; then they drop off by themselves.</p>
+</section>
+{% if wrong %}<section class="card"><h2>Wrong in this practice / ఈ సాధనలో తప్పులు ({{ wrong|length }})</h2><ol class="rs-list">{% for w in wrong %}<li><a href="{{ url_for('geography.g2_question',number=w._lesson or number,qid=w.id,qlang=lang) }}">{{ ((w.question_te if lang!='en' and w.question_te else w.question_en) or '')|truncate(140) }}</a></li>{% endfor %}</ol></section>{% endif %}
 </div>{% endblock %}
